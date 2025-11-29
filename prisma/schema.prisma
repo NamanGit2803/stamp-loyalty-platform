@@ -1,0 +1,116 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+enum Role {
+  ADMIN
+  SHOP
+}
+
+model User {
+  srNo      Int      @id @default(autoincrement())      // Primary key
+  email     String   @unique
+  password  String
+  role      Role     @default(SHOP)
+  createdAt DateTime @default(now())
+
+  shops Shop[]
+}
+
+model Shop {
+  srNo           Int      @id @default(autoincrement())
+  id             String   @unique
+  ownerId        String
+  shopName       String
+  businessType   String?
+  address        String?
+  plan           String   @default("free")
+  isActive       Boolean  @default(true)
+  loyaltyEnabled Boolean  @default(true)
+  targetStamps   Int      @default(5)
+  rewardText     String   @default("Free Reward")
+  createdAt      DateTime @default(now())
+
+  owner         User           @relation(fields: [ownerId], references: [email])
+  customers     Customer[]
+  transactions  Transaction[]
+  rewards       Reward[]
+  subscriptions Subscription[]
+}
+
+model Customer {
+  srNo        Int       @id @default(autoincrement())
+  id          String    @unique
+  shopId      String
+  name        String?
+  phone       String?
+  upiId       String?
+  stampCount  Int       @default(0)
+  totalVisits Int       @default(0)
+  lastVisit   DateTime?
+  createdAt   DateTime  @default(now())
+
+  shop         Shop          @relation(fields: [shopId], references: [id])
+  transactions Transaction[]
+  rewards      Reward[]
+}
+
+model Transaction {
+  srNo       Int       @id @default(autoincrement())
+  id         String    @unique
+  shopId     String
+  customerId String?
+  amount     Float?
+  status     String
+  upiId      String?
+  paymentId  String?
+  method     String?
+  createdAt  DateTime  @default(now())
+
+  shop     Shop      @relation(fields: [shopId], references: [id])
+  customer Customer? @relation(fields: [customerId], references: [id])
+}
+
+model Reward {
+  srNo       Int       @id @default(autoincrement())
+  id         String    @unique
+  shopId     String
+  customerId String
+  rewardText String
+  redeemed   Boolean   @default(false)
+  createdAt  DateTime  @default(now())
+
+  shop     Shop     @relation(fields: [shopId], references: [id])
+  customer Customer @relation(fields: [customerId], references: [id])
+}
+
+model Plan {
+  srNo        Int       @id @default(autoincrement())
+  id          String    @unique
+  name        String
+  price       Int
+  stampLimit  Int?
+  shopLimit   Int?
+  description String?
+  createdAt   DateTime @default(now())
+
+  subscriptions Subscription[]
+}
+
+model Subscription {
+  srNo          Int       @id @default(autoincrement())
+  id            String    @unique
+  shopId        String
+  planId        String
+  status        String    @default("active")
+  startDate     DateTime  @default(now())
+  endDate       DateTime?
+  razorpaySubId String?
+
+  shop Shop @relation(fields: [shopId], references: [id])
+  plan Plan @relation(fields: [planId], references: [id])
+}
