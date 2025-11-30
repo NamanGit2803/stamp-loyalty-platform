@@ -5,10 +5,14 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
-import { Eye, EyeOff, TriangleAlert } from "lucide-react"   
+import { Eye, EyeOff, TriangleAlert } from "lucide-react" 
+import Step1 from './Step1'  
+import Step2 from './Step2'
+import { observer } from "mobx-react-lite"
+import { useStore } from '@/stores/StoreProvider'
 
 const Form = () => {
-    const [step, setStep] = useState(1)
+    const [step, setStep] = useState(2)
     const [showPassword, setShowPassword] = useState(false) // 
     const [showConfirmPassword, setShowConfirmPassword] = useState(false) 
 
@@ -79,10 +83,10 @@ const Form = () => {
                 <div className="p-8">
                     <div className="mb-6">
                         <h1 className="text-3xl font-bold text-secondary mb-2">
-                            {step === 1 ? "Create Account" : "Set Password"}
+                            {step === 1 ? "Create Account" : "Enter Shop Details"}
                         </h1>
                         <p className="text-gray-600">
-                            {step === 1 ? "Join thousands of shopkeepers managing loyalty" : "Secure your account"}
+                            {step === 1 ? "Join thousands of shopkeepers managing loyalty" : "Provide your shop information to continue."}
                         </p>
                     </div>
 
@@ -95,135 +99,14 @@ const Form = () => {
                         ))}
                     </div>
 
-                    <form onSubmit={handleSubmit}>
+                    <div>
                         {step === 1 ? (
-                            <div className="space-y-4">
-                                {/* Full Name */}
-                                <div>
-                                    <label className="block text-sm font-medium text-primary mb-2">Full Name</label>
-                                    <Input
-                                        type="text"
-                                        name="name"
-                                        placeholder="Your name"
-                                        value={formData.name}
-                                        onChange={handleChange}
-                                        className={errors.name ? "border-red-500" : "border-border"}
-                                    />
-                                    {errors.name && <p className="text-red-600 text-sm mt-1"><TriangleAlert/> {errors.name}</p>}
-                                </div>
-
-                                {/* Email */}
-                                <div>
-                                    <label className="block text-sm font-medium text-primary mb-2">Email</label>
-                                    <Input
-                                        type="email"
-                                        name="email"
-                                        placeholder="m@example.com"
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                        className={errors.email ? "border-red-500" : "border-border"}
-                                    />
-                                    {errors.email && <p className="text-red-600 text-sm mt-1">⚠️ {errors.email}</p>}
-                                </div>
-
-                                {/* Password */}
-                                <div>
-                                    <label className="block text-sm font-medium text-primary mb-2">Password</label>
-
-                                    <div className="relative">
-                                        <Input
-                                            type={showPassword ? "text" : "password"}
-                                            name="password"
-                                            placeholder="Minimum 6 characters"
-                                            value={formData.password}
-                                            onChange={handleChange}
-                                            className={errors.password ? "border-red-500 pr-10" : "border-border pr-10"}
-                                        />
-
-                                        <button
-                                            type="button"
-                                            onClick={() => setShowPassword(!showPassword)}
-                                            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600 hover:text-gray-800"
-                                        >
-                                            {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-                                        </button>
-                                    </div>
-
-                                    {errors.password && <p className="text-red-600 text-sm mt-1 flex gap-2 items-center"><TriangleAlert className='h-4 w-4'/> {errors.password}</p>}
-                                </div>
-
-                                {/* Confirm Password */}
-                                <div>
-                                    <label className="block text-sm font-medium text-primary mb-2">Confirm Password</label>
-
-                                    <div className="relative">
-                                        <Input
-                                            type={showConfirmPassword ? "text" : "password"}
-                                            name="confirmPassword"
-                                            placeholder="Re-enter password"
-                                            value={formData.confirmPassword}
-                                            onChange={handleChange}
-                                            className={errors.confirmPassword ? "border-red-500 pr-10" : "border-border pr-10"}
-                                        />
-
-                                        <button
-                                            type="button"
-                                            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                                            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600 hover:text-gray-800"
-                                        >
-                                            {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-                                        </button>
-                                    </div>
-
-                                    {errors.confirmPassword && <p className="text-red-600 text-sm mt-1 flex gap-2 items-center"><TriangleAlert className='h-4 w-4'/> {errors.confirmPassword}</p>}
-                                </div>
-
-
-
-                                <Button onClick={handleNext} className="w-full mt-6 text-white">
-                                    Continue
-                                </Button>
-                            </div>
+                           <Step1 setStep={setStep}/>
                         ) : (
                             /* STEP 2 */
-                            <div className="space-y-4">
-
-                                {/* Phone */}
-                                <div>
-                                    <label className="block text-sm font-medium text-primary mb-2">Phone</label>
-                                    <Input
-                                        type="text"
-                                        name="phone"
-                                        placeholder="+91 XXXXX XXXXX"
-                                        value={formData.phone}
-                                        onChange={handleChange}
-                                        className={errors.phone ? "border-red-500" : "border-border"}
-                                    />
-                                    {errors.phone && <p className="text-red-600 text-sm mt-1">⚠️ {errors.phone}</p>}
-                                </div>
-
-
-                                <div className="flex gap-3 mt-6">
-                                    <Button
-                                        type="button"
-                                        variant="outline"
-                                        onClick={() => setStep(1)}
-                                        className="flex-1 border-blue-200 text-blue-600 hover:bg-blue-50"
-                                    >
-                                        Back
-                                    </Button>
-
-                                    <Button
-                                        type="submit"
-                                        className="flex-1 bg-blue-600 hover:bg-blue-700 text-white"
-                                        disabled={isLoading}
-                                    >
-                                        {isLoading ? "Creating..." : "Create Account"}
-                                    </Button>
-                                </div>
-                            </div>
+                           <Step2 setStep={setStep}/>
                         )}
-                    </form>
+                    </div>
 
                     <p className="text-center text-sm text-gray-600 mt-6">
                         Already have an account?{" "}
@@ -237,4 +120,4 @@ const Form = () => {
     )
 }
 
-export default Form
+export default observer(Form)

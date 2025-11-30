@@ -1,5 +1,9 @@
 {
   "/(auth)/signup/page": "app/(auth)/signup/page.js",
+  "/(dashboard)/[shopId]/customers/page": "app/(dashboard)/[shopId]/customers/page.js",
   "/(dashboard)/[shopId]/page": "app/(dashboard)/[shopId]/page.js",
+  "/(dashboard)/[shopId]/settings/page": "app/(dashboard)/[shopId]/settings/page.js",
+  "/(dashboard)/[shopId]/transactions/page": "app/(dashboard)/[shopId]/transactions/page.js",
+  "/api/auth/signup/userCreate/route": "app/api/auth/signup/userCreate/route.js",
   "/page": "app/page.js"
 }

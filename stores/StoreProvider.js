@@ -2,10 +2,11 @@
 import { createContext, useContext } from "react"
 
 // Import all stores here
+import { userStore } from "./userStore"
 
 // Combine stores in one object
 const store = {
-  
+  userStore,
 }
 
 // Create React Context

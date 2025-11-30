@@ -4,6 +4,7 @@ generator client {
 
 datasource db {
   provider = "mysql"
+  url      = env("DATABASE_URL")
 }
 
 enum Role {
@@ -15,6 +16,7 @@ model User {
   srNo      Int      @id @default(autoincrement())      // Primary key
   email     String   @unique
   password  String
+  name     String
   role      Role     @default(SHOP)
   createdAt DateTime @default(now())
 
