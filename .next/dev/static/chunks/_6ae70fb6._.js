@@ -1062,15 +1062,19 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-const Step2 = ()=>{
+const Step2 = ({ setStep })=>{
     _s();
-    const { userStore } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$stores$2f$StoreProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useStore"])();
+    const { userStore, shopStore } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$stores$2f$StoreProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useStore"])();
     const [errors, setErrors] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({});
     const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
         shopName: "",
         phone: "",
         businessType: '',
-        customBusinessType: ''
+        customBusinessType: '',
+        address: "",
+        minAmount: '',
+        targetStamp: '',
+        reward: ''
     });
     const handleChange = (e)=>{
         const { name, value } = e.target;
@@ -1090,6 +1094,67 @@ const Step2 = ()=>{
     }["Step2.useEffect"], [
         formData
     ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "Step2.useEffect": ()=>{
+            console.log(errors);
+        }
+    }["Step2.useEffect"], [
+        errors
+    ]);
+    // validation 
+    const validate = ()=>{
+        const newErrors = {};
+        if (!formData.shopName.trim()) newErrors.shopName = "Shopname is required";
+        if (!formData.phone.trim()) newErrors.phone = "Phone is required";
+        if (!formData.businessType.trim()) newErrors.businessType = "Business type is required";
+        if (formData.businessType == 'other') {
+            if (!formData.customBusinessType.trim()) newErrors.customBusinessType = "Custom business type is required";
+        }
+        if (!formData.address.trim()) newErrors.address = "Address is required";
+        if (!formData.minAmount.trim()) newErrors.minAmount = "Minimum amount is required";
+        if (!formData.targetStamp.trim()) newErrors.targetStamp = "Target stamp is required";
+        if (!formData.reward.trim()) newErrors.reward = "Reward is required";
+        return newErrors;
+    };
+    // shop creation  
+    const submit = async (e)=>{
+        e.preventDefault();
+        const newErrors = validate();
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+            return;
+        }
+        let finalData = {
+            ...formData
+        };
+        // If user selected OTHER → replace businessType with customBusinessType
+        if (formData.businessType === "other") {
+            finalData.businessType = formData.customBusinessType;
+        }
+        // In ALL cases → remove customBusinessType before sending
+        delete finalData.customBusinessType;
+        if (!userStore?.user?.email) {
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].error("User not exist.");
+            setStep(1);
+            return;
+        }
+        // ADD USER EMAIL HERE
+        finalData.ownerId = userStore.user.email; // <---- IMPORTANT
+        // calling api through store 
+        await shopStore.createShop(finalData);
+    // if (userStore.error) {
+    //     toast.error(userStore.error)
+    //     return
+    // } else {
+    //     setFormData({
+    //         name: "",
+    //         email: "",
+    //         password: "",
+    //         confirmPassword: "",
+    //     })
+    //     setStep(2)
+    // }
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
         action: "",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1102,7 +1167,7 @@ const Step2 = ()=>{
                             children: "Shop Name"
                         }, void 0, false, {
                             fileName: "[project]/components/auth/signup/Step2.jsx",
-                            lineNumber: 42,
+                            lineNumber: 118,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -1114,7 +1179,7 @@ const Step2 = ()=>{
                             className: errors.shopName ? "border-red-500" : "border-border"
                         }, void 0, false, {
                             fileName: "[project]/components/auth/signup/Step2.jsx",
-                            lineNumber: 43,
+                            lineNumber: 119,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         errors.shopName && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1124,21 +1189,20 @@ const Step2 = ()=>{
                                     className: "h-3 w-3"
                                 }, void 0, false, {
                                     fileName: "[project]/components/auth/signup/Step2.jsx",
-                                    lineNumber: 51,
-                                    columnNumber: 106
+                                    lineNumber: 129,
+                                    columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0)),
-                                " ",
                                 errors.shopName
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/auth/signup/Step2.jsx",
-                            lineNumber: 51,
-                            columnNumber: 41
+                            lineNumber: 128,
+                            columnNumber: 25
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/auth/signup/Step2.jsx",
-                    lineNumber: 41,
+                    lineNumber: 117,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1148,7 +1212,7 @@ const Step2 = ()=>{
                             children: "Phone"
                         }, void 0, false, {
                             fileName: "[project]/components/auth/signup/Step2.jsx",
-                            lineNumber: 56,
+                            lineNumber: 137,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1159,7 +1223,7 @@ const Step2 = ()=>{
                                     children: "+91"
                                 }, void 0, false, {
                                     fileName: "[project]/components/auth/signup/Step2.jsx",
-                                    lineNumber: 58,
+                                    lineNumber: 139,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -1172,30 +1236,36 @@ const Step2 = ()=>{
                                     className: `pl-12 ${errors.phone ? "border-red-500" : "border-border"}`
                                 }, void 0, false, {
                                     fileName: "[project]/components/auth/signup/Step2.jsx",
-                                    lineNumber: 62,
+                                    lineNumber: 143,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/auth/signup/Step2.jsx",
-                            lineNumber: 57,
+                            lineNumber: 138,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         errors.phone && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-red-600 text-sm mt-1",
+                            className: "text-red-600 text-xs mt-1 flex gap-2 items-center",
                             children: [
-                                "⚠️ ",
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$triangle$2d$alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TriangleAlert$3e$__["TriangleAlert"], {
+                                    className: "h-3 w-3"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/auth/signup/Step2.jsx",
+                                    lineNumber: 155,
+                                    columnNumber: 29
+                                }, ("TURBOPACK compile-time value", void 0)),
                                 errors.phone
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/auth/signup/Step2.jsx",
-                            lineNumber: 72,
-                            columnNumber: 38
+                            lineNumber: 154,
+                            columnNumber: 25
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/auth/signup/Step2.jsx",
-                    lineNumber: 55,
+                    lineNumber: 136,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1205,7 +1275,7 @@ const Step2 = ()=>{
                             children: "Business Type"
                         }, void 0, false, {
                             fileName: "[project]/components/auth/signup/Step2.jsx",
-                            lineNumber: 77,
+                            lineNumber: 163,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
@@ -1215,20 +1285,41 @@ const Step2 = ()=>{
                                     ...formData,
                                     businessType: value
                                 });
+                                // clear businessType error
+                                if (errors.businessType) {
+                                    setErrors((prev)=>({
+                                            ...prev,
+                                            businessType: ""
+                                        }));
+                                }
+                                // if user selects other, keep custom input
+                                // else clear custom input and its error
+                                if (value !== "other") {
+                                    setFormData((prev)=>({
+                                            ...prev,
+                                            customBusinessType: ""
+                                        }));
+                                    if (errors.customBusinessType) {
+                                        setErrors((prev)=>({
+                                                ...prev,
+                                                customBusinessType: ""
+                                            }));
+                                    }
+                                }
                             },
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectTrigger"], {
-                                    className: "w-full",
+                                    className: `${errors.businessType ? "border-red-500" : "border-border"} w-full `,
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectValue"], {
                                         placeholder: "Select business type"
                                     }, void 0, false, {
                                         fileName: "[project]/components/auth/signup/Step2.jsx",
-                                        lineNumber: 86,
+                                        lineNumber: 187,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/components/auth/signup/Step2.jsx",
-                                    lineNumber: 85,
+                                    lineNumber: 186,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -1237,54 +1328,286 @@ const Step2 = ()=>{
                                             children: item.label
                                         }, item.value, false, {
                                             fileName: "[project]/components/auth/signup/Step2.jsx",
-                                            lineNumber: 91,
+                                            lineNumber: 192,
                                             columnNumber: 33
                                         }, ("TURBOPACK compile-time value", void 0)))
                                 }, void 0, false, {
                                     fileName: "[project]/components/auth/signup/Step2.jsx",
-                                    lineNumber: 89,
+                                    lineNumber: 190,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/auth/signup/Step2.jsx",
-                            lineNumber: 79,
+                            lineNumber: 165,
                             columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        errors.businessType && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "text-red-600 text-xs mt-1 flex gap-2 items-center",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$triangle$2d$alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TriangleAlert$3e$__["TriangleAlert"], {
+                                    className: "h-3 w-3"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/auth/signup/Step2.jsx",
+                                    lineNumber: 201,
+                                    columnNumber: 29
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                errors.businessType
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/auth/signup/Step2.jsx",
+                            lineNumber: 200,
+                            columnNumber: 25
                         }, ("TURBOPACK compile-time value", void 0)),
                         formData.businessType === "other" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "mt-3",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
-                                placeholder: "Enter your business type",
-                                value: formData.customBusinessType || "",
-                                onChange: (e)=>setFormData({
-                                        ...formData,
-                                        customBusinessType: e.target.value
-                                    })
-                            }, void 0, false, {
-                                fileName: "[project]/components/auth/signup/Step2.jsx",
-                                lineNumber: 101,
-                                columnNumber: 29
-                            }, ("TURBOPACK compile-time value", void 0))
-                        }, void 0, false, {
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
+                                    name: "customBusinessType",
+                                    placeholder: "Enter your business type",
+                                    value: formData.customBusinessType,
+                                    onChange: handleChange,
+                                    className: errors.customBusinessType ? "border-red-500" : "border-border"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/auth/signup/Step2.jsx",
+                                    lineNumber: 210,
+                                    columnNumber: 29
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                errors.customBusinessType && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-red-600 text-xs mt-1 flex gap-2 items-center",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$triangle$2d$alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TriangleAlert$3e$__["TriangleAlert"], {
+                                            className: "h-3 w-3"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/auth/signup/Step2.jsx",
+                                            lineNumber: 219,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        errors.customBusinessType
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/auth/signup/Step2.jsx",
+                                    lineNumber: 218,
+                                    columnNumber: 33
+                                }, ("TURBOPACK compile-time value", void 0))
+                            ]
+                        }, void 0, true, {
                             fileName: "[project]/components/auth/signup/Step2.jsx",
-                            lineNumber: 100,
+                            lineNumber: 209,
                             columnNumber: 25
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/auth/signup/Step2.jsx",
-                    lineNumber: 76,
+                    lineNumber: 162,
+                    columnNumber: 17
+                }, ("TURBOPACK compile-time value", void 0)),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                            className: "block text-sm font-medium text-primary mb-2",
+                            children: "Shop Address"
+                        }, void 0, false, {
+                            fileName: "[project]/components/auth/signup/Step2.jsx",
+                            lineNumber: 229,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
+                            type: "text",
+                            name: "address",
+                            placeholder: "Shop full address",
+                            value: formData.address,
+                            onChange: handleChange,
+                            className: errors.address ? "border-red-500" : "border-border"
+                        }, void 0, false, {
+                            fileName: "[project]/components/auth/signup/Step2.jsx",
+                            lineNumber: 230,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        errors.address && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "text-red-600 text-xs mt-1 flex gap-2 items-center",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$triangle$2d$alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TriangleAlert$3e$__["TriangleAlert"], {
+                                    className: "h-3 w-3"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/auth/signup/Step2.jsx",
+                                    lineNumber: 240,
+                                    columnNumber: 29
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                errors.address
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/auth/signup/Step2.jsx",
+                            lineNumber: 239,
+                            columnNumber: 25
+                        }, ("TURBOPACK compile-time value", void 0))
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/components/auth/signup/Step2.jsx",
+                    lineNumber: 228,
+                    columnNumber: 17
+                }, ("TURBOPACK compile-time value", void 0)),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                            className: "block text-sm font-medium text-primary mb-2",
+                            children: "Minimum Amount For A Stamp"
+                        }, void 0, false, {
+                            fileName: "[project]/components/auth/signup/Step2.jsx",
+                            lineNumber: 248,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "relative",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm",
+                                    children: "₹"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/auth/signup/Step2.jsx",
+                                    lineNumber: 253,
+                                    columnNumber: 25
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
+                                    type: "number",
+                                    name: "minAmount",
+                                    placeholder: "0",
+                                    value: formData.minAmount,
+                                    onChange: handleChange,
+                                    className: `pl-8 ${errors.minAmount ? "border-red-500" : "border-border"}`
+                                }, void 0, false, {
+                                    fileName: "[project]/components/auth/signup/Step2.jsx",
+                                    lineNumber: 257,
+                                    columnNumber: 25
+                                }, ("TURBOPACK compile-time value", void 0))
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/auth/signup/Step2.jsx",
+                            lineNumber: 252,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        errors.minAmount && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "text-red-600 text-xs mt-1 flex gap-2 items-center",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$triangle$2d$alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TriangleAlert$3e$__["TriangleAlert"], {
+                                    className: "h-3 w-3"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/auth/signup/Step2.jsx",
+                                    lineNumber: 269,
+                                    columnNumber: 29
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                errors.minAmount
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/auth/signup/Step2.jsx",
+                            lineNumber: 268,
+                            columnNumber: 25
+                        }, ("TURBOPACK compile-time value", void 0))
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/components/auth/signup/Step2.jsx",
+                    lineNumber: 247,
+                    columnNumber: 17
+                }, ("TURBOPACK compile-time value", void 0)),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                            className: "block text-sm font-medium text-primary mb-2",
+                            children: "Stamps Required for Reward"
+                        }, void 0, false, {
+                            fileName: "[project]/components/auth/signup/Step2.jsx",
+                            lineNumber: 277,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
+                            type: "number",
+                            name: "targetStamp",
+                            placeholder: "Enter target stamp",
+                            value: formData.targetStamp,
+                            onChange: handleChange,
+                            className: errors.targetStamp ? "border-red-500" : "border-border"
+                        }, void 0, false, {
+                            fileName: "[project]/components/auth/signup/Step2.jsx",
+                            lineNumber: 278,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        errors.targetStamp && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "text-red-600 text-xs mt-1 flex gap-2 items-center",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$triangle$2d$alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TriangleAlert$3e$__["TriangleAlert"], {
+                                    className: "h-3 w-3"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/auth/signup/Step2.jsx",
+                                    lineNumber: 288,
+                                    columnNumber: 29
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                errors.targetStamp
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/auth/signup/Step2.jsx",
+                            lineNumber: 287,
+                            columnNumber: 25
+                        }, ("TURBOPACK compile-time value", void 0))
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/components/auth/signup/Step2.jsx",
+                    lineNumber: 276,
+                    columnNumber: 17
+                }, ("TURBOPACK compile-time value", void 0)),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                            className: "block text-sm font-medium text-primary mb-2",
+                            children: "Reward"
+                        }, void 0, false, {
+                            fileName: "[project]/components/auth/signup/Step2.jsx",
+                            lineNumber: 296,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
+                            type: "text",
+                            name: "reward",
+                            placeholder: "e.g., Free Coffee",
+                            value: formData.reward,
+                            onChange: handleChange,
+                            className: errors.reward ? "border-red-500" : "border-border"
+                        }, void 0, false, {
+                            fileName: "[project]/components/auth/signup/Step2.jsx",
+                            lineNumber: 297,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        errors.reward && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "text-red-600 text-xs mt-1 flex gap-2 items-center",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$triangle$2d$alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TriangleAlert$3e$__["TriangleAlert"], {
+                                    className: "h-3 w-3"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/auth/signup/Step2.jsx",
+                                    lineNumber: 307,
+                                    columnNumber: 29
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                errors.reward
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/auth/signup/Step2.jsx",
+                            lineNumber: 306,
+                            columnNumber: 25
+                        }, ("TURBOPACK compile-time value", void 0))
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/components/auth/signup/Step2.jsx",
+                    lineNumber: 295,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
-                    type: "submit",
+                    onClick: submit,
                     className: "w-full hover:cursor-pointer text-white",
-                    disabled: userStore.loading,
-                    children: userStore.loading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                    disabled: shopStore.loading,
+                    children: shopStore.loading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$spinner$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Spinner"], {}, void 0, false, {
                                 fileName: "[project]/components/auth/signup/Step2.jsx",
-                                lineNumber: 117,
+                                lineNumber: 318,
                                 columnNumber: 44
                             }, ("TURBOPACK compile-time value", void 0)),
                             "Processing..."
@@ -1292,22 +1615,22 @@ const Step2 = ()=>{
                     }, void 0, true) : 'Continue'
                 }, void 0, false, {
                     fileName: "[project]/components/auth/signup/Step2.jsx",
-                    lineNumber: 112,
+                    lineNumber: 313,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/components/auth/signup/Step2.jsx",
-            lineNumber: 39,
+            lineNumber: 114,
             columnNumber: 13
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/auth/signup/Step2.jsx",
-        lineNumber: 38,
+        lineNumber: 113,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s(Step2, "An4rF8b//mD3+B5S+uZ6A2O88Ho=", false, function() {
+_s(Step2, "/9SAr6pZB3sWEMx+u7Ts1YUVxes=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$stores$2f$StoreProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useStore"]
     ];

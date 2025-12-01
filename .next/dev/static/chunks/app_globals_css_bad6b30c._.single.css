@@ -5591,7 +5591,7 @@
   --destructive: #e40014;
   --destructive-foreground: #eef6fe;
   --border: #c6a7eb;
-  --input: #e5e5e5;
+  --input: #c6a7eb;
   --ring: #a477f4;
   --chart-1: #1963c8;
   --chart-2: #3143ab;
@@ -5628,7 +5628,7 @@
     --destructive: lab(48.4493% 77.4328 61.5452);
     --destructive-foreground: lab(96.5162% -1.71477 -4.90428);
     --border: lab(73.1657% 21.3066 -29.9608);
-    --input: lab(90.952% -.0000596046 0);
+    --input: lab(73.1657% 21.3066 -29.9608);
     --ring: lab(59.0599% 37.4992 -56.9022);
     --chart-1: lab(42.2991% 8.4118 -59.7076);
     --chart-2: lab(32.2162% 21.6532 -58.8224);

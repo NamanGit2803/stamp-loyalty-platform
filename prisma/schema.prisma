@@ -34,7 +34,7 @@ model Shop {
   isActive       Boolean  @default(true)
   loyaltyEnabled Boolean  @default(true)
   targetStamps   Int      @default(5)
-  rewardText     String   @default("Free Reward")
+  reward    String   @default("Free Reward")
   createdAt      DateTime @default(now())
 
   owner         User           @relation(fields: [ownerId], references: [email])

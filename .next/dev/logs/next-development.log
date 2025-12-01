@@ -1,73 +1,243 @@
-[00:00:16.744] Server  LOG      ✓ Ready in 9.7s
-[00:00:19.790] Server  LOG      ○ Compiling / ...
-[00:00:34.001] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:54.141] Server  LOG      ✓ Compiled in 340ms
-[00:02:11.818] Server  LOG      ✓ Compiled in 316ms
-[00:02:41.973] Server  LOG      ✓ Compiled in 287ms
-[00:03:14.279] Server  LOG      ✓ Compiled in 246ms
-[00:03:41.182] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:06:19.982] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:06:19.991] Server  ERROR    ⨯ Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
-[00:06:20.506] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:20.859] Browser ERROR   uncaughtError: Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+[00:00:18.526] Server  LOG      ✓ Ready in 13.4s
+[00:00:21.772] Server  LOG      ○ Compiling /signup ...
+[00:00:41.527] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:42.287] Browser LOG     {"address":"","businessType":"","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[00:01:02.877] Browser LOG     {"address":"","businessType":"","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[00:01:05.326] Browser LOG     {"address":"","businessType":"","customBusinessType":"","minAmount":"","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[00:01:09.746] Browser LOG     {"address":"","businessType":"other","customBusinessType":"","minAmount":"","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[00:01:19.826] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[00:01:21.434] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"1","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[00:01:21.826] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"10","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[00:01:21.826] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[00:01:22.747] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"99","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[00:01:22.747] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"98","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[00:01:22.747] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"97","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[00:01:22.748] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"96","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[00:01:22.748] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"95","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[00:01:23.839] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"95","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":"5"}
+[00:01:24.679] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"95","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":"4"}
+[00:01:24.680] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"95","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":"3"}
+[00:01:24.680] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"95","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":"2"}
+[00:01:24.680] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"95","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":"1"}
+[00:01:26.148] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"95","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[00:01:27.024] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"95","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":"5"}
+[00:01:28.530] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"9","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":"5"}
+[00:01:28.740] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":"5"}
+[00:01:29.363] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"1","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":"5"}
+[00:01:29.776] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"10","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":"5"}
+[00:01:29.776] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":"5"}
+[00:01:33.174] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:02:14.112] Server  LOG      ✓ Compiled in 473ms
+[00:02:37.808] Server  LOG      ✓ Compiled in 347ms
+[00:02:41.213] Browser LOG     hiiiii
+[00:02:46.715] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"x","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:02:46.715] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xs","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:02:47.282] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xsx","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:02:47.282] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xsxs","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:02:47.282] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xsxsx","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:02:47.871] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xsxsxx","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:02:47.871] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xsxsxxs","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:02:48.333] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xsxsxxss","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:02:48.333] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xsxsxxssx","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:02:48.333] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xsxsxxssxs","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:02:50.440] Browser LOG     hiiiii
+[00:03:04.694] Server  LOG      ✓ Compiled in 374ms
+[00:04:35.133] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:04:36.320] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"h","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:04:37.041] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"hu","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:04:37.041] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"hui","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:04:37.041] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"huig","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:04:37.041] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"huigu","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:04:37.041] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"huiguy","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:04:37.041] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"huiguyh","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:06:02.497] Server  LOG      ✓ Compiled in 229ms
+[00:06:28.666] Server  LOG      ✓ Compiled in 292ms
+[00:06:29.035] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
 
-Check the render method of `StatCard`.
-[02:16:05.511] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:16:05.514] Server  ERROR    ⨯ Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
-[02:16:06.138] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:16:06.536] Browser ERROR   uncaughtError: Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
-
-Check the render method of `StatCard`.
-[02:19:39.204] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[02:19:39.263] Server  LOG      ✓ Compiled in 406ms
-[02:19:41.166] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:20:52.668] Browser ERROR   Received NaN for the `%s` attribute. If this is expected, cast the value to a string. value
-[02:34:27.869] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:34:54.406] Server  LOG      ✓ Compiled in 384ms
-[02:34:59.350] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:36:53.363] Server  LOG      ✓ Compiled in 507ms
-[02:40:31.625] Server  LOG      ✓ Compiled in 209ms
-[02:40:31.765] Browser ERROR   uncaughtError: ReferenceError: handleChange is not defined
-[02:41:12.492] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[02:41:13.335] Server  LOG      ✓ Compiled in 243ms
-[02:41:13.999] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:42:40.767] Server  LOG      ✓ Compiled in 216ms
-[13:30:43.601] Server  LOG      ✓ Compiled in 917ms
-[13:31:52.871] Server  LOG      ✓ Compiled in 269ms
-[13:32:11.349] Server  LOG      ✓ Compiled in 259ms
-[13:32:16.360] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[13:32:16.646] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
-This will cause a hydration error.%s <form> form 
-
-  ...
-    <LoadingBoundary name="signup/" loading={null}>
-      <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
-        <RedirectBoundary>
-          <RedirectErrorBoundary router={{...}}>
-            <InnerLayoutRouter url="/signup" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
-              <SegmentViewNode type="page" pagePath="(auth)/sig...">
-                <SegmentTrieNode>
-                <SignupPage>
-                  <SignupForm>
-                    <div className="min-h-scre...">
-                      <Illustration>
-                      <Form>
-                        <div className="flex w-ful...">
-                          <Card className="w-full max...">
-                            <div data-slot="card" className="bg-card te...">
-                              <div className="p-8">
-                                <div>
-                                <div>
->                               <form onSubmit={function handleSubmit}>
-                                  <Step1 setStep={function bound dispatchSetState}>
->                                   <form action="">
-                                ...
-              ...
-            ...
-
-[13:32:16.646] Browser ERROR   <%s> cannot contain a nested %s.
-See this log for the ancestor stack trace. form <form>
-[13:32:16.652] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+Previous: %s
+Incoming: %s useEffect [[object Object]] [[object Object], [object Object]]
+[00:07:14.347] Server  LOG      ✓ Compiled in 415ms
+[00:07:15.032] Browser LOG     {"address":"","businessType":"","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[00:07:15.032] Browser LOG     {}
+[00:07:17.634] Browser LOG     {"address":"Address is required","businessType":"Business type is required","minAmount":"Minimum amount is required","phone":"Phone is required","reward":"Reward is required","shopName":"Shopname is required","targetStamp":"Target stamp is required"}
+[00:07:36.255] Browser LOG     {"address":"","businessType":"","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[00:07:36.255] Browser LOG     {"address":"Address is required","businessType":"Business type is required","minAmount":"Minimum amount is required","phone":"Phone is required","reward":"Reward is required","shopName":"","targetStamp":"Target stamp is required"}
+[00:08:03.415] Browser LOG     {"address":"","businessType":"","customBusinessType":"","minAmount":"","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[00:08:03.415] Browser LOG     {"address":"Address is required","businessType":"Business type is required","minAmount":"Minimum amount is required","phone":"","reward":"Reward is required","shopName":"","targetStamp":"Target stamp is required"}
+[00:08:07.906] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"","customBusinessType":"","minAmount":"","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[00:08:07.906] Browser LOG     {"address":"","businessType":"Business type is required","minAmount":"Minimum amount is required","phone":"","reward":"Reward is required","shopName":"","targetStamp":"Target stamp is required"}
+[00:08:10.375] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"","customBusinessType":"","minAmount":"1","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[00:08:10.375] Browser LOG     {"address":"","businessType":"Business type is required","minAmount":"","phone":"","reward":"Reward is required","shopName":"","targetStamp":"Target stamp is required"}
+[00:08:10.733] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"","customBusinessType":"","minAmount":"10","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[00:08:10.733] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[00:08:13.002] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":"-1"}
+[00:08:13.002] Browser LOG     {"address":"","businessType":"Business type is required","minAmount":"","phone":"","reward":"Reward is required","shopName":"","targetStamp":""}
+[00:08:13.002] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":"-2"}
+[00:08:13.002] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":"-3"}
+[00:08:13.002] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":"-4"}
+[00:08:13.002] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":"-5"}
+[00:08:13.002] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":"-6"}
+[00:08:13.002] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":"-7"}
+[00:08:13.002] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":"-8"}
+[00:08:13.002] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":"-9"}
+[00:08:14.161] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[00:08:15.642] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":"5"}
+[00:08:18.242] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:08:18.242] Browser LOG     {"address":"","businessType":"Business type is required","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[00:08:30.955] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:08:53.101] Browser LOG     {"customBusinessType":"Custom business type is required"}
+[00:09:24.748] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"4","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:09:24.933] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:09:25.486] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"456","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:09:51.053] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"4564","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:09:51.836] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45645","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:09:51.837] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"456454","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:09:51.837] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"4564545","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:09:51.837] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45645454","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:15:10.908] Server  LOG      ✓ Compiled in 277ms
+[00:15:15.711] Browser LOG     {"":"4564545","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45645454","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:15:15.944] Browser LOG     {"":"4564545","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45645454","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:15:16.162] Browser LOG     {"":"4564545","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45645454","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:15:16.520] Browser LOG     {"":"4564545","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45645454","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:15:16.520] Browser LOG     {"":"4564545","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45645454","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:15:17.336] Browser LOG     {"":"4564545","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45645454","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:15:17.336] Browser LOG     {"":"4564545","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45645454","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:15:22.753] Browser LOG     {"":"45645454d","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45645454","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:15:24.130] Browser LOG     {"":"45645454d","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45645454","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:15:24.130] Browser LOG     {"":"45645454d","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45645454","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:15:24.130] Browser LOG     {"":"45645454d","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45645454","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:15:24.130] Browser LOG     {"":"45645454d","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45645454","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:15:24.130] Browser LOG     {"":"45645454d","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45645454","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:15:24.130] Browser LOG     {"":"45645454d","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45645454","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:15:24.130] Browser LOG     {"":"45645454d","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45645454","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:15:24.130] Browser LOG     {"":"45645454d","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45645454","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:15:24.130] Browser LOG     {"":"45645454d","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45645454","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:15:24.130] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45645454","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:15:24.130] Browser LOG     {"":"45645454e","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45645454","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:15:24.130] Browser LOG     {"":"45645454d","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45645454","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:15:24.130] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45645454","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:13.105] Server  LOG      ✓ Compiled in 271ms
+[00:16:18.146] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"4564545","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:18.146] Browser LOG     {"customBusinessType":""}
+[00:16:18.592] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"456454","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:19.362] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45645","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:19.362] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"4564","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:19.362] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"456","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:19.362] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:19.704] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45s","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:19.704] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45sx","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:20.159] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45sxa","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:20.159] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45sx","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:20.865] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45s","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:20.865] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"45","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:20.865] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"4","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:20.865] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:24.096] Browser LOG     {"customBusinessType":"Custom business type is required"}
+[00:16:26.598] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"x","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:26.598] Browser LOG     {"customBusinessType":""}
+[00:16:26.598] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xd","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:26.598] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xds","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:26.598] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xdsx","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:26.598] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xdsxs","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:26.598] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xdsxsx","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:26.598] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xdsxsxs","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:26.963] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xdsxsx","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:27.948] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xdsxs","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:27.948] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xdsx","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:27.948] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xds","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:27.948] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xd","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:27.948] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"x","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:16:27.949] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:19:14.453] Server  LOG      ✓ Compiled in 205ms
+[00:19:22.378] Browser ERROR   uncaughtError: TypeError: Cannot destructure property 'name' of 'e.target' as it is undefined.
+[00:21:10.133] Server  LOG      ✓ Compiled in 274ms
+[00:21:16.389] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"grocery","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:21:25.083] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:21:33.455] Browser LOG     {"customBusinessType":"Custom business type is required"}
+[00:21:35.287] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"x","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:21:35.287] Browser LOG     {"customBusinessType":""}
+[00:21:35.287] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xs","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:21:35.856] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xsw","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:21:35.857] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xswd","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:21:35.857] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xswds","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:21:35.857] Browser LOG     {"":"45645454f","address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xswdsw","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[00:21:39.496] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:40.358] Browser LOG     {"address":"","businessType":"","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[00:21:40.358] Browser LOG     {}
+[00:21:40.969] Browser LOG     {"address":"Address is required","businessType":"Business type is required","minAmount":"Minimum amount is required","phone":"Phone is required","reward":"Reward is required","shopName":"Shopname is required","targetStamp":"Target stamp is required"}
+[00:23:43.295] Server  LOG      ✓ Compiled in 234ms
+[00:25:48.616] Server  LOG      ✓ Compiled in 287ms
+[00:25:55.121] Browser LOG     {"address":"Address is required","businessType":"Business type is required","minAmount":"Minimum amount is required","phone":"Phone is required","reward":"Reward is required","shopName":"Shopname is required","targetStamp":"Target stamp is required"}
+[00:26:10.521] Server  LOG      ✓ Compiled in 236ms
+[00:26:15.764] Browser LOG     {"address":"","businessType":"salon","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[00:26:15.764] Browser LOG     {"address":"Address is required","businessType":"","minAmount":"Minimum amount is required","phone":"Phone is required","reward":"Reward is required","shopName":"Shopname is required","targetStamp":"Target stamp is required"}
+[00:26:19.730] Browser LOG     {"address":"4","businessType":"salon","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[00:26:19.731] Browser LOG     {"address":"","businessType":"","minAmount":"Minimum amount is required","phone":"Phone is required","reward":"Reward is required","shopName":"Shopname is required","targetStamp":"Target stamp is required"}
+[00:26:19.731] Browser LOG     {"address":"48","businessType":"salon","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[00:26:19.731] Browser LOG     {"address":"486","businessType":"salon","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[00:26:19.731] Browser LOG     {"address":"4864","businessType":"salon","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[00:26:19.731] Browser LOG     {"address":"48645","businessType":"salon","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[00:26:27.557] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:28.432] Browser LOG     {"address":"","businessType":"","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[00:26:28.432] Browser LOG     {}
+[00:26:29.466] Browser LOG     {"address":"Address is required","businessType":"Business type is required","minAmount":"Minimum amount is required","phone":"Phone is required","reward":"Reward is required","shopName":"Shopname is required","targetStamp":"Target stamp is required"}
+[00:26:34.753] Browser LOG     {"address":"","businessType":"bakery","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[00:26:34.753] Browser LOG     {"address":"Address is required","businessType":"","minAmount":"Minimum amount is required","phone":"Phone is required","reward":"Reward is required","shopName":"Shopname is required","targetStamp":"Target stamp is required"}
+[00:26:38.054] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:38.900] Browser LOG     {"address":"","businessType":"","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[00:26:38.900] Browser LOG     {}
+[00:26:40.505] Browser LOG     {"address":"","businessType":"other","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[00:26:45.126] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:45.934] Browser LOG     {"address":"","businessType":"","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[00:26:45.934] Browser LOG     {}
+[00:26:46.458] Browser LOG     {"address":"Address is required","businessType":"Business type is required","minAmount":"Minimum amount is required","phone":"Phone is required","reward":"Reward is required","shopName":"Shopname is required","targetStamp":"Target stamp is required"}
+[00:26:50.785] Browser LOG     {"address":"","businessType":"other","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[00:26:50.785] Browser LOG     {"address":"Address is required","businessType":"","minAmount":"Minimum amount is required","phone":"Phone is required","reward":"Reward is required","shopName":"Shopname is required","targetStamp":"Target stamp is required"}
+[00:26:54.149] Browser LOG     {"address":"Address is required","customBusinessType":"Custom business type is required","minAmount":"Minimum amount is required","phone":"Phone is required","reward":"Reward is required","shopName":"Shopname is required","targetStamp":"Target stamp is required"}
+[00:26:59.449] Browser LOG     {"address":"","businessType":"grocery","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[00:26:59.450] Browser LOG     {"address":"Address is required","customBusinessType":"","minAmount":"Minimum amount is required","phone":"Phone is required","reward":"Reward is required","shopName":"Shopname is required","targetStamp":"Target stamp is required"}
+[00:27:01.775] Browser LOG     {"address":"Address is required","minAmount":"Minimum amount is required","phone":"Phone is required","reward":"Reward is required","shopName":"Shopname is required","targetStamp":"Target stamp is required"}
+[02:18:08.198] Server  LOG      ○ Compiling /[shopId]/settings ...
+[02:18:20.899] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:43:01.026] Browser LOG     {"address":"Address is required","minAmount":"Minimum amount is required","phone":"Phone is required","reward":"Reward is required","shopName":"Shopname is required","targetStamp":"Target stamp is required"}
+[02:45:00.064] Server  LOG      ○ Compiling /signup ...
+[02:45:00.708] Server  LOG      ✓ Compiled in 700ms
+[02:45:00.764] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/StoreProvider.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:45:01.180] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/StoreProvider.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:45:04.382] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:45:04.744] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:45:06.392] Browser LOG     {"address":"","businessType":"","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[02:45:06.392] Browser LOG     {}
+[02:45:49.029] Server  LOG      ✓ Compiled in 263ms
+[02:45:50.037] Browser LOG     {"address":"","businessType":"","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[02:45:50.037] Browser LOG     {}
+[02:46:17.949] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:46:17.995] Server  LOG      ✓ Compiled in 239ms
+[02:46:18.826] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:46:23.150] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:46:23.296] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:46:25.030] Browser LOG     {"address":"","businessType":"","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[02:46:25.030] Browser LOG     {}
+[02:46:37.718] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:46:37.722] Server  LOG      ✓ Compiled in 223ms
+[02:46:38.384] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:46:42.131] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:46:42.441] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:46:44.035] Browser LOG     {"address":"","businessType":"","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[02:46:44.035] Browser LOG     {}
+[03:00:56.220] Server  LOG      ✓ Compiled in 355ms
+[03:00:56.247] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:00:56.337] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:01:01.062] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:01:01.205] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:01:02.709] Browser LOG     {"address":"","businessType":"","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[03:01:02.709] Browser LOG     {}
+[03:01:52.203] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:01:52.241] Server  LOG      ✓ Compiled in 261ms
+[03:01:53.128] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:01:57.510] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:01:57.851] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:01:59.585] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -77,200 +247,122 @@ See this log for the ancestor stack trace. form <form>
 
 It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
 
-https://react.dev/link/hydration-mismatch
-[13:32:42.352] Server  LOG      ✓ Compiled in 209ms
-[13:33:09.866] Server  LOG      ✓ Compiled in 292ms
-[13:33:14.501] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[13:34:27.352] Server  LOG      ✓ Compiled in 212ms
-[13:34:48.804] Server  LOG      ✓ Compiled in 331ms
-[13:35:46.392] Server  LOG      ✓ Compiled in 215ms
-[13:35:58.316] Server  LOG      ✓ Compiled in 231ms
-[13:37:50.804] Server  LOG      ✓ Compiled in 457ms
-[13:37:51.727] Browser ERROR   A component is changing a controlled input to be uncontrolled. This is likely caused by the value changing from a defined to undefined, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://react.dev/link/controlled-components
-[13:39:18.277] Server  LOG      ✓ Compiled in 267ms
-[13:39:18.727] Browser ERROR   A component is changing an uncontrolled input to be controlled. This is likely caused by the value changing from undefined to a defined value, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://react.dev/link/controlled-components
-[13:39:28.240] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[13:40:23.096] Server  LOG      ✓ Compiled in 232ms
-[13:40:23.724] Browser LOG     {"phone":"","shopName":""}
-[13:40:38.559] Browser LOG     {"phone":"","shopName":"h"}
-[13:40:38.798] Browser LOG     {"phone":"","shopName":"hj"}
-[13:40:38.798] Browser LOG     {"phone":"","shopName":"hjb"}
-[13:40:38.921] Browser LOG     {"phone":"","shopName":"hjbj"}
-[13:40:39.075] Browser LOG     {"phone":"","shopName":"hjbjb"}
-[13:41:34.245] Browser LOG     {"phone":"4","shopName":"hjbjb"}
-[13:41:34.245] Browser LOG     {"phone":"45","shopName":"hjbjb"}
-[13:41:34.471] Browser LOG     {"phone":"454","shopName":"hjbjb"}
-[13:41:34.614] Browser LOG     {"phone":"4545","shopName":"hjbjb"}
-[13:41:34.754] Browser LOG     {"phone":"45454","shopName":"hjbjb"}
-[13:41:59.039] Server  LOG      ✓ Compiled in 297ms
-[13:42:05.513] Browser LOG     {"phone":"454545","shopName":"hjbjb"}
-[13:42:05.513] Browser LOG     {"phone":"4545456","shopName":"hjbjb"}
-[13:42:05.847] Browser LOG     {"phone":"45454564","shopName":"hjbjb"}
-[13:42:05.847] Browser LOG     {"phone":"454545646","shopName":"hjbjb"}
-[13:42:05.847] Browser LOG     {"phone":"4545456465","shopName":"hjbjb"}
-[13:42:11.737] Browser LOG     {"phone":"","shopName":"hjbjb"}
-[13:42:59.743] Server  LOG      ✓ Compiled in 225ms
-[13:43:05.589] Browser LOG     {"phone":"+91 5","shopName":"hjbjb"}
-[13:43:05.589] Browser LOG     {"phone":"+91 +91 56","shopName":"hjbjb"}
-[13:43:07.457] Browser LOG     {"phone":"+91 +91 +91 5","shopName":"hjbjb"}
-[13:43:07.986] Browser LOG     {"phone":"+91 +91 +91 +91 ","shopName":"hjbjb"}
-[13:43:08.197] Browser LOG     {"phone":"+91 +91 +91 +91 +91","shopName":"hjbjb"}
-[13:43:08.377] Browser LOG     {"phone":"+91 +91 +91 +91 +91 +9","shopName":"hjbjb"}
-[13:43:08.564] Browser LOG     {"phone":"+91 +91 +91 +91 +91 +91 +","shopName":"hjbjb"}
-[13:43:15.760] Server  LOG      ✓ Compiled in 240ms
-[13:43:18.657] Browser LOG     {"phone":"+91 +91 +91 +91 +91 +91 ","shopName":"hjbjb"}
-[13:43:18.849] Browser LOG     {"phone":"+91 +91 +91 +91 +91 +","shopName":"hjbjb"}
-[13:43:19.008] Browser LOG     {"phone":"+91 +91 +91 +91 +91 ","shopName":"hjbjb"}
-[13:43:19.159] Browser LOG     {"phone":"+91 +91 +91 +91 +","shopName":"hjbjb"}
-[13:43:19.316] Browser LOG     {"phone":"+91 +91 +91 +91 ","shopName":"hjbjb"}
-[13:43:19.500] Browser LOG     {"phone":"+91 +91 +91 +","shopName":"hjbjb"}
-[13:43:19.649] Browser LOG     {"phone":"+91 +91 +91 ","shopName":"hjbjb"}
-[13:43:19.815] Browser LOG     {"phone":"+91 +91 +","shopName":"hjbjb"}
-[13:43:19.968] Browser LOG     {"phone":"+91 +91 ","shopName":"hjbjb"}
-[13:43:20.131] Browser LOG     {"phone":"+91 +","shopName":"hjbjb"}
-[13:43:20.289] Browser LOG     {"phone":"+91 ","shopName":"hjbjb"}
-[13:43:20.446] Browser LOG     {"phone":"+","shopName":"hjbjb"}
-[13:43:20.630] Browser LOG     {"phone":"","shopName":"hjbjb"}
-[13:43:21.574] Browser LOG     {"phone":"4","shopName":"hjbjb"}
-[13:43:21.575] Browser LOG     {"phone":"45","shopName":"hjbjb"}
-[13:43:21.575] Browser LOG     {"phone":"456","shopName":"hjbjb"}
-[13:43:21.983] Browser LOG     {"phone":"4564","shopName":"hjbjb"}
-[13:43:21.983] Browser LOG     {"phone":"45646","shopName":"hjbjb"}
-[13:43:21.983] Browser LOG     {"phone":"456465","shopName":"hjbjb"}
-[13:43:21.983] Browser LOG     {"phone":"4564654","shopName":"hjbjb"}
-[13:43:22.483] Browser LOG     {"phone":"","shopName":"hjbjb"}
-[13:45:43.652] Server  LOG      ✓ Compiled in 893ms
-[13:45:47.649] Browser LOG     {"phone":"4","shopName":"hjbjb"}
-[13:45:47.650] Browser LOG     {"phone":"45","shopName":"hjbjb"}
-[13:45:48.038] Browser LOG     {"phone":"454","shopName":"hjbjb"}
-[13:45:48.250] Browser LOG     {"phone":"4545","shopName":"hjbjb"}
-[13:45:48.469] Browser LOG     {"phone":"45454","shopName":"hjbjb"}
-[13:45:48.693] Browser LOG     {"phone":"454545","shopName":"hjbjb"}
-[13:45:48.913] Browser LOG     {"phone":"4545454","shopName":"hjbjb"}
-[13:45:49.717] Browser LOG     {"phone":"","shopName":"hjbjb"}
-[13:45:53.754] Browser LOG     {"phone":"6350250055","shopName":"hjbjb"}
-[13:45:59.774] Browser LOG     {"phone":"635025005","shopName":"hjbjb"}
-[13:46:00.223] Browser LOG     {"phone":"6350250054","shopName":"hjbjb"}
-[13:46:01.183] Browser LOG     {"phone":"635025005","shopName":"hjbjb"}
-[13:46:01.905] Browser LOG     {"phone":"63502500","shopName":"hjbjb"}
-[13:46:01.905] Browser LOG     {"phone":"6350250","shopName":"hjbjb"}
-[13:46:01.905] Browser LOG     {"phone":"635025","shopName":"hjbjb"}
-[13:46:01.905] Browser LOG     {"phone":"63502","shopName":"hjbjb"}
-[13:46:01.905] Browser LOG     {"phone":"6350","shopName":"hjbjb"}
-[13:46:01.905] Browser LOG     {"phone":"635","shopName":"hjbjb"}
-[13:46:01.905] Browser LOG     {"phone":"63","shopName":"hjbjb"}
-[13:46:01.905] Browser LOG     {"phone":"6","shopName":"hjbjb"}
-[13:46:01.905] Browser LOG     {"phone":"","shopName":"hjbjb"}
-[13:46:12.086] Browser LOG     {"phone":"4","shopName":"hjbjb"}
-[13:46:12.629] Browser LOG     {"phone":"46","shopName":"hjbjb"}
-[13:46:12.629] Browser LOG     {"phone":"465","shopName":"hjbjb"}
-[13:46:12.629] Browser LOG     {"phone":"4654","shopName":"hjbjb"}
-[13:46:12.629] Browser LOG     {"phone":"46546","shopName":"hjbjb"}
-[13:46:12.629] Browser LOG     {"phone":"465465","shopName":"hjbjb"}
-[13:46:12.973] Browser LOG     {"phone":"4654654","shopName":"hjbjb"}
-[13:46:12.973] Browser LOG     {"phone":"46546546","shopName":"hjbjb"}
-[13:46:12.973] Browser LOG     {"phone":"465465465","shopName":"hjbjb"}
-[13:46:12.973] Browser LOG     {"phone":"4654654654","shopName":"hjbjb"}
-[13:46:13.763] Browser LOG     {"phone":"465465465","shopName":"hjbjb"}
-[13:46:14.486] Browser LOG     {"phone":"46546546","shopName":"hjbjb"}
-[13:46:14.487] Browser LOG     {"phone":"4654654","shopName":"hjbjb"}
-[13:46:14.487] Browser LOG     {"phone":"465465","shopName":"hjbjb"}
-[13:46:14.487] Browser LOG     {"phone":"46546","shopName":"hjbjb"}
-[13:46:14.487] Browser LOG     {"phone":"4654","shopName":"hjbjb"}
-[13:46:14.487] Browser LOG     {"phone":"465","shopName":"hjbjb"}
-[13:46:14.487] Browser LOG     {"phone":"46","shopName":"hjbjb"}
-[13:46:14.487] Browser LOG     {"phone":"4","shopName":"hjbjb"}
-[13:46:14.487] Browser LOG     {"phone":"","shopName":"hjbjb"}
-[13:46:15.114] Browser LOG     {"phone":"6","shopName":"hjbjb"}
-[13:46:15.774] Browser LOG     {"phone":"63","shopName":"hjbjb"}
-[13:46:16.114] Browser LOG     {"phone":"635","shopName":"hjbjb"}
-[13:46:16.410] Browser LOG     {"phone":"6350","shopName":"hjbjb"}
-[13:46:16.635] Browser LOG     {"phone":"63502","shopName":"hjbjb"}
-[13:46:16.857] Browser LOG     {"phone":"635025","shopName":"hjbjb"}
-[13:46:17.107] Browser LOG     {"phone":"6350250","shopName":"hjbjb"}
-[13:46:17.292] Browser LOG     {"phone":"63502500","shopName":"hjbjb"}
-[13:46:17.505] Browser LOG     {"phone":"635025005","shopName":"hjbjb"}
-[13:46:17.686] Browser LOG     {"phone":"6350250055","shopName":"hjbjb"}
-[13:46:18.672] Browser LOG     {"phone":"635025005","shopName":"hjbjb"}
-[13:46:19.391] Browser LOG     {"phone":"63502500","shopName":"hjbjb"}
-[13:46:19.391] Browser LOG     {"phone":"6350250","shopName":"hjbjb"}
-[13:46:19.391] Browser LOG     {"phone":"635025","shopName":"hjbjb"}
-[13:46:19.391] Browser LOG     {"phone":"63502","shopName":"hjbjb"}
-[13:46:19.391] Browser LOG     {"phone":"6350","shopName":"hjbjb"}
-[13:46:19.392] Browser LOG     {"phone":"635","shopName":"hjbjb"}
-[13:46:19.392] Browser LOG     {"phone":"63","shopName":"hjbjb"}
-[13:46:19.392] Browser LOG     {"phone":"6","shopName":"hjbjb"}
-[13:46:19.392] Browser LOG     {"phone":"","shopName":"hjbjb"}
-[13:46:25.618] Server  LOG      ✓ Compiled in 329ms
-[14:28:58.019] Server  LOG      ✓ Compiled in 8s
-[14:30:09.078] Server  LOG      ✓ Compiled in 611ms
-[14:30:30.848] Browser LOG     {"businessType":"grocery","phone":"","shopName":"hjbjb"}
-[14:30:33.617] Browser LOG     {"businessType":"salon","phone":"","shopName":"hjbjb"}
-[14:30:36.764] Browser LOG     {"businessType":"cafe","phone":"","shopName":"hjbjb"}
-[14:30:46.104] Server  LOG      ✓ Compiled in 375ms
-[14:31:13.976] Server  LOG      ✓ Compiled in 376ms
-[14:31:19.365] Browser LOG     {"businessType":"cafe & restaurant","phone":"","shopName":"hjbjb"}
-[14:31:23.365] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[14:31:24.127] Browser LOG     {"phone":"","shopName":""}
-[14:31:27.631] Browser LOG     {"businessType":"cafe & restaurant","phone":"","shopName":""}
-[14:31:31.056] Browser LOG     {"businessType":"other","phone":"","shopName":""}
-[14:31:34.182] Browser LOG     {"businessType":"other","customBusinessType":"b","phone":"","shopName":""}
-[14:31:34.182] Browser LOG     {"businessType":"other","customBusinessType":"bh","phone":"","shopName":""}
-[14:31:34.182] Browser LOG     {"businessType":"other","customBusinessType":"bhs","phone":"","shopName":""}
-[14:31:34.182] Browser LOG     {"businessType":"other","customBusinessType":"bhsb","phone":"","shopName":""}
-[14:31:34.182] Browser LOG     {"businessType":"other","customBusinessType":"bhsbx","phone":"","shopName":""}
-[14:31:34.182] Browser LOG     {"businessType":"other","customBusinessType":"bhsbxs","phone":"","shopName":""}
-[14:31:34.701] Browser LOG     {"businessType":"other","customBusinessType":"bhsbx","phone":"","shopName":""}
-[14:31:35.447] Browser LOG     {"businessType":"other","customBusinessType":"bhsb","phone":"","shopName":""}
-[14:31:35.447] Browser LOG     {"businessType":"other","customBusinessType":"bhs","phone":"","shopName":""}
-[14:31:35.448] Browser LOG     {"businessType":"other","customBusinessType":"bh","phone":"","shopName":""}
-[14:31:35.448] Browser LOG     {"businessType":"other","customBusinessType":"b","phone":"","shopName":""}
-[14:31:35.448] Browser LOG     {"businessType":"other","customBusinessType":"","phone":"","shopName":""}
-[14:31:41.009] Browser LOG     {"businessType":"grocery","customBusinessType":"","phone":"","shopName":""}
-[14:32:08.416] Server  LOG      ✓ Compiled in 356ms
-[14:32:08.741] Browser LOG     {"businessType":"","phone":"","shopName":""}
-[14:32:13.319] Browser LOG     {"businessType":"salon","phone":"","shopName":""}
-[14:32:19.335] Browser LOG     {"businessType":"other","phone":"","shopName":""}
-[14:32:23.217] Browser LOG     {"businessType":"other","customBusinessType":"c","phone":"","shopName":""}
-[14:32:23.217] Browser LOG     {"businessType":"other","customBusinessType":"cf","phone":"","shopName":""}
-[14:32:23.217] Browser LOG     {"businessType":"other","customBusinessType":"cfd","phone":"","shopName":""}
-[14:32:23.218] Browser LOG     {"businessType":"other","customBusinessType":"cfdf","phone":"","shopName":""}
-[14:32:23.218] Browser LOG     {"businessType":"other","customBusinessType":"cfdfe","phone":"","shopName":""}
-[14:32:23.218] Browser LOG     {"businessType":"other","customBusinessType":"cfdfed","phone":"","shopName":""}
-[14:32:23.218] Browser LOG     {"businessType":"other","customBusinessType":"cfdfedf","phone":"","shopName":""}
-[14:32:23.218] Browser LOG     {"businessType":"other","customBusinessType":"cfdfedfd","phone":"","shopName":""}
-[14:36:05.124] Server  LOG      ✓ Compiled in 306ms
-[14:36:12.143] Browser LOG     {"businessType":"grocery","customBusinessType":"cfdfedfd","phone":"","shopName":""}
-[14:36:19.025] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[14:36:19.776] Browser LOG     {"businessType":"","phone":"","shopName":""}
-[14:36:24.319] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[14:36:25.052] Browser LOG     {"businessType":"","phone":"","shopName":""}
-[14:36:35.053] Browser LOG     {"businessType":"f","phone":"","shopName":""}
-[14:36:35.053] Browser LOG     {"businessType":"fs","phone":"","shopName":""}
-[14:36:35.054] Browser LOG     {"businessType":"fse","phone":"","shopName":""}
-[14:36:35.054] Browser LOG     {"businessType":"fsef","phone":"","shopName":""}
-[14:36:35.054] Browser LOG     {"businessType":"fsefs","phone":"","shopName":""}
-[14:36:35.054] Browser LOG     {"businessType":"fsefsf","phone":"","shopName":""}
-[14:36:40.912] Browser LOG     {"businessType":"grocery","phone":"","shopName":""}
-[14:38:20.956] Server  LOG      ✓ Compiled in 233ms
-[14:38:40.711] Server  LOG      ✓ Compiled in 278ms
-[14:38:41.727] Browser LOG     {"businessType":"","customBusinessType":"","phone":"","shopName":""}
-[14:38:50.900] Browser LOG     {"businessType":"other","customBusinessType":"","phone":"","shopName":""}
-[14:38:52.877] Browser LOG     {"businessType":"other","customBusinessType":"d","phone":"","shopName":""}
-[14:38:52.877] Browser LOG     {"businessType":"other","customBusinessType":"dw","phone":"","shopName":""}
-[14:38:52.878] Browser LOG     {"businessType":"other","customBusinessType":"dws","phone":"","shopName":""}
-[14:38:52.878] Browser LOG     {"businessType":"other","customBusinessType":"dwsd","phone":"","shopName":""}
-[14:38:52.878] Browser LOG     {"businessType":"other","customBusinessType":"dwsdw","phone":"","shopName":""}
-[14:38:52.878] Browser LOG     {"businessType":"other","customBusinessType":"dwsdwd","phone":"","shopName":""}
-[14:38:52.878] Browser LOG     {"businessType":"other","customBusinessType":"dwsdwdw","phone":"","shopName":""}
-[14:38:52.878] Browser LOG     {"businessType":"other","customBusinessType":"dwsdwdwd","phone":"","shopName":""}
-[14:38:52.878] Browser LOG     {"businessType":"other","customBusinessType":"dwsdwdwdw","phone":"","shopName":""}
-[14:38:57.485] Browser LOG     {"businessType":"other","customBusinessType":"","phone":"","shopName":""}
-[14:39:05.967] Browser LOG     {"businessType":"other","customBusinessType":"x","phone":"","shopName":""}
-[14:39:05.967] Browser LOG     {"businessType":"other","customBusinessType":"xd","phone":"","shopName":""}
-[14:39:05.967] Browser LOG     {"businessType":"other","customBusinessType":"xds","phone":"","shopName":""}
-[14:39:05.968] Browser LOG     {"businessType":"other","customBusinessType":"xdsd","phone":"","shopName":""}
-[14:39:05.968] Browser LOG     {"businessType":"other","customBusinessType":"xdsds","phone":"","shopName":""}
-[14:39:05.968] Browser LOG     {"businessType":"other","customBusinessType":"xdsdsd","phone":"","shopName":""}
-[14:39:05.968] Browser LOG     {"businessType":"other","customBusinessType":"xdsdsds","phone":"","shopName":""}
-[14:39:08.778] Browser LOG     {"businessType":"gym","customBusinessType":"xdsdsds","phone":"","shopName":""}
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <SelectProvider required={undefined} scope={undefined} trigger={null} ...>
+      <SelectCollectionProvider scope={undefined}>
+        <SelectCollectionProviderProvider scope={undefined} itemMap={Map} collectionRef={{current:null}}>
+          <SelectProvider scope={undefined} onNativeOptionAdd={function Select.useCallback} ...>
+            <SelectTrigger className={"border-b..."}>
+              <SelectTrigger data-slot="select-tri..." data-size="default" className={"data-[pl..."}>
+                <PopperAnchor asChild={true} __scopePopper={{Popper:[...]}}>
+                  <Primitive.div asChild={true} ref={function}>
+                    <Slot ref={function}>
+                      <SlotClone ref={function}>
+                        <Primitive.button type="button" role="combobox" aria-controls="radix-_R_1..." ...>
+                          <button
+                            type="button"
+                            role="combobox"
++                           aria-controls="radix-_R_13eatpesndlb_"
+-                           aria-controls="radix-_R_4dqatpesndlb_"
+                            aria-expanded={false}
+                            aria-required={undefined}
+                            aria-autocomplete="none"
+                            dir="ltr"
+                            data-state="closed"
+                            disabled={false}
+                            data-disabled={undefined}
+                            data-placeholder=""
+                            data-slot="select-trigger"
+                            data-size="default"
+                            className={"data-[placeholder]:text-muted-foreground [&_svg:not([class*='text-'])]:text-m..."}
+                            onClick={function handleEvent}
+                            onPointerDown={function handleEvent}
+                            onKeyDown={function handleEvent}
+                            ref={function}
+                          >
+            ...
+      ...
+
+[03:01:59.585] Browser LOG     {"address":"","businessType":"","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[03:01:59.585] Browser LOG     {}
+[03:04:48.178] Server  LOG      ✓ Compiled in 604ms
+[03:04:48.197] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:04:48.205] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:04:53.209] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:04:53.329] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:04:54.342] Browser LOG     {"address":"","businessType":"","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[03:04:54.342] Browser LOG     {}
+[03:05:44.129] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:05:44.130] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:05:44.165] Server  LOG      ✓ Compiled in 224ms
+[03:05:48.987] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:05:49.132] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:05:50.316] Browser LOG     {"address":"","businessType":"","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[03:05:50.316] Browser LOG     {}
+[03:06:17.866] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:06:17.870] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:06:17.898] Server  LOG      ✓ Compiled in 220ms
+[03:06:21.698] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:06:22.262] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:06:23.176] Browser LOG     {"address":"","businessType":"","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[03:06:23.176] Browser LOG     {}
+[03:06:25.843] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:06:25.851] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:06:25.896] Server  LOG      ✓ Compiled in 328ms
+[03:06:29.733] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:06:29.943] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:06:31.030] Browser LOG     {"address":"","businessType":"","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[03:06:31.030] Browser LOG     {}
+[03:06:51.359] Browser LOG     {"address":"Address is required","businessType":"Business type is required","minAmount":"Minimum amount is required","phone":"Phone is required","reward":"Reward is required","shopName":"Shopname is required","targetStamp":"Target stamp is required"}
+[03:14:42.027] Server  LOG      ✓ Compiled in 266ms
+[03:16:19.047] Browser LOG     {"address":"","businessType":"","customBusinessType":"","minAmount":"","phone":"","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[03:16:19.047] Browser LOG     {"address":"Address is required","businessType":"Business type is required","minAmount":"Minimum amount is required","phone":"Phone is required","reward":"Reward is required","shopName":"","targetStamp":"Target stamp is required"}
+[03:16:20.787] Browser LOG     {"address":"","businessType":"","customBusinessType":"","minAmount":"","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[03:16:20.787] Browser LOG     {"address":"Address is required","businessType":"Business type is required","minAmount":"Minimum amount is required","phone":"","reward":"Reward is required","shopName":"","targetStamp":"Target stamp is required"}
+[03:16:23.293] Browser LOG     {"address":"","businessType":"salon","customBusinessType":"","minAmount":"","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[03:16:23.293] Browser LOG     {"address":"Address is required","businessType":"","minAmount":"Minimum amount is required","phone":"","reward":"Reward is required","shopName":"","targetStamp":"Target stamp is required"}
+[03:16:26.186] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"salon","customBusinessType":"","minAmount":"","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[03:16:26.186] Browser LOG     {"address":"","businessType":"","minAmount":"Minimum amount is required","phone":"","reward":"Reward is required","shopName":"","targetStamp":"Target stamp is required"}
+[03:16:28.281] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"salon","customBusinessType":"","minAmount":"1","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[03:16:28.281] Browser LOG     {"address":"","businessType":"","minAmount":"","phone":"","reward":"Reward is required","shopName":"","targetStamp":"Target stamp is required"}
+[03:16:28.638] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"salon","customBusinessType":"","minAmount":"10","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[03:16:28.638] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"salon","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":""}
+[03:16:31.437] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"salon","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"","shopName":"bhjgjhb","targetStamp":"5"}
+[03:16:31.437] Browser LOG     {"address":"","businessType":"","minAmount":"","phone":"","reward":"Reward is required","shopName":"","targetStamp":""}
+[03:16:34.743] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"salon","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[03:16:34.743] Browser LOG     {"address":"","businessType":"","minAmount":"","phone":"","reward":"","shopName":"","targetStamp":""}
+[03:16:39.336] Server  LOG     body {}
+[03:16:39.354] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__29a5595f._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[03:16:39.481] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[03:16:39.552] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_9118acee._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[03:16:39.569] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[03:16:39.612] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[03:16:39.638] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[03:16:39.650] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[03:16:39.749] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[03:16:39.771] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[03:16:39.776] Server  ERROR   ReferenceError: userWithoutPassword is not defined
+[03:17:02.591] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[03:17:05.096] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"x","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[03:17:05.096] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xa","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[03:17:05.096] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xas","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[03:17:05.096] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xash","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[03:17:05.096] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xashb","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[03:17:05.096] Browser LOG     {"address":"Jagatpura, Jaipur","businessType":"other","customBusinessType":"xashbx","minAmount":"100","phone":"6350250055","reward":"coffee","shopName":"bhjgjhb","targetStamp":"5"}
+[03:17:06.390] Server  LOG     body {}
+[03:17:06.393] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__29a5595f._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[03:17:06.397] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[03:17:06.400] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_9118acee._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[03:17:06.403] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[03:17:06.408] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[03:17:06.411] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[03:17:06.414] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[03:17:06.537] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[03:17:06.584] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[03:17:06.631] Server  ERROR   ReferenceError: userWithoutPassword is not defined
+[03:17:38.686] Server  LOG      ✓ Compiled in 347ms
+[04:50:17.907] Server  LOG      ✓ Compiled in 1809ms
+[04:52:53.733] Server  LOG      ✓ Compiled in 906ms
+[04:53:56.612] Server  LOG      ✓ Compiled in 223ms
