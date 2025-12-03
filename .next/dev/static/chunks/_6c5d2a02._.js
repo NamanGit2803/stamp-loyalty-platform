@@ -13,11 +13,13 @@ class UserStore {
     user = null;
     loading = false;
     error = null;
+    signupStep = 1;
     // OTP global state
     otpModalOpen = false;
     otpEmail = "";
     otpPurpose = "";
     otpVerified = false;
+    otpResolver = null;
     redirectAfterOtp = null;
     constructor(){
         (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["makeAutoObservable"])(this);
@@ -72,16 +74,18 @@ class UserStore {
     // Auto-fetch user (browser sends cookie)
     async fetchUserProfile() {
         try {
-            const res = await fetch("/api/user/findUser", {
+            const res = await fetch("/api/auth/findUser", {
                 method: "GET",
                 credentials: "include"
             });
             if (!res.ok) return;
             const data = await res.json();
             (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
-                this.user = data;
+                this.user = data.user;
             });
-        } catch  {}
+        } catch (err) {
+            console.error("fetchUserProfile error:", err);
+        }
     }
     // Logout
     async logout() {
@@ -90,10 +94,15 @@ class UserStore {
         });
         this.user = null;
     }
+    // set signup step 
+    setSignupStep(step) {
+        this.signupStep = step;
+    }
     // OTP: request
     async requestOtp(email, purpose, redirectUrl = null) {
         this.loading = true;
         this.error = null;
+        this.otpVerified = false;
         try {
             const res = await fetch("/api/auth/otp/send", {
                 method: "POST",
@@ -119,13 +128,17 @@ class UserStore {
             this.loading = false;
         }
     }
+    // Wait for OTP to be verified
+    waitForOtp() {
+        return new Promise((resolve)=>{
+            this.otpResolver = resolve;
+        });
+    }
     closeOtp() {
         this.otpModalOpen = false;
         this.error = null;
     }
-    // -----------------------------
     // OTP: verify
-    // -----------------------------
     async verifyOtp(code) {
         this.loading = true;
         this.error = null;
@@ -147,9 +160,10 @@ class UserStore {
                 this.otpVerified = true;
                 this.otpModalOpen = false;
             });
-            // automatic redirect if configured
-            if (this.redirectAfterOtp) {
-                window.location.href = this.redirectAfterOtp;
+            // RESOLVE THE OTP WAITING PROMISE HERE
+            if (this.otpResolver) {
+                this.otpResolver(true);
+                this.otpResolver = null;
             }
             return true;
         } catch (err) {
@@ -175,7 +189,7 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/mobx/dist/mobx.esm.js [app-client] (ecmascript)");
 ;
 class ShopStore {
-    shops = [];
+    shop = null;
     loading = false;
     error = null;
     constructor(){
@@ -196,8 +210,7 @@ class ShopStore {
             const data = await res.json();
             if (!res.ok) throw new Error(data.error || "Shop creation failed");
             (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
-                // ADD NEW SHOP TO SHOP LIST
-                this.shops.push(data.shop);
+                this.shop = data.shop; // ✅ SET SINGLE SHOP
             });
             return data.shop;
         } catch (err) {
@@ -208,13 +221,9 @@ class ShopStore {
             this.loading = false;
         }
     }
-    // SET ALL SHOPS
-    setShops(shops) {
-        this.shops = shops;
-    }
-    // ACTIVE SHOP (OPTIONAL FEATURE)
+    // GET ACTIVE SHOP
     get activeShop() {
-        return this.shops[0] || null;
+        return this.shop;
     }
 }
 const shopStore = new ShopStore();

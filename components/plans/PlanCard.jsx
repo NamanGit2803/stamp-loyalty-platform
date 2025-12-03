@@ -1,23 +1,47 @@
 'use client'
 
-import React, { useState } from 'react'
-import Link from "next/link"
+import React, { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation';
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-  CardFooter,
+    Card,
+    CardHeader,
+    CardTitle,
+    CardContent,
+    CardFooter,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Eye, EyeOff, TriangleAlert } from "lucide-react"
 import { observer } from "mobx-react-lite"
 import { useStore } from '@/stores/StoreProvider'
+import { toast } from 'sonner'
+
 
 const PlanCard = () => {
-    const [step, setStep] = useState(1)
+
+    const { shopStore, userStore } = useStore()
+    const router = useRouter()
+
+    useEffect(() => {
+
+    }, [])
+
+    // const shopId = shopStore.shop?.id
+
+    const subscribe = (e) => {
+        e.preventDefault()
+
+        if (!userStore.user) {
+            toast.error('"User not found. Please sign up."')
+            localStorage.removeItem('signupStep')
+
+            setTimeout(() => {
+                router.push('/signup')
+            }, 1500);
+        }
+    }
+
+
 
 
     return (
@@ -69,7 +93,7 @@ const PlanCard = () => {
                     <Button
                         size="lg"
                         className="w-full py-5 text-md font-medium hover:cursor-pointer"
-
+                        onClick={subscribe}
                     >
                         Start Free Trial
                     </Button>

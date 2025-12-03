@@ -76,6 +76,7 @@ const Step2 = ({ setStep }) => {
         if (!userStore?.user?.email) {
             toast.error("User not exist.")
             setStep(1)
+            localStorage.setItem('signupStep', 1)
             return
         }
 
@@ -102,6 +103,8 @@ const Step2 = ({ setStep }) => {
             })
 
             router.push('/plans')
+            setStep(1)
+            localStorage.removeItem("signupStep")
 
         }
 

@@ -1,18 +1,25 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
-import { Eye, EyeOff, TriangleAlert } from "lucide-react" 
-import Step1 from './Step1'  
+import { Eye, EyeOff, TriangleAlert } from "lucide-react"
+import Step1 from './Step1'
 import Step2 from './Step2'
 import { observer } from "mobx-react-lite"
 import { useStore } from '@/stores/StoreProvider'
 
 const Form = () => {
+
     const [step, setStep] = useState(1)
+
+    useEffect(() => {
+        if (localStorage.getItem('signupStep')) {
+            setStep(localStorage.getItem('signupStep'))
+        }
+    }, [])
 
 
     return (
@@ -39,10 +46,10 @@ const Form = () => {
 
                     <div>
                         {step === 1 ? (
-                           <Step1 setStep={setStep}/>
+                            <Step1 setStep={setStep} />
                         ) : (
                             /* STEP 2 */
-                           <Step2 setStep={setStep}/>
+                            <Step2 setStep={setStep} />
                         )}
                     </div>
 

@@ -6,6 +6,7 @@ class UserStore {
     user = null
     loading = false
     error = null
+    signupStep = 1;
 
 
     // OTP global state
@@ -13,6 +14,7 @@ class UserStore {
     otpEmail = "";
     otpPurpose = "";  // signup, login, reset, security, change-email…
     otpVerified = false;
+    otpResolver = null;
 
     redirectAfterOtp = null; // after OTP verification → auto redirect somewhere
 
@@ -41,7 +43,7 @@ class UserStore {
         } catch (err) {
             runInAction(() => this.error = err.message)
         } finally {
-            this.loading = false
+            this.loading = false;
         }
     }
 
@@ -75,7 +77,7 @@ class UserStore {
     // Auto-fetch user (browser sends cookie)
     async fetchUserProfile() {
         try {
-            const res = await fetch("/api/user/findUser", {
+            const res = await fetch("/api/auth/findUser", {
                 method: "GET",
                 credentials: "include"
             })
@@ -84,10 +86,13 @@ class UserStore {
 
             const data = await res.json()
 
+
             runInAction(() => {
-                this.user = data
+                this.user = data.user
             })
-        } catch { }
+        } catch (err) {
+            console.error("fetchUserProfile error:", err);
+        }
     }
 
 
@@ -97,12 +102,18 @@ class UserStore {
         this.user = null
     }
 
+    // set signup step 
+    setSignupStep(step) {
+        this.signupStep = step;
+    }
+
 
 
     // OTP: request
     async requestOtp(email, purpose, redirectUrl = null) {
         this.loading = true;
         this.error = null;
+        this.otpVerified = false;
 
         try {
             const res = await fetch("/api/auth/otp/send", {
@@ -127,14 +138,20 @@ class UserStore {
         }
     }
 
+    // Wait for OTP to be verified
+    waitForOtp() {
+        return new Promise((resolve) => {
+            this.otpResolver = resolve;
+        });
+    }
+
     closeOtp() {
         this.otpModalOpen = false;
         this.error = null
     }
 
-    // -----------------------------
+
     // OTP: verify
-    // -----------------------------
     async verifyOtp(code) {
         this.loading = true;
         this.error = null;
@@ -158,9 +175,10 @@ class UserStore {
                 this.otpModalOpen = false;
             });
 
-            // automatic redirect if configured
-            if (this.redirectAfterOtp) {
-                window.location.href = this.redirectAfterOtp;
+            // RESOLVE THE OTP WAITING PROMISE HERE
+            if (this.otpResolver) {
+                this.otpResolver(true);
+                this.otpResolver = null;
             }
 
             return true;
@@ -171,6 +189,7 @@ class UserStore {
             this.loading = false;
         }
     }
+
 }
 
 export const userStore = new UserStore()

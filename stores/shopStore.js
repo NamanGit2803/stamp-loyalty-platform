@@ -1,14 +1,13 @@
 import { makeAutoObservable, runInAction } from "mobx";
 
 class ShopStore {
-  shops = [];      
+  shop = null;
   loading = false;
   error = null;
 
   constructor() {
     makeAutoObservable(this);
   }
-
 
   // CREATE NEW SHOP
   async createShop(shopData) {
@@ -23,12 +22,10 @@ class ShopStore {
       });
 
       const data = await res.json();
-
       if (!res.ok) throw new Error(data.error || "Shop creation failed");
 
       runInAction(() => {
-        // ADD NEW SHOP TO SHOP LIST
-        this.shops.push(data.shop);  
+        this.shop = data.shop;   // ✅ SET SINGLE SHOP
       });
 
       return data.shop;
@@ -43,14 +40,9 @@ class ShopStore {
     }
   }
 
-  // SET ALL SHOPS
-  setShops(shops) {
-    this.shops = shops;
-  }
-
-  // ACTIVE SHOP (OPTIONAL FEATURE)
+  // GET ACTIVE SHOP
   get activeShop() {
-    return this.shops[0] || null;
+    return this.shop;
   }
 }
 

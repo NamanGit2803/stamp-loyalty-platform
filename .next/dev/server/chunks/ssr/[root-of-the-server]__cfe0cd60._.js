@@ -19,11 +19,13 @@ class UserStore {
     user = null;
     loading = false;
     error = null;
+    signupStep = 1;
     // OTP global state
     otpModalOpen = false;
     otpEmail = "";
     otpPurpose = "";
     otpVerified = false;
+    otpResolver = null;
     redirectAfterOtp = null;
     constructor(){
         (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["makeAutoObservable"])(this);
@@ -96,10 +98,15 @@ class UserStore {
         });
         this.user = null;
     }
+    // set signup step 
+    setSignupStep(step) {
+        this.signupStep = step;
+    }
     // OTP: request
     async requestOtp(email, purpose, redirectUrl = null) {
         this.loading = true;
         this.error = null;
+        this.otpVerified = false;
         try {
             const res = await fetch("/api/auth/otp/send", {
                 method: "POST",
@@ -125,13 +132,17 @@ class UserStore {
             this.loading = false;
         }
     }
+    // Wait for OTP to be verified
+    waitForOtp() {
+        return new Promise((resolve)=>{
+            this.otpResolver = resolve;
+        });
+    }
     closeOtp() {
         this.otpModalOpen = false;
         this.error = null;
     }
-    // -----------------------------
     // OTP: verify
-    // -----------------------------
     async verifyOtp(code) {
         this.loading = true;
         this.error = null;
@@ -153,9 +164,10 @@ class UserStore {
                 this.otpVerified = true;
                 this.otpModalOpen = false;
             });
-            // automatic redirect if configured
-            if (this.redirectAfterOtp) {
-                window.location.href = this.redirectAfterOtp;
+            // RESOLVE THE OTP WAITING PROMISE HERE
+            if (this.otpResolver) {
+                this.otpResolver(true);
+                this.otpResolver = null;
             }
             return true;
         } catch (err) {

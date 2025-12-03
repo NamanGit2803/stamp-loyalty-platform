@@ -1,110 +1,416 @@
-[00:00:28.418] Server  LOG      ○ Compiling middleware ...
-[00:00:30.391] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:36.117] Server  LOG      ✓ Ready in 25s
-[00:00:39.468] Server  LOG      ○ Compiling /signup ...
-[00:01:01.278] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:15.512] Server  LOG     OTP for "njain4282@gmail.com" "=" "315145"
-[00:01:15.774] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:01:17.392] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:01:44.157] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__3854341f._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:01:44.265] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:01:44.361] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_a6f3b1b3._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:01:44.420] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:01:44.462] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:01:44.490] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:01:44.493] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:01:44.540] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:01:44.544] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:01:44.559] Server  ERROR   PrismaClientValidationError: 
-Invalid `prisma.user.update()` invocation in
-E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__3854341f._.js:92:31
+[00:00:29.417] Server  LOG      ○ Compiling middleware ...
+[00:00:30.900] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:36.088] Server  LOG      ✓ Ready in 24.9s
+[00:00:59.151] Server  LOG      ○ Compiling / ...
+[00:01:21.498] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:01:21.509] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:01:21.518] Server  ERROR   fetchUserProfile error: TypeError: Failed to parse URL from /api/auth/findUser
+[00:01:22.410] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:33.431] Server  LOG      ○ Compiling /signup ...
+[00:01:50.019] Server  LOG     OTP for "njain4282@gmail.com" "=" "795156"
+[00:01:50.290] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
+[00:02:06.615] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
+[00:02:07.263] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
+[00:02:37.507] Server  LOG     OTP for "njain4282@gmail.com" "=" "399783"
+[00:02:37.713] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
+[00:02:54.150] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
+[00:02:54.150] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
+[00:06:29.876] Server  LOG     OTP for "njain4282@gmail.com" "=" "189134"
+[00:06:30.092] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
+[00:06:43.569] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
+[00:06:45.240] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
+[00:06:55.952] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:57.188] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__72fe3c31._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:57.278] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:57.368] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_fe208573._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:57.386] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:57.539] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:57.603] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:57.652] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:57.731] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:57.736] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:57.759] Server  ERROR   [findUser error] PrismaClientValidationError: 
+Invalid `prisma.user.findUnique()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__72fe3c31._.js:101:40
 
-  89 });
-  90 // OPTIONAL: mark user verified for signup
-  91 if (purpose === "signup") {
-→ 92     await prisma.user.update({
-           where: {
-             email: "njain4282@gmail.com"
-           },
-           data: {
-             isVerified: true,
-             ~~~~~~~~~~
-         ?   email?: String | StringFieldUpdateOperationsInput,
-         ?   password?: String | StringFieldUpdateOperationsInput,
-         ?   name?: String | StringFieldUpdateOperationsInput,
-         ?   role?: Role | EnumRoleFieldUpdateOperationsInput,
-         ?   createdAt?: DateTime | DateTimeFieldUpdateOperationsInput,
-         ?   shops?: ShopUpdateManyWithoutOwnerNestedInput
-           }
-         })
+   98 // Verify token
+   99 const decoded = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$jsonwebtoken$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].verify(token, process.env.JWT_SECRET);
+  100 // Fetch user
+→ 101 const user = await prisma.user.findUnique({
+        where: {
+          email: "njain4282@gmail.com"
+        },
+        select: {
+          id: true,
+          ~~
+          name: true,
+          email: true,
+          role: true,
+      ?   srNo?: true,
+      ?   password?: true,
+      ?   createdAt?: true,
+      ?   shops?: true,
+      ?   _count?: true
+        }
+      })
 
-Unknown argument `isVerified`. Available options are marked with ?.
-[00:01:44.692] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:04:16.110] Server  LOG      ✓ Compiled in 720ms
-[00:04:47.772] Server  LOG      ✓ Compiled in 293ms
-[00:07:06.773] Server  LOG      ✓ Compiled in 621ms
-[00:07:08.975] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:07:57.806] Server  LOG     OTP for "njain4282@gmail.com" "=" "855459"
-[00:07:58.158] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:07:58.563] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:09:40.437] Server  LOG      ✓ Compiled in 253ms
-[00:09:48.915] Server  LOG      ✓ Compiled in 288ms
-[00:14:08.609] Server  LOG      ✓ Compiled in 555ms
-[00:14:40.136] Server  LOG      ✓ Compiled in 273ms
-[00:15:04.471] Server  LOG      ✓ Compiled in 533ms
-[00:15:57.870] Server  LOG      ✓ Compiled in 317ms
-[00:16:33.216] Server  LOG      ✓ Compiled in 428ms
-[00:17:28.468] Server  LOG      ✓ Compiled in 1507ms
-[00:17:34.587] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:17:47.588] Server  LOG      ✓ Compiled in 282ms
-[00:20:11.599] Server  LOG      ✓ Compiled in 360ms
-[00:21:17.696] Server  LOG      ✓ Compiled in 239ms
-[00:24:45.431] Server  LOG     OTP for "sumantanish14@gmail.com" "=" "168384"
-[00:24:45.729] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:24:46.215] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:26:55.360] Server  LOG      ✓ Compiled in 394ms
-[00:29:41.280] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:35:52.442] Server  LOG      ✓ Compiled in 376ms
-[00:36:04.474] Server  LOG      ✓ Compiled in 234ms
-[00:36:19.443] Server  LOG     OTP for "sumantanish14@gmail.com" "=" "948843"
-[00:36:19.751] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:36:20.251] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:38:40.324] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/userStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:38:40.360] Server  LOG      ✓ Compiled in 332ms
-[00:38:43.160] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:39:05.030] Server  LOG      ✓ Compiled in 257ms
-[00:39:27.677] Server  LOG     OTP for "sumantanish14@gmail.com" "=" "795780"
-[00:39:27.968] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:39:28.446] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:39:31.315] Browser ERROR   uncaughtError: TypeError: userStore.closeOtpModal is not a function
-[00:39:33.012] Browser ERROR   uncaughtError: TypeError: userStore.closeOtpModal is not a function
-[00:39:50.066] Server  LOG      ✓ Compiled in 252ms
-[00:40:03.130] Server  LOG      ✓ Compiled in 322ms
-[00:40:30.549] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:40:46.638] Server  LOG     OTP for "njain4282@gmail.com" "=" "593941"
-[00:40:46.923] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:40:47.388] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:40:56.239] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:40:56.921] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:42:15.595] Server  LOG      ✓ Compiled in 393ms
-[00:42:26.380] Server  LOG     OTP for "njain4282@gmail.com" "=" "378410"
-[00:42:26.688] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:42:27.238] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:42:30.558] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:42:31.348] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:42:40.801] Server  LOG      ✓ Compiled in 322ms
-[00:44:43.452] Server  LOG      ✓ Compiled in 380ms
-[00:45:11.650] Server  LOG     OTP for "njain4282@gmail.com" "=" "298472"
-[00:45:11.936] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:45:12.408] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:45:14.690] Browser ERROR   unhandledRejection: ReferenceError: e is not defined
-[00:45:16.076] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:46:10.500] Server  LOG      ✓ Compiled in 234ms
-[00:46:34.393] Server  LOG     OTP for "njain4282@gmail.com" "=" "778130"
-[00:46:34.670] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:46:35.172] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:46:39.326] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:46:57.844] Server  LOG      ✓ Compiled in 344ms
-[00:47:03.661] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:47:22.978] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[01:02:00.274] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Unknown field `id` for select statement on model `User`. Available options are marked with ?.
+[00:09:13.553] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:50.351] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:34.549] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/userStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:14:34.612] Server  LOG      ✓ Compiled in 384ms
+[00:14:36.428] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:14:36.478] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:14:36.480] Server  ERROR   fetchUserProfile error: TypeError: Failed to parse URL from /api/auth/findUser
+[00:14:37.259] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:38.140] Browser LOG     data {"user":{"email":"njain4282@gmail.com","name":"Naman Jain","role":"SHOP"}}
+[00:14:39.991] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:40.409] Browser LOG     data {"user":{"email":"njain4282@gmail.com","name":"Naman Jain","role":"SHOP"}}
+[00:15:00.681] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/userStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:15:00.711] Server  LOG      ✓ Compiled in 258ms
+[00:15:02.110] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:15:02.115] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:15:02.118] Server  ERROR   fetchUserProfile error: TypeError: Failed to parse URL from /api/auth/findUser
+[00:15:02.937] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:03.417] Browser LOG     data {"email":"njain4282@gmail.com","name":"Naman Jain","role":"SHOP"}
+[00:15:05.258] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:05.715] Browser LOG     data {"email":"njain4282@gmail.com","name":"Naman Jain","role":"SHOP"}
+[00:15:23.862] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/userStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:15:23.894] Server  LOG      ✓ Compiled in 238ms
+[00:15:25.282] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:15:25.285] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:15:25.289] Server  ERROR   fetchUserProfile error: TypeError: Failed to parse URL from /api/auth/findUser
+[00:15:26.184] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:16:32.647] Server  LOG      ✓ Compiled in 492ms
+[00:26:24.953] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:26:24.987] Server  LOG      ✓ Compiled in 431ms
+[00:26:25.812] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\[root-of-the-server]__abcbecd9._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:26:26.054] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_14620b69._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:26:26.097] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading '0')
+[00:26:26.224] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:26:26.228] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:26:26.237] Server  ERROR   fetchUserProfile error: TypeError: Failed to parse URL from /api/auth/findUser
+[00:26:27.723] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:28.381] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading '0')
+[00:27:31.010] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:27:31.010] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:27:31.022] Server  LOG      ✓ Compiled in 441ms
+[00:27:31.024] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:27:31.678] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\[root-of-the-server]__abcbecd9._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:27:31.837] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_14620b69._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:27:31.838] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading '0')
+[00:27:31.927] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:27:31.929] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:27:31.930] Server  ERROR   fetchUserProfile error: TypeError: Failed to parse URL from /api/auth/findUser
+[00:27:33.061] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:27:35.362] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading '0')
+[00:27:48.967] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\[root-of-the-server]__abcbecd9._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:27:48.968] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_14620b69._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:27:48.969] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading '0')
+[00:27:49.730] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:27:50.235] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading '0')
+[00:28:01.884] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:28:01.912] Server  LOG      ✓ Compiled in 261ms
+[00:28:02.494] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\[root-of-the-server]__abcbecd9._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:28:02.543] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_14620b69._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:28:02.546] Server  ERROR    ⨯ TypeError: Cannot read properties of null (reading 'id')
+[00:28:02.623] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:28:02.625] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:28:02.627] Server  ERROR   fetchUserProfile error: TypeError: Failed to parse URL from /api/auth/findUser
+[00:28:03.704] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:28:04.282] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'id')
+[00:28:30.556] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:28:30.570] Server  LOG      ✓ Compiled in 228ms
+[00:28:31.218] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:28:31.254] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:28:31.257] Server  ERROR   fetchUserProfile error: TypeError: Failed to parse URL from /api/auth/findUser
+[00:28:32.645] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:50.319] Server  LOG      ✓ Compiled in 389ms
+[01:20:18.631] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./components/plans/plans-section.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:20:18.665] Server  LOG      ✓ Compiled in 508ms
+[01:20:19.696] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:20:19.698] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:20:19.699] Server  ERROR   fetchUserProfile error: TypeError: Failed to parse URL from /api/auth/findUser
+[01:20:21.582] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:20:36.790] Server  LOG      ✓ Compiled in 1260ms
+[01:20:37.375] Browser ERROR   ./components/plans/plans-section.jsx:2:10
+Ecmascript file had an error
+  1 |
+> 2 | import { useRouter } from "next/navigation";
+    |          ^^^^^^^^^
+  3 | import { useStore } from "@/stores/StoreProvider";
+  4 | import Illustration from "../Illustration";
+  5 | import PlanCard from "./PlanCard";
+
+You're importing a component that needs `useRouter`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./components/plans/plans-section.jsx
+    ./app/plans/page.jsx
+[01:20:48.363] Browser ERROR   ./components/plans/plans-section.jsx:2:10
+Ecmascript file had an error
+  1 |
+> 2 | import { useRouter } from "next/navigation";
+    |          ^^^^^^^^^
+  3 | import { useStore } from "@/stores/StoreProvider";
+  4 | import Illustration from "../Illustration";
+  5 | import PlanCard from "./PlanCard";
+
+You're importing a component that needs `useRouter`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./components/plans/plans-section.jsx
+    ./app/plans/page.jsx
+[01:21:00.368] Browser ERROR   ./components/plans/plans-section.jsx:2:10
+Ecmascript file had an error
+  1 |
+> 2 | import { useRouter } from "next/navigation";
+    |          ^^^^^^^^^
+  3 | import { useStore } from "@/stores/StoreProvider";
+  4 | import Illustration from "../Illustration";
+  5 | import PlanCard from "./PlanCard";
+
+You're importing a component that needs `useRouter`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./components/plans/plans-section.jsx
+    ./app/plans/page.jsx
+[01:21:30.360] Browser ERROR   ./components/plans/plans-section.jsx:2:10
+Ecmascript file had an error
+  1 |
+> 2 | import { useRouter } from "next/navigation";
+    |          ^^^^^^^^^
+  3 | import { useStore } from "@/stores/StoreProvider";
+  4 | import Illustration from "../Illustration";
+  5 | import PlanCard from "./PlanCard";
+
+You're importing a component that needs `useRouter`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./components/plans/plans-section.jsx
+    ./app/plans/page.jsx
+[01:23:03.374] Browser ERROR   ./components/plans/plans-section.jsx:2:10
+Ecmascript file had an error
+  1 |
+> 2 | import { useRouter } from "next/navigation";
+    |          ^^^^^^^^^
+  3 | import { useStore } from "@/stores/StoreProvider";
+  4 | import Illustration from "../Illustration";
+  5 | import PlanCard from "./PlanCard";
+
+You're importing a component that needs `useRouter`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./components/plans/plans-section.jsx
+    ./app/plans/page.jsx
+[01:23:24.786] Server  ERROR    ⨯ ./app/plans/page.jsx:1:1
+Module not found: Can't resolve '@/components/plans/plans-section'
+> 1 | import PlansSection from "@/components/plans/plans-section"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Illustration from "@/components/Illustration"
+  3 | import PlanCard from "@/components/plans/PlanCard"
+  4 |
+
+Import map: aliased to relative './components/plans/plans-section' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:23:24.796] Server  ERROR    ⨯ ./app/plans/page.jsx:1:1
+Module not found: Can't resolve '@/components/plans/plans-section'
+> 1 | import PlansSection from "@/components/plans/plans-section"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Illustration from "@/components/Illustration"
+  3 | import PlanCard from "@/components/plans/PlanCard"
+  4 |
+
+Import map: aliased to relative './components/plans/plans-section' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:23:24.814] Server  ERROR    ⨯ ./app/plans/page.jsx:1:1
+Module not found: Can't resolve '@/components/plans/plans-section'
+> 1 | import PlansSection from "@/components/plans/plans-section"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Illustration from "@/components/Illustration"
+  3 | import PlanCard from "@/components/plans/PlanCard"
+  4 |
+
+Import map: aliased to relative './components/plans/plans-section' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:23:24.830] Server  ERROR    ⨯ ./app/plans/page.jsx:1:1
+Module not found: Can't resolve '@/components/plans/plans-section'
+> 1 | import PlansSection from "@/components/plans/plans-section"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Illustration from "@/components/Illustration"
+  3 | import PlanCard from "@/components/plans/PlanCard"
+  4 |
+
+Import map: aliased to relative './components/plans/plans-section' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:23:25.362] Browser ERROR   ./app/plans/page.jsx:1:1
+Module not found: Can't resolve '@/components/plans/plans-section'
+> 1 | import PlansSection from "@/components/plans/plans-section"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Illustration from "@/components/Illustration"
+  3 | import PlanCard from "@/components/plans/PlanCard"
+  4 |
+
+Import map: aliased to relative './components/plans/plans-section' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[01:23:26.284] Server  ERROR    ⨯ ./app/plans/page.jsx:1:1
+Module not found: Can't resolve '@/components/plans/plans-section'
+> 1 | import PlansSection from "@/components/plans/plans-section"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Illustration from "@/components/Illustration"
+  3 | import PlanCard from "@/components/plans/PlanCard"
+  4 |
+
+Import map: aliased to relative './components/plans/plans-section' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:23:26.288] Server  ERROR    ⨯ ./app/plans/page.jsx:1:1
+Module not found: Can't resolve '@/components/plans/plans-section'
+> 1 | import PlansSection from "@/components/plans/plans-section"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Illustration from "@/components/Illustration"
+  3 | import PlanCard from "@/components/plans/PlanCard"
+  4 |
+
+Import map: aliased to relative './components/plans/plans-section' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:23:27.411] Browser ERROR   ./app/plans/page.jsx:1:1
+Module not found: Can't resolve '@/components/plans/plans-section'
+> 1 | import PlansSection from "@/components/plans/plans-section"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Illustration from "@/components/Illustration"
+  3 | import PlanCard from "@/components/plans/PlanCard"
+  4 |
+
+Import map: aliased to relative './components/plans/plans-section' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[01:23:39.986] Server  LOG      ✓ Compiled in 451ms
+[01:24:54.837] Server  LOG      ✓ Compiled in 343ms
+[01:24:55.360] Browser ERROR   uncaughtError: Error: Rendered fewer hooks than expected. This may be caused by an accidental early return statement.
+[01:25:31.858] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:25:31.871] Server  LOG      ✓ Compiled in 227ms
+[01:25:32.913] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\components_1ce28b13._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:25:32.963] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_14620b69._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:25:32.965] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'shop')
+[01:25:33.041] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:25:33.049] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:25:33.053] Server  ERROR   fetchUserProfile error: TypeError: Failed to parse URL from /api/auth/findUser
+[01:25:33.118] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'shop')
+[01:25:34.357] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:25:35.373] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'shop')
+[01:43:36.371] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:43:36.406] Server  LOG      ✓ Compiled in 444ms
+[01:43:36.947] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\components_1ce28b13._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:43:37.018] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_14620b69._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:43:37.020] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'shop')
+[01:43:37.140] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:43:37.219] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:43:37.220] Server  ERROR   fetchUserProfile error: TypeError: Failed to parse URL from /api/auth/findUser
+[01:43:39.276] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:43:41.366] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'shop')
+[01:44:54.640] Server  LOG      ✓ Compiled in 397ms
+[01:44:54.685] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:44:55.542] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\[root-of-the-server]__b23afbd0._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:44:55.586] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_14620b69._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:44:55.589] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'shop')
+[01:44:55.765] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:44:55.791] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:44:55.817] Server  ERROR   fetchUserProfile error: TypeError: Failed to parse URL from /api/auth/findUser
+[01:44:57.385] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:44:59.366] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'shop')
+[01:46:00.567] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:46:00.593] Server  LOG      ✓ Compiled in 262ms
+[01:46:01.065] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\[root-of-the-server]__b23afbd0._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:46:01.112] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_14620b69._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:46:01.114] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'shop')
+[01:46:01.256] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:46:01.258] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:46:01.260] Server  ERROR   fetchUserProfile error: TypeError: Failed to parse URL from /api/auth/findUser
+[01:46:02.306] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:46:03.361] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'shop')
+[01:46:28.088] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:46:28.121] Server  LOG      ✓ Compiled in 440ms
+[01:46:28.681] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\[root-of-the-server]__b23afbd0._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:46:28.723] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_14620b69._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:46:28.725] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'shop')
+[01:46:28.796] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:46:28.799] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:46:28.800] Server  ERROR   fetchUserProfile error: TypeError: Failed to parse URL from /api/auth/findUser
+[01:46:30.507] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:46:31.523] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'shop')
+[01:58:19.538] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:58:19.565] Server  LOG      ✓ Compiled in 259ms
+[01:58:20.047] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\[root-of-the-server]__b23afbd0._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:58:20.111] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_14620b69._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:58:20.112] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'shop')
+[01:58:20.330] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:58:20.362] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:58:20.379] Server  ERROR   fetchUserProfile error: TypeError: Failed to parse URL from /api/auth/findUser
+[01:58:22.722] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:58:24.365] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'shop')
+[01:58:37.859] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:58:37.883] Server  LOG      ✓ Compiled in 269ms
+[01:58:38.442] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:58:38.443] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:58:38.444] Server  ERROR   fetchUserProfile error: TypeError: Failed to parse URL from /api/auth/findUser
+[01:58:39.812] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:59:12.945] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:59:14.654] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'user')
+[01:59:51.903] Server  LOG      ✓ Compiled in 453ms
+[01:59:52.363] Browser ERROR   React has detected a change in the order of Hooks called by %s. This will lead to bugs and errors if not fixed. For more information, read the Rules of Hooks: https://react.dev/link/rules-of-hooks
+
+   Previous render            Next render
+   ------------------------------------------------------
+%s   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ PlanCard 1. useRef                     useRef
+2. useDebugValue              useDebugValue
+3. useSyncExternalStore       useSyncExternalStore
+4. useContext                 useContext
+5. useEffect                  useContext
+
+[01:59:56.186] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:59:56.188] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:59:56.189] Server  ERROR   fetchUserProfile error: TypeError: Failed to parse URL from /api/auth/findUser
+[01:59:56.975] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:59:59.578] Browser ERROR   uncaughtError: ReferenceError: shopId is not defined
+[02:04:00.678] Server  LOG      ✓ Compiled in 433ms

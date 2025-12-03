@@ -49,44 +49,46 @@ const Step1 = ({ setStep }) => {
 
     // user signup 
     const createUser = async (e) => {
-        e.preventDefault()
-        const newErrors = validate()
+        e.preventDefault();
+
+        const newErrors = validate();
         if (Object.keys(newErrors).length > 0) {
-            setErrors(newErrors)
-            return
+            setErrors(newErrors);
+            return;
         }
 
+        const { confirmPassword: _, ...data } = formData;
 
+        //  Send OTP + Open modal
         await userStore.requestOtp(formData.email, "signup");
 
         if (userStore.error) {
-            toast.error(userStore.error)
-            return
+            toast.error(userStore.error);
+            return;
         }
 
+        //  WAIT HERE until otp verified
+        await userStore.waitForOtp();
 
-
-        const { confirmPassword: _, ...dataWithoutConfirmPassword } = formData
-
-        // calling api through store 
-        await userStore.userSignup(dataWithoutConfirmPassword)
-
+        //  Now call signup API
+        await userStore.userSignup(data);
 
         if (userStore.error) {
-            toast.error(userStore.error)
-            return
-        } else {
-            setFormData({
-                name: "",
-                email: "",
-                password: "",
-                confirmPassword: "",
-            })
-
-            setStep(2)
+            toast.error(userStore.error);
+            return;
         }
 
-    }
+        //  Reset and next step
+        setFormData({
+            name: "",
+            email: "",
+            password: "",
+            confirmPassword: "",
+        });
+
+        localStorage.setItem('signupStep', 2)
+        setStep(2)
+    };
 
 
 
