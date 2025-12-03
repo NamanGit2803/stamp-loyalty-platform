@@ -17,23 +17,19 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist
 ;
 class UserStore {
     user = null;
-    token = null;
-    role = null;
-    isLoggedIn = false;
-    error = null;
     loading = false;
+    error = null;
+    // OTP global state
+    otpModalOpen = false;
+    otpEmail = "";
+    otpPurpose = "";
+    otpVerified = false;
+    redirectAfterOtp = null;
     constructor(){
         (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["makeAutoObservable"])(this);
-        this.loadFromStorage();
+        this.fetchUserProfile(); // auto load user on refresh
     }
-    // SAVE SESSION
-    setSession(user, token) {
-        this.user = user;
-        this.token = token;
-        // Persist in localStorage
-        localStorage.setItem("user", token);
-    }
-    // SignUp 
+    // Register
     async userSignup(formData) {
         this.loading = true;
         this.error = null;
@@ -46,56 +42,129 @@ class UserStore {
                 body: JSON.stringify(formData)
             });
             const data = await res.json();
-            if (!res.ok) throw new Error(data.error || "Registration failed");
+            if (!res.ok) throw new Error(data.error);
             (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
-                this.setSession(data.user, data.token);
+                this.user = data.user;
             });
         } catch (err) {
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
-                this.error = err.message;
-            });
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>this.error = err.message);
         } finally{
             this.loading = false;
         }
     }
-    // LOAD SESSION ON PAGE REFRESH
-    loadFromStorage() {
-        if ("TURBOPACK compile-time truthy", 1) return;
-        //TURBOPACK unreachable
-        ;
-        const storedUser = undefined;
-        const storedToken = undefined;
+    // Login
+    async login(credentials) {
+        this.loading = true;
+        this.error = null;
+        try {
+            const res = await fetch("/api/user/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(credentials)
+            });
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.error);
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+                this.user = data.user;
+            });
+        } catch (err) {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>this.error = err.message);
+        } finally{
+            this.loading = false;
+        }
     }
-    // LOGIN
-    async login(email, password) {
-        const res = await fetch("/api/auth/login", {
-            method: "POST",
-            body: JSON.stringify({
-                email,
-                password
-            })
+    // Auto-fetch user (browser sends cookie)
+    async fetchUserProfile() {
+        try {
+            const res = await fetch("/api/user/findUser", {
+                method: "GET",
+                credentials: "include"
+            });
+            if (!res.ok) return;
+            const data = await res.json();
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+                this.user = data;
+            });
+        } catch  {}
+    }
+    // Logout
+    async logout() {
+        await fetch("/api/user/logout", {
+            method: "POST"
         });
-        const data = await res.json();
-        if (!res.ok) throw new Error(data.error);
-        // API returns { user, token }
-        this.setSession(data);
-        return data;
-    }
-    // LOGOUT
-    logout() {
         this.user = null;
-        this.token = null;
-        this.role = null;
-        this.isLoggedIn = false;
-        localStorage.removeItem("user");
-        localStorage.removeItem("token");
     }
-    // CHECK ROLE HELPERS
-    get isAdmin() {
-        return this.role === "ADMIN";
+    // -----------------------------
+    // OTP: request
+    // -----------------------------
+    async requestOtp(email, purpose, redirectUrl = null) {
+        this.loading = true;
+        this.error = null;
+        try {
+            const res = await fetch("/api/otp/send", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email,
+                    purpose
+                })
+            });
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.error || "Failed to send OTP");
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+                this.otpEmail = email;
+                this.otpPurpose = purpose;
+                this.redirectAfterOtp = redirectUrl;
+                this.otpModalOpen = true;
+            });
+        } catch (err) {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>this.error = err.message);
+        } finally{
+            this.loading = false;
+        }
     }
-    get isShop() {
-        return this.role === "SHOP";
+    closeOtp() {
+        this.otpModalOpen = false;
+    }
+    // -----------------------------
+    // OTP: verify
+    // -----------------------------
+    async verifyOtp(code) {
+        this.loading = true;
+        this.error = null;
+        try {
+            const res = await fetch("/api/otp/verify", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email: this.otpEmail,
+                    code,
+                    purpose: this.otpPurpose
+                })
+            });
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.error || "Invalid OTP");
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+                this.otpVerified = true;
+                this.otpModalOpen = false;
+            });
+            // automatic redirect if configured
+            if (this.redirectAfterOtp) {
+                window.location.href = this.redirectAfterOtp;
+            }
+            return true;
+        } catch (err) {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>this.error = err.message);
+            return false;
+        } finally{
+            this.loading = false;
+        }
     }
 }
 const userStore = new UserStore();

@@ -118,7 +118,8 @@ async function POST(req) {
         // Create token
         const token = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$jsonwebtoken$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].sign({
             email: newUser.email,
-            name: newUser.name
+            name: newUser.name,
+            role: newUser.role
         }, process.env.JWT_SECRET, {
             expiresIn: "7d"
         });
@@ -126,8 +127,7 @@ async function POST(req) {
         // Create response
         const response = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             success: true,
-            user: userWithoutPassword,
-            token
+            user: userWithoutPassword
         }, {
             status: 201
         });

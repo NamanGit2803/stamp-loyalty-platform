@@ -2,6 +2,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { StoreProvider } from "../stores/StoreProvider"
 import { Toaster } from "@/components/ui/sonner"
+import OtpConatiner from "@/components/auth/OtpConatiner"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className} bg-background text-foreground`}>
         <StoreProvider>
           {children}
+          <OtpConatiner/>
         </StoreProvider>
         <Toaster position="top-right" />
       </body>

@@ -9,7 +9,7 @@ const prisma = new PrismaClient()
 export async function POST(req) {
   try {
     const body = await req.json()
-    const { shopName, phone, businessType, address, minAmount, targetStamp, reward } = body
+    const { shopName, phone, businessType, address, minAmount, targetStamp, reward, ownerId } = body
 
     const customId = `shop_${nanoid(8)}`
 
@@ -18,24 +18,20 @@ export async function POST(req) {
     const newShop = await prisma.shop.create({
       data: {
         id: customId,
-        ownerId: 
+        ownerId,
         shopName,
         phone,
         businessType,
         address,
         minAmount,
-        targetStamp,
+        targetStamps: targetStamp,
         reward
       },
     })
 
     // Create response
-    const response = NextResponse.json(
-      { success: true, user: userWithoutPassword, token },
-      { status: 201 }
-    )
+    return NextResponse.json(newShop, { status: 201 })
 
-    return response
   } catch (err) {
     console.error(err)
     return NextResponse.json({ error: "Server error" }, { status: 500 })

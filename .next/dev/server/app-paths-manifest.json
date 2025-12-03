@@ -1,5 +1,7 @@
 {
   "/(auth)/signup/page": "app/(auth)/signup/page.js",
-  "/(dashboard)/[shopId]/settings/page": "app/(dashboard)/[shopId]/settings/page.js",
-  "/api/auth/signup/shopCreate/route": "app/api/auth/signup/shopCreate/route.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/auth/otp/send/route": "app/api/auth/otp/send/route.js",
+  "/api/auth/otp/verify/route": "app/api/auth/otp/verify/route.js",
+  "/api/auth/signup/userCreate/route": "app/api/auth/signup/userCreate/route.js"
 }

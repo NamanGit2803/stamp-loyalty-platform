@@ -11,7 +11,7 @@
   --card-foreground: oklch(0.11 0.008 219.1);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.11 0.008 219.1);
-  --primary:  oklch(0.47 0.19 296);
+  --primary: oklch(0.47 0.19 296);
   --primary-foreground: #ffffff;
   --secondary: oklch(0.63 0.16 298);
   --secondary-foreground: oklch(0.11 0.008 219.1);
@@ -22,6 +22,7 @@
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.97 0.014 247.4);
   --border: oklch(0.78 0.10 305);
+  --border-muted: oklch(0.94 0.01 247);
   --input: oklch(0.78 0.10 305);
   --ring: oklch(0.67 0.18 298);
   --chart-1: oklch(0.516 0.172 258.1);
@@ -59,6 +60,7 @@
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
   --border: oklch(0.269 0 0);
+  --border-muted: oklch(0.94 0.01 247);
   --input: oklch(0.269 0 0);
   --ring: oklch(0.688 0.164 262);
   --chart-1: oklch(0.688 0.164 262);
@@ -97,6 +99,7 @@
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
+  --color-border-muted: var(--border-muted);
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-chart-1: var(--chart-1);
@@ -122,9 +125,15 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.bg-custom-gradient {
+  background-image: linear-gradient(to bottom right, #eff6ff, #ffffff);
+  /* blue-50 → white */
 }
 
 

@@ -31,7 +31,7 @@ export async function POST(req) {
 
     // Create token
     const token = jwt.sign(
-      { email: newUser.email, name: newUser.name },
+      { email: newUser.email, name: newUser.name, role: newUser.role },
       process.env.JWT_SECRET,
       { expiresIn: "7d" }
     )
@@ -40,7 +40,7 @@ export async function POST(req) {
 
     // Create response
     const response = NextResponse.json(
-      { success: true, user: userWithoutPassword, token },
+      { success: true, user: userWithoutPassword},
       { status: 201 }
     )
 

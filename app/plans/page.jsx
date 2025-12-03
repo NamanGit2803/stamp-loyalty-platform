@@ -1,4 +1,4 @@
-import PlansSection from "@/components/pricing/plans-section"
+import PlansSection from "@/components/plans/plans-section"
 
 export default function PlansPage() {
   return <PlansSection />

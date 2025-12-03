@@ -11,8 +11,9 @@ import { toast } from 'sonner'
 import { Spinner } from "@/components/ui/spinner"
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
 import { businessTypes } from '@/lib/businessTypes'
+import { useRouter } from 'next/navigation'
 
-const Step2 = ({setStep}) => {
+const Step2 = ({ setStep }) => {
 
     const { userStore, shopStore } = useStore()
     const [errors, setErrors] = useState({})
@@ -27,20 +28,13 @@ const Step2 = ({setStep}) => {
         reward: '',
     })
 
+    const router = useRouter()
+
     const handleChange = (e) => {
         const { name, value } = e.target
         setFormData((prev) => ({ ...prev, [name]: value }))
         if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }))
     }
-
-    useEffect(() => {
-        console.log(formData)
-
-    }, [formData])
-
-    useEffect(() => {
-        console.log(errors)
-    }, [errors])
 
 
 
@@ -92,25 +86,30 @@ const Step2 = ({setStep}) => {
         await shopStore.createShop(finalData)
 
 
-        // if (userStore.error) {
-        //     toast.error(userStore.error)
-        //     return
-        // } else {
-        //     setFormData({
-        //         name: "",
-        //         email: "",
-        //         password: "",
-        //         confirmPassword: "",
-        //     })
+        if (shopStore.error) {
+            toast.error(shopStore.error)
+            return
+        } else {
+            setFormData({
+                shopName: "",
+                phone: "",
+                businessType: '',
+                customBusinessType: '',
+                address: "",
+                minAmount: '',
+                targetStamp: '',
+                reward: '',
+            })
 
-        //     setStep(2)
-        // }
+            router.push('/plans')
+
+        }
 
     }
 
 
     return (
-        <form action="">
+        <form >
             <div className="space-y-4">
 
                 {/* shop Name */}

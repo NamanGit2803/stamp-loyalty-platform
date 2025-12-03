@@ -12,70 +12,8 @@ import { observer } from "mobx-react-lite"
 import { useStore } from '@/stores/StoreProvider'
 
 const Form = () => {
-    const [step, setStep] = useState(2)
-    const [showPassword, setShowPassword] = useState(false) // 
-    const [showConfirmPassword, setShowConfirmPassword] = useState(false) 
+    const [step, setStep] = useState(1)
 
-    const [formData, setFormData] = useState({
-        name: "",
-        shopName: "",
-        phone: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
-    })
-
-    const [errors, setErrors] = useState({})
-    const [isLoading, setIsLoading] = useState(false)
-
-    const handleChange = (e) => {
-        const { name, value } = e.target
-        setFormData((prev) => ({ ...prev, [name]: value }))
-        if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }))
-    }
-
-    const validateStep1 = () => {
-        const newErrors = {}
-        if (!formData.name.trim()) newErrors.name = "Name is required"
-        if (!formData.email.trim()) newErrors.email = "Email is required"
-        if (!formData.email.includes("@")) newErrors.email = "Invalid email"
-        if (!formData.phone.trim()) newErrors.phone = "Phone is required"
-        if (formData.phone.length < 10) newErrors.phone = "Invalid phone number"
-        return newErrors
-    }
-
-    const validateStep2 = () => {
-        const newErrors = {}
-        if (formData.password.length < 6) newErrors.password = "Password must be 6+ characters"
-        if (formData.password !== formData.confirmPassword)
-            newErrors.confirmPassword = "Passwords do not match"
-        return newErrors
-    }
-
-    const handleNext = () => {
-        const newErrors = validateStep1()
-        if (Object.keys(newErrors).length === 0) {
-            setStep(2)
-            setErrors({})
-        } else {
-            setErrors(newErrors)
-        }
-    }
-
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        const newErrors = validateStep2()
-        if (Object.keys(newErrors).length > 0) {
-            setErrors(newErrors)
-            return
-        }
-
-        setIsLoading(true)
-        setTimeout(() => {
-            window.location.href = "/plans"
-            setIsLoading(false)
-        }, 1000)
-    }
 
     return (
         <div className="flex w-full md:w-2/5 items-center justify-center p-4 h-screen overflow-y-hidden">

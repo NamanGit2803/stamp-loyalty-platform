@@ -1,31 +1,27 @@
 'use client'
 
-import { makeAutoObservable, runInAction } from "mobx";
+import { makeAutoObservable, runInAction } from "mobx"
 
 class UserStore {
-    user = null;
-    token = null;
-    role = null;
-    isLoggedIn = false;
-    error = null;
-    loading = false;
+    user = null
+    loading = false
+    error = null
+
+
+    // OTP global state
+    otpModalOpen = false;
+    otpEmail = "";
+    otpPurpose = "";  // signup, login, reset, security, change-email…
+    otpVerified = false;
+
+    redirectAfterOtp = null; // after OTP verification → auto redirect somewhere
 
     constructor() {
-        makeAutoObservable(this);
-        this.loadFromStorage();
+        makeAutoObservable(this)
+        this.fetchUserProfile() // auto load user on refresh
     }
 
-    
-    // SAVE SESSION
-    setSession(user, token) {
-        this.user = user;
-        this.token = token;
-
-        // Persist in localStorage
-        localStorage.setItem("user", token);
-    }
-
-    // SignUp 
+    // Register
     async userSignup(formData) {
         this.loading = true
         this.error = null
@@ -37,73 +33,144 @@ class UserStore {
             })
             const data = await res.json()
 
-            if (!res.ok) throw new Error(data.error || "Registration failed")
+            if (!res.ok) throw new Error(data.error)
 
             runInAction(() => {
-                this.setSession(data.user, data.token)
+                this.user = data.user
             })
         } catch (err) {
-            runInAction(() => {
-                this.error = err.message
-            })
+            runInAction(() => this.error = err.message)
         } finally {
             this.loading = false
         }
     }
 
 
-    // LOAD SESSION ON PAGE REFRESH
-    loadFromStorage() {
-        if (typeof window === "undefined") return;
+    // Login
+    async login(credentials) {
+        this.loading = true
+        this.error = null
+        try {
+            const res = await fetch("/api/user/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(credentials),
+            })
 
-        const storedUser = localStorage.getItem("user");
-        const storedToken = localStorage.getItem("token");
+            const data = await res.json()
 
-        if (storedUser && storedToken) {
-            this.user = JSON.parse(storedUser);
-            this.token = storedToken;
-            this.role = this.user.role;
-            this.isLoggedIn = true;
+            if (!res.ok) throw new Error(data.error)
+
+            runInAction(() => {
+                this.user = data.user
+            })
+        } catch (err) {
+            runInAction(() => this.error = err.message)
+        } finally {
+            this.loading = false
         }
     }
 
-    // LOGIN
-    async login(email, password) {
-        const res = await fetch("/api/auth/login", {
-            method: "POST",
-            body: JSON.stringify({ email, password }),
-        });
 
-        const data = await res.json();
+    // Auto-fetch user (browser sends cookie)
+    async fetchUserProfile() {
+        try {
+            const res = await fetch("/api/user/findUser", {
+                method: "GET",
+                credentials: "include"
+            })
 
-        if (!res.ok) throw new Error(data.error);
+            if (!res.ok) return
 
-        // API returns { user, token }
-        this.setSession(data);
-        return data;
+            const data = await res.json()
+
+            runInAction(() => {
+                this.user = data
+            })
+        } catch { }
     }
 
 
-    // LOGOUT
-    logout() {
-        this.user = null;
-        this.token = null;
-        this.role = null;
-        this.isLoggedIn = false;
-
-        localStorage.removeItem("user");
-        localStorage.removeItem("token");
+    // Logout
+    async logout() {
+        await fetch("/api/user/logout", { method: "POST" })
+        this.user = null
     }
 
 
-    // CHECK ROLE HELPERS
-    get isAdmin() {
-        return this.role === "ADMIN";
+
+    // OTP: request
+    async requestOtp(email, purpose, redirectUrl = null) {
+        this.loading = true;
+        this.error = null;
+
+        try {
+            const res = await fetch("/api/auth/otp/send", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, purpose }),
+            });
+
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.error || "Failed to send OTP");
+
+            runInAction(() => {
+                this.otpEmail = email;
+                this.otpPurpose = purpose;
+                this.redirectAfterOtp = redirectUrl;
+                this.otpModalOpen = true;
+            });
+        } catch (err) {
+            runInAction(() => (this.error = err.message));
+        } finally {
+            this.loading = false;
+        }
     }
 
-    get isShop() {
-        return this.role === "SHOP";
+    closeOtp() {
+        this.otpModalOpen = false;
+        this.error = null
+    }
+
+    // -----------------------------
+    // OTP: verify
+    // -----------------------------
+    async verifyOtp(code) {
+        this.loading = true;
+        this.error = null;
+
+        try {
+            const res = await fetch("/api/auth/otp/verify", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    email: this.otpEmail,
+                    code,
+                    purpose: this.otpPurpose,
+                }),
+            });
+
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.error || "Invalid OTP");
+
+            runInAction(() => {
+                this.otpVerified = true;
+                this.otpModalOpen = false;
+            });
+
+            // automatic redirect if configured
+            if (this.redirectAfterOtp) {
+                window.location.href = this.redirectAfterOtp;
+            }
+
+            return true;
+        } catch (err) {
+            runInAction(() => (this.error = err.message));
+            return false;
+        } finally {
+            this.loading = false;
+        }
     }
 }
 
-export const userStore = new UserStore();
+export const userStore = new UserStore()

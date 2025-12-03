@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { toast } from 'sonner'
 import { Spinner } from "@/components/ui/spinner"
+import { useRouter } from 'next/navigation'
 
 const Step1 = ({ setStep }) => {
 
@@ -16,6 +17,7 @@ const Step1 = ({ setStep }) => {
 
     const [showPassword, setShowPassword] = useState(false) // 
     const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+    const [errors, setErrors] = useState({})
 
     const [formData, setFormData] = useState({
         name: "",
@@ -24,7 +26,7 @@ const Step1 = ({ setStep }) => {
         confirmPassword: "",
     })
 
-    const [errors, setErrors] = useState({})
+    const router = useRouter()
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -53,6 +55,15 @@ const Step1 = ({ setStep }) => {
             setErrors(newErrors)
             return
         }
+
+
+        await userStore.requestOtp(formData.email, "signup");
+
+        if (userStore.error) {
+            toast.error(userStore.error)
+            return
+        }
+
 
 
         const { confirmPassword: _, ...dataWithoutConfirmPassword } = formData

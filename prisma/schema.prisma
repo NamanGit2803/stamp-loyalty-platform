@@ -30,10 +30,12 @@ model Shop {
   shopName       String
   businessType   String?
   address        String?
+  phone          String?
+  minAmount      String?
   plan           String   @default("free")
   isActive       Boolean  @default(true)
   loyaltyEnabled Boolean  @default(true)
-  targetStamps   Int      @default(5)
+  targetStamps   String
   reward    String   @default("Free Reward")
   createdAt      DateTime @default(now())
 
@@ -60,6 +62,14 @@ model Customer {
   transactions Transaction[]
   rewards      Reward[]
 }
+
+model Otp {
+  email      String   @id
+  code       String
+  purpose    String
+  expiresAt  DateTime
+}
+
 
 model Transaction {
   srNo       Int       @id @default(autoincrement())
