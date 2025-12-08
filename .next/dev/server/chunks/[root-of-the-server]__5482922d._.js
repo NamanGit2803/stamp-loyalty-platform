@@ -99,6 +99,19 @@ async function POST(req) {
     try {
         const body = await req.json();
         const { shopName, phone, businessType, address, minAmount, targetStamp, reward, ownerId } = body;
+        //  CHECK IF SHOP ALREADY EXISTS FOR THIS OWNER
+        const existingShop = await prisma.shop.findFirst({
+            where: {
+                ownerId
+            }
+        });
+        if (existingShop) {
+            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                error: "Shop already exists for this user."
+            }, {
+                status: 400
+            });
+        }
         const customId = `shop_${(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$nanoid$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__["nanoid"])(8)}`;
         // Create new shop
         const newShop = await prisma.shop.create({
@@ -115,7 +128,9 @@ async function POST(req) {
             }
         });
         // Create response
-        return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json(newShop, {
+        return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+            newShop
+        }, {
             status: 201
         });
     } catch (err) {

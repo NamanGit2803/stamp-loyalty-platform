@@ -4,6 +4,7 @@ import { makeAutoObservable, runInAction } from "mobx"
 
 class UserStore {
     user = null
+    shopId = null
     loading = false
     error = null
     signupStep = 1;
@@ -49,14 +50,14 @@ class UserStore {
 
 
     // Login
-    async login(credentials) {
+    async login(formData) {
         this.loading = true
         this.error = null
         try {
-            const res = await fetch("/api/user/login", {
+            const res = await fetch("/api/auth/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(credentials),
+                body: JSON.stringify(formData),
             })
 
             const data = await res.json()
@@ -65,6 +66,7 @@ class UserStore {
 
             runInAction(() => {
                 this.user = data.user
+                this.shopId = data.shopId
             })
         } catch (err) {
             runInAction(() => this.error = err.message)

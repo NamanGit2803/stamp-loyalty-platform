@@ -8,18 +8,27 @@ const prisma = new PrismaClient()
 export async function POST(req) {
   try {
     const body = await req.json()
-    const { name, email, password } = body
+    const { name, email, password, checkOnly } = body
 
     // Check if user exists
     const existing = await prisma.user.findUnique({ where: { email } })
     if (existing) {
-      return NextResponse.json({ error: "User already exists" }, { status: 400 })
+
+      // If not checkOnly — still return same error
+      return NextResponse.json(
+        { error: "User already exists" },
+        { status: 400 }
+      )
     }
 
-    // Hash password before saving
+    // If request is only checking, return positive response
+    if (checkOnly) {
+      return NextResponse.json({ ok: true }, { status: 200 })
+    }
+
+    // ---------- CREATE USER BELOW ----------
     const hashedPassword = await bcrypt.hash(password, 10)
 
-    // Create new user
     const newUser = await prisma.user.create({
       data: {
         name,
@@ -29,7 +38,6 @@ export async function POST(req) {
       },
     })
 
-    // Create token
     const token = jwt.sign(
       { email: newUser.email, name: newUser.name, role: newUser.role },
       process.env.JWT_SECRET,
@@ -38,18 +46,16 @@ export async function POST(req) {
 
     const { password: _, ...userWithoutPassword } = newUser
 
-    // Create response
     const response = NextResponse.json(
-      { success: true, user: userWithoutPassword},
+      { success: true, user: userWithoutPassword },
       { status: 201 }
     )
 
-    // Set cookie (for authentication)
     response.cookies.set("token", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production", // only HTTPS in prod
+      secure: process.env.NODE_ENV === "production",
       sameSite: "strict",
-      maxAge: 7 * 24 * 60 * 60, // 7 days
+      maxAge: 7 * 24 * 60 * 60,
       path: "/",
     })
 

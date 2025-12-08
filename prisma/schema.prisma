@@ -32,7 +32,7 @@ model Shop {
   address        String?
   phone          String?
   minAmount      String?
-  plan           String   @default("free")
+  plan           String   @default("basic")
   isActive       Boolean  @default(true)
   loyaltyEnabled Boolean  @default(true)
   targetStamps   String
@@ -110,22 +110,22 @@ model Plan {
   description String?
   createdAt   DateTime @default(now())
 
-  subscriptions Subscription[]
+
 }
 
 model Subscription {
   srNo          Int       @id @default(autoincrement())
   id            String    @unique
   shopId        String
-  planId        String
-  amount        String
-  status        String    @default("active")
+  planId        String?
+  amount        Int
+  status        String    @default("trialing")
   startDate     DateTime  @default(now())
   endDate       DateTime?
   trialEndsAt    DateTime  
   nextBillingAt  DateTime    
   razorpaySubId String?
 
-  shop Shop @relation(fields: [shopId], references: [id])
-  plan Plan @relation(fields: [planId], references: [id])
+  shop Shop? @relation(fields: [shopId], references: [id])
+
 }

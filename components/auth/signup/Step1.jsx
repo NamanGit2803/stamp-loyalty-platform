@@ -15,7 +15,7 @@ const Step1 = ({ setStep }) => {
 
     const { userStore } = useStore()
 
-    const [showPassword, setShowPassword] = useState(false) // 
+    const [showPassword, setShowPassword] = useState(false)
     const [showConfirmPassword, setShowConfirmPassword] = useState(false)
     const [errors, setErrors] = useState({})
 
@@ -59,7 +59,16 @@ const Step1 = ({ setStep }) => {
 
         const { confirmPassword: _, ...data } = formData;
 
-        //  Send OTP + Open modal
+        //  SIGNUP CHECK-ONLY MODE
+        await userStore.userSignup({ ...data, checkOnly: true });
+
+
+        if (userStore.error === "User already exists") {
+            toast.error(userStore.error);
+            return;
+        }
+
+        //  Send OTP
         await userStore.requestOtp(formData.email, "signup");
 
         if (userStore.error) {
@@ -67,10 +76,10 @@ const Step1 = ({ setStep }) => {
             return;
         }
 
-        //  WAIT HERE until otp verified
+        //  Wait OTP
         await userStore.waitForOtp();
 
-        //  Now call signup API
+        //  Final signup (actual)
         await userStore.userSignup(data);
 
         if (userStore.error) {
@@ -78,7 +87,7 @@ const Step1 = ({ setStep }) => {
             return;
         }
 
-        //  Reset and next step
+        // Reset and next step
         setFormData({
             name: "",
             email: "",
@@ -86,9 +95,10 @@ const Step1 = ({ setStep }) => {
             confirmPassword: "",
         });
 
-        localStorage.setItem('signupStep', 2)
-        setStep(2)
+        localStorage.setItem("signupStep", 2);
+        setStep(2);
     };
+
 
 
 
@@ -115,7 +125,7 @@ const Step1 = ({ setStep }) => {
                     <Input
                         type="email"
                         name="email"
-                        placeholder="m@example.com"
+                        placeholder="your@email.com"
                         value={formData.email}
                         onChange={handleChange}
                         className={errors.email ? "border-red-500" : "border-border"}

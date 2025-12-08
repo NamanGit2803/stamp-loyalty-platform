@@ -3,6 +3,7 @@
 import React from 'react'
 import { observer } from "mobx-react-lite"
 import { useStore } from '@/stores/StoreProvider'
+import { toJS } from 'mobx'
 import { Eye, EyeOff, TriangleAlert, CircleAlert, CheckCircle } from "lucide-react"
 import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
@@ -36,7 +37,11 @@ const Step2 = ({ setStep }) => {
         if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }))
     }
 
-
+    // number regex 
+    const numberValidate = (value) => {
+        const isValidNumber = /^[0-9]+$/.test(value);
+        return isValidNumber;
+    }
 
     // validation 
     const validate = () => {
@@ -49,7 +54,9 @@ const Step2 = ({ setStep }) => {
         }
         if (!formData.address.trim()) newErrors.address = "Address is required"
         if (!formData.minAmount.trim()) newErrors.minAmount = "Minimum amount is required"
+        if (formData.minAmount.trim().length > 0 && !numberValidate(formData.minAmount)) newErrors.minAmount = "Plaese enter valid minimum amount"
         if (!formData.targetStamp.trim()) newErrors.targetStamp = "Target stamp is required"
+        if (formData.targetStamp.trim().length > 0 && !numberValidate(formData.targetStamp)) newErrors.minAmount = "Plaese enter valid target stamp."
         if (!formData.reward.trim()) newErrors.reward = "Reward is required"
         return newErrors
     }
@@ -73,7 +80,7 @@ const Step2 = ({ setStep }) => {
         // In ALL cases → remove customBusinessType before sending
         delete finalData.customBusinessType
 
-        if (!userStore?.user?.email) {
+        if (!userStore.user?.email) {
             toast.error("User not exist.")
             setStep(1)
             localStorage.setItem('signupStep', 1)
@@ -88,8 +95,20 @@ const Step2 = ({ setStep }) => {
 
 
         if (shopStore.error) {
+            if (shopStore.error == 'Shop already exists for this user.') {
+                toast.error(shopStore.error, {
+                    description: 'Click the button to login.',
+                    action: {
+                        label: "Login",
+                        onClick: () => router.push('/login'),
+                    }
+                })
+                return
+            }
+
             toast.error(shopStore.error)
             return
+            
         } else {
             setFormData({
                 shopName: "",
@@ -103,12 +122,12 @@ const Step2 = ({ setStep }) => {
             })
 
             router.push('/plans')
-            setStep(1)
             localStorage.removeItem("signupStep")
 
+            return
         }
-
     }
+
 
 
     return (
@@ -324,4 +343,4 @@ const Step2 = ({ setStep }) => {
     )
 }
 
-export default Step2
+export default observer(Step2)

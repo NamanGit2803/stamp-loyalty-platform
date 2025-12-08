@@ -1,12 +1,15 @@
 {
   "app": {
-    "[project]/app/(auth)/signup/page": [
+    "[project]/app/shop/[shopId]/customers/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
-    "[project]/app/page": [
+    "[project]/app/shop/[shopId]/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
-    "[project]/app/plans/page": [
+    "[project]/app/shop/[shopId]/settings/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/app/shop/[shopId]/transactions/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ]
   },

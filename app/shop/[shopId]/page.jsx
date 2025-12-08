@@ -1,10 +1,8 @@
-import DashboardHome from "@/components/dashboard/dashboard-home"
-import DashboardLayout from "@/components/dashboard/layout"
+import DashboardHome from "@/components/shop/dashboard-home"
 
 export default function DashboardPage() {
   return (
-    <DashboardLayout>
+    
       <DashboardHome />
-    </DashboardLayout>
   )
 }

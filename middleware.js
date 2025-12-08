@@ -1,18 +1,14 @@
 import { NextResponse } from "next/server";
-import jwt from "jsonwebtoken";
+import { jwtVerify } from "jose";
 
 export async function middleware(req) {
   const pathname = req.nextUrl.pathname;
 
   // -----------------------------
-  // 1️⃣ Detect routes
+  // 1️⃣ Detect protected routes
   // -----------------------------
-
-  // Any /shop/... url
   const isShopPath = pathname.startsWith("/shop/");
-
-  // Valid shopId format: /shop/shop_xxxxx
-  const shopMatch = pathname.match(/^\/shop\/(shop_[A-Za-z0-9]+)/);
+  const shopMatch = pathname.match(/^\/shop\/(shop_[A-Za-z0-9_-]+)/);;
   const requestedShopId = shopMatch?.[1] || null;
   const isValidShopIdFormat = Boolean(requestedShopId);
 
@@ -20,26 +16,26 @@ export async function middleware(req) {
   const isShopApi = pathname.startsWith("/api/shop");
   const isAdminApi = pathname.startsWith("/api/admin");
 
-  // Any private route (requires auth)
   const isPrivate = isShopPath || isAdminRoute || isShopApi || isAdminApi;
 
-  // Public route → go through
-  if (!isPrivate) {
-    return NextResponse.next();
-  }
+  if (!isPrivate) return NextResponse.next();
 
   // -----------------------------
-  // 2️⃣ Auth check (JWT cookie)
+  // 2️⃣ JWT auth check
   // -----------------------------
   const token = req.cookies.get("token")?.value;
+
   if (!token) {
-    return NextResponse.redirect(new URL("/login", req.url)); // your login is in (auth)/login → /login
+    return NextResponse.redirect(new URL("/login", req.url));
   }
+
+  const secret = new TextEncoder().encode(process.env.JWT_SECRET);
 
   let user;
   try {
-    user = jwt.verify(token, process.env.JWT_SECRET);
-  } catch {
+    const { payload } = await jwtVerify(token, secret);
+    user = payload; // { email, name, role, iat, exp }
+  } catch (err) {
     return NextResponse.redirect(new URL("/login", req.url));
   }
 
@@ -57,26 +53,61 @@ export async function middleware(req) {
   // 4️⃣ SHOP pages protection
   // -----------------------------
   if (isShopPath) {
-    // must be SHOP user
     if (user.role !== "SHOP") {
       return NextResponse.redirect(new URL("/", req.url));
     }
 
-    // ❗ If /shop/** BUT id is NOT in "shop_..." format → INVALID → redirect home
+
     if (!isValidShopIdFormat) {
       return NextResponse.redirect(new URL("/", req.url));
     }
 
-    // Optional: shop ownership check if you added shopIds to JWT
-    if (user.shopIds && !user.shopIds.includes(requestedShopId)) {
+
+    // --------------------------------------------------
+    // ⭐ 5️⃣ CALL INTERNAL API FOR SHOP + SUBSCRIPTION CHECK
+    // --------------------------------------------------
+    const resp = await fetch(`${req.nextUrl.origin}/api/internal/subscription-check`, {
+      method: "POST",
+      body: JSON.stringify({
+        shopId: requestedShopId,
+        userEmail: user.email, // check ownership inside API
+      }),
+      headers: { "Content-Type": "application/json" }
+    });
+
+    const { status } = await resp.json();
+
+
+    // -----------------------------
+    // 🚦 Handle Subscription Result
+    // -----------------------------
+
+    if (status === "NO_SHOP" || status === "NOT_OWNER") {
       return NextResponse.redirect(new URL("/", req.url));
     }
 
-    return NextResponse.next();
+    if (status === "NO_SUBSCRIPTION") {
+      return NextResponse.redirect(new URL("/plans", req.url));
+    }
+
+    if (status === "TRIAL_ACTIVE") {
+      return NextResponse.next();
+    }
+
+    if (status === "EXPIRED") {
+      return NextResponse.redirect(new URL("/billing", req.url));
+    }
+
+    if (status === "PAID_ACTIVE") {
+      return NextResponse.next();
+    }
+
+    // fallback (should never happen)
+    return NextResponse.redirect(new URL("/", req.url));
   }
 
   // -----------------------------
-  // 5️⃣ SHOP API
+  // 6️⃣ SHOP API protection
   // -----------------------------
   if (isShopApi) {
     if (user.role !== "SHOP") {
@@ -88,7 +119,6 @@ export async function middleware(req) {
   return NextResponse.next();
 }
 
-// apply to all pages except static files
 export const config = {
   matcher: ["/((?!_next|.*\\..*).*)"],
 };

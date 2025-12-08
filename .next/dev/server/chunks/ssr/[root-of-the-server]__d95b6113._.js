@@ -17,6 +17,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist
 ;
 class UserStore {
     user = null;
+    shopId = null;
     loading = false;
     error = null;
     signupStep = 1;
@@ -55,21 +56,22 @@ class UserStore {
         }
     }
     // Login
-    async login(credentials) {
+    async login(formData) {
         this.loading = true;
         this.error = null;
         try {
-            const res = await fetch("/api/user/login", {
+            const res = await fetch("/api/auth/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify(credentials)
+                body: JSON.stringify(formData)
             });
             const data = await res.json();
             if (!res.ok) throw new Error(data.error);
             (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
                 this.user = data.user;
+                this.shopId = data.shopId;
             });
         } catch (err) {
             (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>this.error = err.message);
@@ -195,8 +197,40 @@ class ShopStore {
     shop = null;
     loading = false;
     error = null;
+    trialUsed = false;
     constructor(){
         (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["makeAutoObservable"])(this);
+        // On refresh → load from secure API
+        if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+        ;
+    }
+    // load shop on refresh 
+    async loadShopFromServer() {
+        try {
+            const res = await fetch("/api/auth/findShop", {
+                method: "GET",
+                credentials: "include"
+            });
+            const data = await res.json();
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+                if (res.status === 401) {
+                    // User not logged in
+                    this.shop = null;
+                    return;
+                }
+                // If shop is null or undefined → no shop created
+                this.shop = data.shop ?? null;
+            });
+            // auto check subscription after loading shop
+            if (data.shop) {
+                this.checkSubscription();
+            }
+        } catch (err) {
+            console.error("Shop load failed:", err);
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+                this.shop = null; // failsafe
+            });
+        }
     }
     // CREATE NEW SHOP
     async createShop(shopData) {
@@ -212,10 +246,11 @@ class ShopStore {
             });
             const data = await res.json();
             if (!res.ok) throw new Error(data.error || "Shop creation failed");
+            console.log('data', data);
             (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
-                this.shop = data.shop; // ✅ SET SINGLE SHOP
+                this.shop = data.newShop;
             });
-            return data.shop;
+            return;
         } catch (err) {
             (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
                 this.error = err.message;
@@ -224,9 +259,94 @@ class ShopStore {
             this.loading = false;
         }
     }
-    // GET ACTIVE SHOP
-    get activeShop() {
-        return this.shop;
+    // start free trail 
+    async startTrial() {
+        if (!this.shop) return;
+        this.loading = true;
+        this.error = null;
+        this.trialUsed = false; // add if needed
+        try {
+            const res = await fetch("/api/subscription/start", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                credentials: "include",
+                body: JSON.stringify({
+                    shopId: this.shop.id
+                })
+            });
+            const data = await res.json();
+            // Handle Trial Already Used (409)
+            if (res.status === 409) {
+                (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+                    this.trialUsed = true;
+                    this.error = data.error || "Free trial already used";
+                });
+                return; // stop here
+            }
+            //  Handle other API errors
+            if (!res.ok) {
+                throw new Error(data.error || "Something went wrong");
+            }
+            return;
+        } catch (err) {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+                this.error = err.message;
+            });
+        } finally{
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+                this.loading = false;
+            });
+        }
+    }
+    // CHECK SUBSCRIPTION STATUS
+    async checkSubscription() {
+        if (!this.shop) return;
+        this.loading = true;
+        this.error = null;
+        try {
+            const res = await fetch("/api/subscription/status", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                credentials: "include",
+                body: JSON.stringify({
+                    shopId: this.shop.id
+                })
+            });
+            const data = await res.json();
+            if (!res.ok) {
+                throw new Error(data.error || "Failed to get subscription status");
+            }
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+                // update subscription object inside shop
+                this.shop.subscription = data.subscription || null;
+                // example: ACTIVE | EXPIRED | TRIAL | NONE
+                this.shop.subscriptionStatus = data.status || "NONE";
+            });
+            return data; // return for UI usage
+        } catch (err) {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+                this.error = err.message;
+            });
+        } finally{
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+                this.loading = false;
+            });
+        }
+    }
+    // get expire date 
+    get daysLeft() {
+        if (!this.shop?.subscription) return null;
+        const sub = this.shop.subscription;
+        const endDate = sub.trialEndsAt || sub.nextBillingAt;
+        if (!endDate) return null;
+        const expire = new Date(endDate);
+        const now = new Date();
+        const diff = Math.ceil((expire - now) / (1000 * 60 * 60 * 24));
+        return diff; // may be negative if expired
     }
 }
 const shopStore = new ShopStore();
@@ -1007,6 +1127,9 @@ function OtpModal() {
     const handleVerify = async (e)=>{
         e.preventDefault();
         await userStore.verifyOtp(code);
+        if (!userStore.error) {
+            setCode('');
+        }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Dialog"], {
         open: userStore.otpModalOpen,
@@ -1022,7 +1145,7 @@ function OtpModal() {
                             children: "Enter verification code"
                         }, void 0, false, {
                             fileName: "[project]/components/auth/OtpConatiner.jsx",
-                            lineNumber: 46,
+                            lineNumber: 50,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogDescription"], {
@@ -1032,20 +1155,20 @@ function OtpModal() {
                                     children: userStore.otpEmail
                                 }, void 0, false, {
                                     fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                    lineNumber: 48,
+                                    lineNumber: 52,
                                     columnNumber: 51
                                 }, this),
                                 "."
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/auth/OtpConatiner.jsx",
-                            lineNumber: 47,
+                            lineNumber: 51,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/auth/OtpConatiner.jsx",
-                    lineNumber: 45,
+                    lineNumber: 49,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -1059,7 +1182,7 @@ function OtpModal() {
                                         children: "Verification code"
                                     }, void 0, false, {
                                         fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                        lineNumber: 55,
+                                        lineNumber: 59,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2d$otp$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["InputOTP"], {
@@ -1075,60 +1198,60 @@ function OtpModal() {
                                                     index: 0
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                                    lineNumber: 59,
+                                                    lineNumber: 63,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2d$otp$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["InputOTPSlot"], {
                                                     index: 1
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                                    lineNumber: 60,
+                                                    lineNumber: 64,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2d$otp$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["InputOTPSlot"], {
                                                     index: 2
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                                    lineNumber: 61,
+                                                    lineNumber: 65,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2d$otp$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["InputOTPSlot"], {
                                                     index: 3
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                                    lineNumber: 62,
+                                                    lineNumber: 66,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2d$otp$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["InputOTPSlot"], {
                                                     index: 4
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                                    lineNumber: 63,
+                                                    lineNumber: 67,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2d$otp$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["InputOTPSlot"], {
                                                     index: 5
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                                    lineNumber: 64,
+                                                    lineNumber: 68,
                                                     columnNumber: 37
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                            lineNumber: 58,
+                                            lineNumber: 62,
                                             columnNumber: 33
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                        lineNumber: 57,
+                                        lineNumber: 61,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$field$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FieldDescription"], {
                                         children: "Enter the 6-digit code sent to your email."
                                     }, void 0, false, {
                                         fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                        lineNumber: 68,
+                                        lineNumber: 72,
                                         columnNumber: 29
                                     }, this),
                                     userStore.error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1136,13 +1259,13 @@ function OtpModal() {
                                         children: userStore.error
                                     }, void 0, false, {
                                         fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                        lineNumber: 72,
+                                        lineNumber: 76,
                                         columnNumber: 33
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                lineNumber: 54,
+                                lineNumber: 58,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$field$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FieldGroup"], {
@@ -1154,7 +1277,7 @@ function OtpModal() {
                                         children: userStore.loading ? "Verifying..." : "Verify OTP"
                                     }, void 0, false, {
                                         fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                        lineNumber: 79,
+                                        lineNumber: 83,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$field$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FieldDescription"], {
@@ -1166,41 +1289,41 @@ function OtpModal() {
                                                 children: "Resend"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                                lineNumber: 81,
+                                                lineNumber: 85,
                                                 columnNumber: 63
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                        lineNumber: 80,
+                                        lineNumber: 84,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                lineNumber: 78,
+                                lineNumber: 82,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/auth/OtpConatiner.jsx",
-                        lineNumber: 53,
+                        lineNumber: 57,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/auth/OtpConatiner.jsx",
-                    lineNumber: 52,
+                    lineNumber: 56,
                     columnNumber: 17
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/auth/OtpConatiner.jsx",
-            lineNumber: 44,
+            lineNumber: 48,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/auth/OtpConatiner.jsx",
-        lineNumber: 40,
+        lineNumber: 44,
         columnNumber: 9
     }, this);
 }

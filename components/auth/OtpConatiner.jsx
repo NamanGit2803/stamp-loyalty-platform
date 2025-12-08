@@ -34,6 +34,10 @@ function OtpModal() {
     const handleVerify = async (e) => {
         e.preventDefault();   
         await userStore.verifyOtp(code);
+
+        if(!userStore.error){
+            setCode('')
+        }
     };
 
     return (

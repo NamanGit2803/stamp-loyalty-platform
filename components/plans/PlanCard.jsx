@@ -15,6 +15,7 @@ import { Eye, EyeOff, TriangleAlert } from "lucide-react"
 import { observer } from "mobx-react-lite"
 import { useStore } from '@/stores/StoreProvider'
 import { toast } from 'sonner'
+import { Spinner } from "@/components/ui/spinner"
 
 
 const PlanCard = () => {
@@ -22,26 +23,59 @@ const PlanCard = () => {
     const { shopStore, userStore } = useStore()
     const router = useRouter()
 
-    useEffect(() => {
-
-    }, [])
-
-    // const shopId = shopStore.shop?.id
-
-    const subscribe = (e) => {
+    // subscribe function 
+    const subscribe = async (e) => {
         e.preventDefault()
 
         if (!userStore.user) {
-            toast.error('"User not found. Please sign up."')
+            toast.error('User not found. Please sign up.')
             localStorage.removeItem('signupStep')
 
             setTimeout(() => {
                 router.push('/signup')
             }, 1500);
+            return
+        }
+
+        if (!shopStore.shop) {
+            toast.error('Shop not registered. Please registered your shop.')
+            localStorage.setItem('signupStep', 2)
+
+
+            setTimeout(() => {
+                router.push('/signup')
+            }, 1500);
+
+            return
+        }
+
+        // call start free trial days api 
+        await shopStore.startTrial()
+
+        if (shopStore.error) {
+
+            if (shopStore.trialUsed) {
+                toast.error(shopStore.error, {
+                    description: 'Plaese click on login button for login.',
+                    action: {
+                        label: "Login",
+                        onClick: () => router.push('/login'),
+                    }
+                })
+
+                return
+            }
+
+            toast.error(shopStore.error)
+            return
+        } else {
+            toast.success('Welcome aboard! Your subscription is activated.')
+
+            setTimeout(() => {
+                router.push(`/shop/${shopStore.shop.id}`)
+            }, 1500);
         }
     }
-
-
 
 
     return (
@@ -94,8 +128,9 @@ const PlanCard = () => {
                         size="lg"
                         className="w-full py-5 text-md font-medium hover:cursor-pointer"
                         onClick={subscribe}
+                        disabled={shopStore.loading}
                     >
-                        Start Free Trial
+                        {shopStore.loading ? <><Spinner />Processing...</> : 'Start Free Trial'}
                     </Button>
                 </CardFooter>
             </Card>

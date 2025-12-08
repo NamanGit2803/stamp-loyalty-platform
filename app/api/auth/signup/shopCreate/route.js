@@ -11,6 +11,19 @@ export async function POST(req) {
     const body = await req.json()
     const { shopName, phone, businessType, address, minAmount, targetStamp, reward, ownerId } = body
 
+
+    //  CHECK IF SHOP ALREADY EXISTS FOR THIS OWNER
+    const existingShop = await prisma.shop.findFirst({
+      where: { ownerId },
+    })
+
+    if (existingShop) {
+      return NextResponse.json(
+        { error: "Shop already exists for this user." },
+        { status: 400 }
+      )
+    }
+
     const customId = `shop_${nanoid(8)}`
 
 
@@ -30,7 +43,7 @@ export async function POST(req) {
     })
 
     // Create response
-    return NextResponse.json(newShop, { status: 201 })
+    return NextResponse.json({newShop}, { status: 201 })
 
   } catch (err) {
     console.error(err)

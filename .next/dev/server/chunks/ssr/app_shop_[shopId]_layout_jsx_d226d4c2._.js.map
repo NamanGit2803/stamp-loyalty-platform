@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///E:/Project%20Files/Earning-model/stamp-card-project/stamp-loyalty-platform/app/shop/%5BshopId%5D/layout.jsx"],"sourcesContent":["import React from 'react'\r\n\r\nconst ShopLayout = ({ children }) => {\r\n    return (\r\n        <div>\r\n            {children}\r\n        </div>\r\n    )\r\n}\r\n\r\nexport default ShopLayout"],"names":[],"mappings":";;;;;AAAA;;;AAEA,MAAM,aAAa,CAAC,EAAE,QAAQ,EAAE;IAC5B,qBACI,8OAAC;kBACI;;;;;;AAGb;uCAEe"}}]
+}

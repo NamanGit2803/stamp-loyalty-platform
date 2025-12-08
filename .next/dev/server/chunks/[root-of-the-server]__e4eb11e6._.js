@@ -90,7 +90,7 @@ const prisma = new __TURBOPACK__imported__module__$5b$externals$5d2f40$prisma$2f
 async function POST(req) {
     try {
         const body = await req.json();
-        const { name, email, password } = body;
+        const { name, email, password, checkOnly } = body;
         // Check if user exists
         const existing = await prisma.user.findUnique({
             where: {
@@ -98,15 +98,23 @@ async function POST(req) {
             }
         });
         if (existing) {
+            // If not checkOnly — still return same error
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 error: "User already exists"
             }, {
                 status: 400
             });
         }
-        // Hash password before saving
+        // If request is only checking, return positive response
+        if (checkOnly) {
+            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                ok: true
+            }, {
+                status: 200
+            });
+        }
+        // ---------- CREATE USER BELOW ----------
         const hashedPassword = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$bcryptjs$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].hash(password, 10);
-        // Create new user
         const newUser = await prisma.user.create({
             data: {
                 name,
@@ -115,7 +123,6 @@ async function POST(req) {
                 role: "SHOP"
             }
         });
-        // Create token
         const token = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$jsonwebtoken$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].sign({
             email: newUser.email,
             name: newUser.name,
@@ -124,14 +131,12 @@ async function POST(req) {
             expiresIn: "7d"
         });
         const { password: _, ...userWithoutPassword } = newUser;
-        // Create response
         const response = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             success: true,
             user: userWithoutPassword
         }, {
             status: 201
         });
-        // Set cookie (for authentication)
         response.cookies.set("token", token, {
             httpOnly: true,
             secure: ("TURBOPACK compile-time value", "development") === "production",
