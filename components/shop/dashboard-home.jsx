@@ -1,52 +1,80 @@
-"use client"
+"use client";
 
-import StatCard from "../dashboard/stat-card"
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import { useEffect, useState } from "react";
+import StatCard from "./dashborad-home/stat-card";
+import { Card } from "@/components/ui/card";
+import Link from "next/link";
+import { observer } from "mobx-react-lite";
+import { useStore } from "@/stores/StoreProvider";
+import { IndianRupee, TicketPercent, Gift, Repeat } from 'lucide-react';
 
-export default function DashboardHome() {
+const DashboardHome = observer(() => {
+  const { shopStore, userStore } = useStore();
+
+  // Prevent hydration mismatch
+  const [hydrated, setHydrated] = useState(false);
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
+
+  if (!hydrated) {
+    return (
+      <div className="space-y-8">
+        <div>
+          <h1 className="text-3xl font-bold text-secondary">
+            Welcome Back,
+          </h1>
+          <p className="text-muted-foreground mt-1">
+            Here's what's happening in your shop today
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  // ⭐ FINAL 4 ANALYTICS CARDS
   const stats = [
     {
-      label: "Today's Customers",
-      value: "12",
-      emoji: "👥",
-      trend: "up",
-      trendValue: "+8%",
-      bgColor: "bg-blue-600",
-    },
-    {
-      label: "Total Stamps Given",
-      value: "342",
-      emoji: "🎁",
-      trend: "up",
-      trendValue: "+15%",
-      bgColor: "bg-indigo-600",
-    },
-    {
       label: "Revenue (This Month)",
-      value: "₹4,250",
-      emoji: "💳",
+      value: "₹4,250",  // dynamic later
+      Icon: IndianRupee,
       trend: "up",
-      trendValue: "+22%",
-      bgColor: "bg-blue-500",
+      trendValue: "+12%",
     },
     {
-      label: "Redemptions",
-      value: "8",
-      emoji: "📈",
-      trend: "down",
-      trendValue: "-3%",
-      bgColor: "bg-indigo-500",
+      label: "Stamps Given",
+      value: "342",
+      Icon: TicketPercent,
+      trend: "up",
+      trendValue: "+18%",
     },
-  ]
+    {
+      label: "Rewards Redeemed",
+      value: "8",
+      Icon: Gift,
+      trend: "up",
+      trendValue: "+6%",
+    },
+    {
+      label: "Repeat Customer Rate",
+      value: "37%",
+      Icon: Repeat,
+      trend: "up",
+      trendValue: "+4%",
+    },
+  ];
 
   return (
     <div className="space-y-8">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold text-blue-900">Welcome Back, Rajesh</h1>
-        <p className="text-gray-600 mt-1">Here's what's happening in your shop today</p>
+        <h1 className="text-3xl font-bold text-secondary">
+          Welcome Back, {userStore.user?.name}
+        </h1>
+        <p className="text-muted-foreground mt-1">
+          Here's what's happening in your shop today
+        </p>
       </div>
 
       {/* Stats Grid */}
@@ -58,14 +86,19 @@ export default function DashboardHome() {
 
       {/* Recent Activity */}
       <Card className="p-6 border-blue-100">
-        <h2 className="text-xl font-bold text-blue-900 mb-6">Recent Activity</h2>
+        <h2 className="text-xl font-bold text-blue-900 mb-6">
+          Recent Activity
+        </h2>
         <div className="space-y-4">
           {[
             { customer: "Amit Kumar", action: "Earned 3 stamps", time: "2 hours ago" },
             { customer: "Priya Singh", action: "Redeemed reward", time: "4 hours ago" },
             { customer: "Vikram Patel", action: "New customer", time: "6 hours ago" },
           ].map((activity, i) => (
-            <div key={i} className="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
+            <div
+              key={i}
+              className="flex items-center justify-between p-4 bg-blue-50 rounded-lg"
+            >
               <div>
                 <p className="font-medium text-blue-900">{activity.customer}</p>
                 <p className="text-sm text-gray-600">{activity.action}</p>
@@ -76,5 +109,7 @@ export default function DashboardHome() {
         </div>
       </Card>
     </div>
-  )
-}
+  );
+});
+
+export default DashboardHome;

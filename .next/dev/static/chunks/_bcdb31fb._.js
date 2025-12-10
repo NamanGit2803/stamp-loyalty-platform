@@ -230,52 +230,101 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 
 __turbopack_context__.s([
     "default",
-    ()=>DashboardHome
+    ()=>__TURBOPACK__default__export__
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$dashboard$2f$stat$2d$card$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/dashboard/stat-card.jsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/card.tsx [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/button.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2d$react$2d$lite$2f$es$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/mobx-react-lite/es/index.js [app-client] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2d$react$2d$lite$2f$es$2f$observer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/mobx-react-lite/es/observer.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$stores$2f$StoreProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/stores/StoreProvider.js [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
 "use client";
 ;
 ;
 ;
 ;
 ;
-function DashboardHome() {
+;
+const DashboardHome = _s((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2d$react$2d$lite$2f$es$2f$observer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["observer"])(_c = _s(()=>{
+    _s();
+    const { shopStore, userStore } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$stores$2f$StoreProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useStore"])();
+    // Prevent hydration mismatch
+    const [hydrated, setHydrated] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "DashboardHome.useEffect": ()=>{
+            setHydrated(true);
+        }
+    }["DashboardHome.useEffect"], []);
+    if (!hydrated) {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "space-y-8",
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                        className: "text-3xl font-bold text-secondary",
+                        children: "Welcome Back,"
+                    }, void 0, false, {
+                        fileName: "[project]/components/shop/dashboard-home.jsx",
+                        lineNumber: 24,
+                        columnNumber: 11
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "text-muted-foreground mt-1",
+                        children: "Here's what's happening in your shop today"
+                    }, void 0, false, {
+                        fileName: "[project]/components/shop/dashboard-home.jsx",
+                        lineNumber: 27,
+                        columnNumber: 11
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/shop/dashboard-home.jsx",
+                lineNumber: 23,
+                columnNumber: 9
+            }, ("TURBOPACK compile-time value", void 0))
+        }, void 0, false, {
+            fileName: "[project]/components/shop/dashboard-home.jsx",
+            lineNumber: 22,
+            columnNumber: 7
+        }, ("TURBOPACK compile-time value", void 0));
+    }
+    // ⭐ FINAL 4 ANALYTICS CARDS
     const stats = [
-        {
-            label: "Today's Customers",
-            value: "12",
-            emoji: "👥",
-            trend: "up",
-            trendValue: "+8%",
-            bgColor: "bg-blue-600"
-        },
-        {
-            label: "Total Stamps Given",
-            value: "342",
-            emoji: "🎁",
-            trend: "up",
-            trendValue: "+15%",
-            bgColor: "bg-indigo-600"
-        },
         {
             label: "Revenue (This Month)",
             value: "₹4,250",
-            emoji: "💳",
+            emoji: "💰",
             trend: "up",
-            trendValue: "+22%",
-            bgColor: "bg-blue-500"
+            trendValue: "+12%",
+            bgColor: "bg-blue-600"
         },
         {
-            label: "Redemptions",
+            label: "Stamps Given",
+            value: "342",
+            emoji: "🎟️",
+            trend: "up",
+            trendValue: "+18%",
+            bgColor: "bg-indigo-600"
+        },
+        {
+            label: "Rewards Redeemed",
             value: "8",
-            emoji: "📈",
-            trend: "down",
-            trendValue: "-3%",
-            bgColor: "bg-indigo-500"
+            emoji: "🎁",
+            trend: "up",
+            trendValue: "+6%",
+            bgColor: "bg-green-600"
+        },
+        {
+            label: "Repeat Customer Rate",
+            value: "37%",
+            emoji: "🔄",
+            trend: "up",
+            trendValue: "+4%",
+            bgColor: "bg-purple-600"
         }
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -284,41 +333,44 @@ function DashboardHome() {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                        className: "text-3xl font-bold text-blue-900",
-                        children: "Welcome Back, Rajesh"
-                    }, void 0, false, {
+                        className: "text-3xl font-bold text-secondary",
+                        children: [
+                            "Welcome Back, ",
+                            userStore.user?.name
+                        ]
+                    }, void 0, true, {
                         fileName: "[project]/components/shop/dashboard-home.jsx",
-                        lineNumber: 48,
+                        lineNumber: 75,
                         columnNumber: 9
-                    }, this),
+                    }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-gray-600 mt-1",
+                        className: "text-muted-foreground mt-1",
                         children: "Here's what's happening in your shop today"
                     }, void 0, false, {
                         fileName: "[project]/components/shop/dashboard-home.jsx",
-                        lineNumber: 49,
+                        lineNumber: 78,
                         columnNumber: 9
-                    }, this)
+                    }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/shop/dashboard-home.jsx",
-                lineNumber: 47,
+                lineNumber: 74,
                 columnNumber: 7
-            }, this),
+            }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "grid md:grid-cols-2 lg:grid-cols-4 gap-6",
                 children: stats.map((stat)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$dashboard$2f$stat$2d$card$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                         ...stat
                     }, stat.label, false, {
                         fileName: "[project]/components/shop/dashboard-home.jsx",
-                        lineNumber: 55,
+                        lineNumber: 86,
                         columnNumber: 11
-                    }, this))
+                    }, ("TURBOPACK compile-time value", void 0)))
             }, void 0, false, {
                 fileName: "[project]/components/shop/dashboard-home.jsx",
-                lineNumber: 53,
+                lineNumber: 84,
                 columnNumber: 7
-            }, this),
+            }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
                 className: "p-6 border-blue-100",
                 children: [
@@ -327,9 +379,9 @@ function DashboardHome() {
                         children: "Recent Activity"
                     }, void 0, false, {
                         fileName: "[project]/components/shop/dashboard-home.jsx",
-                        lineNumber: 61,
+                        lineNumber: 92,
                         columnNumber: 9
-                    }, this),
+                    }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "space-y-4",
                         children: [
@@ -358,58 +410,68 @@ function DashboardHome() {
                                                 children: activity.customer
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shop/dashboard-home.jsx",
-                                                lineNumber: 70,
+                                                lineNumber: 106,
                                                 columnNumber: 17
-                                            }, this),
+                                            }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "text-sm text-gray-600",
                                                 children: activity.action
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shop/dashboard-home.jsx",
-                                                lineNumber: 71,
+                                                lineNumber: 107,
                                                 columnNumber: 17
-                                            }, this)
+                                            }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/shop/dashboard-home.jsx",
-                                        lineNumber: 69,
+                                        lineNumber: 105,
                                         columnNumber: 15
-                                    }, this),
+                                    }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-sm text-gray-600",
                                         children: activity.time
                                     }, void 0, false, {
                                         fileName: "[project]/components/shop/dashboard-home.jsx",
-                                        lineNumber: 73,
+                                        lineNumber: 109,
                                         columnNumber: 15
-                                    }, this)
+                                    }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, i, true, {
                                 fileName: "[project]/components/shop/dashboard-home.jsx",
-                                lineNumber: 68,
+                                lineNumber: 101,
                                 columnNumber: 13
-                            }, this))
+                            }, ("TURBOPACK compile-time value", void 0)))
                     }, void 0, false, {
                         fileName: "[project]/components/shop/dashboard-home.jsx",
-                        lineNumber: 62,
+                        lineNumber: 95,
                         columnNumber: 9
-                    }, this)
+                    }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/shop/dashboard-home.jsx",
-                lineNumber: 60,
+                lineNumber: 91,
                 columnNumber: 7
-            }, this)
+            }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/shop/dashboard-home.jsx",
-        lineNumber: 45,
+        lineNumber: 72,
         columnNumber: 5
-    }, this);
-}
-_c = DashboardHome;
-var _c;
-__turbopack_context__.k.register(_c, "DashboardHome");
+    }, ("TURBOPACK compile-time value", void 0));
+}, "we8Pn6am0j6QWtvRf3tjEHWcy3c=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$stores$2f$StoreProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useStore"]
+    ];
+})), "we8Pn6am0j6QWtvRf3tjEHWcy3c=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$stores$2f$StoreProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useStore"]
+    ];
+});
+_c1 = DashboardHome;
+const __TURBOPACK__default__export__ = DashboardHome;
+var _c, _c1;
+__turbopack_context__.k.register(_c, "DashboardHome$observer");
+__turbopack_context__.k.register(_c1, "DashboardHome");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }

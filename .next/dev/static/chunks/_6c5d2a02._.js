@@ -22,12 +22,35 @@ class UserStore {
     otpVerified = false;
     otpResolver = null;
     redirectAfterOtp = null;
+    hydrated = false;
     constructor(){
-        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["makeAutoObservable"])(this);
-        this.fetchUserProfile(); // auto load user on refresh
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["makeAutoObservable"])(this, {}, {
+            autoBind: true
+        });
+        if ("TURBOPACK compile-time truthy", 1) {
+            this.hydrated = true; // Client-only state
+            this.loadInitialUser(); // Safe initial load
+        }
     }
-    // Register
-    async userSignup(formData) {
+    /** ================================
+   * USER INITIAL LOAD (client only)
+   * ================================= */ async loadInitialUser() {
+        try {
+            const res = await fetch("/api/auth/findUser", {
+                method: "GET",
+                credentials: "include"
+            });
+            if (!res.ok) return;
+            const data = await res.json();
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+                this.user = data.user;
+                this.shopId = data.user?.shopId ?? null;
+            });
+        } catch (err) {
+            console.error("User load failed:", err);
+        }
+    }
+    /** ============== SIGNUP ============== */ async userSignup(formData) {
         this.loading = true;
         this.error = null;
         try {
@@ -49,8 +72,7 @@ class UserStore {
             this.loading = false;
         }
     }
-    // Login
-    async login(formData) {
+    /** ============== LOGIN ============== */ async login(formData) {
         this.loading = true;
         this.error = null;
         try {
@@ -73,38 +95,21 @@ class UserStore {
             this.loading = false;
         }
     }
-    // Auto-fetch user (browser sends cookie)
-    async fetchUserProfile() {
-        try {
-            const res = await fetch("/api/auth/findUser", {
-                method: "GET",
-                credentials: "include"
-            });
-            if (!res.ok) return;
-            const data = await res.json();
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
-                this.user = data.user;
-            });
-        } catch (err) {
-            console.error("fetchUserProfile error:", err);
-        }
-    }
-    // Logout
-    async logout() {
+    /** ============== LOGOUT ============== */ async logout() {
         await fetch("/api/user/logout", {
             method: "POST"
         });
-        this.user = null;
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+            this.user = null;
+            this.shopId = null;
+        });
     }
-    // set signup step 
-    setSignupStep(step) {
+    /** ============== SIGNUP STEP ============== */ setSignupStep(step) {
         this.signupStep = step;
     }
-    // OTP: request
-    async requestOtp(email, purpose, redirectUrl = null) {
+    /** ============== OTP: SEND ============== */ async requestOtp(email, purpose, redirectUrl = null) {
         this.loading = true;
         this.error = null;
-        this.otpVerified = false;
         try {
             const res = await fetch("/api/auth/otp/send", {
                 method: "POST",
@@ -117,12 +122,13 @@ class UserStore {
                 })
             });
             const data = await res.json();
-            if (!res.ok) throw new Error(data.error || "Failed to send OTP");
+            if (!res.ok) throw new Error(data.error);
             (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
                 this.otpEmail = email;
                 this.otpPurpose = purpose;
                 this.redirectAfterOtp = redirectUrl;
                 this.otpModalOpen = true;
+                this.otpVerified = false;
             });
         } catch (err) {
             (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>this.error = err.message);
@@ -130,8 +136,7 @@ class UserStore {
             this.loading = false;
         }
     }
-    // Wait for OTP to be verified
-    waitForOtp() {
+    /** ============== WAIT FOR OTP RESOLUTION ============== */ waitForOtp() {
         return new Promise((resolve)=>{
             this.otpResolver = resolve;
         });
@@ -140,8 +145,7 @@ class UserStore {
         this.otpModalOpen = false;
         this.error = null;
     }
-    // OTP: verify
-    async verifyOtp(code) {
+    /** ============== OTP: VERIFY ============== */ async verifyOtp(code) {
         this.loading = true;
         this.error = null;
         try {
@@ -157,12 +161,12 @@ class UserStore {
                 })
             });
             const data = await res.json();
-            if (!res.ok) throw new Error(data.error || "Invalid OTP");
+            if (!res.ok) throw new Error(data.error);
             (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
                 this.otpVerified = true;
                 this.otpModalOpen = false;
             });
-            // RESOLVE THE OTP WAITING PROMISE HERE
+            // resolve any pending promise
             if (this.otpResolver) {
                 this.otpResolver(true);
                 this.otpResolver = null;
@@ -184,6 +188,7 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 "[project]/stores/shopStore.js [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
+// stores/ShopStore.ts
 __turbopack_context__.s([
     "shopStore",
     ()=>shopStore
@@ -192,46 +197,103 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist
 ;
 class ShopStore {
     shop = null;
+    subscription = null;
+    subscriptionStatus = "";
+    daysLeft = null;
     loading = false;
     error = null;
-    trialUsed = false;
+    hydrated = false;
     constructor(){
-        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["makeAutoObservable"])(this);
-        // On refresh → load from secure API
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["makeAutoObservable"])(this, {}, {
+            autoBind: true
+        });
+        // load data only on client
         if ("TURBOPACK compile-time truthy", 1) {
-            this.loadShopFromServer();
+            this.hydrated = true;
+            this.loadInitial();
         }
     }
-    // load shop on refresh 
-    async loadShopFromServer() {
+    /**
+   * Load shop + subscription together on start.
+   * Best performance & prevents flickering.
+   */ async loadInitial() {
+        this.loading = true;
         try {
             const res = await fetch("/api/auth/findShop", {
                 method: "GET",
                 credentials: "include"
             });
             const data = await res.json();
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
-                if (res.status === 401) {
-                    // User not logged in
+            if (res.status === 401 || !data.shop) {
+                (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
                     this.shop = null;
-                    return;
-                }
-                // If shop is null or undefined → no shop created
-                this.shop = data.shop ?? null;
-            });
-            // auto check subscription after loading shop
-            if (data.shop) {
-                this.checkSubscription();
+                    this.subscription = null;
+                    this.subscriptionStatus = "NONE";
+                });
+                return;
             }
-        } catch (err) {
-            console.error("Shop load failed:", err);
+            // Set shop
             (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
-                this.shop = null; // failsafe
+                this.shop = data.shop;
+            });
+            // Now load subscription
+            await this.loadSubscription();
+        } catch (err) {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+                this.error = err.message;
+                this.shop = null;
+                this.subscription = null;
+                this.subscriptionStatus = "NONE";
+            });
+        } finally{
+            this.loading = false;
+        }
+    }
+    /**
+   * Loads only subscription data.
+   */ async loadSubscription() {
+        if (!this.shop?.id) return;
+        try {
+            const res = await fetch("/api/subscription/status", {
+                method: "POST",
+                credentials: "include",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    shopId: this.shop.id
+                })
+            });
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.error || "Failed to load subscription");
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+                this.subscription = data.subscription;
+                this.subscriptionStatus = data.subscription.status || "NONE";
+                this.daysLeft = this.calculateDaysLeft(data.subscription);
+            });
+        } catch (err) {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+                this.error = err.message;
+                this.subscription = null;
+                this.subscriptionStatus = "NONE";
+                this.daysLeft = null;
             });
         }
     }
-    // CREATE NEW SHOP
-    async createShop(shopData) {
+    /**
+   * Utility to calculate days left (extracted for clear logic).
+   */ calculateDaysLeft(sub) {
+        if (!sub) return null;
+        const endDate = sub.trialEndsAt || sub.nextBillingAt;
+        if (!endDate) return null;
+        const expire = new Date(endDate);
+        const now = new Date();
+        console.log('exp', Math.ceil((expire - now) / (1000 * 60 * 60 * 24)));
+        return Math.ceil((expire - now) / (1000 * 60 * 60 * 24));
+    }
+    /**
+   * Creates a new shop
+   */ async createShop(shopData) {
         this.loading = true;
         this.error = null;
         try {
@@ -243,108 +305,47 @@ class ShopStore {
                 body: JSON.stringify(shopData)
             });
             const data = await res.json();
-            if (!res.ok) throw new Error(data.error || "Shop creation failed");
-            console.log('data', data);
+            if (!res.ok) throw new Error(data.error);
             (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
                 this.shop = data.newShop;
             });
-            return;
         } catch (err) {
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
-                this.error = err.message;
-            });
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>this.error = err.message);
         } finally{
             this.loading = false;
         }
     }
-    // start free trail 
-    async startTrial() {
+    /**
+   * Start free trial
+   */ async startTrial() {
         if (!this.shop) return;
         this.loading = true;
         this.error = null;
-        this.trialUsed = false; // add if needed
         try {
             const res = await fetch("/api/subscription/start", {
                 method: "POST",
+                credentials: "include",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                credentials: "include",
                 body: JSON.stringify({
                     shopId: this.shop.id
                 })
             });
             const data = await res.json();
-            // Handle Trial Already Used (409)
             if (res.status === 409) {
-                (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
-                    this.trialUsed = true;
-                    this.error = data.error || "Free trial already used";
-                });
-                return; // stop here
+                // Trial already used
+                (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>this.error = data.error);
+                return;
             }
-            //  Handle other API errors
-            if (!res.ok) {
-                throw new Error(data.error || "Something went wrong");
-            }
-            return;
+            if (!res.ok) throw new Error(data.error);
+            // Refresh subscription
+            await this.loadSubscription();
         } catch (err) {
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
-                this.error = err.message;
-            });
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>this.error = err.message);
         } finally{
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
-                this.loading = false;
-            });
+            this.loading = false;
         }
-    }
-    // CHECK SUBSCRIPTION STATUS
-    async checkSubscription() {
-        if (!this.shop) return;
-        this.loading = true;
-        this.error = null;
-        try {
-            const res = await fetch("/api/subscription/status", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                credentials: "include",
-                body: JSON.stringify({
-                    shopId: this.shop.id
-                })
-            });
-            const data = await res.json();
-            if (!res.ok) {
-                throw new Error(data.error || "Failed to get subscription status");
-            }
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
-                // update subscription object inside shop
-                this.shop.subscription = data.subscription || null;
-                // example: ACTIVE | EXPIRED | TRIAL | NONE
-                this.shop.subscriptionStatus = data.status || "NONE";
-            });
-            return data; // return for UI usage
-        } catch (err) {
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
-                this.error = err.message;
-            });
-        } finally{
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
-                this.loading = false;
-            });
-        }
-    }
-    // get expire date 
-    get daysLeft() {
-        if (!this.shop?.subscription) return null;
-        const sub = this.shop.subscription;
-        const endDate = sub.trialEndsAt || sub.nextBillingAt;
-        if (!endDate) return null;
-        const expire = new Date(endDate);
-        const now = new Date();
-        const diff = Math.ceil((expire - now) / (1000 * 60 * 60 * 24));
-        return diff; // may be negative if expired
     }
 }
 const shopStore = new ShopStore();

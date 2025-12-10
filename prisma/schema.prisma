@@ -12,6 +12,36 @@ enum Role {
   SHOP
 }
 
+enum SubscriptionStatus {
+  trialing
+  active
+  expired
+  cancelled
+}
+
+enum VerificationMode {
+  SCREENSHOT
+  SMS
+  RAZORPAY
+}
+
+enum ScanStatus {
+  pending
+  success
+  rejected
+  manual_review
+}
+
+enum AppType {
+  gpay
+  phonepe
+  paytm
+  bhim
+  bank
+  unknown
+}
+
+
 model User {
   srNo      Int      @id @default(autoincrement())      // Primary key
   email     String   @unique
@@ -36,15 +66,23 @@ model Shop {
   isActive       Boolean  @default(true)
   loyaltyEnabled Boolean  @default(true)
   targetStamps   String
-  reward    String   @default("Free Reward")
+  reward         String   @default("Free Reward")
   createdAt      DateTime @default(now())
+
+  // 🔐 NEW FIELDS FOR SECURE SCANNER
+  upiId                         String?            // UPI where payments come
+  verificationMode              VerificationMode   @default(SCREENSHOT)
+  maxStampsPerCustomerPerDay    Int?               @default(3)
 
   owner         User           @relation(fields: [ownerId], references: [email])
   customers     Customer[]
   transactions  Transaction[]
   rewards       Reward[]
   subscriptions Subscription[]
+  payments      Payment[]
+  scanVerifications ScanVerification[]    
 }
+
 
 model Customer {
   srNo        Int       @id @default(autoincrement())
@@ -58,10 +96,48 @@ model Customer {
   lastVisit   DateTime?
   createdAt   DateTime  @default(now())
 
-  shop         Shop          @relation(fields: [shopId], references: [id])
+  shop         Shop           @relation(fields: [shopId], references: [id])
   transactions Transaction[]
   rewards      Reward[]
+  scanVerifications ScanVerification[]    // 🔐 NEW RELATION
 }
+
+
+model ScanVerification {
+  srNo           Int        @id @default(autoincrement())
+  id             String     @unique @default(cuid())
+
+  shopId         String
+  customerId     String?
+
+  // Parsed from OCR
+  amount         Int        // store in paise or rupees (decide and stay consistent)
+  currency       String     @default("INR")
+  upiId          String
+  utr            String
+  paidAt         DateTime
+  status         ScanStatus @default(pending)
+  rejectReason   String?
+  riskScore      Int        @default(0)
+
+  // Security features
+  screenshotHash String     // sha256(image)
+  appDetected    AppType
+  ocrText        String     // full OCR text dump
+  meta           Json?      // optional extra parsed info (raw JSON)
+  imagePath      String?    // if you store in S3 or similar
+
+  verifiedAt     DateTime?
+  createdAt      DateTime   @default(now())
+
+  shop           Shop       @relation(fields: [shopId], references: [id])
+  customer       Customer?  @relation(fields: [customerId], references: [id])
+
+  @@index([shopId, utr])
+  @@index([customerId])
+  @@index([screenshotHash])
+}
+
 
 model Otp {
   email      String   @id
@@ -119,13 +195,43 @@ model Subscription {
   shopId        String
   planId        String?
   amount        Int
-  status        String    @default("trialing")
+  status SubscriptionStatus @default(trialing)
   startDate     DateTime  @default(now())
   endDate       DateTime?
   trialEndsAt    DateTime  
   nextBillingAt  DateTime    
   razorpaySubId String?
+  updatedAt     DateTime @updatedAt
 
   shop Shop? @relation(fields: [shopId], references: [id])
+  payments Payment[]
 
 }
+
+
+
+
+model Payment {
+  srNo              Int      @id @default(autoincrement())
+  id                String   @unique @default(cuid())
+  
+  shopId            String
+  subscriptionId    String?
+  
+  amount            Int
+  currency          String   @default("INR")
+
+  razorpayOrderId   String?
+  razorpayPaymentId String?
+  razorpaySignature String?
+
+  status            String   // success, failed, pending, refunded
+
+  method            String?  // UPI, Card, Wallet
+  
+  createdAt         DateTime @default(now())
+
+  shop          Shop          @relation(fields: [shopId], references: [id])
+  subscription  Subscription? @relation(fields: [subscriptionId], references: [id])
+}
+

@@ -1,22 +1,34 @@
+// stores/ShopStore.ts
 import { makeAutoObservable, runInAction } from "mobx";
 
 class ShopStore {
-  shop = null;
+  shop = null;            // Full shop object from backend
+  subscription = null;    // Subscription object (clean separation)
+  subscriptionStatus = ""; 
+  daysLeft = null;
+
   loading = false;
   error = null;
-  trialUsed = false;
+
+  hydrated = false;       // prevents hydration mismatch
 
   constructor() {
-    makeAutoObservable(this);
+    makeAutoObservable(this, {}, { autoBind: true });
 
-    // On refresh → load from secure API
+    // load data only on client
     if (typeof window !== "undefined") {
-      this.loadShopFromServer();
+      this.hydrated = true;
+      this.loadInitial();
     }
   }
 
-  // load shop on refresh 
-  async loadShopFromServer() {
+  /**
+   * Load shop + subscription together on start.
+   * Best performance & prevents flickering.
+   */
+  async loadInitial() {
+    this.loading = true;
+
     try {
       const res = await fetch("/api/auth/findShop", {
         method: "GET",
@@ -25,32 +37,89 @@ class ShopStore {
 
       const data = await res.json();
 
-      runInAction(() => {
-        if (res.status === 401) {
-          // User not logged in
+      if (res.status === 401 || !data.shop) {
+        runInAction(() => {
           this.shop = null;
-          return;
-        }
-
-        // If shop is null or undefined → no shop created
-        this.shop = data.shop ?? null;
-      });
-
-      // auto check subscription after loading shop
-      if (data.shop) {
-        this.checkSubscription();
+          this.subscription = null;
+          this.subscriptionStatus = "NONE";
+        });
+        return;
       }
 
-    } catch (err) {
-      console.error("Shop load failed:", err);
+      // Set shop
       runInAction(() => {
-        this.shop = null; // failsafe
+        this.shop = data.shop;
+      });
+
+      // Now load subscription
+      await this.loadSubscription();
+
+    } catch (err) {
+      runInAction(() => {
+        this.error = err.message;
+        this.shop = null;
+        this.subscription = null;
+        this.subscriptionStatus = "NONE";
+      });
+    } finally {
+      this.loading = false;
+    }
+  }
+
+  /**
+   * Loads only subscription data.
+   */
+  async loadSubscription() {
+    if (!this.shop?.id) return;
+
+    try {
+      const res = await fetch("/api/subscription/status", {
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ shopId: this.shop.id }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) throw new Error(data.error || "Failed to load subscription");
+
+      runInAction(() => {
+        this.subscription = data.subscription;
+        this.subscriptionStatus = data.subscription.status || "NONE";
+        this.daysLeft = this.calculateDaysLeft(data.subscription);
+      });
+
+    } catch (err) {
+      runInAction(() => {
+        this.error = err.message;
+        this.subscription = null;
+        this.subscriptionStatus = "NONE";
+        this.daysLeft = null;
       });
     }
   }
 
+  /**
+   * Utility to calculate days left (extracted for clear logic).
+   */
+  calculateDaysLeft(sub) {
+    if (!sub) return null;
 
-  // CREATE NEW SHOP
+    const endDate = sub.trialEndsAt || sub.nextBillingAt;
+    if (!endDate) return null;
+
+    const expire = new Date(endDate);
+    const now = new Date();
+
+    console.log('exp', Math.ceil((expire - now) / (1000 * 60 * 60 * 24)))
+
+    return Math.ceil((expire - now) / (1000 * 60 * 60 * 24));
+  }
+
+  /**
+   * Creates a new shop
+   */
   async createShop(shopData) {
     this.loading = true;
     this.error = null;
@@ -63,140 +132,55 @@ class ShopStore {
       });
 
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Shop creation failed");
-
-      console.log('data', data)
+      if (!res.ok) throw new Error(data.error);
 
       runInAction(() => {
         this.shop = data.newShop;
       });
 
-      return
-
     } catch (err) {
-      runInAction(() => {
-        this.error = err.message;
-      });
-
+      runInAction(() => (this.error = err.message));
     } finally {
       this.loading = false;
     }
   }
 
-
-  // start free trail 
+  /**
+   * Start free trial
+   */
   async startTrial() {
     if (!this.shop) return;
 
     this.loading = true;
     this.error = null;
-    this.trialUsed = false;  // add if needed
 
     try {
       const res = await fetch("/api/subscription/start", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
         credentials: "include",
-        body: JSON.stringify({ shopId: this.shop.id })
-      });
-
-      const data = await res.json();
-
-
-      // Handle Trial Already Used (409)
-      if (res.status === 409) {
-        runInAction(() => {
-          this.trialUsed = true;
-          this.error = data.error || "Free trial already used";
-        });
-        return; // stop here
-      }
-
-
-      //  Handle other API errors
-      if (!res.ok) {
-        throw new Error(data.error || "Something went wrong");
-      }
-
-      return
-
-    } catch (err) {
-      runInAction(() => {
-        this.error = err.message;
-      });
-
-    } finally {
-      runInAction(() => {
-        this.loading = false;
-      });
-    }
-  }
-
-
-  // CHECK SUBSCRIPTION STATUS
-  async checkSubscription() {
-    if (!this.shop) return;
-
-    this.loading = true;
-    this.error = null;
-
-    try {
-      const res = await fetch("/api/subscription/status", {
-        method: "POST",
         headers: { "Content-Type": "application/json" },
-        credentials: "include",
         body: JSON.stringify({ shopId: this.shop.id }),
       });
 
       const data = await res.json();
 
-      if (!res.ok) {
-        throw new Error(data.error || "Failed to get subscription status");
+      if (res.status === 409) {
+        // Trial already used
+        runInAction(() => (this.error = data.error));
+        return;
       }
 
-      runInAction(() => {
-        // update subscription object inside shop
-        this.shop.subscription = data.subscription || null;
+      if (!res.ok) throw new Error(data.error);
 
-        // example: ACTIVE | EXPIRED | TRIAL | NONE
-        this.shop.subscriptionStatus = data.status || "NONE";
-      });
-
-      return data; // return for UI usage
+      // Refresh subscription
+      await this.loadSubscription();
 
     } catch (err) {
-      runInAction(() => {
-        this.error = err.message;
-      });
-
+      runInAction(() => (this.error = err.message));
     } finally {
-      runInAction(() => {
-        this.loading = false;
-      });
+      this.loading = false;
     }
   }
-
-
-  // get expire date 
-  get daysLeft() {
-    if (!this.shop?.subscription) return null;
-
-    const sub = this.shop.subscription;
-    const endDate = sub.trialEndsAt || sub.nextBillingAt;
-
-    if (!endDate) return null;
-
-    const expire = new Date(endDate);
-    const now = new Date();
-
-    const diff = Math.ceil((expire - now) / (1000 * 60 * 60 * 24));
-
-    return diff; // may be negative if expired
-  }
-
-
-
-
 }
 
 export const shopStore = new ShopStore();

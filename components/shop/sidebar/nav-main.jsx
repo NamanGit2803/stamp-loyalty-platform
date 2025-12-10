@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Users, CreditCard, Settings } from "lucide-react";
+import { LayoutDashboard, Users, CreditCard, Settings, QrCode } from "lucide-react";
 
 import {
   SidebarGroup,
@@ -32,6 +32,12 @@ export function NavMain({ shopId }) {
       url: `/shop/${shopId}/transactions`,
       icon: CreditCard,
       match: `/shop/${shopId}/transactions`,
+    },
+    {
+      label: "QR Code",
+      url: `/shop/${shopId}/qr-code`,
+      icon: QrCode,
+      match: `/shop/${shopId}/qr-code`,
     },
     {
       label: "Settings",
