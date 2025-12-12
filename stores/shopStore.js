@@ -112,8 +112,6 @@ class ShopStore {
     const expire = new Date(endDate);
     const now = new Date();
 
-    console.log('exp', Math.ceil((expire - now) / (1000 * 60 * 60 * 24)))
-
     return Math.ceil((expire - now) / (1000 * 60 * 60 * 24));
   }
 

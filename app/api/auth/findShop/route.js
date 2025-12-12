@@ -1,13 +1,14 @@
 import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 import jwt from "jsonwebtoken";
+import { cookies } from "next/headers";
 
 const prisma = new PrismaClient();
 
 export async function GET(req) {
     try {
         // Reads JWT from cookies automatically
-        const token = req.cookies.get("token")?.value;
+        const token = cookies().get("token")?.value;
 
         if (!token) {
             return NextResponse.json(

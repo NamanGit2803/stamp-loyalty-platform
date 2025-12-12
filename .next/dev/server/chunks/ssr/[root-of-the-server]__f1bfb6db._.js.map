@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["file:///E:/Project%20Files/Earning-model/stamp-card-project/stamp-loyalty-platform/app/claim/page.jsx"],"sourcesContent":["export default async function Page({ searchParams }) {\r\n  const params = await searchParams;\r\n  const shopId = params.shopId;\r\n\r\n  return <ClaimPage shopId={shopId} />;\r\n}\r\n"],"names":[],"mappings":";;;;;;AAAe,eAAe,KAAK,EAAE,YAAY,EAAE;IACjD,MAAM,SAAS,MAAM;IACrB,MAAM,SAAS,OAAO,MAAM;IAE5B,qBAAO,8OAAC;QAAU,QAAQ;;;;;;AAC5B"}}]
+}

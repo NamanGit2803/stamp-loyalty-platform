@@ -1,12 +1,8 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
   "/api/auth/findShop/route": "app/api/auth/findShop/route.js",
   "/api/auth/findUser/route": "app/api/auth/findUser/route.js",
-  "/api/internal/subscription-check/route": "app/api/internal/subscription-check/route.js",
-  "/api/subscription/status/route": "app/api/subscription/status/route.js",
+  "/api/public/checkShop/route": "app/api/public/checkShop/route.js",
+  "/api/screenshot/verify/route": "app/api/screenshot/verify/route.js",
   "/claim/page": "app/claim/page.js",
-  "/page": "app/page.js",
-  "/shop/[shopId]/page": "app/shop/[shopId]/page.js",
-  "/shop/[shopId]/qr-code/page": "app/shop/[shopId]/qr-code/page.js",
-  "/shop/[shopId]/scanner/page": "app/shop/[shopId]/scanner/page.js"
+  "/page": "app/page.js"
 }
