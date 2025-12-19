@@ -90,7 +90,8 @@ const prisma = new __TURBOPACK__imported__module__$5b$externals$5d2f40$prisma$2f
 async function GET(req) {
     try {
         // Reads JWT from cookies automatically
-        const token = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["cookies"])().get("token")?.value;
+        const cookieStore = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["cookies"])();
+        const token = cookieStore.get("token")?.value;
         if (!token) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 error: "Not authenticated"

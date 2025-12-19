@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///E:/Project%20Files/Earning-model/stamp-card-project/stamp-loyalty-platform/components/shop/verifications/verifications-component.jsx"],"sourcesContent":["'use client'\r\n\r\nimport React from 'react'\r\n\r\nconst VerificationComponent = () => {\r\n    return (\r\n        <div className=\"space-y-6\">\r\n            {/* Header */}\r\n            <div className=\"flex items-center justify-between gap-4\">\r\n                <div>\r\n                    <h1 className=\"text-3xl font-bold text-secondary\">Payment Verifications</h1>\r\n                    <p className=\"text-muted-foreground mt-1\">Review and manage customer payment proofs</p>\r\n                </div>\r\n            </div>\r\n\r\n            {/* table  */}\r\n            \r\n        </div>\r\n    )\r\n}\r\n\r\nexport default VerificationComponent"],"names":[],"mappings":";;;;;AAEA;AAFA;;;AAIA,MAAM,wBAAwB;IAC1B,qBACI,8OAAC;QAAI,WAAU;kBAEX,cAAA,8OAAC;YAAI,WAAU;sBACX,cAAA,8OAAC;;kCACG,8OAAC;wBAAG,WAAU;kCAAoC;;;;;;kCAClD,8OAAC;wBAAE,WAAU;kCAA6B;;;;;;;;;;;;;;;;;;;;;;AAQ9D;uCAEe"}}]
+}

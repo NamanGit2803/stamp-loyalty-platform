@@ -1,7 +1,7 @@
-import CustomersList from "@/components/dashboard/customers-list"
+import CustomersComponent from "@/components/shop/customer/customers-page"
 
 export default function CustomersPage() {
   return (
-      <CustomersList />
+      <CustomersComponent />
   )
 }

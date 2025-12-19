@@ -13,7 +13,7 @@ export default function StatCard({
   const isUp = trend === "up";
 
   return (
-    <Card className="rounded-2xl p-4 bg-linear-to-br from-purple-50 to-white border border-purple-100 shadow-sm hover:shadow-md transition-all duration-300">
+    <Card className="card">
       <CardHeader className="flex flex-row items-center justify-between p-0">
         {/* icon  */}
         <div className="bg-primary p-2 rounded-lg"><Icon className='size-5 text-white'/></div>

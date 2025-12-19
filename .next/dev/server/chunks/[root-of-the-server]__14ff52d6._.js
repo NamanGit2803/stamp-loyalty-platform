@@ -70,17 +70,16 @@ const runtime = "nodejs";
 ;
 ;
 const prisma = new __TURBOPACK__imported__module__$5b$externals$5d2f40$prisma$2f$client__$5b$external$5d$__$2840$prisma$2f$client$2c$__cjs$29$__["PrismaClient"]();
-// SHA256
 function sha256(buffer) {
     return __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].createHash("sha256").update(buffer).digest("hex");
 }
 async function POST(req) {
     try {
         const formData = await req.formData();
-        const file = formData.get("file"); // optional file for hash only
+        const file = formData.get("file");
         const shopId = formData.get("shopId");
         const phone = formData.get("phone");
-        const ocrJson = formData.get("ocrResult"); // <-- CLIENT OCR DATA
+        const ocrJson = formData.get("ocrResult");
         if (!file || !shopId || !ocrJson || !phone) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 error: "Missing required fields"
@@ -89,13 +88,16 @@ async function POST(req) {
             });
         }
         const ocr = JSON.parse(ocrJson);
+        console.log('ocr', ocr);
         const { text, amount, upiId, utr, status: paymentStatus, appDetected } = ocr;
-        // Convert file buffer → hash
+        // --------------------------------------
+        //   1️⃣ HASH ORIGINAL IMAGE (TRUE DUPLICATE CHECK)
+        // --------------------------------------
         const bytes = await file.arrayBuffer();
         const buffer = Buffer.from(bytes);
         const screenshotHash = sha256(buffer);
         // --------------------------------------
-        // 1️⃣ FETCH SHOP
+        //   2️⃣ FETCH SHOP
         // --------------------------------------
         const shop = await prisma.shop.findUnique({
             where: {
@@ -108,24 +110,24 @@ async function POST(req) {
             status: 404
         });
         // --------------------------------------
-        // 2️⃣ PREVENT DUPLICATE SCREENSHOT
+        //   3️⃣ VERIFY DUPLICATE SCREENSHOT
         // --------------------------------------
-        const duplicate = await prisma.scanVerification.findFirst({
+        const existing = await prisma.scanVerification.findFirst({
             where: {
                 shopId,
                 screenshotHash
             }
         });
-        if (duplicate) {
+        if (existing) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: "Screenshot already used",
+                success: false,
                 rejectReason: "duplicate_screenshot"
             }, {
                 status: 400
             });
         }
         // --------------------------------------
-        // 3️⃣ ENSURE CUSTOMER EXISTS
+        //   4️⃣ CREATE OR FETCH CUSTOMER
         // --------------------------------------
         let customer = await prisma.customer.findFirst({
             where: {
@@ -143,22 +145,18 @@ async function POST(req) {
             });
         }
         // --------------------------------------
-        // 4️⃣ APPLY FRAUD CHECKS
+        //   5️⃣ FRAUD CHECKS
         // --------------------------------------
         let rejectReason = null;
-        //  UPI mismatch
         if (shop.upiId && upiId && shop.upiId !== upiId) {
             rejectReason = "upi_mismatch";
         }
-        // Minimum amount
         if (!rejectReason && amount < Number(shop.minAmount || 0)) {
             rejectReason = "below_minimum";
         }
-        // Payment status
         if (!rejectReason && paymentStatus !== "success") {
             rejectReason = "payment_not_success";
         }
-        // Duplicate UTR
         if (!rejectReason && utr) {
             const utrExists = await prisma.scanVerification.findFirst({
                 where: {
@@ -168,7 +166,15 @@ async function POST(req) {
             });
             if (utrExists) rejectReason = "duplicate_utr";
         }
-        // DAILY LIMIT
+        if (amount === null || isNaN(amount)) {
+            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                success: false,
+                rejectReason: "ocr_failed_amount"
+            }, {
+                status: 400
+            });
+        }
+        // per day limits
         if (!rejectReason) {
             const todayCount = await prisma.scanVerification.count({
                 where: {
@@ -185,7 +191,7 @@ async function POST(req) {
             }
         }
         // --------------------------------------
-        // 5️⃣ SAVE SCAN VERIFICATION ENTRY
+        //   6️⃣ SAVE THE VERIFICATION RECORD
         // --------------------------------------
         const scan = await prisma.scanVerification.create({
             data: {
@@ -212,7 +218,7 @@ async function POST(req) {
             });
         }
         // --------------------------------------
-        // 6️⃣ UPDATE CUSTOMER STAMPS
+        //   7️⃣ AWARD STAMP
         // --------------------------------------
         await prisma.customer.update({
             where: {
@@ -229,7 +235,7 @@ async function POST(req) {
             }
         });
         // --------------------------------------
-        // 7️⃣ CREATE TRANSACTION
+        //   8️⃣ TRANSACTION LOG
         // --------------------------------------
         await prisma.transaction.create({
             data: {

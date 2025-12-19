@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
+  --background: oklch(98.7% 0.010 312);
   --background-secondary: oklch(89.777% 0.03208 299.549);
   --foreground: oklch(0.11 0.008 219.1);
   --card: oklch(1 0 0);
@@ -15,6 +15,7 @@
   --primary-foreground: #ffffff;
   --secondary: oklch(0.63 0.16 298);
   --secondary-foreground: oklch(0.11 0.008 219.1);
+  --extra: oklch(0.65 0.2 280);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --dark-text: oklch(36.403% 0.00551 16.998);
@@ -54,6 +55,7 @@
   --primary-foreground: oklch(0.11 0.008 219.1);
   --secondary: oklch(0.351 0.154 259.8);
   --secondary-foreground: oklch(0.97 0.014 247.4);
+  --extra: oklch(0.65 0.2 280);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
   --dark-text: oklch(36.403% 0.00551 16.998);
@@ -94,6 +96,7 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
+  --color-extra: var(--extra);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-dark-text: var(--dark-text);
@@ -150,4 +153,27 @@
 }
 
 
+.card {
+  /* Border radius (rounded-2xl) */
+  border-radius: 1rem;
 
+  /* Padding (p-4) */
+  padding: 1rem;
+
+  /* Background gradient */
+  background: #fdfaff;
+
+  /* Border */
+  border: 1px solid #f3e8ff;
+
+  /* Small shadow */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+
+  /* Transition */
+  transition: all 300ms ease;
+}
+
+/* Hover effect */
+.card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

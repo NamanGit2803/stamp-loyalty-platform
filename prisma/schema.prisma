@@ -38,7 +38,7 @@ enum AppType {
   paytm
   bhim
   bank
-  unknown
+  UNKNOWN
 }
 
 
@@ -113,8 +113,8 @@ model ScanVerification {
   // Parsed from OCR
   amount         Int        // store in paise or rupees (decide and stay consistent)
   currency       String     @default("INR")
-  upiId          String
-  utr            String
+  upiId          String?
+  utr            String?
   paidAt         DateTime
   status         ScanStatus @default(pending)
   rejectReason   String?
@@ -122,7 +122,7 @@ model ScanVerification {
 
   // Security features
   screenshotHash String     // sha256(image)
-  appDetected    AppType
+  appDetected    AppType?
   ocrText        String     // full OCR text dump
   meta           Json?      // optional extra parsed info (raw JSON)
   imagePath      String?    // if you store in S3 or similar
@@ -130,7 +130,7 @@ model ScanVerification {
   verifiedAt     DateTime?
   createdAt      DateTime   @default(now())
 
-  shop           Shop       @relation(fields: [shopId], references: [id])
+  shop           Shop?       @relation(fields: [shopId], references: [id])
   customer       Customer?  @relation(fields: [customerId], references: [id])
 
   @@index([shopId, utr])

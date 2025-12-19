@@ -34,24 +34,79 @@ async function resizeImage(file, maxWidth = 1200, quality = 0.85) {
     });
 }
 
-/* ------------------------------
-   🔵 SHA256 screenshot hash
---------------------------------*/
-async function sha256(file) {
-    const buffer = await file.arrayBuffer();
-    const hash = await crypto.subtle.digest("SHA-256", buffer);
-    return Array.from(new Uint8Array(hash))
-        .map((b) => b.toString(16).padStart(2, "0"))
-        .join("");
-}
 
 /* ------------------------------
    🔵 OCR Extractor Helpers
 --------------------------------*/
-function extractAmount(text) {
-    const m = text.match(/(?:₹|rs\.?|inr)?\s*([0-9]{1,6})/i);
-    return m ? parseInt(m[1], 10) : null;
+function extractAmountAdvanced(text) {
+    if (!text) return null;
+
+    let cleaned = text
+        .replace(/[lI]/g, "1")   // OCR error: I → 1
+        .replace(/O/g, "0")      // OCR error: O → 0
+        .replace(/,/g, "");      // Remove commas
+
+    const lines = cleaned.split("\n").map(l => l.trim());
+
+    let candidates = [];
+
+    // 1️⃣ PRIORITY: Lines containing keywords related to amount
+    const priorityKeywords = ["amount", "paid", "rs", "₹", "payment"];
+    for (const line of lines) {
+        const low = line.toLowerCase();
+        if (priorityKeywords.some(k => low.includes(k))) {
+            const nums = line.match(/\d{1,6}(?:\.\d{1,2})?/g);
+            if (nums) {
+                nums.forEach(n => {
+                    const val = parseFloat(n);
+                    if (val > 0 && val < 50000) {
+                        candidates.push({ value: val, weight: 3 });
+                    }
+                });
+            }
+        }
+    }
+
+    // 2️⃣ SECOND PRIORITY: Lines containing Rupee symbol
+    for (const line of lines) {
+        if (line.includes("₹")) {
+            const nums = line.match(/\d{1,6}(?:\.\d{1,2})?/g);
+            if (nums) {
+                nums.forEach(n => {
+                    const val = parseFloat(n);
+                    if (val > 0 && val < 50000) {
+                        candidates.push({ value: val, weight: 2 });
+                    }
+                });
+            }
+        }
+    }
+
+    // 3️⃣ THIRD PRIORITY: All numbers (fallback)
+    const allNums = cleaned.match(/\d{1,6}(?:\.\d{1,2})?/g);
+    if (allNums) {
+        allNums.forEach(n => {
+            const val = parseFloat(n);
+            // discard timestamps, years, bank numbers, etc.
+            if (val > 10 && val < 50000) {
+                candidates.push({ value: val, weight: 1 });
+            }
+        });
+    }
+
+    if (candidates.length === 0) return null;
+
+    // 4️⃣ Choose best candidate:
+    // - Highest weight first
+    // - If tie, largest number wins
+    candidates.sort((a, b) => {
+        if (b.weight !== a.weight) return b.weight - a.weight;
+        return b.value - a.value;
+    });
+
+    return candidates[0].value;
 }
+
 
 function extractUpi(text) {
     const m = text.match(/[a-zA-Z0-9.\-_]+@[a-zA-Z]{2,}/);
@@ -70,6 +125,15 @@ function extractStatus(text) {
     if (text.includes("pending")) return "pending";
     return "unknown";
 }
+
+function detectApp(text) {
+    const lower = text.toLowerCase();
+    if (lower.includes("gpay") || lower.includes("google pay")) return "GPAY";
+    if (lower.includes("phonepe")) return "PHONEPE";
+    if (lower.includes("paytm")) return "PAYTM";
+    return "UNKNOWN";
+}
+
 
 /* ------------------------------
    🔵 MAIN COMPONENT
@@ -109,8 +173,6 @@ const ClaimCard = ({ shopId, verify, loading, setLoading }) => {
         //* 1️⃣ Resize Image
         const resized = await resizeImage(file);
 
-        //* 2️⃣ Compute SHA256 hash
-        const screenshotHash = await sha256(resized);
 
         //* 3️⃣ Create OCR worker (new API)
         const worker = await createWorker("eng");
@@ -127,16 +189,17 @@ const ClaimCard = ({ shopId, verify, loading, setLoading }) => {
         //* 5️⃣ Extract values
         const ocrResult = {
             text,
-            amount: extractAmount(text),
+            amount: extractAmountAdvanced(text),
             upiId: extractUpi(text),
             utr: extractUTR(text),
             status: extractStatus(text),
+            appDetected: detectApp(text),
         };
 
         console.log("📌 OCR RESULT:", ocrResult);
 
         //* 6️⃣ Trigger API call in parent component
-        await verify(file, phone, ocrResult, screenshotHash);
+        await verify(file, phone, ocrResult);
     };
 
     return (

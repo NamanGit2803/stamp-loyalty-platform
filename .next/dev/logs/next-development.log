@@ -1,804 +1,942 @@
-[00:00:03.363] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:03.952] Server  LOG      ✓ Ready in 2.9s
-[00:00:07.508] Server  LOG      ○ Compiling /claim ...
-[00:00:14.217] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:16.566] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:16.571] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:16.666] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:16.674] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:16.684] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:00:16.690] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:16.700] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:16.708] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:16.718] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[00:00:17.293] Server  LOG     shop_r0RgTEdE
-[00:03:41.209] Server  WARN     ⚠ Cross origin request detected from 192.168.1.90 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
-Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
-[00:03:41.634] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:03:41.635] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:03:41.641] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:03:41.644] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:03:41.647] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:41.649] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:03:41.658] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:03:41.662] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:03:41.664] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[00:05:19.561] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:20.307] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:05:20.370] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:05:20.382] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:05:20.484] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:05:20.493] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:05:20.510] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:05:20.527] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:05:20.529] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:05:20.551] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[00:05:27.278] Browser ERROR   Failed to fetch RSC payload for http://192.168.1.90:3000/signup. Falling back to browser navigation. {}
-[00:05:27.897] Browser ERROR   Failed to fetch RSC payload for http://192.168.1.90:3000/signup. Falling back to browser navigation. {}
-[00:05:28.365] Browser ERROR   Failed to fetch RSC payload for http://192.168.1.90:3000/signup. Falling back to browser navigation. {}
-[00:05:29.463] Browser ERROR   Failed to fetch RSC payload for http://192.168.1.90:3000/login. Falling back to browser navigation. {}
-[00:06:24.396] Browser ERROR   Failed to fetch RSC payload for http://192.168.1.90:3000/. Falling back to browser navigation. {}
-[00:06:25.354] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:06:25.356] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:06:25.361] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:06:25.364] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:06:25.373] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:06:25.376] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:06:25.380] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:06:25.387] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:06:25.392] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[00:06:29.116] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:06:29.119] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:06:29.125] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:06:29.127] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:06:29.141] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:06:29.143] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:06:29.146] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:06:29.151] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:06:29.155] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[00:06:58.801] Server  LOG      ✓ Compiled in 491ms
-[00:07:20.378] Server  LOG      ✓ Compiled in 332ms
-[00:07:27.299] Server  LOG      ✓ Compiled in 412ms
-[00:07:36.806] Server  LOG      ✓ Compiled in 278ms
-[00:07:47.850] Server  LOG      ✓ Compiled in 288ms
-[00:09:31.189] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:31.306] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:09:31.312] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:09:31.320] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:09:31.365] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:09:31.398] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:09:31.415] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:09:31.567] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:09:31.593] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:09:31.641] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[02:29:57.790] Server  LOG      ✓ Compiled in 575ms
-[02:31:18.868] Server  LOG      ✓ Compiled in 425ms
-[02:32:52.193] Server  LOG      ✓ Compiled in 425ms
-[02:32:52.884] Browser ERROR   uncaughtError: ReferenceError: formData is not defined
-[02:34:38.004] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[02:34:38.033] Server  LOG      ✓ Compiled in 397ms
-[02:34:40.397] Browser ERROR   uncaughtError: ReferenceError: errors is not defined
-[02:34:40.686] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\components_5ab71a1e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:40.744] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_14620b69._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:40.747] Server  ERROR    ⨯ ReferenceError: errors is not defined
-[02:34:42.485] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:34:43.022] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:43.024] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:43.036] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:43.038] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:43.041] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[02:34:43.045] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:43.049] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:43.051] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:43.059] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[02:34:44.045] Server  LOG      ✓ Compiled in 486ms
-[02:34:44.089] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[02:34:44.092] Browser ERROR   uncaughtError: ReferenceError: errors is not defined
-[02:34:44.915] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\components_5ab71a1e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:44.993] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_14620b69._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:44.997] Server  ERROR    ⨯ ReferenceError: errors is not defined
-[02:34:46.726] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:34:46.996] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:46.997] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:47.001] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:47.005] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:47.009] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[02:34:47.012] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:47.015] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:47.017] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:47.021] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[02:34:47.887] Browser ERROR   uncaughtError: ReferenceError: errors is not defined
-[02:34:52.804] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[02:34:52.825] Server  LOG      ✓ Compiled in 329ms
-[02:34:55.363] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:34:55.587] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:55.603] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:55.615] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:55.617] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:55.626] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[02:34:55.642] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:55.660] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:55.672] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:34:55.687] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[02:35:49.815] Server  LOG      ✓ Compiled in 338ms
-[02:35:57.329] Server  LOG      ✓ Compiled in 323ms
-[02:36:04.936] Server  LOG      ✓ Compiled in 341ms
-[02:36:54.353] Server  LOG      ✓ Compiled in 359ms
-[02:39:24.311] Server  LOG      ✓ Compiled in 1077ms
-[02:40:19.799] Server  LOG      ✓ Compiled in 279ms
-[02:47:57.205] Server  LOG      ✓ Compiled in 439ms
-[02:48:03.093] Server  LOG      ✓ Compiled in 363ms
-[02:49:33.494] Server  LOG      ✓ Compiled in 340ms
-[02:51:12.452] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:51:12.898] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:51:12.929] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:51:12.967] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:51:13.007] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:51:13.024] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[02:51:13.054] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:51:13.063] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:51:13.065] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:51:13.069] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[02:52:44.983] Server  LOG      ✓ Compiled in 284ms
-[02:53:29.213] Server  LOG      ✓ Compiled in 316ms
-[02:53:42.805] Server  LOG      ✓ Compiled in 578ms
-[02:53:57.929] Server  LOG      ✓ Compiled in 372ms
-[02:55:56.306] Server  LOG      ✓ Compiled in 279ms
-[02:56:27.812] Server  LOG      ✓ Compiled in 301ms
-[02:56:53.729] Server  LOG      ✓ Compiled in 476ms
-[02:59:07.478] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:59:07.562] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:59:07.589] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:59:07.597] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:59:07.599] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:59:07.601] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[02:59:07.612] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:59:07.615] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:59:07.617] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:59:07.625] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[03:06:16.832] Server  LOG      ✓ Compiled in 1036ms
-[03:06:33.111] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:06:33.249] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[03:06:33.275] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[03:06:33.286] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[03:06:33.288] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[03:06:33.291] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[03:06:33.294] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[03:06:33.302] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[03:06:33.310] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[03:06:33.321] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[03:08:56.113] Server  LOG      ✓ Compiled in 295ms
-[03:14:03.018] Server  LOG      ✓ Compiled in 476ms
-[03:14:29.852] Server  LOG      ✓ Compiled in 317ms
-[03:41:31.535] Server  LOG      ✓ Compiled in 909ms
-[03:41:31.897] Browser ERROR   uncaughtError: ReferenceError: verifyScreenshot is not defined
-[04:31:05.171] Server  LOG      ✓ Compiled in 775ms
-[04:31:05.182] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[04:31:05.984] Browser ERROR   uncaughtError: ReferenceError: verifyScreenshot is not defined
-[04:31:09.093] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\components_5ab71a1e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:31:09.213] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_14620b69._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:31:09.216] Server  ERROR    ⨯ ReferenceError: verifyScreenshot is not defined
-[04:31:11.012] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[04:31:11.772] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:31:11.776] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:31:11.870] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:31:11.872] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:31:11.876] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[04:31:11.879] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:31:11.882] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:31:11.883] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:31:11.886] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[04:31:13.620] Browser ERROR   uncaughtError: ReferenceError: verifyScreenshot is not defined
-[04:31:20.167] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[04:31:20.197] Server  LOG      ✓ Compiled in 280ms
-[04:31:20.755] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\components_5ab71a1e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:31:20.799] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_14620b69._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:31:20.800] Server  ERROR    ⨯ ReferenceError: verifyScreenshot is not defined
-[04:31:22.473] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[04:31:22.826] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:31:22.827] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:31:22.830] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:31:22.834] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:31:22.872] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[04:31:22.874] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:31:22.881] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:31:22.914] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:31:22.923] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[04:31:22.956] Browser ERROR   uncaughtError: ReferenceError: verifyScreenshot is not defined
-[04:33:31.581] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[04:33:31.586] Server  LOG      ✓ Compiled in 287ms
-[04:33:35.799] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[04:33:36.170] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:33:36.172] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:33:36.177] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:33:36.183] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:33:36.187] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[04:33:36.192] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:33:36.200] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:33:36.202] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:33:36.207] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[04:33:51.504] Server  LOG      ✓ Compiled in 412ms
-[04:34:30.037] Server  LOG      ✓ Compiled in 405ms
-[04:36:08.166] Server  LOG      ✓ Compiled in 317ms
-[04:37:20.789] Server  LOG      ✓ Compiled in 340ms
-[04:41:09.729] Server  LOG      ✓ Compiled in 378ms
-[04:41:22.596] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[04:41:22.805] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:41:22.853] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:41:22.860] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:41:22.867] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:41:22.883] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[04:41:22.918] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:41:22.971] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:41:22.974] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:41:22.984] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[04:41:51.689] Server  LOG      ✓ Compiled in 273ms
-[04:41:51.880] Browser LOG     hiiiiii
-[04:41:51.880] Browser LOG     hiiiiii
-[04:41:51.880] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'preventDefault')
-[04:42:12.191] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[04:42:12.216] Server  LOG      ✓ Compiled in 287ms
-[04:42:13.655] Browser LOG     hiiiiii
-[04:42:13.655] Browser LOG     hiiiiii
-[04:42:13.655] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'preventdefault')
-[04:42:13.688] Server  LOG     hiiiiii
-[04:42:13.706] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\components_5ab71a1e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:13.735] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_14620b69._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:13.736] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'preventdefault')
-[04:42:15.019] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[04:42:15.199] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:15.202] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:15.205] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:15.219] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:15.238] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[04:42:15.246] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:15.256] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:15.257] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:15.267] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[04:42:15.373] Browser LOG     hiiiiii
-[04:42:15.373] Browser LOG     hiiiiii
-[04:42:15.373] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'preventdefault')
-[04:42:30.383] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[04:42:30.406] Server  LOG      ✓ Compiled in 280ms
-[04:42:31.381] Server  LOG     hiiiiii
-[04:42:31.466] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\components_5ab71a1e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:31.502] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_14620b69._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:31.503] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'preventDefault')
-[04:42:32.940] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[04:42:33.724] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:33.748] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:33.760] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:33.775] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:33.791] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[04:42:33.799] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:33.802] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:33.814] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:33.833] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[04:42:34.043] Browser LOG     hiiiiii
-[04:42:34.043] Browser LOG     hiiiiii
-[04:42:34.044] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'preventDefault')
-[04:42:35.253] Server  LOG     hiiiiii
-[04:42:35.304] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\components_5ab71a1e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:35.305] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_14620b69._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:35.307] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'preventDefault')
-[04:42:36.604] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[04:42:36.807] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:36.810] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:36.819] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:36.827] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:36.835] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[04:42:36.837] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:36.842] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:36.850] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:42:36.863] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[04:42:37.034] Browser LOG     hiiiiii
-[04:42:37.034] Browser LOG     hiiiiii
-[04:42:37.034] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'preventDefault')
-[04:43:25.061] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[04:43:25.063] Server  LOG      ✓ Compiled in 297ms
-[04:43:26.037] Server  LOG     hiiiiii
-[04:43:26.040] Server  LOG     null ""
-[04:43:29.428] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[04:43:29.636] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:43:29.637] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:43:29.641] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:43:29.644] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:43:29.653] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[04:43:29.657] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:43:29.660] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:43:29.664] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:43:29.669] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[04:43:29.907] Browser LOG     hiiiiii
-[04:43:29.907] Browser LOG     null 
-[04:43:29.907] Browser LOG     hiiiiii
-[04:43:29.908] Browser LOG     null 
-[04:43:30.888] Browser LOG     hiiiiii
-[04:43:30.888] Browser LOG     null 
-[04:43:30.888] Browser LOG     hiiiiii
-[04:43:30.888] Browser LOG     null 
-[04:43:40.409] Server  LOG      ✓ Compiled in 342ms
-[04:43:51.828] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[04:43:52.069] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:43:52.079] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:43:52.086] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:43:52.088] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:43:52.102] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[04:43:52.105] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:43:52.108] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:43:52.112] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:43:52.116] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[04:44:56.777] Server  LOG      ✓ Compiled in 250ms
-[04:45:21.334] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[04:45:21.644] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:45:21.674] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:45:21.728] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:45:21.731] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:45:21.744] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[04:45:21.747] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:45:21.817] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:45:21.837] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:45:21.841] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[04:47:54.787] Server  LOG      ✓ Compiled in 430ms
-[04:48:04.556] Server  LOG      ✓ Compiled in 697ms
-[04:48:10.454] Server  LOG      ✓ Compiled in 304ms
-[04:48:15.689] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[04:48:15.892] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:48:15.894] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:48:15.899] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:48:15.904] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:48:15.907] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[04:48:15.919] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:48:15.926] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:48:15.928] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:48:15.953] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[04:48:25.647] Server  LOG      ✓ Compiled in 263ms
-[04:49:02.256] Server  LOG      ✓ Compiled in 253ms
-[04:49:10.299] Server  LOG      ✓ Compiled in 288ms
-[04:49:26.524] Browser LOG     hiiiiii
-[04:49:26.524] Browser LOG     {} 6350250055
-[04:49:49.158] Server  LOG      ✓ Compiled in 390ms
-[04:50:04.033] Server  LOG      ✓ Compiled in 2.7s
-[04:50:04.886] Browser ERROR   ./components/claimPage/claimPageComponent.jsx:8:10
-Ecmascript file had an error
-   6 | import { toast } from "sonner";
-   7 | import { Sparkles } from "lucide-react";
->  8 | import { toast } from "sonner";
-     |          ^^^^^
-   9 |
-  10 | const ClaimPage = ({ shopId }) => {
-  11 |     const [isInvalid, setIsInvalid] = useState(false);
+[00:00:11.017] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:14.247] Server  LOG      ✓ Ready in 11s
+[00:00:20.270] Server  LOG      ○ Compiling /shop/[shopId]/verifications ...
+[00:00:39.215] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:06.746] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:15.617] Server  LOG      ✓ Compiled in 557ms
+[00:01:54.716] Server  LOG      ✓ Compiled in 363ms
+[00:02:04.411] Server  LOG      ✓ Compiled in 385ms
+[00:02:20.767] Server  LOG      ✓ Compiled in 382ms
+[00:02:39.650] Server  LOG      ✓ Compiled in 505ms
+[00:07:28.707] Server  LOG      ✓ Compiled in 1069ms
+[00:10:07.223] Server  LOG      ✓ Compiled in 291ms
+[00:10:08.389] Browser ERROR   uncaughtError: ReferenceError: setStatus is not defined
+[00:10:23.146] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:10:23.174] Server  LOG      ✓ Compiled in 883ms
+[00:10:26.925] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:46.419] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:29.791] Server  LOG      ✓ Compiled in 375ms
+[00:12:37.885] Server  LOG      ✓ Compiled in 308ms
+[00:13:06.165] Server  LOG      ✓ Compiled in 1431ms
+[00:13:10.787] Server  LOG      ✓ Compiled in 323ms
+[00:13:19.012] Server  LOG      ✓ Compiled in 668ms
+[00:13:41.949] Server  LOG      ✓ Compiled in 371ms
+[00:14:05.981] Server  LOG      ✓ Compiled in 2.4s
+[00:14:16.633] Server  LOG      ✓ Compiled in 926ms
+[00:15:18.981] Server  LOG      ✓ Compiled in 1095ms
+[00:19:56.024] Server  LOG      ✓ Compiled in 775ms
+[00:20:52.319] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:47.950] Server  LOG      ✓ Compiled in 1309ms
+[00:21:56.144] Server  LOG      ○ Compiling /shop/[shopId] ...
+[00:22:14.370] Server  LOG      ✓ Compiled in 1340ms
+[00:23:46.059] Server  LOG      ✓ Compiled in 916ms
+[00:23:51.369] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:25.232] Server  LOG      ✓ Compiled in 1441ms
+[00:25:28.903] Server  LOG      ✓ Compiled in 913ms
+[00:25:35.256] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:05.466] Server  LOG      ✓ Compiled in 391ms
+[00:30:11.780] Server  LOG      ✓ Compiled in 320ms
+[00:34:23.215] Server  ERROR    ⨯ ./components/shop/rewards/rewards-component.jsx:3:1
+Module not found: Can't resolve './verifications-list'
+  1 |
+  2 | import React from 'react'
+> 3 | import VerificationsList from './verifications-list'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const RewardsComponent = () => {
+  6 |     return (
 
-the name `toast` is defined multiple times
+
 
 Import trace:
   Server Component:
-    ./components/claimPage/claimPageComponent.jsx
-    ./app/claim/page.jsx
-[04:50:16.577] Server  LOG      ✓ Compiled in 275ms
-[04:50:16.884] Browser ERROR   ./components/claimPage/claimPageComponent.jsx:8:10
-Ecmascript file had an error
-   6 | import { toast } from "sonner";
-   7 | import { Sparkles } from "lucide-react";
->  8 | import { toast } from "sonner";
-     |          ^^^^^
-   9 |
-  10 | const ClaimPage = ({ shopId }) => {
-  11 |     const [isInvalid, setIsInvalid] = useState(false);
+    ./components/shop/rewards/rewards-component.jsx
+    ./app/shop/[shopId]/rewards/page.jsx
 
-the name `toast` is defined multiple times
+https://nextjs.org/docs/messages/module-not-found
 
-Import trace:
-  Server Component:
-    ./components/claimPage/claimPageComponent.jsx
-    ./app/claim/page.jsx
-[04:50:24.416] Server  ERROR    ⨯ ./components/claimPage/claimPageComponent.jsx:8:10
-Ecmascript file had an error
-   6 | import { toast } from "sonner";
-   7 | import { Sparkles } from "lucide-react";
->  8 | import { toast } from "sonner";
-     |          ^^^^^
-   9 |
-  10 | const ClaimPage = ({ shopId }) => {
-  11 |     const [isInvalid, setIsInvalid] = useState(false);
 
-the name `toast` is defined multiple times
+[00:34:23.278] Server  ERROR    ⨯ ./components/shop/rewards/rewards-component.jsx:3:1
+Module not found: Can't resolve './verifications-list'
+  1 |
+  2 | import React from 'react'
+> 3 | import VerificationsList from './verifications-list'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const RewardsComponent = () => {
+  6 |     return (
+
+
 
 Import trace:
   Server Component:
-    ./components/claimPage/claimPageComponent.jsx
-    ./app/claim/page.jsx
+    ./components/shop/rewards/rewards-component.jsx
+    ./app/shop/[shopId]/rewards/page.jsx
+
+https://nextjs.org/docs/messages/module-not-found
 
 
-[04:50:24.605] Browser ERROR   ./components/claimPage/claimPageComponent.jsx:8:10
-Ecmascript file had an error
-   6 | import { toast } from "sonner";
-   7 | import { Sparkles } from "lucide-react";
->  8 | import { toast } from "sonner";
-     |          ^^^^^
-   9 |
-  10 | const ClaimPage = ({ shopId }) => {
-  11 |     const [isInvalid, setIsInvalid] = useState(false);
-
-the name `toast` is defined multiple times
-
-Import trace:
-  Server Component:
-    ./components/claimPage/claimPageComponent.jsx
-    ./app/claim/page.jsx
-[04:50:27.509] Server  LOG      ○ Compiling /_error ...
-[04:50:31.259] Browser ERROR   ./components/claimPage/claimPageComponent.jsx:8:10
-Ecmascript file had an error
-   6 | import { toast } from "sonner";
-   7 | import { Sparkles } from "lucide-react";
->  8 | import { toast } from "sonner";
-     |          ^^^^^
-   9 |
-  10 | const ClaimPage = ({ shopId }) => {
-  11 |     const [isInvalid, setIsInvalid] = useState(false);
-
-the name `toast` is defined multiple times
+[00:34:23.394] Browser ERROR   ./components/shop/rewards/rewards-component.jsx:3:1
+Module not found: Can't resolve './verifications-list'
+  1 |
+  2 | import React from 'react'
+> 3 | import VerificationsList from './verifications-list'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const RewardsComponent = () => {
+  6 |     return (
 
 Import trace:
   Server Component:
-    ./components/claimPage/claimPageComponent.jsx
-    ./app/claim/page.jsx
-[04:50:32.092] Browser ERROR   ./components/claimPage/claimPageComponent.jsx:8:10
-Ecmascript file had an error
-   6 | import { toast } from "sonner";
-   7 | import { Sparkles } from "lucide-react";
->  8 | import { toast } from "sonner";
-     |          ^^^^^
-   9 |
-  10 | const ClaimPage = ({ shopId }) => {
-  11 |     const [isInvalid, setIsInvalid] = useState(false);
+    ./components/shop/rewards/rewards-component.jsx
+    ./app/shop/[shopId]/rewards/page.jsx
 
-the name `toast` is defined multiple times
-
-Import trace:
-  Server Component:
-    ./components/claimPage/claimPageComponent.jsx
-    ./app/claim/page.jsx
-[04:50:39.417] Browser ERROR   uncaughtError: Error: ./components/claimPage/claimPageComponent.jsx:8:10
-Ecmascript file had an error
-   6 | import { toast } from "sonner";
-   7 | import { Sparkles } from "lucide-react";
->  8 | import { toast } from "sonner";
-     |          ^^^^^
-   9 |
-  10 | const ClaimPage = ({ shopId }) => {
-  11 |     const [isInvalid, setIsInvalid] = useState(false);
-
-the name `toast` is defined multiple times
+https://nextjs.org/docs/messages/module-not-found
+[00:34:53.101] Browser ERROR   ./components/shop/rewards/rewards-component.jsx:3:1
+Module not found: Can't resolve './verifications-list'
+  1 |
+  2 | import React from 'react'
+> 3 | import VerificationsList from './verifications-list'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const RewardsComponent = () => {
+  6 |     return (
 
 Import trace:
   Server Component:
-    ./components/claimPage/claimPageComponent.jsx
-    ./app/claim/page.jsx
+    ./components/shop/rewards/rewards-component.jsx
+    ./app/shop/[shopId]/rewards/page.jsx
 
-
-[04:50:39.550] Browser ERROR   ./components/claimPage/claimPageComponent.jsx:8:10
-Ecmascript file had an error
-   6 | import { toast } from "sonner";
-   7 | import { Sparkles } from "lucide-react";
->  8 | import { toast } from "sonner";
-     |          ^^^^^
-   9 |
-  10 | const ClaimPage = ({ shopId }) => {
-  11 |     const [isInvalid, setIsInvalid] = useState(false);
-
-the name `toast` is defined multiple times
+https://nextjs.org/docs/messages/module-not-found
+[00:35:10.840] Browser ERROR   ./components/shop/rewards/rewards-component.jsx:3:1
+Module not found: Can't resolve './verifications-list'
+  1 |
+  2 | import React from 'react'
+> 3 | import VerificationsList from './verifications-list'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const RewardsComponent = () => {
+  6 |     return (
 
 Import trace:
   Server Component:
-    ./components/claimPage/claimPageComponent.jsx
-    ./app/claim/page.jsx
-[04:50:39.918] Browser ERROR   ./components/claimPage/claimPageComponent.jsx:8:10
-Ecmascript file had an error
-   6 | import { toast } from "sonner";
-   7 | import { Sparkles } from "lucide-react";
->  8 | import { toast } from "sonner";
-     |          ^^^^^
-   9 |
-  10 | const ClaimPage = ({ shopId }) => {
-  11 |     const [isInvalid, setIsInvalid] = useState(false);
+    ./components/shop/rewards/rewards-component.jsx
+    ./app/shop/[shopId]/rewards/page.jsx
 
-the name `toast` is defined multiple times
+https://nextjs.org/docs/messages/module-not-found
+[00:35:19.412] Server  ERROR    ⨯ ./components/shop/rewards/rewards-list.jsx:8:1
+Module not found: Can't resolve './verification-table'
+   6 | import { CheckCircle, AlertCircle, Download, Search, X } from "lucide-react"
+   7 | import { Button } from "@/components/ui/button"
+>  8 | import VerificationsTable from "./verification-table"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 | import { SearchBar } from "@/components/toolbar/SearchBar"
+  10 | import {
+  11 |     Select,
+
+
 
 Import trace:
   Server Component:
-    ./components/claimPage/claimPageComponent.jsx
-    ./app/claim/page.jsx
-[04:50:55.488] Server  LOG      ✓ Compiled in 339ms
-[04:50:58.629] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[04:50:58.839] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:50:58.841] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:50:58.846] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:50:58.850] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:50:58.854] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[04:50:58.857] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:50:58.867] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:50:58.869] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:50:58.873] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[04:52:38.596] Server  LOG      ✓ Compiled in 273ms
-[04:52:38.895] Browser ERROR   uncaughtError: ReferenceError: loading is not defined
-[04:53:49.661] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[04:53:49.685] Server  LOG      ✓ Compiled in 257ms
-[04:53:49.886] Browser ERROR   uncaughtError: ReferenceError: loading is not defined
-[04:53:50.873] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\components_5ab71a1e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:53:50.944] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_14620b69._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:53:50.946] Server  ERROR    ⨯ ReferenceError: loading is not defined
-[04:53:52.895] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[04:53:53.054] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:53:53.056] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:53:53.059] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:53:53.060] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:53:53.164] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[04:53:53.223] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:53:53.318] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:53:53.320] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:53:53.326] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[04:53:54.896] Browser ERROR   uncaughtError: ReferenceError: loading is not defined
-[04:53:55.217] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[04:53:55.243] Server  LOG      ✓ Compiled in 298ms
-[04:53:57.499] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[04:53:57.953] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:53:57.955] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:53:57.957] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:53:57.962] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:53:57.967] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[04:53:57.989] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:53:57.996] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:53:58.004] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:53:58.008] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[04:54:37.879] Server  LOG      ✓ Compiled in 346ms
-[04:54:45.405] Server  LOG      ✓ Compiled in 1389ms
-[04:55:10.163] Server  LOG      ✓ Compiled in 436ms
-[04:55:18.643] Server  LOG      ✓ Compiled in 256ms
-[04:56:23.102] Server  LOG      ✓ Compiled in 259ms
-[04:59:02.953] Server  LOG      ✓ Compiled in 4.6s
-[04:59:14.343] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[04:59:14.466] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:59:14.467] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:59:14.479] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:59:14.480] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:59:14.485] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[04:59:14.499] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:59:14.504] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:59:14.520] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[04:59:14.534] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[05:01:31.813] Server  LOG      ✓ Compiled in 972ms
-[05:02:57.624] Server  LOG      ✓ Compiled in 992ms
-[05:03:32.848] Server  LOG      ✓ Compiled in 405ms
-[05:03:47.615] Server  LOG      ✓ Compiled in 462ms
-[05:05:10.275] Server  LOG      ✓ Compiled in 253ms
-[05:11:26.949] Server  LOG      ✓ Compiled in 405ms
-[05:24:53.489] Server  LOG      ✓ Compiled in 1754ms
-[05:25:04.327] Server  LOG      ✓ Compiled in 263ms
-[05:34:29.941] Server  LOG      ✓ Compiled in 1676ms
-[05:37:44.939] Server  LOG      ✓ Compiled in 417ms
-[05:43:12.491] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[05:43:13.825] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[05:43:13.829] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[05:43:13.890] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[05:43:13.892] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[05:43:13.896] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[05:43:13.908] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[05:43:13.918] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[05:43:13.922] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[05:43:13.929] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[05:44:13.972] Server  LOG      ✓ Compiled in 545ms
-[05:46:01.104] Server  LOG      ✓ Compiled in 354ms
-[05:46:18.144] Server  LOG      ✓ Compiled in 541ms
-[05:47:10.552] Server  LOG      ✓ Compiled in 281ms
-[05:47:20.792] Server  LOG      ✓ Compiled in 1661ms
-[05:47:21.888] Browser ERROR   ./components/claimPage/claimCard.jsx:93:25
-Parsing ecmascript source code failed
-  91 |
-  92 |                         </div>
-> 93 |                         {loading && <div className="scanning-line"></div>}
-     |                         ^
-  94 |                     )}
-  95 |                 </div>
-  96 |
+    ./components/shop/rewards/rewards-list.jsx
+    ./components/shop/rewards/rewards-component.jsx
+    ./app/shop/[shopId]/rewards/page.jsx
 
-Expected '</', got '{'
+https://nextjs.org/docs/messages/module-not-found
 
-Import traces:
-  Client Component Browser:
-    ./components/claimPage/claimCard.jsx [Client Component Browser]
-    ./components/claimPage/claimPageComponent.jsx [Client Component Browser]
-    ./components/claimPage/claimPageComponent.jsx [Server Component]
-    ./app/claim/page.jsx [Server Component]
 
-  Client Component SSR:
-    ./components/claimPage/claimCard.jsx [Client Component SSR]
-    ./components/claimPage/claimPageComponent.jsx [Client Component SSR]
-    ./components/claimPage/claimPageComponent.jsx [Server Component]
-    ./app/claim/page.jsx [Server Component]
-[05:47:33.525] Server  LOG      ✓ Compiled in 303ms
-[05:52:37.236] Server  LOG      ✓ Compiled in 1513ms
-[05:55:21.616] Server  LOG      ✓ Compiled in 2s
-[05:55:33.932] Server  LOG      ✓ Compiled in 2.4s
-[06:04:33.679] Server  LOG      ✓ Compiled in 752ms
-[06:07:48.644] Server  LOG      ✓ Compiled in 1681ms
-[06:08:09.742] Server  LOG      ✓ Compiled in 586ms
-[06:08:32.444] Server  LOG      ✓ Compiled in 315ms
-[06:08:43.559] Server  LOG      ✓ Compiled in 282ms
-[06:27:10.988] Server  LOG      ✓ Compiled in 989ms
-[06:27:22.846] Server  LOG      ✓ Compiled in 2.1s
-[06:27:38.098] Server  LOG      ✓ Compiled in 535ms
-[06:27:51.191] Server  LOG      ✓ Compiled in 313ms
-[06:28:01.903] Server  LOG      ✓ Compiled in 1376ms
-[06:28:42.895] Server  LOG      ✓ Compiled in 311ms
-[06:29:13.499] Server  LOG      ✓ Compiled in 294ms
-[06:29:38.364] Server  LOG      ✓ Compiled in 269ms
-[06:29:54.731] Server  LOG      ✓ Compiled in 349ms
-[06:30:03.559] Server  LOG      ✓ Compiled in 440ms
-[06:30:18.856] Server  LOG      ✓ Compiled in 509ms
-[06:30:29.409] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[06:30:29.926] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[06:30:29.930] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[06:30:29.991] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[06:30:29.993] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[06:30:30.003] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[06:30:30.012] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[06:30:30.022] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[06:30:30.024] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[06:30:30.029] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[06:31:04.851] Server  LOG      ✓ Compiled in 2.7s
-[06:31:20.829] Server  LOG      ✓ Compiled in 385ms
-[23:46:55.391] Server  LOG      ✓ Compiled in 485ms
-[23:47:09.422] Server  LOG      ✓ Compiled in 323ms
-[23:47:26.869] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[23:47:29.774] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:47:29.784] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:47:29.947] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:47:29.953] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:47:29.969] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[23:47:29.980] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:47:30.053] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:47:30.055] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:47:30.058] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[23:47:43.225] Browser ERROR   unhandledRejection: ReferenceError: setResult is not defined
-[23:48:55.424] Server  LOG      ✓ Compiled in 373ms
-[23:48:55.950] Browser ERROR   uncaughtError: Error: Rendered fewer hooks than expected. This may be caused by an accidental early return statement.
-[23:49:00.306] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[23:49:00.314] Server  LOG      ✓ Compiled in 322ms
-[23:49:02.844] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[23:49:03.099] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:49:03.100] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:49:03.105] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:49:03.108] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:49:03.113] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[23:49:03.124] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:49:03.131] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:49:03.137] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:49:03.145] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[23:49:23.390] Server  LOG      ○ Compiling /api/screenshot/verify ...
-[23:49:25.004] Server  ERROR   Error: Cannot find module 'E:\ROOT\node_modules\tesseract.js\src\worker-script\node\index.js'
-[23:49:25.009] Server  ERROR    ⨯ "uncaughtException:" Error: Cannot find module 'E:\ROOT\node_modules\tesseract.js\src\worker-script\node\index.js'
-[23:49:25.014] Server  ERROR    ⨯ "uncaughtException: " Error: Cannot find module 'E:\ROOT\node_modules\tesseract.js\src\worker-script\node\index.js'
-[23:51:12.168] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[23:51:12.719] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:51:12.721] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:51:12.724] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:51:12.726] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:51:12.735] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[23:51:12.738] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:51:12.743] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:51:12.791] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:51:12.798] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[25:50:23.861] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[26:26:33.736] Server  LOG      ✓ Compiled in 5s
-[26:28:43.057] Server  LOG      ✓ Compiled in 530ms
-[26:30:52.776] Server  LOG      ✓ Compiled in 859ms
-[26:32:57.085] Server  LOG      ✓ Compiled in 282ms
-[26:35:42.932] Server  LOG      ✓ Compiled in 277ms
-[26:36:00.468] Server  LOG      ✓ Compiled in 278ms
-[26:36:14.613] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:36:14.616] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:36:14.621] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:36:14.630] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:36:14.647] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[26:36:14.655] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:36:14.664] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:36:14.668] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:36:14.688] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[26:36:14.799] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[26:36:38.850] Browser ERROR   unhandledRejection: TypeError: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__.default is not a constructor
-[26:38:54.946] Server  LOG      ✓ Compiled in 343ms
-[26:39:04.753] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[26:39:05.134] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:39:05.135] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:39:05.139] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:39:05.150] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:39:05.154] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[26:39:05.157] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:39:05.160] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:39:05.168] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:39:05.174] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[26:39:22.233] Browser ERROR   unhandledRejection: TypeError: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__.default is not a constructor
-[26:39:44.798] Server  LOG      ✓ Compiled in 420ms
-[26:39:51.109] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[26:39:51.275] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:39:51.278] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:39:51.289] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:39:51.311] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:39:51.324] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[26:39:51.327] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:39:51.336] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:39:51.346] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:39:51.356] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[26:40:01.018] Browser ERROR   unhandledRejection: DataCloneError: Failed to execute 'postMessage' on 'Worker': (m)=>console.log(m) could not be cloned.
-[26:41:52.416] Server  LOG      ✓ Compiled in 288ms
-[26:42:07.214] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[26:42:07.355] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:42:07.358] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:42:07.370] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:42:07.372] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:42:07.381] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[26:42:07.392] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:42:07.398] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:42:07.402] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:42:07.413] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[26:42:27.350] Browser WARN    `load` is depreciated and should be removed from code (workers now come pre-loaded)
-[26:42:27.350] Browser ERROR   unhandledRejection: TypeError: worker.loadLanguage is not a function
-[26:46:43.008] Server  LOG      ✓ Compiled in 306ms
-[26:46:50.429] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[26:46:50.509] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:46:50.512] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:46:50.522] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:46:50.531] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:46:50.537] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[26:46:50.545] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:46:50.554] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:46:50.563] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:46:50.568] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[26:47:04.688] Browser ERROR   unhandledRejection: TypeError: worker.on is not a function
-[26:48:07.458] Server  LOG      ✓ Compiled in 280ms
-[26:48:13.015] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_711174bf._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:48:13.018] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:48:13.031] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:48:13.035] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:48:13.040] Server  WARN    Error: Route "/api/auth/findShop" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[26:48:13.048] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__bb0a31e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:48:13.054] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:48:13.059] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:48:13.076] Server  ERROR   TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__.cookies)(...).get is not a function
-[26:48:13.100] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[26:48:28.209] Browser LOG     📌 OCR RESULT: {"amount":6,"status":"unknown","text":"0006\n©0060\n©0006\n000\n060600\n","upiId":null,"utr":"060600"}
-[26:48:29.809] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__14ff52d6._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:48:29.821] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:48:29.899] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_143d1e64._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:48:29.913] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:48:29.922] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:48:29.931] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:48:29.934] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:48:29.941] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:48:29.952] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[26:48:29.965] Server  ERROR   VERIFY ERROR → PrismaClientValidationError: 
-Invalid `prisma.scanVerification.create()` invocation in
-E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__14ff52d6._.js:190:52
+[00:35:19.422] Server  ERROR    ⨯ ./components/shop/rewards/rewards-list.jsx:8:1
+Module not found: Can't resolve './verification-table'
+   6 | import { CheckCircle, AlertCircle, Download, Search, X } from "lucide-react"
+   7 | import { Button } from "@/components/ui/button"
+>  8 | import VerificationsTable from "./verification-table"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 | import { SearchBar } from "@/components/toolbar/SearchBar"
+  10 | import {
+  11 |     Select,
 
-  187 // --------------------------------------
-  188 // 5️⃣ SAVE SCAN VERIFICATION ENTRY
-  189 // --------------------------------------
-→ 190 const scan = await prisma.scanVerification.create({
-        data: {
-          shopId: "shop_r0RgTEdE",
-          customerId: "cus_2e0b08e9-4899-494c-b871-c2eb30e1775b",
-          amount: 6,
-          currency: "INR",
-          upiId: null,
-          utr: "060600",
-          paidAt: new Date("2025-12-12T10:20:15.090Z"),
-          status: "rejected",
-          rejectReason: "below_minimum",
-          screenshotHash: "343d764b2e3df4400cac3ff97222f55a0c22d9d1ae8e5cf775c74d355d7bf867",
-          ocrText: "0006\n©0060\n©0006\n000\n060600\n",
-      +   appDetected: AppType
-        }
-      })
 
-Argument `appDetected` is missing.
-[26:48:30.090] Browser LOG     API response: {"error":"Server Error"}
+
+Import trace:
+  Server Component:
+    ./components/shop/rewards/rewards-list.jsx
+    ./components/shop/rewards/rewards-component.jsx
+    ./app/shop/[shopId]/rewards/page.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:19.433] Server  ERROR    ⨯ ./components/shop/rewards/rewards-list.jsx:8:1
+Module not found: Can't resolve './verification-table'
+   6 | import { CheckCircle, AlertCircle, Download, Search, X } from "lucide-react"
+   7 | import { Button } from "@/components/ui/button"
+>  8 | import VerificationsTable from "./verification-table"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 | import { SearchBar } from "@/components/toolbar/SearchBar"
+  10 | import {
+  11 |     Select,
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/rewards/rewards-list.jsx
+    ./components/shop/rewards/rewards-component.jsx
+    ./app/shop/[shopId]/rewards/page.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:19.449] Server  ERROR    ⨯ ./components/shop/rewards/rewards-list.jsx:8:1
+Module not found: Can't resolve './verification-table'
+   6 | import { CheckCircle, AlertCircle, Download, Search, X } from "lucide-react"
+   7 | import { Button } from "@/components/ui/button"
+>  8 | import VerificationsTable from "./verification-table"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 | import { SearchBar } from "@/components/toolbar/SearchBar"
+  10 | import {
+  11 |     Select,
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/rewards/rewards-list.jsx
+    ./components/shop/rewards/rewards-component.jsx
+    ./app/shop/[shopId]/rewards/page.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:19.569] Browser ERROR   ./components/shop/rewards/rewards-list.jsx:8:1
+Module not found: Can't resolve './verification-table'
+   6 | import { CheckCircle, AlertCircle, Download, Search, X } from "lucide-react"
+   7 | import { Button } from "@/components/ui/button"
+>  8 | import VerificationsTable from "./verification-table"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 | import { SearchBar } from "@/components/toolbar/SearchBar"
+  10 | import {
+  11 |     Select,
+
+Import trace:
+  Server Component:
+    ./components/shop/rewards/rewards-list.jsx
+    ./components/shop/rewards/rewards-component.jsx
+    ./app/shop/[shopId]/rewards/page.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:35:34.622] Browser ERROR   ./components/shop/rewards/rewards-list.jsx:8:1
+Module not found: Can't resolve './verification-table'
+   6 | import { CheckCircle, AlertCircle, Download, Search, X } from "lucide-react"
+   7 | import { Button } from "@/components/ui/button"
+>  8 | import VerificationsTable from "./verification-table"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 | import { SearchBar } from "@/components/toolbar/SearchBar"
+  10 | import {
+  11 |     Select,
+
+Import trace:
+  Server Component:
+    ./components/shop/rewards/rewards-list.jsx
+    ./components/shop/rewards/rewards-component.jsx
+    ./app/shop/[shopId]/rewards/page.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:35:55.859] Browser ERROR   ./components/shop/rewards/rewards-list.jsx:8:1
+Module not found: Can't resolve './verification-table'
+   6 | import { CheckCircle, AlertCircle, Download, Search, X } from "lucide-react"
+   7 | import { Button } from "@/components/ui/button"
+>  8 | import VerificationsTable from "./verification-table"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 | import { SearchBar } from "@/components/toolbar/SearchBar"
+  10 | import {
+  11 |     Select,
+
+Import trace:
+  Server Component:
+    ./components/shop/rewards/rewards-list.jsx
+    ./components/shop/rewards/rewards-component.jsx
+    ./app/shop/[shopId]/rewards/page.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:36:08.862] Server  LOG      ✓ Compiled in 327ms
+[00:36:10.539] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\[root-of-the-server]__e55d144d._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:36:10.574] Server  ERROR    ⨯ ReferenceError: VerificationsList is not defined
+[00:36:12.010] Browser ERROR   uncaughtError: ReferenceError: VerificationsList is not defined
+[00:36:49.234] Server  LOG      ✓ Compiled in 771ms
+[00:36:51.885] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:37:17.264] Server  LOG      ✓ Compiled in 749ms
+[00:38:54.905] Server  LOG      ✓ Compiled in 757ms
+[25:38:39.006] Server  LOG      ✓ Compiled in 2.9s
+[25:44:33.942] Server  LOG      ✓ Compiled in 369ms
+[25:47:00.558] Server  LOG      ✓ Compiled in 654ms
+[25:47:10.389] Server  LOG      ✓ Compiled in 376ms
+[25:48:03.852] Server  LOG      ✓ Compiled in 366ms
+[25:48:30.417] Server  LOG      ✓ Compiled in 321ms
+[25:50:47.726] Server  LOG      ✓ Compiled in 1479ms
+[25:55:33.249] Server  LOG      ✓ Compiled in 278ms
+[25:55:44.415] Server  LOG      ✓ Compiled in 424ms
+[25:56:16.082] Server  LOG      ✓ Compiled in 294ms
+[25:57:01.934] Server  LOG      ✓ Compiled in 522ms
+[25:58:20.522] Server  LOG      ✓ Compiled in 564ms
+[25:58:50.099] Server  LOG      ✓ Compiled in 298ms
+[41:34:57.578] Server  LOG      ✓ Compiled in 3.9s
+[41:35:19.220] Server  LOG      ✓ Compiled in 350ms
+[41:35:25.719] Server  LOG      ✓ Compiled in 793ms
+[41:35:42.016] Server  LOG      ✓ Compiled in 935ms
+[41:35:46.225] Server  LOG      ✓ Compiled in 1011ms
+[41:35:52.448] Server  LOG      ✓ Compiled in 631ms
+[41:38:22.630] Server  LOG      ✓ Compiled in 626ms
+[41:38:46.847] Server  LOG      ✓ Compiled in 375ms
+[41:39:55.170] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[41:41:30.378] Server  LOG      ✓ Compiled in 698ms
+[41:41:54.890] Server  LOG      ✓ Compiled in 310ms
+[41:42:06.480] Server  LOG      ✓ Compiled in 421ms
+[41:42:29.354] Server  LOG      ✓ Compiled in 331ms
+[41:43:22.370] Server  LOG      ✓ Compiled in 381ms
+[42:25:22.553] Server  LOG      ✓ Compiled in 3.7s
+[42:38:17.966] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[42:38:31.346] Server  LOG      ✓ Compiled in 649ms
+[42:38:32.340] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <tbody data-slot="table-body" className={"[&_tr:la..."}>
+      <TableRow className="hover:bg-m...">
+        <tr data-slot="table-row" className="data-[stat...">
+          <TableCell>
+          <TableCell>
+          <TableCell>
+          <TableCell>
+          <TableCell>
+          <TableCell className="py-3 flex ...">
+            <td data-slot="table-cell" className={"p-2 alig..."}>
+              <RedeemConfirmDialog>
+                <AlertDialog>
+                  <AlertDialog data-slot="alert-dialog">
+                    <Dialog __scopeDialog={{Dialog:[...]}} data-slot="alert-dialog" modal={true}>
+                      <DialogProvider scope={{Dialog:[...]}} triggerRef={{...}} contentRef={{current:null}} ...>
+                        <AlertDialogTrigger>
+                          <AlertDialogTrigger data-slot="alert-dial...">
+                            <DialogTrigger __scopeDialog={{Dialog:[...]}} data-slot="alert-dial..." ref={null}>
+                              <Primitive.button type="button" aria-haspopup="dialog" aria-expanded={false} ...>
+>                               <button
+>                                 type="button"
+>                                 aria-haspopup="dialog"
+>                                 aria-expanded={false}
+>                                 aria-controls="radix-_R_opl5esnel5ritllb_"
+>                                 data-state="closed"
+>                                 data-slot="alert-dialog-trigger"
+>                                 onClick={function handleEvent}
+>                                 ref={function}
+>                               >
+                                  <Button size="sm">
+>                                   <button
+>                                     data-slot="button"
+>                                     className={"inline-flex items-center justify-center whitespace-nowrap text-sm f..."}
+>                                   >
+                        ...
+      ...
+
+[42:38:32.340] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[42:38:49.430] Server  LOG      ✓ Compiled in 614ms
+[42:39:08.644] Server  LOG      ✓ Compiled in 383ms
+[42:40:14.584] Browser ERROR   uncaughtError: ReferenceError: handleRedeem is not defined
+[42:40:33.865] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[42:52:26.945] Server  LOG      ✓ Compiled in 1394ms
+[42:52:36.916] Server  LOG      ✓ Compiled in 436ms
+[42:54:02.240] Server  ERROR    ⨯ ./app/shop/[shopId]/page.jsx:1:1
+Module not found: Can't resolve '@/components/shop/dashboard-home'
+> 1 | import DashboardHome from "@/components/shop/dashboard-home"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function DashboardPage() {
+  4 |   return (
+
+Import map: aliased to relative './components/shop/dashboard-home' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[42:54:02.340] Server  ERROR    ⨯ ./app/shop/[shopId]/page.jsx:1:1
+Module not found: Can't resolve '@/components/shop/dashboard-home'
+> 1 | import DashboardHome from "@/components/shop/dashboard-home"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function DashboardPage() {
+  4 |   return (
+
+Import map: aliased to relative './components/shop/dashboard-home' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[42:54:03.506] Browser ERROR   ./app/shop/[shopId]/page.jsx:1:1
+Module not found: Can't resolve '@/components/shop/dashboard-home'
+> 1 | import DashboardHome from "@/components/shop/dashboard-home"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function DashboardPage() {
+  4 |   return (
+
+Import map: aliased to relative './components/shop/dashboard-home' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[42:54:06.516] Server  LOG      ✓ Compiled in 645ms
+[42:54:46.021] Server  ERROR    ⨯ ./app/shop/[shopId]/settings/page.jsx:1:1
+Module not found: Can't resolve '@/components/dashboard/settings-form'
+> 1 | import SettingsForm from "@/components/dashboard/settings-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function SettingsPage() {
+  4 |   return (
+
+Import map: aliased to relative './components/dashboard/settings-form' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[42:54:46.024] Server  ERROR    ⨯ ./app/shop/[shopId]/settings/page.jsx:1:1
+Module not found: Can't resolve '@/components/dashboard/settings-form'
+> 1 | import SettingsForm from "@/components/dashboard/settings-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function SettingsPage() {
+  4 |   return (
+
+Import map: aliased to relative './components/dashboard/settings-form' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[42:54:46.075] Server  LOG      ✓ Compiled in 810ms
+[42:54:48.138] Browser ERROR   ./app/shop/[shopId]/settings/page.jsx:1:1
+Module not found: Can't resolve '@/components/dashboard/settings-form'
+> 1 | import SettingsForm from "@/components/dashboard/settings-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function SettingsPage() {
+  4 |   return (
+
+Import map: aliased to relative './components/dashboard/settings-form' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[42:54:48.138] Browser ERROR   ./app/shop/[shopId]/settings/page.jsx:1:1
+Module not found: Can't resolve '@/components/dashboard/settings-form'
+> 1 | import SettingsForm from "@/components/dashboard/settings-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function SettingsPage() {
+  4 |   return (
+
+Import map: aliased to relative './components/dashboard/settings-form' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[42:54:49.263] Server  LOG      ○ Compiling /_error ...
+[42:54:51.325] Browser ERROR   ./app/shop/[shopId]/settings/page.jsx:1:1
+Module not found: Can't resolve '@/components/dashboard/settings-form'
+> 1 | import SettingsForm from "@/components/dashboard/settings-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function SettingsPage() {
+  4 |   return (
+
+Import map: aliased to relative './components/dashboard/settings-form' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[42:54:52.333] Browser ERROR   ./app/shop/[shopId]/settings/page.jsx:1:1
+Module not found: Can't resolve '@/components/dashboard/settings-form'
+> 1 | import SettingsForm from "@/components/dashboard/settings-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function SettingsPage() {
+  4 |   return (
+
+Import map: aliased to relative './components/dashboard/settings-form' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[42:54:57.913] Server  LOG      ✓ Compiled in 484ms
+[42:54:58.285] Server  ERROR    ⨯ SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+[42:54:58.335] Server  ERROR    ⨯ SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+[42:54:58.338] Browser ERROR   ./app/shop/[shopId]/settings/page.jsx:1:1
+Module not found: Can't resolve '@/components/dashboard/settings-form'
+> 1 | import SettingsForm from "@/components/dashboard/settings-form"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function SettingsPage() {
+  4 |   return (
+
+Import map: aliased to relative './components/dashboard/settings-form' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[42:54:59.258] Browser ERROR   uncaughtError: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+[42:55:01.602] Server  LOG      ○ Compiling /_not-found/page ...
+[42:56:13.422] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[42:58:31.367] Server  LOG      ✓ Compiled in 366ms
+[43:07:37.343] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[43:08:08.027] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
+[43:08:08.567] Server  LOG     OTP for "sumantanish14@gmail.com" "=" "708888"
+[43:08:08.796] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
+[43:08:21.699] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
+[43:08:22.213] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
+[43:09:34.580] Server  LOG      ✓ Compiled in 422ms
+[43:10:08.831] Server  LOG      ✓ Compiled in 285ms
+[43:10:23.728] Server  LOG      ✓ Compiled in 378ms
+[43:11:16.707] Server  LOG      ✓ Compiled in 414ms
+[43:11:26.455] Server  LOG      ✓ Compiled in 453ms
+[43:11:31.772] Server  LOG      ✓ Compiled in 395ms
+[43:12:15.849] Server  LOG      ✓ Compiled in 267ms
+[43:12:16.337] Browser ERROR   A component is changing a controlled input to be uncontrolled. This is likely caused by the value changing from a defined to undefined, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://react.dev/link/controlled-components
+[43:12:35.195] Browser ERROR   A component is changing an uncontrolled input to be controlled. This is likely caused by the value changing from undefined to a defined value, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://react.dev/link/controlled-components
+[43:12:52.497] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[43:20:40.854] Server  LOG      ✓ Compiled in 699ms
+[43:20:50.032] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[43:20:53.380] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[43:20:55.387] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[43:20:57.095] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[43:20:58.657] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[43:21:03.811] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[43:21:10.839] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[43:21:18.129] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[43:21:58.701] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
+[43:22:10.065] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[44:36:42.841] Server  LOG      ✓ Compiled in 3.2s
+[44:36:43.334] Browser ERROR   ./components/shop/settings/settings-form.jsx:9:10
+Ecmascript file had an error
+   7 | import { Toggle } from "@/components/ui/toggle"
+   8 | import { CheckCircle } from "lucide-react"
+>  9 | import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+     |          ^^^^
+  10 | import { Label } from "@/components/ui/label"
+  11 | import {
+  12 |   Select,
+
+the name `Card` is defined multiple times
+
+Import trace:
+  Server Component:
+    ./components/shop/settings/settings-form.jsx
+    ./app/shop/[shopId]/settings/page.jsx
+[44:37:25.630] Server  LOG      ✓ Compiled in 349ms
+[44:37:26.323] Browser ERROR   ./components/shop/settings/settings-form.jsx:9:10
+Ecmascript file had an error
+   7 | import { Toggle } from "@/components/ui/toggle"
+   8 | import { CheckCircle } from "lucide-react"
+>  9 | import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+     |          ^^^^
+  10 | import { Label } from "@/components/ui/label"
+  11 | import {
+  12 |   Select,
+
+the name `Card` is defined multiple times
+
+Import trace:
+  Server Component:
+    ./components/shop/settings/settings-form.jsx
+    ./app/shop/[shopId]/settings/page.jsx
+[44:37:43.194] Server  LOG      ✓ Compiled in 374ms
+[44:39:31.172] Server  LOG      ✓ Compiled in 634ms
+[44:47:30.563] Server  LOG      ✓ Compiled in 2.7s
+[44:48:33.352] Server  LOG      ✓ Compiled in 307ms
+[44:48:45.149] Server  LOG      ✓ Compiled in 425ms
+[44:51:00.781] Server  LOG      ✓ Compiled in 724ms
+[44:51:20.697] Server  LOG      ✓ Compiled in 306ms
+[44:51:36.593] Server  LOG      ✓ Compiled in 842ms
+[44:54:51.265] Server  LOG      ✓ Compiled in 356ms
+[44:55:37.042] Server  LOG      ✓ Compiled in 313ms
+[44:56:54.745] Server  LOG      ✓ Compiled in 541ms
+[44:57:16.226] Server  LOG      ✓ Compiled in 393ms
+[44:57:30.011] Server  LOG      ✓ Compiled in 286ms
+[45:27:15.564] Server  LOG      ✓ Compiled in 777ms
+[45:28:12.882] Server  LOG      ✓ Compiled in 595ms
+[45:28:41.544] Server  LOG      ✓ Compiled in 416ms
+[45:28:42.497] Browser ERROR   uncaughtError: ReferenceError: shopName is not defined
+[45:51:30.553] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[45:51:30.554] Server  LOG      ✓ Compiled in 641ms
+[45:51:38.289] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[45:59:39.364] Server  LOG      ✓ Compiled in 2.4s
+[45:59:52.279] Server  LOG      ✓ Compiled in 324ms
+[46:01:12.192] Server  LOG      ✓ Compiled in 855ms
+[46:01:16.683] Server  LOG      ✓ Compiled in 380ms
+[46:03:04.026] Server  LOG      ✓ Compiled in 1106ms
+[46:03:13.667] Server  LOG      ✓ Compiled in 305ms
+[46:05:06.605] Server  LOG      ✓ Compiled in 665ms
+[46:07:35.082] Server  LOG      ✓ Compiled in 352ms
+[46:07:46.505] Server  LOG      ✓ Compiled in 482ms
+[46:07:57.424] Server  LOG      ✓ Compiled in 383ms
+[46:08:23.568] Server  LOG      ✓ Compiled in 352ms
+[46:08:29.883] Browser ERROR   uncaughtError: ReferenceError: errors is not defined
+[46:08:29.883] Browser ERROR   uncaughtError: ReferenceError: errors is not defined
+[46:08:29.883] Browser ERROR   uncaughtError: ReferenceError: errors is not defined
+[46:08:30.029] Browser ERROR   uncaughtError: ReferenceError: errors is not defined
+[46:08:30.176] Browser ERROR   uncaughtError: ReferenceError: errors is not defined
+[46:08:30.409] Browser ERROR   uncaughtError: ReferenceError: errors is not defined
+[46:08:30.409] Browser ERROR   uncaughtError: ReferenceError: errors is not defined
+[46:08:30.773] Browser ERROR   uncaughtError: ReferenceError: errors is not defined
+[46:08:31.420] Browser ERROR   uncaughtError: ReferenceError: errors is not defined
+[46:08:31.420] Browser ERROR   uncaughtError: ReferenceError: errors is not defined
+[46:08:31.420] Browser ERROR   uncaughtError: ReferenceError: errors is not defined
+[46:08:31.420] Browser ERROR   uncaughtError: ReferenceError: errors is not defined
+[46:08:31.420] Browser ERROR   uncaughtError: ReferenceError: errors is not defined
+[46:08:31.420] Browser ERROR   uncaughtError: ReferenceError: errors is not defined
+[46:08:48.283] Server  LOG      ✓ Compiled in 338ms
+[46:13:43.320] Server  LOG      ✓ Compiled in 1282ms
+[46:14:37.026] Server  LOG      ✓ Compiled in 371ms
+[46:14:37.398] Browser ERROR   React has detected a change in the order of Hooks called by %s. This will lead to bugs and errors if not fixed. For more information, read the Rules of Hooks: https://react.dev/link/rules-of-hooks
+
+   Previous render            Next render
+   ------------------------------------------------------
+%s   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ ShopSetting 1. useRef                     useRef
+2. useDebugValue              useDebugValue
+3. useSyncExternalStore       useSyncExternalStore
+4. useState                   useContext
+
+[46:14:45.177] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[46:15:23.742] Server  LOG      ✓ Compiled in 300ms
+[46:15:58.068] Server  LOG      ✓ Compiled in 309ms
+[46:16:13.710] Server  LOG      ✓ Compiled in 301ms
+[46:18:32.913] Server  LOG      ✓ Compiled in 691ms
+[46:19:07.322] Server  LOG      ✓ Compiled in 330ms
+[46:19:23.261] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[46:19:23.279] Server  LOG      ✓ Compiled in 437ms
+[46:19:25.558] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[46:19:26.831] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <TabsProvider scope={undefined} baseId="radix-_R_5..." value="shop" ...>
+      <Primitive.div dir="ltr" data-orientation="horizontal" data-slot="tabs" className="flex flex-..." ref={null}>
+        <div dir="ltr" data-orientation="horizontal" data-slot="tabs" className="flex flex-..." ref={null}>
+          <TabsList>
+          <TabsContent value="shop">
+            <TabsContent data-slot="tabs-content" className="flex-1 out..." value="shop">
+              <Presence present={true}>
+                <Primitive.div data-state="active" data-orientation="horizontal" role="tabpanel" ...>
+                  <div data-state="active" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-_R_5..." ...>
+                    <ShopSetting>
+                      <Card className="bg-[#fdfaf...">
+                        <div data-slot="card" className="text-card-...">
+                          <CardHeader>
+                          <CardContent className="grid gap-4">
+                            <div data-slot="card-content" className="px-6 grid ...">
+                              <div>
+                              <div>
+                              <div>
+                              <Button className="w-fit" disabled={false}>
+                                <button
+                                  data-slot="button"
+                                  className={"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded..."}
++                                 disabled={false}
+-                                 disabled=""
+                                >
++                                 Save
+-                                 {" Saving..."}
+
+[46:19:31.309] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[46:19:32.631] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <TabsProvider scope={undefined} baseId="radix-_R_5..." value="shop" ...>
+      <Primitive.div dir="ltr" data-orientation="horizontal" data-slot="tabs" className="flex flex-..." ref={null}>
+        <div dir="ltr" data-orientation="horizontal" data-slot="tabs" className="flex flex-..." ref={null}>
+          <TabsList>
+          <TabsContent value="shop">
+            <TabsContent data-slot="tabs-content" className="flex-1 out..." value="shop">
+              <Presence present={true}>
+                <Primitive.div data-state="active" data-orientation="horizontal" role="tabpanel" ...>
+                  <div data-state="active" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-_R_5..." ...>
+                    <ShopSetting>
+                      <Card className="bg-[#fdfaf...">
+                        <div data-slot="card" className="text-card-...">
+                          <CardHeader>
+                          <CardContent className="grid gap-4">
+                            <div data-slot="card-content" className="px-6 grid ...">
+                              <div>
+                              <div>
+                              <div>
+                              <Button className="w-fit" disabled={false}>
+                                <button
+                                  data-slot="button"
+                                  className={"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded..."}
++                                 disabled={false}
+-                                 disabled=""
+                                >
++                                 Save
+-                                 {" Saving..."}
+
+[46:19:45.175] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[46:19:45.184] Server  LOG      ✓ Compiled in 866ms
+[46:19:48.344] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[46:19:50.258] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <TooltipProvider delayDuration={0}>
+      <TooltipProvider data-slot="tooltip-pr..." delayDuration={0}>
+        <TooltipProviderProvider scope={undefined} isOpenDelayed={true} delayDuration={0} ...>
+          <div data-slot="sidebar-wr..." style={{...}} className="group/side...">
+            <AppSidebar>
+              <Sidebar collapsible="icon">
+                <div className="group peer..." data-state="expanded" data-collapsible="" data-variant="sidebar" ...>
+                  <div>
+                  <div data-slot="sidebar-co..." className="fixed inse...">
+                    <div data-sidebar="sidebar" data-slot="sidebar-inner" className="bg-sidebar...">
+                      <SidebarHeader>
+                        <div data-slot="sidebar-he..." data-sidebar="header" className="flex flex-...">
+                          <div className="flex gap-2...">
+                            <div>
+                            <div className="grid flex-1">
+                              <span className="truncate font-medium">
++                               bhjgjhb
+-                               Shop Name
+                      ...
+            ...
+
+[46:19:52.813] Server  LOG      ✓ Compiled in 564ms
+[46:19:57.772] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[46:20:11.976] Server  LOG      ✓ Compiled in 1063ms
+[46:20:35.840] Server  LOG      ✓ Compiled in 323ms
+[46:20:58.078] Server  LOG      ✓ Compiled in 571ms
+[46:21:21.551] Server  LOG      ✓ Compiled in 514ms
+[46:25:07.211] Server  LOG      ✓ Compiled in 342ms
+[46:27:27.085] Server  LOG      ✓ Compiled in 596ms
+[46:27:36.889] Server  LOG      ✓ Compiled in 338ms
+[46:27:45.621] Server  LOG      ✓ Compiled in 300ms
+[46:27:50.109] Server  LOG      ✓ Compiled in 328ms
+[46:28:50.657] Server  LOG      ✓ Compiled in 437ms
+[46:29:00.632] Server  LOG      ✓ Compiled in 355ms
+[46:29:08.258] Server  LOG      ✓ Compiled in 312ms
+[46:30:54.972] Server  LOG      ✓ Compiled in 412ms
+[46:31:42.954] Server  LOG      ✓ Compiled in 447ms
+[46:42:47.312] Server  LOG      ✓ Compiled in 439ms
+[46:42:53.613] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[47:02:30.574] Server  LOG      ✓ Compiled in 1530ms
+[47:02:32.012] Server  LOG      ✓ Compiled in 353ms
+[47:04:58.605] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[47:04:59.898] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <TabsProvider scope={undefined} baseId="radix-_R_5..." value="shop" ...>
+      <Primitive.div dir="ltr" data-orientation="horizontal" data-slot="tabs" className="flex flex-..." ref={null}>
+        <div dir="ltr" data-orientation="horizontal" data-slot="tabs" className="flex flex-..." ref={null}>
+          <TabsList>
+          <TabsContent value="shop" className="flex justi...">
+            <TabsContent data-slot="tabs-content" className="flex-1 out..." value="shop">
+              <Presence present={true}>
+                <Primitive.div data-state="active" data-orientation="horizontal" role="tabpanel" ...>
+                  <div data-state="active" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-_R_5..." ...>
+                    <ShopSetting>
+                      <Card className="bg-backgro...">
+                        <div data-slot="card" className="text-card-...">
+                          <CardHeader>
+                          <CardContent className="grid gap-4">
+                            <div data-slot="card-content" className="px-6 grid ...">
+                              <div>
+                              <div>
+                              <div>
+                              <Button className="w-[25%] ho..." disabled={true}>
+                                <button
+                                  data-slot="button"
+                                  className={"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded..."}
++                                 disabled={true}
+-                                 disabled={null}
+                                >
+                                  <Spinner>
+                                    <LoaderCircle role="status" aria-label="Loading" className="size-4 ani...">
++                                     <svg
++                                       ref={null}
++                                       xmlns="http://www.w3.org/2000/svg"
++                                       width={24}
++                                       height={24}
++                                       viewBox="0 0 24 24"
++                                       fill="none"
++                                       stroke="currentColor"
++                                       strokeWidth={2}
++                                       strokeLinecap="round"
++                                       strokeLinejoin="round"
++                                       className="lucide lucide-loader-circle size-4 animate-spin"
++                                       role="status"
++                                       aria-label="Loading"
++                                     >
+-                                     Save
+                                  ...
+
+[47:05:00.116] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[47:05:32.164] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[47:08:06.462] Server  LOG      ✓ Compiled in 316ms
+[47:10:24.505] Server  LOG      ✓ Compiled in 584ms
+[47:16:01.331] Server  LOG      ✓ Compiled in 408ms
+[47:16:11.864] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[47:27:09.835] Server  LOG      ✓ Compiled in 1788ms
+[47:28:26.443] Server  LOG      ✓ Compiled in 417ms
+[47:28:44.782] Server  LOG      ✓ Compiled in 365ms
+[47:28:47.831] Browser ERROR   uncaughtError: ReferenceError: targetStamps is not defined
+[47:48:15.785] Server  LOG      ✓ Compiled in 1210ms
+[47:48:15.840] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[47:48:24.938] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[47:48:27.327] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <TooltipProvider delayDuration={0}>
+      <TooltipProvider data-slot="tooltip-pr..." delayDuration={0}>
+        <TooltipProviderProvider scope={undefined} isOpenDelayed={true} delayDuration={0} ...>
+          <div data-slot="sidebar-wr..." style={{...}} className="group/side...">
+            <AppSidebar>
+              <Sidebar collapsible="icon">
+                <div className="group peer..." data-state="expanded" data-collapsible="" data-variant="sidebar" ...>
+                  <div>
+                  <div data-slot="sidebar-co..." className="fixed inse...">
+                    <div data-sidebar="sidebar" data-slot="sidebar-inner" className="bg-sidebar...">
+                      <SidebarHeader>
+                        <div data-slot="sidebar-he..." data-sidebar="header" className="flex flex-...">
+                          <div className="flex gap-2...">
+                            <div>
+                            <div className="grid flex-1">
+                              <span className="truncate font-medium">
++                               bhjgjhb
+-                               Shop Name
+                      ...
+            ...
+
+[47:48:47.007] Server  LOG      ✓ Compiled in 436ms
+[47:49:11.344] Server  LOG      ✓ Compiled in 353ms
+[47:53:01.225] Server  LOG      ✓ Compiled in 294ms
+[47:53:56.948] Server  LOG      ✓ Compiled in 280ms
+[47:53:57.334] Browser ERROR   A component is changing a controlled input to be uncontrolled. This is likely caused by the value changing from a defined to undefined, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://react.dev/link/controlled-components
+[47:54:08.814] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[49:20:19.908] Server  LOG      ✓ Compiled in 4s
+[49:20:54.360] Server  LOG      ✓ Compiled in 346ms
+[49:29:56.302] Server  LOG      ✓ Compiled in 488ms
+[49:29:57.331] Browser ERROR   uncaughtError: ReferenceError: Switch is not defined
+[49:31:38.604] Server  LOG      ✓ Compiled in 2.6s
+[49:31:38.642] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[49:31:45.350] Browser ERROR   uncaughtError: ReferenceError: isShopLoyaltyEnabled is not defined
+[49:31:46.807] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[49:31:48.416] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <TabsProvider scope={undefined} baseId="radix-_R_5..." value="shop" ...>
+      <Primitive.div dir="ltr" data-orientation="horizontal" data-slot="tabs" className="flex flex-..." ref={null}>
+        <div dir="ltr" data-orientation="horizontal" data-slot="tabs" className="flex flex-..." ref={null}>
+          <TabsList>
+          <TabsContent value="shop" className="flex justi...">
+            <TabsContent data-slot="tabs-content" className="flex-1 out..." value="shop">
+              <Presence present={true}>
+                <Primitive.div data-state="active" data-orientation="horizontal" role="tabpanel" ...>
+                  <div data-state="active" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-_R_5..." ...>
+                    <ShopSetting>
+                      <Card className="bg-backgro...">
+                        <div data-slot="card" className="text-card-...">
+                          <CardHeader>
+                          <CardContent className="grid gap-4">
+                            <div data-slot="card-content" className="px-6 grid ...">
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <Button className="w-[25%] ho..." disabled={true}>
+                                <button
+                                  data-slot="button"
+                                  className={"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded..."}
++                                 disabled={true}
+-                                 disabled={null}
+                                >
+                                  <Spinner>
+                                    <LoaderCircle role="status" aria-label="Loading" className="size-4 ani...">
++                                     <svg
++                                       ref={null}
++                                       xmlns="http://www.w3.org/2000/svg"
++                                       width={24}
++                                       height={24}
++                                       viewBox="0 0 24 24"
++                                       fill="none"
++                                       stroke="currentColor"
++                                       strokeWidth={2}
++                                       strokeLinecap="round"
++                                       strokeLinejoin="round"
++                                       className="lucide lucide-loader-circle size-4 animate-spin"
++                                       role="status"
++                                       aria-label="Loading"
++                                     >
+-                                     Save
+                                  ...
+          ...
+
+[49:31:48.855] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[49:31:56.219] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[49:32:00.519] Browser ERROR   uncaughtError: ReferenceError: isShopLoyaltyEnabled is not defined
+[49:33:13.946] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[49:33:13.952] Server  LOG      ✓ Compiled in 445ms
+[49:33:16.572] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[49:33:43.259] Server  LOG      ✓ Compiled in 396ms
+[49:35:14.561] Server  LOG      ✓ Compiled in 415ms
+[49:35:33.148] Server  LOG      ✓ Compiled in 319ms
+[49:35:46.576] Server  LOG      ✓ Compiled in 359ms
+[49:35:52.101] Server  LOG      ✓ Compiled in 372ms
+[49:36:30.361] Server  LOG      ✓ Compiled in 412ms
+[49:36:36.931] Server  LOG      ✓ Compiled in 1491ms
+[49:36:41.993] Server  LOG      ✓ Compiled in 646ms

@@ -62,7 +62,6 @@ const ClaimPage = ({ shopId }) => {
             form.append("shopId", shopId);
             form.append("phone", phone);
             form.append("ocrResult", JSON.stringify(ocrResult));
-            form.append("screenshotHash", screenshotHash);
 
             const res = await fetch("/api/screenshot/verify", {
                 method: "POST",

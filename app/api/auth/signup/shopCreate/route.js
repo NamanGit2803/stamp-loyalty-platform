@@ -9,7 +9,7 @@ const prisma = new PrismaClient()
 export async function POST(req) {
   try {
     const body = await req.json()
-    const { shopName, phone, businessType, address, minAmount, targetStamp, reward, ownerId } = body
+    const { shopName, phone, upiId, businessType, address, minAmount, targetStamp, reward, ownerId } = body
 
 
     //  CHECK IF SHOP ALREADY EXISTS FOR THIS OWNER
@@ -34,6 +34,7 @@ export async function POST(req) {
         ownerId,
         shopName,
         phone,
+        upiId,
         businessType,
         address,
         minAmount,

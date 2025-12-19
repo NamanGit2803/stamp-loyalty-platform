@@ -17,6 +17,7 @@ import { observer } from "mobx-react-lite"
 import { useStore } from '@/stores/StoreProvider'
 import { NavMain } from "@/components/shop/sidebar/nav-main";
 import { NavUser } from "@/components/shop/sidebar/nav-user";
+import { Separator } from "@/components/ui/separator"
 import {
     Sidebar,
     SidebarContent,
@@ -53,6 +54,8 @@ const AppSidebar = (props) => {
                     </div>
                 </div>
             </SidebarHeader>
+
+            <Separator/>
 
             <SidebarContent>
                 <NavMain shopId={shopStore.shop?.id} />

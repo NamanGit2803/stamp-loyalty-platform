@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Users, CreditCard, Settings, QrCode } from "lucide-react";
+import { LayoutDashboard, Users, CreditCard, Settings, QrCode, BadgeCheck, Gift } from "lucide-react";
 
 import {
   SidebarGroup,
@@ -34,6 +34,18 @@ export function NavMain({ shopId }) {
       match: `/shop/${shopId}/transactions`,
     },
     {
+      label: "Payment Verifications",
+      url: `/shop/${shopId}/verifications`,
+      icon: BadgeCheck,
+      match: `/shop/${shopId}/verifications`,
+    },
+    {
+      label: "Customer Rewards",
+      url: `/shop/${shopId}/rewards`,
+      icon: Gift,
+      match: `/shop/${shopId}/rewards`,
+    },
+    {
       label: "QR Code",
       url: `/shop/${shopId}/qr-code`,
       icon: QrCode,
@@ -61,7 +73,7 @@ export function NavMain({ shopId }) {
                 className="h-10"
               >
                 <Link href={item.url} className={isActive ? "bg-primary/10" : ""}>
-                  {item.icon && <item.icon className="size-6"/>}
+                  {item.icon && <item.icon className="size-6" />}
                   <span>{item.label}</span>
                 </Link>
               </SidebarMenuButton>

@@ -1,8 +1,21 @@
 {
+  "/(auth)/login/page": "app/(auth)/login/page.js",
+  "/(auth)/signup/page": "app/(auth)/signup/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/api/auth/findShop/route": "app/api/auth/findShop/route.js",
   "/api/auth/findUser/route": "app/api/auth/findUser/route.js",
-  "/api/public/checkShop/route": "app/api/public/checkShop/route.js",
-  "/api/screenshot/verify/route": "app/api/screenshot/verify/route.js",
-  "/claim/page": "app/claim/page.js",
-  "/page": "app/page.js"
+  "/api/auth/login/route": "app/api/auth/login/route.js",
+  "/api/auth/otp/send/route": "app/api/auth/otp/send/route.js",
+  "/api/auth/otp/verify/route": "app/api/auth/otp/verify/route.js",
+  "/api/auth/signup/userCreate/route": "app/api/auth/signup/userCreate/route.js",
+  "/api/internal/subscription-check/route": "app/api/internal/subscription-check/route.js",
+  "/api/subscription/status/route": "app/api/subscription/status/route.js",
+  "/page": "app/page.js",
+  "/shop/[shopId]/customers/page": "app/shop/[shopId]/customers/page.js",
+  "/shop/[shopId]/page": "app/shop/[shopId]/page.js",
+  "/shop/[shopId]/qr-code/page": "app/shop/[shopId]/qr-code/page.js",
+  "/shop/[shopId]/rewards/page": "app/shop/[shopId]/rewards/page.js",
+  "/shop/[shopId]/settings/page": "app/shop/[shopId]/settings/page.js",
+  "/shop/[shopId]/transactions/page": "app/shop/[shopId]/transactions/page.js",
+  "/shop/[shopId]/verifications/page": "app/shop/[shopId]/verifications/page.js"
 }

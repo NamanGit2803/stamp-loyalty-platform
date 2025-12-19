@@ -21,6 +21,7 @@ const Step2 = ({ setStep }) => {
     const [formData, setFormData] = useState({
         shopName: "",
         phone: "",
+        upiId: "",
         businessType: '',
         customBusinessType: '',
         address: "",
@@ -48,6 +49,7 @@ const Step2 = ({ setStep }) => {
         const newErrors = {}
         if (!formData.shopName.trim()) newErrors.shopName = "Shopname is required"
         if (!formData.phone.trim()) newErrors.phone = "Phone is required"
+        if (!formData.upiId.trim()) newErrors.upiId = "UpiId is required"
         if (!formData.businessType.trim()) newErrors.businessType = "Business type is required"
         if (formData.businessType == 'other') {
             if (!formData.customBusinessType.trim()) newErrors.customBusinessType = "Custom business type is required"
@@ -175,6 +177,25 @@ const Step2 = ({ setStep }) => {
                         <p className="text-red-600 text-xs mt-1 flex gap-2 items-center">
                             <TriangleAlert className='h-3 w-3' />
                             {errors.phone}
+                        </p>
+                    )}
+                </div>
+
+                {/* upi id */}
+                <div>
+                    <label className="block text-sm font-medium text-primary mb-2">Upi Id</label>
+                    <Input
+                        type="text"
+                        name="upiId"
+                        placeholder="Your upi id"
+                        value={formData.upiId}
+                        onChange={handleChange}
+                        className={errors.upiId ? "border-red-500" : "border-border"}
+                    />
+                    {errors.upiId && (
+                        <p className="text-red-600 text-xs mt-1 flex gap-2 items-center">
+                            <TriangleAlert className='h-3 w-3' />
+                            {errors.upiId}
                         </p>
                     )}
                 </div>

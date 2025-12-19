@@ -1,4 +1,4 @@
-import DashboardHome from "@/components/shop/dashboard-home"
+import DashboardHome from "@/components/shop/dashborad-home/dashboard-home"
 
 export default function DashboardPage() {
   return (

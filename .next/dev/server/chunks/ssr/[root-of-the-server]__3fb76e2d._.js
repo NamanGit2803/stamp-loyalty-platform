@@ -323,17 +323,79 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$tesseract$2e
     });
 }
 /* ------------------------------
-   🔵 SHA256 screenshot hash
---------------------------------*/ async function sha256(file) {
-    const buffer = await file.arrayBuffer();
-    const hash = await crypto.subtle.digest("SHA-256", buffer);
-    return Array.from(new Uint8Array(hash)).map((b)=>b.toString(16).padStart(2, "0")).join("");
-}
-/* ------------------------------
    🔵 OCR Extractor Helpers
---------------------------------*/ function extractAmount(text) {
-    const m = text.match(/(?:₹|rs\.?|inr)?\s*([0-9]{1,6})/i);
-    return m ? parseInt(m[1], 10) : null;
+--------------------------------*/ function extractAmountAdvanced(text) {
+    if (!text) return null;
+    let cleaned = text.replace(/[lI]/g, "1") // OCR error: I → 1
+    .replace(/O/g, "0") // OCR error: O → 0
+    .replace(/,/g, ""); // Remove commas
+    const lines = cleaned.split("\n").map((l)=>l.trim());
+    let candidates = [];
+    // 1️⃣ PRIORITY: Lines containing keywords related to amount
+    const priorityKeywords = [
+        "amount",
+        "paid",
+        "rs",
+        "₹",
+        "payment"
+    ];
+    for (const line of lines){
+        const low = line.toLowerCase();
+        if (priorityKeywords.some((k)=>low.includes(k))) {
+            const nums = line.match(/\d{1,6}(?:\.\d{1,2})?/g);
+            if (nums) {
+                nums.forEach((n)=>{
+                    const val = parseFloat(n);
+                    if (val > 0 && val < 50000) {
+                        candidates.push({
+                            value: val,
+                            weight: 3
+                        });
+                    }
+                });
+            }
+        }
+    }
+    // 2️⃣ SECOND PRIORITY: Lines containing Rupee symbol
+    for (const line of lines){
+        if (line.includes("₹")) {
+            const nums = line.match(/\d{1,6}(?:\.\d{1,2})?/g);
+            if (nums) {
+                nums.forEach((n)=>{
+                    const val = parseFloat(n);
+                    if (val > 0 && val < 50000) {
+                        candidates.push({
+                            value: val,
+                            weight: 2
+                        });
+                    }
+                });
+            }
+        }
+    }
+    // 3️⃣ THIRD PRIORITY: All numbers (fallback)
+    const allNums = cleaned.match(/\d{1,6}(?:\.\d{1,2})?/g);
+    if (allNums) {
+        allNums.forEach((n)=>{
+            const val = parseFloat(n);
+            // discard timestamps, years, bank numbers, etc.
+            if (val > 10 && val < 50000) {
+                candidates.push({
+                    value: val,
+                    weight: 1
+                });
+            }
+        });
+    }
+    if (candidates.length === 0) return null;
+    // 4️⃣ Choose best candidate:
+    // - Highest weight first
+    // - If tie, largest number wins
+    candidates.sort((a, b)=>{
+        if (b.weight !== a.weight) return b.weight - a.weight;
+        return b.value - a.value;
+    });
+    return candidates[0].value;
 }
 function extractUpi(text) {
     const m = text.match(/[a-zA-Z0-9.\-_]+@[a-zA-Z]{2,}/);
@@ -349,6 +411,13 @@ function extractStatus(text) {
     if (text.includes("failed")) return "failed";
     if (text.includes("pending")) return "pending";
     return "unknown";
+}
+function detectApp(text) {
+    const lower = text.toLowerCase();
+    if (lower.includes("gpay") || lower.includes("google pay")) return "GPAY";
+    if (lower.includes("phonepe")) return "PHONEPE";
+    if (lower.includes("paytm")) return "PAYTM";
+    return "UNKNOWN";
 }
 /* ------------------------------
    🔵 MAIN COMPONENT
@@ -377,8 +446,6 @@ function extractStatus(text) {
         setLoading(true); // your MobX store
         //* 1️⃣ Resize Image
         const resized = await resizeImage(file);
-        //* 2️⃣ Compute SHA256 hash
-        const screenshotHash = await sha256(resized);
         //* 3️⃣ Create OCR worker (new API)
         const worker = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$tesseract$2e$js$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createWorker"])("eng");
         //* 4️⃣ Run OCR (no load/loadLanguage/init needed)
@@ -389,14 +456,15 @@ function extractStatus(text) {
         //* 5️⃣ Extract values
         const ocrResult = {
             text,
-            amount: extractAmount(text),
+            amount: extractAmountAdvanced(text),
             upiId: extractUpi(text),
             utr: extractUTR(text),
-            status: extractStatus(text)
+            status: extractStatus(text),
+            appDetected: detectApp(text)
         };
         console.log("📌 OCR RESULT:", ocrResult);
         //* 6️⃣ Trigger API call in parent component
-        await verify(file, phone, ocrResult, screenshotHash);
+        await verify(file, phone, ocrResult);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
         className: "w-full shadow-md border rounded-xl overflow-hidden max-w-sm bg-white",
@@ -409,7 +477,7 @@ function extractStatus(text) {
                         children: "Claim Your Stamp"
                     }, void 0, false, {
                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                        lineNumber: 146,
+                        lineNumber: 209,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -417,13 +485,13 @@ function extractStatus(text) {
                         children: "Upload your UPI payment screenshot"
                     }, void 0, false, {
                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                        lineNumber: 147,
+                        lineNumber: 210,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/claimPage/claimCard.jsx",
-                lineNumber: 145,
+                lineNumber: 208,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -439,7 +507,7 @@ function extractStatus(text) {
                                     className: "w-10 h-10 opacity-70"
                                 }, void 0, false, {
                                     fileName: "[project]/components/claimPage/claimCard.jsx",
-                                    lineNumber: 158,
+                                    lineNumber: 221,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -447,13 +515,13 @@ function extractStatus(text) {
                                     children: "Tap to upload screenshot"
                                 }, void 0, false, {
                                     fileName: "[project]/components/claimPage/claimCard.jsx",
-                                    lineNumber: 159,
+                                    lineNumber: 222,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/claimPage/claimCard.jsx",
-                            lineNumber: 157,
+                            lineNumber: 220,
                             columnNumber: 25
                         }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "relative rounded-lg overflow-hidden shadow border",
@@ -466,7 +534,7 @@ function extractStatus(text) {
                                     className: "object-cover"
                                 }, void 0, false, {
                                     fileName: "[project]/components/claimPage/claimCard.jsx",
-                                    lineNumber: 163,
+                                    lineNumber: 226,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 !loading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -476,35 +544,35 @@ function extractStatus(text) {
                                         className: "w-4 h-4"
                                     }, void 0, false, {
                                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                                        lineNumber: 170,
+                                        lineNumber: 233,
                                         columnNumber: 37
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/components/claimPage/claimCard.jsx",
-                                    lineNumber: 166,
+                                    lineNumber: 229,
                                     columnNumber: 33
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 loading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "absolute inset-0 bg-black/30 z-50 flex items-center justify-center",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$spinner$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Spinner"], {}, void 0, false, {
                                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                                        lineNumber: 176,
+                                        lineNumber: 239,
                                         columnNumber: 37
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/components/claimPage/claimCard.jsx",
-                                    lineNumber: 175,
+                                    lineNumber: 238,
                                     columnNumber: 33
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/claimPage/claimCard.jsx",
-                            lineNumber: 162,
+                            lineNumber: 225,
                             columnNumber: 25
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                        lineNumber: 152,
+                        lineNumber: 215,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -515,7 +583,7 @@ function extractStatus(text) {
                         className: "hidden"
                     }, void 0, false, {
                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                        lineNumber: 183,
+                        lineNumber: 246,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -526,7 +594,7 @@ function extractStatus(text) {
                                 children: "Phone"
                             }, void 0, false, {
                                 fileName: "[project]/components/claimPage/claimCard.jsx",
-                                lineNumber: 193,
+                                lineNumber: 256,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -537,7 +605,7 @@ function extractStatus(text) {
                                         children: "+91"
                                     }, void 0, false, {
                                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                                        lineNumber: 195,
+                                        lineNumber: 258,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -549,19 +617,19 @@ function extractStatus(text) {
                                         className: "pl-10"
                                     }, void 0, false, {
                                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                                        lineNumber: 197,
+                                        lineNumber: 260,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/claimPage/claimCard.jsx",
-                                lineNumber: 194,
+                                lineNumber: 257,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                        lineNumber: 192,
+                        lineNumber: 255,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -572,7 +640,7 @@ function extractStatus(text) {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$spinner$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Spinner"], {}, void 0, false, {
                                     fileName: "[project]/components/claimPage/claimCard.jsx",
-                                    lineNumber: 216,
+                                    lineNumber: 279,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 " Verifying..."
@@ -580,19 +648,19 @@ function extractStatus(text) {
                         }, void 0, true) : "Submit"
                     }, void 0, false, {
                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                        lineNumber: 209,
+                        lineNumber: 272,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/claimPage/claimCard.jsx",
-                lineNumber: 150,
+                lineNumber: 213,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/claimPage/claimCard.jsx",
-        lineNumber: 143,
+        lineNumber: 206,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -746,7 +814,6 @@ const ClaimPage = ({ shopId })=>{
             form.append("shopId", shopId);
             form.append("phone", phone);
             form.append("ocrResult", JSON.stringify(ocrResult));
-            form.append("screenshotHash", screenshotHash);
             const res = await fetch("/api/screenshot/verify", {
                 method: "POST",
                 body: form
@@ -785,7 +852,7 @@ const ClaimPage = ({ shopId })=>{
                         children: shopName || "Shop"
                     }, void 0, false, {
                         fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-                        lineNumber: 102,
+                        lineNumber: 101,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -795,7 +862,7 @@ const ClaimPage = ({ shopId })=>{
                                 className: "w-4 h-4 text-primary/70"
                             }, void 0, false, {
                                 fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-                                lineNumber: 107,
+                                lineNumber: 106,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -803,19 +870,19 @@ const ClaimPage = ({ shopId })=>{
                                 children: "You're one step away from rewards"
                             }, void 0, false, {
                                 fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-                                lineNumber: 108,
+                                lineNumber: 107,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-                        lineNumber: 106,
+                        lineNumber: 105,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-                lineNumber: 101,
+                lineNumber: 100,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$claimPage$2f$claimCard$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -825,7 +892,7 @@ const ClaimPage = ({ shopId })=>{
                 setLoading: setLoading
             }, void 0, false, {
                 fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-                lineNumber: 115,
+                lineNumber: 114,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -837,19 +904,19 @@ const ClaimPage = ({ shopId })=>{
                         children: "LoyaltyPro"
                     }, void 0, false, {
                         fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-                        lineNumber: 142,
+                        lineNumber: 141,
                         columnNumber: 28
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-                lineNumber: 141,
+                lineNumber: 140,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-        lineNumber: 95,
+        lineNumber: 94,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
