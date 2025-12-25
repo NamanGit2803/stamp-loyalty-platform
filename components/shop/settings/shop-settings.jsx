@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { observer } from "mobx-react-lite"
 import { useStore } from '@/stores/StoreProvider'
 import { Spinner } from "@/components/ui/spinner"
@@ -20,6 +20,7 @@ const ShopSetting = () => {
         address: shopStore.shop?.address ?? '',
         upiId: shopStore.shop?.upiId ?? '',
     })
+    const [mounted, setMounted] = useState(false)
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -27,10 +28,22 @@ const ShopSetting = () => {
     }
 
 
+    useEffect(() => {
+      setMounted(true)
+    }, [])
+
+    if(!mounted) return null
+    
+
+
     return (
         <Card className='bg-background border-0 max-w-4xl w-full'>
-            <CardHeader>
+            <CardHeader className='flex justify-between'>
                 <CardTitle className='text-primary'>Shop Details</CardTitle>
+
+                <div className='text-sm text-muted-foreground'>
+                    Shop Id: <span className='text-primary font-semibold'>{shopStore.shop?.id}</span>
+                </div>
             </CardHeader>
             <CardContent className="grid gap-4">
                 {/* shop name  */}
@@ -38,7 +51,18 @@ const ShopSetting = () => {
                     <Label className='mb-1'>Shop Name</Label>
                     <Input value={shopSettings.shopName}
                         name='shopName'
-                        onChange={handleChange} />
+                        onChange={handleChange}
+                        className='capitalize' />
+                </div>
+
+                {/* business type  */}
+                <div>
+                    <Label className='mb-1'>Business Type</Label>
+                    <Input
+                        value={shopStore.shop?.businessType ?? ""}
+                        readOnly
+                        className=" cursor-not-allowed capitalize"
+                    />
                 </div>
 
                 {/* mobile  */}

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///E:/Project%20Files/Earning-model/stamp-card-project/stamp-loyalty-platform/app/shop/%5BshopId%5D/myAccount/page.jsx"],"sourcesContent":["import React from 'react'\r\n\r\nconst Page = () => {\r\n  return (\r\n    <div>page</div>\r\n  )\r\n}\r\n\r\nexport default Page"],"names":[],"mappings":";;;;;AAAA;;;AAEA,MAAM,OAAO;IACX,qBACE,8OAAC;kBAAI;;;;;;AAET;uCAEe"}}]
+}

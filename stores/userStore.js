@@ -3,7 +3,7 @@
 import { makeAutoObservable, runInAction } from "mobx";
 
 class UserStore {
-  user = null;            
+  user = null;
   shopId = null;
   loading = false;
   error = null;
@@ -13,7 +13,7 @@ class UserStore {
   // OTP global state
   otpModalOpen = false;
   otpEmail = "";
-  otpPurpose = "";   
+  otpPurpose = "";
   otpVerified = false;
   otpResolver = null;
 
@@ -104,6 +104,39 @@ class UserStore {
 
     } catch (err) {
       runInAction(() => (this.error = err.message));
+    } finally {
+      this.loading = false;
+    }
+  }
+
+  /** ============== UPDATE USER ============== */
+  async updateProfile(updates) {
+    this.loading = true;
+    this.error = null;
+
+    try {
+      const res = await fetch("/api/shop/user/updateUserDetails", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updates),
+      })
+
+      const data = await res.json()
+
+      if (res.ok) {
+        runInAction(() => {
+          this.user = data.user
+        })
+        return "Profile updated successfully!"
+      } else {
+        throw new Error(data.error || "Failed to update profile")
+      }
+    } catch (err) {
+      runInAction(() => {
+        this.error = err.message
+      })
     } finally {
       this.loading = false;
     }

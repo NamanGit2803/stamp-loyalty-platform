@@ -98,7 +98,7 @@ const ClaimPage = ({ shopId }) => {
 
             {/* ---------- TOP SECTION ---------- */}
             <div className="mt-6 animate-fadeIn">
-                <h2 className="text-2xl font-extrabold text-primary tracking-wide drop-shadow-sm">
+                <h2 className="text-2xl font-extrabold text-primary tracking-wide drop-shadow-sm capitalize">
                     {shopName || "Shop"}
                 </h2>
 

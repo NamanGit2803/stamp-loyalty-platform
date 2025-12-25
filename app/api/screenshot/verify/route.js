@@ -3,7 +3,10 @@ export const runtime = "nodejs";
 import { NextResponse } from "next/server";
 import crypto from "crypto";
 import { PrismaClient } from "@prisma/client";
-import { parsePaymentOCR } from "@/lib/aiParser";
+import { parsePaymentScreenshot } from "@/lib/aiParser";
+import { validateScreenshotBeforeAI } from "@/lib/tools";
+import { detectPaymentDirection } from "@/lib/tools";
+import { validateUPIScreenshotTime } from "@/lib/upiTime";
 
 const prisma = new PrismaClient();
 
@@ -31,42 +34,35 @@ export async function POST(req) {
         const clientOCR = JSON.parse(ocrJson);
         const { text: rawText } = clientOCR;
 
-        // --------------------------------------
-        // 1️⃣ AI OCR FIX PROCESSING
-        // --------------------------------------
-        const ai = await parsePaymentOCR(rawText);
-
-        if (ai.aiError) {
-            console.log("⚠ AI unavailable — continuing with client OCR only");
-        }
-
-
-        console.log("AI FIXED OCR →", ai);
-
-        // AI corrected values (fallback to client OCR)
-        const amount = ai.amount ?? clientOCR.amount ?? null;
-        const upiId = ai.upiId ?? clientOCR.upiId ?? null;
-        const utr = ai.utr ?? clientOCR.utr ?? null;
-        const appDetected = ai.appDetected ?? "UNKNOWN";
-        const isLikelyFake = ai.isLikelyFake ?? false;
-
-        // Validate amount
-        if (!amount || isNaN(amount)) {
-            return NextResponse.json(
-                { success: false, rejectReason: "ocr_failed_amount" },
-                { status: 400 }
-            );
-        }
+        console.log('text', rawText)
 
         // --------------------------------------
-        // 2️⃣ HASH ORIGINAL IMAGE (True Duplicate Prevention)
+        // 1️⃣ HASH ORIGINAL IMAGE (True Duplicate Prevention) and checksum
         // --------------------------------------
         const bytes = await file.arrayBuffer();
         const buffer = Buffer.from(bytes);
         const screenshotHash = sha256(buffer);
+        // base 64 image 
+        const imageBase64 = buffer.toString("base64");
+
+        // checksum 
+        const checksum = crypto
+            .createHash("sha256")
+            .update(
+                rawText
+                    ?.toLowerCase()
+                    .replace(/\s+/g, " ")
+                    .replace(/[^\x20-\x7E]/g, "")
+                    .trim()
+            )
+            .digest("hex");
+
+
+
+
 
         // --------------------------------------
-        // 3️⃣ FETCH SHOP
+        // 2️⃣ FETCH SHOP
         // --------------------------------------
         const shop = await prisma.shop.findUnique({ where: { id: shopId } });
         if (!shop) {
@@ -76,55 +72,184 @@ export async function POST(req) {
             );
         }
 
-        // --------------------------------------
-        // 4️⃣ CHECK DUPLICATE SCREENSHOT
-        // --------------------------------------
-        const duplicate = await prisma.scanVerification.findFirst({
-            where: { shopId, screenshotHash },
-        });
 
-        if (duplicate) {
+        // 3️⃣ Detect payment direction (paid / received / unknown)
+        const paymentDirection = detectPaymentDirection(rawText);
+
+        if (paymentDirection == 'RECEIVED') {
             return NextResponse.json(
-                { success: false, rejectReason: "duplicate_screenshot" },
+                { success: false, rejectReason: 'Received payment not valid.' },
+                { status: 400 }
+            )
+        }
+
+
+
+        // --------------------------------------
+        // 4️⃣ PRE-VALIDATION BEFORE AI (cost saving)
+        // --------------------------------------
+        const preFail = await validateScreenshotBeforeAI(buffer, clientOCR);
+
+        if (preFail) {
+            return NextResponse.json(
+                { success: false, rejectReason: 'Screenshot is not valid..' },
                 { status: 400 }
             );
         }
 
+
         // --------------------------------------
-        // 5️⃣ CREATE / FETCH CUSTOMER
+        // 5️⃣ CHECK DUPLICATE SCREENSHOT
         // --------------------------------------
-        let customer = await prisma.customer.findFirst({
-            where: { shopId, phone },
+        const duplicateHash = await prisma.scanVerification.findFirst({
+            where: {
+                shopId,
+                screenshotHash,
+                status: "success"
+            },
         });
 
-        if (!customer) {
-            customer = await prisma.customer.create({
-                data: {
-                    id: `cus_${crypto.randomUUID()}`,
-                    shopId,
-                    phone,
-                },
-            });
+        if (duplicateHash) {
+            return NextResponse.json(
+                { success: false, rejectReason: "Duplicate Screenshot" },
+                { status: 400 }
+            );
         }
 
+
+        //  Check duplicate OCR checksum
+        const duplicateChecksum = await prisma.scanVerification.findFirst({
+            where: {
+                shopId,
+                checksum,
+                status: "success"
+            }
+        });
+
+        if (duplicateChecksum) {
+            return NextResponse.json(
+                { success: false, rejectReason: "Duplicate Screenshot" },
+                { status: 400 }
+            );
+        }
+
+
         // --------------------------------------
-        // 6️⃣ FRAUD CHECKS
+        // 6️⃣ AI OCR FIX PROCESSING
         // --------------------------------------
-        let rejectReason = null;
+        const ai = await parsePaymentScreenshot(imageBase64);
+
+        if (ai.aiError) {
+            console.log("⚠ AI unavailable — continuing with client OCR only");
+        }
+
+
+        console.log("AI FIXED OCR →", ai);
+
+        // AI corrected values (fallback to client OCR)
+        const amount = ai.amount ?? null;
+        const upiId = ai.upiId ?? clientOCR.upiId ?? null;
+        const utr = ai.utr ?? clientOCR.utr ?? null;
+        const date = ai.date ?? clientOCR.date ?? null;
+        const time = ai.time ?? clientOCR.time ?? null;
+        const appDetected = ai.appDetected ?? "UNKNOWN";
+        const isLikelyFake = ai.isLikelyFake ?? false;
+        const confidence = ai.confidence ?? null;
+        const status = ai.status ?? false
+
+
+        const timeCheck2 = validateUPIScreenshotTime(date, time);
+        console.log("time", timeCheck2)
+
+
+
+        // if payment status not success 
+        if (!ai || status !== "success") {
+            return NextResponse.json(
+                { success: false, rejectReason: "Payment is not successful." },
+                { status: 400 }
+            )
+        }
+
+
+        // check utr 
+        if (utr) {
+            const utrRegex = /^[0-9A-Za-z]{12,18}$/;
+
+            const utrExists = await prisma.scanVerification.findFirst({
+                where: { shopId, utr, status: 'success' },
+            });
+
+            if (!utrRegex.test(utr)) {
+                return NextResponse.json(
+                    { success: false, rejectReason: "Screenshot is not valid." },
+                    { status: 400 }
+                );
+            }
+
+            // duplicate utr 
+            if (utrExists) {
+                return NextResponse.json(
+                    { success: false, rejectReason: "Duplicate Screenshot" },
+                    { status: 400 }
+                )
+            }
+        }
+
+
+        // Validate amount
+        if (!amount) {
+            return NextResponse.json(
+                { success: false, rejectReason: "Amount is invalid" },
+                { status: 400 }
+            );
+        }
+
+        // amount limit 
+        if (amount) {
+            if (amount < shop.minAmount) {
+                return NextResponse.json(
+                    { success: false, rejectReason: "Payment amount is below the minimum required." },
+                    { status: 400 }
+                );
+            }
+        }
+
+
+        // time and date validation 
+        const timeCheck = validateUPIScreenshotTime(date, time);
+        if (!timeCheck.valid) {
+            return NextResponse.json(
+                {
+                    success: false,
+                    rejectReason: "Invalid date and time.",
+                },
+                { status: 400 }
+            );
+        }
+
 
         // AI flagged fake
         if (isLikelyFake) {
             rejectReason = "suspicious_screenshot";
         }
 
+
+
+
+
+
+
+
+
+        
+        
+
+
+
         // UPI mismatch
         if (!rejectReason && shop.upiId && upiId && shop.upiId !== upiId) {
             rejectReason = "upi_mismatch";
-        }
-
-        // Minimum amount check
-        if (!rejectReason && amount < Number(shop.minAmount || 0)) {
-            rejectReason = "below_minimum";
         }
 
         // Payment status from client OCR (not AI)
@@ -132,13 +257,6 @@ export async function POST(req) {
             rejectReason = "payment_not_success";
         }
 
-        // Duplicate UTR
-        if (!rejectReason && utr) {
-            const utrExists = await prisma.scanVerification.findFirst({
-                where: { shopId, utr },
-            });
-            if (utrExists) rejectReason = "duplicate_utr";
-        }
 
         // Daily Limit
         if (!rejectReason) {
@@ -164,7 +282,7 @@ export async function POST(req) {
         const scan = await prisma.scanVerification.create({
             data: {
                 shopId,
-                customerId: customer.id,
+                customerId: phone,
                 amount,
                 currency: "INR",
                 upiId,
@@ -184,6 +302,24 @@ export async function POST(req) {
                 { success: false, rejectReason },
                 { status: 400 }
             );
+        }
+
+
+        // --------------------------------------
+        //  CREATE / FETCH CUSTOMER
+        // --------------------------------------
+        let customer = await prisma.customer.findFirst({
+            where: { shopId, phone },
+        });
+
+        if (!customer) {
+            customer = await prisma.customer.create({
+                data: {
+                    id: `cus_${crypto.randomUUID()}`,
+                    shopId,
+                    phone,
+                },
+            });
         }
 
         // --------------------------------------

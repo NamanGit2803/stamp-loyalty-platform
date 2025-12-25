@@ -57,8 +57,8 @@ module.exports = mod;
 "use strict";
 
 __turbopack_context__.s([
-    "parsePaymentOCR",
-    ()=>parsePaymentOCR
+    "parsePaymentScreenshot",
+    ()=>parsePaymentScreenshot
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$openai$2f$index$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/openai/index.mjs [app-route] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$openai$2f$client$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$export__OpenAI__as__default$3e$__ = __turbopack_context__.i("[project]/node_modules/openai/client.mjs [app-route] (ecmascript) <export OpenAI as default>");
@@ -66,51 +66,86 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$openai$2f$cl
 const client = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$openai$2f$client$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$export__OpenAI__as__default$3e$__["default"]({
     apiKey: process.env.OPENAI_API_KEY
 });
-async function parsePaymentOCR(ocrText) {
-    const prompt = `
-You are an expert at reading Indian UPI payment screenshots.
-Extract ONLY these fields:
-
-- amount (number)
-- upiId (string or null)
-- utr (string or null)
-- appDetected (GPay | PhonePe | Paytm | AmazonPay | UNKNOWN)
-- isLikelyFake (true/false)
-
-OCR text:
-${ocrText}
-
-Return ONLY JSON with this format:
-
-{
-  "amount": number,
-  "upiId": "string or null",
-  "utr": "string or null",
-  "appDetected": "GPay/PhonePe/Paytm/AmazonPay/UNKNOWN",
-  "isLikelyFake": boolean
+/**
+ * Safely extract + repair JSON from LLM output
+ */ function parseLLMJson(raw) {
+    if (!raw) throw new Error("Empty AI response");
+    let text = raw.trim().replace(/^```json/i, "").replace(/^```/, "").replace(/```$/, "").trim();
+    const start = text.indexOf("{");
+    const end = text.lastIndexOf("}");
+    if (start === -1 || end === -1) {
+        throw new Error("No JSON object found");
+    }
+    text = text.slice(start, end + 1);
+    return JSON.parse(text.replace(/,\s*}/g, "}").replace(/,\s*]/g, "]").replace(/\n/g, " ").replace(/\t/g, " "));
 }
-`;
-    const res = await client.chat.completions.create({
-        model: "gpt-4.1-mini",
-        messages: [
-            {
-                role: "system",
-                content: "You correct OCR mistakes and extract structured payment data."
-            },
-            {
-                role: "user",
-                content: prompt
-            }
-        ],
-        temperature: 0
-    });
-    let json = res.choices[0].message.content;
+async function parsePaymentScreenshot(imageBase64) {
+    if (!imageBase64) throw new Error("Image base64 is required");
     try {
-        return JSON.parse(json);
-    } catch  {
+        const systemPrompt = "You are an OCR + extraction system. Output ONLY valid minified JSON. No text, no explanations.";
+        const userPrompt = `
+Extract payment info from the screenshot.
+
+Rules:
+- amount: number or null
+- upiId: must contain "@"
+- utr: alphanumeric 8-25 chars or null
+- date: YYYY-MM-DD or null
+- app: GPay | PhonePe | Paytm | AmazonPay | UNKNOWN
+- fake: true if screenshot looks edited/blurred/cropped
+- confidence: 0 to 1
+
+Output ONLY:
+{"amount":null,"upiId":null,"utr":null,"date":null,"app":"UNKNOWN","fake":false,"confidence":0.5}
+`;
+        // ChatGPT-4.1-mini Vision request
+        const res = await client.chat.completions.create({
+            model: "gpt-4.1-mini",
+            messages: [
+                {
+                    role: "system",
+                    content: systemPrompt
+                },
+                {
+                    role: "user",
+                    content: [
+                        {
+                            type: "input_text",
+                            text: userPrompt
+                        },
+                        {
+                            type: "input_image",
+                            image_url: `data:image/jpeg;base64,${imageBase64}`
+                        }
+                    ]
+                }
+            ],
+            temperature: 0,
+            max_tokens: 120
+        });
+        const raw = res.choices[0].message.content;
+        const parsed = parseLLMJson(raw);
+        // FINAL NORMALIZED OUTPUT
         return {
-            error: "Invalid JSON from AI",
-            raw: json
+            amount: typeof parsed.amount === "number" ? parsed.amount : null,
+            upiId: typeof parsed.upiId === "string" && parsed.upiId.includes("@") ? parsed.upiId : null,
+            utr: typeof parsed.utr === "string" && /^[a-zA-Z0-9]{8,25}$/.test(parsed.utr) ? parsed.utr : null,
+            date: typeof parsed.date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(parsed.date) ? parsed.date : null,
+            appDetected: parsed.app || "UNKNOWN",
+            isLikelyFake: Boolean(parsed.fake),
+            confidence: Math.min(Math.max(typeof parsed.confidence === "number" ? parsed.confidence : 0.5, 0), 1)
+        };
+    } catch (err) {
+        console.error("ChatGPT OCR ERROR →", err);
+        return {
+            amount: null,
+            upiId: null,
+            utr: null,
+            date: null,
+            appDetected: "UNKNOWN",
+            isLikelyFake: false,
+            confidence: 0,
+            aiError: true
         };
     }
 }
@@ -154,26 +189,6 @@ async function POST(req) {
         const clientOCR = JSON.parse(ocrJson);
         const { text: rawText } = clientOCR;
         // --------------------------------------
-        // 1️⃣ AI OCR FIX PROCESSING
-        // --------------------------------------
-        const ai = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$aiParser$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["parsePaymentOCR"])(rawText);
-        console.log("AI FIXED OCR →", ai);
-        // AI corrected values (fallback to client OCR)
-        const amount = ai.amount ?? clientOCR.amount ?? null;
-        const upiId = ai.upiId ?? clientOCR.upiId ?? null;
-        const utr = ai.utr ?? clientOCR.utr ?? null;
-        const appDetected = ai.appDetected ?? "UNKNOWN";
-        const isLikelyFake = ai.isLikelyFake ?? false;
-        // Validate amount
-        if (!amount || isNaN(amount)) {
-            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                success: false,
-                rejectReason: "ocr_failed_amount"
-            }, {
-                status: 400
-            });
-        }
-        // --------------------------------------
         // 2️⃣ HASH ORIGINAL IMAGE (True Duplicate Prevention)
         // --------------------------------------
         const bytes = await file.arrayBuffer();
@@ -206,7 +221,30 @@ async function POST(req) {
         if (duplicate) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 success: false,
-                rejectReason: "duplicate_screenshot"
+                rejectReason: "Duplicate Screenshot"
+            }, {
+                status: 400
+            });
+        }
+        // --------------------------------------
+        // 1️⃣ AI OCR FIX PROCESSING
+        // --------------------------------------
+        const ai = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$aiParser$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["parsePaymentScreenshot"])(file);
+        if (ai.aiError) {
+            console.log("⚠ AI unavailable — continuing with client OCR only");
+        }
+        console.log("AI FIXED OCR →", ai);
+        // AI corrected values (fallback to client OCR)
+        const amount = ai.amount ?? clientOCR.amount ?? null;
+        const upiId = ai.upiId ?? clientOCR.upiId ?? null;
+        const utr = ai.utr ?? clientOCR.utr ?? null;
+        const appDetected = ai.appDetected ?? "UNKNOWN";
+        const isLikelyFake = ai.isLikelyFake ?? false;
+        // Validate amount
+        if (!amount || isNaN(amount)) {
+            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                success: false,
+                rejectReason: "ocr_failed_amount"
             }, {
                 status: 400
             });

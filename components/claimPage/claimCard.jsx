@@ -9,9 +9,8 @@ import { observer } from "mobx-react-lite";
 import { Spinner } from "@/components/ui/spinner";
 import { createWorker } from "tesseract.js";
 
-/* ------------------------------
-   🔵 IMAGE RESIZER (FAST OCR)
---------------------------------*/
+
+// resize image 
 async function resizeImage(file, maxWidth = 1200, quality = 0.85) {
     return new Promise((resolve) => {
         const img = new Image();
@@ -34,78 +33,67 @@ async function resizeImage(file, maxWidth = 1200, quality = 0.85) {
     });
 }
 
-
-/* ------------------------------
-   🔵 OCR Extractor Helpers
---------------------------------*/
-function extractAmountAdvanced(text) {
+// extract date 
+function extractDate(text) {
     if (!text) return null;
 
-    let cleaned = text
-        .replace(/[lI]/g, "1")   // OCR error: I → 1
-        .replace(/O/g, "0")      // OCR error: O → 0
-        .replace(/,/g, "");      // Remove commas
+    text = text.replace(/,/g, "").trim();
 
-    const lines = cleaned.split("\n").map(l => l.trim());
+    // Supported formats:
+    // 24/01/2025
+    // 24-01-2025
+    // 24.01.2025
+    // 2025/01/24
+    // 24 Jan 2025
+    // Jan 24 2025
 
-    let candidates = [];
+    const patterns = [
+        /\b(\d{2})\/(\d{2})\/(\d{4})\b/,      // 24/01/2025
+        /\b(\d{2})-(\d{2})-(\d{4})\b/,        // 24-01-2025
+        /\b(\d{2})\.(\d{2})\.(\d{4})\b/,      // 24.01.2025
+        /\b(\d{4})\/(\d{2})\/(\d{2})\b/,      // 2025/01/24
+        /\b(\d{2})\s([A-Za-z]+)\s(\d{4})\b/,  // 24 Jan 2025
+        /\b([A-Za-z]+)\s(\d{2})\s(\d{4})\b/   // Jan 24 2025
+    ];
 
-    // 1️⃣ PRIORITY: Lines containing keywords related to amount
-    const priorityKeywords = ["amount", "paid", "rs", "₹", "payment"];
-    for (const line of lines) {
-        const low = line.toLowerCase();
-        if (priorityKeywords.some(k => low.includes(k))) {
-            const nums = line.match(/\d{1,6}(?:\.\d{1,2})?/g);
-            if (nums) {
-                nums.forEach(n => {
-                    const val = parseFloat(n);
-                    if (val > 0 && val < 50000) {
-                        candidates.push({ value: val, weight: 3 });
-                    }
-                });
-            }
-        }
+    for (let regex of patterns) {
+        const match = text.match(regex);
+        if (match) return match[0]; // Return exact date string found
     }
 
-    // 2️⃣ SECOND PRIORITY: Lines containing Rupee symbol
-    for (const line of lines) {
-        if (line.includes("₹")) {
-            const nums = line.match(/\d{1,6}(?:\.\d{1,2})?/g);
-            if (nums) {
-                nums.forEach(n => {
-                    const val = parseFloat(n);
-                    if (val > 0 && val < 50000) {
-                        candidates.push({ value: val, weight: 2 });
-                    }
-                });
-            }
-        }
-    }
-
-    // 3️⃣ THIRD PRIORITY: All numbers (fallback)
-    const allNums = cleaned.match(/\d{1,6}(?:\.\d{1,2})?/g);
-    if (allNums) {
-        allNums.forEach(n => {
-            const val = parseFloat(n);
-            // discard timestamps, years, bank numbers, etc.
-            if (val > 10 && val < 50000) {
-                candidates.push({ value: val, weight: 1 });
-            }
-        });
-    }
-
-    if (candidates.length === 0) return null;
-
-    // 4️⃣ Choose best candidate:
-    // - Highest weight first
-    // - If tie, largest number wins
-    candidates.sort((a, b) => {
-        if (b.weight !== a.weight) return b.weight - a.weight;
-        return b.value - a.value;
-    });
-
-    return candidates[0].value;
+    return null;
 }
+
+
+// extract time 
+function extractTime(text) {
+    if (!text) return null;
+
+    text = text.toLowerCase().trim().replace(/\./g, ":").replace(/-/g, ":");
+
+    // Supported formats:
+    // 10:42 AM
+    // 10:42AM
+    // 22:30
+    // 10.42 pm
+    // 10:42:10
+
+    const patterns = [
+        /\b(\d{1,2}:\d{2}\s?(am|pm))\b/i,   // 10:42 AM
+        /\b(\d{1,2}:\d{2}(am|pm))\b/i,      // 10:42AM
+        /\b(\d{1,2}:\d{2}:\d{2})\b/,        // 10:42:10
+        /\b(\d{1,2}:\d{2})\b/               // 22:30
+    ];
+
+    for (let regex of patterns) {
+        const match = text.match(regex);
+        if (match) return match[0];
+    }
+
+    return null;
+}
+
+
 
 
 function extractUpi(text) {
@@ -118,26 +106,7 @@ function extractUTR(text) {
     return m ? m[0] : null;
 }
 
-function extractStatus(text) {
-    text = text.toLowerCase();
-    if (text.includes("successful") || text.includes("completed")) return "success";
-    if (text.includes("failed")) return "failed";
-    if (text.includes("pending")) return "pending";
-    return "unknown";
-}
 
-function detectApp(text) {
-    const lower = text.toLowerCase();
-    if (lower.includes("gpay") || lower.includes("google pay")) return "GPAY";
-    if (lower.includes("phonepe")) return "PHONEPE";
-    if (lower.includes("paytm")) return "PAYTM";
-    return "UNKNOWN";
-}
-
-
-/* ------------------------------
-   🔵 MAIN COMPONENT
---------------------------------*/
 
 const ClaimCard = ({ shopId, verify, loading, setLoading }) => {
     const [file, setFile] = useState(null);
@@ -189,11 +158,10 @@ const ClaimCard = ({ shopId, verify, loading, setLoading }) => {
         //* 5️⃣ Extract values
         const ocrResult = {
             text,
-            amount: extractAmountAdvanced(text),
             upiId: extractUpi(text),
             utr: extractUTR(text),
-            status: extractStatus(text),
-            appDetected: detectApp(text),
+            date: extractDate(text),
+            time: extractTime(text),
         };
 
         console.log("📌 OCR RESULT:", ocrResult);

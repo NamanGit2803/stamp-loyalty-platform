@@ -8,13 +8,6 @@ import {
   LogOut,
   Sparkles,
 } from "lucide-react";
-
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar";
-
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -24,27 +17,20 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
 import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
+import { useRouter } from "next/navigation";
 
-export function NavUser({ user, logout }) {
+
+export function NavUser({ user, logout, shopId }) {
+
   const { isMobile } = useSidebar();
+  const router = useRouter()
 
-  function githubAvatarFromSeed(seed) {
-    let hash = 0;
-    for (let i = 0; i < seed?.length; i++) {
-      hash = seed?.charCodeAt(i) + ((hash << 5) - hash);
-    }
-    return Math.abs(hash % 5000000); // GitHub has millions of IDs
-  }
-
-
-  const gid = githubAvatarFromSeed(user?.email);
 
   return (
     <SidebarMenu>
@@ -53,18 +39,15 @@ export function NavUser({ user, logout }) {
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
               size="lg"
-              className="data-[state=open]:bg-sidebar-primary data-[state=open]:text-sidebar-accent-foreground shadow-2xl bg-background border-border"
+              className="data-[state=open]:bg-sidebar-primary data-[state=open]:text-sidebar-accent-foreground shadow-[0_10px_30px_rgba(0,0,0,0.12)] bg-background border border-border/30 hover:cursor-pointer hover:bg-background  hover:text-sidebar-foreground"
             >
-              <Avatar className="h-8 w-8 rounded-lg">
-                <AvatarImage src={`https://avatars.githubusercontent.com/u/${gid}?v=4`} alt={user?.name} />
-                <AvatarFallback className="rounded-lg">
-                  {user?.name?.charAt(0).toUpperCase()}
-                </AvatarFallback>
-              </Avatar>
+              <div className="h-8 w-8 bg-secondary rounded-lg flex items-center justify-center text-primary-foreground">
+                {user?.name?.charAt(0).toUpperCase()}
+              </div>
 
               <div className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-medium">{user?.name}</span>
-                <span className="truncate text-xs">{user?.email}</span>
+                <span className="truncate font-medium capitalize">{user?.name ?? ''}</span>
+                <span className="truncate text-xs">{user?.email ?? ''}</span>
               </div>
 
               <ChevronsUpDown className="ml-auto size-4" />
@@ -79,12 +62,9 @@ export function NavUser({ user, logout }) {
           >
             <DropdownMenuLabel className="p-0 font-normal">
               <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
-                <Avatar className="h-8 w-8 rounded-lg">
-                  <AvatarImage src={`https://avatars.githubusercontent.com/u/${gid}?v=4`} alt={user?.name} />
-                  <AvatarFallback className="rounded-lg">
-                    {user?.name?.charAt(0).toUpperCase()}
-                  </AvatarFallback>
-                </Avatar>
+                <div className="h-8 w-8 bg-secondary rounded-lg flex items-center justify-center text-primary-foreground">
+                  {user?.name?.charAt(0).toUpperCase()}
+                </div>
 
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-medium">{user?.name}</span>
@@ -96,12 +76,12 @@ export function NavUser({ user, logout }) {
             <DropdownMenuSeparator />
 
             <DropdownMenuGroup>
-              <DropdownMenuItem>
+              <DropdownMenuItem onClick={()=>router.push(`/shop/${shopId}/myAccount`)}>
                 <BadgeCheck />
                 Account
               </DropdownMenuItem>
 
-              <DropdownMenuItem>
+              <DropdownMenuItem onClick={()=>router.push(`/shop/${shopId}/billing`)}>
                 <CreditCard />
                 Billing
               </DropdownMenuItem>

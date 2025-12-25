@@ -100,6 +100,7 @@ const LoyaltySettings = () => {
                     <Input
                         value={loyaltySettings.reward}
                         name='reward'
+                        className='capitalize'
                         onChange={handleChange}
                     />
                 </div>

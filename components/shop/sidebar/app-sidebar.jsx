@@ -50,7 +50,7 @@ const AppSidebar = (props) => {
                     </div>
 
                     <div className="grid flex-1">
-                        <span className="truncate font-medium">{shopStore.shop?.shopName || 'Shop Name'}</span>
+                        <span className="truncate font-medium capitalize">{shopStore.shop?.shopName || 'Shop Name'}</span>
                     </div>
                 </div>
             </SidebarHeader>
@@ -62,7 +62,7 @@ const AppSidebar = (props) => {
             </SidebarContent>
 
             <SidebarFooter>
-                <NavUser user={userStore.user} logout={userStore.logout} />
+                <NavUser user={userStore.user} logout={userStore.logout} shopId={shopStore.shop?.id}/>
             </SidebarFooter>
 
             <SidebarRail />

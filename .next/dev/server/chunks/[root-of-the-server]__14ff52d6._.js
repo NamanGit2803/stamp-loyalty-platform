@@ -65,12 +65,20 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/server.js [app-route] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/crypto [external] (crypto, cjs)");
 var __TURBOPACK__imported__module__$5b$externals$5d2f40$prisma$2f$client__$5b$external$5d$__$2840$prisma$2f$client$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/@prisma/client [external] (@prisma/client, cjs)");
+(()=>{
+    const e = new Error("Cannot find module '@/lib/parsePaymentScreenshot'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
 const runtime = "nodejs";
 ;
 ;
 ;
+;
 const prisma = new __TURBOPACK__imported__module__$5b$externals$5d2f40$prisma$2f$client__$5b$external$5d$__$2840$prisma$2f$client$2c$__cjs$29$__["PrismaClient"]();
-function sha256(buffer) {
+/* ------------------------------
+   🔐 SHA256 HASH
+--------------------------------*/ function sha256(buffer) {
     return __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].createHash("sha256").update(buffer).digest("hex");
 }
 async function POST(req) {
@@ -79,46 +87,63 @@ async function POST(req) {
         const file = formData.get("file");
         const shopId = formData.get("shopId");
         const phone = formData.get("phone");
-        const ocrJson = formData.get("ocrResult");
-        if (!file || !shopId || !ocrJson || !phone) {
+        if (!file || !shopId || !phone) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 error: "Missing required fields"
             }, {
                 status: 400
             });
         }
-        const ocr = JSON.parse(ocrJson);
-        console.log('ocr', ocr);
-        const { text, amount, upiId, utr, status: paymentStatus, appDetected } = ocr;
-        // --------------------------------------
-        //   1️⃣ HASH ORIGINAL IMAGE (TRUE DUPLICATE CHECK)
-        // --------------------------------------
-        const bytes = await file.arrayBuffer();
+        if (phone.length < 10) {
+            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                error: "Invalid phone number"
+            }, {
+                status: 400
+            });
+        }
+        /* ------------------------------
+           1️⃣ READ IMAGE
+        --------------------------------*/ const bytes = await file.arrayBuffer();
         const buffer = Buffer.from(bytes);
         const screenshotHash = sha256(buffer);
-        // --------------------------------------
-        //   2️⃣ FETCH SHOP
-        // --------------------------------------
-        const shop = await prisma.shop.findUnique({
+        const imageBase64 = buffer.toString("base64");
+        /* ------------------------------
+           2️⃣ DEEPSEEK OCR
+        --------------------------------*/ const ai = await parsePaymentScreenshot(imageBase64);
+        console.log("🔍 DeepSeek OCR →", ai);
+        // 🚨 HARD SAFETY GATE
+        if (ai.aiError || ai.confidence < 0.6 || !ai.amount || !ai.utr) {
+            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                success: false,
+                rejectReason: "ocr_low_confidence"
+            }, {
+                status: 400
+            });
+        }
+        const { amount, upiId, utr, date, appDetected, isLikelyFake } = ai;
+        /* ------------------------------
+           3️⃣ FETCH SHOP
+        --------------------------------*/ const shop = await prisma.shop.findUnique({
             where: {
                 id: shopId
             }
         });
-        if (!shop) return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            error: "Invalid shopId"
-        }, {
-            status: 404
-        });
-        // --------------------------------------
-        //   3️⃣ VERIFY DUPLICATE SCREENSHOT
-        // --------------------------------------
-        const existing = await prisma.scanVerification.findFirst({
+        if (!shop) {
+            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                error: "Invalid shopId"
+            }, {
+                status: 404
+            });
+        }
+        /* ------------------------------
+           4️⃣ DUPLICATE SCREENSHOT CHECK
+        --------------------------------*/ const duplicateScreenshot = await prisma.scanVerification.findFirst({
             where: {
                 shopId,
                 screenshotHash
             }
         });
-        if (existing) {
+        if (duplicateScreenshot) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 success: false,
                 rejectReason: "duplicate_screenshot"
@@ -126,10 +151,9 @@ async function POST(req) {
                 status: 400
             });
         }
-        // --------------------------------------
-        //   4️⃣ CREATE OR FETCH CUSTOMER
-        // --------------------------------------
-        let customer = await prisma.customer.findFirst({
+        /* ------------------------------
+           5️⃣ CREATE / FETCH CUSTOMER
+        --------------------------------*/ let customer = await prisma.customer.findFirst({
             where: {
                 shopId,
                 phone
@@ -144,19 +168,22 @@ async function POST(req) {
                 }
             });
         }
-        // --------------------------------------
-        //   5️⃣ FRAUD CHECKS
-        // --------------------------------------
-        let rejectReason = null;
-        if (shop.upiId && upiId && shop.upiId !== upiId) {
+        /* ------------------------------
+           6️⃣ FRAUD & BUSINESS RULES
+        --------------------------------*/ let rejectReason = null;
+        // AI flagged fake
+        if (isLikelyFake) {
+            rejectReason = "suspicious_screenshot";
+        }
+        // UPI mismatch
+        if (!rejectReason && shop.upiId && upiId && shop.upiId !== upiId) {
             rejectReason = "upi_mismatch";
         }
+        // Minimum amount
         if (!rejectReason && amount < Number(shop.minAmount || 0)) {
             rejectReason = "below_minimum";
         }
-        if (!rejectReason && paymentStatus !== "success") {
-            rejectReason = "payment_not_success";
-        }
+        // Duplicate UTR
         if (!rejectReason && utr) {
             const utrExists = await prisma.scanVerification.findFirst({
                 where: {
@@ -166,15 +193,7 @@ async function POST(req) {
             });
             if (utrExists) rejectReason = "duplicate_utr";
         }
-        if (amount === null || isNaN(amount)) {
-            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                success: false,
-                rejectReason: "ocr_failed_amount"
-            }, {
-                status: 400
-            });
-        }
-        // per day limits
+        // Daily limit per customer
         if (!rejectReason) {
             const todayCount = await prisma.scanVerification.count({
                 where: {
@@ -190,10 +209,9 @@ async function POST(req) {
                 rejectReason = "daily_limit_reached";
             }
         }
-        // --------------------------------------
-        //   6️⃣ SAVE THE VERIFICATION RECORD
-        // --------------------------------------
-        const scan = await prisma.scanVerification.create({
+        /* ------------------------------
+           7️⃣ SAVE VERIFICATION
+        --------------------------------*/ const scan = await prisma.scanVerification.create({
             data: {
                 shopId,
                 customerId: customer.id,
@@ -201,12 +219,12 @@ async function POST(req) {
                 currency: "INR",
                 upiId,
                 utr,
-                paidAt: new Date(),
+                paidAt: date ? new Date(date) : new Date(),
                 status: rejectReason ? "rejected" : "success",
                 rejectReason,
                 screenshotHash,
                 appDetected,
-                ocrText: text
+                ocrText: null
             }
         });
         if (rejectReason) {
@@ -217,10 +235,9 @@ async function POST(req) {
                 status: 400
             });
         }
-        // --------------------------------------
-        //   7️⃣ AWARD STAMP
-        // --------------------------------------
-        await prisma.customer.update({
+        /* ------------------------------
+           8️⃣ AWARD STAMP
+        --------------------------------*/ await prisma.customer.update({
             where: {
                 id: customer.id
             },
@@ -234,10 +251,9 @@ async function POST(req) {
                 lastVisit: new Date()
             }
         });
-        // --------------------------------------
-        //   8️⃣ TRANSACTION LOG
-        // --------------------------------------
-        await prisma.transaction.create({
+        /* ------------------------------
+           9️⃣ TRANSACTION LOG
+        --------------------------------*/ await prisma.transaction.create({
             data: {
                 id: `txn_${__TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID()}`,
                 shopId,
@@ -256,7 +272,7 @@ async function POST(req) {
     } catch (err) {
         console.error("VERIFY ERROR →", err);
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            error: "Server Error"
+            error: "Server error"
         }, {
             status: 500
         });

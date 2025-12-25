@@ -271,9 +271,8 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-/* ------------------------------
-   🔵 IMAGE RESIZER (FAST OCR)
---------------------------------*/ async function resizeImage(file, maxWidth = 1200, quality = 0.85) {
+// resize image 
+async function resizeImage(file, maxWidth = 1200, quality = 0.85) {
     return new Promise((resolve)=>{
         const img = new Image();
         img.onload = ()=>{
@@ -293,80 +292,52 @@ var _s = __turbopack_context__.k.signature();
         img.src = URL.createObjectURL(file);
     });
 }
-/* ------------------------------
-   🔵 OCR Extractor Helpers
---------------------------------*/ function extractAmountAdvanced(text) {
+// extract date 
+function extractDate(text) {
     if (!text) return null;
-    let cleaned = text.replace(/[lI]/g, "1") // OCR error: I → 1
-    .replace(/O/g, "0") // OCR error: O → 0
-    .replace(/,/g, ""); // Remove commas
-    const lines = cleaned.split("\n").map((l)=>l.trim());
-    let candidates = [];
-    // 1️⃣ PRIORITY: Lines containing keywords related to amount
-    const priorityKeywords = [
-        "amount",
-        "paid",
-        "rs",
-        "₹",
-        "payment"
+    text = text.replace(/,/g, "").trim();
+    // Supported formats:
+    // 24/01/2025
+    // 24-01-2025
+    // 24.01.2025
+    // 2025/01/24
+    // 24 Jan 2025
+    // Jan 24 2025
+    const patterns = [
+        /\b(\d{2})\/(\d{2})\/(\d{4})\b/,
+        /\b(\d{2})-(\d{2})-(\d{4})\b/,
+        /\b(\d{2})\.(\d{2})\.(\d{4})\b/,
+        /\b(\d{4})\/(\d{2})\/(\d{2})\b/,
+        /\b(\d{2})\s([A-Za-z]+)\s(\d{4})\b/,
+        /\b([A-Za-z]+)\s(\d{2})\s(\d{4})\b/ // Jan 24 2025
     ];
-    for (const line of lines){
-        const low = line.toLowerCase();
-        if (priorityKeywords.some((k)=>low.includes(k))) {
-            const nums = line.match(/\d{1,6}(?:\.\d{1,2})?/g);
-            if (nums) {
-                nums.forEach((n)=>{
-                    const val = parseFloat(n);
-                    if (val > 0 && val < 50000) {
-                        candidates.push({
-                            value: val,
-                            weight: 3
-                        });
-                    }
-                });
-            }
-        }
+    for (let regex of patterns){
+        const match = text.match(regex);
+        if (match) return match[0]; // Return exact date string found
     }
-    // 2️⃣ SECOND PRIORITY: Lines containing Rupee symbol
-    for (const line of lines){
-        if (line.includes("₹")) {
-            const nums = line.match(/\d{1,6}(?:\.\d{1,2})?/g);
-            if (nums) {
-                nums.forEach((n)=>{
-                    const val = parseFloat(n);
-                    if (val > 0 && val < 50000) {
-                        candidates.push({
-                            value: val,
-                            weight: 2
-                        });
-                    }
-                });
-            }
-        }
+    return null;
+}
+// extract time 
+function extractTime(text) {
+    if (!text) return null;
+    text = text.toLowerCase().trim().replace(/\./g, ":").replace(/-/g, ":");
+    // Supported formats:
+    // 10:42 AM
+    // 10:42AM
+    // 22:30
+    // 10.42 pm
+    // 10:42:10
+    const patterns = [
+        /\b(\d{1,2}:\d{2}\s?(am|pm))\b/i,
+        /\b(\d{1,2}:\d{2}(am|pm))\b/i,
+        /\b(\d{1,2}:\d{2}:\d{2})\b/,
+        /\b(\d{1,2}:\d{2})\b/ // 22:30
+    ];
+    for (let regex of patterns){
+        const match = text.match(regex);
+        if (match) return match[0];
     }
-    // 3️⃣ THIRD PRIORITY: All numbers (fallback)
-    const allNums = cleaned.match(/\d{1,6}(?:\.\d{1,2})?/g);
-    if (allNums) {
-        allNums.forEach((n)=>{
-            const val = parseFloat(n);
-            // discard timestamps, years, bank numbers, etc.
-            if (val > 10 && val < 50000) {
-                candidates.push({
-                    value: val,
-                    weight: 1
-                });
-            }
-        });
-    }
-    if (candidates.length === 0) return null;
-    // 4️⃣ Choose best candidate:
-    // - Highest weight first
-    // - If tie, largest number wins
-    candidates.sort((a, b)=>{
-        if (b.weight !== a.weight) return b.weight - a.weight;
-        return b.value - a.value;
-    });
-    return candidates[0].value;
+    return null;
 }
 function extractUpi(text) {
     const m = text.match(/[a-zA-Z0-9.\-_]+@[a-zA-Z]{2,}/);
@@ -376,23 +347,7 @@ function extractUTR(text) {
     const m = text.match(/\b\d{6,12}\b/);
     return m ? m[0] : null;
 }
-function extractStatus(text) {
-    text = text.toLowerCase();
-    if (text.includes("successful") || text.includes("completed")) return "success";
-    if (text.includes("failed")) return "failed";
-    if (text.includes("pending")) return "pending";
-    return "unknown";
-}
-function detectApp(text) {
-    const lower = text.toLowerCase();
-    if (lower.includes("gpay") || lower.includes("google pay")) return "GPAY";
-    if (lower.includes("phonepe")) return "PHONEPE";
-    if (lower.includes("paytm")) return "PAYTM";
-    return "UNKNOWN";
-}
-/* ------------------------------
-   🔵 MAIN COMPONENT
---------------------------------*/ const ClaimCard = ({ shopId, verify, loading, setLoading })=>{
+const ClaimCard = ({ shopId, verify, loading, setLoading })=>{
     _s();
     const [file, setFile] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [phone, setPhone] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
@@ -428,11 +383,10 @@ function detectApp(text) {
         //* 5️⃣ Extract values
         const ocrResult = {
             text,
-            amount: extractAmountAdvanced(text),
             upiId: extractUpi(text),
             utr: extractUTR(text),
-            status: extractStatus(text),
-            appDetected: detectApp(text)
+            date: extractDate(text),
+            time: extractTime(text)
         };
         console.log("📌 OCR RESULT:", ocrResult);
         //* 6️⃣ Trigger API call in parent component
@@ -449,7 +403,7 @@ function detectApp(text) {
                         children: "Claim Your Stamp"
                     }, void 0, false, {
                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                        lineNumber: 209,
+                        lineNumber: 177,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -457,13 +411,13 @@ function detectApp(text) {
                         children: "Upload your UPI payment screenshot"
                     }, void 0, false, {
                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                        lineNumber: 210,
+                        lineNumber: 178,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/claimPage/claimCard.jsx",
-                lineNumber: 208,
+                lineNumber: 176,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -479,7 +433,7 @@ function detectApp(text) {
                                     className: "w-10 h-10 opacity-70"
                                 }, void 0, false, {
                                     fileName: "[project]/components/claimPage/claimCard.jsx",
-                                    lineNumber: 221,
+                                    lineNumber: 189,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -487,13 +441,13 @@ function detectApp(text) {
                                     children: "Tap to upload screenshot"
                                 }, void 0, false, {
                                     fileName: "[project]/components/claimPage/claimCard.jsx",
-                                    lineNumber: 222,
+                                    lineNumber: 190,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/claimPage/claimCard.jsx",
-                            lineNumber: 220,
+                            lineNumber: 188,
                             columnNumber: 25
                         }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "relative rounded-lg overflow-hidden shadow border",
@@ -506,7 +460,7 @@ function detectApp(text) {
                                     className: "object-cover"
                                 }, void 0, false, {
                                     fileName: "[project]/components/claimPage/claimCard.jsx",
-                                    lineNumber: 226,
+                                    lineNumber: 194,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 !loading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -516,35 +470,35 @@ function detectApp(text) {
                                         className: "w-4 h-4"
                                     }, void 0, false, {
                                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                                        lineNumber: 233,
+                                        lineNumber: 201,
                                         columnNumber: 37
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/components/claimPage/claimCard.jsx",
-                                    lineNumber: 229,
+                                    lineNumber: 197,
                                     columnNumber: 33
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 loading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "absolute inset-0 bg-black/30 z-50 flex items-center justify-center",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$spinner$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Spinner"], {}, void 0, false, {
                                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                                        lineNumber: 239,
+                                        lineNumber: 207,
                                         columnNumber: 37
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/components/claimPage/claimCard.jsx",
-                                    lineNumber: 238,
+                                    lineNumber: 206,
                                     columnNumber: 33
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/claimPage/claimCard.jsx",
-                            lineNumber: 225,
+                            lineNumber: 193,
                             columnNumber: 25
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                        lineNumber: 215,
+                        lineNumber: 183,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -555,7 +509,7 @@ function detectApp(text) {
                         className: "hidden"
                     }, void 0, false, {
                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                        lineNumber: 246,
+                        lineNumber: 214,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -566,7 +520,7 @@ function detectApp(text) {
                                 children: "Phone"
                             }, void 0, false, {
                                 fileName: "[project]/components/claimPage/claimCard.jsx",
-                                lineNumber: 256,
+                                lineNumber: 224,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -577,7 +531,7 @@ function detectApp(text) {
                                         children: "+91"
                                     }, void 0, false, {
                                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                                        lineNumber: 258,
+                                        lineNumber: 226,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -589,19 +543,19 @@ function detectApp(text) {
                                         className: "pl-10"
                                     }, void 0, false, {
                                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                                        lineNumber: 260,
+                                        lineNumber: 228,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/claimPage/claimCard.jsx",
-                                lineNumber: 257,
+                                lineNumber: 225,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                        lineNumber: 255,
+                        lineNumber: 223,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -612,7 +566,7 @@ function detectApp(text) {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$spinner$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Spinner"], {}, void 0, false, {
                                     fileName: "[project]/components/claimPage/claimCard.jsx",
-                                    lineNumber: 279,
+                                    lineNumber: 247,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 " Verifying..."
@@ -620,19 +574,19 @@ function detectApp(text) {
                         }, void 0, true) : "Submit"
                     }, void 0, false, {
                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                        lineNumber: 272,
+                        lineNumber: 240,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/claimPage/claimCard.jsx",
-                lineNumber: 213,
+                lineNumber: 181,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/claimPage/claimCard.jsx",
-        lineNumber: 206,
+        lineNumber: 174,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -844,7 +798,7 @@ const ClaimPage = ({ shopId })=>{
                 className: "mt-6 animate-fadeIn",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "text-2xl font-extrabold text-primary tracking-wide drop-shadow-sm",
+                        className: "text-2xl font-extrabold text-primary tracking-wide drop-shadow-sm capitalize",
                         children: shopName || "Shop"
                     }, void 0, false, {
                         fileName: "[project]/components/claimPage/claimPageComponent.jsx",

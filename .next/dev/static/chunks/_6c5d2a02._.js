@@ -95,6 +95,34 @@ class UserStore {
             this.loading = false;
         }
     }
+    /** ============== UPDATE USER ============== */ async updateProfile(updates) {
+        this.loading = true;
+        this.error = null;
+        try {
+            const res = await fetch("/api/shop/user/updateUserDetails", {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(updates)
+            });
+            const data = await res.json();
+            if (res.ok) {
+                (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+                    this.user = data.user;
+                });
+                return "Profile updated successfully!";
+            } else {
+                throw new Error(data.error || "Failed to update profile");
+            }
+        } catch (err) {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+                this.error = err.message;
+            });
+        } finally{
+            this.loading = false;
+        }
+    }
     /** ============== LOGOUT ============== */ async logout() {
         await fetch("/api/user/logout", {
             method: "POST"

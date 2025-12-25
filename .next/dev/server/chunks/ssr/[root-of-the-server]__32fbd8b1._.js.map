@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///E:/Project%20Files/Earning-model/stamp-card-project/stamp-loyalty-platform/components/shop/account/account-page.jsx"],"sourcesContent":["import React from 'react'\r\n\r\nconst AccountPage = () => {\r\n  return (\r\n    <div>AccountPage</div>\r\n  )\r\n}\r\n\r\nexport default AccountPage"],"names":[],"mappings":";;;;;AAAA;;;AAEA,MAAM,cAAc;IAClB,qBACE,8OAAC;kBAAI;;;;;;AAET;uCAEe"}},
+    {"offset": {"line": 40, "column": 0}, "map": {"version":3,"sources":["file:///E:/Project%20Files/Earning-model/stamp-card-project/stamp-loyalty-platform/app/shop/%5BshopId%5D/myAccount/page.jsx"],"sourcesContent":["import React from 'react'\r\nimport AccountPage from '@/components/shop/account/account-page'\r\n\r\nconst Page = () => {\r\n    return (\r\n        <div className='space-y-6'>\r\n            {/* header */}\r\n            <div>\r\n                <h1 className=\"text-3xl font-bold text-secondary\">My Account</h1>\r\n                <p className=\"text-muted-foreground mt-1\">Control your profile and account settings</p>\r\n            </div>\r\n\r\n            <AccountPage/>\r\n\r\n        </div>\r\n    )\r\n}\r\n\r\nexport default Page"],"names":[],"mappings":";;;;;AAAA;AACA;;;;AAEA,MAAM,OAAO;IACT,qBACI,8OAAC;QAAI,WAAU;;0BAEX,8OAAC;;kCACG,8OAAC;wBAAG,WAAU;kCAAoC;;;;;;kCAClD,8OAAC;wBAAE,WAAU;kCAA6B;;;;;;;;;;;;0BAG9C,8OAAC,4JAAW;;;;;;;;;;;AAIxB;uCAEe"}}]
+}

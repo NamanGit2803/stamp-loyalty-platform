@@ -126,6 +126,7 @@ model ScanVerification {
   ocrText        String     // full OCR text dump
   meta           Json?      // optional extra parsed info (raw JSON)
   imagePath      String?    // if you store in S3 or similar
+  checkSum       String?
 
   verifiedAt     DateTime?
   createdAt      DateTime   @default(now())
