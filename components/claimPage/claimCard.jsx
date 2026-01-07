@@ -139,14 +139,27 @@ const ClaimCard = ({ shopId, verify, loading, setLoading }) => {
         const selected = e.target.files?.[0];
         if (!selected) return;
 
+        // Realme / Oppo fix
+        if (!selected.type || !selected.type.startsWith("image/")) {
+            alert("Please select a screenshot image");
+            e.target.value = "";
+            return;
+        }
+
         setFile(selected);
 
         const reader = new FileReader();
-        reader.onload = () => {
-            setPreview(reader.result); // base64 data URL
+        reader.onloadend = () => {
+            if (reader.result) {
+                setPreview(reader.result);
+            } else {
+                alert("Unable to preview image. Please try again.");
+            }
         };
+
         reader.readAsDataURL(selected);
     };
+
 
 
     const removeImage = () => {
@@ -154,7 +167,7 @@ const ClaimCard = ({ shopId, verify, loading, setLoading }) => {
         setPreview(null);
 
         const input = document.getElementById("hidden-file-input");
-        if (input) input.value = ""; // 🔥 REQUIRED for mobile
+        if (input) input.value = "";
     };
 
 
@@ -243,9 +256,11 @@ const ClaimCard = ({ shopId, verify, loading, setLoading }) => {
                     id="hidden-file-input"
                     type="file"
                     accept="image/*"
+                    capture="environment"
                     onChange={handleFileChange}
                     className="hidden"
                 />
+
 
                 {/* Phone */}
                 <div className="w-full">
