@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///E:/Project%20Files/Earning-model/stamp-card-project/stamp-loyalty-platform/app/shop/%5BshopId%5D/page.jsx"],"sourcesContent":["import DashboardHome from \"@/components/dashboard/dashboard-home\"\n\nexport default function DashboardPage() {\n  return (\n    \n      <DashboardHome />\n  )\n}\n"],"names":[],"mappings":";;;;;;;;;;;;AAEe,SAAS;IACtB,qBAEI,8OAAC;;;;;AAEP"}}]
-}
