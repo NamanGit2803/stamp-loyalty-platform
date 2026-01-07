@@ -1,7 +1,8 @@
-import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
 
-const prisma = new PrismaClient();
+import { NextResponse } from "next/server";
+import prisma from "@/lib/prisma";
 
 export async function POST(req) {
   try {
@@ -9,18 +10,20 @@ export async function POST(req) {
 
     // Validate shop ownership
     const shop = await prisma.shop.findUnique({
-      where: { id: shopId }
+      where: { id: shopId },
     });
 
+    if (!shop) {
+      return NextResponse.json({ status: "NO_SHOP" });
+    }
 
-    if (!shop) return NextResponse.json({ status: "NO_SHOP" });
     if (shop.ownerId !== userEmail) {
       return NextResponse.json({ status: "NOT_OWNER" });
     }
 
     // Fetch subscription
     const subscription = await prisma.subscription.findFirst({
-      where: { shopId }
+      where: { shopId },
     });
 
     if (!subscription) {
@@ -42,7 +45,7 @@ export async function POST(req) {
     return NextResponse.json({ status: "PAID_ACTIVE" });
 
   } catch (err) {
-    console.error(err);
+    console.error("[subscription check error]", err);
     return NextResponse.json({ status: "ERROR" });
   }
 }

@@ -1,15 +1,14 @@
-import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
-import jwt from "jsonwebtoken";
-import bcrypt from "bcryptjs"
-import { cookies } from "next/headers";
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
 
-const prisma = new PrismaClient();
+import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
+import prisma from "@/lib/prisma";
+import bcrypt from "bcryptjs";
 
 export async function PUT(req) {
     try {
-
-        // Reads JWT from cookies automatically
+        // ✅ cookies() is synchronous
         const cookieStore = await cookies();
         const token = cookieStore.get("token")?.value;
 
@@ -20,21 +19,35 @@ export async function PUT(req) {
             );
         }
 
-        // Verify token
-        let decoded
+        if (!process.env.JWT_SECRET) {
+            return NextResponse.json(
+                { error: "Invalid token" },
+                { status: 401 }
+            );
+        }
+
+        // ✅ Runtime-only JWT import
+        const jwt = (await import("jsonwebtoken")).default;
+
+        let decoded;
         try {
             decoded = jwt.verify(token, process.env.JWT_SECRET);
         } catch {
-            return NextResponse.json({ error: "Invalid token" }, { status: 401 })
+            return NextResponse.json(
+                { error: "Invalid token" },
+                { status: 401 }
+            );
         }
-
 
         // ✅ Parse request body
         const body = await req.json();
         const { name, currentPassword, newPassword } = body;
 
         if (!name && !newPassword) {
-            return NextResponse.json({ error: "No fields to update" }, { status: 400 });
+            return NextResponse.json(
+                { error: "No fields to update" },
+                { status: 400 }
+            );
         }
 
         // ✅ Get user
@@ -43,7 +56,10 @@ export async function PUT(req) {
         });
 
         if (!user) {
-            return NextResponse.json({ error: "User not found" }, { status: 404 });
+            return NextResponse.json(
+                { error: "User not found" },
+                { status: 404 }
+            );
         }
 
         const updateData = {};
@@ -57,7 +73,11 @@ export async function PUT(req) {
                 );
             }
 
-            const isMatch = await bcrypt.compare(currentPassword, user.password);
+            const isMatch = await bcrypt.compare(
+                currentPassword,
+                user.password
+            );
+
             if (!isMatch) {
                 return NextResponse.json(
                     { error: "Current password is incorrect" },
@@ -70,9 +90,11 @@ export async function PUT(req) {
         }
 
         // ✅ Handle other updates
-        if (name) updateData.name = name;
+        if (name) {
+            updateData.name = name;
+        }
 
-        // ✅ Only now update once
+        // ✅ Single update call
         const updatedUser = await prisma.user.update({
             where: { email: decoded.email },
             data: updateData,
@@ -84,8 +106,12 @@ export async function PUT(req) {
                 : "Profile updated successfully",
             user: updatedUser,
         });
+
     } catch (err) {
-        console.error("Error updating profile:", err);
-        return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+        console.error("[update profile error]", err);
+        return NextResponse.json(
+            { error: "Internal server error" },
+            { status: 500 }
+        );
     }
 }
