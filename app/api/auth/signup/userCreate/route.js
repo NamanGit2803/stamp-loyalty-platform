@@ -69,7 +69,7 @@ export async function POST(req) {
     // ✅ cookies.set is synchronous (NO await)
     response.cookies.set("token", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
+      secure: process.env.NODE_ENV === "production" && !!process.env.VERCEL,
       sameSite: "strict",
       maxAge: 7 * 24 * 60 * 60,
       path: "/",
