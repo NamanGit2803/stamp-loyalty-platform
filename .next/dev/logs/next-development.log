@@ -1592,3 +1592,5 @@ https://nextjs.org/docs/messages/module-not-found
 [05:39:20.471] Server  LOG     AI FIXED OCR → {}
 [05:39:20.604] Browser LOG     API response: {"rejectReason":"amount_below_mimimum","success":false}
 [05:39:53.962] Server  LOG      ✓ Compiled in 372ms
+[23:57:00.635] Server  LOG        Reload env: .env
+[23:57:49.093] Server  LOG        Reload env: .env

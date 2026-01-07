@@ -1,40 +1,37 @@
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
+
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
-import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
+import prisma from "@/lib/prisma";
 
-const prisma = new PrismaClient();
+export async function GET() {
+  try {
+    const cookieStore = cookies();
+    const token = cookieStore.get("token")?.value;
 
-export async function GET(req) {
-    try {
-        // Reads JWT from cookies automatically
-        const cookieStore = await cookies();
-        const token = cookieStore.get("token")?.value;
-
-        if (!token) {
-            return NextResponse.json(
-                { error: "Not authenticated" },
-                { status: 401 }
-            );
-        }
-
-        // Verify token
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
-
-        const shop = await prisma.shop.findFirst({
-            where: { ownerId: decoded.email }
-        });
-
-        if (!shop) {
-            return NextResponse.json({ shop: null }, { status: 200 });
-
-        }
-
-        return NextResponse.json({ shop });
-
-    } catch (err) {
-        console.error(err);
-        return NextResponse.json({ shop: null }, { status: 200 });
+    if (!token || !process.env.JWT_SECRET) {
+      return NextResponse.json({ shop: null }, { status: 200 });
     }
+
+    // ✅ Import JWT ONLY at runtime
+    const jwt = (await import("jsonwebtoken")).default;
+
+    let decoded;
+    try {
+      decoded = jwt.verify(token, process.env.JWT_SECRET);
+    } catch {
+      return NextResponse.json({ shop: null }, { status: 200 });
+    }
+
+    const shop = await prisma.shop.findFirst({
+      where: { ownerId: decoded.email },
+    });
+
+    return NextResponse.json({ shop: shop ?? null });
+
+  } catch (err) {
+    console.error("findShop error:", err);
+    return NextResponse.json({ shop: null }, { status: 200 });
+  }
 }
