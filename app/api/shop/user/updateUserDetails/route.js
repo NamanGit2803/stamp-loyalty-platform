@@ -2,15 +2,13 @@ export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
 import { NextResponse } from "next/server";
-import { cookies } from "next/headers";
 import prisma from "@/lib/prisma";
 import bcrypt from "bcryptjs";
 
 export async function PUT(req) {
     try {
         // ✅ cookies() is synchronous
-        const cookieStore = await cookies();
-        const token = cookieStore.get("token")?.value;
+        const token = req.cookies.get("token")?.value;
 
         if (!token) {
             return NextResponse.json(

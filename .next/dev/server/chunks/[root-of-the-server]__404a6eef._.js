@@ -70,7 +70,6 @@ const __TURBOPACK__default__export__ = prisma;
 "[project]/app/api/auth/findUser/route.js [app-route] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-// app/api/auth/findUser/route.js
 __turbopack_context__.s([
     "GET",
     ()=>GET,
@@ -80,18 +79,15 @@ __turbopack_context__.s([
     ()=>runtime
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/server.js [app-route] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/headers.js [app-route] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/prisma.js [app-route] (ecmascript)");
 const dynamic = "force-dynamic";
 const runtime = "nodejs";
 ;
 ;
-;
-async function GET() {
+async function GET(req) {
     try {
         // ✅ Correct App Router cookie access
-        const cookieStore = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["cookies"])();
-        const token = cookieStore.get("token")?.value;
+        const token = req.cookies.get("token")?.value;
         if (!token) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 error: "Not authenticated"

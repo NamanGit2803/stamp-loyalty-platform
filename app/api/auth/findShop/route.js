@@ -2,13 +2,11 @@ export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
 import { NextResponse } from "next/server";
-import { cookies } from "next/headers";
 import prisma from "@/lib/prisma";
 
-export async function GET() {
+export async function GET(req) {
   try {
-    const cookieStore = await cookies();
-    const token = cookieStore.get("token")?.value;
+    const token = req.cookies.get("token")?.value;
 
     if (!token || !process.env.JWT_SECRET) {
       return NextResponse.json({ shop: null }, { status: 200 });
