@@ -1,16 +1,16 @@
-import { PrismaClient } from "@prisma/client"
-import bcrypt from "bcryptjs"
-import jwt from "jsonwebtoken"
-import { NextResponse } from "next/server"
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
 
-const prisma = new PrismaClient()
+import { NextResponse } from "next/server";
+import prisma from "@/lib/prisma";
+import bcrypt from "bcryptjs";
 
 export async function POST(req) {
     try {
-        const body = await req.json()
-        const { email, password } = body
+        const body = await req.json();
+        const { email, password } = body;
 
-        // check for email & password 
+        // ✅ same validation
         if (!email || !password) {
             return NextResponse.json(
                 { error: "Email and password are required" },
@@ -18,29 +18,31 @@ export async function POST(req) {
             );
         }
 
-        // Check if user exists
-        const user = await prisma.user.findUnique({ where: { email } })
+        // ✅ same user lookup
+        const user = await prisma.user.findUnique({
+            where: { email },
+        });
+
         if (!user) {
             return NextResponse.json(
                 { error: "User not found. Please sign up." },
                 { status: 401 }
-            )
+            );
         }
 
-
-        // finding shop with this email
+        // ✅ same shop lookup
         const shop = await prisma.shop.findFirst({
-            where: { ownerId: user.email }
+            where: { ownerId: user.email },
         });
+
         if (!shop) {
             return NextResponse.json(
                 { error: "Shop not registered." },
                 { status: 401 }
-            )
+            );
         }
 
-
-        // password match 
+        // ✅ same password check
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
             return NextResponse.json(
@@ -49,31 +51,49 @@ export async function POST(req) {
             );
         }
 
-        // token create 
+        // ✅ env guard
+        if (!process.env.JWT_SECRET) {
+            return NextResponse.json(
+                { error: "Server misconfiguration" },
+                { status: 500 }
+            );
+        }
+
+        // ✅ runtime-only JWT import
+        const jwt = (await import("jsonwebtoken")).default;
+
+        // ✅ same token payload & expiry
         const token = jwt.sign(
             { email: user.email, name: user.name, role: user.role },
             process.env.JWT_SECRET,
             { expiresIn: "7d" }
-        )
-
-
+        );
 
         const response = NextResponse.json(
-            { success: true, user: user, shopId: shop.id},
+            {
+                success: true,
+                user,
+                shopId: shop.id,
+            },
             { status: 201 }
-        )
+        );
 
+        // ✅ cookies are SYNC (no await)
         response.cookies.set("token", token, {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
             sameSite: "strict",
             maxAge: 7 * 24 * 60 * 60,
             path: "/",
-        })
+        });
 
-        return response
+        return response;
+
     } catch (err) {
-        console.error(err)
-        return NextResponse.json({ error: "Server error" }, { status: 500 })
+        console.error("[login error]", err);
+        return NextResponse.json(
+            { error: "Server error" },
+            { status: 500 }
+        );
     }
 }
