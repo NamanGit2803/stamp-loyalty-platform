@@ -140,13 +140,23 @@ const ClaimCard = ({ shopId, verify, loading, setLoading }) => {
         if (!selected) return;
 
         setFile(selected);
-        setPreview(URL.createObjectURL(selected));
+
+        const reader = new FileReader();
+        reader.onload = () => {
+            setPreview(reader.result); // base64 data URL
+        };
+        reader.readAsDataURL(selected);
     };
+
 
     const removeImage = () => {
         setFile(null);
         setPreview(null);
+
+        const input = document.getElementById("hidden-file-input");
+        if (input) input.value = ""; // 🔥 REQUIRED for mobile
     };
+
 
     /* ------------------------------
        🔵 CLIENT-SIDE OCR LOGIC
