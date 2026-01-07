@@ -4,11 +4,7 @@
   "/api/auth/findUser/route": "app/api/auth/findUser/route.js",
   "/api/auth/login/route": "app/api/auth/login/route.js",
   "/api/internal/subscription-check/route": "app/api/internal/subscription-check/route.js",
-  "/api/public/checkShop/route": "app/api/public/checkShop/route.js",
-  "/api/screenshot/verify/route": "app/api/screenshot/verify/route.js",
   "/api/subscription/status/route": "app/api/subscription/status/route.js",
-  "/claim/page": "app/claim/page.js",
   "/page": "app/page.js",
-  "/shop/[shopId]/customers/page": "app/shop/[shopId]/customers/page.js",
   "/shop/[shopId]/page": "app/shop/[shopId]/page.js"
 }
