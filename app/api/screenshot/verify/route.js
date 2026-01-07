@@ -2,14 +2,12 @@ export const runtime = "nodejs";
 
 import { NextResponse } from "next/server";
 import crypto from "crypto";
-import { PrismaClient } from "@prisma/client";
 import { parsePaymentScreenshot } from "@/lib/aiParser";
 import { validateScreenshotBeforeAI } from "@/lib/tools";
 import { detectPaymentDirection } from "@/lib/tools";
 import { validateUPIScreenshotTime } from "@/lib/upiTime";
 import { nanoid } from "nanoid"
 
-const prisma = new PrismaClient();
 
 /** SHA256 hash generator */
 function sha256(buffer) {
@@ -18,6 +16,9 @@ function sha256(buffer) {
 
 export async function POST(req) {
     try {
+        // ✅ Lazy import Prisma (build-safe)
+        const { default: prisma } = await import("@/lib/prisma");
+
         const formData = await req.formData();
 
         const file = formData.get("file");

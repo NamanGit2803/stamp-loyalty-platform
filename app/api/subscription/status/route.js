@@ -2,11 +2,12 @@ export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
 import { NextResponse } from "next/server";
-import prisma from "@/lib/prisma";
 
 
 export async function POST(req) {
   try {
+    // ✅ Lazy import Prisma (build-safe)
+    const { default: prisma } = await import("@/lib/prisma");
 
     const { shopId } = await req.json();
     if (!shopId) {

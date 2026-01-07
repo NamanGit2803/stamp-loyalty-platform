@@ -2,11 +2,12 @@ export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
 import { NextResponse } from "next/server";
-import prisma from "@/lib/prisma";
 import bcrypt from "bcryptjs";
 
 export async function PUT(req) {
     try {
+        // ✅ Lazy import Prisma (build-safe)
+        const { default: prisma } = await import("@/lib/prisma");
         // ✅ cookies() is synchronous
         const token = req.cookies.get("token")?.value;
 

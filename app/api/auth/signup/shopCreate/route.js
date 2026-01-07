@@ -1,7 +1,6 @@
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
-import prisma from "@/lib/prisma";
 import { NextResponse } from "next/server"
 import { nanoid } from "nanoid"
 
@@ -9,6 +8,9 @@ import { nanoid } from "nanoid"
 
 export async function POST(req) {
   try {
+    // ✅ Lazy import Prisma (build-safe)
+    const { default: prisma } = await import("@/lib/prisma");
+
     const body = await req.json()
     const { shopName, phone, upiId, businessType, address, minAmount, targetStamp, reward, ownerId } = body
 
@@ -45,7 +47,7 @@ export async function POST(req) {
     })
 
     // Create response
-    return NextResponse.json({newShop}, { status: 201 })
+    return NextResponse.json({ newShop }, { status: 201 })
 
   } catch (err) {
     console.error(err)
