@@ -1,12 +1,17 @@
+// app/api/auth/findUser/route.js
+
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
+
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
-import jwt from "jsonwebtoken";
+import { cookies } from "next/headers";
+import prisma from "@/lib/prisma";
 
-const prisma = new PrismaClient();
-
-export async function GET(req) {
+export async function GET() {
   try {
-    const token = req.cookies.get("token")?.value;
+    // ✅ Correct App Router cookie access
+    const cookieStore = await cookies();
+    const token = cookieStore.get("token")?.value;
 
     if (!token) {
       return NextResponse.json(
@@ -15,13 +20,30 @@ export async function GET(req) {
       );
     }
 
-    // Verify token
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    if (!process.env.JWT_SECRET) {
+      return NextResponse.json(
+        { error: "Invalid or expired token" },
+        { status: 401 }
+      );
+    }
 
-    // Fetch user
+    // ✅ Runtime-only import (prevents build crash)
+    const jwt = (await import("jsonwebtoken")).default;
+
+    let decoded;
+    try {
+      decoded = jwt.verify(token, process.env.JWT_SECRET);
+    } catch {
+      return NextResponse.json(
+        { error: "Invalid or expired token" },
+        { status: 401 }
+      );
+    }
+
+    // ✅ SAME DB LOGIC
     const user = await prisma.user.findUnique({
       where: { email: decoded.email },
-      select: { name: true, email: true, role: true }
+      select: { name: true, email: true, role: true },
     });
 
     if (!user) {
@@ -31,15 +53,11 @@ export async function GET(req) {
       );
     }
 
-    // Success → return user
-    return NextResponse.json(
-      { user },
-      { status: 200 }
-    );
+    // ✅ SAME SUCCESS RESPONSE
+    return NextResponse.json({ user }, { status: 200 });
 
   } catch (err) {
     console.error("[findUser error]", err);
-
     return NextResponse.json(
       { error: "Invalid or expired token" },
       { status: 401 }

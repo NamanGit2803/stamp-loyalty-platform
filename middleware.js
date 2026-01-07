@@ -77,6 +77,8 @@ export async function middleware(req) {
 
     const { status } = await resp.json();
 
+    console.log('ststus', status)
+
 
     // -----------------------------
     // 🚦 Handle Subscription Result
