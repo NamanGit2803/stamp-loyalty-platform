@@ -32,14 +32,6 @@ enum ScanStatus {
   manual_review
 }
 
-enum AppType {
-  gpay
-  phonepe
-  paytm
-  bhim
-  bank
-  UNKNOWN
-}
 
 
 model User {
@@ -72,7 +64,7 @@ model Shop {
   // 🔐 NEW FIELDS FOR SECURE SCANNER
   upiId                         String?            // UPI where payments come
   verificationMode              VerificationMode   @default(SCREENSHOT)
-  maxStampsPerCustomerPerDay    Int?               @default(3)
+  maxStampsPerCustomerPerDay    Int?               @default(1)
 
   owner         User           @relation(fields: [ownerId], references: [email])
   customers     Customer[]
@@ -89,7 +81,7 @@ model Customer {
   id          String    @unique
   shopId      String
   name        String?
-  phone       String?
+  phone       String?   @unique
   upiId       String?
   stampCount  Int       @default(0)
   totalVisits Int       @default(0)
@@ -99,7 +91,6 @@ model Customer {
   shop         Shop           @relation(fields: [shopId], references: [id])
   transactions Transaction[]
   rewards      Reward[]
-  scanVerifications ScanVerification[]    // 🔐 NEW RELATION
 }
 
 
@@ -111,7 +102,7 @@ model ScanVerification {
   customerId     String?
 
   // Parsed from OCR
-  amount         Int        // store in paise or rupees (decide and stay consistent)
+  amount         Int?        // store in paise or rupees (decide and stay consistent)
   currency       String     @default("INR")
   upiId          String?
   utr            String?
@@ -122,17 +113,16 @@ model ScanVerification {
 
   // Security features
   screenshotHash String     // sha256(image)
-  appDetected    AppType?
+  appDetected    String
   ocrText        String     // full OCR text dump
   meta           Json?      // optional extra parsed info (raw JSON)
   imagePath      String?    // if you store in S3 or similar
-  checkSum       String?
+  checksum       String?
 
   verifiedAt     DateTime?
   createdAt      DateTime   @default(now())
 
   shop           Shop?       @relation(fields: [shopId], references: [id])
-  customer       Customer?  @relation(fields: [customerId], references: [id])
 
   @@index([shopId, utr])
   @@index([customerId])
@@ -161,7 +151,7 @@ model Transaction {
   createdAt  DateTime  @default(now())
 
   shop     Shop      @relation(fields: [shopId], references: [id])
-  customer Customer? @relation(fields: [customerId], references: [id])
+  customer Customer? @relation(fields: [customerId], references: [phone])
 }
 
 model Reward {

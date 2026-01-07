@@ -94,18 +94,36 @@ function extractTime(text) {
 }
 
 
+function extractPayeeUpi(text) {
+    if (!text) return null;
 
+    const normalized = text
+        .replace(/\n+/g, " ")
+        .replace(/\s+/g, " ")
+        .toLowerCase();
 
-function extractUpi(text) {
-    const m = text.match(/[a-zA-Z0-9.\-_]+@[a-zA-Z]{2,}/);
-    return m ? m[0] : null;
+    // Context keywords that usually appear BEFORE payee UPI
+    const payeePatterns = [
+        /paid to\s+([a-z0-9.\-_]+@[a-z]{2,})/,
+        /payee\s+([a-z0-9.\-_]+@[a-z]{2,})/,
+        /to\s+([a-z0-9.\-_]+@[a-z]{2,})/,
+        /credited to\s+([a-z0-9.\-_]+@[a-z]{2,})/,
+        /receiver\s+([a-z0-9.\-_]+@[a-z]{2,})/,
+    ];
+
+    for (const pattern of payeePatterns) {
+        const match = normalized.match(pattern);
+        if (match) return match[1];
+    }
+
+    return null;
 }
+
 
 function extractUTR(text) {
     const m = text.match(/\b\d{6,12}\b/);
     return m ? m[0] : null;
 }
-
 
 
 const ClaimCard = ({ shopId, verify, loading, setLoading }) => {
@@ -158,7 +176,7 @@ const ClaimCard = ({ shopId, verify, loading, setLoading }) => {
         //* 5️⃣ Extract values
         const ocrResult = {
             text,
-            upiId: extractUpi(text),
+            upiId: extractPayeeUpi(text),
             utr: extractUTR(text),
             date: extractDate(text),
             time: extractTime(text),

@@ -403,7 +403,7 @@ const ClaimCard = ({ shopId, verify, loading, setLoading })=>{
                         children: "Claim Your Stamp"
                     }, void 0, false, {
                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                        lineNumber: 177,
+                        lineNumber: 174,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -411,13 +411,13 @@ const ClaimCard = ({ shopId, verify, loading, setLoading })=>{
                         children: "Upload your UPI payment screenshot"
                     }, void 0, false, {
                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                        lineNumber: 178,
+                        lineNumber: 175,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/claimPage/claimCard.jsx",
-                lineNumber: 176,
+                lineNumber: 173,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -433,7 +433,7 @@ const ClaimCard = ({ shopId, verify, loading, setLoading })=>{
                                     className: "w-10 h-10 opacity-70"
                                 }, void 0, false, {
                                     fileName: "[project]/components/claimPage/claimCard.jsx",
-                                    lineNumber: 189,
+                                    lineNumber: 186,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -441,13 +441,13 @@ const ClaimCard = ({ shopId, verify, loading, setLoading })=>{
                                     children: "Tap to upload screenshot"
                                 }, void 0, false, {
                                     fileName: "[project]/components/claimPage/claimCard.jsx",
-                                    lineNumber: 190,
+                                    lineNumber: 187,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/claimPage/claimCard.jsx",
-                            lineNumber: 188,
+                            lineNumber: 185,
                             columnNumber: 25
                         }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "relative rounded-lg overflow-hidden shadow border",
@@ -460,7 +460,7 @@ const ClaimCard = ({ shopId, verify, loading, setLoading })=>{
                                     className: "object-cover"
                                 }, void 0, false, {
                                     fileName: "[project]/components/claimPage/claimCard.jsx",
-                                    lineNumber: 194,
+                                    lineNumber: 191,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 !loading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -470,35 +470,35 @@ const ClaimCard = ({ shopId, verify, loading, setLoading })=>{
                                         className: "w-4 h-4"
                                     }, void 0, false, {
                                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                                        lineNumber: 201,
+                                        lineNumber: 198,
                                         columnNumber: 37
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/components/claimPage/claimCard.jsx",
-                                    lineNumber: 197,
+                                    lineNumber: 194,
                                     columnNumber: 33
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 loading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "absolute inset-0 bg-black/30 z-50 flex items-center justify-center",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$spinner$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Spinner"], {}, void 0, false, {
                                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                                        lineNumber: 207,
+                                        lineNumber: 204,
                                         columnNumber: 37
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/components/claimPage/claimCard.jsx",
-                                    lineNumber: 206,
+                                    lineNumber: 203,
                                     columnNumber: 33
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/claimPage/claimCard.jsx",
-                            lineNumber: 193,
+                            lineNumber: 190,
                             columnNumber: 25
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                        lineNumber: 183,
+                        lineNumber: 180,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -509,7 +509,7 @@ const ClaimCard = ({ shopId, verify, loading, setLoading })=>{
                         className: "hidden"
                     }, void 0, false, {
                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                        lineNumber: 214,
+                        lineNumber: 211,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -520,7 +520,7 @@ const ClaimCard = ({ shopId, verify, loading, setLoading })=>{
                                 children: "Phone"
                             }, void 0, false, {
                                 fileName: "[project]/components/claimPage/claimCard.jsx",
-                                lineNumber: 224,
+                                lineNumber: 221,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -531,7 +531,7 @@ const ClaimCard = ({ shopId, verify, loading, setLoading })=>{
                                         children: "+91"
                                     }, void 0, false, {
                                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                                        lineNumber: 226,
+                                        lineNumber: 223,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -543,19 +543,19 @@ const ClaimCard = ({ shopId, verify, loading, setLoading })=>{
                                         className: "pl-10"
                                     }, void 0, false, {
                                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                                        lineNumber: 228,
+                                        lineNumber: 225,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/claimPage/claimCard.jsx",
-                                lineNumber: 225,
+                                lineNumber: 222,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                        lineNumber: 223,
+                        lineNumber: 220,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -566,7 +566,7 @@ const ClaimCard = ({ shopId, verify, loading, setLoading })=>{
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$spinner$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Spinner"], {}, void 0, false, {
                                     fileName: "[project]/components/claimPage/claimCard.jsx",
-                                    lineNumber: 247,
+                                    lineNumber: 244,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 " Verifying..."
@@ -574,19 +574,19 @@ const ClaimCard = ({ shopId, verify, loading, setLoading })=>{
                         }, void 0, true) : "Submit"
                     }, void 0, false, {
                         fileName: "[project]/components/claimPage/claimCard.jsx",
-                        lineNumber: 240,
+                        lineNumber: 237,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/claimPage/claimCard.jsx",
-                lineNumber: 181,
+                lineNumber: 178,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/claimPage/claimCard.jsx",
-        lineNumber: 174,
+        lineNumber: 171,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };

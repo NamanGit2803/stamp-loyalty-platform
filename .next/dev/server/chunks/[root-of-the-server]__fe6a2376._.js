@@ -400,7 +400,7 @@ function extractDate(text) {
         if (match) return match[0]; // Return exact date string found
     }
     return null;
-} // extract time for ocr 
+}
 }),
 "[project]/lib/upiTime.js [app-route] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
@@ -623,6 +623,7 @@ async function POST(req) {
         const shopId = formData.get("shopId");
         const phone = formData.get("phone");
         const ocrJson = formData.get("ocrResult");
+        let rejectReason = null;
         if (!file || !shopId || !ocrJson || !phone) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 error: "Missing required fields"
@@ -634,15 +635,17 @@ async function POST(req) {
         const { text: rawText } = clientOCR;
         console.log('text', rawText);
         // --------------------------------------
-        // 1️⃣ HASH ORIGINAL IMAGE (True Duplicate Prevention)
+        // 1️⃣ HASH ORIGINAL IMAGE (True Duplicate Prevention) and checksum
         // --------------------------------------
         const bytes = await file.arrayBuffer();
         const buffer = Buffer.from(bytes);
         const screenshotHash = sha256(buffer);
         // base 64 image 
         const imageBase64 = buffer.toString("base64");
+        // checksum 
+        const checksum = __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].createHash("sha256").update(rawText?.toLowerCase().replace(/\s+/g, " ").replace(/[^\x20-\x7E]/g, "").trim()).digest("hex");
         // --------------------------------------
-        // 2️⃣ FETCH SHOP
+        // 2️⃣ FETCH SHOP and subscription details 
         // --------------------------------------
         const shop = await prisma.shop.findUnique({
             where: {
@@ -651,47 +654,109 @@ async function POST(req) {
         });
         if (!shop) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: "Invalid shopId"
+                error: "Invalid shopId."
             }, {
                 status: 404
             });
         }
-        // 3️⃣ Detect payment direction (paid / received / unknown)
-        const paymentDirection = (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$tools$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["detectPaymentDirection"])(rawText);
-        if (paymentDirection == 'RECEIVED') {
+        // Shop active check
+        if (!shop.isActive) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 success: false,
-                rejectReason: 'Received payment not valid.'
+                error: "Shop is inactive."
             }, {
-                status: 400
+                status: 403
             });
+        }
+        // get shop subscription details 
+        const subscription = await prisma.subscription.findFirst({
+            where: {
+                shopId
+            }
+        });
+        if (!subscription) {
+            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                success: false,
+                error: "Shop is not subscribed."
+            }, {
+                status: 403
+            });
+        }
+        // subscription status 
+        if (subscription.status !== 'active' || subscription.nextBillingAt < new Date()) {
+            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                success: false,
+                error: "Subscription expired."
+            }, {
+                status: 403
+            });
+        }
+        // 3️⃣ Detect payment direction (paid / received / unknown)
+        if (!rejectReason) {
+            const paymentDirection = (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$tools$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["detectPaymentDirection"])(rawText);
+            if (paymentDirection == 'RECEIVED') {
+                rejectReason = 'received_payment_direction.';
+            }
         }
         // --------------------------------------
         // 4️⃣ PRE-VALIDATION BEFORE AI (cost saving)
         // --------------------------------------
-        const preFail = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$tools$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["validateScreenshotBeforeAI"])(buffer, clientOCR);
-        if (preFail) {
-            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                success: false,
-                rejectReason: 'Screenshot is not valid..'
-            }, {
-                status: 400
-            });
+        if (!rejectReason) {
+            const preFail = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$tools$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["validateScreenshotBeforeAI"])(buffer, clientOCR);
+            if (preFail) {
+                rejectReason = preFail;
+            }
         }
         // --------------------------------------
         // 5️⃣ CHECK DUPLICATE SCREENSHOT
         // --------------------------------------
-        const duplicate = await prisma.scanVerification.findFirst({
-            where: {
-                shopId,
-                screenshotHash,
-                status: "success"
+        if (!rejectReason) {
+            const duplicateHash = await prisma.scanVerification.findFirst({
+                where: {
+                    shopId,
+                    screenshotHash,
+                    status: "success"
+                }
+            });
+            if (duplicateHash) {
+                rejectReason = 'duplicate_image_hash';
             }
-        });
-        if (duplicate) {
+        }
+        //  Check duplicate OCR checksum
+        if (!rejectReason) {
+            const duplicateChecksum = await prisma.scanVerification.findFirst({
+                where: {
+                    shopId,
+                    checksum,
+                    status: "success"
+                }
+            });
+            if (duplicateChecksum) {
+                rejectReason = 'duplicate_image_ocr';
+            }
+        }
+        // pre ai verification scan save
+        if (rejectReason) {
+            const scan = await prisma.scanVerification.create({
+                data: {
+                    shopId,
+                    customerId: phone,
+                    amount: null,
+                    currency: "INR",
+                    upiId: clientOCR.upiId ?? null,
+                    utr: clientOCR.utr ?? null,
+                    paidAt: new Date(),
+                    status: "rejected",
+                    rejectReason,
+                    screenshotHash,
+                    appDetected: 'UNKNOWN',
+                    ocrText: rawText,
+                    checksum
+                }
+            });
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 success: false,
-                rejectReason: "Duplicate Screenshot"
+                rejectReason
             }, {
                 status: 400
             });
@@ -702,6 +767,29 @@ async function POST(req) {
         const ai = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$aiParser$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["parsePaymentScreenshot"])(imageBase64);
         if (ai.aiError) {
             console.log("⚠ AI unavailable — continuing with client OCR only");
+            const scan = await prisma.scanVerification.create({
+                data: {
+                    shopId,
+                    customerId: phone,
+                    amount: null,
+                    currency: "INR",
+                    upiId: clientOCR.upiId ?? null,
+                    utr: clientOCR.utr ?? null,
+                    paidAt: new Date(),
+                    status: "rejected",
+                    rejectReason: 'Server Error',
+                    screenshotHash,
+                    appDetected: 'UNKNOWN',
+                    ocrText: rawText,
+                    checksum
+                }
+            });
+            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                success: false,
+                rejectReason
+            }, {
+                status: 400
+            });
         }
         console.log("AI FIXED OCR →", ai);
         // AI corrected values (fallback to client OCR)
@@ -714,16 +802,16 @@ async function POST(req) {
         const isLikelyFake = ai.isLikelyFake ?? false;
         const confidence = ai.confidence ?? null;
         const status = ai.status ?? false;
-        const timeCheck2 = (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$upiTime$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["validateUPIScreenshotTime"])(date, time);
-        console.log("time", timeCheck2);
         // if payment status not success 
-        if (!ai || ai.status !== "success") {
-            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                success: false,
-                rejectReason: "Payment is not successful."
-            }, {
-                status: 400
-            });
+        if (!rejectReason) {
+            if (status !== "success") {
+                return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                    success: false,
+                    rejectReason: "payment_not_success."
+                }, {
+                    status: 400
+                });
+            }
         }
         // check utr 
         if (utr) {
@@ -738,7 +826,7 @@ async function POST(req) {
             if (!utrRegex.test(utr)) {
                 return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                     success: false,
-                    rejectReason: "Screenshot is not valid."
+                    rejectReason: "invalid_utr."
                 }, {
                     status: 400
                 });
@@ -747,7 +835,7 @@ async function POST(req) {
             if (utrExists) {
                 return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                     success: false,
-                    rejectReason: "Duplicate Screenshot"
+                    rejectReason: "utr_already_exist"
                 }, {
                     status: 400
                 });
@@ -757,7 +845,7 @@ async function POST(req) {
         if (!amount) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 success: false,
-                rejectReason: "Amount is invalid"
+                rejectReason: "amount_not_existed"
             }, {
                 status: 400
             });
@@ -767,7 +855,7 @@ async function POST(req) {
             if (amount < shop.minAmount) {
                 return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                     success: false,
-                    rejectReason: "Payment amount is below the minimum required."
+                    rejectReason: "ammount_below_mimimum."
                 }, {
                     status: 400
                 });
@@ -779,6 +867,58 @@ async function POST(req) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 success: false,
                 rejectReason: timeCheck.reason
+            }, {
+                status: 400
+            });
+        }
+        // AI flagged fake
+        if (isLikelyFake) {
+            rejectReason = "suspicious_screenshot";
+        }
+        // check confidance 
+        if (confidence) {
+            if (confidence < 0.80) {
+                return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                    success: false,
+                    rejectReason: 'confidance_low'
+                }, {
+                    status: 400
+                });
+            }
+        }
+        // upi mismatch 
+        if (!upiId) {
+            rejectReason = 'upi_not_exist';
+        }
+        if (upiId) {
+            if (upiId !== shop.upiId) {
+                rejectReason = 'upi_mismatch';
+            }
+        }
+        // --------------------------------------
+        // 7️⃣ SAVE THE VERIFICATION RECORD
+        // --------------------------------------
+        const scan = await prisma.scanVerification.create({
+            data: {
+                shopId,
+                customerId: phone,
+                amount,
+                currency: "INR",
+                upiId,
+                utr,
+                paidAt: new Date(),
+                status: rejectReason ? "rejected" : "success",
+                rejectReason,
+                screenshotHash,
+                appDetected,
+                ocrText: rawText
+            }
+        });
+        // If failed fraud check → return here
+        if (rejectReason) {
+            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                success: false,
+                rejectReason
             }, {
                 status: 400
             });
@@ -799,66 +939,6 @@ async function POST(req) {
                     shopId,
                     phone
                 }
-            });
-        }
-        // --------------------------------------
-        //  FRAUD CHECKS
-        // --------------------------------------
-        let rejectReason = null;
-        // AI flagged fake
-        if (isLikelyFake) {
-            rejectReason = "suspicious_screenshot";
-        }
-        // UPI mismatch
-        if (!rejectReason && shop.upiId && upiId && shop.upiId !== upiId) {
-            rejectReason = "upi_mismatch";
-        }
-        // Payment status from client OCR (not AI)
-        if (!rejectReason && clientOCR.status !== "success") {
-            rejectReason = "payment_not_success";
-        }
-        // Daily Limit
-        if (!rejectReason) {
-            const todayCount = await prisma.scanVerification.count({
-                where: {
-                    shopId,
-                    customerId: customer.id,
-                    status: "success",
-                    createdAt: {
-                        gte: new Date(new Date().setHours(0, 0, 0, 0))
-                    }
-                }
-            });
-            if (todayCount >= shop.maxStampsPerCustomerPerDay) {
-                rejectReason = "daily_limit_reached";
-            }
-        }
-        // --------------------------------------
-        // 7️⃣ SAVE THE VERIFICATION RECORD
-        // --------------------------------------
-        const scan = await prisma.scanVerification.create({
-            data: {
-                shopId,
-                customerId: customer.id,
-                amount,
-                currency: "INR",
-                upiId,
-                utr,
-                paidAt: new Date(),
-                status: rejectReason ? "rejected" : "success",
-                rejectReason,
-                screenshotHash,
-                appDetected,
-                ocrText: rawText
-            }
-        });
-        // If failed fraud check → return here
-        if (rejectReason) {
-            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                success: false,
-                rejectReason
-            }, {
-                status: 400
             });
         }
         // --------------------------------------

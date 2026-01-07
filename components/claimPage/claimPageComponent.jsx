@@ -1,17 +1,21 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import InvalidQRUI from "./invalidQRUI";
+import InvalidQRUI from "./errorComponents/invalidQRUI";
 import ClaimCard from "./claimCard";
 import { toast } from "sonner";
 import { Sparkles } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import SuccessAnimation from "../animations/SuccessAnimation";
+import Error429 from "./errorComponents/error429";
+import ManualReviewUI from "./errorComponents/manualReviewUI";
 
 const ClaimPage = ({ shopId }) => {
     const [isInvalid, setIsInvalid] = useState(false);
     const [shopName, setShopName] = useState("");
     const [loading, setLoading] = useState(false);
-    const [result, setResult] = useState(null);
+    const [uiState, setUIState] = useState("claim");
+
 
     if (!shopId) return <InvalidQRUI />;
 
@@ -48,13 +52,8 @@ const ClaimPage = ({ shopId }) => {
     const verifyScreenshot = async (file, phone, ocrResult, screenshotHash) => {
 
         if (!file) return;
-        if (!phone || phone.length < 10) {
-            setResult({ error: "Please enter a valid phone number" });
-            return;
-        }
 
         setLoading(true);
-        setResult(null);
 
         try {
             const form = new FormData();
@@ -71,20 +70,35 @@ const ClaimPage = ({ shopId }) => {
             const data = await res.json();
             setLoading(false);
 
+            console.log("API response:", data);
+
             if (data.success) {
-                setResult({ success: true });
-                toast.success("Payment Verified! Stamp added 🎉");
+                setUIState("success");
+
+                // set default 
+                setTimeout(() => {
+                    setUIState('claim')
+                }, 5000);
+
             } else {
-                setResult({ error: data.error || data.rejectReason || "Verification failed" });
-                toast.error(data.error || data.rejectReason || "Verification failed");
+                if (data.error == 'daily_upload_limit_reached') {
+                    setUIState('error429')
+                    return
+                }
+
+                if (data.rejectReason === 'upi_mismatch' || data.rejectReason === 'upi_not_exist') {
+                    setUIState('manualReview')
+                    return
+                }
+
+                // if(data.rejectReason === '')
+                toast.error(data.error || data.rejectReason ? 'Invalid Screenshot' : 'Verification failed' || "Verification failed");
             }
 
-            console.log("API response:", data);
 
         } catch (err) {
             console.error("Verification Error:", err);
             setLoading(false);
-            setResult({ error: "Something went wrong" });
             toast.error("Something went wrong");
         }
     };
@@ -111,29 +125,13 @@ const ClaimPage = ({ shopId }) => {
             </div>
 
             {/* ---------- CARD CENTERED ---------- */}
-            <ClaimCard shopId={shopId} verify={verifyScreenshot} loading={loading} setLoading={setLoading}/>
+            {uiState == 'claim' && <ClaimCard shopId={shopId} verify={verifyScreenshot} loading={loading} setLoading={setLoading} />}
 
+            {uiState === 'success' && <SuccessAnimation />}
 
-            {/* Result alerts */}
-            {/* {result?.success && (
-                    <Alert className="bg-green-50 border-green-300">
-                        <CheckCircle2 className="h-5 w-5 text-green-700" />
-                        <AlertTitle className="text-green-700 font-semibold">
-                            Payment Verified!
-                        </AlertTitle>
-                        <AlertDescription className="text-green-600">
-                            Stamp added successfully 🎉
-                        </AlertDescription>
-                    </Alert>
-                )}
+            {uiState === 'error429' && <Error429 />}
 
-                {result?.error && (
-                    <Alert variant="destructive">
-                        <XCircle className="h-5 w-5" />
-                        <AlertTitle className="font-semibold">Verification Failed</AlertTitle>
-                        <AlertDescription>{result.error}</AlertDescription>
-                    </Alert>
-                )} */}
+            {uiState === 'manualReview' && <ManualReviewUI />}
 
 
             {/* ---------- FOOTER ---------- */}
