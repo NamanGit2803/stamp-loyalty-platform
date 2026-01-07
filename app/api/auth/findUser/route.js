@@ -2,28 +2,23 @@ export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
 import { NextResponse } from "next/server";
-import prisma from "@/lib/prisma";
 
 export async function GET(req) {
   try {
-    // ✅ Correct App Router cookie access
+    // ✅ Lazy import Prisma (build-safe)
+    const { default: prisma } = await import("@/lib/prisma");
+
+    // ✅ Correct cookie access for Route Handlers
     const token = req.cookies.get("token")?.value;
 
-    if (!token) {
-      return NextResponse.json(
-        { error: "Not authenticated" },
-        { status: 401 }
-      );
-    }
-
-    if (!process.env.JWT_SECRET) {
+    if (!token || !process.env.JWT_SECRET) {
       return NextResponse.json(
         { error: "Invalid or expired token" },
         { status: 401 }
       );
     }
 
-    // ✅ Runtime-only import (prevents build crash)
+    // ✅ Runtime-only JWT import
     const jwt = (await import("jsonwebtoken")).default;
 
     let decoded;
@@ -49,7 +44,7 @@ export async function GET(req) {
       );
     }
 
-    // ✅ SAME SUCCESS RESPONSE
+    // ✅ SAME RESPONSE
     return NextResponse.json({ user }, { status: 200 });
 
   } catch (err) {

@@ -1,0 +1,7 @@
+1:"$Sreact.fragment"
+2:I[97367,["/_next/static/chunks/007ca8c79e8e8175.js","/_next/static/chunks/247eb132b7f7b574.js","/_next/static/chunks/733e500e189fafbe.js","/_next/static/chunks/947856060621b794.js","/_next/static/chunks/d7744fe445fdcdf9.js","/_next/static/chunks/ffc1da1c7e84c275.js"],"ViewportBoundary"]
+4:I[97367,["/_next/static/chunks/007ca8c79e8e8175.js","/_next/static/chunks/247eb132b7f7b574.js","/_next/static/chunks/733e500e189fafbe.js","/_next/static/chunks/947856060621b794.js","/_next/static/chunks/d7744fe445fdcdf9.js","/_next/static/chunks/ffc1da1c7e84c275.js"],"MetadataBoundary"]
+5:"$Sreact.suspense"
+0:{"buildId":"3G0kwVR4lVuPH7k9R1y7P","rsc":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"loading":null,"isPartial":false}
+3:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, user-scalable=yes"}],["$","meta","2",{"name":"theme-color","content":"#1F2937"}],["$","meta","3",{"name":"color-scheme","content":"light"}]]
+6:[["$","title","0",{"children":"Loyalty Pro - Shopkeeper Loyalty Platform"}],["$","meta","1",{"name":"description","content":"Manage customer loyalty, rewards, and payments with ease"}]]

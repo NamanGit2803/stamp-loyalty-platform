@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "functions": {
+    "/api/auth/login": {},
+    "/api/auth/otp/verify": {},
+    "/api/auth/signup/shopCreate": {},
+    "/api/auth/signup/userCreate": {},
+    "/api/internal/subscription-check": {},
+    "/api/public/checkShop": {},
+    "/api/screenshot/verify": {},
+    "/api/shop/user/updateUserDetails": {},
+    "/api/auth/findUser": {},
+    "/api/subscription/extend": {},
+    "/api/subscription/cancel": {},
+    "/api/subscription/start": {},
+    "/api/subscription/status": {},
+    "/api/auth/otp/send": {},
+    "/api/auth/findShop": {}
+  }
+}
