@@ -120,3 +120,10 @@ Check the render method of `FeaturesPage`.
 [16:29:20.689] Server  LOG      ✓ Compiled in 421ms
 [16:31:19.077] Server  LOG      ✓ Compiled in 994ms
 [16:33:30.157] Server  LOG        Reload env: .env
+[16:40:36.779] Server  LOG      ✓ Compiled in 869ms
+[16:41:43.565] Server  LOG      ✓ Compiled in 1926ms
+[16:43:44.577] Server  LOG      ✓ Compiled in 930ms
+[16:44:26.017] Server  LOG      ✓ Compiled in 419ms
+[16:49:45.761] Server  LOG      ✓ Compiled in 432ms
+[16:49:59.212] Server  LOG      ✓ Compiled in 1065ms
+[16:50:37.434] Server  LOG      ✓ Compiled in 490ms

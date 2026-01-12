@@ -43,15 +43,15 @@ const features = [
 
 const CoreFeature = () => {
     return (
-        <section className="py-20 bg-background">
+        <section className="py-15 bg-background">
             <div className="max-w-7xl mx-auto px-6">
 
                 {/* Section Heading */}
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
+                <div className="text-center max-w-3xl mx-auto mb-11  sm:mb-16">
+                    <h2 className="text-2xl sm:text-4xl font-bold text-primary mb-4">
                         Core Features That Drive Loyalty
                     </h2>
-                    <p className="text-muted-foreground text-lg">
+                    <p className="text-muted-foreground text-sm sm:text-lg">
                         Everything you need to turn first-time customers into regulars —
                         without complexity.
                     </p>

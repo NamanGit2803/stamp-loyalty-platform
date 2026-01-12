@@ -21,15 +21,15 @@ const steps = [
 
 const HowItWorks = () => {
     return (
-        <section className="py-20 bg-light-shade">
+        <section className="py-15 bg-light-shade">
             <div className="max-w-7xl mx-auto px-6">
 
                 {/* Heading */}
-                <div className="text-center max-w-2xl mx-auto mb-16">
-                    <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
+                <div className="text-center max-w-2xl mx-auto mb-11 sm:mb-16">
+                    <h2 className="text-2xl sm:text-4xl font-bold text-primary mb-4">
                         How <span className="logo-font">Stampi</span> Works
                     </h2>
-                    <p className="text-muted-foreground text-lg">
+                    <p className="text-muted-foreground text-sm sm:text-lg">
                         A simple 3-step flow that turns payments into repeat customers.
                     </p>
                 </div>

@@ -1229,6 +1229,14 @@
     margin-bottom: calc(var(--spacing) * 10);
   }
 
+  .mb-11 {
+    margin-bottom: calc(var(--spacing) * 11);
+  }
+
+  .mb-12 {
+    margin-bottom: calc(var(--spacing) * 12);
+  }
+
   .mb-14 {
     margin-bottom: calc(var(--spacing) * 14);
   }
@@ -5411,6 +5419,12 @@
   @media (min-width: 40rem) {
     .sm\:bottom-0 {
       bottom: calc(var(--spacing) * 0);
+    }
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:mb-16 {
+      margin-bottom: calc(var(--spacing) * 16);
     }
   }
 
