@@ -6,6 +6,7 @@
 :root {
   --background: oklch(100% 0.00011 271.152);
   --background-secondary: oklch(89.777% 0.03208 299.549);
+  --background-3: oklch(0.9705 0.0142 254.6);
   --foreground: oklch(0.11 0.008 219.1);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.11 0.008 219.1);
@@ -58,6 +59,7 @@
 .dark {
   --background: oklch(0.11 0.008 219.1);
   --background-secondary: oklch(92.51% 0.019 309.592);
+  --background-3: oklch(0.9705 0.0142 254.6);
   --foreground: oklch(0.97 0.014 247.4);
   --card: oklch(0.145 0 0);
   --card-foreground: oklch(0.97 0.014 247.4);
@@ -110,6 +112,7 @@
   --font-mono: "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);
   --color-background-secondary: var(--background-secondary);
+  --color-background-3: var(--background-3);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);

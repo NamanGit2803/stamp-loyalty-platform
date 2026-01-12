@@ -127,3 +127,216 @@ Check the render method of `FeaturesPage`.
 [16:49:45.761] Server  LOG      ✓ Compiled in 432ms
 [16:49:59.212] Server  LOG      ✓ Compiled in 1065ms
 [16:50:37.434] Server  LOG      ✓ Compiled in 490ms
+[16:55:13.890] Server  LOG      ✓ Compiled in 1051ms
+[16:55:47.083] Server  LOG      ✓ Compiled in 980ms
+[16:55:59.801] Server  LOG      ✓ Compiled in 453ms
+[16:56:08.680] Server  LOG      ✓ Compiled in 408ms
+[16:58:52.980] Server  LOG      ✓ Compiled in 467ms
+[16:59:03.549] Server  LOG      ✓ Compiled in 463ms
+[16:59:13.350] Server  LOG      ✓ Compiled in 948ms
+[16:59:47.165] Server  LOG      ✓ Compiled in 793ms
+[17:00:45.887] Server  LOG      ✓ Compiled in 653ms
+[17:02:28.029] Server  LOG      ✓ Compiled in 890ms
+[17:03:06.274] Server  LOG      ✓ Compiled in 390ms
+[17:16:06.025] Server  LOG      ✓ Compiled in 1606ms
+[17:16:16.619] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[17:17:23.844] Server  LOG      ✓ Compiled in 4s
+[17:17:26.324] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[17:17:56.690] Server  LOG      ✓ Compiled in 473ms
+[17:18:54.202] Server  LOG      ✓ Compiled in 738ms
+[17:19:31.619] Server  LOG      ✓ Compiled in 746ms
+[17:20:15.063] Server  LOG      ✓ Compiled in 889ms
+[17:43:57.570] Server  LOG      ✓ Compiled in 3s
+[17:44:03.860] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[17:44:07.124] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <MenuProvider scope={{Menu:[...], ...}} open={false} onOpenChange={function useCallbackRef.useMemo} content={null} ...>
+      <MenuProvider scope={{Menu:[...], ...}} onClose={function Menu.useCallback} isUsingKeyboardRef={{current:false}} ...>
+        <DropdownMenuTrigger asChild={true}>
+          <DropdownMenuTrigger data-slot="dropdown-m..." asChild={true}>
+            <MenuAnchor asChild={true} __scopeMenu={{Menu:[...], ...}}>
+              <PopperAnchor __scopePopper={{Menu:[...], ...}} asChild={true} ref={null}>
+                <Primitive.div asChild={true} ref={function}>
+                  <Slot ref={function}>
+                    <SlotClone ref={function}>
+                      <Primitive.button type="button" id="radix-_R_e..." aria-haspopup="menu" aria-expanded={false} ...>
+                        <Slot type="button" id="radix-_R_e..." aria-haspopup="menu" aria-expanded={false} ...>
+                          <SlotClone type="button" id="radix-_R_e..." aria-haspopup="menu" aria-expanded={false} ...>
+                            <button
+                              className="relative w-10 h-10 flex items-center justify-center"
+                              type="button"
++                             id="radix-_R_eitllb_"
+-                             id="radix-_R_1mitllb_"
+                              aria-haspopup="menu"
+                              aria-expanded={false}
+                              aria-controls={undefined}
+                              data-state="closed"
+                              data-disabled={undefined}
+                              disabled={false}
+                              data-slot="dropdown-menu-trigger"
+                              onPointerDown={function handleEvent}
+                              onKeyDown={function handleEvent}
+                              ref={function}
+                            >
+        ...
+
+[17:44:22.708] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[17:44:46.524] Server  LOG      ✓ Compiled in 3.5s
+[17:44:47.376] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[18:17:42.543] Server  LOG      ✓ Compiled in 883ms
+[18:18:01.323] Server  LOG      ✓ Compiled in 437ms
+[18:18:20.785] Server  LOG      ✓ Compiled in 416ms
+[18:19:31.618] Server  LOG      ✓ Compiled in 630ms
+[18:20:01.701] Server  LOG      ✓ Compiled in 977ms
+[18:25:42.787] Server  LOG      ✓ Compiled in 1138ms
+[18:25:48.506] Server  LOG      ✓ Compiled in 603ms
+[18:26:09.417] Server  LOG      ✓ Compiled in 760ms
+[18:26:57.112] Server  LOG      ✓ Compiled in 2s
+[18:27:22.002] Server  LOG      ✓ Compiled in 497ms
+[20:54:46.024] Server  LOG      ✓ Compiled in 1934ms
+[20:54:50.922] Server  LOG      ✓ Compiled in 671ms
+[20:54:59.221] Server  LOG      ○ Compiling /about ...
+[20:57:31.698] Server  LOG      ✓ Compiled in 455ms
+[20:57:57.426] Server  LOG      ✓ Compiled in 610ms
+[21:57:52.648] Server  LOG      ✓ Compiled in 1143ms
+[21:57:53.573] Browser ERROR   uncaughtError: ReferenceError: siteName is not defined
+[21:58:10.561] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\_6a9e49a4._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[21:58:10.571] Server  ERROR    ⨯ ReferenceError: siteName is not defined
+[21:58:11.768] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[21:58:13.055] Browser ERROR   uncaughtError: ReferenceError: siteName is not defined
+[21:58:41.062] Server  LOG      ✓ Compiled in 834ms
+[21:58:41.066] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[21:58:43.248] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[21:59:13.279] Server  LOG      ✓ Compiled in 600ms
+[21:59:30.983] Server  LOG      ✓ Compiled in 1341ms
+[21:59:42.083] Server  LOG      ✓ Compiled in 685ms
+[21:59:52.584] Server  LOG      ✓ Compiled in 435ms
+[22:00:09.225] Server  LOG      ✓ Compiled in 1212ms
+[22:00:16.352] Server  LOG      ✓ Compiled in 485ms
+[22:00:34.883] Server  LOG      ✓ Compiled in 430ms
+[22:00:41.736] Server  LOG      ✓ Compiled in 429ms
+[22:00:45.703] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[22:01:25.595] Server  LOG      ✓ Compiled in 416ms
+[22:02:06.053] Server  LOG      ✓ Compiled in 1572ms
+[22:02:13.883] Server  LOG      ✓ Compiled in 528ms
+[22:05:07.947] Server  LOG      ✓ Compiled in 630ms
+[22:05:42.253] Server  LOG      ✓ Compiled in 472ms
+[22:07:03.964] Server  LOG      ✓ Compiled in 1011ms
+[22:07:24.725] Server  LOG      ✓ Compiled in 436ms
+[22:16:04.321] Server  LOG      ✓ Compiled in 533ms
+[22:17:14.854] Server  LOG      ✓ Compiled in 696ms
+[22:21:27.654] Server  LOG      ✓ Compiled in 2.2s
+[22:22:25.468] Server  LOG      ✓ Compiled in 481ms
+[22:25:23.397] Server  LOG      ✓ Compiled in 454ms
+[22:26:33.919] Server  LOG      ✓ Compiled in 546ms
+[22:26:48.020] Server  LOG      ✓ Compiled in 1377ms
+[22:27:00.840] Server  LOG      ✓ Compiled in 426ms
+[22:27:17.653] Server  LOG      ✓ Compiled in 411ms
+[22:28:50.373] Server  LOG      ✓ Compiled in 493ms
+[22:38:04.129] Server  LOG      ✓ Compiled in 840ms
+[22:39:58.819] Server  LOG      ✓ Compiled in 706ms
+[22:47:38.571] Server  LOG      ✓ Compiled in 725ms
+[22:51:00.349] Server  LOG      ✓ Compiled in 406ms
+[22:52:46.623] Server  LOG      ✓ Compiled in 1032ms
+[22:52:47.798] Browser ERROR   ./components/about/mission.jsx:44:12
+Parsing ecmascript source code failed
+  42 |
+  43 | const ValueCard = ({ title, text }) => {
+> 44 |     return (
+     |            ^
+> 45 |         
+     | ^^^^^^^^
+> 46 |     )
+     | ^^^^^^
+  47 | }
+
+Parenthesized expression cannot be empty
+
+Import traces:
+  Client Component Browser:
+    ./components/about/mission.jsx [Client Component Browser]
+    ./app/(public)/about/page.jsx [Client Component Browser]
+    ./app/(public)/about/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./components/about/mission.jsx [Client Component SSR]
+    ./app/(public)/about/page.jsx [Client Component SSR]
+    ./app/(public)/about/page.jsx [Server Component]
+[22:52:53.026] Server  LOG      ✓ Compiled in 703ms
+[22:52:55.110] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
+
+Check the render method of `Mission`. 
+[22:52:58.028] Server  ERROR   Each child in a list should have a unique "key" prop.
+
+Check the render method of `Mission`. See https://react.dev/link/warning-keys for more information.
+[22:53:05.632] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[22:53:07.876] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
+
+Check the render method of `Mission`. 
+[22:53:13.582] Server  LOG      ✓ Compiled in 699ms
+[22:54:17.579] Server  LOG      ✓ Compiled in 737ms
+[22:54:35.539] Server  LOG      ✓ Compiled in 393ms
+[22:54:53.782] Server  LOG      ✓ Compiled in 506ms
+[22:56:02.956] Server  LOG      ✓ Compiled in 459ms
+[22:56:18.676] Server  LOG      ✓ Compiled in 459ms
+[22:56:35.812] Server  LOG      ✓ Compiled in 520ms
+[22:56:50.137] Server  LOG      ✓ Compiled in 484ms
+[22:57:08.529] Server  LOG      ✓ Compiled in 1305ms
+[22:57:18.182] Server  LOG      ✓ Compiled in 567ms
+[22:57:56.188] Server  LOG      ✓ Compiled in 559ms
+[22:59:27.152] Server  LOG      ✓ Compiled in 412ms
+[22:59:33.001] Server  LOG      ✓ Compiled in 545ms
+[22:59:58.160] Server  LOG      ✓ Compiled in 504ms
+[23:00:14.028] Server  LOG      ✓ Compiled in 904ms
+[23:00:23.109] Server  LOG      ✓ Compiled in 464ms
+[23:01:14.350] Server  LOG      ✓ Compiled in 430ms
+[23:01:20.291] Server  LOG      ✓ Compiled in 447ms
+[23:04:15.307] Server  LOG      ✓ Compiled in 3.3s
+[23:04:34.732] Server  LOG      ✓ Compiled in 677ms
+[23:05:22.307] Server  LOG      ✓ Compiled in 422ms
+[23:11:00.461] Server  LOG      ✓ Compiled in 1284ms
+[23:11:13.258] Server  LOG      ✓ Compiled in 440ms
+[23:11:37.023] Server  LOG      ✓ Compiled in 665ms
+[23:12:59.350] Server  LOG      ✓ Compiled in 774ms
+[23:16:17.667] Server  LOG      ✓ Compiled in 744ms
+[23:16:18.499] Browser ERROR   uncaughtError: ReferenceError: siteName is not defined
+[23:16:37.837] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[23:16:37.883] Server  LOG      ✓ Compiled in 674ms
+[23:16:40.806] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[23:16:56.060] Server  LOG      ✓ Compiled in 523ms
+[23:17:19.756] Server  LOG      ✓ Compiled in 384ms
+[23:17:54.376] Server  LOG      ✓ Compiled in 901ms
+[23:20:11.298] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\[root-of-the-server]__a8b9fe80._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[23:20:11.309] Server  ERROR    ⨯ ReferenceError: Button is not defined
+[23:20:12.805] Browser ERROR   uncaughtError: ReferenceError: Button is not defined
+[23:21:01.425] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[23:21:08.055] Server  LOG      ✓ Compiled in 612ms
+[23:21:09.654] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[23:21:33.654] Server  LOG      ✓ Compiled in 648ms
+[23:21:34.232] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\[root-of-the-server]__f7852981._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[23:21:34.236] Server  ERROR    ⨯ ReferenceError: siteName is not defined
+[23:21:36.046] Browser ERROR   uncaughtError: ReferenceError: siteName is not defined
+[23:21:41.596] Server  LOG      ✓ Compiled in 643ms
+[23:21:42.140] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\[root-of-the-server]__f7852981._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[23:21:42.142] Server  ERROR    ⨯ ReferenceError: siteName is not defined
+[23:21:44.490] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[23:21:46.818] Browser ERROR   uncaughtError: ReferenceError: siteName is not defined
+[23:22:11.209] Server  LOG      ✓ Compiled in 473ms
+[23:22:11.786] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\[root-of-the-server]__f7852981._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[23:22:11.787] Server  ERROR    ⨯ ReferenceError: Link is not defined
+[23:22:13.302] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[23:22:13.998] Browser ERROR   uncaughtError: ReferenceError: Link is not defined
+[23:22:25.916] Server  LOG      ✓ Compiled in 399ms
+[23:22:31.857] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[23:25:05.671] Server  LOG      ✓ Compiled in 992ms
