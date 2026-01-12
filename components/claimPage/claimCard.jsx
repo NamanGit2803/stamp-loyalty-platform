@@ -8,6 +8,7 @@ import { Upload, X } from "lucide-react";
 import { observer } from "mobx-react-lite";
 import { Spinner } from "@/components/ui/spinner";
 import { createWorker } from "tesseract.js";
+import { toast } from "sonner";
 
 
 // resize image 
@@ -141,7 +142,7 @@ const ClaimCard = ({ shopId, verify, loading, setLoading }) => {
 
         // Realme sometimes gives empty type
         if (selected.size === 0) {
-            alert("Invalid image. Please select a screenshot.");
+            toast.error("Invalid image. Please select a screenshot.");
             e.target.value = "";
             return;
         }
@@ -154,12 +155,12 @@ const ClaimCard = ({ shopId, verify, loading, setLoading }) => {
             if (reader.result) {
                 setPreview(reader.result);
             } else {
-                alert("Preview failed. Please reselect image.");
+                toast.error("Preview failed. Please reselect image.");
             }
         };
 
         reader.onerror = () => {
-            alert("Image not supported on this device.");
+            toast.error("Image not supported on this device.");
         };
 
         reader.readAsDataURL(selected);

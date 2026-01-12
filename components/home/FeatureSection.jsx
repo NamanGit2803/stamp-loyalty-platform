@@ -49,10 +49,10 @@ const FeatureSection = () => {
         <section className="max-w-7xl mx-auto px-4 md:px-8 py-20">
             {/* Heading */}
             <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3">
                     Powerful Features
                 </h2>
-                <p className="text-gray-600 max-w-2xl mx-auto">
+                <p className="text-muted-foreground max-w-2xl mx-auto">
                     Everything you need to build and manage customer loyalty programs
                 </p>
             </div>
@@ -65,7 +65,7 @@ const FeatureSection = () => {
                     return (
                         <Card
                             key={index}
-                            className=" p-8 border border-blue-100 shadow-sm rounded-2xl hover:shadow-xl hover:-translate-y-1 
+                            className=" p-8 border border-border/50 shadow-sm rounded-2xl hover:shadow-xl hover:-translate-y-1 
                 transition-all 
                 bg-white/90 
                 backdrop-blur-sm
@@ -76,20 +76,20 @@ const FeatureSection = () => {
                 w-14 h-14 
                 flex items-center justify-center 
                 rounded-xl 
-                bg-blue-100 
-                text-blue-700 
-                mb-5
+                bg-secondary/10
+                text-primary 
+                mb-4
                 shadow-inner
               "
                             >
                                 <Icon size={28} strokeWidth={1.8} />
                             </div>
 
-                            <h3 className="text-xl font-semibold text-blue-900 mb-2">
+                            <h3 className="text-xl font-semibold text-primary mb-2">
                                 {feature.title}
                             </h3>
 
-                            <p className="text-gray-600 text-sm leading-relaxed">
+                            <p className="text-muted-foreground text-sm leading-relaxed">
                                 {feature.description}
                             </p>
                         </Card>

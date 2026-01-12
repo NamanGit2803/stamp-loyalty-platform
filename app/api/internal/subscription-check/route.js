@@ -5,12 +5,9 @@ import { NextResponse } from "next/server";
 
 export async function POST(req) {
   try {
-    // ✅ Lazy import Prisma (build-safe)
     const { default: prisma } = await import("@/lib/prisma");
-
     const { shopId, userEmail } = await req.json();
 
-    // Validate shop ownership
     const shop = await prisma.shop.findUnique({
       where: { id: shopId },
     });
@@ -23,7 +20,6 @@ export async function POST(req) {
       return NextResponse.json({ status: "NOT_OWNER" });
     }
 
-    // Fetch subscription
     const subscription = await prisma.subscription.findFirst({
       where: { shopId },
     });
@@ -33,21 +29,35 @@ export async function POST(req) {
     }
 
     const now = new Date();
-    const trialEnds = new Date(subscription.trialEndsAt);
-    const nextBilling = new Date(subscription.nextBillingAt);
+    const trialEnds = subscription.trialEndsAt
+      ? new Date(subscription.trialEndsAt)
+      : null;
 
-    if (now <= trialEnds) {
+    const nextBilling = subscription.nextBillingAt
+      ? new Date(subscription.nextBillingAt)
+      : null;
+
+    // 1️⃣ Trial still active
+    if (trialEnds && now <= trialEnds) {
       return NextResponse.json({ status: "TRIAL_ACTIVE" });
     }
 
-    if (now > trialEnds && now > nextBilling) {
+    // 2️⃣ Explicit canceled or expired
+    if (subscription.status === "canceled") {
       return NextResponse.json({ status: "EXPIRED" });
     }
 
-    return NextResponse.json({ status: "PAID_ACTIVE" });
+    // 3️⃣ Paid and valid
+    if (nextBilling && now <= nextBilling) {
+      return NextResponse.json({ status: "PAID_ACTIVE" });
+    }
+
+    // 4️⃣ Billing date passed
+    return NextResponse.json({ status: "EXPIRED" });
 
   } catch (err) {
     console.error("[subscription check error]", err);
     return NextResponse.json({ status: "ERROR" });
   }
 }
+

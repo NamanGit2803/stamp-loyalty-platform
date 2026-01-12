@@ -1,0 +1,122 @@
+[00:00:25.409] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:30.562] Server  LOG      ✓ Ready in 21.4s
+[00:00:34.123] Server  LOG      ○ Compiling / ...
+[00:01:08.485] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:12.206] Server  LOG      ○ Compiling /api/auth/findShop ...
+[00:02:32.033] Server  LOG      ✓ Compiled in 696ms
+[00:02:44.946] Server  LOG      ✓ Compiled in 628ms
+[00:03:04.095] Server  LOG      ✓ Compiled in 2.8s
+[00:03:42.050] Server  LOG      ✓ Compiled in 762ms
+[00:05:35.323] Server  LOG      ✓ Compiled in 1642ms
+[00:06:52.592] Server  LOG      ✓ Compiled in 1918ms
+[00:07:28.823] Server  LOG      ✓ Compiled in 1263ms
+[00:07:38.760] Server  LOG      ✓ Compiled in 1174ms
+[00:09:27.629] Server  LOG      ✓ Compiled in 1617ms
+[00:10:36.396] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:39.214] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:57.155] Server  LOG      ✓ Compiled in 431ms
+[00:14:15.153] Server  LOG      ✓ Compiled in 522ms
+[00:24:46.709] Server  LOG      ✓ Compiled in 690ms
+[00:24:47.932] Browser ERROR   uncaughtError: ReferenceError: FeatureCard is not defined
+[00:27:39.793] Server  LOG      ✓ Compiled in 435ms
+[00:27:41.158] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\components_features_108dcd62._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:27:41.354] Server  ERROR    ⨯ ReferenceError: FeatureCard is not defined
+[00:27:44.344] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:27:45.899] Browser ERROR   uncaughtError: ReferenceError: FeatureCard is not defined
+[00:28:11.866] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:28:11.897] Server  LOG      ✓ Compiled in 513ms
+[00:28:14.078] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:28:25.212] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:28:58.304] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:18.843] Server  LOG      ✓ Compiled in 384ms
+[00:30:32.249] Server  LOG      ✓ Compiled in 404ms
+[00:30:56.441] Server  LOG      ✓ Compiled in 398ms
+[00:32:02.089] Server  LOG      ✓ Compiled in 456ms
+[00:32:30.773] Server  LOG      ✓ Compiled in 426ms
+[00:34:19.487] Server  ERROR    ⨯ ./app/(public)/features/page.jsx:1:1
+Module not found: Can't resolve '@/components/features/featureComponent'
+> 1 | import FeatureComponent from "@/components/features/featureComponent"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function FeaturesPage() {
+  4 |     return (
+
+Import map: aliased to relative './components/features/featureComponent' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:19.550] Server  ERROR    ⨯ ./app/(public)/features/page.jsx:1:1
+Module not found: Can't resolve '@/components/features/featureComponent'
+> 1 | import FeatureComponent from "@/components/features/featureComponent"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function FeaturesPage() {
+  4 |     return (
+
+Import map: aliased to relative './components/features/featureComponent' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:34:19.608] Server  LOG      ✓ Compiled in 1647ms
+[00:34:20.672] Server  LOG      ✓ Compiled in 795ms
+[00:34:21.949] Browser ERROR   ./app/(public)/features/page.jsx:1:1
+Module not found: Can't resolve '@/components/features/featureComponent'
+> 1 | import FeatureComponent from "@/components/features/featureComponent"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function FeaturesPage() {
+  4 |     return (
+
+Import map: aliased to relative './components/features/featureComponent' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:34:21.950] Server  LOG      ✓ Compiled in 104ms
+[00:34:23.411] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:40:01.681] Browser ERROR   uncaughtError: Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `FeaturesPage`.
+[00:40:04.345] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:40:04.451] Server  LOG      ✓ Compiled in 478ms
+[00:40:07.629] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:41:57.738] Server  LOG      ✓ Compiled in 1644ms
+[00:42:30.594] Server  LOG      ✓ Compiled in 861ms
+[00:43:22.534] Server  LOG      ✓ Compiled in 1177ms
+[00:44:10.521] Server  LOG      ✓ Compiled in 1038ms
+[01:02:48.280] Server  LOG      ✓ Compiled in 802ms
+[01:03:01.969] Server  LOG      ✓ Compiled in 1060ms
+[01:03:28.019] Server  LOG      ✓ Compiled in 546ms
+[01:03:37.835] Server  LOG      ✓ Compiled in 450ms
+[01:04:07.666] Server  LOG      ✓ Compiled in 497ms
+[01:04:32.961] Server  LOG      ✓ Compiled in 513ms
+[01:05:09.269] Server  LOG      ✓ Compiled in 460ms
+[01:08:00.914] Server  LOG      ✓ Compiled in 1182ms
+[01:09:28.957] Server  LOG      ✓ Compiled in 415ms
+[01:15:34.064] Server  LOG      ✓ Compiled in 2.2s
+[01:18:12.787] Server  LOG      ✓ Compiled in 999ms
+[01:22:27.435] Server  LOG      ✓ Compiled in 491ms
+[02:34:06.854] Server  LOG      ✓ Compiled in 653ms
+[02:34:39.244] Server  LOG      ✓ Compiled in 899ms
+[02:35:11.876] Server  LOG      ✓ Compiled in 443ms
+[02:41:05.156] Server  LOG      ✓ Compiled in 1766ms
+[02:42:26.813] Server  LOG      ✓ Compiled in 441ms
+[02:49:07.032] Server  LOG      ✓ Compiled in 1517ms
+[02:51:49.706] Server  LOG      ✓ Compiled in 1407ms
+[02:54:12.486] Server  LOG      ✓ Compiled in 563ms
+[02:55:08.700] Server  LOG      ✓ Compiled in 1542ms
+[02:56:49.003] Server  LOG      ✓ Compiled in 1067ms
+[03:03:51.752] Server  LOG      ✓ Compiled in 1355ms
+[03:07:14.694] Server  LOG      ✓ Compiled in 737ms
+[03:12:44.313] Server  LOG      ✓ Compiled in 380ms
+[03:13:45.526] Server  LOG      ○ Compiling /login ...
+[16:16:48.032] Server  LOG      ✓ Compiled in 2.9s
+[16:19:46.704] Server  LOG      ✓ Compiled in 1211ms
+[16:23:51.780] Server  LOG      ✓ Compiled in 436ms
+[16:27:25.486] Server  LOG      ✓ Compiled in 384ms
+[16:27:46.268] Server  LOG      ✓ Compiled in 491ms
+[16:29:20.689] Server  LOG      ✓ Compiled in 421ms
+[16:31:19.077] Server  LOG      ✓ Compiled in 994ms
+[16:33:30.157] Server  LOG        Reload env: .env

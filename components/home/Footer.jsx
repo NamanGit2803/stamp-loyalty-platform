@@ -2,83 +2,91 @@
 
 import React from 'react'
 import Link from 'next/link'
+import { Separator } from "@/components/ui/separator"
+
+const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "Stampi"
+
+const footerLinks = {
+  product: [
+    { label: "Features", href: "/features" },
+    { label: "Pricing", href: "/plans" },
+  ],
+  company: [
+    { label: "About", href: "#" },
+    { label: "Contact", href: "#" },
+  ],
+  legal: [
+    { label: "Privacy", href: "#" },
+    { label: "Terms", href: "#" },
+  ],
+}
 
 const Footer = () => {
   return (
-    <footer className="border-t border-blue-100 mt-20 py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">
-                  L
-                </div>
-                <span className="font-bold text-blue-900">Loyalty Pro</span>
+    <footer className=" bg-light-shade/50">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 pb-8">
+
+        {/* Upper section */}
+        <div className="grid md:grid-cols-4 gap-8 pb-16">
+
+          {/* Brand */}
+          <div>
+            <Link href="/" className="flex items-center gap-2 select-none mb-4">
+              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                <span className="text-white font-semibold text-lg leading-none logo-font">
+                  S
+                </span>
               </div>
-              <p className="text-sm text-gray-600">Building customer loyalty, one business at a time.</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-blue-900 mb-4">Product</h4>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="#" className="text-gray-600 hover:text-blue-600">
-                    Features
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/plans" className="text-gray-600 hover:text-blue-600">
-                    Pricing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-gray-600 hover:text-blue-600">
-                    Security
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-blue-900 mb-4">Company</h4>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="#" className="text-gray-600 hover:text-blue-600">
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-gray-600 hover:text-blue-600">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-gray-600 hover:text-blue-600">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-blue-900 mb-4">Legal</h4>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="#" className="text-gray-600 hover:text-blue-600">
-                    Privacy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-gray-600 hover:text-blue-600">
-                    Terms
-                  </Link>
-                </li>
-              </ul>
-            </div>
+
+              <span className="text-xl logo-font font-semibold text-secondary">
+                {siteName}
+              </span>
+            </Link>
+
+            <p className="text-sm text-muted-foreground max-w-xs">
+              Helping businesses turn customers into regulars.
+            </p>
           </div>
-          <div className="border-t border-blue-100 pt-8 text-center text-sm text-gray-600">
-            <p>&copy; 2025 Loyalty Pro. All rights reserved.</p>
-          </div>
+
+          {/* Columns */}
+          <FooterColumn title="Product" links={footerLinks.product} />
+          <FooterColumn title="Company" links={footerLinks.company} />
+          <FooterColumn title="Legal" links={footerLinks.legal} />
+
         </div>
-      </footer>
+
+        <Separator className="my-10 bg-border/55" />
+
+        {/* Bottom */}
+        <div className="text-center text-sm text-muted-foreground">
+          © {new Date().getFullYear()}{" "}
+          <span className="logo-font text-primary">{siteName}</span>. All rights reserved.
+        </div>
+      </div>
+    </footer>
   )
 }
 
 export default Footer
+
+/* -------- Helper Component (JSX ONLY) -------- */
+
+const FooterColumn = ({ title, links }) => {
+  return (
+    <div>
+      <h4 className="font-semibold text-primary mb-4">{title}</h4>
+      <ul className="space-y-2 text-sm">
+        {links.map((link) => (
+          <li key={link.label}>
+            <Link
+              href={link.href}
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}

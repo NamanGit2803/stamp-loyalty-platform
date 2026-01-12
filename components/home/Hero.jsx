@@ -10,8 +10,8 @@ const Hero = () => {
             <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6 leading-tight text-balance">
                 Grow Your Business with <span className="text-secondary">Customer Loyalty</span>
             </h1>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto text-pretty">
-                Loyalty Pro helps small shopkeepers build lasting customer relationships through intelligent loyalty programs
+            <p className="text-lg text-dark-text mb-8 max-w-2xl mx-auto text-pretty">
+                <span className='logo-font text-primary'>{process.env.NEXT_PUBLIC_SITE_NAME ?? "Site name"}</span> helps small shopkeepers build lasting customer relationships through intelligent loyalty programs
                 and rewards
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center mb-16">

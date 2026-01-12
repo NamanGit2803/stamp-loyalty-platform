@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(98.7% 0.010 312);
+  --background: oklch(100% 0.00011 271.152);
   --background-secondary: oklch(89.777% 0.03208 299.549);
   --foreground: oklch(0.11 0.008 219.1);
   --card: oklch(1 0 0);
@@ -16,6 +16,7 @@
   --secondary: oklch(0.63 0.16 298);
   --secondary-foreground: oklch(0.11 0.008 219.1);
   --extra: oklch(0.65 0.2 280);
+  --light-shade: oklch(92.84% 0.024 313.13);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --dark-text: oklch(36.403% 0.00551 16.998);
@@ -67,6 +68,7 @@
   --secondary: oklch(0.351 0.154 259.8);
   --secondary-foreground: oklch(0.97 0.014 247.4);
   --extra: oklch(0.65 0.2 280);
+  --light-shade: oklch(92.84% 0.024 313.13);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
   --dark-text: oklch(36.403% 0.00551 16.998);
@@ -118,6 +120,7 @@
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-extra: var(--extra);
+  --color-light-shade: var(--light-shade);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-dark-text: var(--dark-text);
@@ -205,4 +208,11 @@
 /* Hover effect */
 .card:hover {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* logo font  */
+.logo-font {
+  font-family: var(--font-comfortaa);
+  font-weight: 800;
 }

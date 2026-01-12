@@ -1,0 +1,12 @@
+{
+  "/(auth)/login/page": "app/(auth)/login/page.js",
+  "/(auth)/signup/page": "app/(auth)/signup/page.js",
+  "/(public)/features/page": "app/(public)/features/page.js",
+  "/(public)/page": "app/(public)/page.js",
+  "/(public)/plans/page": "app/(public)/plans/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/auth/findShop/route": "app/api/auth/findShop/route.js",
+  "/api/auth/findUser/route": "app/api/auth/findUser/route.js",
+  "/api/subscription/status/route": "app/api/subscription/status/route.js",
+  "/plans/page": "app/plans/page.js"
+}
