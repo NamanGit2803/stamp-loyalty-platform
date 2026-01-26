@@ -361,3 +361,7 @@ Incoming: %s useEffect [1, 10, , ] [1, 10, , , pending]
 [04:02:58.231] Server  LOG     ststus TRIAL_ACTIVE
 [04:03:21.348] Server  LOG        Reload env: .env
 [04:03:22.177] Server  LOG     ststus TRIAL_ACTIVE
+[04:08:30.464] Server  LOG        Reload env: .env
+[04:08:31.692] Server  LOG     ststus TRIAL_ACTIVE
+[04:13:07.832] Server  LOG        Reload env: .env
+[04:13:08.968] Server  LOG     ststus TRIAL_ACTIVE
