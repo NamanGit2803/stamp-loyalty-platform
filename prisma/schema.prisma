@@ -12,12 +12,6 @@ enum Role {
   SHOP
 }
 
-enum SubscriptionStatus {
-  trialing
-  active
-  expired
-  cancelled
-}
 
 enum VerificationMode {
   SCREENSHOT
@@ -43,7 +37,26 @@ model User {
   createdAt DateTime @default(now())
 
   shops Shop[]
+  passwordResets PasswordReset[]
 }
+
+
+model PasswordReset {
+  id         String     @unique @default(cuid())
+  userId     String
+  tokenHash  String   @unique
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [email], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+
+
+
+
 
 model Shop {
   srNo           Int      @id @default(autoincrement())
@@ -81,9 +94,10 @@ model Customer {
   id          String    @unique
   shopId      String
   name        String?
-  phone       String?   @unique
+  phone       String?  
   upiId       String?
   stampCount  Int       @default(0)
+  totalStampCount Int?       @default(0)
   totalVisits Int       @default(0)
   lastVisit   DateTime?
   createdAt   DateTime  @default(now())
@@ -91,6 +105,9 @@ model Customer {
   shop         Shop           @relation(fields: [shopId], references: [id])
   transactions Transaction[]
   rewards      Reward[]
+  scanVerification ScanVerification[]
+
+   @@unique([shopId, phone]) // 👈 unique per shop, not global
 }
 
 
@@ -100,6 +117,7 @@ model ScanVerification {
 
   shopId         String
   customerId     String?
+  phone          String?
 
   // Parsed from OCR
   amount         Int?        // store in paise or rupees (decide and stay consistent)
@@ -123,6 +141,7 @@ model ScanVerification {
   createdAt      DateTime   @default(now())
 
   shop           Shop?       @relation(fields: [shopId], references: [id])
+  customer       Customer?  @relation(fields: [customerId], references: [id])
 
   @@index([shopId, utr])
   @@index([customerId])
@@ -151,7 +170,7 @@ model Transaction {
   createdAt  DateTime  @default(now())
 
   shop     Shop      @relation(fields: [shopId], references: [id])
-  customer Customer? @relation(fields: [customerId], references: [phone])
+  customer Customer? @relation(fields: [customerId], references: [id])
 }
 
 model Reward {
@@ -160,7 +179,6 @@ model Reward {
   shopId     String
   customerId String
   rewardText String
-  redeemed   Boolean   @default(false)
   createdAt  DateTime  @default(now())
 
   shop     Shop     @relation(fields: [shopId], references: [id])
@@ -171,12 +189,14 @@ model Plan {
   srNo        Int       @id @default(autoincrement())
   id          String    @unique
   name        String
+  features    Json
   price       Int
   stampLimit  Int?
   shopLimit   Int?
   description String?
   createdAt   DateTime @default(now())
 
+  subscriptions Subscription[]
 
 }
 
@@ -185,8 +205,7 @@ model Subscription {
   id            String    @unique
   shopId        String
   planId        String?
-  amount        Int
-  status SubscriptionStatus @default(trialing)
+  status        String @default("trialing")
   startDate     DateTime  @default(now())
   endDate       DateTime?
   trialEndsAt    DateTime  
@@ -194,6 +213,7 @@ model Subscription {
   razorpaySubId String?
   updatedAt     DateTime @updatedAt
 
+  plan Plan? @relation(fields: [planId], references: [id])
   shop Shop? @relation(fields: [shopId], references: [id])
   payments Payment[]
 

@@ -1,0 +1,3 @@
+{
+  "/api/auth/forgotPassword/sendLink/route": "app/api/auth/forgotPassword/sendLink/route.js"
+}

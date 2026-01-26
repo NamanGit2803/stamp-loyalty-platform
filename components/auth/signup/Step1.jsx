@@ -10,6 +10,8 @@ import { Input } from "@/components/ui/input"
 import { toast } from 'sonner'
 import { Spinner } from "@/components/ui/spinner"
 import { useRouter } from 'next/navigation'
+import Link from "next/link"
+import { Checkbox } from "@/components/ui/checkbox"
 
 const Step1 = ({ setStep }) => {
 
@@ -24,6 +26,7 @@ const Step1 = ({ setStep }) => {
         email: "",
         password: "",
         confirmPassword: "",
+        checkbox: false,
     })
 
     const router = useRouter()
@@ -57,6 +60,11 @@ const Step1 = ({ setStep }) => {
             return;
         }
 
+        if (formData.checkbox == false) {
+            toast.error('Please check the checkbox.')
+            return
+        }
+
         const { confirmPassword: _, ...data } = formData;
 
         //  SIGNUP CHECK-ONLY MODE
@@ -64,8 +72,24 @@ const Step1 = ({ setStep }) => {
 
 
         if (userStore.error === "User already exists") {
-            toast.error(userStore.error);
+            toast.error(userStore.error+'.', {
+                description: 'Please login.',
+                action: {
+                    label: "Login",
+                    onClick: () => router.push('/login'),
+                }
+            })
             return;
+        }
+
+        if (userStore.error === 'Shop not registered') {
+            localStorage.setItem("signupStep", 2)
+
+            toast.error('Shop not registered yet with this email.', {
+                description: 'Please registerd your shop.',
+            })
+            setStep(2)
+            return
         }
 
         //  Send OTP
@@ -183,6 +207,25 @@ const Step1 = ({ setStep }) => {
                     </div>
 
                     {errors.confirmPassword && <p className="text-red-600 text-xs mt-1 flex gap-2 items-center"><TriangleAlert className='h-3 w-3' /> {errors.confirmPassword}</p>}
+                </div>
+
+                {/* checkbox  */}
+                <div className="flex items-start gap-2 text-sm">
+                    <Checkbox id="terms" required checked={formData.checkbox} onCheckedChange={(val) => setFormData((prev) => ({ ...prev, 'checkbox': !!val }))} />
+
+                    <label
+                        htmlFor="terms"
+                        className="text-gray-600 leading-relaxed cursor-pointer"
+                    >
+                        I agree to the{" "}
+                        <Link href="/terms" className="text-primary hover:underline">
+                            Terms & Conditions
+                        </Link>{" "}
+                        and{" "}
+                        <Link href="/privacy" className="text-primary hover:underline">
+                            Privacy Policy
+                        </Link>
+                    </label>
                 </div>
 
                 <Button onClick={createUser} disabled={userStore.loading} className="w-full mt-6 text-white hover:cursor-pointer">

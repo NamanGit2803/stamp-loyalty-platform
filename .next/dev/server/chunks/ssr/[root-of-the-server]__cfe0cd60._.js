@@ -136,6 +136,25 @@ class UserStore {
             this.shopId = null;
         });
     }
+    /** ============== FORGOT PASSWORD ============== */ async forgotPassword(email) {
+        this.loading = true;
+        this.error = null;
+        try {
+            const res = await fetch("/api/auth/forgotPassword/sendLink", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(email)
+            });
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.error);
+        } catch (err) {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>this.error = err.message);
+        } finally{
+            this.loading = false;
+        }
+    }
     /** ============== SIGNUP STEP ============== */ setSignupStep(step) {
         this.signupStep = step;
     }

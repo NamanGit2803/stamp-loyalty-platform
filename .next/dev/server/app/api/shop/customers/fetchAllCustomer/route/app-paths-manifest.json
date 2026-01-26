@@ -1,0 +1,3 @@
+{
+  "/api/shop/customers/fetchAllCustomer/route": "app/api/shop/customers/fetchAllCustomer/route.js"
+}

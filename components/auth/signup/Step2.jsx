@@ -117,6 +117,7 @@ const Step2 = ({ setStep }) => {
                 phone: "",
                 businessType: '',
                 customBusinessType: '',
+                upiId: '',
                 address: "",
                 minAmount: '',
                 targetStamp: '',
@@ -320,7 +321,7 @@ const Step2 = ({ setStep }) => {
                     <Input
                         type="number"
                         name="targetStamp"
-                        placeholder="Enter target stamp"
+                        placeholder="Enter target stamp.   e.g., 5"
                         value={formData.targetStamp}
                         onChange={handleChange}
                         className={errors.targetStamp ? "border-red-500" : "border-border"}

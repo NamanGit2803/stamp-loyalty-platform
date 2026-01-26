@@ -91,8 +91,15 @@ const ClaimPage = ({ shopId }) => {
                     return
                 }
 
-                // if(data.rejectReason === '')
-                toast.error(data.error || data.rejectReason ? 'Invalid Screenshot' : 'Verification failed' || "Verification failed");
+                
+                toast.error(
+                    data.error
+                        ? data.error
+                        : data.rejectReason
+                            ? "Invalid Screenshot"
+                            : "Verification failed"
+                );
+
             }
 
 
@@ -136,7 +143,7 @@ const ClaimPage = ({ shopId }) => {
 
             {/* ---------- FOOTER ---------- */}
             <p className="mb-5 text-center text-xs text-gray-500 tracking-wide">
-                Powered by <span className="font-semibold text-primary">LoyaltyPro</span>
+                Powered by <span className='logo-font text-primary'>{process.env.NEXT_PUBLIC_SITE_NAME ?? "site_name"}</span>
             </p>
         </div>
     );

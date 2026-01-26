@@ -19,120 +19,122 @@ import {
     TooltipContent,
     TooltipTrigger,
 } from "@/components/ui/tooltip"
+import { Spinner } from "@/components/ui/spinner"
+import { FormatLastVisit } from "@/lib/dateFormat"
+import VerifyConfirmDialog from "./verification-table/verifyConfirmDialog"
+import DetailsDialog from "./verification-table/detailsDialog"
 
-const mockTransactions = [
-    { id: 1, customer: "Amit Kumar", mobile: '1234567891', amount: 250, date: "2024-01-15", app: 'Paytm', status: "success" },
-    { id: 2, customer: "Priya Singh", mobile: '1234567891', amount: 180, date: "2024-01-14", app: 'Paytm', status: "success" },
-    { id: 3, customer: "Vikram Patel", mobile: '1234567891', amount: 99, date: "2024-01-13", app: 'Paytm', status: "failed" },
-    { id: 4, customer: "Neha Sharma", mobile: '1234567891', amount: 500, date: "2024-01-12", app: 'Paytm', status: "success" },
-]
+function renderStatusBadge(status) {
+    switch (status) {
+        case "success":
+            return (
+                <Badge className="gap-1 bg-green-100 text-green-700 hover:bg-green-100">
+                    <CheckCircle size={14} />
+                    Success
+                </Badge>
+            );
 
-export default function VerificationsTable() {
-    const [filterDate, setFilterDate] = useState("")
+        case "pending":
+            return (
+                <Badge className="gap-1 bg-warning-bg-primary text-warning-text-1 ">
+                    <AlertCircle size={14} />
+                    Pending
+                </Badge>
+            );
 
-    const transactions = mockTransactions.filter(
-        (tx) => !filterDate || tx.date === filterDate
-    )
+        case "rejected":
+        default:
+            return (
+                <Badge className="gap-1 bg-error-bg-primary text-error-text-1">
+                    <AlertCircle size={14} />
+                    Rejected
+                </Badge>
+            );
+    }
+}
+
+
+
+export default function VerificationsTable({ loading, data }) {
 
     return (
         <Card className="overflow-hidden card">
-            <Table>
-                <TableHeader className="bg-muted/40 sticky top-0 z-10">
-                    <TableRow>
-                        <TableHead className="text-primary">Customer</TableHead>
-                        <TableHead className="text-primary">Mobile</TableHead>
-                        <TableHead className="text-primary">Amount</TableHead>
-                        <TableHead className="text-primary">Date</TableHead>
-                        <TableHead className="text-primary">App</TableHead>
-                        <TableHead className="text-primary">Status</TableHead>
-                        <TableHead className="text-primary">Actions</TableHead>
-                    </TableRow>
-                </TableHeader>
 
-                <TableBody>
-                    {transactions.map((tx) => (
-                        <TableRow
-                            key={tx.id}
-                            className="hover:bg-muted/30 transition-colors"
-                        >
-                            {/* Customer */}
-                            <TableCell className="py-3 font-medium">
-                                {tx.customer}
-                            </TableCell>
+            {/* LOADING STATE */}
+            {loading && (
+                <div className="flex justify-center items-center py-10">
+                    <Spinner className="h-6 w-6 text-primary" />
+                </div>
+            )}
 
-                            {/* mobile */}
-                            <TableCell className="py-3 font-medium text-dark-text">
-                                {tx.mobile}
-                            </TableCell>
-
-                            {/* Amount */}
-                            <TableCell className="py-3 font-semibold text-dark-text">
-                                ₹{tx.amount}
-                            </TableCell>
-
-                            {/* Date */}
-                            <TableCell className="py-3 text-muted-foreground">
-                                {tx.date}
-                            </TableCell>
-
-                            {/* App */}
-                            <TableCell className="py-3 text-primary">
-                                {tx.app}
-                            </TableCell>
-
-                            {/* Status */}
-                            <TableCell className="py-3">
-                                {tx.status === "success" ? (
-                                    <Badge className="gap-1 bg-green-100 text-green-700 hover:bg-green-100">
-                                        <CheckCircle size={14} />
-                                        Success
-                                    </Badge>
-                                ) : (
-                                    <Badge className="gap-1 bg-red-100 text-red-700 hover:bg-red-100">
-                                        <AlertCircle size={14} />
-                                        Failed
-                                    </Badge>
-                                )}
-                            </TableCell>
-
-                            {/* action  */}
-                            <TableCell className="py-3 flex gap-1">
-                                <Tooltip>
-                                    <TooltipTrigger asChild>
-                                        <Button
-                                            variant="ghost"
-                                            size="icon-sm"
-                                        >
-                                            <Eye className="size-4" />
-                                        </Button>
-                                    </TooltipTrigger>
-                                    <TooltipContent>
-                                        <p>View details</p>
-                                    </TooltipContent>
-                                </Tooltip>
-
-                                <Tooltip>
-                                    <TooltipTrigger asChild>
-                                        <Button
-                                            variant="ghost"
-                                            size="icon-sm"
-                                        >
-                                            <Pencil className="size-4" />
-                                        </Button>
-                                    </TooltipTrigger>
-                                    <TooltipContent>
-                                        <p>Edit</p>
-                                    </TooltipContent>
-                                </Tooltip>
-                            </TableCell>
+            {!loading && (
+                <Table className="whitespace-nowrap">
+                    <TableHeader className="bg-muted/40 sticky top-0 z-10">
+                        <TableRow>
+                            <TableHead className="text-primary">Id</TableHead>
+                            <TableHead className="text-primary">Customer Mobile</TableHead>
+                            <TableHead className="text-primary">Amount</TableHead>
+                            <TableHead className="text-primary">UTR</TableHead>
+                            <TableHead className="text-primary">Status</TableHead>
+                            <TableHead className="text-primary">Created At</TableHead>
+                            <TableHead className="text-primary">Actions</TableHead>
                         </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
+                    </TableHeader>
 
-            {transactions.length === 0 && (
-                <div className="py-6 text-center text-sm text-muted-foreground">
-                    No transactions found
+                    <TableBody>
+                        {data.map((data) => (
+                            <TableRow
+                                key={data.id}
+                                className="hover:bg-muted/30 transition-colors"
+                            >
+                                {/* id */}
+                                <TableCell className="py-3 text-dark-text">
+                                    {data.id}
+                                </TableCell>
+
+                                {/* mobile */}
+                                <TableCell className="py-3 font-medium text-dark-text">
+                                    {'+91 ' + data.phone}
+                                </TableCell>
+
+                                {/* Amount */}
+                                <TableCell className="py-3 font-semibold text-dark-text">
+                                    ₹{data.amount ? data.amount : '0'}
+                                </TableCell>
+
+                                {/* utr */}
+                                <TableCell className="py-3 font-medium text-muted-foreground">
+                                    {data.utr}
+                                </TableCell>
+
+                                {/* Status */}
+                                <TableCell className="py-3">
+                                    {renderStatusBadge(data.status)}
+                                </TableCell>
+
+
+                                {/* Date */}
+                                <TableCell className="py-3 text-muted-foreground">
+                                    {FormatLastVisit(data.createdAt, true)}
+                                </TableCell>
+
+
+
+                                {/* action  */}
+                                <TableCell className="py-3 flex gap-1">
+                                    <DetailsDialog scan={data} status={data.status}/>
+
+                                    {data.status === 'pending' && <VerifyConfirmDialog scanId={data.id} customer={data.phone} />}
+                                </TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            )}
+
+            {!loading && data?.length === 0 && (
+                <div className="py-10 text-center text-sm text-muted-foreground">
+                    No data found
                 </div>
             )}
         </Card>

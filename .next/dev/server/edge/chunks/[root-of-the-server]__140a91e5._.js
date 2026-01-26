@@ -32,7 +32,6 @@ async function middleware(req) {
     // -----------------------------
     const isShopPath = pathname.startsWith("/shop/");
     const shopMatch = pathname.match(/^\/shop\/(shop_[A-Za-z0-9_-]+)/);
-    ;
     const requestedShopId = shopMatch?.[1] || null;
     const isValidShopIdFormat = Boolean(requestedShopId);
     const isAdminRoute = pathname.startsWith("/admin");

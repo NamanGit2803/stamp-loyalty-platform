@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 import crypto from "crypto";
 import { parsePaymentScreenshot } from "@/lib/aiParser";
 import { validateScreenshotBeforeAI } from "@/lib/tools";
-import { detectPaymentDirection } from "@/lib/tools";
+import { detectPaymentDirection, ISTMidnightToUTC } from "@/lib/tools";
 import { validateUPIScreenshotTime } from "@/lib/upiTime";
 import { nanoid } from "nanoid"
 
@@ -37,10 +37,14 @@ export async function POST(req) {
             );
         }
 
+        // FETCH CUSTOMER 
+        let customer = await prisma.customer.findFirst({
+            where: { shopId, phone },
+        });
+
         const clientOCR = JSON.parse(ocrJson);
         const { text: rawText } = clientOCR;
 
-        console.log('text', rawText)
 
         // --------------------------------------
         // 1️⃣ HASH ORIGINAL IMAGE (True Duplicate Prevention) and checksum
@@ -97,8 +101,16 @@ export async function POST(req) {
             );
         }
 
+        const now = new Date();
+        const validStatuses = ["active", "trailing"];
+        // STATUS VALIDATION
+        const isStatusValid = validStatuses.includes(subscription.status);
+
+        // DATE VALIDATION (UTC-safe)
+        const isExpired = new Date(subscription.nextBillingAt) < now;
+
         // subscription status 
-        if (subscription.status !== 'active' || subscription.nextBillingAt < new Date()) {
+        if (!isStatusValid || isExpired) {
             return NextResponse.json(
                 { success: false, error: "Subscription expired." },
                 { status: 403 }
@@ -109,13 +121,12 @@ export async function POST(req) {
         // --------------------------------------
         // 4️⃣ daily upload limit
         // --------------------------------------
-        const todayStart = new Date();
-        todayStart.setHours(0, 0, 0, 0);
+        const utcStart = ISTMidnightToUTC();
         const dailyUploads = await prisma.scanVerification.count({
             where: {
                 shopId,
-                customerId: phone,
-                createdAt: { gte: todayStart },
+                phone,
+                createdAt: { gte: utcStart },
                 status: "success"
             },
         });
@@ -194,7 +205,8 @@ export async function POST(req) {
             const scan = await prisma.scanVerification.create({
                 data: {
                     shopId,
-                    customerId: phone,
+                    phone: phone,
+                    customerId: customer ? customer.id : null,
                     amount: null,
                     currency: "INR",
                     upiId: clientOCR.upiId ?? null,
@@ -206,6 +218,7 @@ export async function POST(req) {
                     appDetected: 'UNKNOWN',
                     ocrText: rawText,
                     checksum,
+                    verifiedAt: new Date()
                 },
             });
 
@@ -348,6 +361,20 @@ export async function POST(req) {
         }
 
 
+        // --------------------------------------
+        //  CREATE CUSTOMER
+        // --------------------------------------
+        if (!customer && !rejectReason) {
+            customer = await prisma.customer.create({
+                data: {
+                    id: `cust_${nanoid(10)}`,
+                    shopId,
+                    phone,
+                },
+            });
+        }
+
+
 
         // --------------------------------------
         // 7️⃣ SAVE THE VERIFICATION RECORD
@@ -355,7 +382,8 @@ export async function POST(req) {
         const scan = await prisma.scanVerification.create({
             data: {
                 shopId,
-                customerId: phone,
+                phone: phone,
+                customerId: customer ? customer.id : null,
                 amount,
                 currency: "INR",
                 upiId,
@@ -367,6 +395,7 @@ export async function POST(req) {
                 appDetected,
                 ocrText: rawText,
                 checksum,
+                verifiedAt: rejectReason ? rejectReason === 'upi_mismatch' || rejectReason === 'upi_not_exist' ? null : new Date() : new Date()
             },
         });
 
@@ -379,22 +408,6 @@ export async function POST(req) {
         }
 
 
-        // --------------------------------------
-        //  CREATE / FETCH CUSTOMER
-        // --------------------------------------
-        let customer = await prisma.customer.findFirst({
-            where: { shopId, phone },
-        });
-
-        if (!customer) {
-            customer = await prisma.customer.create({
-                data: {
-                    id: `cus_${nanoid(10)}`,
-                    shopId,
-                    phone,
-                },
-            });
-        }
 
         // --------------------------------------
         // 8️⃣ AWARD STAMP
@@ -404,30 +417,19 @@ export async function POST(req) {
             data: {
                 stampCount: { increment: 1 },
                 totalVisits: { increment: 1 },
+                totalStampCount: { increment: 1 },
                 lastVisit: new Date(),
             },
         });
 
-        // --------------------------------------
-        // 9️⃣ TRANSACTION LOG
-        // --------------------------------------
-        await prisma.transaction.create({
-            data: {
-                id: `txn_${crypto.randomUUID()}`,
-                shopId,
-                customerId: phone,
-                amount,
-                status: "success",
-                upiId,
-                method: "UPI_SCREENSHOT",
-            },
-        });
 
         return NextResponse.json({
             success: true,
             message: "Stamp added!",
             scanId: scan.id,
         });
+
+
     } catch (err) {
         console.error("VERIFY ERROR →", err);
         return NextResponse.json(

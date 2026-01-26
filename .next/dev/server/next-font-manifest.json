@@ -1,34 +1,22 @@
 {
   "app": {
-    "[project]/app/(auth)/login/page": [
+    "[project]/app/claim/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
       "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
     ],
-    "[project]/app/(auth)/signup/page": [
+    "[project]/app/shop/[shopId]/customers/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
       "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
     ],
-    "[project]/app/(public)/about/page": [
+    "[project]/app/shop/[shopId]/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
       "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
     ],
-    "[project]/app/(public)/features/page": [
+    "[project]/app/shop/[shopId]/rewards/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
       "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
     ],
-    "[project]/app/(public)/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
-      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
-    ],
-    "[project]/app/(public)/plans/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
-      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
-    ],
-    "[project]/app/_not-found/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
-      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
-    ],
-    "[project]/app/plans/page": [
+    "[project]/app/shop/[shopId]/verifications/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
       "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
     ]

@@ -27,7 +27,7 @@ export async function POST(req) {
 
         if (!user) {
             return NextResponse.json(
-                { error: "User not found. Please sign up." },
+                { error: "User not found." },
                 { status: 401 }
             );
         }
@@ -48,7 +48,7 @@ export async function POST(req) {
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
             return NextResponse.json(
-                { error: "Incorrect password" },
+                { error: "Incorrect password." },
                 { status: 401 }
             );
         }

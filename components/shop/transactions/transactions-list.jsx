@@ -1,9 +1,4 @@
-"use client"
 
-import { useState } from "react"
-import { Card } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Download, CheckCircle, AlertCircle } from "lucide-react"
 import TransactionsTable from "./transactions-table"
 
 

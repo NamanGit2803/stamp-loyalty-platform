@@ -1,37 +1,72 @@
 "use client"
 
-import { useState } from "react"
-import { Card } from "@/components/ui/card"
+import { useState, useEffect } from "react"
 import { Input } from "@/components/ui/input"
-import { CheckCircle, AlertCircle, Download, Search, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import RewardsTable from "./rewards-table"
+import { observer } from "mobx-react-lite"
+import { useStore } from '@/stores/StoreProvider'
 import { SearchBar } from "@/components/toolbar/SearchBar"
-import {
-    Select,
-    SelectContent,
-    SelectGroup,
-    SelectItem,
-    SelectLabel,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select"
+import { useDebounce } from "@/hooks/use-debounce"
+import Pagination from "@/components/toolbar/pagination"
+import { toast } from "sonner"
 
-const mockTransactions = [
-    { id: 1, customer: "Amit Kumar", mobile: '1234567891', amount: 250, date: "2024-01-15", app: 'Paytm', status: "success" },
-    { id: 2, customer: "Priya Singh", mobile: '1234567891', amount: 180, date: "2024-01-14", app: 'Paytm', status: "success" },
-    { id: 3, customer: "Vikram Patel", mobile: '1234567891', amount: 99, date: "2024-01-13", app: 'Paytm', status: "failed" },
-    { id: 4, customer: "Neha Sharma", mobile: '1234567891', amount: 500, date: "2024-01-12", app: 'Paytm', status: "success" },
-]
 
-export default function RewardsList() {
+const RewardsList = () => {
+
+    const { shopStore } = useStore()
+
     const [filterDate, setFilterDate] = useState("")
     const [search, setSearch] = useState("")
-    const [status, setStatus] = useState("all")
+    const [rewardsData, setRewardsData] = useState([])
+    const [page, setPage] = useState(1)
+    const [loading, setLoading] = useState(false)
 
-    const transactions = mockTransactions.filter(
-        (tx) => !filterDate || tx.date === filterDate
-    )
+    useEffect(() => {
+        shopStore.resetPagination()
+    }, [])
+
+    // debounce 
+    const debouncedSearch = useDebounce(search, 500);
+
+
+    //  FETCH rewards history
+    useEffect(() => {
+        const fetchRewards = async () => {
+            setLoading(true);
+
+            try {
+                const res = await fetch("/api/shop/customers/rewardHistory", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        shopId: shopStore.shop?.id,
+                        page,
+                        limit: shopStore.pagination?.limit,
+                        search: debouncedSearch,
+                        date: filterDate,
+                    }),
+                });
+
+                const data = await res.json();
+
+
+                if (!res.ok) {
+                    throw new Error(data.error || "Failed to fetch rewards");
+                }
+
+                setRewardsData(data.data);               // update table
+                shopStore.updatePagination(data.pagination); // update MobX pagination state
+
+            } catch (error) {
+                console.error("FETCH rewards error:", error);
+                toast.error(error.message);
+            }
+
+            setLoading(false);
+        };
+
+        fetchRewards();
+    }, [page, shopStore.pagination?.limit, debouncedSearch, filterDate]);
 
     return (
         <div className="space-y-2">
@@ -42,7 +77,7 @@ export default function RewardsList() {
                     <SearchBar
                         value={search}
                         onChange={setSearch}
-                        placeholder="Search by name, phone or transaction ID"
+                        placeholder="Search by name or phone... "
                     />
 
                     {/* date  */}
@@ -53,26 +88,16 @@ export default function RewardsList() {
                         className="h-9 text-sm w-auto"
                         style={{ background: "linear-gradient(to bottom right, #faf5ff, #ffffff)" }}
                     />
-
-                    {/* status  */}
-                    <Select value={status} onValueChange={setStatus}>
-                        <SelectTrigger className="bg-background">
-                            <SelectValue placeholder="Status" />
-                        </SelectTrigger>
-
-                        <SelectContent>
-                            <SelectItem value="all">All Status</SelectItem>
-                            <SelectItem value="pending">Pending</SelectItem>
-                            <SelectItem value="success">Verified</SelectItem>
-                            <SelectItem value="rejected">Rejected</SelectItem>
-                            <SelectItem value="manual_review">Under Review</SelectItem>
-                        </SelectContent>
-                    </Select>
                 </div>
             </div>
 
             {/* Table */}
-            <RewardsTable />
+            <RewardsTable rewardsData={rewardsData} loading={loading} />
+
+            {/* PAGINATION */}
+            <Pagination page={page} setPage={setPage} />
         </div>
     )
 }
+
+export default observer(RewardsList)

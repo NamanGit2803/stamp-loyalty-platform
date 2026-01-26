@@ -1,5 +1,4 @@
 
-import React from 'react'
 import VerificationsList from './verifications-list'
 
 const VerificationComponent = () => {

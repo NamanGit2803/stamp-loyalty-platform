@@ -300,19 +300,29 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-;
 const PlanCard = ()=>{
     _s();
-    const { shopStore, userStore } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$stores$2f$StoreProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useStore"])();
+    const { shopStore, userStore, planStore } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$stores$2f$StoreProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useStore"])();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
+    const [hydrated, setHydrated] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "PlanCard.useEffect": ()=>{
+            setHydrated(true);
+            planStore.loadPlans();
+        }
+    }["PlanCard.useEffect"], []);
+    if (!hydrated) {
+        return null;
+    }
+    const plan = planStore.defaultPlan;
     // subscribe function 
-    const subscribe = async (e)=>{
+    const subscribe = async (e, planId)=>{
         e.preventDefault();
         if (!userStore.user) {
-            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].error('User not found. Please sign up.');
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].error('User not login. Please login.');
             localStorage.removeItem('signupStep');
             setTimeout(()=>{
-                router.push('/signup');
+                router.push('/login');
             }, 1500);
             return;
         }
@@ -325,7 +335,7 @@ const PlanCard = ()=>{
             return;
         }
         // call start free trial days api 
-        await shopStore.startTrial();
+        await shopStore.startTrial(planId);
         if (shopStore.error) {
             if (shopStore.trialUsed) {
                 __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].error(shopStore.error, {
@@ -349,7 +359,7 @@ const PlanCard = ()=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "flex w-full md:w-2/5 items-center justify-center p-4 h-screen overflow-y-hidden",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
-            className: "   mt-10    w-full max-w-sm    border border-border-muted   shadow-sm    rounded-xl    hover:shadow-md    transition    bg-white   ",
+            className: "mt-10    w-full max-w-sm    border border-border-muted   shadow-sm    rounded-xl    hover:shadow-md    transition    bg-white",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardHeader"], {
                     children: [
@@ -357,11 +367,14 @@ const PlanCard = ()=>{
                             className: "flex justify-between items-center",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardTitle"], {
-                                    className: "text-xl font-semibold",
-                                    children: "Basic Plan"
-                                }, void 0, false, {
+                                    className: "text-xl font-semibold capitalize ",
+                                    children: [
+                                        plan?.name,
+                                        " Plan"
+                                    ]
+                                }, void 0, true, {
                                     fileName: "[project]/components/plans/PlanCard.jsx",
-                                    lineNumber: 97,
+                                    lineNumber: 105,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -369,21 +382,24 @@ const PlanCard = ()=>{
                                     children: "15 Days Free"
                                 }, void 0, false, {
                                     fileName: "[project]/components/plans/PlanCard.jsx",
-                                    lineNumber: 98,
+                                    lineNumber: 106,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/plans/PlanCard.jsx",
-                            lineNumber: 96,
+                            lineNumber: 104,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "text-primary text-4xl font-bold mt-3",
-                            children: "₹299"
-                        }, void 0, false, {
+                            children: [
+                                "₹",
+                                plan?.price
+                            ]
+                        }, void 0, true, {
                             fileName: "[project]/components/plans/PlanCard.jsx",
-                            lineNumber: 101,
+                            lineNumber: 109,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -391,27 +407,18 @@ const PlanCard = ()=>{
                             children: "per month"
                         }, void 0, false, {
                             fileName: "[project]/components/plans/PlanCard.jsx",
-                            lineNumber: 102,
+                            lineNumber: 110,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/plans/PlanCard.jsx",
-                    lineNumber: 95,
+                    lineNumber: 103,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
                     className: "mt-2 space-y-2",
-                    children: [
-                        "Unlimited customers",
-                        "Multiple locations",
-                        "Loyalty stamps",
-                        "QR automation",
-                        "Custom rewards",
-                        "WhatsApp reminders",
-                        "Analytics dashboard",
-                        "Priority support"
-                    ].map((feat)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    children: plan?.features.map((feat)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "flex items-center gap-2 text-gray-700 text-sm",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -419,25 +426,25 @@ const PlanCard = ()=>{
                                     children: "✔"
                                 }, void 0, false, {
                                     fileName: "[project]/components/plans/PlanCard.jsx",
-                                    lineNumber: 120,
+                                    lineNumber: 119,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     children: feat
                                 }, void 0, false, {
                                     fileName: "[project]/components/plans/PlanCard.jsx",
-                                    lineNumber: 121,
+                                    lineNumber: 120,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, feat, true, {
                             fileName: "[project]/components/plans/PlanCard.jsx",
-                            lineNumber: 116,
+                            lineNumber: 115,
                             columnNumber: 25
                         }, ("TURBOPACK compile-time value", void 0)))
                 }, void 0, false, {
                     fileName: "[project]/components/plans/PlanCard.jsx",
-                    lineNumber: 105,
+                    lineNumber: 113,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardFooter"], {
@@ -445,13 +452,13 @@ const PlanCard = ()=>{
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                         size: "lg",
                         className: "w-full py-5 text-md font-medium hover:cursor-pointer",
-                        onClick: subscribe,
+                        onClick: (e)=>subscribe(e, plan?.id),
                         disabled: shopStore.loading,
                         children: shopStore.loading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$spinner$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Spinner"], {}, void 0, false, {
                                     fileName: "[project]/components/plans/PlanCard.jsx",
-                                    lineNumber: 133,
+                                    lineNumber: 132,
                                     columnNumber: 48
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 "Processing..."
@@ -459,27 +466,27 @@ const PlanCard = ()=>{
                         }, void 0, true) : 'Start Free Trial'
                     }, void 0, false, {
                         fileName: "[project]/components/plans/PlanCard.jsx",
-                        lineNumber: 127,
+                        lineNumber: 126,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/components/plans/PlanCard.jsx",
-                    lineNumber: 126,
+                    lineNumber: 125,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/components/plans/PlanCard.jsx",
-            lineNumber: 83,
+            lineNumber: 95,
             columnNumber: 13
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/plans/PlanCard.jsx",
-        lineNumber: 82,
+        lineNumber: 94,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s(PlanCard, "mG4jQYKEsJZP9RfD8v1BQ2rk7D0=", false, function() {
+_s(PlanCard, "n8rldAUa3V0rwl/g0K+rIMFBZLE=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$stores$2f$StoreProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useStore"],
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]

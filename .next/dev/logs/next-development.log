@@ -1,154 +1,30 @@
-[00:00:25.409] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:30.562] Server  LOG      ✓ Ready in 21.4s
-[00:00:34.123] Server  LOG      ○ Compiling / ...
-[00:01:08.485] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:12.206] Server  LOG      ○ Compiling /api/auth/findShop ...
-[00:02:32.033] Server  LOG      ✓ Compiled in 696ms
-[00:02:44.946] Server  LOG      ✓ Compiled in 628ms
-[00:03:04.095] Server  LOG      ✓ Compiled in 2.8s
-[00:03:42.050] Server  LOG      ✓ Compiled in 762ms
-[00:05:35.323] Server  LOG      ✓ Compiled in 1642ms
-[00:06:52.592] Server  LOG      ✓ Compiled in 1918ms
-[00:07:28.823] Server  LOG      ✓ Compiled in 1263ms
-[00:07:38.760] Server  LOG      ✓ Compiled in 1174ms
-[00:09:27.629] Server  LOG      ✓ Compiled in 1617ms
-[00:10:36.396] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:10:39.214] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:10:57.155] Server  LOG      ✓ Compiled in 431ms
-[00:14:15.153] Server  LOG      ✓ Compiled in 522ms
-[00:24:46.709] Server  LOG      ✓ Compiled in 690ms
-[00:24:47.932] Browser ERROR   uncaughtError: ReferenceError: FeatureCard is not defined
-[00:27:39.793] Server  LOG      ✓ Compiled in 435ms
-[00:27:41.158] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\components_features_108dcd62._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:27:41.354] Server  ERROR    ⨯ ReferenceError: FeatureCard is not defined
-[00:27:44.344] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:27:45.899] Browser ERROR   uncaughtError: ReferenceError: FeatureCard is not defined
-[00:28:11.866] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:28:11.897] Server  LOG      ✓ Compiled in 513ms
-[00:28:14.078] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:28:25.212] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:28:58.304] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:30:18.843] Server  LOG      ✓ Compiled in 384ms
-[00:30:32.249] Server  LOG      ✓ Compiled in 404ms
-[00:30:56.441] Server  LOG      ✓ Compiled in 398ms
-[00:32:02.089] Server  LOG      ✓ Compiled in 456ms
-[00:32:30.773] Server  LOG      ✓ Compiled in 426ms
-[00:34:19.487] Server  ERROR    ⨯ ./app/(public)/features/page.jsx:1:1
-Module not found: Can't resolve '@/components/features/featureComponent'
-> 1 | import FeatureComponent from "@/components/features/featureComponent"
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  2 |
-  3 | export default function FeaturesPage() {
-  4 |     return (
-
-Import map: aliased to relative './components/features/featureComponent' inside of [project]/
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:34:19.550] Server  ERROR    ⨯ ./app/(public)/features/page.jsx:1:1
-Module not found: Can't resolve '@/components/features/featureComponent'
-> 1 | import FeatureComponent from "@/components/features/featureComponent"
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  2 |
-  3 | export default function FeaturesPage() {
-  4 |     return (
-
-Import map: aliased to relative './components/features/featureComponent' inside of [project]/
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:34:19.608] Server  LOG      ✓ Compiled in 1647ms
-[00:34:20.672] Server  LOG      ✓ Compiled in 795ms
-[00:34:21.949] Browser ERROR   ./app/(public)/features/page.jsx:1:1
-Module not found: Can't resolve '@/components/features/featureComponent'
-> 1 | import FeatureComponent from "@/components/features/featureComponent"
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  2 |
-  3 | export default function FeaturesPage() {
-  4 |     return (
-
-Import map: aliased to relative './components/features/featureComponent' inside of [project]/
-
-https://nextjs.org/docs/messages/module-not-found
-[00:34:21.950] Server  LOG      ✓ Compiled in 104ms
-[00:34:23.411] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:40:01.681] Browser ERROR   uncaughtError: Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
-
-Check the render method of `FeaturesPage`.
-[00:40:04.345] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:40:04.451] Server  LOG      ✓ Compiled in 478ms
-[00:40:07.629] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:41:57.738] Server  LOG      ✓ Compiled in 1644ms
-[00:42:30.594] Server  LOG      ✓ Compiled in 861ms
-[00:43:22.534] Server  LOG      ✓ Compiled in 1177ms
-[00:44:10.521] Server  LOG      ✓ Compiled in 1038ms
-[01:02:48.280] Server  LOG      ✓ Compiled in 802ms
-[01:03:01.969] Server  LOG      ✓ Compiled in 1060ms
-[01:03:28.019] Server  LOG      ✓ Compiled in 546ms
-[01:03:37.835] Server  LOG      ✓ Compiled in 450ms
-[01:04:07.666] Server  LOG      ✓ Compiled in 497ms
-[01:04:32.961] Server  LOG      ✓ Compiled in 513ms
-[01:05:09.269] Server  LOG      ✓ Compiled in 460ms
-[01:08:00.914] Server  LOG      ✓ Compiled in 1182ms
-[01:09:28.957] Server  LOG      ✓ Compiled in 415ms
-[01:15:34.064] Server  LOG      ✓ Compiled in 2.2s
-[01:18:12.787] Server  LOG      ✓ Compiled in 999ms
-[01:22:27.435] Server  LOG      ✓ Compiled in 491ms
-[02:34:06.854] Server  LOG      ✓ Compiled in 653ms
-[02:34:39.244] Server  LOG      ✓ Compiled in 899ms
-[02:35:11.876] Server  LOG      ✓ Compiled in 443ms
-[02:41:05.156] Server  LOG      ✓ Compiled in 1766ms
-[02:42:26.813] Server  LOG      ✓ Compiled in 441ms
-[02:49:07.032] Server  LOG      ✓ Compiled in 1517ms
-[02:51:49.706] Server  LOG      ✓ Compiled in 1407ms
-[02:54:12.486] Server  LOG      ✓ Compiled in 563ms
-[02:55:08.700] Server  LOG      ✓ Compiled in 1542ms
-[02:56:49.003] Server  LOG      ✓ Compiled in 1067ms
-[03:03:51.752] Server  LOG      ✓ Compiled in 1355ms
-[03:07:14.694] Server  LOG      ✓ Compiled in 737ms
-[03:12:44.313] Server  LOG      ✓ Compiled in 380ms
-[03:13:45.526] Server  LOG      ○ Compiling /login ...
-[16:16:48.032] Server  LOG      ✓ Compiled in 2.9s
-[16:19:46.704] Server  LOG      ✓ Compiled in 1211ms
-[16:23:51.780] Server  LOG      ✓ Compiled in 436ms
-[16:27:25.486] Server  LOG      ✓ Compiled in 384ms
-[16:27:46.268] Server  LOG      ✓ Compiled in 491ms
-[16:29:20.689] Server  LOG      ✓ Compiled in 421ms
-[16:31:19.077] Server  LOG      ✓ Compiled in 994ms
-[16:33:30.157] Server  LOG        Reload env: .env
-[16:40:36.779] Server  LOG      ✓ Compiled in 869ms
-[16:41:43.565] Server  LOG      ✓ Compiled in 1926ms
-[16:43:44.577] Server  LOG      ✓ Compiled in 930ms
-[16:44:26.017] Server  LOG      ✓ Compiled in 419ms
-[16:49:45.761] Server  LOG      ✓ Compiled in 432ms
-[16:49:59.212] Server  LOG      ✓ Compiled in 1065ms
-[16:50:37.434] Server  LOG      ✓ Compiled in 490ms
-[16:55:13.890] Server  LOG      ✓ Compiled in 1051ms
-[16:55:47.083] Server  LOG      ✓ Compiled in 980ms
-[16:55:59.801] Server  LOG      ✓ Compiled in 453ms
-[16:56:08.680] Server  LOG      ✓ Compiled in 408ms
-[16:58:52.980] Server  LOG      ✓ Compiled in 467ms
-[16:59:03.549] Server  LOG      ✓ Compiled in 463ms
-[16:59:13.350] Server  LOG      ✓ Compiled in 948ms
-[16:59:47.165] Server  LOG      ✓ Compiled in 793ms
-[17:00:45.887] Server  LOG      ✓ Compiled in 653ms
-[17:02:28.029] Server  LOG      ✓ Compiled in 890ms
-[17:03:06.274] Server  LOG      ✓ Compiled in 390ms
-[17:16:06.025] Server  LOG      ✓ Compiled in 1606ms
-[17:16:16.619] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[17:17:23.844] Server  LOG      ✓ Compiled in 4s
-[17:17:26.324] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[17:17:56.690] Server  LOG      ✓ Compiled in 473ms
-[17:18:54.202] Server  LOG      ✓ Compiled in 738ms
-[17:19:31.619] Server  LOG      ✓ Compiled in 746ms
-[17:20:15.063] Server  LOG      ✓ Compiled in 889ms
-[17:43:57.570] Server  LOG      ✓ Compiled in 3s
-[17:44:03.860] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[17:44:07.124] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:00:19.291] Server  LOG      ○ Compiling middleware ...
+[00:00:20.259] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:24.243] Server  LOG      ✓ Ready in 19.9s
+[00:00:27.681] Server  LOG     ststus TRIAL_ACTIVE
+[00:00:30.729] Server  LOG      ○ Compiling /shop/[shopId]/verifications ...
+[00:00:59.542] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:54.405] Server  LOG     ststus TRIAL_ACTIVE
+[00:01:56.997] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:28.300] Server  LOG      ○ Compiling /claim ...
+[00:02:30.535] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:52.562] Browser LOG     📌 OCR RESULT: {"date":null,"text":"Transaction Details =<\n@ Paid successfully\nPaid to\nRAJNANDNI TOMAR\nkhushi.tomar566-1@okicici\nPay again\nPaid from\nAmazon Pay UPI\n(+) 8 Bank of Baroda ****7475\n7851056731@yapl\nUPI transaction ID 525117789599 =\nAmazon reference ID APYAPb8e8dcfed (CJ\nSe8deea2d0d069\ncef98e7\nDate and time 8 Sept 2025, 11:05 PM\n(@) Help & FAQs\n[A a B® w\nHome Account Transactions Rewards\n","time":"11:05 pm","upiId":null,"utr":"7851056731"}
+[00:02:55.487] Server  LOG      ○ Compiling /api/screenshot/verify ...
+[00:02:59.092] Server  WARN    Couldn't load fs
+[00:02:59.113] Server  WARN    Couldn't load zlib
+[00:03:03.078] Server  LOG     AI FIXED OCR → {}
+[00:03:03.487] Browser LOG     API response: {"rejectReason":"invalid_date_or_time","success":false}
+[00:03:18.383] Browser LOG     📌 OCR RESULT: {"date":null,"text":"2:54:45 R= % al O78%\n< Payment successful HELP\n9 Dec 2025, 11:17 PM\nNotes: PayviaRazorpay\nPaid to\n% FACEBOOK INDIA a\nliew history\nONLIN\nfacebookindiaonlinefdw.rzp@mairtel\nDebited from v\n2 Bank of Baroda - 7475 LI=P»\nUPI transaction ID\n570953907798\nNavi transaction ID\n2025120923172620625577042698240\no\nYou've won 10) 95, Check now »\n","time":"11:17 pm","upiId":null,"utr":"570953907798"}
+[00:03:21.474] Server  LOG     AI FIXED OCR → {}
+[00:03:21.663] Browser LOG     API response: {"rejectReason":"invalid_date_or_time","success":false}
+[00:03:39.855] Server  LOG     ststus TRIAL_ACTIVE
+[00:03:42.895] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:27.945] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:49.820] Browser LOG     📌 OCR RESULT: {"date":null,"text":"Transaction Details =<\n© Received\nReceived from\nPRINCE KUMAR GURJAR F G RAMLAL...\n6378946211@ptyes\nCredited to\nAmazon Pay UPI\n(+) 8 Bank of Baroda ****7475\n7851056731@yapl\nUPI transaction ID 690364077164 (OJ\nAmazon reference ID PTM89d43e30ef0 |]\nf4808a71cab413fe\n20f4cc\nDate and time 8 Sept 2025, 10:45 PM\n(@) Help & FAQs\n[A a B® w\nHome Account Transactions Rewards\n","time":"10:45 pm","upiId":null,"utr":"6378946211"}
+[00:04:50.008] Browser LOG     API response: {"rejectReason":"received_payment_direction.","success":false}
+[00:04:55.945] Server  LOG     ststus TRIAL_ACTIVE
+[00:04:56.966] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:58.478] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -158,185 +34,330 @@ Check the render method of `FeaturesPage`.
 
 It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
 
-%s%s https://react.dev/link/hydration-mismatch 
+https://react.dev/link/hydration-mismatch
 
   ...
-    <MenuProvider scope={{Menu:[...], ...}} open={false} onOpenChange={function useCallbackRef.useMemo} content={null} ...>
-      <MenuProvider scope={{Menu:[...], ...}} onClose={function Menu.useCallback} isUsingKeyboardRef={{current:false}} ...>
-        <DropdownMenuTrigger asChild={true}>
-          <DropdownMenuTrigger data-slot="dropdown-m..." asChild={true}>
-            <MenuAnchor asChild={true} __scopeMenu={{Menu:[...], ...}}>
-              <PopperAnchor __scopePopper={{Menu:[...], ...}} asChild={true} ref={null}>
-                <Primitive.div asChild={true} ref={function}>
-                  <Slot ref={function}>
-                    <SlotClone ref={function}>
-                      <Primitive.button type="button" id="radix-_R_e..." aria-haspopup="menu" aria-expanded={false} ...>
-                        <Slot type="button" id="radix-_R_e..." aria-haspopup="menu" aria-expanded={false} ...>
-                          <SlotClone type="button" id="radix-_R_e..." aria-haspopup="menu" aria-expanded={false} ...>
-                            <button
-                              className="relative w-10 h-10 flex items-center justify-center"
-                              type="button"
-+                             id="radix-_R_eitllb_"
--                             id="radix-_R_1mitllb_"
-                              aria-haspopup="menu"
-                              aria-expanded={false}
-                              aria-controls={undefined}
-                              data-state="closed"
-                              data-disabled={undefined}
-                              disabled={false}
-                              data-slot="dropdown-menu-trigger"
-                              onPointerDown={function handleEvent}
-                              onKeyDown={function handleEvent}
-                              ref={function}
-                            >
-        ...
+    <TooltipProvider delayDuration={0}>
+      <TooltipProvider data-slot="tooltip-pr..." delayDuration={0}>
+        <TooltipProviderProvider scope={undefined} isOpenDelayed={true} delayDuration={0} ...>
+          <div data-slot="sidebar-wr..." style={{...}} className="group/side...">
+            <AppSidebar>
+              <Sidebar collapsible="icon">
+                <div className="group peer..." data-state="expanded" data-collapsible="" data-variant="sidebar" ...>
+                  <div>
+                  <div data-slot="sidebar-co..." className="fixed inse...">
+                    <div data-sidebar="sidebar" data-slot="sidebar-inner" className="bg-sidebar...">
+                      <SidebarHeader>
+                        <div data-slot="sidebar-he..." data-sidebar="header" className="flex flex-...">
+                          <div className="flex gap-2...">
+                            <div>
+                            <div className="grid flex-1">
+                              <span className="truncate font-medium capitalize">
++                               The Cafe Street
+-                               Shop Name
+                      ...
+            ...
 
-[17:44:22.708] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[17:44:46.524] Server  LOG      ✓ Compiled in 3.5s
-[17:44:47.376] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[18:17:42.543] Server  LOG      ✓ Compiled in 883ms
-[18:18:01.323] Server  LOG      ✓ Compiled in 437ms
-[18:18:20.785] Server  LOG      ✓ Compiled in 416ms
-[18:19:31.618] Server  LOG      ✓ Compiled in 630ms
-[18:20:01.701] Server  LOG      ✓ Compiled in 977ms
-[18:25:42.787] Server  LOG      ✓ Compiled in 1138ms
-[18:25:48.506] Server  LOG      ✓ Compiled in 603ms
-[18:26:09.417] Server  LOG      ✓ Compiled in 760ms
-[18:26:57.112] Server  LOG      ✓ Compiled in 2s
-[18:27:22.002] Server  LOG      ✓ Compiled in 497ms
-[20:54:46.024] Server  LOG      ✓ Compiled in 1934ms
-[20:54:50.922] Server  LOG      ✓ Compiled in 671ms
-[20:54:59.221] Server  LOG      ○ Compiling /about ...
-[20:57:31.698] Server  LOG      ✓ Compiled in 455ms
-[20:57:57.426] Server  LOG      ✓ Compiled in 610ms
-[21:57:52.648] Server  LOG      ✓ Compiled in 1143ms
-[21:57:53.573] Browser ERROR   uncaughtError: ReferenceError: siteName is not defined
-[21:58:10.561] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\_6a9e49a4._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[21:58:10.571] Server  ERROR    ⨯ ReferenceError: siteName is not defined
-[21:58:11.768] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[21:58:13.055] Browser ERROR   uncaughtError: ReferenceError: siteName is not defined
-[21:58:41.062] Server  LOG      ✓ Compiled in 834ms
-[21:58:41.066] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[21:58:43.248] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[21:59:13.279] Server  LOG      ✓ Compiled in 600ms
-[21:59:30.983] Server  LOG      ✓ Compiled in 1341ms
-[21:59:42.083] Server  LOG      ✓ Compiled in 685ms
-[21:59:52.584] Server  LOG      ✓ Compiled in 435ms
-[22:00:09.225] Server  LOG      ✓ Compiled in 1212ms
-[22:00:16.352] Server  LOG      ✓ Compiled in 485ms
-[22:00:34.883] Server  LOG      ✓ Compiled in 430ms
-[22:00:41.736] Server  LOG      ✓ Compiled in 429ms
-[22:00:45.703] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[22:01:25.595] Server  LOG      ✓ Compiled in 416ms
-[22:02:06.053] Server  LOG      ✓ Compiled in 1572ms
-[22:02:13.883] Server  LOG      ✓ Compiled in 528ms
-[22:05:07.947] Server  LOG      ✓ Compiled in 630ms
-[22:05:42.253] Server  LOG      ✓ Compiled in 472ms
-[22:07:03.964] Server  LOG      ✓ Compiled in 1011ms
-[22:07:24.725] Server  LOG      ✓ Compiled in 436ms
-[22:16:04.321] Server  LOG      ✓ Compiled in 533ms
-[22:17:14.854] Server  LOG      ✓ Compiled in 696ms
-[22:21:27.654] Server  LOG      ✓ Compiled in 2.2s
-[22:22:25.468] Server  LOG      ✓ Compiled in 481ms
-[22:25:23.397] Server  LOG      ✓ Compiled in 454ms
-[22:26:33.919] Server  LOG      ✓ Compiled in 546ms
-[22:26:48.020] Server  LOG      ✓ Compiled in 1377ms
-[22:27:00.840] Server  LOG      ✓ Compiled in 426ms
-[22:27:17.653] Server  LOG      ✓ Compiled in 411ms
-[22:28:50.373] Server  LOG      ✓ Compiled in 493ms
-[22:38:04.129] Server  LOG      ✓ Compiled in 840ms
-[22:39:58.819] Server  LOG      ✓ Compiled in 706ms
-[22:47:38.571] Server  LOG      ✓ Compiled in 725ms
-[22:51:00.349] Server  LOG      ✓ Compiled in 406ms
-[22:52:46.623] Server  LOG      ✓ Compiled in 1032ms
-[22:52:47.798] Browser ERROR   ./components/about/mission.jsx:44:12
-Parsing ecmascript source code failed
-  42 |
-  43 | const ValueCard = ({ title, text }) => {
-> 44 |     return (
-     |            ^
-> 45 |         
-     | ^^^^^^^^
-> 46 |     )
-     | ^^^^^^
-  47 | }
+[00:05:05.981] Server  LOG     ststus TRIAL_ACTIVE
+[00:05:07.200] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:59.494] Server  LOG      ✓ Compiled in 723ms
+[00:07:45.784] Server  LOG      ✓ Compiled in 614ms
+[00:24:10.291] Server  LOG      ✓ Compiled in 811ms
+[00:25:34.026] Server  LOG      ✓ Compiled in 442ms
+[00:49:17.696] Server  LOG      ✓ Compiled in 491ms
+[00:50:53.549] Server  LOG      ✓ Compiled in 739ms
+[00:51:13.298] Server  LOG      ✓ Compiled in 1566ms
+[01:00:04.110] Server  LOG      ✓ Compiled in 2.6s
+[01:00:08.243] Server  LOG     ststus TRIAL_ACTIVE
+[01:00:13.512] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:02:59.455] Server  LOG      ✓ Compiled in 857ms
+[01:03:06.363] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:03:07.001] Server  LOG     ststus TRIAL_ACTIVE
+[01:03:09.485] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:03:51.036] Server  LOG      ✓ Compiled in 549ms
+[01:03:57.342] Server  LOG     ststus TRIAL_ACTIVE
+[01:03:59.470] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:04:13.647] Server  LOG      ✓ Compiled in 702ms
+[01:04:40.816] Server  LOG      ✓ Compiled in 545ms
+[01:05:00.370] Server  LOG      ✓ Compiled in 555ms
+[01:17:51.394] Server  LOG      ✓ Compiled in 1102ms
+[01:17:56.250] Server  LOG     ststus TRIAL_ACTIVE
+[01:17:59.566] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:18:23.462] Server  LOG      ✓ Compiled in 464ms
+[01:18:28.251] Server  LOG     ststus TRIAL_ACTIVE
+[01:18:29.998] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:18:41.898] Server  LOG      ✓ Compiled in 713ms
+[01:19:10.507] Server  LOG      ✓ Compiled in 545ms
+[01:19:35.455] Server  LOG      ✓ Compiled in 804ms
+[01:19:44.750] Server  LOG      ✓ Compiled in 1583ms
+[01:22:10.035] Server  LOG      ✓ Compiled in 635ms
+[01:22:29.039] Server  LOG      ✓ Compiled in 494ms
+[01:24:10.120] Server  LOG      ✓ Compiled in 532ms
+[01:24:16.175] Server  LOG     ststus TRIAL_ACTIVE
+[01:24:20.029] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:26:43.105] Server  LOG      ✓ Compiled in 615ms
+[01:27:52.192] Server  LOG      ✓ Compiled in 402ms
+[01:28:05.832] Server  LOG      ✓ Compiled in 1014ms
+[01:28:16.296] Server  LOG      ✓ Compiled in 545ms
+[01:28:29.873] Server  LOG      ✓ Compiled in 614ms
+[01:29:11.948] Server  LOG      ✓ Compiled in 557ms
+[01:29:17.769] Server  LOG      ✓ Compiled in 544ms
+[01:29:21.620] Server  LOG     ststus TRIAL_ACTIVE
+[01:29:23.318] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:47:16.961] Server  LOG      ✓ Compiled in 650ms
+[01:52:15.126] Server  LOG     ststus TRIAL_ACTIVE
+[01:52:21.739] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:53:40.743] Server  LOG      ✓ Compiled in 726ms
+[01:53:40.807] Server  LOG     ststus TRIAL_ACTIVE
+[01:54:12.830] Server  LOG      ✓ Compiled in 498ms
+[01:54:12.860] Server  LOG     ststus TRIAL_ACTIVE
+[01:54:21.298] Server  LOG      ✓ Compiled in 1112ms
+[01:54:21.898] Server  LOG     ststus TRIAL_ACTIVE
+[01:54:31.341] Server  LOG     ststus TRIAL_ACTIVE
+[01:54:34.356] Server  LOG      ○ Compiling /shop/[shopId] ...
+[01:54:42.176] Server  LOG     ststus TRIAL_ACTIVE
+[01:54:47.286] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[01:55:04.111] Server  LOG     ststus TRIAL_ACTIVE
+[01:55:07.134] Server  LOG     ststus TRIAL_ACTIVE
+[01:55:13.460] Server  LOG     ststus TRIAL_ACTIVE
+[01:55:35.028] Server  LOG      ✓ Compiled in 401ms
+[01:55:50.756] Server  LOG      ✓ Compiled in 429ms
+[01:56:10.389] Server  LOG      ✓ Compiled in 826ms
+[02:09:01.296] Server  LOG      ✓ Compiled in 433ms
+[02:10:36.416] Server  LOG      ✓ Compiled in 424ms
+[02:19:30.472] Server  LOG      ✓ Compiled in 3.8s
+[02:20:04.964] Server  LOG      ✓ Compiled in 404ms
+[02:39:36.511] Server  LOG      ✓ Compiled in 718ms
+[02:40:20.363] Server  LOG      ✓ Compiled in 837ms
+[02:40:26.759] Server  LOG     ststus TRIAL_ACTIVE
+[02:40:32.803] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:41:51.166] Server  LOG      ✓ Compiled in 701ms
+[02:41:51.172] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:41:51.346] Server  LOG     ststus TRIAL_ACTIVE
+[02:41:53.616] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:42:39.667] Server  LOG      ✓ Compiled in 675ms
+[02:42:47.684] Server  LOG      ✓ Compiled in 483ms
+[02:43:05.995] Server  LOG      ✓ Compiled in 661ms
+[02:43:55.088] Server  LOG      ✓ Compiled in 1870ms
+[02:46:52.441] Server  LOG     prisma:error "\nInvalid `prisma.scanVerification.findMany()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__acfa75ef._.js:120:53\n\n  117 // -------------------------\n  118 // QUERY DB\n  119 // -------------------------\n→ 120 const items = await prisma.scanVerification.findMany({\n        where: {\n          shopId: \"shop_XqXX_c9C\",\n          OR: [\n            {\n              utr: {\n                contains: \"200\"\n              }\n            },\n            {\n              phone: {\n                contains: \"200\"\n              }\n            },\n            {\n              amount: {\n                contains: \"200\"\n              }\n            },\n            {\n              amount: 200\n            }\n          ]\n        },\n        skip: 0,\n        take: 10,\n        orderBy: {\n          createdAt: \"desc\"\n        },\n        include: {\n          customer: true\n        }\n      })\n\nUnknown argument `contains`. Available options are marked with ?."
+[02:46:52.465] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__acfa75ef._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[02:46:52.614] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[02:46:52.675] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_c4fdf332._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[02:46:52.690] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[02:46:52.701] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[02:46:52.708] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[02:46:52.715] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[02:46:52.721] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[02:46:52.725] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[02:46:52.735] Server  ERROR   Scan Verification API error: PrismaClientValidationError: 
+Invalid `prisma.scanVerification.findMany()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__acfa75ef._.js:120:53
 
-Parenthesized expression cannot be empty
+  117 // -------------------------
+  118 // QUERY DB
+  119 // -------------------------
+→ 120 const items = await prisma.scanVerification.findMany({
+        where: {
+          shopId: "shop_XqXX_c9C",
+          OR: [
+            {
+              utr: {
+                contains: "200"
+              }
+            },
+            {
+              phone: {
+                contains: "200"
+              }
+            },
+            {
+              amount: {
+                contains: "200"
+              }
+            },
+            {
+              amount: 200
+            }
+          ]
+        },
+        skip: 0,
+        take: 10,
+        orderBy: {
+          createdAt: "desc"
+        },
+        include: {
+          customer: true
+        }
+      })
 
-Import traces:
-  Client Component Browser:
-    ./components/about/mission.jsx [Client Component Browser]
-    ./app/(public)/about/page.jsx [Client Component Browser]
-    ./app/(public)/about/page.jsx [Server Component]
+Unknown argument `contains`. Available options are marked with ?.
+[02:50:41.926] Server  LOG     ststus TRIAL_ACTIVE
+[02:50:46.547] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:56:19.822] Server  LOG     ststus TRIAL_ACTIVE
+[02:56:23.339] Server  LOG     ststus TRIAL_ACTIVE
+[02:56:28.643] Server  LOG     ststus TRIAL_ACTIVE
+[02:56:38.059] Server  LOG     ststus TRIAL_ACTIVE
+[02:56:40.529] Server  LOG     ststus TRIAL_ACTIVE
+[02:56:45.290] Server  LOG     ststus TRIAL_ACTIVE
+[02:58:29.790] Server  LOG      ✓ Compiled in 1301ms
+[03:01:16.726] Server  LOG     ststus TRIAL_ACTIVE
+[03:01:19.083] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:04:17.908] Server  LOG      ✓ Compiled in 536ms
+[03:04:37.098] Server  LOG      ✓ Compiled in 501ms
+[03:08:44.779] Server  LOG      ✓ Compiled in 974ms
+[03:09:19.665] Server  LOG      ✓ Compiled in 642ms
+[03:10:23.550] Server  LOG      ✓ Compiled in 390ms
+[03:10:38.986] Server  LOG      ✓ Compiled in 543ms
+[03:10:59.115] Server  LOG      ✓ Compiled in 718ms
+[03:11:41.223] Server  LOG      ✓ Compiled in 602ms
+[03:12:03.534] Server  LOG      ✓ Compiled in 626ms
+[03:17:24.006] Server  LOG      ✓ Compiled in 900ms
+[03:20:19.251] Server  LOG      ✓ Compiled in 981ms
+[03:20:53.046] Server  LOG     ststus TRIAL_ACTIVE
+[03:20:58.588] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:21:42.003] Server  LOG      ✓ Compiled in 529ms
+[03:21:50.014] Server  LOG     ststus TRIAL_ACTIVE
+[03:21:51.760] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:22:36.733] Server  LOG      ✓ Compiled in 773ms
+[03:23:34.689] Server  LOG      ✓ Compiled in 647ms
+[03:23:35.708] Browser ERROR   uncaughtError: ReferenceError: Eye is not defined
+[03:24:02.378] Server  LOG      ✓ Compiled in 643ms
+[03:24:02.537] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[03:24:02.669] Server  LOG     ststus TRIAL_ACTIVE
+[03:24:04.393] Server  ERROR   Error: aborted
+[03:24:04.402] Server  ERROR    ⨯ "uncaughtException:" Error: aborted
+[03:24:04.414] Server  ERROR    ⨯ "uncaughtException: " Error: aborted
+[03:24:06.579] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:24:38.518] Server  LOG      ✓ Compiled in 508ms
+[03:26:53.961] Server  LOG      ✓ Compiled in 573ms
+[03:27:05.588] Server  LOG      ✓ Compiled in 428ms
+[03:29:26.441] Server  LOG      ✓ Compiled in 1799ms
+[03:31:23.028] Server  LOG      ✓ Compiled in 1295ms
+[03:31:26.025] Server  LOG      ✓ Compiled in 663ms
+[03:31:47.254] Server  LOG      ✓ Compiled in 867ms
+[03:32:10.039] Server  LOG      ✓ Compiled in 759ms
+[03:32:22.459] Server  LOG      ✓ Compiled in 469ms
+[03:32:40.799] Server  LOG      ✓ Compiled in 506ms
+[03:34:02.359] Server  LOG      ✓ Compiled in 479ms
+[03:34:23.169] Server  LOG      ✓ Compiled in 594ms
+[03:38:44.325] Server  LOG      ✓ Compiled in 651ms
+[03:40:49.197] Server  LOG      ✓ Compiled in 858ms
+[03:41:46.365] Server  LOG      ✓ Compiled in 475ms
+[03:42:01.315] Server  LOG      ✓ Compiled in 1013ms
+[03:43:43.532] Server  LOG      ✓ Compiled in 449ms
+[03:50:16.686] Server  LOG      ✓ Compiled in 409ms
+[03:54:44.913] Server  LOG      ✓ Compiled in 1159ms
+[03:55:01.277] Server  LOG      ✓ Compiled in 496ms
+[03:55:13.999] Server  LOG      ✓ Compiled in 602ms
+[03:55:36.903] Server  LOG      ✓ Compiled in 807ms
+[03:56:31.640] Server  LOG      ✓ Compiled in 877ms
+[03:57:47.614] Server  LOG      ✓ Compiled in 546ms
+[03:58:25.424] Server  LOG      ✓ Compiled in 1159ms
+[03:58:34.044] Server  LOG      ✓ Compiled in 1201ms
+[03:58:52.594] Browser ERROR   unhandledRejection: TypeError: shopStore.verifyScan is not a function
+[03:58:56.855] Server  LOG     ststus TRIAL_ACTIVE
+[03:59:06.483] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:59:16.148] Server  LOG      ✓ Compiled in 621ms
+[03:59:36.852] Server  LOG      ✓ Compiled in 492ms
+[03:59:37.779] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
 
-  Client Component SSR:
-    ./components/about/mission.jsx [Client Component SSR]
-    ./app/(public)/about/page.jsx [Client Component SSR]
-    ./app/(public)/about/page.jsx [Server Component]
-[22:52:53.026] Server  LOG      ✓ Compiled in 703ms
-[22:52:55.110] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
-
-Check the render method of `Mission`. 
-[22:52:58.028] Server  ERROR   Each child in a list should have a unique "key" prop.
-
-Check the render method of `Mission`. See https://react.dev/link/warning-keys for more information.
-[22:53:05.632] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[22:53:07.876] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
-
-Check the render method of `Mission`. 
-[22:53:13.582] Server  LOG      ✓ Compiled in 699ms
-[22:54:17.579] Server  LOG      ✓ Compiled in 737ms
-[22:54:35.539] Server  LOG      ✓ Compiled in 393ms
-[22:54:53.782] Server  LOG      ✓ Compiled in 506ms
-[22:56:02.956] Server  LOG      ✓ Compiled in 459ms
-[22:56:18.676] Server  LOG      ✓ Compiled in 459ms
-[22:56:35.812] Server  LOG      ✓ Compiled in 520ms
-[22:56:50.137] Server  LOG      ✓ Compiled in 484ms
-[22:57:08.529] Server  LOG      ✓ Compiled in 1305ms
-[22:57:18.182] Server  LOG      ✓ Compiled in 567ms
-[22:57:56.188] Server  LOG      ✓ Compiled in 559ms
-[22:59:27.152] Server  LOG      ✓ Compiled in 412ms
-[22:59:33.001] Server  LOG      ✓ Compiled in 545ms
-[22:59:58.160] Server  LOG      ✓ Compiled in 504ms
-[23:00:14.028] Server  LOG      ✓ Compiled in 904ms
-[23:00:23.109] Server  LOG      ✓ Compiled in 464ms
-[23:01:14.350] Server  LOG      ✓ Compiled in 430ms
-[23:01:20.291] Server  LOG      ✓ Compiled in 447ms
-[23:04:15.307] Server  LOG      ✓ Compiled in 3.3s
-[23:04:34.732] Server  LOG      ✓ Compiled in 677ms
-[23:05:22.307] Server  LOG      ✓ Compiled in 422ms
-[23:11:00.461] Server  LOG      ✓ Compiled in 1284ms
-[23:11:13.258] Server  LOG      ✓ Compiled in 440ms
-[23:11:37.023] Server  LOG      ✓ Compiled in 665ms
-[23:12:59.350] Server  LOG      ✓ Compiled in 774ms
-[23:16:17.667] Server  LOG      ✓ Compiled in 744ms
-[23:16:18.499] Browser ERROR   uncaughtError: ReferenceError: siteName is not defined
-[23:16:37.837] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[23:16:37.883] Server  LOG      ✓ Compiled in 674ms
-[23:16:40.806] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[23:16:56.060] Server  LOG      ✓ Compiled in 523ms
-[23:17:19.756] Server  LOG      ✓ Compiled in 384ms
-[23:17:54.376] Server  LOG      ✓ Compiled in 901ms
-[23:20:11.298] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\[root-of-the-server]__a8b9fe80._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:20:11.309] Server  ERROR    ⨯ ReferenceError: Button is not defined
-[23:20:12.805] Browser ERROR   uncaughtError: ReferenceError: Button is not defined
-[23:21:01.425] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[23:21:08.055] Server  LOG      ✓ Compiled in 612ms
-[23:21:09.654] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[23:21:33.654] Server  LOG      ✓ Compiled in 648ms
-[23:21:34.232] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\[root-of-the-server]__f7852981._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:21:34.236] Server  ERROR    ⨯ ReferenceError: siteName is not defined
-[23:21:36.046] Browser ERROR   uncaughtError: ReferenceError: siteName is not defined
-[23:21:41.596] Server  LOG      ✓ Compiled in 643ms
-[23:21:42.140] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\[root-of-the-server]__f7852981._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:21:42.142] Server  ERROR    ⨯ ReferenceError: siteName is not defined
-[23:21:44.490] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[23:21:46.818] Browser ERROR   uncaughtError: ReferenceError: siteName is not defined
-[23:22:11.209] Server  LOG      ✓ Compiled in 473ms
-[23:22:11.786] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\[root-of-the-server]__f7852981._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:22:11.787] Server  ERROR    ⨯ ReferenceError: Link is not defined
-[23:22:13.302] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[23:22:13.998] Browser ERROR   uncaughtError: ReferenceError: Link is not defined
-[23:22:25.916] Server  LOG      ✓ Compiled in 399ms
-[23:22:31.857] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[23:25:05.671] Server  LOG      ✓ Compiled in 992ms
+Previous: %s
+Incoming: %s useEffect [1, 10, , ] [1, 10, , , pending]
+[03:59:46.462] Server  LOG     ststus TRIAL_ACTIVE
+[03:59:48.265] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:00:35.996] Server  LOG     ststus TRIAL_ACTIVE
+[04:00:38.002] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[04:00:51.585] Server  LOG     ststus TRIAL_ACTIVE
+[04:01:00.729] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:42.012] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:42.920] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:43.154] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:43.326] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:43.527] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:43.909] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:44.139] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:44.351] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:44.540] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:44.759] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:44.912] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:45.070] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:45.294] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:45.448] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:45.610] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:45.821] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:46.002] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:46.155] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:46.316] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:46.467] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:46.636] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:46.868] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:47.022] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:47.166] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:47.329] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:47.474] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:47.611] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:47.778] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:47.941] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:48.107] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:48.262] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:48.416] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:48.549] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:48.712] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:48.884] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:49.153] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:49.449] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:49.593] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:49.737] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:49.891] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:50.064] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:50.211] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:50.380] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:50.530] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:50.679] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:50.821] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:50.977] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:51.143] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:51.284] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:51.441] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:51.606] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:51.762] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:51.908] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:52.061] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:52.192] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:52.347] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:52.495] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:52.630] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:52.783] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:52.937] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:53.093] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:53.276] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:53.452] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:53.603] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:53.787] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:53.946] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:54.265] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:54.438] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:54.577] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:54.737] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:54.897] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:55.044] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:55.173] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:55.387] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:55.534] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:55.688] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:55.844] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:55.996] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:56.160] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:56.328] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:56.508] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:56.679] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:56.902] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:57.080] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:57.261] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:57.491] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:57.671] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:57.859] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:58.049] Server  LOG     ststus TRIAL_ACTIVE
+[04:02:58.231] Server  LOG     ststus TRIAL_ACTIVE
+[04:03:21.348] Server  LOG        Reload env: .env
+[04:03:22.177] Server  LOG     ststus TRIAL_ACTIVE

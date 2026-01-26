@@ -510,11 +510,11 @@ const footerLinks = {
     legal: [
         {
             label: "Privacy",
-            href: "#"
+            href: "/privacy"
         },
         {
             label: "Terms",
-            href: "#"
+            href: "/terms"
         }
     ]
 };

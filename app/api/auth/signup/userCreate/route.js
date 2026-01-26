@@ -17,7 +17,17 @@ export async function POST(req) {
       where: { email },
     });
 
+    const shop = await prisma.shop.findFirst({
+      where: { ownerId: email },
+    });
+
     if (existing) {
+      if (!shop) {
+        return NextResponse.json(
+          { error: "Shop not registered" },
+          { status: 400 }
+        );
+      }
       return NextResponse.json(
         { error: "User already exists" },
         { status: 400 }

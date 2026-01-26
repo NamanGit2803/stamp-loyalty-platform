@@ -1,12 +1,17 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { CheckCircle, AlertCircle, Download, Search, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import VerificationsTable from "./verification-table"
 import { SearchBar } from "@/components/toolbar/SearchBar"
+import { observer } from "mobx-react-lite"
+import { useStore } from '@/stores/StoreProvider'
+import Pagination from "@/components/toolbar/pagination"
+import { useDebounce } from "@/hooks/use-debounce"
+import { toast } from "sonner"
 import {
     Select,
     SelectContent,
@@ -17,21 +22,47 @@ import {
     SelectValue,
 } from "@/components/ui/select"
 
-const mockTransactions = [
-    { id: 1, customer: "Amit Kumar", mobile: '1234567891', amount: 250, date: "2024-01-15", app: 'Paytm', status: "success" },
-    { id: 2, customer: "Priya Singh", mobile: '1234567891', amount: 180, date: "2024-01-14", app: 'Paytm', status: "success" },
-    { id: 3, customer: "Vikram Patel", mobile: '1234567891', amount: 99, date: "2024-01-13", app: 'Paytm', status: "failed" },
-    { id: 4, customer: "Neha Sharma", mobile: '1234567891', amount: 500, date: "2024-01-12", app: 'Paytm', status: "success" },
-]
+const VerificationsList = () => {
 
-export default function VerificationsList() {
+    const { shopStore } = useStore()
+
     const [filterDate, setFilterDate] = useState("")
     const [search, setSearch] = useState("")
     const [status, setStatus] = useState("all")
+    const [page, setPage] = useState(1)
+    const [loading, setLoading] = useState(false)
 
-    const transactions = mockTransactions.filter(
-        (tx) => !filterDate || tx.date === filterDate
-    )
+    useEffect(() => {
+        shopStore.resetPagination()
+    }, [])
+
+    // debounce 
+    const debouncedSearch = useDebounce(search, 500);
+
+
+    //  FETCH verification history
+    useEffect(() => {
+        const fetchRewards = async () => {
+            setLoading(true);
+
+            await shopStore.fetchPaymentVerifications({
+                page,
+                search: debouncedSearch,
+                date: filterDate,
+                status
+            })
+
+            setLoading(false);
+
+            if (shopStore.error) {
+                toast.error(shopStore.error);
+                return;
+            }
+        };
+
+        fetchRewards();
+    }, [page, shopStore.pagination?.limit, debouncedSearch, filterDate, status]);
+
 
     return (
         <div className="space-y-2">
@@ -65,7 +96,6 @@ export default function VerificationsList() {
                             <SelectItem value="pending">Pending</SelectItem>
                             <SelectItem value="success">Verified</SelectItem>
                             <SelectItem value="rejected">Rejected</SelectItem>
-                            <SelectItem value="manual_review">Under Review</SelectItem>
                         </SelectContent>
                     </Select>
                 </div>
@@ -77,7 +107,13 @@ export default function VerificationsList() {
             </div>
 
             {/* Table */}
-            <VerificationsTable />
+
+            <VerificationsTable loading={loading} data={shopStore.scanVerifications} />
+
+            {/* PAGINATION */}
+            <Pagination page={page} setPage={setPage} />
         </div>
     )
 }
+
+export default observer(VerificationsList)

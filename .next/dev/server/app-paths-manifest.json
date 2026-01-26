@@ -1,13 +1,17 @@
 {
-  "/(auth)/login/page": "app/(auth)/login/page.js",
-  "/(auth)/signup/page": "app/(auth)/signup/page.js",
-  "/(public)/about/page": "app/(public)/about/page.js",
-  "/(public)/features/page": "app/(public)/features/page.js",
-  "/(public)/page": "app/(public)/page.js",
-  "/(public)/plans/page": "app/(public)/plans/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
   "/api/auth/findShop/route": "app/api/auth/findShop/route.js",
   "/api/auth/findUser/route": "app/api/auth/findUser/route.js",
+  "/api/internal/subscription-check/route": "app/api/internal/subscription-check/route.js",
+  "/api/plans/fetchPlans/route": "app/api/plans/fetchPlans/route.js",
+  "/api/public/checkShop/route": "app/api/public/checkShop/route.js",
+  "/api/screenshot/verify/route": "app/api/screenshot/verify/route.js",
+  "/api/shop/customers/fetchAllCustomer/route": "app/api/shop/customers/fetchAllCustomer/route.js",
+  "/api/shop/customers/rewardHistory/route": "app/api/shop/customers/rewardHistory/route.js",
+  "/api/shop/paymentVerification/fetch/route": "app/api/shop/paymentVerification/fetch/route.js",
   "/api/subscription/status/route": "app/api/subscription/status/route.js",
-  "/plans/page": "app/plans/page.js"
+  "/claim/page": "app/claim/page.js",
+  "/shop/[shopId]/customers/page": "app/shop/[shopId]/customers/page.js",
+  "/shop/[shopId]/page": "app/shop/[shopId]/page.js",
+  "/shop/[shopId]/rewards/page": "app/shop/[shopId]/rewards/page.js",
+  "/shop/[shopId]/verifications/page": "app/shop/[shopId]/verifications/page.js"
 }

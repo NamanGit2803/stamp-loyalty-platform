@@ -7,7 +7,7 @@ import CTASection from "@/components/about/CTASection"
 
 export default function AboutPage() {
     return (
-        <main className="bg-white">
+        <main >
 
             {/* ---------- HERO ---------- */}
             <Hero />

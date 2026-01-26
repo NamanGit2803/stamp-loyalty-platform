@@ -10,97 +10,79 @@ import {
     TableRow,
 } from "@/components/ui/table"
 import { Card } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Badge } from "@/components/ui/badge"
-import { CheckCircle, AlertCircle, Download, Eye, Pencil } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import RedeemConfirmDialog from "./redeemConfirm-dialog"
+import { Spinner } from "@/components/ui/spinner"
+import { FormatLastVisit } from "@/lib/dateFormat"
 
-const mockTransactions = [
-    { id: 1, customer: "Amit Kumar", mobile: '1234567891', reward: 'coffee', date: "2024-01-15", app: 'Paytm', status: "Available" },
-    { id: 2, customer: "Priya Singh", mobile: '1234567891', reward: 'coffee', date: "2024-01-14", app: 'Paytm', status: "Redeemed" },
-    { id: 3, customer: "Vikram Patel", mobile: '1234567891', reward: 'coffee', date: "2024-01-13", app: 'Paytm', status: "Redeemed" },
-    { id: 4, customer: "Neha Sharma", mobile: '1234567891', reward: 'coffee', date: "2024-01-12", app: 'Paytm', status: "Available" },
-]
 
-export default function RewardsTable() {
-    const [filterDate, setFilterDate] = useState("")
-
-    const transactions = mockTransactions.filter(
-        (tx) => !filterDate || tx.date === filterDate
-    )
+export default function RewardsTable({ rewardsData, loading }) {
 
     return (
         <Card className="overflow-hidden card">
-            <Table>
-                <TableHeader className="bg-muted/40 sticky top-0 z-10">
-                    <TableRow>
-                        <TableHead className="text-primary">Customer</TableHead>
-                        <TableHead className="text-primary">Mobile</TableHead>
-                        <TableHead className="text-primary">Reward</TableHead>
-                        <TableHead className="text-primary">Status</TableHead>
-                        <TableHead className="text-primary">Earned On</TableHead>
-                        <TableHead className="text-primary">Actions</TableHead>
-                    </TableRow>
-                </TableHeader>
 
-                <TableBody>
-                    {transactions.map((tx) => (
-                        <TableRow
-                            key={tx.id}
-                            className="hover:bg-muted/30 transition-colors"
-                        >
-                            {/* Customer */}
-                            <TableCell className="py-3 font-medium">
-                                {tx.customer}
-                            </TableCell>
+            {/* LOADING STATE */}
+            {loading && (
+                <div className="flex justify-center items-center py-10">
+                    <Spinner className="h-6 w-6 text-primary" />
+                </div>
+            )}
 
-                            {/* mobile */}
-                            <TableCell className="py-3 font-medium text-dark-text">
-                                {'+91 ' + tx.mobile}
-                            </TableCell>
-
-                            {/* reward */}
-                            <TableCell className="py-3 text-dark-text">
-                                {tx.reward}
-                            </TableCell>
-
-                            {/* Status */}
-                            <TableCell className="py-3">
-                                {tx.status === "Available" ? (
-                                    <Badge className="gap-1 bg-green-100 text-green-700 hover:bg-green-100">
-                                        <CheckCircle size={14} />
-                                        {tx.status}
-                                    </Badge>
-                                ) : (
-                                    <Badge variant="default" className="bg-gray-200 text-gray-700">
-                                        {tx.status}
-                                    </Badge>
-                                )}
-                            </TableCell>
-
-                            {/* Date */}
-                            <TableCell className="py-3 text-muted-foreground">
-                                {tx.date}
-                            </TableCell>
-
-                            {/* action  */}
-                            <TableCell className="py-3 flex gap-1">
-                                {tx.status == 'Available' ? <RedeemConfirmDialog/>
-                                    :
-                                    <Badge variant="default" className="bg-gray-200 text-gray-700">
-                                        {tx.status}
-                                    </Badge>
-                                }
-                            </TableCell>
+            {!loading && (
+                <Table>
+                    <TableHeader className="bg-muted/40 sticky top-0 z-10">
+                        <TableRow>
+                            <TableHead className="text-primary">Customer</TableHead>
+                            <TableHead className="text-primary">Reward Id</TableHead>
+                            <TableHead className="text-primary">Mobile</TableHead>
+                            <TableHead className="text-primary">Reward</TableHead>
+                            <TableHead className="text-primary">Earned On</TableHead>
                         </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
+                    </TableHeader>
 
-            {transactions.length === 0 && (
-                <div className="py-6 text-center text-sm text-muted-foreground">
-                    No transactions found
+                    <TableBody>
+                        {rewardsData?.map((c) => (
+                            <TableRow
+                                key={c.id}
+                                className="hover:bg-muted/30 transition-colors"
+                            >
+                                {/* Customer */}
+                                <TableCell className="py-3 font-medium">
+                                    <div className="flex items-center gap-3">
+                                        <div className="h-8 w-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-semibold">
+                                            {c.customer?.name[0]}
+                                        </div>
+                                        <span className="font-medium capitalize">{c.customer?.name}</span>
+                                    </div>
+                                </TableCell>
+
+                                {/* reward id  */}
+                                <TableCell className="py-3 text-dark-text">
+                                    {c.id}
+                                </TableCell>
+
+                                {/* mobile */}
+                                <TableCell className="py-3 font-medium text-dark-text">
+                                    {'+91 ' + c.customer?.phone}
+                                </TableCell>
+
+                                {/* reward */}
+                                <TableCell className="py-3 text-dark-text capitalize">
+                                    {c.rewardText}
+                                </TableCell>
+
+
+                                {/* Date */}
+                                <TableCell className="py-3 text-muted-foreground">
+                                    {FormatLastVisit(c.createdAt, true)}
+                                </TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            )}
+
+            {!loading && rewardsData?.length === 0 && (
+                <div className="py-10 text-center text-sm text-muted-foreground">
+                    No data found
                 </div>
             )}
         </Card>

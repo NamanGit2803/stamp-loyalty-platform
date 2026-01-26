@@ -10,9 +10,15 @@ export async function POST(req) {
         // ✅ Lazy import Prisma (build-safe)
         const { default: prisma } = await import("@/lib/prisma");
 
-        const { shopId } = await req.json();
+        const { shopId, planId } = await req.json();
+
+        if(!planId){
+            return NextResponse.json({ error: "Server error." }, { status: 500 });
+        }
+
+
         if (!shopId) {
-            return NextResponse.json({ error: "shopId is required" }, { status: 400 });
+            return NextResponse.json({ error: "shopId is not registered." }, { status: 400 });
         }
 
         // Prevent duplicate subscription creation
@@ -35,11 +41,11 @@ export async function POST(req) {
             data: {
                 id: customId,
                 shopId,
-                amount: 299,
+                planId,
                 startDate: now,
                 trialEndsAt,
                 nextBillingAt: trialEndsAt,
-                status: "active"
+                status: "trailing"
             }
         });
 

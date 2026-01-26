@@ -11,11 +11,12 @@ import { useStore } from '@/stores/StoreProvider'
 import { Eye, EyeOff, TriangleAlert, CircleAlert, CheckCircle } from "lucide-react"
 import { Spinner } from "@/components/ui/spinner"
 import { toast } from 'sonner'
+import ForgotPasswordDialog from './forgotPasswordDialog'
 
 
 const Form = () => {
 
-    const { userStore } = useStore()
+    const { userStore, shopStore } = useStore()
     const router = useRouter()
     const [formData, setFormData] = useState({
         email: "",
@@ -64,7 +65,26 @@ const Form = () => {
                 toast.error(userStore.error, {
                     description: 'Please registerd your shop.',
                     action: {
-                        label: "Sign up",
+                        label: "Register",
+                        onClick: () => router.push('/signup'),
+                    }
+                })
+
+                return
+            }
+
+            if (userStore.error === 'Incorrect password.') {
+                toast.error(userStore.error)
+                setFormData((prev) => ({ ...prev, password: '' }))
+                return
+            }
+
+            if (userStore.error == 'User not found.') {
+                localStorage.setItem("signupStep", 1)
+                toast.error(userStore.error, {
+                    description: 'Please signup.',
+                    action: {
+                        label: "Register",
                         onClick: () => router.push('/signup'),
                     }
                 })
@@ -73,6 +93,22 @@ const Form = () => {
             }
 
             toast.error(userStore.error)
+            return
+        }
+
+        // load shop data 
+        await shopStore.loadInitial();
+
+        if (shopStore.shop == null) {
+            localStorage.setItem("signupStep", 2)
+            toast.error(userStore.error, {
+                description: 'Please registerd your shop.',
+                action: {
+                    label: "Register",
+                    onClick: () => router.push('/signup'),
+                }
+            })
+
             return
         }
 
@@ -101,10 +137,10 @@ const Form = () => {
 
     return (
         <div className="flex w-full md:w-2/5 items-center justify-center p-4 h-screen overflow-y-hidden">
-            <Card className="w-full max-w-md shadow-lg border-blue-100 p-0 h-[90%] overflow-y-auto no-scrollbar">
+            <Card className="w-full max-w-md shadow-lg border-border/50 p-0 h-[90%] overflow-y-auto no-scrollbar">
                 <div className="p-8">
                     <h1 className="text-3xl font-bold text-secondary mb-2">Welcome Back</h1>
-                    <p className="text-muted-foreground mb-7">Sign in to your Loyalty Pro account</p>
+                    <p className="text-muted-foreground mb-7">Sign in to your <Link href={'/'} className='logo-font text-primary'>{process.env.NEXT_PUBLIC_SITE_NAME ?? "site_name"}</Link> account</p>
 
                     <form onSubmit={handleSubmit} className="space-y-4">
                         {/* email address  */}
@@ -147,11 +183,9 @@ const Form = () => {
                             {errors.password && <p className="text-red-600 text-xs mt-1 flex gap-2 items-center"><TriangleAlert className='h-3 w-3' /> {errors.password}</p>}
                         </div>
 
-                        <Link href="#" className="text-primary text-sm hover:text-accent hover:underline inline-block">
-                            Forgot password?
-                        </Link>
+                        <ForgotPasswordDialog />
 
-                        <Button type="submit" className="w-full mt-5 hover:cursor-pointer text-white" disabled={userStore.loading}>
+                        <Button type="submit" className="w-full mt-5 hover:cursor-pointer" disabled={userStore.loading}>
                             {userStore.loading ? <><Spinner />Signing in...</> : "Sign In"}
                         </Button>
                     </form>

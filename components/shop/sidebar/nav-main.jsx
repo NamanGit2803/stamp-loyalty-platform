@@ -27,12 +27,12 @@ export function NavMain({ shopId }) {
       icon: Users,
       match: `/shop/${shopId}/customers`,
     },
-    {
-      label: "Transactions",
-      url: `/shop/${shopId}/transactions`,
-      icon: CreditCard,
-      match: `/shop/${shopId}/transactions`,
-    },
+    // {
+    //   label: "Transactions",
+    //   url: `/shop/${shopId}/transactions`,
+    //   icon: CreditCard,
+    //   match: `/shop/${shopId}/transactions`,
+    // },
     {
       label: "Payment Verifications",
       url: `/shop/${shopId}/verifications`,

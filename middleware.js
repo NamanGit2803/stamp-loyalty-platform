@@ -8,7 +8,7 @@ export async function middleware(req) {
   // 1️⃣ Detect protected routes
   // -----------------------------
   const isShopPath = pathname.startsWith("/shop/");
-  const shopMatch = pathname.match(/^\/shop\/(shop_[A-Za-z0-9_-]+)/);;
+  const shopMatch = pathname.match(/^\/shop\/(shop_[A-Za-z0-9_-]+)/);
   const requestedShopId = shopMatch?.[1] || null;
   const isValidShopIdFormat = Boolean(requestedShopId);
 

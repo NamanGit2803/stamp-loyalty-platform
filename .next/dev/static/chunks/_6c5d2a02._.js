@@ -132,6 +132,24 @@ class UserStore {
             this.shopId = null;
         });
     }
+    /** ============== FORGOT PASSWORD ============== */ async forgotPassword(email) {
+        this.error = null;
+        try {
+            const res = await fetch("/api/auth/forgotPassword/sendLink", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(email)
+            });
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.error);
+        } catch (err) {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>this.error = err.message);
+        } finally{
+            this.loading = false;
+        }
+    }
     /** ============== SIGNUP STEP ============== */ setSignupStep(step) {
         this.signupStep = step;
     }
@@ -312,11 +330,31 @@ class ShopStore {
    * Utility to calculate days left (extracted for clear logic).
    */ calculateDaysLeft(sub) {
         if (!sub) return null;
-        const endDate = sub.trialEndsAt || sub.nextBillingAt;
-        if (!endDate) return null;
-        const expire = new Date(endDate);
+        // Convert any UTC timestamp → IST date-only (00:00)
+        const toISTDay = (date)=>{
+            const d = new Date(date);
+            const utc = d.getTime() + d.getTimezoneOffset() * 60000;
+            const ist = new Date(utc + 5.5 * 60 * 60 * 1000);
+            return new Date(ist.getFullYear(), ist.getMonth(), ist.getDate());
+        };
+        // TODAY (IST)
         const now = new Date();
-        return Math.ceil((expire - now) / (1000 * 60 * 60 * 24));
+        const utcNow = now.getTime() + now.getTimezoneOffset() * 60000;
+        const nowIST = new Date(utcNow + 5.5 * 60 * 60 * 1000);
+        const todayIST = new Date(nowIST.getFullYear(), nowIST.getMonth(), nowIST.getDate());
+        // 1️⃣ Trial still valid?
+        if (sub.trialEndsAt) {
+            const trialEnd = toISTDay(sub.trialEndsAt);
+            const diff = Math.floor((trialEnd - todayIST) / 86400000);
+            if (diff >= 0) return diff;
+        }
+        // 2️⃣ Paid subscription
+        if (sub.nextBillingAt) {
+            const billingDay = toISTDay(sub.nextBillingAt);
+            const diff = Math.floor((billingDay - todayIST) / 86400000);
+            return diff > 0 ? diff : 0;
+        }
+        return 0;
     }
     /**
    * Creates a new shop
@@ -360,7 +398,7 @@ class ShopStore {
                 })
             });
             const data = await res.json();
-            if (res.status === 409) {
+            if (res.status === 409 && res.subscription == true) {
                 // Trial already used
                 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>this.error = data.error);
                 return;

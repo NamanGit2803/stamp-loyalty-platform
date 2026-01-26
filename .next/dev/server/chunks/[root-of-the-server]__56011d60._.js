@@ -86,7 +86,7 @@ async function POST(req) {
         });
         if (!user) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: "User not found. Please sign up."
+                error: "User not found."
             }, {
                 status: 401
             });
@@ -108,7 +108,7 @@ async function POST(req) {
         const isMatch = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$bcryptjs$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].compare(password, user.password);
         if (!isMatch) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: "Incorrect password"
+                error: "Incorrect password."
             }, {
                 status: 401
             });

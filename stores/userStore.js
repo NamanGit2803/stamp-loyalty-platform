@@ -152,6 +152,30 @@ class UserStore {
     });
   }
 
+
+  /** ============== FORGOT PASSWORD ============== */
+  async forgotPassword(email) {
+    this.error = null;
+
+    try {
+      const res = await fetch("/api/auth/forgotPassword/sendLink", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(email),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) throw new Error(data.error);
+
+
+    } catch (err) {
+      runInAction(() => (this.error = err.message));
+    } finally {
+      this.loading = false;
+    }
+  }
+
   /** ============== SIGNUP STEP ============== */
   setSignupStep(step) {
     this.signupStep = step;
