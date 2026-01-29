@@ -31,12 +31,12 @@ const ClaimPage = ({ shopId }) => {
                 const data = await res.json();
 
                 if (!data.exists) {
-                    if (data.error === 'pauseLoyalty') {
+                    setIsInvalid(true);
+                } else {
+                    if (data.shop?.loyaltyEnabled === false) {
                         setUIState('pauseLoyalty')
                         return
                     }
-                    setIsInvalid(true);
-                } else {
                     setShopName(data.shop?.shopName || "");
                 }
 
