@@ -50,9 +50,9 @@ const CustomersTable = ({ customers, loading }) => {
                                 <TableCell className="py-3">
                                     <div className="flex items-center gap-3">
                                         <div className="h-8 w-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-semibold">
-                                            {c.name[0]}
+                                            {c.name ? c.name[0] : ''}
                                         </div>
-                                        <span className="font-medium capitalize">{c.name}</span>
+                                        <span className="font-medium capitalize">{c.name || 'Unkown'}</span>
                                     </div>
                                 </TableCell>
 

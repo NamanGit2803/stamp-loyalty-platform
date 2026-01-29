@@ -33,6 +33,13 @@ export async function POST(req) {
       );
     }
 
+    if (!shop.loyaltyEnabled) {
+      return NextResponse.json(
+        { exists: false, error: "pauseLoyalty" },
+        { status: 423 }
+      );
+    }
+
     return NextResponse.json({
       exists: true,
       shop

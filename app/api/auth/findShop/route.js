@@ -27,7 +27,14 @@ export async function GET(req) {
       where: { ownerId: decoded.email },
     });
 
-    return NextResponse.json({ shop: shop ?? null });
+    if(!shop){
+      return NextResponse.json(
+        { error: "Shop not found" },
+        { status: 404 }
+      );
+    }
+
+    return NextResponse.json({ shop: shop }, {status: 200});
 
   } catch (err) {
     console.error("findShop error:", err);

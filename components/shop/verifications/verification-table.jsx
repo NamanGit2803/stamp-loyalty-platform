@@ -76,7 +76,7 @@ export default function VerificationsTable({ loading, data }) {
                             <TableHead className="text-primary">Amount</TableHead>
                             <TableHead className="text-primary">UTR</TableHead>
                             <TableHead className="text-primary">Status</TableHead>
-                            <TableHead className="text-primary">Created At</TableHead>
+                            <TableHead className="text-primary">Date</TableHead>
                             <TableHead className="text-primary">Actions</TableHead>
                         </TableRow>
                     </TableHeader>

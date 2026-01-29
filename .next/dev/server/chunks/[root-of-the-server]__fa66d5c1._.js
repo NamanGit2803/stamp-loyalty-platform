@@ -84,8 +84,17 @@ async function GET(req) {
                 ownerId: decoded.email
             }
         });
+        if (!shop) {
+            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                error: "Shop not found"
+            }, {
+                status: 404
+            });
+        }
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            shop: shop ?? null
+            shop: shop
+        }, {
+            status: 200
         });
     } catch (err) {
         console.error("findShop error:", err);

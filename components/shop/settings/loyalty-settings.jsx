@@ -11,33 +11,59 @@ import { useStore } from '@/stores/StoreProvider'
 import { Spinner } from "@/components/ui/spinner"
 import { Switch } from "@/components/ui/switch"
 import { Separator } from "@/components/ui/separator"
+import { toast } from 'sonner'
 
 
 
 const LoyaltySettings = () => {
 
-    const { userStore, shopStore } = useStore()
+    const { shopStore } = useStore()
+    const [enableEditing, setEnableEditing] = useState(false)
     const [loyaltySettings, setloyaltySettings] = useState({
         targetStamps: shopStore.shop?.targetStamps ?? '',
         reward: shopStore.shop?.reward ?? '',
-        maxStampsPerDay: shopStore.shop?.maxStampsPerCustomerPerDay ?? '',
         minAmount: shopStore.shop?.minAmount ?? '',
-
     })
 
     const handleChange = (e) => {
         const { name, value } = e.target
-        setShopSettings((prev) => ({ ...prev, [name]: value }))
+        setloyaltySettings((prev) => ({ ...prev, [name]: value }))
+    }
+
+
+    // update detals 
+    const updateDetails = async (enable = false) => {
+
+        await shopStore.updateShopDetails(loyaltySettings, enable)
+
+
+        if (!shopStore.error) {
+            if (enable) {
+                shopStore.shop?.loyaltyEnabled == true ? toast.success('Your loyalty program has been enabled.') : toast.success('Your loyalty program has been paused.')
+                return
+            }
+            toast.success('Data has been update successfully.')
+            return
+        }
+
+        toast.error(shopStore.error)
+        return
     }
 
 
 
     return (
         <Card className='bg-background border-0 max-w-4xl w-full'>
-            <CardHeader>
+            <CardHeader className='flex justify-between'>
                 <CardTitle className='text-primary'>Loyalty Rules</CardTitle>
+
+                <div className="flex items-center space-x-2">
+                    <Label htmlFor="enable-editing" className="text-dark-text">Enable Editing</Label>
+                    <Switch checked={enableEditing} onCheckedChange={setEnableEditing} id="enable-editing" />
+                </div>
             </CardHeader>
             <CardContent className="grid gap-4">
+
                 {/* loyalty enabled switch  */}
                 <div className="flex items-center justify-between">
                     <div>
@@ -46,12 +72,13 @@ const LoyaltySettings = () => {
                             Turn off to pause stamps and rewards for customers
                         </p>
                     </div>
-                    <Switch
+                    {shopStore.loading ? <Spinner /> : <Switch
                         checked={shopStore.shop?.loyaltyEnabled ?? true}
-                    />
+                        onCheckedChange={() => updateDetails(true)}
+                    />}
                 </div>
 
-                <Separator className='bg-gray-300'/>
+                <Separator className='bg-gray-300' />
 
                 {/* target stamp  */}
                 <div className='mt-7'>
@@ -61,6 +88,8 @@ const LoyaltySettings = () => {
                         name='targetStamps'
                         value={loyaltySettings.targetStamps}
                         onChange={handleChange}
+                        disabled={!enableEditing}
+                        className='text-dark-text disabled:opacity-100  disabled:bg-light-shade/40'
                     />
                 </div>
 
@@ -80,7 +109,8 @@ const LoyaltySettings = () => {
                             name="minAmount"
                             value={loyaltySettings.minAmount}
                             placeholder="0"
-                            className="rounded-l-none"
+                            className="rounded-l-none text-dark-text disabled:opacity-100  disabled:bg-light-shade/40"
+                            disabled={!enableEditing}
                             onChange={(e) => {
                                 handleChange({
                                     target: {
@@ -100,22 +130,13 @@ const LoyaltySettings = () => {
                     <Input
                         value={loyaltySettings.reward}
                         name='reward'
-                        className='capitalize'
                         onChange={handleChange}
+                        disabled={!enableEditing}
+                        className='capitalize text-dark-text disabled:opacity-100  disabled:bg-light-shade/40'
                     />
                 </div>
 
-                <div>
-                    <Label className='mb-1'>Max Stamps per Customer / Day</Label>
-                    <Input
-                        type="number"
-                        name='maxStampsPerDay'
-                        value={loyaltySettings.maxStampsPerDay}
-                        onChange={handleChange}
-                    />
-                </div>
-
-                <Button className='w-[25%] hover:cursor-pointer' disabled={shopStore.loading}>
+                <Button className='w-[25%] hover:cursor-pointer' onClick={() => updateDetails()} disabled={shopStore.loading || !enableEditing}>
                     {shopStore.loading ? <><Spinner /> Saving...</>
                         :
                         'Save'}

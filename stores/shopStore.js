@@ -356,6 +356,78 @@ class ShopStore {
 
   }
 
+
+  /*
+  payment verifications records
+  */
+  async verifyScan(scanId) {
+    this.loading = true;
+    this.error = null;
+
+    try {
+      const res = await fetch("/api/shop/paymentVerification/manualVerify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          shopId: this.shop?.id,
+          scanId
+        })
+      });
+
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error);
+
+      // Refresh customer list after redeem
+      await this.fetchPaymentVerifications({
+        page: this.pagination.page,
+        search: '',
+        status: 'all'
+      });
+
+
+    } catch (err) {
+      this.error = err.message;
+      return { error: err.message };
+
+    } finally {
+      this.loading = false;
+    }
+  }
+
+  /*
+  update shop details 
+  */
+  async updateShopDetails(details, enable=false) {
+    this.loading = true;
+    this.error = null;
+
+    try {
+      const res = await fetch("/api/shop/shopDetails/update", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          shopId: shopStore.shop?.id,
+          details,
+          enable
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to update.");
+      }
+
+      runInAction(()=> (this.shop = data.shop))
+
+      return
+    } catch (error) {
+      runInAction(() => (this.error = error.message));
+    } finally {
+      this.loading = false;
+    }
+  }
+
 }
 
 export const shopStore = new ShopStore();

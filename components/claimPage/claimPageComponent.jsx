@@ -5,10 +5,10 @@ import InvalidQRUI from "./errorComponents/invalidQRUI";
 import ClaimCard from "./claimCard";
 import { toast } from "sonner";
 import { Sparkles } from "lucide-react";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import SuccessAnimation from "../animations/SuccessAnimation";
 import Error429 from "./errorComponents/error429";
 import ManualReviewUI from "./errorComponents/manualReviewUI";
+import PausedLoyaltyUI from "./errorComponents/pausedLoyaltyUI";
 
 const ClaimPage = ({ shopId }) => {
     const [isInvalid, setIsInvalid] = useState(false);
@@ -31,10 +31,16 @@ const ClaimPage = ({ shopId }) => {
                 const data = await res.json();
 
                 if (!data.exists) {
+                    if (data.error === 'pauseLoyalty') {
+                        setUIState('pauseLoyalty')
+                        return
+                    }
                     setIsInvalid(true);
                 } else {
-                    setShopName(data.shop.shopName || "");
+                    setShopName(data.shop?.shopName || "");
                 }
+
+                return
 
             } catch (error) {
                 console.error(error);
@@ -70,7 +76,6 @@ const ClaimPage = ({ shopId }) => {
             const data = await res.json();
             setLoading(false);
 
-            console.log("API response:", data);
 
             if (data.success) {
                 setUIState("success");
@@ -80,18 +85,27 @@ const ClaimPage = ({ shopId }) => {
                     setUIState('claim')
                 }, 5000);
 
+                return
+
             } else {
-                if (data.error == 'daily_upload_limit_reached') {
+                if (data.error === 'daily_upload_limit_reached') {
                     setUIState('error429')
                     return
                 }
+
+                if (data.error === 'pauseLoyalty') {
+                    setUIState('pauseLoyalty')
+                    return
+                }
+
+
 
                 if (data.rejectReason === 'upi_mismatch' || data.rejectReason === 'upi_not_exist') {
                     setUIState('manualReview')
                     return
                 }
 
-                
+
                 toast.error(
                     data.error
                         ? data.error
@@ -118,7 +132,7 @@ const ClaimPage = ({ shopId }) => {
             min-h-screen p-8 text-center bg-custom-gradient gap-10">
 
             {/* ---------- TOP SECTION ---------- */}
-            <div className="mt-6 animate-fadeIn">
+            {(uiState === 'claim' || uiState === 'success') && (<div className="mt-6 animate-fadeIn">
                 <h2 className="text-2xl font-extrabold text-primary tracking-wide drop-shadow-sm capitalize">
                     {shopName || "Shop"}
                 </h2>
@@ -129,7 +143,7 @@ const ClaimPage = ({ shopId }) => {
                         You're one step away from rewards
                     </p>
                 </div>
-            </div>
+            </div>)}
 
             {/* ---------- CARD CENTERED ---------- */}
             {uiState == 'claim' && <ClaimCard shopId={shopId} verify={verifyScreenshot} loading={loading} setLoading={setLoading} />}
@@ -140,6 +154,7 @@ const ClaimPage = ({ shopId }) => {
 
             {uiState === 'manualReview' && <ManualReviewUI />}
 
+            {uiState === 'pauseLoyalty' && <PausedLoyaltyUI />}
 
             {/* ---------- FOOTER ---------- */}
             <p className="mb-5 text-center text-xs text-gray-500 tracking-wide">

@@ -52,7 +52,7 @@ export async function POST(req) {
         // make reward entry 
         const reward = await prisma.reward.create({
             data: {
-                id: `reward_${nanoid(8)}`,        
+                id: `reward_${nanoid(8)}`,
                 shopId,
                 customerId,
                 rewardText,

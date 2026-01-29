@@ -114,9 +114,14 @@ async function POST(req) {
             where,
             skip,
             take: limit,
-            orderBy: {
-                createdAt: "desc"
-            },
+            orderBy: [
+                {
+                    verifiedAt: "desc"
+                },
+                {
+                    createdAt: "desc"
+                }
+            ],
             include: {
                 customer: true
             }

@@ -82,6 +82,13 @@ export async function POST(req) {
             );
         }
 
+        if (!shop.loyaltyEnabled) {
+            return NextResponse.json(
+                { error: "pauseLoaylty" },
+                { status: 423 }
+            );
+        }
+
         // Shop active check
         if (!shop.isActive) {
             return NextResponse.json(

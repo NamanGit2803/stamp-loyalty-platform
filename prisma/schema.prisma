@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -132,7 +132,7 @@ model ScanVerification {
   // Security features
   screenshotHash String     // sha256(image)
   appDetected    String
-  ocrText        String   @db.LongText    // full OCR text dump
+  ocrText        String      // full OCR text dump
   meta           Json?      // optional extra parsed info (raw JSON)
   imagePath      String?    // if you store in S3 or similar
   checksum       String?

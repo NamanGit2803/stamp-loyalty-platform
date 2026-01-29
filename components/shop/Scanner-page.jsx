@@ -8,6 +8,7 @@ import { observer } from "mobx-react-lite";
 import { useStore } from "@/stores/StoreProvider";
 import { Spinner } from "@/components/ui/spinner"
 import { generateStyledQR } from "@/lib/generateStyledQR";
+import { toast } from "sonner";
 
 const ScannerComponent = observer(() => {
     const { shopStore } = useStore();
@@ -32,10 +33,13 @@ const ScannerComponent = observer(() => {
     }, [shopId]);
 
     // doenload the qr 
-    const handleDownload = async() => {
-        if (!qr) return;
+    const handleDownload = async () => {
+        if (!qr) {
+            toast.error("QR not found.")
+            return
+        };
 
-        const styledQR = await generateStyledQR(qr);
+        const styledQR = await generateStyledQR(qr, shopStore.shop?.shopName);
 
         const a = document.createElement("a");
         a.href = styledQR;
@@ -44,9 +48,12 @@ const ScannerComponent = observer(() => {
     };
 
     // print the qr 
-    const handlePrint = async() => {
-        if (!qr) return;
-        const styledQR = await generateStyledQR(qr);
+    const handlePrint = async () => {
+        if (!qr) {
+            toast.error("QR not found.")
+            return
+        };
+        const styledQR = await generateStyledQR(qr, shopStore.shop?.shopName);
 
         const win = window.open("");
         win.document.write(`<img src="${styledQR}" style="width:350px;" />`);

@@ -16,10 +16,13 @@ import { Button } from "@/components/ui/button"
 import { observer } from "mobx-react-lite"
 import { useStore } from '@/stores/StoreProvider'
 import { toast } from "sonner"
+import { Spinner } from "@/components/ui/spinner"
 
 const VerifyConfirmDialog = ({ scanId, customer }) => {
 
     const { shopStore } = useStore()
+    const [loading, setLoading] = useState(false)
+    const [open, setOpen] = useState(false)
 
     const handleVerify = async () => {
         if (!scanId) {
@@ -27,17 +30,26 @@ const VerifyConfirmDialog = ({ scanId, customer }) => {
             return
         }
 
+        setLoading(true)
+
         await shopStore.verifyScan(scanId)
+
+        setLoading(false)
 
         if (!shopStore.error) {
             toast.success("Payment verified successfully. Stamp added to customer.")
+            setOpen(false)
+            return
         }
+
+        toast.error(shopStore.error)
+
     }
 
     return (
-        <AlertDialog>
+        <AlertDialog open={open} onOpenChange={setOpen}>
             <AlertDialogTrigger asChild>
-                <Button size="sm" variant="default">
+                <Button size="sm" variant="default" onClick={() => setOpen(true)}>
                     Verify
                 </Button>
             </AlertDialogTrigger>
@@ -57,14 +69,14 @@ const VerifyConfirmDialog = ({ scanId, customer }) => {
                 </AlertDialogHeader>
 
                 <AlertDialogFooter>
-                    <AlertDialogCancel disabled={shopStore.loading}>Cancel</AlertDialogCancel>
+                    <AlertDialogCancel disabled={loading} onClick={() => setOpen(false)}>Cancel</AlertDialogCancel>
 
-                    <AlertDialogAction
+                    <Button
                         onClick={handleVerify}
-                        disabled={shopStore.loading}
+                        disabled={loading}
                     >
-                        {shopStore.loading ? "Verifying..." : "Confirm Verify"}
-                    </AlertDialogAction>
+                        {loading ? <><Spinner /> Verifying...</> : "Confirm Verify"}
+                    </Button>
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>

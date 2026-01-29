@@ -252,6 +252,7 @@ class ShopStore {
     hydrated = false;
     // customers 
     customers = [];
+    scanVerifications = [];
     pagination = {
         page: 1,
         total: 0,
@@ -431,6 +432,16 @@ class ShopStore {
         };
     }
     /*
+ update paginatio
+ */ updatePagination(data) {
+        this.pagination = {
+            page: data.page,
+            total: data.total,
+            limit: data.limit,
+            totalPages: data.totalPages
+        };
+    }
+    /*
     fetch all customer of a shop 
   */ async fetchCustomers({ page, search = '' }) {
         this.loading = false;
@@ -489,6 +500,100 @@ class ShopStore {
             return {
                 error: err.message
             };
+        } finally{
+            this.loading = false;
+        }
+    }
+    /*
+  payment verifications records
+  */ async fetchPaymentVerifications({ page, search, date, status }) {
+        this.loading = false;
+        this.error = null;
+        try {
+            const res = await fetch("/api/shop/paymentVerification/fetch", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    shopId: shopStore.shop?.id,
+                    page,
+                    limit: shopStore.pagination?.limit,
+                    search,
+                    date,
+                    status
+                })
+            });
+            const data = await res.json();
+            if (!res.ok) {
+                throw new Error(data.error || "Failed to fetch rewards");
+            }
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+                this.scanVerifications = data.data;
+                this.pagination = data.pagination;
+            });
+        } catch (error) {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>this.error = error.message);
+        } finally{
+            this.loading = false;
+        }
+    }
+    /*
+  payment verifications records
+  */ async verifyScan(scanId) {
+        this.loading = true;
+        this.error = null;
+        try {
+            const res = await fetch("/api/shop/paymentVerification/manualVerify", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    shopId: this.shop?.id,
+                    scanId
+                })
+            });
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.error);
+            // Refresh customer list after redeem
+            await this.fetchPaymentVerifications({
+                page: this.pagination.page,
+                search: '',
+                status: 'all'
+            });
+        } catch (err) {
+            this.error = err.message;
+            return {
+                error: err.message
+            };
+        } finally{
+            this.loading = false;
+        }
+    }
+    /*
+  update shop details 
+  */ async updateShopDetails(details, type) {
+        this.loading = true;
+        this.error = null;
+        try {
+            const res = await fetch("/api/shop/shopDetails/update", {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    shopId: shopStore.shop?.id,
+                    details,
+                    type
+                })
+            });
+            const data = await res.json();
+            if (!res.ok) {
+                throw new Error(data.error || "Failed to update.");
+            }
+        } catch (error) {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>this.error = error.message);
         } finally{
             this.loading = false;
         }

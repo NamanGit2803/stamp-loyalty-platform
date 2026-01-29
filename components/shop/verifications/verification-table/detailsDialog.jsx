@@ -16,7 +16,7 @@ import { Calendar, CreditCard, Shield, FileText, AlertTriangle, Eye } from "luci
 
 const StatusBadge = ({ status }) => {
     const color =
-        status === "verified" ? "bg-green-500" :
+        status === "success" ? "bg-green-500" :
             status === "rejected" ? "bg-red-500" :
                 "bg-yellow-500"
 
