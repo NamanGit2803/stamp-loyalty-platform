@@ -45,7 +45,7 @@ export async function POST(req) {
                 startDate: now,
                 trialEndsAt,
                 nextBillingAt: trialEndsAt,
-                status: "trailing"
+                status: "trialing"
             }
         });
 

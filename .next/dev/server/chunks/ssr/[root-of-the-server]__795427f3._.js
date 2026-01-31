@@ -128,13 +128,25 @@ class UserStore {
         }
     }
     /** ============== LOGOUT ============== */ async logout() {
-        await fetch("/api/user/logout", {
-            method: "POST"
-        });
-        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
-            this.user = null;
-            this.shopId = null;
-        });
+        this.loading = true;
+        this.error = false;
+        try {
+            await fetch("/api/auth/logout", {
+                method: "POST"
+            });
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+                this.user = null;
+                this.shopId = null;
+            });
+            window.location.href = "/login";
+            return;
+        } catch (err) {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+                this.error = err.message;
+            });
+        } finally{
+            this.loading = false;
+        }
     }
     /** ============== FORGOT PASSWORD ============== */ async forgotPassword(email) {
         this.error = null;
@@ -573,7 +585,7 @@ class ShopStore {
     }
     /*
   update shop details 
-  */ async updateShopDetails(details, type) {
+  */ async updateShopDetails(details, enable = false) {
         this.loading = true;
         this.error = null;
         try {
@@ -585,13 +597,15 @@ class ShopStore {
                 body: JSON.stringify({
                     shopId: shopStore.shop?.id,
                     details,
-                    type
+                    enable
                 })
             });
             const data = await res.json();
             if (!res.ok) {
                 throw new Error(data.error || "Failed to update.");
             }
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>this.shop = data.shop);
+            return;
         } catch (error) {
             (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>this.error = error.message);
         } finally{

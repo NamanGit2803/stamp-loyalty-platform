@@ -639,7 +639,9 @@ function Badge({ className, variant, asChild = false, ...props }) {
 
 __turbopack_context__.s([
     "FormatLastVisit",
-    ()=>FormatLastVisit
+    ()=>FormatLastVisit,
+    "FormatToIST",
+    ()=>FormatToIST
 ]);
 function FormatLastVisit(dateString, normal = false) {
     if (!dateString) return "-";
@@ -660,6 +662,21 @@ function FormatLastVisit(dateString, normal = false) {
         month: "short",
         year: "numeric"
     });
+}
+function FormatToIST(dateString) {
+    const date = new Date(dateString);
+    const ist = new Date(date.getTime() + 5.5 * 60 * 60 * 1000);
+    const day = ist.getDate();
+    const month = ist.toLocaleString("en-IN", {
+        month: "short"
+    });
+    const year = ist.getFullYear();
+    const time = ist.toLocaleString("en-IN", {
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true
+    });
+    return `${day} ${month} ${year} • ${time.toUpperCase()}`;
 }
 }),
 "[project]/components/ui/spinner.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {

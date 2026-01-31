@@ -15,7 +15,10 @@ export async function POST(req) {
     }
 
     const subscription = await prisma.subscription.findFirst({
-      where: { shopId }
+      where: { shopId },
+      include: {
+        plan: true,   // ← Fetch the related plan details
+      },
     });
 
     return NextResponse.json({ subscription });

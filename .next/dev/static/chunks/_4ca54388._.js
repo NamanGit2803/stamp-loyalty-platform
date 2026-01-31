@@ -729,7 +729,9 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 
 __turbopack_context__.s([
     "FormatLastVisit",
-    ()=>FormatLastVisit
+    ()=>FormatLastVisit,
+    "FormatToIST",
+    ()=>FormatToIST
 ]);
 function FormatLastVisit(dateString, normal = false) {
     if (!dateString) return "-";
@@ -752,8 +754,25 @@ function FormatLastVisit(dateString, normal = false) {
     });
 }
 _c = FormatLastVisit;
-var _c;
+function FormatToIST(dateString) {
+    const date = new Date(dateString);
+    const ist = new Date(date.getTime() + 5.5 * 60 * 60 * 1000);
+    const day = ist.getDate();
+    const month = ist.toLocaleString("en-IN", {
+        month: "short"
+    });
+    const year = ist.getFullYear();
+    const time = ist.toLocaleString("en-IN", {
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true
+    });
+    return `${day} ${month} ${year} • ${time.toUpperCase()}`;
+}
+_c1 = FormatToIST;
+var _c, _c1;
 __turbopack_context__.k.register(_c, "FormatLastVisit");
+__turbopack_context__.k.register(_c1, "FormatToIST");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }

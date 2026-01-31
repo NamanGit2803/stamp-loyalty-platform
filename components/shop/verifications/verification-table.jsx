@@ -23,35 +23,7 @@ import { Spinner } from "@/components/ui/spinner"
 import { FormatLastVisit } from "@/lib/dateFormat"
 import VerifyConfirmDialog from "./verification-table/verifyConfirmDialog"
 import DetailsDialog from "./verification-table/detailsDialog"
-
-function renderStatusBadge(status) {
-    switch (status) {
-        case "success":
-            return (
-                <Badge className="gap-1 bg-green-100 text-green-700 hover:bg-green-100">
-                    <CheckCircle size={14} />
-                    Success
-                </Badge>
-            );
-
-        case "pending":
-            return (
-                <Badge className="gap-1 bg-warning-bg-primary text-warning-text-1 ">
-                    <AlertCircle size={14} />
-                    Pending
-                </Badge>
-            );
-
-        case "rejected":
-        default:
-            return (
-                <Badge className="gap-1 bg-error-bg-primary text-error-text-1">
-                    <AlertCircle size={14} />
-                    Rejected
-                </Badge>
-            );
-    }
-}
+import { renderStatusBadge } from "@/components/toolbar/statusVariant"
 
 
 
@@ -108,7 +80,7 @@ export default function VerificationsTable({ loading, data }) {
                                 </TableCell>
 
                                 {/* Status */}
-                                <TableCell className="py-3">
+                                <TableCell className="py-3 capitalize">
                                     {renderStatusBadge(data.status)}
                                 </TableCell>
 

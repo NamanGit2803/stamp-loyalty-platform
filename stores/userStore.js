@@ -144,13 +144,30 @@ class UserStore {
 
   /** ============== LOGOUT ============== */
   async logout() {
-    await fetch("/api/user/logout", { method: "POST" });
+    this.loading = true;
+    this.error = false;
 
-    runInAction(() => {
-      this.user = null;
-      this.shopId = null;
-    });
+    try {
+
+      await fetch("/api/auth/logout", { method: "POST" });
+
+      runInAction(() => {
+        this.user = null;
+        this.shopId = null;
+      });
+
+      window.location.href = "/login";
+      return
+
+    } catch (err) {
+      runInAction(() => {
+        this.error = err.message
+      })
+    } finally {
+      this.loading = false;
+    }
   }
+
 
 
   /** ============== FORGOT PASSWORD ============== */

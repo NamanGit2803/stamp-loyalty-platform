@@ -2,16 +2,7 @@
 
 import * as React from "react";
 import {
-    AudioWaveform,
-    BookOpen,
-    Bot,
-    Command,
-    Frame,
     GalleryVerticalEnd,
-    Map,
-    PieChart,
-    Settings2,
-    SquareTerminal,
 } from "lucide-react";
 import { observer } from "mobx-react-lite"
 import { useStore } from '@/stores/StoreProvider'
@@ -26,15 +17,6 @@ import {
     SidebarRail,
 } from "@/components/ui/sidebar";
 
-// This is sample data.
-const data = {
-    user: {
-        name: "shadcn",
-        email: "m@example.com",
-        avatar: "/avatars/shadcn.jpg",
-    },
-
-};
 
 const AppSidebar = (props) => {
 

@@ -210,8 +210,16 @@ model Subscription {
   endDate       DateTime?
   trialEndsAt    DateTime  
   nextBillingAt  DateTime    
+
+  // RAZORPAY
   razorpaySubId String?
+
+  // cashfree 
+  cashfreeSubscriptionId String?
+  cashfreeMandateId      String?
+
   updatedAt     DateTime @updatedAt
+  createdAt DateTime @default(now())
 
   plan Plan? @relation(fields: [planId], references: [id])
   shop Shop? @relation(fields: [shopId], references: [id])
@@ -235,6 +243,13 @@ model Payment {
   razorpayOrderId   String?
   razorpayPaymentId String?
   razorpaySignature String?
+
+   // Cashfree fields (new)
+  cashfreeOrderId        String?
+  cashfreePaymentId      String?
+  cashfreeSubscriptionId String?
+  cashfreeMandateId      String?
+  cashfreeEvent          String?   // activated, debited, failed, cancelled
 
   status            String   // success, failed, pending, refunded
 

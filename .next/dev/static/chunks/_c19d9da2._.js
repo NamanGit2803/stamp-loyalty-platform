@@ -353,7 +353,9 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 
 __turbopack_context__.s([
     "FormatLastVisit",
-    ()=>FormatLastVisit
+    ()=>FormatLastVisit,
+    "FormatToIST",
+    ()=>FormatToIST
 ]);
 function FormatLastVisit(dateString, normal = false) {
     if (!dateString) return "-";
@@ -376,8 +378,25 @@ function FormatLastVisit(dateString, normal = false) {
     });
 }
 _c = FormatLastVisit;
-var _c;
+function FormatToIST(dateString) {
+    const date = new Date(dateString);
+    const ist = new Date(date.getTime() + 5.5 * 60 * 60 * 1000);
+    const day = ist.getDate();
+    const month = ist.toLocaleString("en-IN", {
+        month: "short"
+    });
+    const year = ist.getFullYear();
+    const time = ist.toLocaleString("en-IN", {
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true
+    });
+    return `${day} ${month} ${year} • ${time.toUpperCase()}`;
+}
+_c1 = FormatToIST;
+var _c, _c1;
 __turbopack_context__.k.register(_c, "FormatLastVisit");
+__turbopack_context__.k.register(_c1, "FormatToIST");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
@@ -1377,7 +1396,7 @@ function VerificationsTable({ loading, data }) {
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$table$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableCell"], {
-                                        className: "py-3",
+                                        className: "py-3 capitalize",
                                         children: renderStatusBadge(data.status)
                                     }, void 0, false, {
                                         fileName: "[project]/components/shop/verifications/verification-table.jsx",

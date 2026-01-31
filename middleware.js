@@ -57,6 +57,10 @@ export async function middleware(req) {
       return NextResponse.redirect(new URL("/", req.url));
     }
 
+    if (pathname.endsWith("/billing")) {
+      return NextResponse.next();
+    }
+
 
     if (!isValidShopIdFormat) {
       return NextResponse.redirect(new URL("/", req.url));
@@ -96,8 +100,8 @@ export async function middleware(req) {
       return NextResponse.next();
     }
 
-    if (status === "EXPIRED") {
-      return NextResponse.redirect(new URL("/billing", req.url));
+    if (status === "EXPIRED" || status === 'TRIAL_END') {
+      return NextResponse.redirect(new URL(`/shop/${requestedShopId}/billing`, req.url));
     }
 
     if (status === "PAID_ACTIVE") {
@@ -112,10 +116,51 @@ export async function middleware(req) {
   // 6️⃣ SHOP API protection
   // -----------------------------
   if (isShopApi) {
+
     if (user.role !== "SHOP") {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
-    return NextResponse.next();
+
+    // --------------------------------------------------
+    // ⭐ 5️⃣ CALL INTERNAL API FOR SHOP + SUBSCRIPTION CHECK
+    // --------------------------------------------------
+    const resp = await fetch(`${req.nextUrl.origin}/api/internal/subscription-check`, {
+      method: "POST",
+      body: JSON.stringify({
+        shopId: requestedShopId,
+        userEmail: user.email, // check ownership inside API
+      }),
+      headers: { "Content-Type": "application/json" }
+    });
+
+    const { status } = await resp.json();
+
+    // -----------------------------
+    // 🚦 Handle Subscription Result
+    // -----------------------------
+
+    if (status === "NO_SHOP" || status === "NOT_OWNER") {
+      return NextResponse.redirect(new URL("/", req.url));
+    }
+
+    if (status === "NO_SUBSCRIPTION") {
+      return NextResponse.redirect(new URL("/plans", req.url));
+    }
+
+    if (status === "TRIAL_ACTIVE") {
+      return NextResponse.next();
+    }
+
+    if (status === "EXPIRED" || status === 'TRIAL_END') {
+      return NextResponse.redirect(new URL(`/shop/${requestedShopId}/billing`, req.url));
+    }
+
+    if (status === "PAID_ACTIVE") {
+      return NextResponse.next();
+    }
+
+    // fallback (should never happen)
+    return NextResponse.redirect(new URL("/", req.url));
   }
 
   return NextResponse.next();

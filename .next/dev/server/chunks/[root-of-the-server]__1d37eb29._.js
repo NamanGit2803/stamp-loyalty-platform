@@ -60,53 +60,75 @@ async function POST(req) {
     try {
         const { default: prisma } = await __turbopack_context__.A("[project]/lib/prisma.js [app-route] (ecmascript, async loader)");
         const { shopId, userEmail } = await req.json();
-        const shop = await prisma.shop.findUnique({
-            where: {
-                id: shopId
-            }
+        let shop;
+        if (shopId != null) {
+            shop = await prisma.shop.findUnique({
+                where: {
+                    id: shopId
+                }
+            });
+        } else {
+            shop = await prisma.shop.findFirst({
+                where: {
+                    ownerId: userEmail
+                }
+            });
+        }
+        if (!shop) return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+            status: "NO_SHOP"
         });
-        if (!shop) {
-            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                status: "NO_SHOP"
-            });
-        }
-        if (shop.ownerId !== userEmail) {
-            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                status: "NOT_OWNER"
-            });
-        }
+        if (shop.ownerId !== userEmail) return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+            status: "NOT_OWNER"
+        });
         const subscription = await prisma.subscription.findFirst({
             where: {
                 shopId
             }
         });
-        if (!subscription) {
-            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                status: "NO_SUBSCRIPTION"
-            });
-        }
+        if (!subscription) return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+            status: "NO_SUBSCRIPTION"
+        });
         const now = new Date();
         const trialEnds = subscription.trialEndsAt ? new Date(subscription.trialEndsAt) : null;
         const nextBilling = subscription.nextBillingAt ? new Date(subscription.nextBillingAt) : null;
-        // 1️⃣ Trial still active
-        if (trialEnds && now <= trialEnds) {
+        // ⭐ 1️⃣ Trial ended -> update status
+        if (subscription.status === "trialing" && trialEnds && now > trialEnds) {
+            await prisma.subscription.update({
+                where: {
+                    id: subscription.id
+                },
+                data: {
+                    status: "trial_end"
+                }
+            });
+            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                status: "TRIAL_END"
+            });
+        }
+        if (subscription.status === 'trial_end') {
+            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                status: "TRIAL_END"
+            });
+        }
+        // 2️⃣ Trial still active
+        if (subscription.status === "trialing" && trialEnds && now <= trialEnds) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 status: "TRIAL_ACTIVE"
             });
         }
-        // 2️⃣ Explicit canceled or expired
+        // 3️⃣ Explicit canceled
         if (subscription.status === "canceled") {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 status: "EXPIRED"
             });
         }
-        // 3️⃣ Paid and valid
-        if (nextBilling && now <= nextBilling) {
+        // 4️⃣ Paid and valid
+        if (nextBilling && now <= nextBilling && subscription.status == 'active') {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 status: "PAID_ACTIVE"
             });
         }
-        // 4️⃣ Billing date passed
+        // 5️⃣ Billing date passed
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             status: "EXPIRED"
         });

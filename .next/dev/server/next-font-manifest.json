@@ -4,19 +4,7 @@
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
       "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
     ],
-    "[project]/app/(auth)/plans/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
-      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
-    ],
-    "[project]/app/(auth)/signup/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
-      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
-    ],
     "[project]/app/(public)/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
-      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
-    ],
-    "[project]/app/_not-found/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
       "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
     ],
@@ -24,15 +12,11 @@
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
       "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
     ],
-    "[project]/app/shop/[shopId]/myAccount/page": [
+    "[project]/app/shop/[shopId]/billing/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
       "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
     ],
     "[project]/app/shop/[shopId]/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
-      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
-    ],
-    "[project]/app/shop/[shopId]/settings/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
       "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
     ]

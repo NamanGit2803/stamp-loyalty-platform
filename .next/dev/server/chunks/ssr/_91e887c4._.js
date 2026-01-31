@@ -303,7 +303,9 @@ function Spinner({ className, ...props }) {
 
 __turbopack_context__.s([
     "FormatLastVisit",
-    ()=>FormatLastVisit
+    ()=>FormatLastVisit,
+    "FormatToIST",
+    ()=>FormatToIST
 ]);
 function FormatLastVisit(dateString, normal = false) {
     if (!dateString) return "-";
@@ -324,6 +326,21 @@ function FormatLastVisit(dateString, normal = false) {
         month: "short",
         year: "numeric"
     });
+}
+function FormatToIST(dateString) {
+    const date = new Date(dateString);
+    const ist = new Date(date.getTime() + 5.5 * 60 * 60 * 1000);
+    const day = ist.getDate();
+    const month = ist.toLocaleString("en-IN", {
+        month: "short"
+    });
+    const year = ist.getFullYear();
+    const time = ist.toLocaleString("en-IN", {
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true
+    });
+    return `${day} ${month} ${year} • ${time.toUpperCase()}`;
 }
 }),
 "[project]/components/ui/alert-dialog.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
@@ -1270,7 +1287,7 @@ function VerificationsTable({ loading, data }) {
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$table$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TableCell"], {
-                                        className: "py-3",
+                                        className: "py-3 capitalize",
                                         children: renderStatusBadge(data.status)
                                     }, void 0, false, {
                                         fileName: "[project]/components/shop/verifications/verification-table.jsx",

@@ -124,13 +124,25 @@ class UserStore {
         }
     }
     /** ============== LOGOUT ============== */ async logout() {
-        await fetch("/api/user/logout", {
-            method: "POST"
-        });
-        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
-            this.user = null;
-            this.shopId = null;
-        });
+        this.loading = true;
+        this.error = false;
+        try {
+            await fetch("/api/auth/logout", {
+                method: "POST"
+            });
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+                this.user = null;
+                this.shopId = null;
+            });
+            window.location.href = "/login";
+            return;
+        } catch (err) {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+                this.error = err.message;
+            });
+        } finally{
+            this.loading = false;
+        }
     }
     /** ============== FORGOT PASSWORD ============== */ async forgotPassword(email) {
         this.error = null;
