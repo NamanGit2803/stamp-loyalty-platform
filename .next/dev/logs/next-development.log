@@ -1015,3 +1015,4 @@ Argument `shopId` must not be null.
 [48:07:30.741] Server  LOG     ststus TRIAL_ACTIVE
 [48:07:32.389] Server  LOG     ststus TRIAL_ACTIVE
 [48:07:33.070] Server  LOG     ststus TRIAL_ACTIVE
+[48:32:06.946] Server  LOG      ✓ Compiled in 3.3s

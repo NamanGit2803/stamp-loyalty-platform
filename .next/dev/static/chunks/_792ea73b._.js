@@ -1168,6 +1168,7 @@ function NavMain({ shopId }) {
     _s();
     const pathname = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"])();
     const sidebar = (0, __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$sidebar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSidebar"])();
+    console.log("iddd", shopId);
     const navItems = [
         {
             label: "Home",
@@ -1226,41 +1227,41 @@ function NavMain({ shopId }) {
                                     className: "size-6"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shop/sidebar/nav-main.jsx",
-                                    lineNumber: 45,
+                                    lineNumber: 47,
                                     columnNumber: 19
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     children: item.label
                                 }, void 0, false, {
                                     fileName: "[project]/components/shop/sidebar/nav-main.jsx",
-                                    lineNumber: 46,
+                                    lineNumber: 48,
                                     columnNumber: 19
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/shop/sidebar/nav-main.jsx",
-                            lineNumber: 38,
+                            lineNumber: 40,
                             columnNumber: 17
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/shop/sidebar/nav-main.jsx",
-                        lineNumber: 37,
+                        lineNumber: 39,
                         columnNumber: 15
                     }, this)
                 }, item.label, false, {
                     fileName: "[project]/components/shop/sidebar/nav-main.jsx",
-                    lineNumber: 36,
+                    lineNumber: 38,
                     columnNumber: 13
                 }, this);
             })
         }, void 0, false, {
             fileName: "[project]/components/shop/sidebar/nav-main.jsx",
-            lineNumber: 31,
+            lineNumber: 33,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/shop/sidebar/nav-main.jsx",
-        lineNumber: 30,
+        lineNumber: 32,
         columnNumber: 5
     }, this);
 }
