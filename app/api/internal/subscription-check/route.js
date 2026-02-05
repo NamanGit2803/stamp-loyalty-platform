@@ -25,7 +25,7 @@ export async function POST(req) {
       return NextResponse.json({ status: "NOT_OWNER" });
 
     const subscription = await prisma.subscription.findFirst({
-      where: { shopId },
+      where: { shopId: shop.id },
     });
 
     if (!subscription)

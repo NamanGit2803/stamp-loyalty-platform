@@ -13,10 +13,11 @@ import { Spinner } from "@/components/ui/spinner"
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
 import { businessTypes } from '@/lib/businessTypes'
 import { useRouter } from 'next/navigation'
+import { FormatToIST } from '@/lib/dateFormat'
 
 const Step2 = ({ setStep }) => {
 
-    const { userStore, shopStore } = useStore()
+    const { userStore, shopStore, planStore } = useStore()
     const [errors, setErrors] = useState({})
     const [formData, setFormData] = useState({
         shopName: "",
@@ -31,6 +32,7 @@ const Step2 = ({ setStep }) => {
     })
 
     const router = useRouter()
+    const plan = planStore.defaultPlan
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -93,7 +95,7 @@ const Step2 = ({ setStep }) => {
         finalData.ownerId = userStore.user.email   // <---- IMPORTANT
 
         // calling api through store 
-        await shopStore.createShop(finalData)
+        await shopStore.createShop(finalData, plan.id)
 
 
         if (shopStore.error) {
@@ -110,7 +112,7 @@ const Step2 = ({ setStep }) => {
 
             toast.error(shopStore.error)
             return
-            
+
         } else {
             setFormData({
                 shopName: "",
@@ -124,8 +126,24 @@ const Step2 = ({ setStep }) => {
                 reward: '',
             })
 
-            router.push('/plans')
+            toast.success('Welcome aboard! Your shop has been created.')
             localStorage.removeItem("signupStep")
+
+            setTimeout(() => {
+                router.push(`/shop/${shopStore.shop.id}`)
+            }, 1500);
+
+            // send welcome email 
+            await fetch("/api/email/sendWelcomeEmail", {
+                method: "POST",
+                body: JSON.stringify({
+                    email: userStore.user?.email,
+                    name: userStore.user?.name,
+                    shopName: shopStore.shop?.shopName,
+                    trialEndDate: FormatToIST(shopStore.subscription?.trialEndsAt),
+                    dashboardUrl: `${process.env.NEXT_PUBLIC_APP_URL}/shop/${shopStore.shop?.id}`,
+                })
+            });
 
             return
         }

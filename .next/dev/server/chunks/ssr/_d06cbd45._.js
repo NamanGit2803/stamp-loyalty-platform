@@ -257,7 +257,9 @@ function Spinner({ className, ...props }) {
 
 __turbopack_context__.s([
     "FormatLastVisit",
-    ()=>FormatLastVisit
+    ()=>FormatLastVisit,
+    "FormatToIST",
+    ()=>FormatToIST
 ]);
 function FormatLastVisit(dateString, normal = false) {
     if (!dateString) return "-";
@@ -278,6 +280,21 @@ function FormatLastVisit(dateString, normal = false) {
         month: "short",
         year: "numeric"
     });
+}
+function FormatToIST(dateString) {
+    const date = new Date(dateString);
+    const options = {
+        timeZone: "Asia/Kolkata",
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true
+    };
+    const formatted = date.toLocaleString("en-IN", options);
+    // Replace comma with bullet "•"
+    return formatted.replace(",", " •").toUpperCase();
 }
 }),
 "[project]/components/shop/rewards/rewards-table.jsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {

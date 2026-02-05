@@ -24,6 +24,7 @@ export async function POST(req) {
         id: true,
         shopName: true,
         loyaltyEnabled: true,
+        targetStamps: true,
       },
     });
 

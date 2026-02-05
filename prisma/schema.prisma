@@ -194,6 +194,9 @@ model Plan {
   stampLimit  Int?
   shopLimit   Int?
   description String?
+
+  cashfreePlanId  String? 
+
   createdAt   DateTime @default(now())
 
   subscriptions Subscription[]

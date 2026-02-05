@@ -6,6 +6,7 @@ class ShopStore {
   subscription = null;    // Subscription object (clean separation)
   subscriptionStatus = "";
   daysLeft = null;
+  plan = [];
 
   loading = false;
   error = null;
@@ -154,7 +155,7 @@ class ShopStore {
   /**
    * Creates a new shop
    */
-  async createShop(shopData) {
+  async createShop(shopData, planId) {
     this.loading = true;
     this.error = null;
 
@@ -172,6 +173,9 @@ class ShopStore {
         this.shop = data.newShop;
       });
 
+      // start trial 
+      await this.startTrial(planId)
+
     } catch (err) {
       runInAction(() => (this.error = err.message));
     } finally {
@@ -183,7 +187,8 @@ class ShopStore {
    * Start free trial
    */
   async startTrial(planId) {
-    if (!this.shop) return;
+
+    if(!this.shop) return
 
     this.loading = true;
     this.error = null;
@@ -397,7 +402,7 @@ class ShopStore {
   /*
   update shop details 
   */
-  async updateShopDetails(details, enable=false) {
+  async updateShopDetails(details, enable = false) {
     this.loading = true;
     this.error = null;
 
@@ -418,7 +423,7 @@ class ShopStore {
         throw new Error(data.error || "Failed to update.");
       }
 
-      runInAction(()=> (this.shop = data.shop))
+      runInAction(() => (this.shop = data.shop))
 
       return
     } catch (error) {
@@ -427,6 +432,38 @@ class ShopStore {
       this.loading = false;
     }
   }
+
+
+  // subscription handle 
+  /*
+  extend or active subscription 
+  */
+  async activeSubscription() {
+    this.loading = true
+    this.error = null
+
+    try {
+      const res = await fetch("/api/subscription/extend", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          shopId: this.shop?.id,
+        })
+      });
+
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error);
+
+    } catch (err) {
+      this.error = err.message;
+      return { error: err.message };
+
+    } finally {
+      this.loading = false;
+    }
+  }
+
+
 
 }
 

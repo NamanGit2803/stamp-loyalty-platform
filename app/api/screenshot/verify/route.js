@@ -27,7 +27,7 @@ export async function POST(req) {
         const ocrJson = formData.get("ocrResult");
 
         let rejectReason = null;
-
+        let newCustomer = false;
 
 
         if (!file || !shopId || !ocrJson || !phone) {
@@ -109,7 +109,7 @@ export async function POST(req) {
         }
 
         const now = new Date();
-        const validStatuses = ["active", "trailing"];
+        const validStatuses = ["active", "trialing"];
         // STATUS VALIDATION
         const isStatusValid = validStatuses.includes(subscription.status);
 
@@ -379,6 +379,7 @@ export async function POST(req) {
                     phone,
                 },
             });
+            newCustomer = true
         }
 
 
@@ -409,7 +410,7 @@ export async function POST(req) {
         // If failed fraud check → return here
         if (rejectReason) {
             return NextResponse.json(
-                { success: false, rejectReason },
+                { success: false, rejectReason, newCustomer },
                 { status: 400 }
             );
         }
@@ -434,6 +435,11 @@ export async function POST(req) {
             success: true,
             message: "Stamp added!",
             scanId: scan.id,
+            newCustomer,
+            customer: {
+                customerId: customer.id,
+                customerStamp: customer.stampCount,
+            },
         });
 
 

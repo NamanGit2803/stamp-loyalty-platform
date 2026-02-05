@@ -76,7 +76,8 @@ async function POST(req) {
             select: {
                 id: true,
                 shopName: true,
-                loyaltyEnabled: true
+                loyaltyEnabled: true,
+                targetStamps: true
             }
         });
         if (!shop) {

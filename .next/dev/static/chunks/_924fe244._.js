@@ -1103,7 +1103,7 @@ var _s = __turbopack_context__.k.signature();
 ;
 const Step2 = ({ setStep })=>{
     _s();
-    const { userStore, shopStore } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$stores$2f$StoreProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useStore"])();
+    const { userStore, shopStore, planStore } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$stores$2f$StoreProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useStore"])();
     const [errors, setErrors] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({});
     const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
         shopName: "",
@@ -1727,7 +1727,7 @@ const Step2 = ({ setStep })=>{
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s(Step2, "sdZjvhX0vKFI2AddG1R4NodJZc0=", false, function() {
+_s(Step2, "k8UaS6/2wfBZbhf5aGKItVO6qfI=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$stores$2f$StoreProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useStore"],
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]

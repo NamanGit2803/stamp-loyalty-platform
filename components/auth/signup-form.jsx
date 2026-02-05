@@ -1,6 +1,4 @@
-"use client"
 
-import { useState } from "react"
 import Illustration from "./signup/Illustration"
 import Form from "./signup/Form"
 

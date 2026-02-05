@@ -589,6 +589,7 @@ async function POST(req) {
         const phone = formData.get("phone");
         const ocrJson = formData.get("ocrResult");
         let rejectReason = null;
+        let newCustomer = false;
         if (!file || !shopId || !ocrJson || !phone) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 error: "Missing required fields"
@@ -663,7 +664,7 @@ async function POST(req) {
         const now = new Date();
         const validStatuses = [
             "active",
-            "trailing"
+            "trialing"
         ];
         // STATUS VALIDATION
         const isStatusValid = validStatuses.includes(subscription.status);
@@ -890,6 +891,7 @@ async function POST(req) {
                     phone
                 }
             });
+            newCustomer = true;
         }
         // --------------------------------------
         // 7️⃣ SAVE THE VERIFICATION RECORD
@@ -917,7 +919,8 @@ async function POST(req) {
         if (rejectReason) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 success: false,
-                rejectReason
+                rejectReason,
+                newCustomer
             }, {
                 status: 400
             });
@@ -945,7 +948,8 @@ async function POST(req) {
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             success: true,
             message: "Stamp added!",
-            scanId: scan.id
+            scanId: scan.id,
+            newCustomer
         });
     } catch (err) {
         console.error("VERIFY ERROR →", err);

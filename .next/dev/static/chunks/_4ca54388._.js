@@ -756,18 +756,18 @@ function FormatLastVisit(dateString, normal = false) {
 _c = FormatLastVisit;
 function FormatToIST(dateString) {
     const date = new Date(dateString);
-    const ist = new Date(date.getTime() + 5.5 * 60 * 60 * 1000);
-    const day = ist.getDate();
-    const month = ist.toLocaleString("en-IN", {
-        month: "short"
-    });
-    const year = ist.getFullYear();
-    const time = ist.toLocaleString("en-IN", {
+    const options = {
+        timeZone: "Asia/Kolkata",
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
         hour: "numeric",
         minute: "2-digit",
         hour12: true
-    });
-    return `${day} ${month} ${year} • ${time.toUpperCase()}`;
+    };
+    const formatted = date.toLocaleString("en-IN", options);
+    // Replace comma with bullet "•"
+    return formatted.replace(",", " •").toUpperCase();
 }
 _c1 = FormatToIST;
 var _c, _c1;

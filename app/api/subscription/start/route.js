@@ -16,11 +16,6 @@ export async function POST(req) {
             return NextResponse.json({ error: "Server error." }, { status: 500 });
         }
 
-
-        if (!shopId) {
-            return NextResponse.json({ error: "shopId is not registered." }, { status: 400 });
-        }
-
         // Prevent duplicate subscription creation
         const existing = await prisma.subscription.findFirst({
             where: { shopId }

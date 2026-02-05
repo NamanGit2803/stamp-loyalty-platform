@@ -39,27 +39,13 @@ const PlanCard = () => {
     const subscribe = async (e, planId) => {
         e.preventDefault()
 
-        if (!userStore.user) {
-            toast.error('User not login. Please login.')
-            localStorage.removeItem('signupStep')
+        localStorage.setItem('signupStep',1);
 
-            setTimeout(() => {
-                router.push('/login')
-            }, 1500);
-            return
-        }
+        setTimeout(() => {
+            router.push('/signup')
+        }, 800);
 
-        if (!shopStore.shop) {
-            toast.error('Shop not registered. Please registered your shop.')
-            localStorage.setItem('signupStep', 2)
-
-
-            setTimeout(() => {
-                router.push('/signup')
-            }, 1500);
-
-            return
-        }
+        return
 
         // call start free trial days api 
         await shopStore.startTrial(planId)
@@ -126,10 +112,9 @@ const PlanCard = () => {
                     <Button
                         size="lg"
                         className="w-full py-5 text-md font-medium hover:cursor-pointer"
-                        onClick={(e) => subscribe(e, plan?.id)}
-                        disabled={shopStore.loading}
+                        onClick={(e) => subscribe(e)}
                     >
-                        {shopStore.loading ? <><Spinner />Processing...</> : 'Start Free Trial'}
+                        Start Free Trial
                     </Button>
                 </CardFooter>
             </Card>

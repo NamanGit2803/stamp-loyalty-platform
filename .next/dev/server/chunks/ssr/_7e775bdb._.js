@@ -380,9 +380,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 ;
 ;
-const TrialEndCard = ()=>{
+const TrialEndCard = ({ plan })=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
-        className: "w-full border-none shadow-md bg-gradient-to-br from-red-50 via-white to-red-100 rounded-xl overflow-hidden",
+        className: "w-full border-none shadow-md bg-linear-to-br from-red-50 via-white to-red-100 rounded-xl overflow-hidden",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardHeader"], {
                 className: "pb-2",
@@ -393,51 +393,51 @@ const TrialEndCard = ()=>{
                             className: "flex items-center gap-3",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "p-2 bg-red-100 rounded-full",
+                                    className: "p-2 bg-error-bg-primary rounded-full",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$triangle$2d$alert$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertTriangle$3e$__["AlertTriangle"], {
-                                        className: "w-5 h-5 text-red-600"
+                                        className: "w-5 h-5 text-error-text-1"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shop/billing/planDetails-page/trialEnd-card.jsx",
                                         lineNumber: 16,
-                                        columnNumber: 11
+                                        columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/components/shop/billing/planDetails-page/trialEnd-card.jsx",
                                     lineNumber: 15,
-                                    columnNumber: 9
+                                    columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardTitle"], {
-                                    className: "text-xl font-semibold text-red-700",
-                                    children: "Your Trial Has Ended"
+                                    className: "text-xl font-semibold text-error-text-2",
+                                    children: "Your Trial Has Been Ended"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shop/billing/planDetails-page/trialEnd-card.jsx",
                                     lineNumber: 18,
-                                    columnNumber: 9
+                                    columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/shop/billing/planDetails-page/trialEnd-card.jsx",
                             lineNumber: 14,
-                            columnNumber: 7
+                            columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: "text-xs px-3 py-1 rounded-full bg-red-200 text-red-700 font-semibold shadow-sm",
+                            className: "text-xs px-3 py-1 rounded-full bg-error-bg-primary text-error-text-2 font-semibold shadow-sm",
                             children: "INACTIVE"
                         }, void 0, false, {
                             fileName: "[project]/components/shop/billing/planDetails-page/trialEnd-card.jsx",
                             lineNumber: 23,
-                            columnNumber: 7
+                            columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/shop/billing/planDetails-page/trialEnd-card.jsx",
                     lineNumber: 13,
-                    columnNumber: 5
+                    columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/components/shop/billing/planDetails-page/trialEnd-card.jsx",
                 lineNumber: 12,
-                columnNumber: 3
+                columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
                 className: "space-y-5 mt-3",
@@ -446,102 +446,87 @@ const TrialEndCard = ()=>{
                         className: "text-dark-text text-sm leading-relaxed",
                         children: [
                             "Your 15-day free trial is over. To keep using ",
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "logo-font text-primary",
                                 children: "Stampi"
                             }, void 0, false, {
                                 fileName: "[project]/components/shop/billing/planDetails-page/trialEnd-card.jsx",
                                 lineNumber: 34,
-                                columnNumber: 53
+                                columnNumber: 67
                             }, ("TURBOPACK compile-time value", void 0)),
                             " and continue rewarding your customers, please activate a subscription."
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/shop/billing/planDetails-page/trialEnd-card.jsx",
                         lineNumber: 33,
-                        columnNumber: 5
+                        columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "p-4 rounded-xl bg-white border shadow-sm flex justify-between items-center hover:shadow-md transition",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "font-semibold text-dark-text flex items-center gap-1 text-lg",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__["Star"], {
-                                                className: "w-4 h-4 text-primary"
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/shop/billing/planDetails-page/trialEnd-card.jsx",
-                                                lineNumber: 42,
-                                                columnNumber: 11
-                                            }, ("TURBOPACK compile-time value", void 0)),
-                                            " Basic Plan"
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/components/shop/billing/planDetails-page/trialEnd-card.jsx",
-                                        lineNumber: 41,
-                                        columnNumber: 9
-                                    }, ("TURBOPACK compile-time value", void 0)),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-muted-foreground text-sm",
-                                        children: "₹499 / month"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/shop/billing/planDetails-page/trialEnd-card.jsx",
-                                        lineNumber: 44,
-                                        columnNumber: 9
-                                    }, ("TURBOPACK compile-time value", void 0))
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/components/shop/billing/planDetails-page/trialEnd-card.jsx",
-                                lineNumber: 40,
-                                columnNumber: 7
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
-                                size: "sm",
-                                className: "bg-primary text-white px-5",
-                                children: "Select"
-                            }, void 0, false, {
-                                fileName: "[project]/components/shop/billing/planDetails-page/trialEnd-card.jsx",
-                                lineNumber: 47,
-                                columnNumber: 7
-                            }, ("TURBOPACK compile-time value", void 0))
-                        ]
-                    }, void 0, true, {
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "font-semibold text-dark-text flex items-center gap-1 text-lg",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__["Star"], {
+                                            className: "w-4 h-4 text-primary"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/shop/billing/planDetails-page/trialEnd-card.jsx",
+                                            lineNumber: 42,
+                                            columnNumber: 29
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        " ",
+                                        plan?.plan.name ?? 'Plan',
+                                        " Plan"
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/shop/billing/planDetails-page/trialEnd-card.jsx",
+                                    lineNumber: 41,
+                                    columnNumber: 25
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-muted-foreground text-sm",
+                                    children: [
+                                        "₹",
+                                        plan?.plan?.price ?? 'null',
+                                        " / month"
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/shop/billing/planDetails-page/trialEnd-card.jsx",
+                                    lineNumber: 44,
+                                    columnNumber: 25
+                                }, ("TURBOPACK compile-time value", void 0))
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/shop/billing/planDetails-page/trialEnd-card.jsx",
+                            lineNumber: 40,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0))
+                    }, void 0, false, {
                         fileName: "[project]/components/shop/billing/planDetails-page/trialEnd-card.jsx",
                         lineNumber: 39,
-                        columnNumber: 5
+                        columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "flex flex-col gap-3 pt-1",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
-                                className: "w-full bg-primary text-white hover:bg-primary/90 py-3 rounded-lg text-base",
-                                children: "Start Subscription"
-                            }, void 0, false, {
-                                fileName: "[project]/components/shop/billing/planDetails-page/trialEnd-card.jsx",
-                                lineNumber: 54,
-                                columnNumber: 7
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
-                                variant: "outline",
-                                className: "w-full py-3 rounded-lg text-base",
-                                children: "Explore Plans"
-                            }, void 0, false, {
-                                fileName: "[project]/components/shop/billing/planDetails-page/trialEnd-card.jsx",
-                                lineNumber: 58,
-                                columnNumber: 7
-                            }, ("TURBOPACK compile-time value", void 0))
-                        ]
-                    }, void 0, true, {
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                            className: "w-full bg-primary text-white hover:bg-primary/90 py-3 rounded-lg text-base",
+                            children: "Start Subscription"
+                        }, void 0, false, {
+                            fileName: "[project]/components/shop/billing/planDetails-page/trialEnd-card.jsx",
+                            lineNumber: 50,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0))
+                    }, void 0, false, {
                         fileName: "[project]/components/shop/billing/planDetails-page/trialEnd-card.jsx",
-                        lineNumber: 53,
-                        columnNumber: 5
+                        lineNumber: 49,
+                        columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/shop/billing/planDetails-page/trialEnd-card.jsx",
                 lineNumber: 30,
-                columnNumber: 3
+                columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
@@ -591,7 +576,9 @@ const PlanDeatilsPage = ()=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "space-y-6",
         children: [
-            shopStore.subscription?.status === 'trial_end' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shop$2f$billing$2f$planDetails$2d$page$2f$trialEnd$2d$card$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+            shopStore.subscription?.status === 'trial_end' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shop$2f$billing$2f$planDetails$2d$page$2f$trialEnd$2d$card$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                plan: shopStore.subscription ?? null
+            }, void 0, false, {
                 fileName: "[project]/components/shop/billing/planDetails-page.jsx",
                 lineNumber: 22,
                 columnNumber: 63
@@ -705,7 +692,7 @@ const PlanDeatilsPage = ()=>{
                 lineNumber: 24,
                 columnNumber: 17
             }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
+            (shopStore.subscription?.status === 'active' || shopStore.subscription?.status === 'trialing') && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardHeader"], {
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardTitle"], {
@@ -753,9 +740,9 @@ const PlanDeatilsPage = ()=>{
             }, void 0, true, {
                 fileName: "[project]/components/shop/billing/planDetails-page.jsx",
                 lineNumber: 49,
-                columnNumber: 13
+                columnNumber: 112
             }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
+            shopStore.subscription?.status === 'active' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardHeader"], {
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardTitle"], {
@@ -800,7 +787,7 @@ const PlanDeatilsPage = ()=>{
             }, void 0, true, {
                 fileName: "[project]/components/shop/billing/planDetails-page.jsx",
                 lineNumber: 61,
-                columnNumber: 13
+                columnNumber: 61
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {

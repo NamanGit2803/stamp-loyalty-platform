@@ -11,7 +11,7 @@ import { useStore } from '@/stores/StoreProvider'
 
 const Form = () => {
 
-    const { userStore } = useStore()
+    const { userStore, planStore } = useStore()
     const [step, setStep] = useState(1)
     const router = useRouter()
 
@@ -20,9 +20,11 @@ const Form = () => {
             setStep(localStorage.getItem('signupStep'))
         }
 
-        if(!userStore.user){
+        if (!userStore.user) {
             localStorage.removeItem('signupStep')
         }
+
+        planStore.loadPlans()
 
 
     }, [])
@@ -68,11 +70,11 @@ const Form = () => {
                     </div>
 
                     <p className="text-center text-sm text-gray-600 mt-6">
-                        {step == 2 ? 'Want to signup with another email? ' :'Already have an account? '}
-                        {step == 2 ? <span className='hover:cursor-pointer text-primary hover:underline' onClick={setLocalStorage}>Sign up</span> 
-                        :<Link href="/login" className="text-primary hover:underline">
-                            Sign in
-                        </Link>}
+                        {step == 2 ? 'Want to signup with another email? ' : 'Already have an account? '}
+                        {step == 2 ? <span className='hover:cursor-pointer text-primary hover:underline' onClick={setLocalStorage}>Sign up</span>
+                            : <Link href="/login" className="text-primary hover:underline">
+                                Sign in
+                            </Link>}
                     </p>
                 </div>
             </Card>

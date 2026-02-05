@@ -9,12 +9,18 @@ import SuccessAnimation from "../animations/SuccessAnimation";
 import Error429 from "./errorComponents/error429";
 import ManualReviewUI from "./errorComponents/manualReviewUI";
 import PausedLoyaltyUI from "./errorComponents/pausedLoyaltyUI";
+import NameEnterCard from "./nameEnterCard";
+import Link from "next/link";
 
 const ClaimPage = ({ shopId }) => {
     const [isInvalid, setIsInvalid] = useState(false);
-    const [shopName, setShopName] = useState("");
+    const [shop, setShop] = useState({
+        name: '',
+        targetStamps: 0
+    });
     const [loading, setLoading] = useState(false);
     const [uiState, setUIState] = useState("claim");
+    const [customer, setCustomer] = useState({})
 
 
     if (!shopId) return <InvalidQRUI />;
@@ -37,7 +43,10 @@ const ClaimPage = ({ shopId }) => {
                         setUIState('pauseLoyalty')
                         return
                     }
-                    setShopName(data.shop?.shopName || "");
+                    setShop({
+                        name: data.shop?.shopName,
+                        targetStamps: data.shop?.targetStamps,
+                    });
                 }
 
                 return
@@ -78,6 +87,13 @@ const ClaimPage = ({ shopId }) => {
 
 
             if (data.success) {
+                if (data.newCustomer) {
+                    setUIState('nameCard')
+                    setCustomer(data.customer)
+
+                    return
+                }
+
                 setUIState("success");
 
                 // set default 
@@ -132,9 +148,9 @@ const ClaimPage = ({ shopId }) => {
             min-h-screen p-8 text-center bg-custom-gradient gap-10">
 
             {/* ---------- TOP SECTION ---------- */}
-            {(uiState === 'claim' || uiState === 'success') && (<div className="mt-6 animate-fadeIn">
+            {(uiState === 'claim' || uiState === 'success' || uiState === 'nameCard') && (<div className="mt-6 animate-fadeIn">
                 <h2 className="text-2xl font-extrabold text-primary tracking-wide drop-shadow-sm capitalize">
-                    {shopName || "Shop"}
+                    {shop.name || "Shop"}
                 </h2>
 
                 <div className="flex items-center justify-center gap-1 mt-1">
@@ -146,9 +162,11 @@ const ClaimPage = ({ shopId }) => {
             </div>)}
 
             {/* ---------- CARD CENTERED ---------- */}
-            {uiState == 'claim' && <ClaimCard shopId={shopId} verify={verifyScreenshot} loading={loading} setLoading={setLoading} />}
+            {uiState === 'claim' && <ClaimCard shopId={shopId} verify={verifyScreenshot} loading={loading} setLoading={setLoading} />}
 
-            {uiState === 'success' && <SuccessAnimation />}
+            {uiState === 'nameCard' && <NameEnterCard shopName={shop.name} customerId={customer.customerId} setUIState={setUIState} />}
+
+            {uiState === 'success' && <SuccessAnimation targetStamps={shop.targetStamps} customer={customer}/>}
 
             {uiState === 'error429' && <Error429 />}
 
@@ -158,7 +176,7 @@ const ClaimPage = ({ shopId }) => {
 
             {/* ---------- FOOTER ---------- */}
             <p className="mb-5 text-center text-xs text-gray-500 tracking-wide">
-                Powered by <span className='logo-font text-primary'>{process.env.NEXT_PUBLIC_SITE_NAME ?? "site_name"}</span>
+                Powered by <Link href={'/'} className='logo-font text-primary'>{process.env.NEXT_PUBLIC_SITE_NAME ?? "site_name"}</Link>
             </p>
         </div>
     );

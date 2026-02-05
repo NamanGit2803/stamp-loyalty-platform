@@ -197,8 +197,33 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$auth$2f$OtpCon
 ;
 ;
 const metadata = {
-    title: "Stampi - Shopkeeper Loyalty Platform",
-    description: "Manage customer loyalty, rewards, and payments with ease"
+    title: "Stampi - Customer Loyalty Platform",
+    description: "Manage customer loyalty, rewards, and payments with ease",
+    icons: {
+        icon: [
+            {
+                url: "/favicon-32x32.png",
+                sizes: "32x32",
+                type: "image/png"
+            },
+            {
+                url: "/favicon-16x16.png",
+                sizes: "16x16",
+                type: "image/png"
+            }
+        ],
+        apple: [
+            {
+                url: "/apple-touch-icon.png",
+                sizes: "180x180",
+                type: "image/png"
+            }
+        ],
+        shortcut: [
+            "/favicon-32x32.png"
+        ]
+    },
+    manifest: "/site.webmanifest"
 };
 const viewport = {
     themeColor: "#1F2937",
@@ -216,31 +241,31 @@ function RootLayout({ children }) {
                         children,
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$auth$2f$OtpConatiner$2e$jsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                             fileName: "[project]/app/layout.jsx",
-                            lineNumber: 34,
+                            lineNumber: 47,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/layout.jsx",
-                    lineNumber: 32,
+                    lineNumber: 45,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$sonner$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Toaster"], {
                     position: "top-right"
                 }, void 0, false, {
                     fileName: "[project]/app/layout.jsx",
-                    lineNumber: 36,
+                    lineNumber: 49,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/layout.jsx",
-            lineNumber: 31,
+            lineNumber: 44,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/layout.jsx",
-        lineNumber: 30,
+        lineNumber: 43,
         columnNumber: 5
     }, this);
 }

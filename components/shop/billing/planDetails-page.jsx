@@ -19,7 +19,7 @@ const PlanDeatilsPage = () => {
     return (
         <div className='space-y-6'>
             {/* ---------------- Current Plan ---------------- */}
-            {shopStore.subscription?.status === 'trial_end' ? <TrialEndCard />
+            {shopStore.subscription?.status === 'trial_end' ? <TrialEndCard/>
                 :
                 <Card className='w-full'>
                     <CardHeader className="flex flex-row items-center gap-3 justify-between">
@@ -46,7 +46,7 @@ const PlanDeatilsPage = () => {
                 </Card>}
 
             {/* ---------------- Plan Features ---------------- */}
-            <Card>
+            {(shopStore.subscription?.status === 'active' || shopStore.subscription?.status === 'trialing') && <Card>
                 <CardHeader>
                     <CardTitle className='text-primary flex gap-2 items-center'> <ListChecks className="w-5 h-5" /> Your Plan Includes</CardTitle>
                 </CardHeader>
@@ -54,11 +54,11 @@ const PlanDeatilsPage = () => {
                 <CardContent className="space-y-2 text-sm">
                     {shopStore.subscription?.plan?.features?.map((feat) => <p key={feat} className="text-dark-text">✔ {feat}</p>)}
                 </CardContent>
-            </Card>
+            </Card>}
 
 
             {/* ---------------- Actions ---------------- */}
-            <Card>
+            {shopStore.subscription?.status === 'active' && <Card>
                 <CardHeader>
                     <CardTitle className='text-primary flex items-center gap-2'> <Settings2 className="w-5 h-5" /> Manage Subscription</CardTitle>
                 </CardHeader>
@@ -66,7 +66,7 @@ const PlanDeatilsPage = () => {
                 <CardContent className="flex gap-3">
                     <Button variant="outline">Cancel Subscription</Button>
                 </CardContent>
-            </Card>
+            </Card>}
         </div>
     )
 }

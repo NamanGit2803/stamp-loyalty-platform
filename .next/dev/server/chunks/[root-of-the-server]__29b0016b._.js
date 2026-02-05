@@ -76,13 +76,6 @@ async function POST(req) {
                 status: 500
             });
         }
-        if (!shopId) {
-            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: "shopId is not registered."
-            }, {
-                status: 400
-            });
-        }
         // Prevent duplicate subscription creation
         const existing = await prisma.subscription.findFirst({
             where: {
@@ -108,7 +101,7 @@ async function POST(req) {
                 startDate: now,
                 trialEndsAt,
                 nextBillingAt: trialEndsAt,
-                status: "trailing"
+                status: "trialing"
             }
         });
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({

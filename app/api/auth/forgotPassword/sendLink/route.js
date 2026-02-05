@@ -49,8 +49,6 @@ export async function POST(req) {
                 },
             });
 
-            console.log('token', token)
-
             // ✅ Reset URL (email integration later)
             const resetUrl = `${process.env.NEXT_PUBLIC_APP_URL}/reset-password?token=${token}`;
 
