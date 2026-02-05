@@ -906,11 +906,19 @@ const DetailsDialog = ({ scan })=>{
                                 className: "space-y-1",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoRow, {
+                                        label: "Reject Reason",
+                                        value: scan.rejectReason
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/shop/verifications/verification-table/detailsDialog.jsx",
+                                        lineNumber: 92,
+                                        columnNumber: 25
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoRow, {
                                         label: "App Detected",
                                         value: scan.appDetected
                                     }, void 0, false, {
                                         fileName: "[project]/components/shop/verifications/verification-table/detailsDialog.jsx",
-                                        lineNumber: 92,
+                                        lineNumber: 93,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoRow, {
@@ -918,7 +926,7 @@ const DetailsDialog = ({ scan })=>{
                                         value: scan.screenshotHash
                                     }, void 0, false, {
                                         fileName: "[project]/components/shop/verifications/verification-table/detailsDialog.jsx",
-                                        lineNumber: 93,
+                                        lineNumber: 94,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoRow, {
@@ -926,7 +934,7 @@ const DetailsDialog = ({ scan })=>{
                                         value: scan.checksum
                                     }, void 0, false, {
                                         fileName: "[project]/components/shop/verifications/verification-table/detailsDialog.jsx",
-                                        lineNumber: 94,
+                                        lineNumber: 95,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
@@ -953,19 +961,19 @@ const DetailsDialog = ({ scan })=>{
                                             className: "h-4 w-4 text-primary"
                                         }, void 0, false, {
                                             fileName: "[project]/components/shop/verifications/verification-table/detailsDialog.jsx",
-                                            lineNumber: 103,
+                                            lineNumber: 104,
                                             columnNumber: 33
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         "OCR Text"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shop/verifications/verification-table/detailsDialog.jsx",
-                                    lineNumber: 102,
+                                    lineNumber: 103,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/components/shop/verifications/verification-table/detailsDialog.jsx",
-                                lineNumber: 101,
+                                lineNumber: 102,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -974,18 +982,18 @@ const DetailsDialog = ({ scan })=>{
                                     children: scan.ocrText
                                 }, void 0, false, {
                                     fileName: "[project]/components/shop/verifications/verification-table/detailsDialog.jsx",
-                                    lineNumber: 109,
+                                    lineNumber: 110,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/components/shop/verifications/verification-table/detailsDialog.jsx",
-                                lineNumber: 108,
+                                lineNumber: 109,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/shop/verifications/verification-table/detailsDialog.jsx",
-                        lineNumber: 100,
+                        lineNumber: 101,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -1000,19 +1008,19 @@ const DetailsDialog = ({ scan })=>{
                                             className: "h-4 w-4 text-primary"
                                         }, void 0, false, {
                                             fileName: "[project]/components/shop/verifications/verification-table/detailsDialog.jsx",
-                                            lineNumber: 120,
+                                            lineNumber: 121,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         "Timeline"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shop/verifications/verification-table/detailsDialog.jsx",
-                                    lineNumber: 119,
+                                    lineNumber: 120,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/components/shop/verifications/verification-table/detailsDialog.jsx",
-                                lineNumber: 118,
+                                lineNumber: 119,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -1023,7 +1031,7 @@ const DetailsDialog = ({ scan })=>{
                                         value: new Date(scan.createdAt).toLocaleString()
                                     }, void 0, false, {
                                         fileName: "[project]/components/shop/verifications/verification-table/detailsDialog.jsx",
-                                        lineNumber: 126,
+                                        lineNumber: 127,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoRow, {
@@ -1031,19 +1039,19 @@ const DetailsDialog = ({ scan })=>{
                                         value: scan.verifiedAt ? new Date(scan.verifiedAt).toLocaleString() : null
                                     }, void 0, false, {
                                         fileName: "[project]/components/shop/verifications/verification-table/detailsDialog.jsx",
-                                        lineNumber: 130,
+                                        lineNumber: 131,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/shop/verifications/verification-table/detailsDialog.jsx",
-                                lineNumber: 125,
+                                lineNumber: 126,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/shop/verifications/verification-table/detailsDialog.jsx",
-                        lineNumber: 117,
+                        lineNumber: 118,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]

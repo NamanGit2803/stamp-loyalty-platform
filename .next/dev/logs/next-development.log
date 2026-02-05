@@ -792,3 +792,226 @@ Argument `shopId` must not be null.
 [46:10:28.244] Server  LOG     id "shop_0cd61cP2"
 [46:10:32.330] Server  LOG     ststus TRIAL_ACTIVE
 [46:10:35.489] Server  LOG     ststus TRIAL_ACTIVE
+[46:27:52.964] Server  LOG     ststus TRIAL_ACTIVE
+[46:28:26.231] Server  LOG        Reload env: .env
+[46:28:32.258] Server  LOG     ststus TRIAL_ACTIVE
+[46:31:41.032] Server  LOG      ✓ Compiled in 3.1s
+[46:39:13.058] Server  LOG     ststus TRIAL_ACTIVE
+[46:42:28.289] Server  LOG      ✓ Compiled in 1109ms
+[46:44:29.718] Server  LOG      ✓ Compiled in 1861ms
+[46:46:48.194] Server  LOG      ✓ Compiled in 953ms
+[46:46:49.965] Server  LOG     ststus TRIAL_ACTIVE
+[46:46:52.524] Server  LOG     ststus TRIAL_ACTIVE
+[46:46:53.350] Server  LOG     ststus TRIAL_ACTIVE
+[46:46:54.269] Server  LOG     ststus TRIAL_ACTIVE
+[46:46:55.185] Server  LOG     ststus TRIAL_ACTIVE
+[46:46:56.882] Server  LOG     ststus TRIAL_ACTIVE
+[46:56:58.883] Server  LOG      ✓ Compiled in 3s
+[46:57:01.508] Server  LOG     ststus TRIAL_ACTIVE
+[46:57:04.086] Server  LOG     ststus TRIAL_ACTIVE
+[46:57:04.859] Server  LOG     ststus TRIAL_ACTIVE
+[46:57:05.661] Server  LOG     ststus TRIAL_ACTIVE
+[46:57:06.499] Server  LOG     ststus TRIAL_ACTIVE
+[46:57:07.270] Server  LOG     ststus TRIAL_ACTIVE
+[46:58:18.040] Server  LOG      ✓ Compiled in 571ms
+[46:58:18.849] Server  LOG     ststus TRIAL_ACTIVE
+[46:58:25.041] Server  LOG     ststus TRIAL_ACTIVE
+[46:58:25.065] Server  LOG      ✓ Compiled in 828ms
+[46:58:26.529] Server  LOG     ststus TRIAL_ACTIVE
+[46:58:27.406] Server  LOG     ststus TRIAL_ACTIVE
+[46:58:28.228] Server  LOG     ststus TRIAL_ACTIVE
+[46:58:29.132] Server  LOG     ststus TRIAL_ACTIVE
+[46:58:29.866] Server  LOG     ststus TRIAL_ACTIVE
+[46:58:30.704] Server  LOG     ststus TRIAL_ACTIVE
+[46:58:32.100] Server  LOG     ststus TRIAL_ACTIVE
+[46:58:32.854] Server  LOG     ststus TRIAL_ACTIVE
+[46:58:33.846] Server  LOG     ststus TRIAL_ACTIVE
+[46:58:34.676] Server  LOG     ststus TRIAL_ACTIVE
+[46:58:56.599] Server  LOG      ✓ Compiled in 656ms
+[46:58:57.382] Server  LOG     ststus TRIAL_ACTIVE
+[46:58:59.133] Server  LOG     ststus TRIAL_ACTIVE
+[46:59:00.064] Server  LOG     ststus TRIAL_ACTIVE
+[46:59:01.109] Server  LOG     ststus TRIAL_ACTIVE
+[46:59:02.091] Server  LOG     ststus TRIAL_ACTIVE
+[46:59:02.838] Server  LOG     ststus TRIAL_ACTIVE
+[46:59:51.648] Server  LOG      ✓ Compiled in 663ms
+[46:59:52.507] Server  LOG     ststus TRIAL_ACTIVE
+[46:59:53.882] Server  LOG     ststus TRIAL_ACTIVE
+[46:59:54.768] Server  LOG     ststus TRIAL_ACTIVE
+[46:59:55.664] Server  LOG     ststus TRIAL_ACTIVE
+[46:59:56.564] Server  LOG     ststus TRIAL_ACTIVE
+[46:59:57.304] Server  LOG     ststus TRIAL_ACTIVE
+[47:00:19.936] Server  LOG      ✓ Compiled in 549ms
+[47:00:20.751] Server  LOG     ststus TRIAL_ACTIVE
+[47:00:22.503] Server  LOG     ststus TRIAL_ACTIVE
+[47:00:23.510] Server  LOG     ststus TRIAL_ACTIVE
+[47:00:24.251] Server  LOG     ststus TRIAL_ACTIVE
+[47:00:25.162] Server  LOG     ststus TRIAL_ACTIVE
+[47:00:25.984] Server  LOG     ststus TRIAL_ACTIVE
+[47:00:32.768] Server  LOG      ✓ Compiled in 2.8s
+[47:00:33.211] Server  LOG     ststus TRIAL_ACTIVE
+[47:00:34.381] Server  LOG     ststus TRIAL_ACTIVE
+[47:00:35.337] Server  LOG     ststus TRIAL_ACTIVE
+[47:00:36.690] Server  LOG     ststus TRIAL_ACTIVE
+[47:00:37.951] Server  LOG     ststus TRIAL_ACTIVE
+[47:00:38.937] Server  LOG     ststus TRIAL_ACTIVE
+[47:01:32.111] Server  LOG      ✓ Compiled in 1500ms
+[47:01:32.937] Server  LOG     ststus TRIAL_ACTIVE
+[47:01:34.412] Server  LOG     ststus TRIAL_ACTIVE
+[47:01:35.258] Server  LOG     ststus TRIAL_ACTIVE
+[47:01:36.180] Server  LOG     ststus TRIAL_ACTIVE
+[47:01:37.055] Server  LOG     ststus TRIAL_ACTIVE
+[47:01:38.449] Server  LOG     ststus TRIAL_ACTIVE
+[47:02:23.180] Server  LOG      ✓ Compiled in 626ms
+[47:02:23.699] Server  LOG     ststus TRIAL_ACTIVE
+[47:02:25.294] Server  LOG     ststus TRIAL_ACTIVE
+[47:02:26.031] Server  LOG     ststus TRIAL_ACTIVE
+[47:02:26.671] Server  LOG     ststus TRIAL_ACTIVE
+[47:02:27.310] Server  LOG     ststus TRIAL_ACTIVE
+[47:02:28.121] Server  LOG     ststus TRIAL_ACTIVE
+[47:03:34.906] Server  LOG      ✓ Compiled in 2.1s
+[47:03:35.320] Server  LOG     ststus TRIAL_ACTIVE
+[47:03:36.881] Server  LOG     ststus TRIAL_ACTIVE
+[47:03:37.489] Server  LOG     ststus TRIAL_ACTIVE
+[47:03:38.074] Server  LOG     ststus TRIAL_ACTIVE
+[47:03:38.799] Server  LOG     ststus TRIAL_ACTIVE
+[47:03:39.359] Server  LOG     ststus TRIAL_ACTIVE
+[47:06:14.069] Server  LOG      ✓ Compiled in 1349ms
+[47:06:53.795] Server  LOG      ✓ Compiled in 5.6s
+[47:06:54.464] Server  LOG     ststus TRIAL_ACTIVE
+[47:06:54.480] Server  LOG     ststus TRIAL_ACTIVE
+[47:06:54.598] Server  LOG     ststus TRIAL_ACTIVE
+[47:06:54.614] Server  LOG     ststus TRIAL_ACTIVE
+[47:06:54.666] Server  LOG     ststus TRIAL_ACTIVE
+[47:06:54.686] Server  LOG     ststus TRIAL_ACTIVE
+[47:07:03.318] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[47:07:04.995] Server  LOG     id "shop_0cd61cP2"
+[47:07:34.512] Server  LOG      ✓ Compiled in 581ms
+[47:07:47.646] Server  LOG      ✓ Compiled in 2s
+[47:08:11.084] Server  LOG      ✓ Compiled in 949ms
+[47:08:15.754] Server  LOG      ✓ Compiled in 722ms
+[47:10:48.572] Server  LOG      ✓ Compiled in 707ms
+[47:10:50.166] Server  LOG     ststus TRIAL_ACTIVE
+[47:11:11.244] Server  LOG     ststus TRIAL_ACTIVE
+[47:11:12.223] Server  LOG     ststus TRIAL_ACTIVE
+[47:11:12.888] Server  LOG     ststus TRIAL_ACTIVE
+[47:11:13.573] Server  LOG     ststus TRIAL_ACTIVE
+[47:11:14.351] Server  LOG     ststus TRIAL_ACTIVE
+[47:11:25.072] Server  LOG      ✓ Compiled in 599ms
+[47:11:25.509] Server  LOG     ststus TRIAL_ACTIVE
+[47:11:28.813] Server  LOG     ststus TRIAL_ACTIVE
+[47:11:29.757] Server  LOG     ststus TRIAL_ACTIVE
+[47:11:30.791] Server  LOG     ststus TRIAL_ACTIVE
+[47:11:32.220] Server  LOG     ststus TRIAL_ACTIVE
+[47:11:33.259] Server  LOG     ststus TRIAL_ACTIVE
+[47:11:41.576] Server  LOG      ✓ Compiled in 1210ms
+[47:11:42.074] Server  LOG     ststus TRIAL_ACTIVE
+[47:11:43.369] Server  LOG     ststus TRIAL_ACTIVE
+[47:11:44.454] Server  LOG     ststus TRIAL_ACTIVE
+[47:11:45.247] Server  LOG     ststus TRIAL_ACTIVE
+[47:11:46.385] Server  LOG     ststus TRIAL_ACTIVE
+[47:11:47.442] Server  LOG     ststus TRIAL_ACTIVE
+[47:11:57.730] Server  LOG      ✓ Compiled in 990ms
+[47:12:43.942] Server  LOG      ✓ Compiled in 571ms
+[47:12:44.398] Server  LOG     ststus TRIAL_ACTIVE
+[47:12:45.669] Server  LOG     ststus TRIAL_ACTIVE
+[47:12:46.358] Server  LOG     ststus TRIAL_ACTIVE
+[47:12:47.029] Server  LOG     ststus TRIAL_ACTIVE
+[47:12:47.675] Server  LOG     ststus TRIAL_ACTIVE
+[47:12:48.356] Server  LOG     ststus TRIAL_ACTIVE
+[47:14:22.211] Server  LOG      ✓ Compiled in 1022ms
+[47:14:22.881] Server  LOG     ststus TRIAL_ACTIVE
+[47:14:24.256] Server  LOG     ststus TRIAL_ACTIVE
+[47:14:24.984] Server  LOG     ststus TRIAL_ACTIVE
+[47:14:25.628] Server  LOG     ststus TRIAL_ACTIVE
+[47:14:26.307] Server  LOG     ststus TRIAL_ACTIVE
+[47:14:27.217] Server  LOG     ststus TRIAL_ACTIVE
+[47:15:00.073] Server  LOG      ✓ Compiled in 1110ms
+[47:15:00.748] Server  LOG     ststus TRIAL_ACTIVE
+[47:15:02.158] Server  LOG     ststus TRIAL_ACTIVE
+[47:15:02.843] Server  LOG     ststus TRIAL_ACTIVE
+[47:15:03.462] Server  LOG     ststus TRIAL_ACTIVE
+[47:15:04.151] Server  LOG     ststus TRIAL_ACTIVE
+[47:15:04.888] Server  LOG     ststus TRIAL_ACTIVE
+[47:17:14.493] Server  LOG      ✓ Compiled in 1072ms
+[47:17:15.000] Server  LOG     ststus TRIAL_ACTIVE
+[47:17:16.048] Server  LOG     ststus TRIAL_ACTIVE
+[47:17:16.681] Server  LOG     ststus TRIAL_ACTIVE
+[47:17:17.663] Server  LOG     ststus TRIAL_ACTIVE
+[47:17:18.288] Server  LOG     ststus TRIAL_ACTIVE
+[47:17:19.031] Server  LOG     ststus TRIAL_ACTIVE
+[47:17:25.616] Server  LOG      ✓ Compiled in 1070ms
+[47:17:26.030] Server  LOG     ststus TRIAL_ACTIVE
+[47:17:27.232] Server  LOG     ststus TRIAL_ACTIVE
+[47:17:27.914] Server  LOG     ststus TRIAL_ACTIVE
+[47:17:28.599] Server  LOG     ststus TRIAL_ACTIVE
+[47:17:29.284] Server  LOG     ststus TRIAL_ACTIVE
+[47:17:29.982] Server  LOG     ststus TRIAL_ACTIVE
+[47:17:38.834] Server  LOG      ✓ Compiled in 1719ms
+[47:17:39.377] Server  LOG     ststus TRIAL_ACTIVE
+[47:17:40.597] Server  LOG     ststus TRIAL_ACTIVE
+[47:17:41.245] Server  LOG     ststus TRIAL_ACTIVE
+[47:17:41.998] Server  LOG     ststus TRIAL_ACTIVE
+[47:17:42.794] Server  LOG     ststus TRIAL_ACTIVE
+[47:17:43.448] Server  LOG     ststus TRIAL_ACTIVE
+[47:18:37.853] Server  LOG      ✓ Compiled in 1112ms
+[47:19:47.888] Server  LOG      ✓ Compiled in 2.8s
+[47:20:01.276] Server  LOG      ✓ Compiled in 648ms
+[47:20:18.176] Server  LOG      ✓ Compiled in 668ms
+[47:20:32.049] Server  LOG      ✓ Compiled in 543ms
+[47:20:47.947] Server  LOG      ✓ Compiled in 584ms
+[47:21:02.760] Server  LOG      ✓ Compiled in 797ms
+[47:21:16.308] Server  LOG      ✓ Compiled in 935ms
+[47:21:45.778] Server  LOG      ✓ Compiled in 560ms
+[47:30:00.244] Server  LOG      ✓ Compiled in 816ms
+[47:31:37.914] Server  LOG      ✓ Compiled in 924ms
+[47:31:54.970] Server  LOG      ✓ Compiled in 730ms
+[47:32:04.686] Server  LOG      ✓ Compiled in 757ms
+[47:32:17.513] Server  LOG      ✓ Compiled in 1047ms
+[47:32:29.030] Server  LOG      ✓ Compiled in 610ms
+[47:32:42.214] Server  LOG      ✓ Compiled in 989ms
+[47:32:49.834] Server  LOG      ✓ Compiled in 586ms
+[48:03:59.130] Server  LOG      ✓ Compiled in 1284ms
+[48:04:01.920] Server  LOG     ststus TRIAL_ACTIVE
+[48:04:04.711] Server  LOG     ststus TRIAL_ACTIVE
+[48:04:05.616] Server  LOG     ststus TRIAL_ACTIVE
+[48:04:06.381] Server  LOG     ststus TRIAL_ACTIVE
+[48:04:07.509] Server  LOG     ststus TRIAL_ACTIVE
+[48:04:08.223] Server  LOG     ststus TRIAL_ACTIVE
+[48:04:26.734] Server  LOG      ✓ Compiled in 1357ms
+[48:04:27.184] Server  LOG     ststus TRIAL_ACTIVE
+[48:04:28.787] Server  LOG     ststus TRIAL_ACTIVE
+[48:04:29.512] Server  LOG     ststus TRIAL_ACTIVE
+[48:04:30.643] Server  LOG     ststus TRIAL_ACTIVE
+[48:04:31.441] Server  LOG     ststus TRIAL_ACTIVE
+[48:04:33.159] Server  LOG     ststus TRIAL_ACTIVE
+[48:05:12.760] Server  LOG      ✓ Compiled in 668ms
+[48:05:13.232] Server  LOG     ststus TRIAL_ACTIVE
+[48:05:15.822] Server  LOG     ststus TRIAL_ACTIVE
+[48:05:16.463] Server  LOG     ststus TRIAL_ACTIVE
+[48:05:17.045] Server  LOG     ststus TRIAL_ACTIVE
+[48:05:17.667] Server  LOG     ststus TRIAL_ACTIVE
+[48:05:18.298] Server  LOG     ststus TRIAL_ACTIVE
+[48:05:31.742] Server  LOG     ststus TRIAL_ACTIVE
+[48:05:42.140] Server  LOG     id "shop_0cd61cP2"
+[48:05:58.078] Server  LOG      ✓ Compiled in 1111ms
+[48:05:58.575] Server  LOG     ststus TRIAL_ACTIVE
+[48:06:00.582] Server  LOG     ststus TRIAL_ACTIVE
+[48:06:01.231] Server  LOG     ststus TRIAL_ACTIVE
+[48:06:02.052] Server  LOG     ststus TRIAL_ACTIVE
+[48:06:02.666] Server  LOG     ststus TRIAL_ACTIVE
+[48:06:03.446] Server  LOG     ststus TRIAL_ACTIVE
+[48:07:07.426] Server  LOG      ✓ Compiled in 2.3s
+[48:07:07.578] Server  LOG     ststus TRIAL_ACTIVE
+[48:07:09.059] Server  LOG     ststus TRIAL_ACTIVE
+[48:07:10.090] Server  LOG     ststus TRIAL_ACTIVE
+[48:07:10.855] Server  LOG     ststus TRIAL_ACTIVE
+[48:07:11.493] Server  LOG     ststus TRIAL_ACTIVE
+[48:07:12.186] Server  LOG     ststus TRIAL_ACTIVE
+[48:07:27.741] Server  LOG      ✓ Compiled in 859ms
+[48:07:28.250] Server  LOG     ststus TRIAL_ACTIVE
+[48:07:29.402] Server  LOG     ststus TRIAL_ACTIVE
+[48:07:30.094] Server  LOG     ststus TRIAL_ACTIVE
+[48:07:30.741] Server  LOG     ststus TRIAL_ACTIVE
+[48:07:32.389] Server  LOG     ststus TRIAL_ACTIVE
+[48:07:33.070] Server  LOG     ststus TRIAL_ACTIVE

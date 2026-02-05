@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import StatCard from "./stat-card";
 import { Card } from "@/components/ui/card";
-import Link from "next/link";
 import { observer } from "mobx-react-lite";
 import { useStore } from "@/stores/StoreProvider";
 import { IndianRupee, TicketPercent, Gift, Repeat } from 'lucide-react';
@@ -22,7 +21,7 @@ const DashboardHome = observer(() => {
     return (
       <div className="space-y-8">
         <div>
-          <h1 className="text-3xl font-bold text-secondary">
+          <h1 className="text-2xl sm:text-3xl font-bold text-secondary">
             Welcome Back,
           </h1>
           <p className="text-muted-foreground mt-1">

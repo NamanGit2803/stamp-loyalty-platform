@@ -89,6 +89,7 @@ const DetailsDialog = ({ scan }) => {
                     </CardHeader>
 
                     <CardContent className="space-y-1">
+                        <InfoRow label="Reject Reason" value={scan.rejectReason} />
                         <InfoRow label="App Detected" value={scan.appDetected} />
                         <InfoRow label="Screenshot Hash" value={scan.screenshotHash} />
                         <InfoRow label="Checksum" value={scan.checksum} />

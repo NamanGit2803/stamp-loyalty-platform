@@ -1,4 +1,3 @@
-import React from 'react'
 import AppSidebar from "@/components/shop/sidebar/app-sidebar"
 import ExpiryStatus from '@/components/shop/ExpiryStatus'
 import { Separator } from "@/components/ui/separator"
@@ -7,6 +6,7 @@ import {
     SidebarProvider,
     SidebarTrigger,
 } from "@/components/ui/sidebar"
+import NotificationMenu from "@/components/shop/notification/notificationMenu"
 import Link from 'next/link'
 
 
@@ -16,7 +16,8 @@ const ShopLayout = ({ children }) => {
             <AppSidebar />
             <SidebarInset className='bg-custom-gradient overflow-hidden'>
                 <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 w-full">
-                    <div className="flex items-center justify-between px-4 w-full">
+                    {/* normal vision  */}
+                    <div className="hidden sm:flex items-center justify-between px-4 w-full">
                         <div className='flex items-center gap-2'>
                             <SidebarTrigger className="-ml-1" />
                             <Separator
@@ -24,9 +25,31 @@ const ShopLayout = ({ children }) => {
                                 className="mr-2 data-[orientation=vertical]:h-4"
                             />
                             <ExpiryStatus />
+                            
                         </div>
 
-                        <Link href={'/'} className='logo-font flex items-center text-secondary tracking-wide text-lg'>{process.env.NEXT_PUBLIC_SITE_NAME ?? 'brand name'}</Link>
+                        <div className="flex items-center gap-4">
+                            <NotificationMenu />
+                            <Link href={'/'} className='logo-font flex items-center text-secondary tracking-wide text-lg'>{process.env.NEXT_PUBLIC_SITE_NAME ?? 'brand name'}</Link>
+                        </div>
+                    </div>
+
+                    {/* mobile vision  */}
+                    <div className="flex sm:hidden justify-between px-4 w-full">
+                        <div className='flex items-baseline gap-2'>
+                            <SidebarTrigger className="-ml-1" />
+                            <Separator
+                                orientation="vertical"
+                                className="mr-2 data-[orientation=vertical]:h-4"
+                            />
+                            <div className='flex flex-col gap-0.5'>
+                                <Link href={'/'} className='logo-font flex items-center text-secondary tracking-wide text-lg'>{process.env.NEXT_PUBLIC_SITE_NAME ?? 'brand name'}</Link>
+                                <ExpiryStatus />
+                            </div>
+                        </div>
+                        <div className="flex items-baseline pt-1">
+                        <NotificationMenu />
+                        </div>
                     </div>
                 </header>
                 <div className="p-4 md:p-8">{children}</div>
