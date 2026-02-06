@@ -1,49 +1,88 @@
 {
   "app": {
     "[project]/app/(auth)/login/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
+    ],
+    "[project]/app/(auth)/plans/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
+    ],
+    "[project]/app/(auth)/reset-password/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
     ],
     "[project]/app/(auth)/signup/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
+    ],
+    "[project]/app/(public)/about/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
+    ],
+    "[project]/app/(public)/contact/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
+    ],
+    "[project]/app/(public)/features/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
+    ],
+    "[project]/app/(public)/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
+    ],
+    "[project]/app/(public)/privacy/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
+    ],
+    "[project]/app/(public)/terms/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
     ],
     "[project]/app/_not-found/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
     ],
     "[project]/app/claim/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
-    ],
-    "[project]/app/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
-    ],
-    "[project]/app/plans/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
     ],
     "[project]/app/shop/[shopId]/billing/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
     ],
     "[project]/app/shop/[shopId]/customers/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
     ],
     "[project]/app/shop/[shopId]/myAccount/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
     ],
     "[project]/app/shop/[shopId]/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
     ],
     "[project]/app/shop/[shopId]/qr-code/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
     ],
     "[project]/app/shop/[shopId]/rewards/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
     ],
     "[project]/app/shop/[shopId]/settings/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
     ],
     "[project]/app/shop/[shopId]/transactions/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
     ],
     "[project]/app/shop/[shopId]/verifications/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/7f20430e44eb7422-s.p.bd5bbcc6.woff2"
     ]
   },
   "appUsingSizeAdjust": true,

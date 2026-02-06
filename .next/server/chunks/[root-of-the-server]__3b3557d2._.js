@@ -1,0 +1,52 @@
+module.exports=[18622,(e,t,r)=>{t.exports=e.x("next/dist/compiled/next-server/app-page-turbo.runtime.prod.js",()=>require("next/dist/compiled/next-server/app-page-turbo.runtime.prod.js"))},56704,(e,t,r)=>{t.exports=e.x("next/dist/server/app-render/work-async-storage.external.js",()=>require("next/dist/server/app-render/work-async-storage.external.js"))},32319,(e,t,r)=>{t.exports=e.x("next/dist/server/app-render/work-unit-async-storage.external.js",()=>require("next/dist/server/app-render/work-unit-async-storage.external.js"))},24725,(e,t,r)=>{t.exports=e.x("next/dist/server/app-render/after-task-async-storage.external.js",()=>require("next/dist/server/app-render/after-task-async-storage.external.js"))},70406,(e,t,r)=>{t.exports=e.x("next/dist/compiled/@opentelemetry/api",()=>require("next/dist/compiled/@opentelemetry/api"))},93695,(e,t,r)=>{t.exports=e.x("next/dist/shared/lib/no-fallback-error.external.js",()=>require("next/dist/shared/lib/no-fallback-error.external.js"))},14747,(e,t,r)=>{t.exports=e.x("path",()=>require("path"))},54799,(e,t,r)=>{t.exports=e.x("crypto",()=>require("crypto"))},66680,(e,t,r)=>{t.exports=e.x("node:crypto",()=>require("node:crypto"))},88947,(e,t,r)=>{t.exports=e.x("stream",()=>require("stream"))},874,(e,t,r)=>{t.exports=e.x("buffer",()=>require("buffer"))},51615,(e,t,r)=>{t.exports=e.x("node:buffer",()=>require("node:buffer"))},71632,e=>{"use strict";function t({title:e,content:t}){return`
+  <!DOCTYPE html>
+  <html>
+    <body style="margin:0;font-family:Arial;background:#f6f9fc;padding:20px">
+      <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+          <td align="center">
+            <table width="600" style="background:#ffffff;border-radius:8px;padding:24px">
+              <tr>
+                <td style="text-align:center;font-size:24px;font-weight:bold;color:#6247AA">
+                  Stampi
+                </td>
+              </tr>
+
+              <tr><td style="padding:20px 0;font-size:18px;font-weight:bold">
+                ${e}
+              </td></tr>
+
+              <tr><td style="font-size:15px;color:#444">
+                ${t}
+              </td></tr>
+
+              <tr><td style="padding-top:30px;font-size:12px;color:#999;text-align:center">
+                \xa9 ${new Date().getFullYear()} Stampi \xb7 All rights reserved
+              </td></tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </body>
+  </html>
+  `}e.s(["baseEmailTemplate",()=>t])},33567,e=>{"use strict";var t=e.i(47909),r=e.i(74017),a=e.i(96250),n=e.i(59756),o=e.i(61916),s=e.i(14444),i=e.i(37092),l=e.i(69741),d=e.i(16795),p=e.i(87718),u=e.i(95169),c=e.i(47587),x=e.i(66012),f=e.i(70101),h=e.i(26937),m=e.i(10372),g=e.i(93695);e.i(52474);var v=e.i(220),R=e.i(89171),y=e.i(21892),w=e.i(71632);async function b({to:e,otp:t}){return(0,y.sendEmail)({to:e,subject:"Your Stampi OTP Code",html:function({otp:e}){return(0,w.baseEmailTemplate)({title:"Your OTP Code",content:`
+      <p>Your one-time password (OTP) is:</p>
+
+      <div style="
+        font-size:32px;
+        font-weight:bold;
+        letter-spacing:6px;
+        background:#f3f0ff;
+        padding:16px;
+        text-align:center;
+        border-radius:6px;
+        margin:20px 0;
+      ">
+        ${e}
+      </div>
+
+      <p>This OTP is valid for <b>5 minutes</b>.</p>
+      <p>If you didn’t request this, you can safely ignore this email.</p>
+    `})}({otp:t})})}let E=new Map;async function C(t){try{let{default:r}=await e.A(75296),{email:a,purpose:n}=await t.json();if(!a)return R.NextResponse.json({error:"Email required"},{status:400});if(!function(e,t=5,r=3e5){let a=Date.now(),n=E.get(e);return!n||a-n.startTime>r?(E.set(e,{count:1,startTime:a}),!0):!(n.count>=t)&&(n.count+=1,E.set(e,n),!0)}(a))return R.NextResponse.json({error:"Too many OTP requests. Please try again later."},{status:429});let o=Math.floor(1e5+9e5*Math.random()).toString(),s=new Date(Date.now()+3e5);return await r.otp.upsert({where:{email:a},update:{code:o,purpose:n,expiresAt:s},create:{email:a,code:o,purpose:n,expiresAt:s}}),await b({to:a,otp:o}),R.NextResponse.json({success:!0})}catch(e){return console.error("[otp send error]",e),R.NextResponse.json({error:"Server error"},{status:500})}}e.s(["POST",()=>C,"dynamic",0,"force-dynamic","runtime",0,"nodejs"],59829);var T=e.i(59829);let A=new t.AppRouteRouteModule({definition:{kind:r.RouteKind.APP_ROUTE,page:"/api/auth/otp/send/route",pathname:"/api/auth/otp/send",filename:"route",bundlePath:""},distDir:".next",relativeProjectDir:"",resolvedPagePath:"[project]/app/api/auth/otp/send/route.js",nextConfigOutput:"",userland:T}),{workAsyncStorage:P,workUnitAsyncStorage:q,serverHooks:O}=A;function N(){return(0,a.patchFetch)({workAsyncStorage:P,workUnitAsyncStorage:q})}async function j(e,t,a){A.isDev&&(0,n.addRequestMeta)(e,"devRequestTimingInternalsEnd",process.hrtime.bigint());let R="/api/auth/otp/send/route";R=R.replace(/\/index$/,"")||"/";let y=await A.prepare(e,t,{srcPage:R,multiZoneDraftMode:!1});if(!y)return t.statusCode=400,t.end("Bad Request"),null==a.waitUntil||a.waitUntil.call(a,Promise.resolve()),null;let{buildId:w,params:b,nextConfig:E,parsedUrl:C,isDraftMode:T,prerenderManifest:P,routerServerContext:q,isOnDemandRevalidate:O,revalidateOnlyGenerated:N,resolvedPathname:j,clientReferenceManifest:S,serverActionsManifest:k}=y,_=(0,l.normalizeAppPath)(R),M=!!(P.dynamicRoutes[_]||P.routes[j]),D=async()=>((null==q?void 0:q.render404)?await q.render404(e,t,C,!1):t.end("This page could not be found"),null);if(M&&!T){let e=!!P.routes[j],t=P.dynamicRoutes[_];if(t&&!1===t.fallback&&!e){if(E.experimental.adapterPath)return await D();throw new g.NoFallbackError}}let H=null;!M||A.isDev||T||(H="/index"===(H=j)?"/":H);let I=!0===A.isDev||!M,U=M&&!I;k&&S&&(0,s.setReferenceManifestsSingleton)({page:R,clientReferenceManifest:S,serverActionsManifest:k,serverModuleMap:(0,i.createServerModuleMap)({serverActionsManifest:k})});let $=e.method||"GET",F=(0,o.getTracer)(),K=F.getActiveScopeSpan(),z={params:b,prerenderManifest:P,renderOpts:{experimental:{authInterrupts:!!E.experimental.authInterrupts},cacheComponents:!!E.cacheComponents,supportsDynamicResponse:I,incrementalCache:(0,n.getRequestMeta)(e,"incrementalCache"),cacheLifeProfiles:E.cacheLife,waitUntil:a.waitUntil,onClose:e=>{t.on("close",e)},onAfterTaskError:void 0,onInstrumentationRequestError:(t,r,a)=>A.onRequestError(e,t,a,q)},sharedContext:{buildId:w}},B=new d.NodeNextRequest(e),L=new d.NodeNextResponse(t),Y=p.NextRequestAdapter.fromNodeNextRequest(B,(0,p.signalFromNodeResponse)(t));try{let s=async e=>A.handle(Y,z).finally(()=>{if(!e)return;e.setAttributes({"http.status_code":t.statusCode,"next.rsc":!1});let r=F.getRootSpanAttributes();if(!r)return;if(r.get("next.span_type")!==u.BaseServerSpan.handleRequest)return void console.warn(`Unexpected root span type '${r.get("next.span_type")}'. Please report this Next.js issue https://github.com/vercel/next.js`);let a=r.get("next.route");if(a){let t=`${$} ${a}`;e.setAttributes({"next.route":a,"http.route":a,"next.span_name":t}),e.updateName(t)}else e.updateName(`${$} ${R}`)}),i=!!(0,n.getRequestMeta)(e,"minimalMode"),l=async n=>{var o,l;let d=async({previousCacheEntry:r})=>{try{if(!i&&O&&N&&!r)return t.statusCode=404,t.setHeader("x-nextjs-cache","REVALIDATED"),t.end("This page could not be found"),null;let o=await s(n);e.fetchMetrics=z.renderOpts.fetchMetrics;let l=z.renderOpts.pendingWaitUntil;l&&a.waitUntil&&(a.waitUntil(l),l=void 0);let d=z.renderOpts.collectedTags;if(!M)return await (0,x.sendResponse)(B,L,o,z.renderOpts.pendingWaitUntil),null;{let e=await o.blob(),t=(0,f.toNodeOutgoingHttpHeaders)(o.headers);d&&(t[m.NEXT_CACHE_TAGS_HEADER]=d),!t["content-type"]&&e.type&&(t["content-type"]=e.type);let r=void 0!==z.renderOpts.collectedRevalidate&&!(z.renderOpts.collectedRevalidate>=m.INFINITE_CACHE)&&z.renderOpts.collectedRevalidate,a=void 0===z.renderOpts.collectedExpire||z.renderOpts.collectedExpire>=m.INFINITE_CACHE?void 0:z.renderOpts.collectedExpire;return{value:{kind:v.CachedRouteKind.APP_ROUTE,status:o.status,body:Buffer.from(await e.arrayBuffer()),headers:t},cacheControl:{revalidate:r,expire:a}}}}catch(t){throw(null==r?void 0:r.isStale)&&await A.onRequestError(e,t,{routerKind:"App Router",routePath:R,routeType:"route",revalidateReason:(0,c.getRevalidateReason)({isStaticGeneration:U,isOnDemandRevalidate:O})},q),t}},p=await A.handleResponse({req:e,nextConfig:E,cacheKey:H,routeKind:r.RouteKind.APP_ROUTE,isFallback:!1,prerenderManifest:P,isRoutePPREnabled:!1,isOnDemandRevalidate:O,revalidateOnlyGenerated:N,responseGenerator:d,waitUntil:a.waitUntil,isMinimalMode:i});if(!M)return null;if((null==p||null==(o=p.value)?void 0:o.kind)!==v.CachedRouteKind.APP_ROUTE)throw Object.defineProperty(Error(`Invariant: app-route received invalid cache entry ${null==p||null==(l=p.value)?void 0:l.kind}`),"__NEXT_ERROR_CODE",{value:"E701",enumerable:!1,configurable:!0});i||t.setHeader("x-nextjs-cache",O?"REVALIDATED":p.isMiss?"MISS":p.isStale?"STALE":"HIT"),T&&t.setHeader("Cache-Control","private, no-cache, no-store, max-age=0, must-revalidate");let u=(0,f.fromNodeOutgoingHttpHeaders)(p.value.headers);return i&&M||u.delete(m.NEXT_CACHE_TAGS_HEADER),!p.cacheControl||t.getHeader("Cache-Control")||u.get("Cache-Control")||u.set("Cache-Control",(0,h.getCacheControlHeader)(p.cacheControl)),await (0,x.sendResponse)(B,L,new Response(p.value.body,{headers:u,status:p.value.status||200})),null};K?await l(K):await F.withPropagatedContext(e.headers,()=>F.trace(u.BaseServerSpan.handleRequest,{spanName:`${$} ${R}`,kind:o.SpanKind.SERVER,attributes:{"http.method":$,"http.target":e.url}},l))}catch(t){if(t instanceof g.NoFallbackError||await A.onRequestError(e,t,{routerKind:"App Router",routePath:_,routeType:"route",revalidateReason:(0,c.getRevalidateReason)({isStaticGeneration:U,isOnDemandRevalidate:O})}),M)throw t;return await (0,x.sendResponse)(B,L,new Response(null,{status:500})),null}}e.s(["handler",()=>j,"patchFetch",()=>N,"routeModule",()=>A,"serverHooks",()=>O,"workAsyncStorage",()=>P,"workUnitAsyncStorage",()=>q],33567)},75296,e=>{e.v(t=>Promise.all(["server/chunks/[root-of-the-server]__7d27f5e0._.js"].map(t=>e.l(t))).then(()=>t(35508)))}];
+
+//# sourceMappingURL=%5Broot-of-the-server%5D__3b3557d2._.js.map

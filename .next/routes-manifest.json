@@ -113,6 +113,12 @@
       "namedRegex": "^/_not\\-found(?:/)?$"
     },
     {
+      "page": "/about",
+      "regex": "^/about(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about(?:/)?$"
+    },
+    {
       "page": "/api/auth/findShop",
       "regex": "^/api/auth/findShop(?:/)?$",
       "routeKeys": {},
@@ -125,10 +131,28 @@
       "namedRegex": "^/api/auth/findUser(?:/)?$"
     },
     {
+      "page": "/api/auth/forgotPassword/resetPassword",
+      "regex": "^/api/auth/forgotPassword/resetPassword(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/forgotPassword/resetPassword(?:/)?$"
+    },
+    {
+      "page": "/api/auth/forgotPassword/sendLink",
+      "regex": "^/api/auth/forgotPassword/sendLink(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/forgotPassword/sendLink(?:/)?$"
+    },
+    {
       "page": "/api/auth/login",
       "regex": "^/api/auth/login(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/api/auth/login(?:/)?$"
+    },
+    {
+      "page": "/api/auth/logout",
+      "regex": "^/api/auth/logout(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/logout(?:/)?$"
     },
     {
       "page": "/api/auth/otp/send",
@@ -155,10 +179,40 @@
       "namedRegex": "^/api/auth/signup/userCreate(?:/)?$"
     },
     {
+      "page": "/api/cashfree/webhook",
+      "regex": "^/api/cashfree/webhook(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/cashfree/webhook(?:/)?$"
+    },
+    {
+      "page": "/api/email/sendWelcomeEmail",
+      "regex": "^/api/email/sendWelcomeEmail(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/email/sendWelcomeEmail(?:/)?$"
+    },
+    {
+      "page": "/api/email/test-email",
+      "regex": "^/api/email/test\\-email(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/email/test\\-email(?:/)?$"
+    },
+    {
       "page": "/api/internal/subscription-check",
       "regex": "^/api/internal/subscription\\-check(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/api/internal/subscription\\-check(?:/)?$"
+    },
+    {
+      "page": "/api/plans/fetchPlans",
+      "regex": "^/api/plans/fetchPlans(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/plans/fetchPlans(?:/)?$"
+    },
+    {
+      "page": "/api/public/addCustomerName",
+      "regex": "^/api/public/addCustomerName(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/public/addCustomerName(?:/)?$"
     },
     {
       "page": "/api/public/checkShop",
@@ -171,6 +225,42 @@
       "regex": "^/api/screenshot/verify(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/api/screenshot/verify(?:/)?$"
+    },
+    {
+      "page": "/api/shop/customers/fetchAllCustomer",
+      "regex": "^/api/shop/customers/fetchAllCustomer(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/shop/customers/fetchAllCustomer(?:/)?$"
+    },
+    {
+      "page": "/api/shop/customers/rewardHistory",
+      "regex": "^/api/shop/customers/rewardHistory(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/shop/customers/rewardHistory(?:/)?$"
+    },
+    {
+      "page": "/api/shop/customers/rewardRedeem",
+      "regex": "^/api/shop/customers/rewardRedeem(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/shop/customers/rewardRedeem(?:/)?$"
+    },
+    {
+      "page": "/api/shop/paymentVerification/fetch",
+      "regex": "^/api/shop/paymentVerification/fetch(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/shop/paymentVerification/fetch(?:/)?$"
+    },
+    {
+      "page": "/api/shop/paymentVerification/manualVerify",
+      "regex": "^/api/shop/paymentVerification/manualVerify(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/shop/paymentVerification/manualVerify(?:/)?$"
+    },
+    {
+      "page": "/api/shop/shopDetails/update",
+      "regex": "^/api/shop/shopDetails/update(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/shop/shopDetails/update(?:/)?$"
     },
     {
       "page": "/api/shop/user/updateUserDetails",
@@ -209,6 +299,18 @@
       "namedRegex": "^/claim(?:/)?$"
     },
     {
+      "page": "/contact",
+      "regex": "^/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contact(?:/)?$"
+    },
+    {
+      "page": "/features",
+      "regex": "^/features(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/features(?:/)?$"
+    },
+    {
       "page": "/login",
       "regex": "^/login(?:/)?$",
       "routeKeys": {},
@@ -221,10 +323,28 @@
       "namedRegex": "^/plans(?:/)?$"
     },
     {
+      "page": "/privacy",
+      "regex": "^/privacy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/privacy(?:/)?$"
+    },
+    {
+      "page": "/reset-password",
+      "regex": "^/reset\\-password(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/reset\\-password(?:/)?$"
+    },
+    {
       "page": "/signup",
       "regex": "^/signup(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/signup(?:/)?$"
+    },
+    {
+      "page": "/terms",
+      "regex": "^/terms(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/terms(?:/)?$"
     }
   ],
   "dataRoutes": [],

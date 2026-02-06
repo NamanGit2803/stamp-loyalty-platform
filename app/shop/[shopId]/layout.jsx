@@ -1,3 +1,4 @@
+
 import AppSidebar from "@/components/shop/sidebar/app-sidebar"
 import ExpiryStatus from '@/components/shop/ExpiryStatus'
 import { Separator } from "@/components/ui/separator"
@@ -10,10 +11,13 @@ import NotificationMenu from "@/components/shop/notification/notificationMenu"
 import Link from 'next/link'
 
 
-const ShopLayout = ({ children }) => {
+const ShopLayout = async ({ children, params }) => {
+
+    const { shopId } = await params
+
     return (
         <SidebarProvider>
-            <AppSidebar />
+            <AppSidebar shopId={shopId}/>
             <SidebarInset className='bg-custom-gradient overflow-hidden'>
                 <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 w-full">
                     {/* normal vision  */}
@@ -25,7 +29,7 @@ const ShopLayout = ({ children }) => {
                                 className="mr-2 data-[orientation=vertical]:h-4"
                             />
                             <ExpiryStatus />
-                            
+
                         </div>
 
                         <div className="flex items-center gap-4">
@@ -48,7 +52,7 @@ const ShopLayout = ({ children }) => {
                             </div>
                         </div>
                         <div className="flex items-baseline pt-1">
-                        <NotificationMenu />
+                            <NotificationMenu />
                         </div>
                     </div>
                 </header>

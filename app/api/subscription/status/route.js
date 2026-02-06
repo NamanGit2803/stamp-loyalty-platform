@@ -11,7 +11,6 @@ export async function POST(req) {
 
     const { shopId } = await req.json();
 
-    console.log('id', shopId)
     if (!shopId) {
       return NextResponse.json({ error: "shopId required" }, { status: 400 });
     }

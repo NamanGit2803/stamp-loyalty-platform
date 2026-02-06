@@ -18,12 +18,12 @@ import {
 } from "@/components/ui/sidebar";
 
 
-const AppSidebar = (props) => {
+const AppSidebar = ({shopId, ...rest}) => {
 
     const { shopStore, userStore } = useStore()
 
     return (
-        <Sidebar collapsible="icon" {...props}>
+        <Sidebar collapsible="icon" {...rest}>
             {/* shop name  */}
             <SidebarHeader>
                 <div className="flex gap-2 items-center">
@@ -40,11 +40,11 @@ const AppSidebar = (props) => {
             <Separator/>
 
             <SidebarContent>
-                <NavMain shopId={shopStore.shop?.id} />
+                <NavMain shopId={shopStore.shop?.id ?? shopId} />
             </SidebarContent>
 
             <SidebarFooter>
-                <NavUser user={userStore.user} logout={userStore.logout} shopId={shopStore.shop?.id}/>
+                <NavUser user={userStore.user} logout={userStore.logout} shopId={shopStore.shop?.id ?? shopId}/>
             </SidebarFooter>
 
             <SidebarRail />
