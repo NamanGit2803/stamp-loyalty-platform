@@ -1168,7 +1168,6 @@ function NavMain({ shopId }) {
     _s();
     const pathname = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"])();
     const sidebar = (0, __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$sidebar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSidebar"])();
-    console.log("iddd", shopId);
     const navItems = [
         {
             label: "Home",
@@ -1227,41 +1226,41 @@ function NavMain({ shopId }) {
                                     className: "size-6"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shop/sidebar/nav-main.jsx",
-                                    lineNumber: 47,
+                                    lineNumber: 45,
                                     columnNumber: 19
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     children: item.label
                                 }, void 0, false, {
                                     fileName: "[project]/components/shop/sidebar/nav-main.jsx",
-                                    lineNumber: 48,
+                                    lineNumber: 46,
                                     columnNumber: 19
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/shop/sidebar/nav-main.jsx",
-                            lineNumber: 40,
+                            lineNumber: 38,
                             columnNumber: 17
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/shop/sidebar/nav-main.jsx",
-                        lineNumber: 39,
+                        lineNumber: 37,
                         columnNumber: 15
                     }, this)
                 }, item.label, false, {
                     fileName: "[project]/components/shop/sidebar/nav-main.jsx",
-                    lineNumber: 38,
+                    lineNumber: 36,
                     columnNumber: 13
                 }, this);
             })
         }, void 0, false, {
             fileName: "[project]/components/shop/sidebar/nav-main.jsx",
-            lineNumber: 33,
+            lineNumber: 31,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/shop/sidebar/nav-main.jsx",
-        lineNumber: 32,
+        lineNumber: 30,
         columnNumber: 5
     }, this);
 }
@@ -2029,31 +2028,55 @@ const ExpiryStatus = _s((0, __TURBOPACK__imported__module__$5b$project$5d2f$node
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0));
     }
-    const isTrial = shopStore.subscriptionStatus === 'trialing';
+    const isTrial = shopStore.subscriptionStatus === 'trialing' || shopStore.subscriptionStatus === 'trial_end';
     const daysLeft = ()=>{
         const days = shopStore.daysLeft ?? null;
         if (days === null || days === undefined) return "--";
-        if (days < 0) return "Expired";
-        if (days == 0) return "Today";
-        if (days == 1) return "Tomorrow";
-        return `${days} days`;
+        if (days < 0) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+            className: " font-semibold text-error-text-1",
+            children: "Expired"
+        }, void 0, false, {
+            fileName: "[project]/components/shop/ExpiryStatus.jsx",
+            lineNumber: 32,
+            columnNumber: 26
+        }, ("TURBOPACK compile-time value", void 0));
+        if (days == 0) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+            className: " font-semibold text-warning-text-2",
+            children: "Today"
+        }, void 0, false, {
+            fileName: "[project]/components/shop/ExpiryStatus.jsx",
+            lineNumber: 34,
+            columnNumber: 27
+        }, ("TURBOPACK compile-time value", void 0));
+        if (days == 1) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+            className: " font-semibold text-warning-text-1",
+            children: "Tomorrow"
+        }, void 0, false, {
+            fileName: "[project]/components/shop/ExpiryStatus.jsx",
+            lineNumber: 36,
+            columnNumber: 27
+        }, ("TURBOPACK compile-time value", void 0));
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+            className: " font-semibold text-primary",
+            children: [
+                days,
+                " days"
+            ]
+        }, void 0, true, {
+            fileName: "[project]/components/shop/ExpiryStatus.jsx",
+            lineNumber: 38,
+            columnNumber: 12
+        }, ("TURBOPACK compile-time value", void 0));
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "text-sm text-dark-text",
         children: [
             isTrial ? 'Free plan expires in: ' : 'Plan expires in: ',
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                className: "text-primary font-semibold",
-                children: daysLeft()
-            }, void 0, false, {
-                fileName: "[project]/components/shop/ExpiryStatus.jsx",
-                lineNumber: 44,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0))
+            daysLeft()
         ]
     }, void 0, true, {
         fileName: "[project]/components/shop/ExpiryStatus.jsx",
-        lineNumber: 42,
+        lineNumber: 43,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 }, "6S3J201DwR6ukmSme3y/2M2Uh5c=", false, function() {

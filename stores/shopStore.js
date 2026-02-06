@@ -7,6 +7,7 @@ class ShopStore {
   subscriptionStatus = "";
   daysLeft = null;
   plan = [];
+  dashboardStats = null;
 
   loading = false;
   error = null;
@@ -118,37 +119,72 @@ class ShopStore {
   calculateDaysLeft(sub) {
     if (!sub) return null;
 
-    // Convert any UTC timestamp → IST date-only (00:00)
-    const toISTDay = (date) => {
+    const now = new Date(); // actual current time in IST or local
+    const trialEndRaw = sub.trialEndsAt ? new Date(sub.trialEndsAt) : null;
+    const billingRaw = sub.nextBillingAt ? new Date(sub.nextBillingAt) : null;
+
+    // ✔ Check real-time expiry first
+    if (trialEndRaw && now > trialEndRaw) {
+      console.log('date hello')
+      return -1; // expired
+    }
+    if (billingRaw && now > billingRaw) {
+      return -1; // expired
+    }
+
+    // Convert to IST date-only
+    const toISTDateOnly = (date) => {
       const d = new Date(date);
-      const utc = d.getTime() + (d.getTimezoneOffset() * 60000);
-      const ist = new Date(utc + 5.5 * 60 * 60 * 1000);
+      const ist = new Date(d.getTime() + 5.5 * 3600 * 1000);
       return new Date(ist.getFullYear(), ist.getMonth(), ist.getDate());
     };
 
-    // TODAY (IST)
-    const now = new Date();
-    const utcNow = now.getTime() + (now.getTimezoneOffset() * 60000);
-    const nowIST = new Date(utcNow + 5.5 * 60 * 60 * 1000);
-    const todayIST = new Date(nowIST.getFullYear(), nowIST.getMonth(), nowIST.getDate());
+    const todayIST = toISTDateOnly(now);
 
-    // 1️⃣ Trial still valid?
+    // TRIAL
     if (sub.trialEndsAt) {
-      const trialEnd = toISTDay(sub.trialEndsAt);
+      const trialEnd = toISTDateOnly(sub.trialEndsAt);
       const diff = Math.floor((trialEnd - todayIST) / 86400000);
       if (diff >= 0) return diff;
     }
 
-    // 2️⃣ Paid subscription
+    // PAID
     if (sub.nextBillingAt) {
-      const billingDay = toISTDay(sub.nextBillingAt);
+      const billingDay = toISTDateOnly(sub.nextBillingAt);
       const diff = Math.floor((billingDay - todayIST) / 86400000);
-
-      return diff > 0 ? diff : 0;
+      return diff >= 0 ? diff : -1;
     }
 
-    return 0;
+    return -1;
   }
+
+
+  // get analytics 
+  async fetchDashboardStats() {
+    this.error = null;
+    this.loading = true;
+
+    try {
+      const res = await fetch("/api/shop/dashboardStats", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ shopId: this.shop?.id }),
+      });
+
+      const data = await res.json();
+
+      runInAction(() => {
+        this.dashboardStats = data;
+      });
+
+    } catch (error) {
+      runInAction(() => (this.error = err.message));
+    } finally {
+      this.loading = false;
+    }
+  }
+
+
 
 
 
@@ -188,7 +224,7 @@ class ShopStore {
    */
   async startTrial(planId) {
 
-    if(!this.shop) return
+    if (!this.shop) return
 
     this.loading = true;
     this.error = null;
@@ -235,8 +271,8 @@ class ShopStore {
 
 
   /*
- update paginatio
- */
+  update paginatio
+  */
   updatePagination(data) {
     this.pagination = {
       page: data.page,

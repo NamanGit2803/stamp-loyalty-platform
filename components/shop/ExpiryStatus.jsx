@@ -21,27 +21,28 @@ const ExpiryStatus = observer(() => {
     );
   }
 
-  const isTrial = shopStore.subscriptionStatus === 'trialing';
+  const isTrial = shopStore.subscriptionStatus === 'trialing' || shopStore.subscriptionStatus === 'trial_end';
 
   const daysLeft = () => {
     const days = shopStore.daysLeft ?? null;
 
+
     if (days === null || days === undefined) return "--";
 
-    if (days < 0) return "Expired";
+    if (days < 0) return <span className=' font-semibold text-error-text-1'>Expired</span>
 
-    if (days == 0) return "Today";
+    if (days == 0) return <span className=' font-semibold text-warning-text-2'>Today</span>
 
-    if (days == 1) return "Tomorrow";
+    if (days == 1) return <span className=' font-semibold text-warning-text-1'>Tomorrow</span>
 
-    return `${days} days`
+    return <span className=' font-semibold text-primary'>{days} days</span>
 
   }
 
   return (
     <div className='text-sm text-dark-text'>
       {isTrial ? 'Free plan expires in: ' : 'Plan expires in: '}
-      <span className='text-primary font-semibold'>{daysLeft()}</span>
+      {daysLeft()}
     </div>
   );
 });

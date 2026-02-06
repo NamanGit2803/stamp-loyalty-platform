@@ -1,42 +1,352 @@
-[00:00:10.491] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:12.024] Server  LOG      ✓ Ready in 8.7s
-[00:02:41.456] Server  LOG      ○ Compiling / ...
-[00:02:54.172] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:22.088] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:03:25.181] Server  LOG     ststus TRIAL_ACTIVE
-[00:03:34.058] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:03:34.061] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\_022cc41e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:03:34.071] Server  WARN    Error: Route "/shop/[shopId]" used `params.shopId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:34.687] Browser LOG     iddd shop_0cd61cP2
-[00:03:34.687] Browser LOG     iddd shop_0cd61cP2
-[00:03:35.179] Browser LOG     iddd shop_0cd61cP2
-[00:03:35.179] Browser LOG     iddd shop_0cd61cP2
-[00:06:31.383] Server  LOG      ✓ Compiled in 985ms
-[00:06:31.891] Server  LOG     ststus TRIAL_ACTIVE
-[00:06:34.621] Browser LOG     iddd shop_0cd61cP2
-[00:06:34.621] Browser LOG     iddd shop_0cd61cP2
-[00:06:34.621] Browser LOG     iddd shop_0cd61cP2
-[00:06:34.621] Browser LOG     iddd shop_0cd61cP2
-[00:06:37.982] Server  LOG     ststus TRIAL_ACTIVE
-[00:06:39.831] Server  LOG     iddd undefined
-[00:06:40.901] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:41.433] Browser LOG     iddd undefined
-[00:06:41.434] Browser LOG     iddd undefined
-[00:06:41.986] Browser LOG     iddd shop_0cd61cP2
-[00:06:41.986] Browser LOG     iddd shop_0cd61cP2
-[00:09:31.971] Server  LOG      ✓ Compiled in 1310ms
-[00:09:32.336] Server  LOG     ststus TRIAL_ACTIVE
-[00:09:34.458] Browser LOG     iddd shop_0cd61cP2
-[00:09:34.458] Browser LOG     iddd shop_0cd61cP2
-[00:09:34.458] Browser LOG     iddd shop_0cd61cP2
-[00:09:34.458] Browser LOG     iddd shop_0cd61cP2
-[00:16:23.336] Server  LOG      ✓ Compiled in 474ms
-[00:16:24.536] Server  LOG     ststus TRIAL_ACTIVE
-[00:16:27.260] Browser LOG     iddd shop_0cd61cP2
-[00:16:27.260] Browser LOG     iddd shop_0cd61cP2
-[00:16:27.260] Browser ERROR   React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element. shopId shopid
-[00:16:28.088] Browser LOG     iddd shop_0cd61cP2
-[00:16:28.088] Browser LOG     iddd shop_0cd61cP2
-[00:20:42.646] Server  LOG      ✓ Compiled in 787ms
-[00:20:43.097] Browser LOG     iddd shop_0cd61cP2
-[00:20:43.097] Browser LOG     iddd shop_0cd61cP2
+[00:00:08.478] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:10.242] Server  LOG      ✓ Ready in 7.6s
+[00:00:13.616] Server  LOG      ○ Compiling / ...
+[00:00:23.256] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:44.049] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
+[00:00:47.479] Server  LOG     ststus TRIAL_ACTIVE
+[00:00:55.798] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__34798da3._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:55.867] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:55.927] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_6e114b1d._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:55.953] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:55.984] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:55.998] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:56.000] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:56.003] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:56.014] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:56.017] Server  ERROR   Dashboard Stats Error: TypeError: Cannot read properties of undefined (reading 'id')
+[00:00:56.039] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__34798da3._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:56.044] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:56.047] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_6e114b1d._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:56.051] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:56.057] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:56.060] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:56.063] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:56.065] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:56.072] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:56.074] Server  ERROR   Dashboard Stats Error: TypeError: Cannot read properties of undefined (reading 'id')
+[00:05:42.385] Server  LOG     ststus TRIAL_ACTIVE
+[00:05:47.730] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:18.793] Server  LOG     ststus TRIAL_ACTIVE
+[00:06:20.103] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:51.847] Server  LOG      ✓ Compiled in 1771ms
+[00:06:58.398] Server  LOG     ststus TRIAL_ACTIVE
+[00:07:01.698] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:05.674] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <TooltipProvider delayDuration={0}>
+      <TooltipProvider data-slot="tooltip-pr..." delayDuration={0}>
+        <TooltipProviderProvider scope={undefined} isOpenDelayed={true} delayDuration={0} ...>
+          <div data-slot="sidebar-wr..." style={{...}} className="group/side...">
+            <AppSidebar shopId="shop_0cd61cP2">
+              <Sidebar collapsible="icon">
+                <div className="group peer..." data-state="expanded" data-collapsible="" data-variant="sidebar" ...>
+                  <div>
+                  <div data-slot="sidebar-co..." className="fixed inse...">
+                    <div data-sidebar="sidebar" data-slot="sidebar-inner" className="bg-sidebar...">
+                      <SidebarHeader>
+                        <div data-slot="sidebar-he..." data-sidebar="header" className="flex flex-...">
+                          <div className="flex gap-2...">
+                            <div>
+                            <div className="grid flex-1">
+                              <span className="truncate font-medium capitalize">
++                               {"The Street Cafe's"}
+-                               Shop Name
+                      ...
+            ...
+
+[00:07:05.674] Browser LOG     hello
+[00:07:05.674] Browser LOG     hello
+[00:07:09.767] Server  LOG     prisma:error "\nInvalid `prisma.customer.findMany()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__34798da3._.js:158:53\n\n  155     }\n  156 });\n  157 const target = shop?.targetStamps || 0;\n→ 158 const closeToReward = await prisma.customer.findMany({\n        where: {\n          shopId: \"shop_0cd61cP2\",\n          stampCount: {\n            gte: 2,\n            lt: \"6\"\n                ~~~\n          }\n        },\n        take: 5\n      })\n\nArgument `lt`: Invalid value provided. Expected Int or IntFieldRefInput, provided String."
+[00:07:09.772] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__34798da3._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:09.832] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:09.896] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_6e114b1d._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:09.899] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:09.900] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:09.902] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:09.905] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:09.907] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:09.908] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:09.913] Server  ERROR   Dashboard Stats Error: PrismaClientValidationError: 
+Invalid `prisma.customer.findMany()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__34798da3._.js:158:53
+
+  155     }
+  156 });
+  157 const target = shop?.targetStamps || 0;
+→ 158 const closeToReward = await prisma.customer.findMany({
+        where: {
+          shopId: "shop_0cd61cP2",
+          stampCount: {
+            gte: 2,
+            lt: "6"
+                ~~~
+          }
+        },
+        take: 5
+      })
+
+Argument `lt`: Invalid value provided. Expected Int or IntFieldRefInput, provided String.
+[00:07:09.940] Server  LOG     prisma:error "\nInvalid `prisma.customer.findMany()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__34798da3._.js:158:53\n\n  155     }\n  156 });\n  157 const target = shop?.targetStamps || 0;\n→ 158 const closeToReward = await prisma.customer.findMany({\n        where: {\n          shopId: \"shop_0cd61cP2\",\n          stampCount: {\n            gte: 2,\n            lt: \"6\"\n                ~~~\n          }\n        },\n        take: 5\n      })\n\nArgument `lt`: Invalid value provided. Expected Int or IntFieldRefInput, provided String."
+[00:07:09.942] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__34798da3._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:09.988] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:09.990] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_6e114b1d._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:09.992] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:09.993] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:09.997] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:10.053] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:10.056] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:10.057] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:10.060] Server  ERROR   Dashboard Stats Error: PrismaClientValidationError: 
+Invalid `prisma.customer.findMany()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__34798da3._.js:158:53
+
+  155     }
+  156 });
+  157 const target = shop?.targetStamps || 0;
+→ 158 const closeToReward = await prisma.customer.findMany({
+        where: {
+          shopId: "shop_0cd61cP2",
+          stampCount: {
+            gte: 2,
+            lt: "6"
+                ~~~
+          }
+        },
+        take: 5
+      })
+
+Argument `lt`: Invalid value provided. Expected Int or IntFieldRefInput, provided String.
+[00:09:37.122] Server  LOG     ststus TRIAL_ACTIVE
+[00:09:39.289] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:40.892] Browser LOG     hello
+[00:11:59.060] Server  LOG      ✓ Compiled in 980ms
+[00:13:00.529] Server  LOG      ✓ Compiled in 545ms
+[00:16:22.349] Server  LOG      ✓ Compiled in 551ms
+[00:17:26.863] Server  LOG      ✓ Compiled in 471ms
+[00:19:44.368] Server  LOG      ✓ Compiled in 547ms
+[00:21:26.279] Server  LOG      ✓ Compiled in 700ms
+[00:22:47.170] Server  LOG      ✓ Compiled in 479ms
+[00:22:51.577] Server  LOG      ✓ Compiled in 823ms
+[00:22:52.335] Browser ERROR   uncaughtError: ReferenceError: target is not defined
+[00:24:15.140] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:24:15.184] Server  LOG      ✓ Compiled in 511ms
+[00:24:16.575] Server  LOG     ststus TRIAL_ACTIVE
+[00:24:21.382] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:23.661] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'map')
+[00:24:32.010] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:24:32.033] Server  LOG      ✓ Compiled in 633ms
+[00:24:32.555] Server  LOG     ststus TRIAL_ACTIVE
+[00:24:34.300] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:26.592] Server  LOG      ✓ Compiled in 974ms
+[00:26:45.512] Server  LOG     ststus TRIAL_ACTIVE
+[00:26:47.210] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:27:13.715] Server  LOG      ✓ Compiled in 517ms
+[00:27:40.996] Server  LOG      ✓ Compiled in 842ms
+[00:28:11.474] Server  LOG      ✓ Compiled in 661ms
+[00:28:11.993] Browser ERROR   uncaughtError: ReferenceError: closeToReward is not defined
+[00:28:27.150] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:28:27.197] Server  LOG      ✓ Compiled in 512ms
+[00:28:27.694] Server  LOG     ststus TRIAL_ACTIVE
+[00:28:30.263] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:32:49.860] Server  LOG      ✓ Compiled in 542ms
+[00:33:40.567] Server  LOG      ✓ Compiled in 641ms
+[00:33:47.282] Server  LOG      ✓ Compiled in 907ms
+[00:37:45.616] Server  LOG      ✓ Compiled in 1004ms
+[00:39:56.466] Server  LOG      ✓ Compiled in 465ms
+[00:40:02.666] Server  LOG     ststus TRIAL_ACTIVE
+[00:40:06.746] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:40:08.391] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[00:40:10.082] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[00:40:13.446] Server  LOG     ststus TRIAL_ACTIVE
+[00:40:14.474] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:40:15.853] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[00:40:17.053] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[00:40:17.416] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[00:40:33.568] Server  LOG      ✓ Compiled in 1378ms
+[00:40:33.578] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:40:34.138] Server  LOG     ststus TRIAL_ACTIVE
+[00:40:34.143] Server  LOG     ststus TRIAL_ACTIVE
+[00:40:35.739] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:40:37.158] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[00:40:38.542] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[00:40:47.631] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:40:47.656] Server  LOG      ✓ Compiled in 695ms
+[00:40:48.326] Server  LOG     ststus TRIAL_ACTIVE
+[00:40:48.342] Server  LOG     ststus TRIAL_ACTIVE
+[00:40:54.658] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:40:56.993] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <div data-slot="sidebar-wr..." style={{...}} className="group/side...">
+      ...
+        <MenuProvider scope={{Menu:[...], ...}} onClose={function Menu.useCallback} isUsingKeyboardRef={{current:false}} ...>
+          <DropdownMenuTrigger asChild={true}>
+            <DropdownMenuTrigger data-slot="dropdown-m..." asChild={true}>
+              <MenuAnchor asChild={true} __scopeMenu={{Menu:[...], ...}}>
+                <PopperAnchor __scopePopper={{Menu:[...], ...}} asChild={true} ref={null}>
+                  <Primitive.div asChild={true} ref={function}>
+                    <Slot ref={function}>
+                      <SlotClone ref={function}>
+                        <Primitive.button type="button" id="radix-_R_4..." aria-haspopup="menu" aria-expanded={false} ...>
+                          <Slot type="button" id="radix-_R_4..." aria-haspopup="menu" aria-expanded={false} ...>
+                            <SlotClone type="button" id="radix-_R_4..." aria-haspopup="menu" aria-expanded={false} ...>
+                              <SidebarMenuButton size="lg" className="data-[stat..." type="button" id="radix-_R_4..." ...>
+                                <button
+                                  data-slot="dropdown-menu-trigger"
+                                  data-sidebar="menu-button"
+                                  data-size="lg"
+                                  data-active={false}
+                                  className={"peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded..."}
+                                  type="button"
++                                 id="radix-_R_4j5ritllb_"
+-                                 id="radix-_R_id5ritllb_"
+                                  aria-haspopup="menu"
+                                  aria-expanded={false}
+                                  aria-controls={undefined}
+                                  data-state="closed"
+                                  data-disabled={undefined}
+                                  disabled={false}
+                                  onPointerDown={function handleEvent}
+                                  onKeyDown={function handleEvent}
+                                  ref={function}
+                                >
+          ...
+      ...
+        <header className="flex h-16 ...">
+          ...
+            <MenuProvider scope={{Menu:[...], ...}} onClose={function Menu.useCallback} ...>
+              <DropdownMenuTrigger className="outline-no...">
+                <DropdownMenuTrigger data-slot="dropdown-m..." className="outline-no...">
+                  <MenuAnchor asChild={true} __scopeMenu={{Menu:[...], ...}}>
+                    <PopperAnchor __scopePopper={{Menu:[...], ...}} asChild={true} ref={null}>
+                      <Primitive.div asChild={true} ref={function}>
+                        <Slot ref={function}>
+                          <SlotClone ref={function}>
+                            <Primitive.button type="button" id="radix-_R_p..." aria-haspopup="menu" aria-expanded={false} ...>
+                              <button
+                                type="button"
++                               id="radix-_R_pd5ritllb_"
+-                               id="radix-_R_35l5ritllb_"
+                                aria-haspopup="menu"
+                                aria-expanded={false}
+                                aria-controls={undefined}
+                                data-state="closed"
+                                data-disabled={undefined}
+                                disabled={false}
+                                data-slot="dropdown-menu-trigger"
+                                className="outline-none relative"
+                                onPointerDown={function handleEvent}
+                                onKeyDown={function handleEvent}
+                                ref={function}
+                              >
+              ...
+          ...
+            <MenuProvider scope={{Menu:[...], ...}} onClose={function Menu.useCallback} ...>
+              <DropdownMenuTrigger className="outline-no...">
+                <DropdownMenuTrigger data-slot="dropdown-m..." className="outline-no...">
+                  <MenuAnchor asChild={true} __scopeMenu={{Menu:[...], ...}}>
+                    <PopperAnchor __scopePopper={{Menu:[...], ...}} asChild={true} ref={null}>
+                      <Primitive.div asChild={true} ref={function}>
+                        <Slot ref={function}>
+                          <SlotClone ref={function}>
+                            <Primitive.button type="button" id="radix-_R_a..." aria-haspopup="menu" aria-expanded={false} ...>
+                              <button
+                                type="button"
++                               id="radix-_R_ad5ritllb_"
+-                               id="radix-_R_19l5ritllb_"
+                                aria-haspopup="menu"
+                                aria-expanded={false}
+                                aria-controls={undefined}
+                                data-state="closed"
+                                data-disabled={undefined}
+                                disabled={false}
+                                data-slot="dropdown-menu-trigger"
+                                className="outline-none relative"
+                                onPointerDown={function handleEvent}
+                                onKeyDown={function handleEvent}
+                                ref={function}
+                              >
+              ...
+
+[00:40:57.176] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[00:40:58.242] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[00:40:58.688] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[00:41:23.202] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:41:23.236] Server  LOG      ✓ Compiled in 673ms
+[00:41:23.864] Server  LOG     ststus TRIAL_ACTIVE
+[00:41:23.869] Server  LOG     ststus TRIAL_ACTIVE
+[00:41:25.656] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:41:26.882] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[00:41:28.176] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[00:42:01.841] Server  LOG      ✓ Compiled in 2s
+[00:42:10.858] Server  LOG      ✓ Compiled in 634ms
+[00:42:28.152] Server  LOG      ✓ Compiled in 855ms
+[00:42:33.183] Server  LOG      ✓ Compiled in 615ms
+[00:43:42.260] Server  LOG      ✓ Compiled in 486ms
+[00:44:56.555] Server  LOG      ✓ Compiled in 580ms
+[00:45:09.780] Server  LOG      ✓ Compiled in 1020ms
+[00:45:20.867] Server  LOG      ✓ Compiled in 1290ms
+[00:45:29.478] Server  LOG      ✓ Compiled in 692ms
+[00:46:27.447] Server  LOG      ✓ Compiled in 600ms
+[00:46:41.166] Server  LOG      ✓ Compiled in 475ms
+[00:50:54.644] Server  LOG      ✓ Compiled in 1197ms
+[00:50:56.014] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
+
+Check the render method of `div`.  It was passed a child from BestCustomers.
+[00:51:17.795] Server  LOG      ✓ Compiled in 602ms
+[00:52:18.419] Server  LOG      ✓ Compiled in 592ms
+[00:54:47.827] Server  LOG      ✓ Compiled in 849ms
+[01:01:02.253] Server  LOG      ✓ Compiled in 4.8s
+[01:01:25.431] Server  LOG      ✓ Compiled in 1139ms
+[01:01:51.656] Server  LOG      ✓ Compiled in 535ms
+[01:02:12.631] Server  LOG      ✓ Compiled in 555ms
+[01:02:32.067] Server  LOG      ✓ Compiled in 981ms
+[01:02:43.367] Server  LOG      ✓ Compiled in 666ms
+[01:02:52.123] Server  LOG      ✓ Compiled in 1038ms
+[01:02:59.362] Server  LOG      ✓ Compiled in 1100ms
+[01:03:05.310] Server  LOG      ✓ Compiled in 1073ms
+[01:03:51.426] Server  LOG      ✓ Compiled in 566ms
+[01:03:52.014] Browser ERROR   uncaughtError: ReferenceError: Skeleton is not defined
+[01:04:08.917] Server  LOG      ✓ Compiled in 1014ms
+[01:04:08.924] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:04:11.491] Server  LOG     ststus TRIAL_ACTIVE
+[01:04:15.648] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:04:18.033] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[01:04:23.059] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[01:04:44.962] Server  LOG      ✓ Compiled in 554ms
+[01:05:01.358] Server  LOG      ✓ Compiled in 749ms
+[01:05:34.844] Server  LOG     ststus TRIAL_ACTIVE
+[01:05:36.538] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:05:37.943] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[01:05:39.167] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[01:07:28.053] Server  LOG      ✓ Compiled in 525ms
+[01:07:46.638] Server  LOG      ✓ Compiled in 531ms
+[01:08:07.992] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:08:07.995] Server  LOG      ✓ Compiled in 697ms
+[01:08:08.724] Server  LOG     ststus TRIAL_ACTIVE
+[01:08:08.760] Server  LOG     ststus TRIAL_ACTIVE
+[01:08:10.675] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:08:11.972] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[01:08:13.230] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[01:08:13.632] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading

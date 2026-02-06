@@ -86,6 +86,8 @@ model Shop {
   subscriptions Subscription[]
   payments      Payment[]
   scanVerifications ScanVerification[]    
+
+  @@index([id])
 }
 
 
@@ -108,6 +110,12 @@ model Customer {
   scanVerification ScanVerification[]
 
    @@unique([shopId, phone]) // 👈 unique per shop, not global
+
+   @@index([shopId, totalStampCount])
+   @@index([shopId, phone])
+   @@index([shopId, stampCount])
+
+
 }
 
 
@@ -146,6 +154,10 @@ model ScanVerification {
   @@index([shopId, utr])
   @@index([customerId])
   @@index([screenshotHash])
+  @@index([shopId, status, createdAt])
+  @@index([shopId, customerId, status, createdAt])
+
+
 }
 
 
@@ -183,6 +195,9 @@ model Reward {
 
   shop     Shop     @relation(fields: [shopId], references: [id])
   customer Customer @relation(fields: [customerId], references: [id])
+
+  @@index([shopId, createdAt])
+
 }
 
 model Plan {

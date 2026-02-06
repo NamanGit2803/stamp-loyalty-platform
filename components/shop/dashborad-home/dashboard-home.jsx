@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from "react";
 import StatCard from "./stat-card";
-import { Card } from "@/components/ui/card";
 import { observer } from "mobx-react-lite";
 import { useStore } from "@/stores/StoreProvider";
 import { IndianRupee, TicketPercent, Gift, Repeat } from 'lucide-react';
+import SettingOverviewCard from "./setting-overviewCard";
+import { BestCustomers } from "./best-customerCard";
+import { CloseToRewardCard } from "./customer-closeCard";
 
 const DashboardHome = observer(() => {
   const { shopStore, userStore } = useStore();
@@ -15,7 +17,15 @@ const DashboardHome = observer(() => {
 
   useEffect(() => {
     setHydrated(true);
+
   }, []);
+
+  useEffect(() => {
+    if (shopStore.shop?.id && !shopStore.dashboardStats) {
+      shopStore.fetchDashboardStats();
+    }
+  }, [shopStore.shop?.id]);
+
 
   if (!hydrated) {
     return (
@@ -32,32 +42,32 @@ const DashboardHome = observer(() => {
     );
   }
 
-  // ⭐ FINAL 4 ANALYTICS CARDS
+  // 4 ANALYTICS CARDS
   const stats = [
     {
-      label: "Revenue (This Month)",
-      value: "₹4,250",  // dynamic later
+      label: "Revenue",
+      value: shopStore.dashboardStats?.revenue || 0, 
       Icon: IndianRupee,
       trend: "up",
       trendValue: "+12%",
     },
     {
       label: "Stamps Given",
-      value: "342",
+      value: shopStore.dashboardStats?.stampsGiven || 0,
       Icon: TicketPercent,
       trend: "up",
       trendValue: "+18%",
     },
     {
       label: "Rewards Redeemed",
-      value: "8",
+      value: shopStore.dashboardStats?.rewardsRedeemed || 0,
       Icon: Gift,
       trend: "up",
       trendValue: "+6%",
     },
     {
       label: "Repeat Customer Rate",
-      value: "37%",
+      value: shopStore.dashboardStats?.repeatRate + '%' || 0,
       Icon: Repeat,
       trend: "up",
       trendValue: "+4%",
@@ -79,34 +89,16 @@ const DashboardHome = observer(() => {
       {/* Stats Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {stats.map((stat) => (
-          <StatCard key={stat.label} {...stat} />
+          <StatCard key={stat.label} {...stat}  loading={shopStore.loading} />
         ))}
       </div>
 
-      {/* Recent Activity */}
-      <Card className="p-6 border-blue-100">
-        <h2 className="text-xl font-bold text-blue-900 mb-6">
-          Recent Activity
-        </h2>
-        <div className="space-y-4">
-          {[
-            { customer: "Amit Kumar", action: "Earned 3 stamps", time: "2 hours ago" },
-            { customer: "Priya Singh", action: "Redeemed reward", time: "4 hours ago" },
-            { customer: "Vikram Patel", action: "New customer", time: "6 hours ago" },
-          ].map((activity, i) => (
-            <div
-              key={i}
-              className="flex items-center justify-between p-4 bg-blue-50 rounded-lg"
-            >
-              <div>
-                <p className="font-medium text-blue-900">{activity.customer}</p>
-                <p className="text-sm text-gray-600">{activity.action}</p>
-              </div>
-              <p className="text-sm text-gray-600">{activity.time}</p>
-            </div>
-          ))}
-        </div>
-      </Card>
+      <SettingOverviewCard shop={shopStore.shop} />
+
+      <div className="flex flex-col sm:flex-row gap-5">
+        <BestCustomers bestCustomers={shopStore.dashboardStats?.bestCustomers} loading={shopStore.loading}/>
+        <CloseToRewardCard closeToReward={shopStore.dashboardStats?.closeToReward} targetStamps={shopStore.shop?.targetStamps} loading={shopStore.loading}/>
+      </div>
     </div>
   );
 });

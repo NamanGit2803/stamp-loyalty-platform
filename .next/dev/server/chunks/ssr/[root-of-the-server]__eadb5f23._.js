@@ -260,6 +260,7 @@ class ShopStore {
     subscriptionStatus = "";
     daysLeft = null;
     plan = [];
+    dashboardStats = null;
     loading = false;
     error = null;
     hydrated = false;
@@ -305,9 +306,9 @@ class ShopStore {
             });
             // Now load subscription
             await this.loadSubscription();
-        } catch (err) {
+        } catch (err1) {
             (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
-                this.error = err.message;
+                this.error = err1.message;
                 this.shop = null;
                 this.subscription = null;
                 this.subscriptionStatus = "NONE";
@@ -338,9 +339,9 @@ class ShopStore {
                 this.subscriptionStatus = data.subscription.status || "NONE";
                 this.daysLeft = this.calculateDaysLeft(data.subscription);
             });
-        } catch (err) {
+        } catch (err1) {
             (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
-                this.error = err.message;
+                this.error = err1.message;
                 this.subscription = null;
                 this.subscriptionStatus = "NONE";
                 this.daysLeft = null;
@@ -351,31 +352,61 @@ class ShopStore {
    * Utility to calculate days left (extracted for clear logic).
    */ calculateDaysLeft(sub) {
         if (!sub) return null;
-        // Convert any UTC timestamp → IST date-only (00:00)
-        const toISTDay = (date)=>{
+        const now = new Date(); // actual current time in IST or local
+        const trialEndRaw = sub.trialEndsAt ? new Date(sub.trialEndsAt) : null;
+        const billingRaw = sub.nextBillingAt ? new Date(sub.nextBillingAt) : null;
+        // ✔ Check real-time expiry first
+        if (trialEndRaw && now > trialEndRaw) {
+            console.log('date hello');
+            return -1; // expired
+        }
+        if (billingRaw && now > billingRaw) {
+            return -1; // expired
+        }
+        // Convert to IST date-only
+        const toISTDateOnly = (date)=>{
             const d = new Date(date);
-            const utc = d.getTime() + d.getTimezoneOffset() * 60000;
-            const ist = new Date(utc + 5.5 * 60 * 60 * 1000);
+            const ist = new Date(d.getTime() + 5.5 * 3600 * 1000);
             return new Date(ist.getFullYear(), ist.getMonth(), ist.getDate());
         };
-        // TODAY (IST)
-        const now = new Date();
-        const utcNow = now.getTime() + now.getTimezoneOffset() * 60000;
-        const nowIST = new Date(utcNow + 5.5 * 60 * 60 * 1000);
-        const todayIST = new Date(nowIST.getFullYear(), nowIST.getMonth(), nowIST.getDate());
-        // 1️⃣ Trial still valid?
+        const todayIST = toISTDateOnly(now);
+        // TRIAL
         if (sub.trialEndsAt) {
-            const trialEnd = toISTDay(sub.trialEndsAt);
+            const trialEnd = toISTDateOnly(sub.trialEndsAt);
             const diff = Math.floor((trialEnd - todayIST) / 86400000);
             if (diff >= 0) return diff;
         }
-        // 2️⃣ Paid subscription
+        // PAID
         if (sub.nextBillingAt) {
-            const billingDay = toISTDay(sub.nextBillingAt);
+            const billingDay = toISTDateOnly(sub.nextBillingAt);
             const diff = Math.floor((billingDay - todayIST) / 86400000);
-            return diff > 0 ? diff : 0;
+            return diff >= 0 ? diff : -1;
         }
-        return 0;
+        return -1;
+    }
+    // get analytics 
+    async fetchDashboardStats() {
+        this.error = null;
+        this.loading = true;
+        try {
+            const res = await fetch("/api/shop/dashboardStats", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    shopId: this.shop?.id
+                })
+            });
+            const data = await res.json();
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>{
+                this.dashboardStats = data;
+            });
+        } catch (error) {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>this.error = err.message);
+        } finally{
+            this.loading = false;
+        }
     }
     /**
    * Creates a new shop
@@ -397,8 +428,8 @@ class ShopStore {
             });
             // start trial 
             await this.startTrial(planId);
-        } catch (err) {
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>this.error = err.message);
+        } catch (err1) {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>this.error = err1.message);
         } finally{
             this.loading = false;
         }
@@ -430,8 +461,8 @@ class ShopStore {
             if (!res.ok) throw new Error(data.error);
             // Refresh subscription
             await this.loadSubscription();
-        } catch (err) {
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>this.error = err.message);
+        } catch (err1) {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$mobx$2f$dist$2f$mobx$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runInAction"])(()=>this.error = err1.message);
         } finally{
             this.loading = false;
         }
@@ -447,8 +478,8 @@ class ShopStore {
         };
     }
     /*
- update paginatio
- */ updatePagination(data) {
+  update paginatio
+  */ updatePagination(data) {
         this.pagination = {
             page: data.page,
             total: data.total,
@@ -510,10 +541,10 @@ class ShopStore {
             await this.fetchCustomers({
                 page: this.pagination.page
             });
-        } catch (err) {
-            this.error = err.message;
+        } catch (err1) {
+            this.error = err1.message;
             return {
-                error: err.message
+                error: err1.message
             };
         } finally{
             this.loading = false;
@@ -577,10 +608,10 @@ class ShopStore {
                 search: '',
                 status: 'all'
             });
-        } catch (err) {
-            this.error = err.message;
+        } catch (err1) {
+            this.error = err1.message;
             return {
-                error: err.message
+                error: err1.message
             };
         } finally{
             this.loading = false;
@@ -633,10 +664,10 @@ class ShopStore {
             });
             const data = await res.json();
             if (!res.ok) throw new Error(data.error);
-        } catch (err) {
-            this.error = err.message;
+        } catch (err1) {
+            this.error = err1.message;
             return {
-                error: err.message
+                error: err1.message
             };
         } finally{
             this.loading = false;

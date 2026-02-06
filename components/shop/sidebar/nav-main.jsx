@@ -16,8 +16,6 @@ export function NavMain({ shopId }) {
   const pathname = usePathname();
   const sidebar = useSidebar();
 
-  console.log("iddd", shopId)
-
 
   const navItems = [
     { label: "Home", url: `/shop/${shopId}`, icon: LayoutDashboard, match: `/shop/${shopId}` },
