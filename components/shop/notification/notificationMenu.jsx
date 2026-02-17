@@ -36,7 +36,7 @@ export default function NotificationMenu() {
         <DropdownMenu>
             <DropdownMenuTrigger className="outline-none relative">
                 <Bell className="text-primary size-6 p-1 rounded-full hover:bg-gray-200 hover:cursor-pointer" />
-                <span className="absolute top-0 right-0 h-2 w-2 bg-secondary rounded-full"></span>
+                <span className="absolute top-0 right-0 h-2 w-2 bg-secondary rounded-full animate-pulse"></span>
             </DropdownMenuTrigger>
 
             <DropdownMenuContent className="w-80 p-0 rounded-xl shadow-xl bg-white/80 backdrop-blur-xl border border-gray-200">

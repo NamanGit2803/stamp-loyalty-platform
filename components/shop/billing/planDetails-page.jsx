@@ -19,7 +19,7 @@ const PlanDeatilsPage = () => {
     return (
         <div className='space-y-6'>
             {/* ---------------- Current Plan ---------------- */}
-            {shopStore.subscription?.status === 'trial_end' ? <TrialEndCard/>
+            {shopStore.subscription?.status === 'trial_end' ? <TrialEndCard />
                 :
                 <Card className='w-full'>
                     <CardHeader className="flex flex-row items-center gap-3 justify-between">
@@ -52,8 +52,14 @@ const PlanDeatilsPage = () => {
                 </CardHeader>
 
                 <CardContent className="space-y-2 text-sm">
-                    {shopStore.subscription?.plan?.features?.map((feat) => <p key={feat} className="text-dark-text">✔ {feat}</p>)}
+                    {shopStore.subscription?.plan?.features?.map((feat) => (
+                        <div key={feat} className="flex items-start space-x-2 text-dark-text">
+                            <span className="mt-0.5">✔</span>
+                            <span>{feat}</span>
+                        </div>
+                    ))}
                 </CardContent>
+
             </Card>}
 
 

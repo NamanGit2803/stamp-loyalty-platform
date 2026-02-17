@@ -773,16 +773,29 @@ const PlanDeatilsPage = ()=>{
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
                         className: "space-y-2 text-sm",
-                        children: shopStore.subscription?.plan?.features?.map((feat)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-dark-text",
+                        children: shopStore.subscription?.plan?.features?.map((feat)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-start space-x-2 text-dark-text",
                                 children: [
-                                    "✔ ",
-                                    feat
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "mt-0.5",
+                                        children: "✔"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/shop/billing/planDetails-page.jsx",
+                                        lineNumber: 57,
+                                        columnNumber: 29
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        children: feat
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/shop/billing/planDetails-page.jsx",
+                                        lineNumber: 58,
+                                        columnNumber: 29
+                                    }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, feat, true, {
                                 fileName: "[project]/components/shop/billing/planDetails-page.jsx",
-                                lineNumber: 55,
-                                columnNumber: 76
+                                lineNumber: 56,
+                                columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0)))
                     }, void 0, false, {
                         fileName: "[project]/components/shop/billing/planDetails-page.jsx",
@@ -806,19 +819,19 @@ const PlanDeatilsPage = ()=>{
                                     className: "w-5 h-5"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shop/billing/planDetails-page.jsx",
-                                    lineNumber: 63,
+                                    lineNumber: 69,
                                     columnNumber: 82
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 " Manage Subscription"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/shop/billing/planDetails-page.jsx",
-                            lineNumber: 63,
+                            lineNumber: 69,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/components/shop/billing/planDetails-page.jsx",
-                        lineNumber: 62,
+                        lineNumber: 68,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -828,18 +841,18 @@ const PlanDeatilsPage = ()=>{
                             children: "Cancel Subscription"
                         }, void 0, false, {
                             fileName: "[project]/components/shop/billing/planDetails-page.jsx",
-                            lineNumber: 67,
+                            lineNumber: 73,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/components/shop/billing/planDetails-page.jsx",
-                        lineNumber: 66,
+                        lineNumber: 72,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/shop/billing/planDetails-page.jsx",
-                lineNumber: 61,
+                lineNumber: 67,
                 columnNumber: 61
             }, ("TURBOPACK compile-time value", void 0))
         ]
@@ -1490,17 +1503,19 @@ var Content = TabsContent;
 "use strict";
 
 /**
- * @license lucide-react v0.454.0 - ISC
+ * @license lucide-react v0.563.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
     "default",
     ()=>LoaderCircle
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
 ;
-const LoaderCircle = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("LoaderCircle", [
+const __iconNode = [
     [
         "path",
         {
@@ -1508,7 +1523,8 @@ const LoaderCircle = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_mo
             key: "13zald"
         }
     ]
-]);
+];
+const LoaderCircle = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("loader-circle", __iconNode);
 ;
  //# sourceMappingURL=loader-circle.js.map
 }),
@@ -1525,17 +1541,19 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 "use strict";
 
 /**
- * @license lucide-react v0.454.0 - ISC
+ * @license lucide-react v0.563.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
     "default",
     ()=>CircleAlert
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
 ;
-const CircleAlert = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("CircleAlert", [
+const __iconNode = [
     [
         "circle",
         {
@@ -1565,7 +1583,8 @@ const CircleAlert = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_mod
             key: "4dfq90"
         }
     ]
-]);
+];
+const CircleAlert = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("circle-alert", __iconNode);
 ;
  //# sourceMappingURL=circle-alert.js.map
 }),
@@ -1582,17 +1601,19 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 "use strict";
 
 /**
- * @license lucide-react v0.454.0 - ISC
+ * @license lucide-react v0.563.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
     "default",
     ()=>Calendar
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
 ;
-const Calendar = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("Calendar", [
+const __iconNode = [
     [
         "path",
         {
@@ -1625,7 +1646,8 @@ const Calendar = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_module
             key: "8toen8"
         }
     ]
-]);
+];
+const Calendar = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("calendar", __iconNode);
 ;
  //# sourceMappingURL=calendar.js.map
 }),
@@ -1642,17 +1664,40 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 "use strict";
 
 /**
- * @license lucide-react v0.454.0 - ISC
+ * @license lucide-react v0.563.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
     "default",
     ()=>ListChecks
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
 ;
-const ListChecks = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("ListChecks", [
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M13 5h8",
+            key: "a7qcls"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M13 12h8",
+            key: "h98zly"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M13 19h8",
+            key: "c3s6r1"
+        }
+    ],
     [
         "path",
         {
@@ -1666,29 +1711,9 @@ const ListChecks = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modu
             d: "m3 7 2 2 4-4",
             key: "1obspn"
         }
-    ],
-    [
-        "path",
-        {
-            d: "M13 6h8",
-            key: "15sg57"
-        }
-    ],
-    [
-        "path",
-        {
-            d: "M13 12h8",
-            key: "h98zly"
-        }
-    ],
-    [
-        "path",
-        {
-            d: "M13 18h8",
-            key: "oe0vm4"
-        }
     ]
-]);
+];
+const ListChecks = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("list-checks", __iconNode);
 ;
  //# sourceMappingURL=list-checks.js.map
 }),
@@ -1705,29 +1730,31 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 "use strict";
 
 /**
- * @license lucide-react v0.454.0 - ISC
+ * @license lucide-react v0.563.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
     "default",
     ()=>Settings2
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
 ;
-const Settings2 = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("Settings2", [
-    [
-        "path",
-        {
-            d: "M20 7h-9",
-            key: "3s1dr2"
-        }
-    ],
+const __iconNode = [
     [
         "path",
         {
             d: "M14 17H5",
             key: "gfn3mx"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M19 7h-9",
+            key: "6i9tg"
         }
     ],
     [
@@ -1748,7 +1775,8 @@ const Settings2 = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modul
             key: "dfmy0x"
         }
     ]
-]);
+];
+const Settings2 = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("settings-2", __iconNode);
 ;
  //# sourceMappingURL=settings-2.js.map
 }),
@@ -1765,17 +1793,19 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 "use strict";
 
 /**
- * @license lucide-react v0.454.0 - ISC
+ * @license lucide-react v0.563.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
     "default",
     ()=>Star
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
 ;
-const Star = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("Star", [
+const __iconNode = [
     [
         "path",
         {
@@ -1783,7 +1813,8 @@ const Star = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f
             key: "r04s7s"
         }
     ]
-]);
+];
+const Star = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("star", __iconNode);
 ;
  //# sourceMappingURL=star.js.map
 }),
@@ -1800,17 +1831,26 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 "use strict";
 
 /**
- * @license lucide-react v0.454.0 - ISC
+ * @license lucide-react v0.563.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
     "default",
     ()=>Ban
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
 ;
-const Ban = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("Ban", [
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M4.929 4.929 19.07 19.071",
+            key: "196cmz"
+        }
+    ],
     [
         "circle",
         {
@@ -1819,15 +1859,9 @@ const Ban = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$
             r: "10",
             key: "1mglay"
         }
-    ],
-    [
-        "path",
-        {
-            d: "m4.9 4.9 14.2 14.2",
-            key: "1m5liu"
-        }
     ]
-]);
+];
+const Ban = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("ban", __iconNode);
 ;
  //# sourceMappingURL=ban.js.map
 }),

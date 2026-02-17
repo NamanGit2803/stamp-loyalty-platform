@@ -6,7 +6,7 @@ const Page = () => {
         <div className='space-y-6'>
             {/* header */}
             <div>
-                <h1 className="text-3xl font-bold text-secondary">My Account</h1>
+                <h1 className="text-2xl sm:text-3xl font-bold text-secondary">My Account</h1>
                 <p className="text-muted-foreground mt-1">Control your profile and account settings</p>
             </div>
 

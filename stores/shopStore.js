@@ -185,9 +185,7 @@ class ShopStore {
   }
 
 
-
-
-
+  
   /**
    * Creates a new shop
    */

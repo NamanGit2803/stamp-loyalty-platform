@@ -8,14 +8,14 @@ import { Skeleton } from "@/components/ui/skeleton"
 export function CloseToRewardCard({ closeToReward, targetStamps, loading }) {
     return (
         <Card className="w-full card">
-            <CardHeader>
+            <CardHeader className="p-0">
                 <CardTitle className="text-xl font-semibold flex items-center gap-2 text-primary">
                     <Gauge className="size-5 text-primary " />
                     Close to Reward
                 </CardTitle>
             </CardHeader>
 
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-4 p-0">
 
                 {/* skeleton  */}
                 {loading && (
@@ -40,7 +40,7 @@ export function CloseToRewardCard({ closeToReward, targetStamps, loading }) {
                 )}
 
                 {/* Existing List */}
-                {!loading && closeToReward?.map((c) => {
+                {!loading && closeToReward?.map((c, index) => {
                     const left = targetStamps - c.stampCount
 
                     return (
@@ -53,8 +53,13 @@ export function CloseToRewardCard({ closeToReward, targetStamps, loading }) {
                                     {c.name ? c.name[0] : ''}
                                 </div>
 
-                                <div>
-                                    <p className="font-medium">{c.name}</p>
+                                <div className="space-y-1.5 sm:space-y-1">
+                                    <p className="font-medium text-dark-text flex flex-col sm:flex-row sm:items-center sm:gap-2">
+                                        {index + 1}. {c.name}
+                                        <span className="text-xs text-muted-foreground">
+                                            (ID: <span className="text-primary">{c.id}</span>)
+                                        </span>
+                                    </p>
                                     <p className="text-sm text-muted-foreground">
                                         {c.stampCount} / {targetStamps} stamps ·{" "}
                                         {left === 1 ? "1 stamp left" : `${left} stamps left`}

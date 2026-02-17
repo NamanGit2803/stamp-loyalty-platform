@@ -55,7 +55,7 @@ const ProfileCard = () => {
                     </p>
                 </div>
 
-                <Button disabled={userStore.loading || userStore.user?.name === name} onClick={updateProfile} className="w-[20%] hover:cursor-pointer">{userStore.loading ? <><Spinner /> Saving Changes...</>
+                <Button disabled={userStore.loading || userStore.user?.name === name} onClick={updateProfile} className="hover:cursor-pointer">{userStore.loading ? <><Spinner /> Saving Changes...</>
                     : 'Save Changes'}</Button>
             </CardContent>
         </Card>

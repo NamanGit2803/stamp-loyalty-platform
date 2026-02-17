@@ -46,7 +46,9 @@ const DashboardHome = observer(() => {
   const stats = [
     {
       label: "Revenue",
-      value: shopStore.dashboardStats?.revenue || 0, 
+      value: (shopStore.dashboardStats?.revenue
+        ? `₹${Intl.NumberFormat("en-IN").format(shopStore.dashboardStats.revenue)}`
+        : "₹0"),
       Icon: IndianRupee,
       trend: "up",
       trendValue: "+12%",
@@ -78,7 +80,7 @@ const DashboardHome = observer(() => {
     <div className="space-y-8">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold text-secondary">
+        <h1 className="text-2xl sm:text-3xl font-bold text-secondary">
           Welcome Back, {userStore.user?.name}
         </h1>
         <p className="text-muted-foreground mt-1">
@@ -89,15 +91,15 @@ const DashboardHome = observer(() => {
       {/* Stats Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {stats.map((stat) => (
-          <StatCard key={stat.label} {...stat}  loading={shopStore.loading} />
+          <StatCard key={stat.label} {...stat} loading={shopStore.loading} />
         ))}
       </div>
 
       <SettingOverviewCard shop={shopStore.shop} />
 
       <div className="flex flex-col sm:flex-row gap-5">
-        <BestCustomers bestCustomers={shopStore.dashboardStats?.bestCustomers} loading={shopStore.loading}/>
-        <CloseToRewardCard closeToReward={shopStore.dashboardStats?.closeToReward} targetStamps={shopStore.shop?.targetStamps} loading={shopStore.loading}/>
+        <BestCustomers bestCustomers={shopStore.dashboardStats?.bestCustomers} loading={shopStore.loading} />
+        <CloseToRewardCard closeToReward={shopStore.dashboardStats?.closeToReward} targetStamps={shopStore.shop?.targetStamps} loading={shopStore.loading} />
       </div>
     </div>
   );

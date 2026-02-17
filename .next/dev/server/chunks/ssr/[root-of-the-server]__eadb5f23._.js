@@ -1524,7 +1524,9 @@ function OtpModal() {
         await userStore.verifyOtp(code);
         if (!userStore.error) {
             setCode('');
+            return;
         }
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error(userStore.error);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Dialog"], {
         open: userStore.otpModalOpen,
@@ -1540,30 +1542,31 @@ function OtpModal() {
                             children: "Enter verification code"
                         }, void 0, false, {
                             fileName: "[project]/components/auth/OtpConatiner.jsx",
-                            lineNumber: 50,
+                            lineNumber: 53,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogDescription"], {
                             children: [
                                 "We sent a 6-digit code to ",
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("b", {
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "text-primary font-bold",
                                     children: userStore.otpEmail
                                 }, void 0, false, {
                                     fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                    lineNumber: 52,
+                                    lineNumber: 55,
                                     columnNumber: 51
                                 }, this),
                                 "."
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/auth/OtpConatiner.jsx",
-                            lineNumber: 51,
+                            lineNumber: 54,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/auth/OtpConatiner.jsx",
-                    lineNumber: 49,
+                    lineNumber: 52,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -1577,7 +1580,7 @@ function OtpModal() {
                                         children: "Verification code"
                                     }, void 0, false, {
                                         fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                        lineNumber: 59,
+                                        lineNumber: 62,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2d$otp$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["InputOTP"], {
@@ -1593,60 +1596,60 @@ function OtpModal() {
                                                     index: 0
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                                    lineNumber: 63,
+                                                    lineNumber: 66,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2d$otp$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["InputOTPSlot"], {
                                                     index: 1
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                                    lineNumber: 64,
+                                                    lineNumber: 67,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2d$otp$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["InputOTPSlot"], {
                                                     index: 2
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                                    lineNumber: 65,
+                                                    lineNumber: 68,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2d$otp$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["InputOTPSlot"], {
                                                     index: 3
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                                    lineNumber: 66,
+                                                    lineNumber: 69,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2d$otp$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["InputOTPSlot"], {
                                                     index: 4
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                                    lineNumber: 67,
+                                                    lineNumber: 70,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2d$otp$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["InputOTPSlot"], {
                                                     index: 5
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                                    lineNumber: 68,
+                                                    lineNumber: 71,
                                                     columnNumber: 37
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                            lineNumber: 62,
+                                            lineNumber: 65,
                                             columnNumber: 33
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                        lineNumber: 61,
+                                        lineNumber: 64,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$field$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FieldDescription"], {
                                         children: "Enter the 6-digit code sent to your email."
                                     }, void 0, false, {
                                         fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                        lineNumber: 72,
+                                        lineNumber: 75,
                                         columnNumber: 29
                                     }, this),
                                     userStore.error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1654,13 +1657,13 @@ function OtpModal() {
                                         children: userStore.error
                                     }, void 0, false, {
                                         fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                        lineNumber: 76,
+                                        lineNumber: 79,
                                         columnNumber: 33
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                lineNumber: 58,
+                                lineNumber: 61,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$field$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FieldGroup"], {
@@ -1672,7 +1675,7 @@ function OtpModal() {
                                         children: userStore.loading ? "Verifying..." : "Verify OTP"
                                     }, void 0, false, {
                                         fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                        lineNumber: 83,
+                                        lineNumber: 86,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$field$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FieldDescription"], {
@@ -1684,41 +1687,41 @@ function OtpModal() {
                                                 children: "Resend"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                                lineNumber: 85,
+                                                lineNumber: 88,
                                                 columnNumber: 63
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                        lineNumber: 84,
+                                        lineNumber: 87,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/auth/OtpConatiner.jsx",
-                                lineNumber: 82,
+                                lineNumber: 85,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/auth/OtpConatiner.jsx",
-                        lineNumber: 57,
+                        lineNumber: 60,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/auth/OtpConatiner.jsx",
-                    lineNumber: 56,
+                    lineNumber: 59,
                     columnNumber: 17
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/auth/OtpConatiner.jsx",
-            lineNumber: 48,
+            lineNumber: 51,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/auth/OtpConatiner.jsx",
-        lineNumber: 44,
+        lineNumber: 47,
         columnNumber: 9
     }, this);
 }

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///E:/Project%20Files/Earning-model/stamp-card-project/stamp-loyalty-platform/lib/prisma.js"],"sourcesContent":["import { PrismaClient } from \"@prisma/client\";\r\n\r\nconst globalForPrisma = globalThis;\r\n\r\n// Ensure only one PrismaClient instance is created\r\nif (!globalForPrisma.prisma) {\r\n  globalForPrisma.prisma = new PrismaClient({\r\n    log: [\"error\"],\r\n  });\r\n}\r\n\r\nconst prisma = globalForPrisma.prisma;\r\n\r\nexport default prisma;\r\n"],"names":[],"mappings":";;;;AAAA;;AAEA,MAAM,kBAAkB;AAExB,mDAAmD;AACnD,IAAI,CAAC,gBAAgB,MAAM,EAAE;IAC3B,gBAAgB,MAAM,GAAG,IAAI,6IAAY,CAAC;QACxC,KAAK;YAAC;SAAQ;IAChB;AACF;AAEA,MAAM,SAAS,gBAAgB,MAAM;uCAEtB"}}]
+}

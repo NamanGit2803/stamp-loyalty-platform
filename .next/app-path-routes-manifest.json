@@ -32,6 +32,7 @@
   "/api/shop/customers/fetchAllCustomer/route": "/api/shop/customers/fetchAllCustomer",
   "/api/shop/customers/rewardHistory/route": "/api/shop/customers/rewardHistory",
   "/api/shop/customers/rewardRedeem/route": "/api/shop/customers/rewardRedeem",
+  "/api/shop/dashboardStats/route": "/api/shop/dashboardStats",
   "/api/shop/paymentVerification/fetch/route": "/api/shop/paymentVerification/fetch",
   "/api/shop/paymentVerification/manualVerify/route": "/api/shop/paymentVerification/manualVerify",
   "/api/shop/shopDetails/update/route": "/api/shop/shopDetails/update",

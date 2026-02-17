@@ -26,7 +26,7 @@ export default function StatCard({
         <p className="text-sm text-primary font-semibold">{label}</p>
         <p className="text-xs text-secondary">This Month</p>
 
-        <div className="flex items-center gap-1 mt-3">
+        {/* <div className="flex items-center gap-1 mt-3">
           {isUp ? (
             <ArrowUpRight className="h-4 w-4 text-green-600" />
           ) : (
@@ -40,7 +40,7 @@ export default function StatCard({
           >
             {trendValue}
           </span>
-        </div>
+        </div> */}
       </CardContent>
     </Card>
   );

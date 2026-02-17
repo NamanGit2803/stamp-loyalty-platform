@@ -67,15 +67,15 @@ const VerificationsList = () => {
     return (
         <div className="space-y-2">
             {/* Filter */}
-            <div className="flex justify-between">
-                <div className="flex gap-2">
-                    {/* input search  */}
-                    <SearchBar
-                        value={search}
-                        onChange={setSearch}
-                        placeholder="Search by name, phone or transaction ID"
-                    />
+            <div className="flex flex-col sm:flex-row gap-2">
+                {/* input search  */}
+                <SearchBar
+                    value={search}
+                    onChange={setSearch}
+                    placeholder="Search by name, phone or transaction ID"
+                />
 
+                <div className="flex gap-2">
                     {/* date  */}
                     <Input
                         type="date"
@@ -99,11 +99,6 @@ const VerificationsList = () => {
                         </SelectContent>
                     </Select>
                 </div>
-
-                <Button className="gap-2 hover:cursor-pointer">
-                    <Download size={20} />
-                    Export
-                </Button>
             </div>
 
             {/* Table */}

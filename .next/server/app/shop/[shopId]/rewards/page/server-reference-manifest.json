@@ -1,20 +1,4 @@
 {
-  "node": {
-    "7fb45c5b8c4e5f3881dfb9532b1434daf44bbb1077": {
-      "workers": {
-        "app/shop/[shopId]/rewards/page": {
-          "moduleId": 52454,
-          "async": false,
-          "exportedName": "default",
-          "filename": "app/shop/[shopId]/layout.jsx"
-        }
-      },
-      "layer": {
-        "app/shop/[shopId]/rewards/page": "rsc"
-      },
-      "exportedName": "default",
-      "filename": "app/shop/[shopId]/layout.jsx"
-    }
-  },
+  "node": {},
   "edge": {}
 }

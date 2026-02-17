@@ -11,7 +11,7 @@ const SettingOverviewCard = ({shop}) => {
 
     return (
         <Card className="card">
-            <CardHeader className="flex flex-row items-center justify-between">
+            <CardHeader className="flex flex-row items-center justify-between p-0 gap-3">
 
                 {/* Left Title */}
                 <CardTitle className="text-xl font-semibold flex items-center gap-2 text-primary">
@@ -26,7 +26,7 @@ const SettingOverviewCard = ({shop}) => {
 
             </CardHeader>
 
-            <CardContent className="flex flex-col sm:grid grid-cols-2 gap-4">
+            <CardContent className="flex flex-col sm:grid grid-cols-2 gap-4 sm:gap-6 sm:gap-x-8 p-0">
 
                 {/* Target Stamps */}
                 <div className="p-4 bg-background rounded-xl shadow-sm flex items-center gap-3">

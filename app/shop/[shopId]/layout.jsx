@@ -17,7 +17,7 @@ const ShopLayout = async ({ children, params }) => {
 
     return (
         <SidebarProvider>
-            <AppSidebar shopId={shopId}/>
+            <AppSidebar shopId={shopId} />
             <SidebarInset className='bg-custom-gradient overflow-hidden'>
                 <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 w-full">
                     {/* normal vision  */}
@@ -40,16 +40,18 @@ const ShopLayout = async ({ children, params }) => {
 
                     {/* mobile vision  */}
                     <div className="flex sm:hidden justify-between px-4 w-full">
-                        <div className='flex items-baseline gap-2'>
-                            <SidebarTrigger className="-ml-1" />
-                            <Separator
-                                orientation="vertical"
-                                className="mr-2 data-[orientation=vertical]:h-4"
-                            />
-                            <div className='flex flex-col gap-0.5'>
+                        <div className='flex flex-col items-baseline gap-1'>
+                            <div className="flex items-baseline gap-2">
+                                <SidebarTrigger className="-ml-1" />
+                                <Separator
+                                    orientation="vertical"
+                                    className="mr-2 data-[orientation=vertical]:h-4"
+                                />
+
                                 <Link href={'/'} className='logo-font flex items-center text-secondary tracking-wide text-lg'>{process.env.NEXT_PUBLIC_SITE_NAME ?? 'brand name'}</Link>
-                                <ExpiryStatus />
                             </div>
+
+                            <ExpiryStatus />
                         </div>
                         <div className="flex items-baseline pt-1">
                             <NotificationMenu />

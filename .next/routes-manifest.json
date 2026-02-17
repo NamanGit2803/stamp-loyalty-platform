@@ -245,6 +245,12 @@
       "namedRegex": "^/api/shop/customers/rewardRedeem(?:/)?$"
     },
     {
+      "page": "/api/shop/dashboardStats",
+      "regex": "^/api/shop/dashboardStats(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/shop/dashboardStats(?:/)?$"
+    },
+    {
       "page": "/api/shop/paymentVerification/fetch",
       "regex": "^/api/shop/paymentVerification/fetch(?:/)?$",
       "routeKeys": {},

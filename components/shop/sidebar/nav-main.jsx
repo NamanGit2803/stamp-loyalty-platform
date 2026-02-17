@@ -40,7 +40,6 @@ export function NavMain({ shopId }) {
                   onClick={() => {
                     if (sidebar.isMobile) sidebar.setOpenMobile(false); // CLOSE ONLY ON MOBILE
                   }}
-                  className={isActive ? "bg-primary/10" : ""}
                 >
                   <item.icon className="size-6" />
                   <span>{item.label}</span>

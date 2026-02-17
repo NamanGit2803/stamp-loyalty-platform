@@ -842,16 +842,29 @@ const PlanDeatilsPage = ()=>{
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
                         className: "space-y-2 text-sm",
-                        children: shopStore.subscription?.plan?.features?.map((feat)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-dark-text",
+                        children: shopStore.subscription?.plan?.features?.map((feat)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-start space-x-2 text-dark-text",
                                 children: [
-                                    "✔ ",
-                                    feat
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "mt-0.5",
+                                        children: "✔"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/shop/billing/planDetails-page.jsx",
+                                        lineNumber: 57,
+                                        columnNumber: 29
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        children: feat
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/shop/billing/planDetails-page.jsx",
+                                        lineNumber: 58,
+                                        columnNumber: 29
+                                    }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, feat, true, {
                                 fileName: "[project]/components/shop/billing/planDetails-page.jsx",
-                                lineNumber: 55,
-                                columnNumber: 76
+                                lineNumber: 56,
+                                columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0)))
                     }, void 0, false, {
                         fileName: "[project]/components/shop/billing/planDetails-page.jsx",
@@ -875,19 +888,19 @@ const PlanDeatilsPage = ()=>{
                                     className: "w-5 h-5"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shop/billing/planDetails-page.jsx",
-                                    lineNumber: 63,
+                                    lineNumber: 69,
                                     columnNumber: 82
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 " Manage Subscription"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/shop/billing/planDetails-page.jsx",
-                            lineNumber: 63,
+                            lineNumber: 69,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/components/shop/billing/planDetails-page.jsx",
-                        lineNumber: 62,
+                        lineNumber: 68,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -897,18 +910,18 @@ const PlanDeatilsPage = ()=>{
                             children: "Cancel Subscription"
                         }, void 0, false, {
                             fileName: "[project]/components/shop/billing/planDetails-page.jsx",
-                            lineNumber: 67,
+                            lineNumber: 73,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/components/shop/billing/planDetails-page.jsx",
-                        lineNumber: 66,
+                        lineNumber: 72,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/shop/billing/planDetails-page.jsx",
-                lineNumber: 61,
+                lineNumber: 67,
                 columnNumber: 61
             }, ("TURBOPACK compile-time value", void 0))
         ]

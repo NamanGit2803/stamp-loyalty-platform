@@ -24,12 +24,24 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 
 export function NavUser({ user, logout, shopId }) {
 
-  const { isMobile } = useSidebar();
+  const { isMobile, setOpenMobile } = useSidebar();
   const router = useRouter()
+  const pathname = usePathname();
+
+  const isActive = (route) => pathname === `/shop/${shopId}/${route}`;
+
+  const handleClick = (route) => {
+    router.push(`/shop/${shopId}/${route}`)
+
+    if (isMobile) {
+      setOpenMobile(false);
+    }
+  }
 
 
   return (
@@ -75,18 +87,21 @@ export function NavUser({ user, logout, shopId }) {
 
             <DropdownMenuSeparator />
 
-            <DropdownMenuGroup>
-              <DropdownMenuItem onClick={()=>router.push(`/shop/${shopId}/myAccount`)}>
+            <DropdownMenuGroup className="space-y-1">
+              <DropdownMenuItem onClick={() => handleClick('myAccount')}
+                className={isActive('myAccount') ? "bg-accent text-muted" : ""}>
                 <BadgeCheck />
                 Account
               </DropdownMenuItem>
 
-              <DropdownMenuItem onClick={()=>router.push(`/shop/${shopId}/billing`)}>
+              <DropdownMenuItem onClick={() => handleClick('billing')}
+                className={isActive('billing') ? "bg-primary text-muted" : ""}>
                 <CreditCard />
                 Billing
               </DropdownMenuItem>
 
-              <DropdownMenuItem>
+              <DropdownMenuItem onClick={() => handleClick('notifications')}
+                className={isActive('notifications') ? "bg-primary text-muted" : ""}>
                 <Bell />
                 Notifications
               </DropdownMenuItem>

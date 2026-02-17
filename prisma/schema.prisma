@@ -113,6 +113,7 @@ model Customer {
 
    @@index([shopId, totalStampCount])
    @@index([shopId, phone])
+   @@index([phone])
    @@index([shopId, stampCount])
 
 
