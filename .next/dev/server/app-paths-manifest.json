@@ -1,1 +1,7 @@
-{}
+{
+  "/(public)/page": "app/(public)/page.js",
+  "/api/auth/findShop/route": "app/api/auth/findShop/route.js",
+  "/api/auth/findUser/route": "app/api/auth/findUser/route.js",
+  "/api/plans/fetchPlans/route": "app/api/plans/fetchPlans/route.js",
+  "/customer/[customerId]/page": "app/customer/[customerId]/page.js"
+}
