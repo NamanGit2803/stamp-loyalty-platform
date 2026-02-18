@@ -137,7 +137,7 @@ const Form = () => {
 
     return (
         <div className="flex w-full md:w-2/5 items-center justify-center p-4 h-screen overflow-y-hidden">
-            <Card className="w-full max-w-md shadow-lg border-border/50 p-0 h-[90%] overflow-y-auto no-scrollbar">
+            <Card className="w-full max-w-md shadow-lg border-border/50 p-0 h-[65%] sm:h-[90%] overflow-y-auto no-scrollbar">
                 <div className="p-8">
                     <h1 className="text-3xl font-bold text-secondary mb-2">Welcome Back</h1>
                     <p className="text-muted-foreground mb-7">Sign in to your <Link href={'/'} className='logo-font text-primary'>{process.env.NEXT_PUBLIC_SITE_NAME ?? "site_name"}</Link> account</p>

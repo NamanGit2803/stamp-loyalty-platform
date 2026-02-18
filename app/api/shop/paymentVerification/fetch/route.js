@@ -19,7 +19,7 @@ export async function POST(req) {
 
         if (!shopId) {
             return NextResponse.json(
-                { error: "shopId is required" },
+                { error: "shopId" },
                 { status: 400 }
             );
         }

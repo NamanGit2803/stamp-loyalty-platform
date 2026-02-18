@@ -10,15 +10,6 @@ import {
     TableRow,
 } from "@/components/ui/table"
 import { Card } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Badge } from "@/components/ui/badge"
-import { CheckCircle, AlertCircle, Download, Eye, Pencil } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import {
-    Tooltip,
-    TooltipContent,
-    TooltipTrigger,
-} from "@/components/ui/tooltip"
 import { Spinner } from "@/components/ui/spinner"
 import { FormatLastVisit } from "@/lib/dateFormat"
 import VerifyConfirmDialog from "./verification-table/verifyConfirmDialog"

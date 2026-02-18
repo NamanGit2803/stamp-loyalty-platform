@@ -510,7 +510,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 function SearchBar({ value, onChange, placeholder = "Search..." }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "w-[60%] sm:w-sm min-w-[180px]",
+        className: "w-full sm:w-sm min-w-[180px]",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "relative bg-background",
             children: [
@@ -1046,78 +1046,74 @@ const RewardsList = ()=>{
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const fetchRewards = async ()=>{
             setLoading(true);
-            try {
-                const res = await fetch("/api/shop/customers/rewardHistory", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        shopId: shopStore.shop?.id,
-                        page,
-                        limit: shopStore.pagination?.limit,
-                        search: debouncedSearch,
-                        date: filterDate
-                    })
-                });
-                const data = await res.json();
-                if (!res.ok) {
-                    throw new Error(data.error || "Failed to fetch rewards");
+            if (shopStore.shop) {
+                try {
+                    const res = await fetch("/api/shop/customers/rewardHistory", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            shopId: shopStore.shop?.id,
+                            page,
+                            limit: shopStore.pagination?.limit,
+                            search: debouncedSearch,
+                            date: filterDate
+                        })
+                    });
+                    const data = await res.json();
+                    if (!res.ok) {
+                        throw new Error(data.error || "Failed to fetch rewards");
+                    }
+                    setRewardsData(data.data); // update table
+                    shopStore.updatePagination(data.pagination); // update MobX pagination state
+                } catch (error) {
+                    console.error("FETCH rewards error:", error);
+                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error(error.message);
                 }
-                setRewardsData(data.data); // update table
-                shopStore.updatePagination(data.pagination); // update MobX pagination state
-            } catch (error) {
-                console.error("FETCH rewards error:", error);
-                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error(error.message);
+                setLoading(false);
             }
-            setLoading(false);
         };
         fetchRewards();
     }, [
         page,
         shopStore.pagination?.limit,
         debouncedSearch,
-        filterDate
+        filterDate,
+        shopStore.shop
     ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "space-y-2",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex justify-between",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex gap-2",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$toolbar$2f$SearchBar$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SearchBar"], {
-                            value: search,
-                            onChange: setSearch,
-                            placeholder: "Search by name or phone... "
-                        }, void 0, false, {
-                            fileName: "[project]/components/shop/rewards/rewards-list.jsx",
-                            lineNumber: 77,
-                            columnNumber: 21
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
-                            type: "date",
-                            value: filterDate,
-                            onChange: (e)=>setFilterDate(e.target.value),
-                            className: "h-9 text-sm w-auto",
-                            style: {
-                                background: "linear-gradient(to bottom right, #faf5ff, #ffffff)"
-                            }
-                        }, void 0, false, {
-                            fileName: "[project]/components/shop/rewards/rewards-list.jsx",
-                            lineNumber: 84,
-                            columnNumber: 21
-                        }, ("TURBOPACK compile-time value", void 0))
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/components/shop/rewards/rewards-list.jsx",
-                    lineNumber: 75,
-                    columnNumber: 17
-                }, ("TURBOPACK compile-time value", void 0))
-            }, void 0, false, {
+                className: "flex flex-col sm:flex-row gap-1 sm:gap-2",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$toolbar$2f$SearchBar$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SearchBar"], {
+                        value: search,
+                        onChange: setSearch,
+                        placeholder: "Search by name or phone... "
+                    }, void 0, false, {
+                        fileName: "[project]/components/shop/rewards/rewards-list.jsx",
+                        lineNumber: 79,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
+                        type: "date",
+                        value: filterDate,
+                        onChange: (e)=>setFilterDate(e.target.value),
+                        className: "h-9 text-sm w-[50%] sm:w-auto",
+                        style: {
+                            background: "linear-gradient(to bottom right, #faf5ff, #ffffff)"
+                        }
+                    }, void 0, false, {
+                        fileName: "[project]/components/shop/rewards/rewards-list.jsx",
+                        lineNumber: 86,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
                 fileName: "[project]/components/shop/rewards/rewards-list.jsx",
-                lineNumber: 74,
+                lineNumber: 77,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shop$2f$rewards$2f$rewards$2d$table$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1125,7 +1121,7 @@ const RewardsList = ()=>{
                 loading: loading
             }, void 0, false, {
                 fileName: "[project]/components/shop/rewards/rewards-list.jsx",
-                lineNumber: 95,
+                lineNumber: 96,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$toolbar$2f$pagination$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1133,13 +1129,13 @@ const RewardsList = ()=>{
                 setPage: setPage
             }, void 0, false, {
                 fileName: "[project]/components/shop/rewards/rewards-list.jsx",
-                lineNumber: 98,
+                lineNumber: 99,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/shop/rewards/rewards-list.jsx",
-        lineNumber: 72,
+        lineNumber: 75,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };

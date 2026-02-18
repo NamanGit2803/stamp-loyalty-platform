@@ -34,45 +34,47 @@ const RewardsList = () => {
         const fetchRewards = async () => {
             setLoading(true);
 
-            try {
-                const res = await fetch("/api/shop/customers/rewardHistory", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        shopId: shopStore.shop?.id,
-                        page,
-                        limit: shopStore.pagination?.limit,
-                        search: debouncedSearch,
-                        date: filterDate,
-                    }),
-                });
+            if (shopStore.shop) {
 
-                const data = await res.json();
+                try {
+                    const res = await fetch("/api/shop/customers/rewardHistory", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            shopId: shopStore.shop?.id,
+                            page,
+                            limit: shopStore.pagination?.limit,
+                            search: debouncedSearch,
+                            date: filterDate,
+                        }),
+                    });
+
+                    const data = await res.json();
 
 
-                if (!res.ok) {
-                    throw new Error(data.error || "Failed to fetch rewards");
+                    if (!res.ok) {
+                        throw new Error(data.error || "Failed to fetch rewards");
+                    }
+
+                    setRewardsData(data.data);               // update table
+                    shopStore.updatePagination(data.pagination); // update MobX pagination state
+
+                } catch (error) {
+                    console.error("FETCH rewards error:", error);
+                    toast.error(error.message);
                 }
 
-                setRewardsData(data.data);               // update table
-                shopStore.updatePagination(data.pagination); // update MobX pagination state
-
-            } catch (error) {
-                console.error("FETCH rewards error:", error);
-                toast.error(error.message);
+                setLoading(false);
             }
-
-            setLoading(false);
         };
 
         fetchRewards();
-    }, [page, shopStore.pagination?.limit, debouncedSearch, filterDate]);
+    }, [page, shopStore.pagination?.limit, debouncedSearch, filterDate, shopStore.shop]);
 
     return (
         <div className="space-y-2">
             {/* Filter */}
-            <div className="flex justify-between">
-                <div className="flex gap-2">
+            <div className="flex flex-col sm:flex-row gap-1 sm:gap-2">
                     {/* input search  */}
                     <SearchBar
                         value={search}
@@ -85,10 +87,9 @@ const RewardsList = () => {
                         type="date"
                         value={filterDate}
                         onChange={(e) => setFilterDate(e.target.value)}
-                        className="h-9 text-sm w-auto"
+                        className="h-9 text-sm w-[50%] sm:w-auto"
                         style={{ background: "linear-gradient(to bottom right, #faf5ff, #ffffff)" }}
                     />
-                </div>
             </div>
 
             {/* Table */}

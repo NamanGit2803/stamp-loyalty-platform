@@ -16,7 +16,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 function SearchBar({ value, onChange, placeholder = "Search..." }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "w-[60%] sm:w-sm min-w-[180px]",
+        className: "w-full sm:w-sm min-w-[180px]",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "relative bg-background",
             children: [
@@ -1463,12 +1463,15 @@ const CustomersList = ()=>{
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const fetchCustomers = async ()=>{
             setLoading(true);
-            await shopStore.fetchCustomers({
-                page,
-                search: debouncedSearch
-            });
-            setLoading(false);
+            if (shopStore.shop) {
+                await shopStore.fetchCustomers({
+                    page,
+                    search: debouncedSearch
+                });
+                setLoading(false);
+            }
             if (shopStore.error) {
+                if (shopStore.error === 'shopId') return;
                 __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error(shopStore.error);
                 return;
             }
@@ -1477,7 +1480,8 @@ const CustomersList = ()=>{
     }, [
         page,
         shopStore.pagination?.limit,
-        debouncedSearch
+        debouncedSearch,
+        shopStore.shop
     ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "space-y-2",
@@ -1488,7 +1492,7 @@ const CustomersList = ()=>{
                 placeholder: "Search by name or phone..."
             }, void 0, false, {
                 fileName: "[project]/components/shop/customer/customers-list.jsx",
-                lineNumber: 56,
+                lineNumber: 61,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shop$2f$customer$2f$customerList$2f$customersTable$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1496,7 +1500,7 @@ const CustomersList = ()=>{
                 loading: loading
             }, void 0, false, {
                 fileName: "[project]/components/shop/customer/customers-list.jsx",
-                lineNumber: 63,
+                lineNumber: 68,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$toolbar$2f$pagination$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1504,13 +1508,13 @@ const CustomersList = ()=>{
                 setPage: setPage
             }, void 0, false, {
                 fileName: "[project]/components/shop/customer/customers-list.jsx",
-                lineNumber: 66,
+                lineNumber: 71,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/shop/customer/customers-list.jsx",
-        lineNumber: 53,
+        lineNumber: 58,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

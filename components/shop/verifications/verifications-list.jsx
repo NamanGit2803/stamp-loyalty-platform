@@ -45,14 +45,17 @@ const VerificationsList = () => {
         const fetchRewards = async () => {
             setLoading(true);
 
-            await shopStore.fetchPaymentVerifications({
-                page,
-                search: debouncedSearch,
-                date: filterDate,
-                status
-            })
+            if (shopStore.shop) {
 
-            setLoading(false);
+                await shopStore.fetchPaymentVerifications({
+                    page,
+                    search: debouncedSearch,
+                    date: filterDate,
+                    status
+                })
+
+                setLoading(false);
+            }
 
             if (shopStore.error) {
                 toast.error(shopStore.error);
@@ -61,7 +64,7 @@ const VerificationsList = () => {
         };
 
         fetchRewards();
-    }, [page, shopStore.pagination?.limit, debouncedSearch, filterDate, status]);
+    }, [page, shopStore.pagination?.limit, debouncedSearch, filterDate, status, shopStore.shop]);
 
 
     return (
@@ -75,19 +78,32 @@ const VerificationsList = () => {
                     placeholder="Search by name, phone or transaction ID"
                 />
 
-                <div className="flex gap-2">
+                <div className="grid grid-cols-2 gap-2">
                     {/* date  */}
-                    <Input
-                        type="date"
-                        value={filterDate}
-                        onChange={(e) => setFilterDate(e.target.value)}
-                        className="h-9 text-sm w-auto"
-                        style={{ background: "linear-gradient(to bottom right, #faf5ff, #ffffff)" }}
-                    />
+                    <div className="relative w-full">
+                        <Input
+                            type="date"
+                            value={filterDate}
+                            onChange={(e) => setFilterDate(e.target.value)}
+                            className="h-9 text-sm w-full pr-10"
+                            style={{ background: "linear-gradient(to bottom right, #faf5ff, #ffffff)" }}
+                        />
+
+                        {filterDate && (
+                            <button
+                                type="button"
+                                onClick={() => setFilterDate("")}
+                                className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500"
+                            >
+                                ✕
+                            </button>
+                        )}
+                    </div>
+
 
                     {/* status  */}
                     <Select value={status} onValueChange={setStatus}>
-                        <SelectTrigger className="bg-background">
+                        <SelectTrigger className="bg-background w-full">
                             <SelectValue placeholder="Status" />
                         </SelectTrigger>
 

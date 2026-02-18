@@ -10,7 +10,7 @@ export function SearchBar({
   placeholder = "Search...",
 }) {
   return (
-    <div className="w-[60%] sm:w-sm min-w-[180px]">
+    <div className="w-full sm:w-sm min-w-[180px]">
       <div className="relative bg-background">
         {/* Search Icon */}
         <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />

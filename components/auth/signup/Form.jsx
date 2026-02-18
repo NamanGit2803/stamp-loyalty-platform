@@ -37,7 +37,7 @@ const Form = () => {
 
     return (
         <div className="flex w-full md:w-2/5 items-center justify-center p-4 h-screen overflow-y-hidden">
-            <Card className="w-full max-w-md shadow-lg border-blue-100 p-0 h-[90%] overflow-y-auto no-scrollbar">
+            <Card className="w-full max-w-md shadow-lg border-border/50 p-0 h-auto sm:h-[90%] sm:overflow-y-auto no-scrollbar">
                 <div className="p-8">
                     <div className="mb-5">
                         <h1 className="text-3xl font-bold text-secondary mb-2">

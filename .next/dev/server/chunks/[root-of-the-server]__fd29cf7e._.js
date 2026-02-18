@@ -63,7 +63,7 @@ async function POST(req) {
         const { shopId, page = 1, limit = 10, search = "" } = body;
         if (!shopId) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: "shopId is required"
+                error: "shopId"
             }, {
                 status: 400
             });

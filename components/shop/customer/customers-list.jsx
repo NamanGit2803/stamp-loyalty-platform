@@ -21,9 +21,9 @@ const CustomersList = () => {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-   shopStore.resetPagination()
+    shopStore.resetPagination()
   }, [])
-  
+
 
   // debounce 
   const debouncedSearch = useDebounce(search, 500); // 500ms delay
@@ -32,22 +32,27 @@ const CustomersList = () => {
   useEffect(() => {
     const fetchCustomers = async () => {
       setLoading(true)
-      
-      await shopStore.fetchCustomers({
-        page,
-        search: debouncedSearch
-      });
 
-      setLoading(false)
+      if (shopStore.shop) {
+
+        await shopStore.fetchCustomers({
+          page,
+          search: debouncedSearch
+        });
+
+
+        setLoading(false)
+      }
 
       if (shopStore.error) {
+        if (shopStore.error === 'shopId') return
         toast.error(shopStore.error);
         return;
       }
     };
 
     fetchCustomers();
-  }, [page, shopStore.pagination?.limit, debouncedSearch]);
+  }, [page, shopStore.pagination?.limit, debouncedSearch, shopStore.shop]);
 
   return (
     <div className="space-y-2">
@@ -60,10 +65,10 @@ const CustomersList = () => {
       />
 
       {/* TABLE */}
-      <CustomersTable customers={shopStore.customers} loading={loading}/>
+      <CustomersTable customers={shopStore.customers} loading={loading} />
 
       {/* PAGINATION */}
-      <Pagination page={page} setPage={setPage}/>
+      <Pagination page={page} setPage={setPage} />
     </div>
   )
 }

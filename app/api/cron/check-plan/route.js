@@ -59,7 +59,7 @@ export async function GET() {
             await sendPlanExpiredEmail({
                 to: s.shop?.ownerId,
                 shopName: s.shop?.shopName,
-                expiryDate: s.nextBillingAt,
+                expiryDate: s.nextBillingAt + IST_OFFSET,
                 dashboardUrl: `https://stampi.in/shop/${s.shop?.id}/billing`,
             });
         }
@@ -81,7 +81,7 @@ export async function GET() {
             await sendPlanExpiresTomorrowEmail({
                 to: s.shop?.ownerId,
                 shopName: s.shop?.shopName,
-                expiryDate: s.nextBillingAt,
+                expiryDate: s.nextBillingAt + IST_OFFSET,
                 dashboardUrl: `https://stampi.in/shop/${s.shop?.id}/billing`,
             });
         }

@@ -176,7 +176,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$templates$2f$baseEmai
 ;
 function PlanExpiresTomorrowEmail({ shopName, expiryDate, dashboardUrl }) {
     return (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$templates$2f$baseEmail$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["baseEmailTemplate"])({
-        title: "Your Plan Expires Tomorrow ⚠️",
+        title: "Your Plan Expires Tomorrow",
         content: `
       <p>Hi <strong>${shopName}</strong>,</p>
 
@@ -236,7 +236,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$templates$2f$tomorrow
 async function sendPlanExpiresTomorrowEmail({ to, shopName, expiryDate, dashboardUrl }) {
     return (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$sendEmail$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["sendEmail"])({
         to,
-        subject: "Your Plan Expires Tomorrow ⚠️",
+        subject: "Your Plan Expires Tomorrow",
         html: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$templates$2f$tomorrowPlanExpire$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["PlanExpiresTomorrowEmail"])({
             shopName,
             expiryDate,
@@ -347,7 +347,7 @@ async function GET() {
     try {
         const { default: prisma } = await __turbopack_context__.A("[project]/lib/prisma.js [app-route] (ecmascript, async loader)");
         // -----------------------------------------
-        //  IST TIME SUPPORT
+        // IST TIME SUPPORT
         // -----------------------------------------
         const IST_OFFSET = 5.5 * 60 * 60 * 1000;
         const nowUTC = new Date();
@@ -358,12 +358,12 @@ async function GET() {
         const startTomorrowIST = new Date(nowIST.getFullYear(), nowIST.getMonth(), nowIST.getDate() + 1);
         // DAY AFTER TOMORROW IST 00:00
         const startDayAfterIST = new Date(nowIST.getFullYear(), nowIST.getMonth(), nowIST.getDate() + 2);
-        // Convert to UTC for DB
+        // Convert IST boundaries back to UTC for DB comparison
         const startTodayUTC = new Date(startTodayIST.getTime() - IST_OFFSET);
         const startTomorrowUTC = new Date(startTomorrowIST.getTime() - IST_OFFSET);
         const startDayAfterUTC = new Date(startDayAfterIST.getTime() - IST_OFFSET);
         // -----------------------------------------
-        // 1️⃣ EXPIRING TODAY (for expired email)
+        // 1️⃣ EXPIRING TODAY (Send Expired Email)
         // -----------------------------------------
         const subsExpiringToday = await prisma.subscription.findMany({
             where: {
@@ -376,8 +376,16 @@ async function GET() {
                 shop: true
             }
         });
+        for (const s of subsExpiringToday){
+            await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$email$2f$sendPlanExpiredEmail$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["sendPlanExpiredEmail"])({
+                to: s.shop?.ownerId,
+                shopName: s.shop?.shopName,
+                expiryDate: s.nextBillingAt + IST_OFFSET,
+                dashboardUrl: `https://stampi.in/shop/${s.shop?.id}/billing`
+            });
+        }
         // -----------------------------------------
-        // 2️⃣ EXPIRING TOMORROW (for 24h-before email)
+        // 2️⃣ EXPIRING TOMORROW (Send Reminder Email)
         // -----------------------------------------
         const subsExpiringTomorrow = await prisma.subscription.findMany({
             where: {
@@ -390,47 +398,23 @@ async function GET() {
                 shop: true
             }
         });
-        const oneDayMs = 24 * 60 * 60 * 1000;
-        // ---------------------------------------------------
-        // ⭐ EXPIRED EMAIL (Expiry Today)
-        // ---------------------------------------------------
-        for (const s of subsExpiringToday){
-            const expiryUTC = new Date(s.nextBillingAt);
-            const expiryIST = new Date(expiryUTC.getTime() + IST_OFFSET);
-            if (expiryIST <= nowIST) {
-                await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$email$2f$sendPlanExpiredEmail$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["sendPlanExpiredEmail"])({
-                    to: s.shop?.ownerId,
-                    shopName: s.shop?.shopName,
-                    expiryDate: expiryIST,
-                    dashboardUrl: `https://stampi.in/shop/${s.shop?.id}/billing`
-                });
-            }
-        }
-        // ---------------------------------------------------
-        // ⭐ 24 HOURS BEFORE EMAIL (Expiry Tomorrow)
-        // ---------------------------------------------------
         for (const s of subsExpiringTomorrow){
-            const expiryUTC = new Date(s.nextBillingAt);
-            const expiryIST = new Date(expiryUTC.getTime() + IST_OFFSET);
-            const diff = expiryIST - nowIST;
-            console.log(subsExpiringTomorrow, expiryIST, nowIST);
-            // 10-minute cron window around 24 hours
-            if (diff <= oneDayMs && diff > oneDayMs - 10 * 60 * 1000) {
-                await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$email$2f$sendPlanExpiresTomorrowEmail$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["sendPlanExpiresTomorrowEmail"])({
-                    to: s.shop?.ownerId,
-                    shopName: s.shop?.shopName,
-                    expiryDate: expiryIST,
-                    dashboardUrl: `https://stampi.in/shop/${s.shop?.id}/billing`
-                });
-            }
+            await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$email$2f$sendPlanExpiresTomorrowEmail$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["sendPlanExpiresTomorrowEmail"])({
+                to: s.shop?.ownerId,
+                shopName: s.shop?.shopName,
+                expiryDate: s.nextBillingAt,
+                dashboardUrl: `https://stampi.in/shop/${s.shop?.id}/billing`
+            });
         }
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            status: "CRON_RAN"
+            status: "CRON_RAN_SUCCESSFULLY"
         });
     } catch (err) {
         console.error("[CRON ERROR]", err);
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             status: "ERROR"
+        }, {
+            status: 500
         });
     }
 }

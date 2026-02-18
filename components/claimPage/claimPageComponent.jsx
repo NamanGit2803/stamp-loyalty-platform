@@ -114,6 +114,10 @@ const ClaimPage = ({ shopId }) => {
                     return
                 }
 
+                if(data.rejectReason === 'amount_below_mimimum'){
+                    toast.error('Payment is below the minimum required amount.')
+                    return
+                }
 
 
                 if (data.rejectReason === 'upi_mismatch' || data.rejectReason === 'upi_not_exist') {

@@ -4,6 +4,7 @@ import "./globals.css"
 import { StoreProvider } from "../stores/StoreProvider"
 import { Toaster } from "@/components/ui/sonner"
 import OtpConatiner from "@/components/auth/OtpConatiner"
+import NextTopLoader from "nextjs-toploader";
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -42,6 +43,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.className} ${comfortaa.variable} bg-background text-foreground`}>
+        <NextTopLoader
+          color="#6836b6"
+          height={3}
+          showSpinner={false}
+        />
         <StoreProvider>
           {children}
           <OtpConatiner />

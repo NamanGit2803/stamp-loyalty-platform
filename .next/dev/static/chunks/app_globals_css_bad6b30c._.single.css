@@ -692,6 +692,10 @@
     order: 9999;
   }
 
+  .col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
   .col-start-2 {
     grid-column-start: 2;
   }
@@ -1072,6 +1076,18 @@
     height: 1.15rem;
   }
 
+  .h-\[60\%\] {
+    height: 60%;
+  }
+
+  .h-\[65\%\] {
+    height: 65%;
+  }
+
+  .h-\[70\%\] {
+    height: 70%;
+  }
+
   .h-\[90\%\] {
     height: 90%;
   }
@@ -1282,6 +1298,10 @@
 
   .w-\[25\%\] {
     width: 25%;
+  }
+
+  .w-\[50\%\] {
+    width: 50%;
   }
 
   .w-\[60\%\] {
@@ -5374,6 +5394,12 @@
   }
 
   @media (min-width: 40rem) {
+    .sm\:h-\[90\%\] {
+      height: 90%;
+    }
+  }
+
+  @media (min-width: 40rem) {
     .sm\:h-\[420px\] {
       height: 420px;
     }
@@ -5388,6 +5414,12 @@
   @media (min-width: 40rem) {
     .sm\:w-\[80px\] {
       width: 80px;
+    }
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:w-auto {
+      width: auto;
     }
   }
 
@@ -5492,6 +5524,12 @@
   @media (min-width: 40rem) {
     .sm\:gap-x-8 {
       column-gap: calc(var(--spacing) * 8);
+    }
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:overflow-y-auto {
+      overflow-y: auto;
     }
   }
 

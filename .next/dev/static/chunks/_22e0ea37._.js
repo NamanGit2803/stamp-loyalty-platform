@@ -1522,7 +1522,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 function SearchBar({ value, onChange, placeholder = "Search..." }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "w-[60%] sm:w-sm min-w-[180px]",
+        className: "w-full sm:w-sm min-w-[180px]",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "relative bg-background",
             children: [
@@ -2165,17 +2165,36 @@ const VerificationsList = ()=>{
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex gap-2",
+                        className: "grid grid-cols-2 gap-2",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
-                                type: "date",
-                                value: filterDate,
-                                onChange: (e)=>setFilterDate(e.target.value),
-                                className: "h-9 text-sm w-auto",
-                                style: {
-                                    background: "linear-gradient(to bottom right, #faf5ff, #ffffff)"
-                                }
-                            }, void 0, false, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "relative w-full",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
+                                        type: "date",
+                                        value: filterDate,
+                                        onChange: (e)=>setFilterDate(e.target.value),
+                                        className: "h-9 text-sm w-full pr-10",
+                                        style: {
+                                            background: "linear-gradient(to bottom right, #faf5ff, #ffffff)"
+                                        }
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/shop/verifications/verifications-list.jsx",
+                                        lineNumber: 81,
+                                        columnNumber: 25
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    filterDate && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        type: "button",
+                                        onClick: ()=>setFilterDate(""),
+                                        className: "absolute right-2 top-1/2 -translate-y-1/2 text-gray-500",
+                                        children: "✕"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/shop/verifications/verifications-list.jsx",
+                                        lineNumber: 90,
+                                        columnNumber: 29
+                                    }, ("TURBOPACK compile-time value", void 0))
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/components/shop/verifications/verifications-list.jsx",
                                 lineNumber: 80,
                                 columnNumber: 21
@@ -2185,17 +2204,17 @@ const VerificationsList = ()=>{
                                 onValueChange: setStatus,
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectTrigger"], {
-                                        className: "bg-background",
+                                        className: "bg-background w-full",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectValue"], {
                                             placeholder: "Status"
                                         }, void 0, false, {
                                             fileName: "[project]/components/shop/verifications/verifications-list.jsx",
-                                            lineNumber: 91,
+                                            lineNumber: 104,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/components/shop/verifications/verifications-list.jsx",
-                                        lineNumber: 90,
+                                        lineNumber: 103,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -2205,7 +2224,7 @@ const VerificationsList = ()=>{
                                                 children: "All Status"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shop/verifications/verifications-list.jsx",
-                                                lineNumber: 95,
+                                                lineNumber: 108,
                                                 columnNumber: 29
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -2213,7 +2232,7 @@ const VerificationsList = ()=>{
                                                 children: "Pending"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shop/verifications/verifications-list.jsx",
-                                                lineNumber: 96,
+                                                lineNumber: 109,
                                                 columnNumber: 29
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -2221,7 +2240,7 @@ const VerificationsList = ()=>{
                                                 children: "Verified"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shop/verifications/verifications-list.jsx",
-                                                lineNumber: 97,
+                                                lineNumber: 110,
                                                 columnNumber: 29
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -2229,19 +2248,19 @@ const VerificationsList = ()=>{
                                                 children: "Rejected"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shop/verifications/verifications-list.jsx",
-                                                lineNumber: 98,
+                                                lineNumber: 111,
                                                 columnNumber: 29
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/shop/verifications/verifications-list.jsx",
-                                        lineNumber: 94,
+                                        lineNumber: 107,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/shop/verifications/verifications-list.jsx",
-                                lineNumber: 89,
+                                lineNumber: 102,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
@@ -2261,7 +2280,7 @@ const VerificationsList = ()=>{
                 data: shopStore.scanVerifications
             }, void 0, false, {
                 fileName: "[project]/components/shop/verifications/verifications-list.jsx",
-                lineNumber: 106,
+                lineNumber: 119,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$toolbar$2f$pagination$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -2269,7 +2288,7 @@ const VerificationsList = ()=>{
                 setPage: setPage
             }, void 0, false, {
                 fileName: "[project]/components/shop/verifications/verifications-list.jsx",
-                lineNumber: 109,
+                lineNumber: 122,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]

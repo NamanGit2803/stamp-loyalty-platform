@@ -5,3 +5,484 @@
 [00:19:26.271] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:19:30.488] Server  LOG      ○ Compiling /api/auth/findUser ...
 [00:21:12.829] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[20:29:07.721] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[20:29:13.018] Server  LOG      ○ Compiling /login ...
+[20:29:24.337] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
+[20:29:27.330] Server  LOG     ststus TRIAL_ACTIVE
+[20:29:30.405] Server  LOG      ○ Compiling /shop/[shopId] ...
+[20:29:40.460] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[20:29:40.460] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[20:33:52.495] Server  LOG      ○ Compiling /api/cron/check-plan ...
+[20:34:48.380] Server  LOG     ststus TRIAL_ACTIVE
+[20:36:13.510] Server  LOG     ststus TRIAL_ACTIVE
+[20:36:19.134] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[20:36:33.378] Server  LOG     ststus TRIAL_ACTIVE
+[20:38:16.828] Server  LOG      ✓ Compiled in 626ms
+[20:38:33.511] Server  LOG      ✓ Compiled in 621ms
+[20:38:59.912] Server  LOG      ✓ Compiled in 1362ms
+[20:39:22.875] Server  LOG      ✓ Compiled in 528ms
+[20:39:30.191] Server  LOG      ✓ Compiled in 527ms
+[20:42:24.118] Server  LOG      ✓ Compiled in 542ms
+[20:48:43.475] Server  LOG      ✓ Compiled in 840ms
+[20:49:13.408] Server  LOG      ✓ Compiled in 683ms
+[20:49:23.718] Server  LOG      ✓ Compiled in 1273ms
+[20:49:36.530] Server  LOG      ✓ Compiled in 1704ms
+[20:49:44.598] Server  LOG      ✓ Compiled in 771ms
+[20:50:26.419] Server  LOG      ✓ Compiled in 796ms
+[20:50:49.480] Server  LOG      ✓ Compiled in 899ms
+[20:51:33.212] Server  LOG      ✓ Compiled in 615ms
+[20:53:41.084] Server  LOG     ststus TRIAL_ACTIVE
+[20:53:49.677] Server  LOG     ststus TRIAL_ACTIVE
+[20:53:52.904] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[20:53:56.722] Server  LOG     ststus TRIAL_ACTIVE
+[20:55:43.683] Server  LOG      ✓ Compiled in 473ms
+[20:55:47.256] Server  LOG     ststus TRIAL_ACTIVE
+[20:55:53.635] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[20:59:41.256] Server  LOG      ✓ Compiled in 517ms
+[20:59:45.644] Server  LOG     ststus TRIAL_ACTIVE
+[20:59:58.580] Server  LOG     ststus TRIAL_ACTIVE
+[21:00:03.373] Server  LOG     ststus TRIAL_ACTIVE
+[21:01:14.396] Server  LOG      ✓ Compiled in 517ms
+[21:02:05.804] Server  LOG      ✓ Compiled in 507ms
+[21:02:06.775] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [1, 10, , , all] [1, 10, , , all, [object Object]]
+[21:02:23.221] Server  LOG     ststus TRIAL_ACTIVE
+[21:02:33.668] Server  LOG     ststus TRIAL_ACTIVE
+[21:02:36.708] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <div data-slot="sidebar-wr..." style={{...}} className="group/side...">
+      ...
+        <MenuProvider scope={{Menu:[...], ...}} onClose={function Menu.useCallback} isUsingKeyboardRef={{current:false}} ...>
+          <DropdownMenuTrigger asChild={true}>
+            <DropdownMenuTrigger data-slot="dropdown-m..." asChild={true}>
+              <MenuAnchor asChild={true} __scopeMenu={{Menu:[...], ...}}>
+                <PopperAnchor __scopePopper={{Menu:[...], ...}} asChild={true} ref={null}>
+                  <Primitive.div asChild={true} ref={function}>
+                    <Slot ref={function}>
+                      <SlotClone ref={function}>
+                        <Primitive.button type="button" id="radix-_R_4..." aria-haspopup="menu" aria-expanded={false} ...>
+                          <Slot type="button" id="radix-_R_4..." aria-haspopup="menu" aria-expanded={false} ...>
+                            <SlotClone type="button" id="radix-_R_4..." aria-haspopup="menu" aria-expanded={false} ...>
+                              <SidebarMenuButton size="lg" className="data-[stat..." type="button" id="radix-_R_4..." ...>
+                                <button
+                                  data-slot="dropdown-menu-trigger"
+                                  data-sidebar="menu-button"
+                                  data-size="lg"
+                                  data-active={false}
+                                  className={"peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded..."}
+                                  type="button"
++                                 id="radix-_R_4j9esndlb_"
+-                                 id="radix-_R_id5ritllb_"
+                                  aria-haspopup="menu"
+                                  aria-expanded={false}
+                                  aria-controls={undefined}
+                                  data-state="closed"
+                                  data-disabled={undefined}
+                                  disabled={false}
+                                  onPointerDown={function handleEvent}
+                                  onKeyDown={function handleEvent}
+                                  ref={function}
+                                >
+          ...
+      <SidebarInset className="bg-custom-...">
+        <main data-slot="sidebar-inset" className="relative f...">
+          <header className="flex h-16 ...">
+            ...
+              <MenuProvider scope={{Menu:[...], ...}} onClose={function Menu.useCallback} ...>
+                <DropdownMenuTrigger className="outline-no...">
+                  <DropdownMenuTrigger data-slot="dropdown-m..." className="outline-no...">
+                    <MenuAnchor asChild={true} __scopeMenu={{Menu:[...], ...}}>
+                      <PopperAnchor __scopePopper={{Menu:[...], ...}} asChild={true} ref={null}>
+                        <Primitive.div asChild={true} ref={function}>
+                          <Slot ref={function}>
+                            <SlotClone ref={function}>
+                              <Primitive.button type="button" id="radix-_R_p..." aria-haspopup="menu" ...>
+                                <button
+                                  type="button"
++                                 id="radix-_R_pd9esndlb_"
+-                                 id="radix-_R_35l5ritllb_"
+                                  aria-haspopup="menu"
+                                  aria-expanded={false}
+                                  aria-controls={undefined}
+                                  data-state="closed"
+                                  data-disabled={undefined}
+                                  disabled={false}
+                                  data-slot="dropdown-menu-trigger"
+                                  className="outline-none relative"
+                                  onPointerDown={function handleEvent}
+                                  onKeyDown={function handleEvent}
+                                  ref={function}
+                                >
+                ...
+            ...
+              <MenuProvider scope={{Menu:[...], ...}} onClose={function Menu.useCallback} ...>
+                <DropdownMenuTrigger className="outline-no...">
+                  <DropdownMenuTrigger data-slot="dropdown-m..." className="outline-no...">
+                    <MenuAnchor asChild={true} __scopeMenu={{Menu:[...], ...}}>
+                      <PopperAnchor __scopePopper={{Menu:[...], ...}} asChild={true} ref={null}>
+                        <Primitive.div asChild={true} ref={function}>
+                          <Slot ref={function}>
+                            <SlotClone ref={function}>
+                              <Primitive.button type="button" id="radix-_R_a..." aria-haspopup="menu" ...>
+                                <button
+                                  type="button"
++                                 id="radix-_R_ad9esndlb_"
+-                                 id="radix-_R_19l5ritllb_"
+                                  aria-haspopup="menu"
+                                  aria-expanded={false}
+                                  aria-controls={undefined}
+                                  data-state="closed"
+                                  data-disabled={undefined}
+                                  disabled={false}
+                                  data-slot="dropdown-menu-trigger"
+                                  className="outline-none relative"
+                                  onPointerDown={function handleEvent}
+                                  onKeyDown={function handleEvent}
+                                  ref={function}
+                                >
+                ...
+          ...
+            <div className="space-y-2">
+              ...
+                <SelectProvider scope={undefined} onNativeOptionAdd={function Select.useCallback} ...>
+                  <SelectTrigger className="bg-backgro...">
+                    <SelectTrigger data-slot="select-tri..." data-size="default" className={"border-i..."}>
+                      <PopperAnchor asChild={true} __scopePopper={{Popper:[...]}}>
+                        <Primitive.div asChild={true} ref={function}>
+                          <Slot ref={function}>
+                            <SlotClone ref={function}>
+                              <Primitive.button type="button" role="combobox" aria-controls="radix-_R_2..." ...>
+                                <button
+                                  type="button"
+                                  role="combobox"
++                                 aria-controls="radix-_R_2j9bn5rl9esndlb_"
+-                                 aria-controls="radix-_R_ad5esnel5ritllb_"
+                                  aria-expanded={false}
+                                  aria-required={undefined}
+                                  aria-autocomplete="none"
+                                  dir="ltr"
+                                  data-state="closed"
+                                  disabled={false}
+                                  data-disabled={undefined}
+                                  data-placeholder={undefined}
+                                  data-slot="select-trigger"
+                                  data-size="default"
+                                  className={"border-input data-[placeholder]:text-muted-foreground [&_svg:not([class..."}
+                                  onClick={function handleEvent}
+                                  onPointerDown={function handleEvent}
+                                  onKeyDown={function handleEvent}
+                                  ref={function}
+                                >
+                  ...
+              <VerificationsTable>
+              ...
+                <SelectProvider scope={undefined} onNativeOptionAdd={function Select.useCallback} ...>
+                  <SelectTrigger className="w-[70px] s...">
+                    <SelectTrigger data-slot="select-tri..." data-size="default" className={"border-i..."}>
+                      <PopperAnchor asChild={true} __scopePopper={{Popper:[...]}}>
+                        <Primitive.div asChild={true} ref={function}>
+                          <Slot ref={function}>
+                            <SlotClone ref={function}>
+                              <Primitive.button type="button" role="combobox" aria-controls="radix-_R_9..." ...>
+                                <button
+                                  type="button"
+                                  role="combobox"
++                                 aria-controls="radix-_R_9v9bn5rl9esndlb_"
+-                                 aria-controls="radix-_R_17t5esnel5ritllb_"
+                                  aria-expanded={false}
+                                  aria-required={undefined}
+                                  aria-autocomplete="none"
+                                  dir="ltr"
+                                  data-state="closed"
+                                  disabled={false}
+                                  data-disabled={undefined}
+                                  data-placeholder={undefined}
+                                  data-slot="select-trigger"
+                                  data-size="default"
+                                  className={"border-input data-[placeholder]:text-muted-foreground [&_svg:not([class..."}
+                                  onClick={function handleEvent}
+                                  onPointerDown={function handleEvent}
+                                  onKeyDown={function handleEvent}
+                                  ref={function}
+                                >
+                  ...
+
+[21:02:45.793] Server  LOG     ststus TRIAL_ACTIVE
+[21:03:03.593] Server  LOG     ststus TRIAL_ACTIVE
+[21:03:11.625] Server  LOG     ststus TRIAL_ACTIVE
+[21:03:16.518] Browser ERROR   FETCH rewards error: {}
+[21:04:12.495] Server  LOG      ✓ Compiled in 521ms
+[21:04:12.775] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [1, 10, , ] [1, 10, , , [object Object]]
+[21:04:15.860] Server  LOG     ststus TRIAL_ACTIVE
+[21:04:20.335] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <div data-slot="sidebar-wr..." style={{...}} className="group/side...">
+      ...
+        <MenuProvider scope={{Menu:[...], ...}} onClose={function Menu.useCallback} isUsingKeyboardRef={{current:false}} ...>
+          <DropdownMenuTrigger asChild={true}>
+            <DropdownMenuTrigger data-slot="dropdown-m..." asChild={true}>
+              <MenuAnchor asChild={true} __scopeMenu={{Menu:[...], ...}}>
+                <PopperAnchor __scopePopper={{Menu:[...], ...}} asChild={true} ref={null}>
+                  <Primitive.div asChild={true} ref={function}>
+                    <Slot ref={function}>
+                      <SlotClone ref={function}>
+                        <Primitive.button type="button" id="radix-_R_4..." aria-haspopup="menu" aria-expanded={false} ...>
+                          <Slot type="button" id="radix-_R_4..." aria-haspopup="menu" aria-expanded={false} ...>
+                            <SlotClone type="button" id="radix-_R_4..." aria-haspopup="menu" aria-expanded={false} ...>
+                              <SidebarMenuButton size="lg" className="data-[stat..." type="button" id="radix-_R_4..." ...>
+                                <button
+                                  data-slot="dropdown-menu-trigger"
+                                  data-sidebar="menu-button"
+                                  data-size="lg"
+                                  data-active={false}
+                                  className={"peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded..."}
+                                  type="button"
++                                 id="radix-_R_4j9esndlb_"
+-                                 id="radix-_R_id5ritllb_"
+                                  aria-haspopup="menu"
+                                  aria-expanded={false}
+                                  aria-controls={undefined}
+                                  data-state="closed"
+                                  data-disabled={undefined}
+                                  disabled={false}
+                                  onPointerDown={function handleEvent}
+                                  onKeyDown={function handleEvent}
+                                  ref={function}
+                                >
+          ...
+      <SidebarInset className="bg-custom-...">
+        <main data-slot="sidebar-inset" className="relative f...">
+          <header className="flex h-16 ...">
+            ...
+              <MenuProvider scope={{Menu:[...], ...}} onClose={function Menu.useCallback} ...>
+                <DropdownMenuTrigger className="outline-no...">
+                  <DropdownMenuTrigger data-slot="dropdown-m..." className="outline-no...">
+                    <MenuAnchor asChild={true} __scopeMenu={{Menu:[...], ...}}>
+                      <PopperAnchor __scopePopper={{Menu:[...], ...}} asChild={true} ref={null}>
+                        <Primitive.div asChild={true} ref={function}>
+                          <Slot ref={function}>
+                            <SlotClone ref={function}>
+                              <Primitive.button type="button" id="radix-_R_p..." aria-haspopup="menu" ...>
+                                <button
+                                  type="button"
++                                 id="radix-_R_pd9esndlb_"
+-                                 id="radix-_R_35l5ritllb_"
+                                  aria-haspopup="menu"
+                                  aria-expanded={false}
+                                  aria-controls={undefined}
+                                  data-state="closed"
+                                  data-disabled={undefined}
+                                  disabled={false}
+                                  data-slot="dropdown-menu-trigger"
+                                  className="outline-none relative"
+                                  onPointerDown={function handleEvent}
+                                  onKeyDown={function handleEvent}
+                                  ref={function}
+                                >
+                ...
+            ...
+              <MenuProvider scope={{Menu:[...], ...}} onClose={function Menu.useCallback} ...>
+                <DropdownMenuTrigger className="outline-no...">
+                  <DropdownMenuTrigger data-slot="dropdown-m..." className="outline-no...">
+                    <MenuAnchor asChild={true} __scopeMenu={{Menu:[...], ...}}>
+                      <PopperAnchor __scopePopper={{Menu:[...], ...}} asChild={true} ref={null}>
+                        <Primitive.div asChild={true} ref={function}>
+                          <Slot ref={function}>
+                            <SlotClone ref={function}>
+                              <Primitive.button type="button" id="radix-_R_a..." aria-haspopup="menu" ...>
+                                <button
+                                  type="button"
++                                 id="radix-_R_ad9esndlb_"
+-                                 id="radix-_R_19l5ritllb_"
+                                  aria-haspopup="menu"
+                                  aria-expanded={false}
+                                  aria-controls={undefined}
+                                  data-state="closed"
+                                  data-disabled={undefined}
+                                  disabled={false}
+                                  data-slot="dropdown-menu-trigger"
+                                  className="outline-none relative"
+                                  onPointerDown={function handleEvent}
+                                  onKeyDown={function handleEvent}
+                                  ref={function}
+                                >
+                ...
+          ...
+            <SelectCollectionProviderProvider scope={undefined} itemMap={Map} collectionRef={{current:null}}>
+              <SelectProvider scope={undefined} onNativeOptionAdd={function Select.useCallback} ...>
+                <SelectTrigger className="w-[70px] s...">
+                  <SelectTrigger data-slot="select-tri..." data-size="default" className={"border-i..."}>
+                    <PopperAnchor asChild={true} __scopePopper={{Popper:[...]}}>
+                      <Primitive.div asChild={true} ref={function}>
+                        <Slot ref={function}>
+                          <SlotClone ref={function}>
+                            <Primitive.button type="button" role="combobox" aria-controls="radix-_R_9..." ...>
+                              <button
+                                type="button"
+                                role="combobox"
++                               aria-controls="radix-_R_9v9bn5rl9esndlb_"
+-                               aria-controls="radix-_R_17t5esnel5ritllb_"
+                                aria-expanded={false}
+                                aria-required={undefined}
+                                aria-autocomplete="none"
+                                dir="ltr"
+                                data-state="closed"
+                                disabled={false}
+                                data-disabled={undefined}
+                                data-placeholder={undefined}
+                                data-slot="select-trigger"
+                                data-size="default"
+                                className={"border-input data-[placeholder]:text-muted-foreground [&_svg:not([class*=..."}
+                                onClick={function handleEvent}
+                                onPointerDown={function handleEvent}
+                                onKeyDown={function handleEvent}
+                                ref={function}
+                              >
+                ...
+
+[21:04:29.607] Server  LOG     ststus TRIAL_ACTIVE
+[21:05:37.560] Server  LOG      ✓ Compiled in 474ms
+[21:06:01.809] Server  LOG      ✓ Compiled in 628ms
+[21:06:33.668] Server  LOG      ✓ Compiled in 612ms
+[21:06:48.381] Server  LOG      ✓ Compiled in 780ms
+[21:06:52.942] Server  LOG     ststus TRIAL_ACTIVE
+[21:06:57.017] Server  LOG     ststus TRIAL_ACTIVE
+[21:07:15.654] Server  LOG      ✓ Compiled in 482ms
+[21:09:11.270] Server  LOG     ststus TRIAL_ACTIVE
+[21:19:52.485] Server  LOG      ✓ Compiled in 2s
+[21:21:31.242] Server  LOG      ✓ Compiled in 1128ms
+[21:21:37.141] Server  LOG     ststus TRIAL_ACTIVE
+[21:21:41.430] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[21:21:50.533] Server  LOG     ststus TRIAL_ACTIVE
+[21:21:55.236] Server  LOG     ststus TRIAL_ACTIVE
+[21:21:56.995] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[21:22:00.753] Server  LOG     ststus TRIAL_ACTIVE
+[21:22:06.134] Server  LOG     ststus TRIAL_ACTIVE
+[21:22:07.621] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[21:22:15.684] Server  LOG     ststus TRIAL_ACTIVE
+[21:22:19.351] Server  LOG     ststus TRIAL_ACTIVE
+[21:22:20.850] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[21:31:05.672] Server  LOG      ✓ Compiled in 3.4s
+[21:31:06.236] Server  LOG     ststus TRIAL_ACTIVE
+[21:31:07.506] Server  LOG     ststus TRIAL_ACTIVE
+[21:31:07.523] Server  LOG     ststus TRIAL_ACTIVE
+[21:31:07.707] Server  LOG     ststus TRIAL_ACTIVE
+[21:31:07.775] Server  LOG     ststus TRIAL_ACTIVE
+[21:31:07.892] Server  LOG     ststus TRIAL_ACTIVE
+[21:31:07.902] Server  LOG     ststus TRIAL_ACTIVE
+[21:31:07.908] Server  LOG     ststus TRIAL_ACTIVE
+[21:31:07.919] Server  LOG     ststus TRIAL_ACTIVE
+[21:31:10.181] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[21:31:14.707] Server  LOG     ststus TRIAL_ACTIVE
+[21:31:20.153] Server  LOG     ststus TRIAL_ACTIVE
+[21:31:22.060] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[21:31:29.764] Server  LOG     ststus TRIAL_ACTIVE
+[21:31:43.863] Server  LOG      ✓ Compiled in 945ms
+[21:31:44.291] Server  LOG     ststus TRIAL_ACTIVE
+[21:31:45.635] Server  LOG     ststus TRIAL_ACTIVE
+[21:31:46.183] Server  LOG     ststus TRIAL_ACTIVE
+[21:31:46.800] Server  LOG     ststus TRIAL_ACTIVE
+[21:31:47.437] Server  LOG     ststus TRIAL_ACTIVE
+[21:31:48.097] Server  LOG     ststus TRIAL_ACTIVE
+[21:31:48.517] Server  LOG     ststus TRIAL_ACTIVE
+[21:31:48.868] Server  LOG     ststus TRIAL_ACTIVE
+[21:31:49.553] Server  LOG     ststus TRIAL_ACTIVE
+[21:31:49.716] Server  LOG     ststus TRIAL_ACTIVE
+[21:31:50.041] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[21:31:52.393] Server  LOG     ststus TRIAL_ACTIVE
+[21:31:55.466] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[21:31:55.569] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[21:32:00.118] Server  LOG     ststus TRIAL_ACTIVE
+[21:32:01.790] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[21:32:03.117] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[21:32:03.946] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[21:32:13.127] Server  LOG      ✓ Compiled in 780ms
+[21:32:13.458] Server  LOG     ststus TRIAL_ACTIVE
+[21:32:14.796] Server  LOG     ststus TRIAL_ACTIVE
+[21:32:15.401] Server  LOG     ststus TRIAL_ACTIVE
+[21:32:16.000] Server  LOG     ststus TRIAL_ACTIVE
+[21:32:16.537] Server  LOG     ststus TRIAL_ACTIVE
+[21:32:17.384] Server  LOG     ststus TRIAL_ACTIVE
+[21:32:18.371] Server  LOG     ststus TRIAL_ACTIVE
+[21:32:18.882] Server  LOG     ststus TRIAL_ACTIVE
+[21:32:19.412] Server  LOG     ststus TRIAL_ACTIVE
+[21:34:51.017] Server  LOG      ✓ Compiled in 1045ms
+[21:34:51.545] Server  LOG     ststus TRIAL_ACTIVE
+[21:34:52.993] Server  LOG     ststus TRIAL_ACTIVE
+[21:34:53.612] Server  LOG     ststus TRIAL_ACTIVE
+[21:34:54.004] Server  LOG     ststus TRIAL_ACTIVE
+[21:34:55.112] Server  LOG     ststus TRIAL_ACTIVE
+[21:34:55.892] Server  LOG     ststus TRIAL_ACTIVE
+[21:34:56.413] Server  LOG     ststus TRIAL_ACTIVE
+[21:34:56.741] Server  LOG     ststus TRIAL_ACTIVE
+[21:34:56.904] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[21:34:57.101] Server  LOG     ststus TRIAL_ACTIVE
+[21:34:57.435] Server  LOG     ststus TRIAL_ACTIVE
+[21:34:58.265] Server  LOG     ststus TRIAL_ACTIVE
+[21:35:21.289] Server  LOG      ✓ Compiled in 490ms
+[21:35:21.661] Server  LOG     ststus TRIAL_ACTIVE
+[21:35:22.532] Server  LOG     ststus TRIAL_ACTIVE
+[21:35:23.163] Server  LOG     ststus TRIAL_ACTIVE
+[21:35:23.719] Server  LOG     ststus TRIAL_ACTIVE
+[21:35:24.257] Server  LOG     ststus TRIAL_ACTIVE
+[21:35:24.857] Server  LOG     ststus TRIAL_ACTIVE
+[21:35:25.413] Server  LOG     ststus TRIAL_ACTIVE
+[21:35:25.959] Server  LOG     ststus TRIAL_ACTIVE
+[21:35:26.488] Server  LOG     ststus TRIAL_ACTIVE
+[21:35:29.732] Server  LOG     ststus TRIAL_ACTIVE
+[21:35:31.597] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[21:35:32.850] Server  LOG     ststus TRIAL_ACTIVE
+[21:35:38.382] Server  LOG     ststus TRIAL_ACTIVE
+[21:35:41.481] Server  LOG      ○ Compiling /shop/[shopId]/qr-code ...
+[21:35:48.407] Server  LOG     ststus TRIAL_ACTIVE
+[21:35:56.861] Server  LOG     ststus TRIAL_ACTIVE
+[21:35:58.335] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[21:36:08.305] Server  LOG     ststus TRIAL_ACTIVE
+[21:36:15.635] Server  LOG      ✓ Compiled in 462ms
+[21:36:15.984] Server  LOG     ststus TRIAL_ACTIVE
+[21:36:17.192] Server  LOG     ststus TRIAL_ACTIVE
+[21:36:17.721] Server  LOG     ststus TRIAL_ACTIVE
+[21:36:18.234] Server  LOG     ststus TRIAL_ACTIVE
+[21:36:18.747] Server  LOG     ststus TRIAL_ACTIVE
+[21:36:19.357] Server  LOG     ststus TRIAL_ACTIVE
+[21:36:19.873] Server  LOG     ststus TRIAL_ACTIVE
+[21:36:20.367] Server  LOG     ststus TRIAL_ACTIVE
+[21:36:20.964] Server  LOG     ststus TRIAL_ACTIVE
+[21:36:21.575] Server  LOG     ststus TRIAL_ACTIVE
+[21:36:25.012] Server  LOG     ststus TRIAL_ACTIVE
+[21:36:27.326] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[21:36:28.663] Server  LOG     ststus TRIAL_ACTIVE
+[21:36:31.624] Server  LOG     ststus TRIAL_ACTIVE
+[21:36:45.467] Server  LOG     ststus TRIAL_ACTIVE
+[21:37:54.977] Server  LOG      ✓ Compiled in 1665ms
+[21:38:55.503] Server  LOG      ✓ Compiled in 559ms
+[25:42:34.879] Server  LOG     ststus TRIAL_ACTIVE
+[26:01:16.909] Server  LOG        Reload env: .env
+[26:01:19.914] Server  LOG     ststus TRIAL_ACTIVE
