@@ -10,28 +10,40 @@ export async function GET() {
         const { default: prisma } = await import("@/lib/prisma");
 
         // -----------------------------------------
-        //  IST TIME SUPPORT
+        // IST TIME SUPPORT
         // -----------------------------------------
         const IST_OFFSET = 5.5 * 60 * 60 * 1000;
         const nowUTC = new Date();
         const nowIST = new Date(nowUTC.getTime() + IST_OFFSET);
 
         // TODAY IST 00:00
-        const startTodayIST = new Date(nowIST.getFullYear(), nowIST.getMonth(), nowIST.getDate());
+        const startTodayIST = new Date(
+            nowIST.getFullYear(),
+            nowIST.getMonth(),
+            nowIST.getDate()
+        );
 
         // TOMORROW IST 00:00
-        const startTomorrowIST = new Date(nowIST.getFullYear(), nowIST.getMonth(), nowIST.getDate() + 1);
+        const startTomorrowIST = new Date(
+            nowIST.getFullYear(),
+            nowIST.getMonth(),
+            nowIST.getDate() + 1
+        );
 
         // DAY AFTER TOMORROW IST 00:00
-        const startDayAfterIST = new Date(nowIST.getFullYear(), nowIST.getMonth(), nowIST.getDate() + 2);
+        const startDayAfterIST = new Date(
+            nowIST.getFullYear(),
+            nowIST.getMonth(),
+            nowIST.getDate() + 2
+        );
 
-        // Convert to UTC for DB
+        // Convert IST boundaries back to UTC for DB comparison
         const startTodayUTC = new Date(startTodayIST.getTime() - IST_OFFSET);
         const startTomorrowUTC = new Date(startTomorrowIST.getTime() - IST_OFFSET);
         const startDayAfterUTC = new Date(startDayAfterIST.getTime() - IST_OFFSET);
 
         // -----------------------------------------
-        // 1️⃣ EXPIRING TODAY (for expired email)
+        // 1️⃣ EXPIRING TODAY (Send Expired Email)
         // -----------------------------------------
         const subsExpiringToday = await prisma.subscription.findMany({
             where: {
@@ -43,8 +55,17 @@ export async function GET() {
             include: { shop: true }
         });
 
+        for (const s of subsExpiringToday) {
+            await sendPlanExpiredEmail({
+                to: s.shop?.ownerId,
+                shopName: s.shop?.shopName,
+                expiryDate: s.nextBillingAt,
+                dashboardUrl: `https://stampi.in/shop/${s.shop?.id}/billing`,
+            });
+        }
+
         // -----------------------------------------
-        // 2️⃣ EXPIRING TOMORROW (for 24h-before email)
+        // 2️⃣ EXPIRING TOMORROW (Send Reminder Email)
         // -----------------------------------------
         const subsExpiringTomorrow = await prisma.subscription.findMany({
             where: {
@@ -56,54 +77,19 @@ export async function GET() {
             include: { shop: true }
         });
 
-        const oneDayMs = 24 * 60 * 60 * 1000;
-
-
-        // ---------------------------------------------------
-        // ⭐ EXPIRED EMAIL (Expiry Today)
-        // ---------------------------------------------------
-        for (const s of subsExpiringToday) {
-            const expiryUTC = new Date(s.nextBillingAt);
-            const expiryIST = new Date(expiryUTC.getTime() + IST_OFFSET);
-
-            if (expiryIST <= nowIST) {
-                await sendPlanExpiredEmail({
-                    to: s.shop?.ownerId,
-                    shopName: s.shop?.shopName,
-                    expiryDate: expiryIST,
-                    dashboardUrl: `https://stampi.in/shop/${s.shop?.id}/billing`,
-                });
-            }
-        }
-
-        // ---------------------------------------------------
-        // ⭐ 24 HOURS BEFORE EMAIL (Expiry Tomorrow)
-        // ---------------------------------------------------
         for (const s of subsExpiringTomorrow) {
-
-            const expiryUTC = new Date(s.nextBillingAt);
-            const expiryIST = new Date(expiryUTC.getTime() + IST_OFFSET);
-
-            const diff = expiryIST - nowIST;
-
-            console.log(subsExpiringTomorrow, expiryIST, nowIST)
-
-            // 10-minute cron window around 24 hours
-            if (diff <= oneDayMs && diff > oneDayMs - 10 * 60 * 1000) {
-
-                await sendPlanExpiresTomorrowEmail({
-                    to: s.shop?.ownerId,
-                    shopName: s.shop?.shopName,
-                    expiryDate: expiryIST,
-                    dashboardUrl: `https://stampi.in/shop/${s.shop?.id}/billing`,
-                });
-            }
+            await sendPlanExpiresTomorrowEmail({
+                to: s.shop?.ownerId,
+                shopName: s.shop?.shopName,
+                expiryDate: s.nextBillingAt,
+                dashboardUrl: `https://stampi.in/shop/${s.shop?.id}/billing`,
+            });
         }
 
-        return NextResponse.json({ status: "CRON_RAN" });
+        return NextResponse.json({ status: "CRON_RAN_SUCCESSFULLY" });
 
     } catch (err) {
         console.error("[CRON ERROR]", err);
-        return NextResponse.json({ status: "ERROR" });
+        return NextResponse.json({ status: "ERROR" }, { status: 500 });
     }
 }
