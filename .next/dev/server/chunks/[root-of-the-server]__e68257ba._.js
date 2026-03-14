@@ -384,6 +384,8 @@ async function GET() {
                 dashboardUrl: `https://stampi.in/shop/${s.shop?.id}/billing`
             });
         }
+        console.log("Today UTC Range:", startTodayUTC, startTomorrowUTC);
+        console.log("Subs Expiring Today:", subsExpiringToday);
         // -----------------------------------------
         // 2️⃣ EXPIRING TOMORROW (Send Reminder Email)
         // -----------------------------------------
@@ -402,7 +404,7 @@ async function GET() {
             await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$email$2f$sendPlanExpiresTomorrowEmail$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["sendPlanExpiresTomorrowEmail"])({
                 to: s.shop?.ownerId,
                 shopName: s.shop?.shopName,
-                expiryDate: s.nextBillingAt,
+                expiryDate: s.nextBillingAt + IST_OFFSET,
                 dashboardUrl: `https://stampi.in/shop/${s.shop?.id}/billing`
             });
         }

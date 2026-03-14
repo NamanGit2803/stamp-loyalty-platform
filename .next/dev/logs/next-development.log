@@ -1,319 +1,62 @@
-[00:00:08.018] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:10.030] Server  LOG      ✓ Ready in 7.4s
-[00:00:39.249] Server  LOG      ○ Compiling / ...
-[00:00:54.466] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:52.835] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
-[00:05:03.748] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[00:05:03.748] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[00:07:41.302] Server  LOG      ✓ Compiled in 4.5s
-[00:08:56.739] Server  LOG      ✓ Compiled in 651ms
-[00:08:59.681] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:01.151] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[00:09:03.148] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[00:09:17.283] Server  LOG      ✓ Compiled in 525ms
-[00:10:41.462] Server  LOG      ✓ Compiled in 886ms
-[00:11:17.318] Server  LOG      ✓ Compiled in 645ms
-[00:12:16.759] Server  LOG      ✓ Compiled in 574ms
-[00:12:19.598] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:12:21.154] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[00:12:22.141] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[00:12:27.612] Server  LOG      ✓ Compiled in 508ms
-[00:12:42.302] Server  LOG      ✓ Compiled in 523ms
-[00:14:29.140] Server  LOG      ✓ Compiled in 674ms
-[00:14:31.327] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:14:32.430] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[00:14:34.147] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[00:15:49.619] Server  LOG      ✓ Compiled in 721ms
-[00:17:57.253] Server  LOG      ✓ Compiled in 529ms
-[00:18:14.788] Server  LOG      ✓ Compiled in 528ms
-[00:32:32.947] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:32:34.193] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[00:32:35.176] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[01:41:36.397] Server  LOG      ✓ Compiled in 926ms
-[01:41:39.302] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:41:40.390] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[01:41:41.662] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[01:42:25.438] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:42:26.317] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[01:42:27.577] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[01:45:38.429] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:45:39.313] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[01:45:40.837] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[01:46:57.001] Server  LOG      ✓ Compiled in 750ms
-[01:47:07.582] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:47:08.452] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[01:47:09.737] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[01:49:09.347] Server  LOG      ✓ Compiled in 1449ms
-[01:52:46.056] Server  LOG      ✓ Compiled in 787ms
-[01:54:59.743] Server  LOG      ✓ Compiled in 489ms
-[01:55:20.630] Server  LOG      ✓ Compiled in 857ms
-[02:02:33.919] Server  LOG      ✓ Compiled in 583ms
-[02:06:47.902] Server  LOG      ✓ Compiled in 510ms
-[02:07:04.757] Server  LOG      ✓ Compiled in 678ms
-[02:11:27.942] Server  LOG      ✓ Compiled in 1084ms
-[02:11:39.210] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:11:40.508] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[02:11:41.823] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[02:12:23.775] Server  LOG      ✓ Compiled in 768ms
-[02:13:11.254] Server  LOG      ✓ Compiled in 517ms
-[02:13:24.171] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:13:25.062] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[02:13:26.381] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[02:13:45.126] Server  LOG      ✓ Compiled in 576ms
-[02:33:28.897] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:33:30.012] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[02:33:31.415] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[02:35:39.298] Server  LOG      ✓ Compiled in 753ms
-[20:19:38.281] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[20:19:39.831] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[20:19:41.530] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[20:21:54.993] Server  LOG      ✓ Compiled in 2s
-[20:22:23.216] Server  LOG      ✓ Compiled in 548ms
-[20:23:08.538] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[20:23:10.446] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[20:23:12.418] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[20:26:14.900] Server  LOG      ✓ Compiled in 1046ms
-[23:24:53.921] Server  LOG      ○ Compiling /api/shop/notifications/markAsRead ...
-[23:24:59.452] Server  LOG      ○ Compiling /shop/[shopId]/notifications/[notificationId] ...
-[23:25:07.964] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:08.281] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_1017e7b2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:08.295] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:08.313] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:08.331] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:08.353] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:08.370] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:08.381] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:08.393] Server  ERROR    ⨯ Error: The default export is not a React Component in "/shop/[shopId]/notifications/[notificationId]/page"
-[23:25:08.404] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:08.412] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_1017e7b2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:08.414] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:08.418] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:08.420] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:08.425] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:08.429] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:08.433] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:08.438] Server  ERROR    ⨯ Error: The default export is not a React Component in "/shop/[shopId]/notifications/[notificationId]/page"
-[23:25:11.484] Server  LOG      ○ Compiling /_error ...
-[23:25:18.849] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:18.851] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_1017e7b2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:18.853] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:18.862] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:18.867] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:18.868] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:18.870] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:18.882] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:18.883] Server  ERROR    ⨯ Error: The default export is not a React Component in "/shop/[shopId]/notifications/[notificationId]/page"
-[23:25:18.913] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:18.914] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_1017e7b2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:18.916] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:18.918] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:18.920] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:18.922] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:18.928] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:18.931] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:25:18.933] Server  ERROR    ⨯ Error: The default export is not a React Component in "/shop/[shopId]/notifications/[notificationId]/page"
-[23:25:19.554] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/shop/[shopId]/notifications/[notificationId]/page"
-[23:25:23.287] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[23:25:24.467] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[23:25:25.723] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[23:26:33.637] Browser ERROR   uncaughtError: Error: Objects are not valid as a React child (found: [object Error]). If you meant to render a collection of children, use an array instead.
-[23:26:36.091] Browser ERROR   uncaughtError: Error: Rendered more hooks than during the previous render.
-[23:26:36.192] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:36.196] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_1017e7b2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:36.198] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:36.217] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:36.219] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:36.221] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:36.223] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:36.227] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:36.229] Server  ERROR    ⨯ Error: The default export is not a React Component in "/shop/[shopId]/notifications/[notificationId]/page"
-[23:26:36.253] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:36.254] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_1017e7b2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:36.256] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:36.269] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:36.272] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:36.274] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:36.289] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:36.380] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:36.419] Server  ERROR    ⨯ Error: The default export is not a React Component in "/shop/[shopId]/notifications/[notificationId]/page"
-[23:26:43.213] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[23:26:44.049] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[23:26:45.505] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[23:26:48.957] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:48.962] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_1017e7b2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:48.964] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:48.966] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:48.968] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.003] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.005] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.008] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.017] Server  ERROR    ⨯ Error: The default export is not a React Component in "/shop/[shopId]/notifications/[notificationId]/page"
-[23:26:49.033] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.036] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_1017e7b2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.051] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.053] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.055] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.057] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.062] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.066] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.068] Server  ERROR    ⨯ Error: The default export is not a React Component in "/shop/[shopId]/notifications/[notificationId]/page"
-[23:26:49.680] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.682] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_1017e7b2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.685] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.686] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.688] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.690] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.698] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.700] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.707] Server  ERROR    ⨯ Error: The default export is not a React Component in "/shop/[shopId]/notifications/[notificationId]/page"
-[23:26:49.741] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.750] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_1017e7b2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.752] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.753] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.755] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.757] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.766] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.768] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[23:26:49.769] Server  ERROR    ⨯ Error: The default export is not a React Component in "/shop/[shopId]/notifications/[notificationId]/page"
-[23:26:50.215] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/shop/[shopId]/notifications/[notificationId]/page"
-[23:26:55.731] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[23:26:56.204] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-https://react.dev/link/hydration-mismatch
-
-  ...
-    <TooltipProvider delayDuration={0}>
-      <TooltipProvider data-slot="tooltip-pr..." delayDuration={0}>
-        <TooltipProviderProvider scope={undefined} isOpenDelayed={true} delayDuration={0} ...>
-          <div data-slot="sidebar-wr..." style={{...}} className="group/side...">
-            <AppSidebar shopId="shop_2oHT9n8u">
-              <Sidebar collapsible="icon">
-                <div className="group peer..." data-state="expanded" data-collapsible="" data-variant="sidebar" ...>
-                  <div>
-                  <div data-slot="sidebar-co..." className="fixed inse...">
-                    <div data-sidebar="sidebar" data-slot="sidebar-inner" className="bg-sidebar...">
-                      <SidebarHeader>
-                        <div data-slot="sidebar-he..." data-sidebar="header" className="flex flex-...">
-                          <div className="flex gap-2...">
-                            <div>
-                            <div className="grid flex-1">
-                              <span className="truncate font-medium capitalize">
-+                               Joker Cafe
--                               Shop Name
-                      ...
-            ...
-
-[23:26:56.336] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[23:26:58.265] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[23:26:58.265] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[23:27:00.056] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[23:27:00.769] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[23:27:02.259] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[23:36:58.966] Server  LOG      ○ Compiling /shop/[shopId]/customers ...
-[24:19:09.356] Server  LOG      ✓ Compiled in 2.7s
-[24:20:26.396] Server  LOG      ○ Compiling middleware ...
-[24:20:49.083] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[24:20:51.367] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[24:20:53.210] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
-[24:51:09.850] Server  LOG      ○ Compiling /shop/[shopId]/notifications ...
-[24:51:15.381] Browser ERROR   uncaughtError: TypeError: notifications.map is not a function
-[24:51:29.936] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[24:51:29.981] Server  LOG      ✓ Compiled in 541ms
-[24:51:33.087] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[24:51:34.629] Browser ERROR   uncaughtError: TypeError: notifications?.map is not a function
-[24:51:58.361] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[24:52:02.226] Browser ERROR   uncaughtError: TypeError: notifications?.map is not a function
-[24:52:36.515] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[24:52:36.533] Server  LOG      ✓ Compiled in 597ms
-[24:52:40.251] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[24:52:43.349] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-02-23T10:30:59.457Z","customerId":null,"id":"xmlx48454serdcrtfgv","isRead":true,"isSent":false,"link":null,"message":"A new customer Naman registered from qr at your shop.","metadata":null,"readAt":null,"sentAt":null,"shopId":"shop_2oHT9n8u","title":"New Customer Joined","type":"system","updatedAt":"2026-02-24T09:05:46.861Z"},{"channel":"IN_APP","createdAt":"2026-02-22T04:36:12.457Z","customerId":null,"id":"cmlx99a290001113s8cr6sqgx","isRead":true,"isSent":true,"link":null,"message":"Your shop \"Joker Cafe\" has been successfully created. You are now on a free trial plan valid until 09 MAR 2026 • 10:06 AM.","metadata":{"trialEndsAt":"09 MAR 2026 • 10:06 AM"},"readAt":null,"sentAt":null,"shopId":"shop_2oHT9n8u","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-02-24T09:03:54.328Z"}]}
-[24:52:43.350] Browser ERROR   uncaughtError: TypeError: notifications?.map is not a function
-[24:52:56.184] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[24:52:56.207] Server  LOG      ✓ Compiled in 835ms
-[24:52:58.964] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[24:53:01.878] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-02-23T10:30:59.457Z","customerId":null,"id":"xmlx48454serdcrtfgv","isRead":true,"isSent":false,"link":null,"message":"A new customer Naman registered from qr at your shop.","metadata":null,"readAt":null,"sentAt":null,"shopId":"shop_2oHT9n8u","title":"New Customer Joined","type":"system","updatedAt":"2026-02-24T09:05:46.861Z"},{"channel":"IN_APP","createdAt":"2026-02-22T04:36:12.457Z","customerId":null,"id":"cmlx99a290001113s8cr6sqgx","isRead":true,"isSent":true,"link":null,"message":"Your shop \"Joker Cafe\" has been successfully created. You are now on a free trial plan valid until 09 MAR 2026 • 10:06 AM.","metadata":{"trialEndsAt":"09 MAR 2026 • 10:06 AM"},"readAt":null,"sentAt":null,"shopId":"shop_2oHT9n8u","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-02-24T09:03:54.328Z"}]}
-[24:53:08.743] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[24:53:11.528] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[24:53:13.010] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-https://react.dev/link/hydration-mismatch
-
-  ...
-    <TooltipProvider delayDuration={0}>
-      <TooltipProvider data-slot="tooltip-pr..." delayDuration={0}>
-        <TooltipProviderProvider scope={undefined} isOpenDelayed={true} delayDuration={0} ...>
-          <div data-slot="sidebar-wr..." style={{...}} className="group/side...">
-            <AppSidebar shopId="shop_2oHT9n8u">
-              <Sidebar collapsible="icon">
-                <div className="group peer..." data-state="expanded" data-collapsible="" data-variant="sidebar" ...>
-                  <div>
-                  <div data-slot="sidebar-co..." className="fixed inse...">
-                    <div data-sidebar="sidebar" data-slot="sidebar-inner" className="bg-sidebar...">
-                      <SidebarHeader>
-                        <div data-slot="sidebar-he..." data-sidebar="header" className="flex flex-...">
-                          <div className="flex gap-2...">
-                            <div>
-                            <div className="grid flex-1">
-                              <span className="truncate font-medium capitalize">
-+                               Joker Cafe
--                               Shop Name
-                      ...
-            ...
-
-[24:53:14.313] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-02-23T10:30:59.457Z","customerId":null,"id":"xmlx48454serdcrtfgv","isRead":true,"isSent":false,"link":null,"message":"A new customer Naman registered from qr at your shop.","metadata":null,"readAt":null,"sentAt":null,"shopId":"shop_2oHT9n8u","title":"New Customer Joined","type":"system","updatedAt":"2026-02-24T09:05:46.861Z"},{"channel":"IN_APP","createdAt":"2026-02-22T04:36:12.457Z","customerId":null,"id":"cmlx99a290001113s8cr6sqgx","isRead":true,"isSent":true,"link":null,"message":"Your shop \"Joker Cafe\" has been successfully created. You are now on a free trial plan valid until 09 MAR 2026 • 10:06 AM.","metadata":{"trialEndsAt":"09 MAR 2026 • 10:06 AM"},"readAt":null,"sentAt":null,"shopId":"shop_2oHT9n8u","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-02-24T09:03:54.328Z"}]}
-[24:53:14.883] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-02-23T10:30:59.457Z","customerId":null,"id":"xmlx48454serdcrtfgv","isRead":true,"isSent":false,"link":null,"message":"A new customer Naman registered from qr at your shop.","metadata":null,"readAt":null,"sentAt":null,"shopId":"shop_2oHT9n8u","title":"New Customer Joined","type":"system","updatedAt":"2026-02-24T09:05:46.861Z"},{"channel":"IN_APP","createdAt":"2026-02-22T04:36:12.457Z","customerId":null,"id":"cmlx99a290001113s8cr6sqgx","isRead":true,"isSent":true,"link":null,"message":"Your shop \"Joker Cafe\" has been successfully created. You are now on a free trial plan valid until 09 MAR 2026 • 10:06 AM.","metadata":{"trialEndsAt":"09 MAR 2026 • 10:06 AM"},"readAt":null,"sentAt":null,"shopId":"shop_2oHT9n8u","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-02-24T09:03:54.328Z"}]}
-[24:53:20.694] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[24:53:23.152] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-02-23T10:30:59.457Z","customerId":null,"id":"xmlx48454serdcrtfgv","isRead":true,"isSent":false,"link":null,"message":"A new customer Naman registered from qr at your shop.","metadata":null,"readAt":null,"sentAt":null,"shopId":"shop_2oHT9n8u","title":"New Customer Joined","type":"system","updatedAt":"2026-02-24T09:05:46.861Z"},{"channel":"IN_APP","createdAt":"2026-02-22T04:36:12.457Z","customerId":null,"id":"cmlx99a290001113s8cr6sqgx","isRead":true,"isSent":true,"link":null,"message":"Your shop \"Joker Cafe\" has been successfully created. You are now on a free trial plan valid until 09 MAR 2026 • 10:06 AM.","metadata":{"trialEndsAt":"09 MAR 2026 • 10:06 AM"},"readAt":null,"sentAt":null,"shopId":"shop_2oHT9n8u","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-02-24T09:03:54.328Z"}]}
-[24:53:53.179] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-02-23T10:30:59.457Z","customerId":null,"id":"xmlx48454serdcrtfgv","isRead":true,"isSent":false,"link":null,"message":"A new customer Naman registered from qr at your shop.","metadata":null,"readAt":null,"sentAt":null,"shopId":"shop_2oHT9n8u","title":"New Customer Joined","type":"system","updatedAt":"2026-02-24T09:05:46.861Z"},{"channel":"IN_APP","createdAt":"2026-02-22T04:36:12.457Z","customerId":null,"id":"cmlx99a290001113s8cr6sqgx","isRead":true,"isSent":true,"link":null,"message":"Your shop \"Joker Cafe\" has been successfully created. You are now on a free trial plan valid until 09 MAR 2026 • 10:06 AM.","metadata":{"trialEndsAt":"09 MAR 2026 • 10:06 AM"},"readAt":null,"sentAt":null,"shopId":"shop_2oHT9n8u","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-02-24T09:03:54.328Z"}]}
-[24:53:53.179] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-02-23T10:30:59.457Z","customerId":null,"id":"xmlx48454serdcrtfgv","isRead":true,"isSent":false,"link":null,"message":"A new customer Naman registered from qr at your shop.","metadata":null,"readAt":null,"sentAt":null,"shopId":"shop_2oHT9n8u","title":"New Customer Joined","type":"system","updatedAt":"2026-02-24T09:05:46.861Z"},{"channel":"IN_APP","createdAt":"2026-02-22T04:36:12.457Z","customerId":null,"id":"cmlx99a290001113s8cr6sqgx","isRead":true,"isSent":true,"link":null,"message":"Your shop \"Joker Cafe\" has been successfully created. You are now on a free trial plan valid until 09 MAR 2026 • 10:06 AM.","metadata":{"trialEndsAt":"09 MAR 2026 • 10:06 AM"},"readAt":null,"sentAt":null,"shopId":"shop_2oHT9n8u","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-02-24T09:03:54.328Z"}]}
-[25:15:25.903] Server  LOG      ✓ Compiled in 638ms
-[25:15:27.083] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\[root-of-the-server]__c9bc12de._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[25:15:27.086] Server  ERROR    ⨯ ReferenceError: useEffect is not defined
-[25:15:29.159] Browser ERROR   uncaughtError: ReferenceError: useEffect is not defined
-[25:15:59.499] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[25:15:59.513] Server  LOG      ✓ Compiled in 517ms
-[25:16:00.664] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\[root-of-the-server]__c9bc12de._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[25:16:00.665] Server  ERROR    ⨯ ReferenceError: useEffect is not defined
-[25:16:03.009] Server  LOG      ✓ Compiled in 1581ms
-[25:16:04.221] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[25:16:07.187] Browser ERROR   uncaughtError: ReferenceError: useEffect is not defined
-[25:44:48.579] Server  LOG      ✓ Compiled in 565ms
-[25:44:54.963] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[25:44:58.141] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-02-23T10:30:59.457Z","customerId":null,"id":"xmlx48454serdcrtfgv","isRead":true,"isSent":false,"link":null,"message":"A new customer Naman registered from qr at your shop.","metadata":null,"readAt":null,"sentAt":null,"shopId":"shop_2oHT9n8u","title":"New Customer Joined","type":"system","updatedAt":"2026-02-24T09:05:46.861Z"},{"channel":"IN_APP","createdAt":"2026-02-22T04:36:12.457Z","customerId":null,"id":"cmlx99a290001113s8cr6sqgx","isRead":true,"isSent":true,"link":null,"message":"Your shop \"Joker Cafe\" has been successfully created. You are now on a free trial plan valid until 09 MAR 2026 • 10:06 AM.","metadata":{"trialEndsAt":"09 MAR 2026 • 10:06 AM"},"readAt":null,"sentAt":null,"shopId":"shop_2oHT9n8u","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-02-24T09:03:54.328Z"}]}
-[26:03:12.066] Server  LOG      ✓ Compiled in 767ms
-[26:03:23.781] Server  LOG      ✓ Compiled in 807ms
-[26:03:54.879] Server  LOG      ✓ Compiled in 741ms
-[26:05:06.288] Server  LOG      ✓ Compiled in 1637ms
-[26:05:18.549] Server  LOG      ✓ Compiled in 907ms
-[26:05:54.553] Server  LOG      ✓ Compiled in 642ms
-[26:07:28.126] Server  LOG      ✓ Compiled in 1861ms
-[26:09:55.222] Server  LOG      ✓ Compiled in 566ms
-[26:10:19.644] Server  LOG      ✓ Compiled in 799ms
-[26:10:26.224] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[26:10:27.889] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-02-23T10:30:59.457Z","customerId":null,"id":"xmlx48454serdcrtfgv","isRead":true,"isSent":false,"link":null,"message":"A new customer Naman registered from qr at your shop.","metadata":null,"readAt":null,"sentAt":null,"shopId":"shop_2oHT9n8u","title":"New Customer Joined","type":"system","updatedAt":"2026-02-24T09:05:46.861Z"},{"channel":"IN_APP","createdAt":"2026-02-22T04:36:12.457Z","customerId":null,"id":"cmlx99a290001113s8cr6sqgx","isRead":true,"isSent":true,"link":null,"message":"Your shop \"Joker Cafe\" has been successfully created. You are now on a free trial plan valid until 09 MAR 2026 • 10:06 AM.","metadata":{"trialEndsAt":"09 MAR 2026 • 10:06 AM"},"readAt":null,"sentAt":null,"shopId":"shop_2oHT9n8u","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-02-24T09:03:54.328Z"}]}
-[26:10:45.590] Server  LOG      ✓ Compiled in 632ms
-[26:26:27.210] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[26:26:29.009] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-02-23T10:30:59.457Z","customerId":null,"id":"xmlx48454serdcrtfgv","isRead":false,"isSent":false,"link":null,"message":"A new customer Naman registered from qr at your shop.","metadata":null,"readAt":null,"sentAt":null,"shopId":"shop_2oHT9n8u","title":"New Customer Joined","type":"system","updatedAt":"2026-02-24T09:05:46.861Z"},{"channel":"IN_APP","createdAt":"2026-02-22T04:36:12.457Z","customerId":null,"id":"cmlx99a290001113s8cr6sqgx","isRead":true,"isSent":true,"link":null,"message":"Your shop \"Joker Cafe\" has been successfully created. You are now on a free trial plan valid until 09 MAR 2026 • 10:06 AM.","metadata":{"trialEndsAt":"09 MAR 2026 • 10:06 AM"},"readAt":null,"sentAt":null,"shopId":"shop_2oHT9n8u","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-02-24T09:03:54.328Z"}]}
-[26:26:29.009] Browser ERROR   uncaughtError: ReferenceError: Dot is not defined
-[26:26:47.713] Server  LOG      ✓ Compiled in 1076ms
-[26:26:48.623] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[26:26:51.059] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[26:26:53.019] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-02-23T10:30:59.457Z","customerId":null,"id":"xmlx48454serdcrtfgv","isRead":false,"isSent":false,"link":null,"message":"A new customer Naman registered from qr at your shop.","metadata":null,"readAt":null,"sentAt":null,"shopId":"shop_2oHT9n8u","title":"New Customer Joined","type":"system","updatedAt":"2026-02-24T09:05:46.861Z"},{"channel":"IN_APP","createdAt":"2026-02-22T04:36:12.457Z","customerId":null,"id":"cmlx99a290001113s8cr6sqgx","isRead":true,"isSent":true,"link":null,"message":"Your shop \"Joker Cafe\" has been successfully created. You are now on a free trial plan valid until 09 MAR 2026 • 10:06 AM.","metadata":{"trialEndsAt":"09 MAR 2026 • 10:06 AM"},"readAt":null,"sentAt":null,"shopId":"shop_2oHT9n8u","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-02-24T09:03:54.328Z"}]}
-[26:31:21.558] Server  LOG      ✓ Compiled in 810ms
-[26:31:36.360] Server  LOG      ✓ Compiled in 497ms
+[00:00:24.478] Server  LOG      ○ Compiling middleware ...
+[00:00:26.495] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:32.270] Server  LOG      ✓ Ready in 25.6s
+[00:01:19.342] Server  LOG      ○ Compiling / ...
+[00:01:46.165] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:49.382] Server  LOG      ○ Compiling /api/auth/findUser ...
+[00:03:01.829] Server  LOG      ○ Compiling /contact ...
+[00:37:25.144] Server  LOG      ○ Compiling /api/cron/check-plan ...
+[00:37:34.794] Server  LOG     Today UTC Range: {} {}
+[00:37:34.796] Server  LOG     Subs Expiring Today: []
+[00:39:14.095] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
+[00:41:46.385] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
+[00:46:33.366] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:07:36.784] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
+[08:07:39.849] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
+[08:07:53.206] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
+[08:07:55.326] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: UserStore@1.loading
+[08:08:40.675] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[08:08:40.675] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[08:09:00.462] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[08:09:00.582] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[08:09:50.350] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:10:08.690] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:08.955] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_1017e7b2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:08.976] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:08.995] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:08.999] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:09.002] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:09.006] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:09.009] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:09.016] Server  ERROR    ⨯ Error: The default export is not a React Component in "/shop/[shopId]/notifications/[notificationId]/page"
+[08:10:09.030] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:09.034] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_1017e7b2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:09.037] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:09.038] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:09.041] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:09.043] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:09.045] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:09.047] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:09.051] Server  ERROR    ⨯ Error: The default export is not a React Component in "/shop/[shopId]/notifications/[notificationId]/page"
+[08:10:12.092] Server  LOG      ○ Compiling /_error ...
+[08:10:15.612] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:15.613] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_1017e7b2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:15.615] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:15.617] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:15.619] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:15.622] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:15.626] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:15.628] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:15.630] Server  ERROR    ⨯ Error: The default export is not a React Component in "/shop/[shopId]/notifications/[notificationId]/page"
+[08:10:15.646] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:15.647] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\node_modules_next_dist_1017e7b2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:15.652] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:15.658] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:15.661] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:15.662] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:15.664] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:15.666] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:10:15.675] Server  ERROR    ⨯ Error: The default export is not a React Component in "/shop/[shopId]/notifications/[notificationId]/page"
+[08:10:16.302] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/shop/[shopId]/notifications/[notificationId]/page"
+[08:10:24.790] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:15:05.766] Server  LOG      ✓ Compiled in 1969ms

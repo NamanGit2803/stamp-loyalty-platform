@@ -1074,10 +1074,6 @@
     height: 1.15rem;
   }
 
-  .h-\[65\%\] {
-    height: 65%;
-  }
-
   .h-\[360px\] {
     height: 360px;
   }
@@ -1232,10 +1228,6 @@
 
   .w-6 {
     width: calc(var(--spacing) * 6);
-  }
-
-  .w-7 {
-    width: calc(var(--spacing) * 7);
   }
 
   .w-8 {
@@ -5427,6 +5419,12 @@
   }
 
   @media (min-width: 40rem) {
+    .sm\:h-screen {
+      height: 100vh;
+    }
+  }
+
+  @media (min-width: 40rem) {
     .sm\:min-h-screen {
       min-height: 100vh;
     }
@@ -5557,6 +5555,12 @@
   @media (min-width: 40rem) {
     .sm\:overflow-y-auto {
       overflow-y: auto;
+    }
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:overflow-y-hidden {
+      overflow-y: hidden;
     }
   }
 

@@ -42,6 +42,8 @@ export async function GET() {
         const startTomorrowUTC = new Date(startTomorrowIST.getTime() - IST_OFFSET);
         const startDayAfterUTC = new Date(startDayAfterIST.getTime() - IST_OFFSET);
 
+
+
         // -----------------------------------------
         // 1️⃣ EXPIRING TODAY (Send Expired Email)
         // -----------------------------------------
@@ -63,6 +65,9 @@ export async function GET() {
                 dashboardUrl: `https://stampi.in/shop/${s.shop?.id}/billing`,
             });
         }
+
+        console.log("Today UTC Range:", startTodayUTC, startTomorrowUTC);
+        console.log("Subs Expiring Today:", subsExpiringToday);
 
         // -----------------------------------------
         // 2️⃣ EXPIRING TOMORROW (Send Reminder Email)

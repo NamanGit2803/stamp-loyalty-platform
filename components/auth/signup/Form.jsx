@@ -36,7 +36,7 @@ const Form = () => {
 
 
     return (
-        <div className="flex w-full md:w-2/5 items-center justify-center p-4 h-screen overflow-y-hidden">
+        <div className="flex w-full md:w-2/5 items-center justify-center p-4 sm:h-screen sm:overflow-y-hidden">
             <Card className="w-full max-w-md shadow-lg border-border/50 p-0 h-auto sm:h-[90%] sm:overflow-y-auto no-scrollbar">
                 <div className="p-8">
                     <div className="mb-5">
