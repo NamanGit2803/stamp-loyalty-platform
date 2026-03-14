@@ -232,7 +232,7 @@ class ShopStore {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ shopId: this.shop.id, planId }),
+        body: JSON.stringify({ shopId: this.shop.id, planId, shopName: this.shop.shopName }),
       });
 
       const data = await res.json();

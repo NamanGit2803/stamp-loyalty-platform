@@ -33,7 +33,7 @@ const ShopLayout = async ({ children, params }) => {
                         </div>
 
                         <div className="flex items-center gap-4">
-                            <NotificationMenu />
+                            <NotificationMenu shopId={shopId}/>
                             <Link href={'/'} className='logo-font flex items-center text-secondary tracking-wide text-lg'>{process.env.NEXT_PUBLIC_SITE_NAME ?? 'brand name'}</Link>
                         </div>
                     </div>

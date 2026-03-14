@@ -70,8 +70,15 @@ export async function POST(req) {
       return NextResponse.json({ status: "PAID_ACTIVE" });
     }
 
-    // 5️⃣ Billing date passed
-    return NextResponse.json({ status: "EXPIRED" });
+    if (subscription.status === 'active' && nextBilling && now > nextBilling) {
+      await prisma.subscription.update({
+        where: { id: subscription.id },
+        data: { status: "expired" },
+      });
+
+      return NextResponse.json({ status: "EXPIRED" });
+    }
+
 
   } catch (err) {
     console.error("[subscription check error]", err);

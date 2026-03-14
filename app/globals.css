@@ -54,6 +54,12 @@
   --warning-bg-primary: oklch(0.96 0.07 95);
   --warning-text-1: oklch(0.65 0.18 80);
   --warning-text-2: oklch(0.55 0.16 75);
+  /* success  */
+  --success-text-1: oklch(0.600 0.200 145);
+  --success-text-2: oklch(0.540 0.170 145);
+  --success-bg-primary: oklch(0.940 0.030 145);
+  --success-border: oklch(0.890 0.060 145);
+
 
 }
 
@@ -107,6 +113,11 @@
   --warning-bg-primary: oklch(0.96 0.07 95);
   --warning-text-1: oklch(0.65 0.18 80);
   --warning-text-2: oklch(0.55 0.16 75);
+  /* success  */
+  --success-text-1: oklch(0.600 0.200 145);
+  --success-text-2: oklch(0.540 0.170 145);
+  --success-bg-primary: oklch(0.940 0.030 145);
+  --success-border: oklch(0.890 0.060 145);
 }
 
 @theme inline {
@@ -163,6 +174,10 @@
   --color-warning-text-2: var(--warning-text-2);
   --color-warning-border: var(--warning-border);
   --color-warning-bg-primary: var(--warning-bg-primary);
+  --color-success-text-1: var(--success-text-1);
+  --color-success-text-2: var(--success-text-2);
+  --color-success-bg-primary: var(--success-bg-primary);
+  --color-success-border: var(--success-border);
 }
 
 @layer base {

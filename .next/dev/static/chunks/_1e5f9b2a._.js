@@ -450,7 +450,8 @@ class ShopStore {
                 },
                 body: JSON.stringify({
                     shopId: this.shop.id,
-                    planId
+                    planId,
+                    shopName: this.shop.shopName
                 })
             });
             const data = await res.json();

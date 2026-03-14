@@ -11,7 +11,7 @@ import Form from "./login/Form"
 export default function LoginForm() {
 
   return (
-    <div className="min-h-screen w-full flex bg-custom-gradient">
+    <div className="sm:min-h-screen w-full flex bg-custom-gradient">
       {/* left side  */}
       <Illustration imageSrc={'/plan2.png'} title={'Secure login. Seamless experience.'} />
       

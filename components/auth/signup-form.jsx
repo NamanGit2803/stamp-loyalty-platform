@@ -5,7 +5,7 @@ import Form from "./signup/Form"
 export default function SignupForm() {
 
   return (
-    <div className="min-h-screen w-full flex bg-custom-gradient">
+    <div className="sm:min-h-screen w-full flex bg-custom-gradient">
       
       {/* LEFT ILLUSTRATION SECTION */}
       <Illustration/>

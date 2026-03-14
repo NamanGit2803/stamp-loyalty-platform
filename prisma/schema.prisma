@@ -27,6 +27,14 @@ enum ScanStatus {
 }
 
 
+enum NotificationChannel {
+  IN_APP
+  EMAIL
+  WHATSAPP
+  MESSAGE
+}
+
+
 
 model User {
   srNo      Int      @id @default(autoincrement())      // Primary key
@@ -52,8 +60,6 @@ model PasswordReset {
 
   @@index([userId])
 }
-
-
 
 
 
@@ -86,6 +92,7 @@ model Shop {
   subscriptions Subscription[]
   payments      Payment[]
   scanVerifications ScanVerification[]    
+  notifications Notification[]
 
   @@index([id])
 }
@@ -108,6 +115,7 @@ model Customer {
   transactions Transaction[]
   rewards      Reward[]
   scanVerification ScanVerification[]
+  notifications Notification[]
 
    @@unique([shopId, phone]) // 👈 unique per shop, not global
 
@@ -115,7 +123,6 @@ model Customer {
    @@index([shopId, phone])
    @@index([phone])
    @@index([shopId, stampCount])
-
 
 }
 
@@ -186,6 +193,7 @@ model Transaction {
   customer Customer? @relation(fields: [customerId], references: [id])
 }
 
+
 model Reward {
   srNo       Int       @id @default(autoincrement())
   id         String    @unique
@@ -247,8 +255,6 @@ model Subscription {
 }
 
 
-
-
 model Payment {
   srNo              Int      @id @default(autoincrement())
   id                String   @unique @default(cuid())
@@ -279,4 +285,46 @@ model Payment {
   shop          Shop          @relation(fields: [shopId], references: [id])
   subscription  Subscription? @relation(fields: [subscriptionId], references: [id])
 }
+
+
+
+
+
+model Notification {
+  id            String   @id @default(cuid())
+  
+  // Multi-tenant support
+  shopId        String?
+  shop          Shop?    @relation(fields: [shopId], references: [id], onDelete: Cascade)
+
+  customerId    String?
+  customer      Customer? @relation(fields: [customerId], references: [id], onDelete: Cascade)
+
+  // Content
+  title         String
+  message       String
+  type          String
+  channel       NotificationChannel
+
+  // Optional metadata (for dynamic UI / deep linking)
+  link          String? 
+  metadata      Json?
+
+  // Status
+  isRead        Boolean   @default(false)
+  readAt        DateTime?
+
+  // Delivery tracking
+  isSent        Boolean   @default(false)
+  sentAt        DateTime?
+
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@index([shopId])
+  @@index([customerId])
+  @@index([isRead])
+}
+
+
 

@@ -1,0 +1,3 @@
+{
+  "/api/shop/notifications/markAsRead/route": "app/api/shop/notifications/markAsRead/route.js"
+}

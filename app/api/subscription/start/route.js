@@ -3,6 +3,7 @@ export const runtime = "nodejs";
 
 import { NextResponse } from "next/server";
 import { nanoid } from "nanoid"
+import { FormatToIST } from "@/lib/dateFormat";
 
 
 export async function POST(req) {
@@ -10,9 +11,9 @@ export async function POST(req) {
         // ✅ Lazy import Prisma (build-safe)
         const { default: prisma } = await import("@/lib/prisma");
 
-        const { shopId, planId } = await req.json();
+        const { shopId, planId, shopName } = await req.json();
 
-        if(!planId){
+        if (!planId) {
             return NextResponse.json({ error: "Server error." }, { status: 500 });
         }
 
@@ -41,6 +42,20 @@ export async function POST(req) {
                 trialEndsAt,
                 nextBillingAt: trialEndsAt,
                 status: "trialing"
+            }
+        });
+
+        await prisma.notification.create({
+            data: {
+                shopId,
+                title: "Welcome to Stampi! 🎉",
+                message: `Your shop "${shopName}" has been successfully created. You are now on a free trial plan valid until ${FormatToIST(trialEndsAt)}.`,
+                type: "success",
+                channel: "IN_APP",
+                metadata: {
+                    trialEndsAt: FormatToIST(trialEndsAt),
+                },
+                isSent: true,
             }
         });
 

@@ -128,10 +128,19 @@ async function POST(req) {
                 status: "PAID_ACTIVE"
             });
         }
-        // 5️⃣ Billing date passed
-        return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            status: "EXPIRED"
-        });
+        if (subscription.status === 'active' && nextBilling && now > nextBilling) {
+            await prisma.subscription.update({
+                where: {
+                    id: subscription.id
+                },
+                data: {
+                    status: "expired"
+                }
+            });
+            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                status: "EXPIRED"
+            });
+        }
     } catch (err) {
         console.error("[subscription check error]", err);
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
