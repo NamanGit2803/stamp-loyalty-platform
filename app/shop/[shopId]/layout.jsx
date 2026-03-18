@@ -54,7 +54,7 @@ const ShopLayout = async ({ children, params }) => {
                             <ExpiryStatus />
                         </div>
                         <div className="flex items-baseline pt-1">
-                            <NotificationMenu />
+                            <NotificationMenu shopId={shopId} />
                         </div>
                     </div>
                 </header>

@@ -1638,3 +1638,4 @@ Error in connector: Error querying the database: FATAL: MaxClientsInSessionMode:
 [96:42:00.887] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
 [96:43:41.074] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
 [96:43:41.074] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[100:55:46.536] Server  LOG      ✓ Compiled in 1674ms
