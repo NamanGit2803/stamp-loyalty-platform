@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
 import { SearchBar } from "@/components/toolbar/SearchBar"
 import { observer } from "mobx-react-lite"
 import { useStore } from '@/stores/StoreProvider'
@@ -9,7 +8,6 @@ import CustomersTable from "./customerList/customersTable"
 import { toast } from "sonner"
 import { useDebounce } from "@/hooks/use-debounce"
 import Pagination from "@/components/toolbar/pagination"
-
 
 
 const CustomersList = () => {

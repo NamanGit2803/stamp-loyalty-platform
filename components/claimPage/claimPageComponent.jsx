@@ -168,7 +168,7 @@ const ClaimPage = ({ shopId }) => {
             {/* ---------- CARD CENTERED ---------- */}
             {uiState === 'claim' && <ClaimCard shopId={shopId} verify={verifyScreenshot} loading={loading} setLoading={setLoading} />}
 
-            {uiState === 'nameCard' && <NameEnterCard shopName={shop.name} customerId={customer.customerId} setUIState={setUIState} />}
+            {uiState === 'nameCard' && <NameEnterCard shop={shop} customer={customer} setUIState={setUIState} />}
 
             {uiState === 'success' && <SuccessAnimation targetStamps={shop.targetStamps} customer={customer}/>}
 

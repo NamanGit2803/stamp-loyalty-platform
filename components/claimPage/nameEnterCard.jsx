@@ -8,16 +8,16 @@ import { useState } from "react"
 import { toast } from "sonner"
 import { Spinner } from "@/components/ui/spinner"
 
-export default function NameEnterCard({ shopName, customerId, setUIState }) {
+export default function NameEnterCard({ shop, customer, setUIState }) {
 
     const [name, setName] = useState('')
     const [loading, setLoading] = useState(false)
 
     const addName = async () => {
-        // if (!customerId) {
-        //     toast.error('User not found!')
-        //     return
-        // }
+        if (!customer) {
+            toast.error('User not found!')
+            return
+        }
 
         setLoading(true)
 
@@ -25,17 +25,41 @@ export default function NameEnterCard({ shopName, customerId, setUIState }) {
             const res = await fetch("/api/public/addCustomerName", {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ customerId, name }),
+                body: JSON.stringify({ customerId: customer.id, name }),
             });
 
             const data = await res.json();
             if (!res.ok) throw new Error(data.error);
         } catch (error) {
             toast.error(error)
+            setLoading(false)
         }
 
+        setLoading(false)
         toast.success("Name has been updated successfully")
         setUIState('success')
+
+        // send whats app message 
+        try {
+            const res = await fetch("/api/whatsapp/sendMessage", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    phone: customer.phone,
+                    templateName: "stamp_added_link",
+                    variables: [
+                        name || "",
+                        shop.name,
+                        customer.stampCount,
+                        shop.targetStamps,
+                        `https://stampi.in/customer/${customer.id}`,
+                    ]
+                }),
+            });
+
+        } catch (error) {
+            toast.error(error)
+        }
 
 
     }
@@ -51,7 +75,7 @@ export default function NameEnterCard({ shopName, customerId, setUIState }) {
             <CardContent className="text-center text-muted-foreground text-sm leading-relaxed space-y-6">
                 <p>
                     Welcome to the <span className="logo-font text-primary">Stampi</span> reward journey! 🎉<br />
-                    You're now joining the loyalty account of <br /><span className="text-primary font-semibold">{shopName ?? 'shop'}</span>.<br />
+                    You're now joining the loyalty account of <br /><span className="text-primary font-semibold">{shop.name ?? 'shop'}</span>.<br />
                     To begin collecting your stamps, please enter your sweet name — only once!
                 </p>
 
@@ -67,8 +91,8 @@ export default function NameEnterCard({ shopName, customerId, setUIState }) {
                         />
                     </div>
 
-                    <Button className="w-full text-base py-5 rounded-md" size="sm" disabled={loading} onClick={()=>{addName()}}>
-                        {loading ? <><Spinner/> Updating...</> : 'Continue'}
+                    <Button className="w-full text-base py-5 rounded-md" size="sm" disabled={loading} onClick={() => { addName() }}>
+                        {loading ? <><Spinner /> Updating...</> : 'Continue'}
                     </Button>
                 </div>
             </CardContent>

@@ -7,6 +7,7 @@ import { validateScreenshotBeforeAI } from "@/lib/tools";
 import { detectPaymentDirection, ISTMidnightToUTC } from "@/lib/tools";
 import { validateUPIScreenshotTime } from "@/lib/upiTime";
 import { nanoid } from "nanoid"
+import { sendWhatsAppTemplate } from "@/lib/whatsapp/sendMessages";
 
 
 /** SHA256 hash generator */
@@ -420,7 +421,7 @@ export async function POST(req) {
         // --------------------------------------
         // 8️⃣ AWARD STAMP
         // --------------------------------------
-        await prisma.customer.update({
+        customer = await prisma.customer.update({
             where: { id: customer.id },
             data: {
                 stampCount: { increment: 1 },
@@ -431,15 +432,28 @@ export async function POST(req) {
         });
 
 
+        if (!newCustomer && customer.stampCount === 2) {
+            // send message on whatsapp 
+            await sendWhatsAppTemplate({
+                phone,
+                templateName: 'stamp_added_link',
+                variables: [
+                    customer.name || "",
+                    shop.shopName,
+                    customer.stampCount,
+                    shop.targetStamps,
+                    `https://stampi.in/customer/${customer.id}`,
+                ]
+            });
+        }
+
+
         return NextResponse.json({
             success: true,
             message: "Stamp added!",
             scanId: scan.id,
             newCustomer,
-            customer: {
-                customerId: customer.id,
-                customerStamp: customer.stampCount,
-            },
+            customer,
         });
 
 

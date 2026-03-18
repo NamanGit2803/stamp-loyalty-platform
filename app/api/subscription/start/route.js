@@ -49,9 +49,10 @@ export async function POST(req) {
             data: {
                 shopId,
                 title: "Welcome to Stampi! 🎉",
-                message: `Your shop "${shopName}" has been successfully created. You are now on a free trial plan valid until ${FormatToIST(trialEndsAt)}.`,
+                message: `Your shop "${shopName}" has been successfully created. You are now on a free trial plan valid until ${FormatToIST(trialEndsAt)}. View complete plan details on the billing page.`,
                 type: "success",
                 channel: "IN_APP",
+                link: `/shop/${shopId}/billing`,
                 metadata: {
                     trialEndsAt: FormatToIST(trialEndsAt),
                 },

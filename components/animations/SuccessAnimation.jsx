@@ -20,8 +20,8 @@ export default function SuccessAnimation({ targetStamps, customer }) {
             <p className="mt-2 text-base text-gray-700">
                 You've earned <span className="font-semibold text-green-600">1 stamp</span> for this visit.
                 <br />
-                You now have <span className="font-semibold text-primary">{customer.customerStamp ?? 0} stamps</span> in total.<br />
-                Only <span className="font-semibold text-primary">{Number(targetStamps) - Number(customer.customerStamp ?? 0) ?? 0} more</span> to unlock your reward! ⭐
+                You now have <span className="font-semibold text-primary">{customer.stampCount ?? 0} stamps</span> in total.<br />
+                Only <span className="font-semibold text-primary">{Number(targetStamps) - Number(customer.stampCount ?? 0) ?? 0} more</span> to unlock your reward! ⭐
             </p>
 
         </div>

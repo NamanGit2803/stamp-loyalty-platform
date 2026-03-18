@@ -2160,30 +2160,24 @@ function FormatToIST(dateString) {
 }
 _c1 = FormatToIST;
 function TimeAgoUTCtoIST(utcDateInput) {
-    const utcDate = new Date(utcDateInput);
-    // Convert UTC → IST (+5:30)
-    const istDate = new Date(utcDate.getTime() + 5.5 * 60 * 60 * 1000);
+    const date = new Date(utcDateInput);
     const now = new Date();
-    const nowIST = new Date(now.getTime() + 5.5 * 60 * 60 * 1000);
-    const diffMs = nowIST - istDate;
+    const diffMs = now - date;
     const diffSec = Math.floor(diffMs / 1000);
     const diffMin = Math.floor(diffSec / 60);
     const diffHour = Math.floor(diffMin / 60);
     const diffDay = Math.floor(diffHour / 24);
-    // Today cases
     if (diffSec < 60) return "Just now";
     if (diffMin < 60) return diffMin + " min ago";
     if (diffHour < 24) return diffHour + " hour" + (diffHour > 1 ? "s" : "") + " ago";
-    // Yesterday with time
     if (diffDay === 1) {
-        const time = istDate.toLocaleTimeString("en-IN", {
+        const time = date.toLocaleTimeString("en-IN", {
             hour: "2-digit",
             minute: "2-digit"
         });
         return `Yesterday at ${time}`;
     }
-    // Older than yesterday → IST date + time
-    return istDate.toLocaleString("en-IN", {
+    return date.toLocaleString("en-IN", {
         day: "2-digit",
         month: "short",
         year: "numeric",
@@ -2216,12 +2210,18 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$triangle$2d$alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TriangleAlert$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/triangle-alert.js [app-client] (ecmascript) <export default as TriangleAlert>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$minus$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CircleMinus$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/circle-minus.js [app-client] (ecmascript) <export default as CircleMinus>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$dateFormat$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/dateFormat.js [app-client] (ecmascript)");
+(()=>{
+    const e = new Error("Cannot find module '../notification-dialog/notifyDialog'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/sonner/dist/index.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
+;
 ;
 ;
 ;
@@ -2282,20 +2282,20 @@ function NotificationMenu({ shopId }) {
                         className: "text-primary size-6 p-1 rounded-full hover:bg-gray-200 hover:cursor-pointer"
                     }, void 0, false, {
                         fileName: "[project]/components/shop/notification/notificationMenu.jsx",
-                        lineNumber: 56,
+                        lineNumber: 57,
                         columnNumber: 17
                     }, this),
                     notifications.some((n)=>!n.isRead) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                         className: "absolute top-0 right-0 h-2 w-2 bg-secondary rounded-full animate-pulse"
                     }, void 0, false, {
                         fileName: "[project]/components/shop/notification/notificationMenu.jsx",
-                        lineNumber: 59,
+                        lineNumber: 60,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/shop/notification/notificationMenu.jsx",
-                lineNumber: 55,
+                lineNumber: 56,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenuContent"], {
@@ -2306,12 +2306,12 @@ function NotificationMenu({ shopId }) {
                         children: "Notifications"
                     }, void 0, false, {
                         fileName: "[project]/components/shop/notification/notificationMenu.jsx",
-                        lineNumber: 64,
+                        lineNumber: 65,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenuSeparator"], {}, void 0, false, {
                         fileName: "[project]/components/shop/notification/notificationMenu.jsx",
-                        lineNumber: 68,
+                        lineNumber: 69,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2322,7 +2322,7 @@ function NotificationMenu({ shopId }) {
                                 children: "No notifications yet"
                             }, void 0, false, {
                                 fileName: "[project]/components/shop/notification/notificationMenu.jsx",
-                                lineNumber: 72,
+                                lineNumber: 73,
                                 columnNumber: 25
                             }, this),
                             notifications.map((n)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
@@ -2335,34 +2335,34 @@ function NotificationMenu({ shopId }) {
                                                     className: "text-warning-text-1 group-hover:text-muted"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shop/notification/notificationMenu.jsx",
-                                                    lineNumber: 83,
+                                                    lineNumber: 84,
                                                     columnNumber: 37
                                                 }, this),
                                                 n.type === "PLAN_EXPIRED" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$minus$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CircleMinus$3e$__["CircleMinus"], {
                                                     className: "text-error-text-1 group-hover:text-muted"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shop/notification/notificationMenu.jsx",
-                                                    lineNumber: 86,
+                                                    lineNumber: 87,
                                                     columnNumber: 37
                                                 }, this),
                                                 n.type === "success" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CircleCheckBig$3e$__["CircleCheckBig"], {
                                                     className: "text-success-text-1 group-hover:text-muted"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shop/notification/notificationMenu.jsx",
-                                                    lineNumber: 89,
+                                                    lineNumber: 90,
                                                     columnNumber: 37
                                                 }, this),
                                                 n.type === "system" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$info$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Info$3e$__["Info"], {
                                                     className: "text-primary group-hover:text-muted"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shop/notification/notificationMenu.jsx",
-                                                    lineNumber: 92,
+                                                    lineNumber: 93,
                                                     columnNumber: 37
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shop/notification/notificationMenu.jsx",
-                                            lineNumber: 81,
+                                            lineNumber: 82,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2373,7 +2373,7 @@ function NotificationMenu({ shopId }) {
                                                     children: n.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shop/notification/notificationMenu.jsx",
-                                                    lineNumber: 97,
+                                                    lineNumber: 98,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2381,7 +2381,7 @@ function NotificationMenu({ shopId }) {
                                                     children: n.message
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shop/notification/notificationMenu.jsx",
-                                                    lineNumber: 98,
+                                                    lineNumber: 99,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2389,30 +2389,30 @@ function NotificationMenu({ shopId }) {
                                                     children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$dateFormat$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TimeAgoUTCtoIST"])(n.createdAt)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shop/notification/notificationMenu.jsx",
-                                                    lineNumber: 101,
+                                                    lineNumber: 102,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shop/notification/notificationMenu.jsx",
-                                            lineNumber: 96,
+                                            lineNumber: 97,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, n.id, true, {
                                     fileName: "[project]/components/shop/notification/notificationMenu.jsx",
-                                    lineNumber: 78,
+                                    lineNumber: 79,
                                     columnNumber: 25
                                 }, this))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/shop/notification/notificationMenu.jsx",
-                        lineNumber: 70,
+                        lineNumber: 71,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenuSeparator"], {}, void 0, false, {
                         fileName: "[project]/components/shop/notification/notificationMenu.jsx",
-                        lineNumber: 109,
+                        lineNumber: 110,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2423,24 +2423,24 @@ function NotificationMenu({ shopId }) {
                             children: "View All Notifications"
                         }, void 0, false, {
                             fileName: "[project]/components/shop/notification/notificationMenu.jsx",
-                            lineNumber: 112,
+                            lineNumber: 113,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/shop/notification/notificationMenu.jsx",
-                        lineNumber: 111,
+                        lineNumber: 112,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/shop/notification/notificationMenu.jsx",
-                lineNumber: 63,
+                lineNumber: 64,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/shop/notification/notificationMenu.jsx",
-        lineNumber: 54,
+        lineNumber: 55,
         columnNumber: 9
     }, this);
 }

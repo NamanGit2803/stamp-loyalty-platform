@@ -59,7 +59,7 @@ const runtime = "nodejs";
 async function POST(req) {
     try {
         const body = await req.json();
-        const shopId = body.shopId;
+        const { shopId, cursor, search } = body;
         if (!shopId) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 error: "shopId missing",
@@ -69,22 +69,46 @@ async function POST(req) {
             });
         }
         const { default: prisma } = await __turbopack_context__.A("[project]/lib/prisma.js [app-route] (ecmascript, async loader)");
-        // Fetch last 5 notifications
         const notifications = await prisma.notification.findMany({
             where: {
-                shopId
+                shopId,
+                ...search && {
+                    OR: [
+                        {
+                            title: {
+                                contains: search,
+                                mode: "insensitive"
+                            }
+                        },
+                        {
+                            message: {
+                                contains: search,
+                                mode: "insensitive"
+                            }
+                        }
+                    ]
+                }
             },
             orderBy: {
                 createdAt: "desc"
+            },
+            take: 10,
+            ...cursor && {
+                cursor: {
+                    id: cursor
+                },
+                skip: 1
             }
         });
+        const nextCursor = notifications.length > 0 ? notifications[notifications.length - 1].id : null;
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            notifications
+            notifications,
+            nextCursor
         }, {
             status: 200
         });
     } catch (err) {
-        console.error("findShop error:", err);
+        console.error("notifications error:", err);
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             notifications: []
         }, {

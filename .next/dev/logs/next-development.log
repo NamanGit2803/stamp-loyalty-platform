@@ -60,3 +60,1577 @@
 [08:10:16.302] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/shop/[shopId]/notifications/[notificationId]/page"
 [08:10:24.790] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [08:15:05.766] Server  LOG      ✓ Compiled in 1969ms
+[08:22:14.515] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:22:52.080] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":null,"message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-14T15:54:04.155Z"}]}
+[08:22:52.080] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":null,"message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-14T15:54:04.155Z"}]}
+[08:27:48.226] Server  LOG      ✓ Compiled in 940ms
+[08:28:12.551] Server  LOG      ✓ Compiled in 693ms
+[08:40:29.583] Server  LOG      ✓ Compiled in 947ms
+[08:41:46.927] Server  LOG      ✓ Compiled in 552ms
+[08:42:30.212] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:42:33.037] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":false,"link":null,"message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-14T15:54:04.155Z"}]}
+[08:43:08.895] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:43:11.147] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":false,"link":null,"message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-14T15:54:04.155Z"}]}
+[08:43:33.330] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:43:35.534] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":false,"isSent":true,"link":null,"message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-14T15:54:04.155Z"}]}
+[08:44:56.073] Server  LOG      ✓ Compiled in 540ms
+[08:45:05.838] Server  LOG      ✓ Compiled in 908ms
+[08:45:40.244] Server  LOG      ✓ Compiled in 720ms
+[08:45:47.267] Server  LOG      ✓ Compiled in 1145ms
+[08:45:55.147] Server  LOG      ✓ Compiled in 1033ms
+[08:46:02.775] Server  LOG      ✓ Compiled in 994ms
+[08:46:12.190] Server  LOG      ✓ Compiled in 1135ms
+[08:46:25.384] Server  LOG      ✓ Compiled in 1024ms
+[08:46:34.811] Server  LOG      ✓ Compiled in 1215ms
+[08:47:34.614] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":false,"isSent":true,"link":null,"message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-14T15:54:04.155Z"}]}
+[08:47:34.779] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":false,"isSent":true,"link":null,"message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-14T15:54:04.155Z"}]}
+[08:48:01.074] Server  LOG      ✓ Compiled in 1301ms
+[08:49:03.279] Server  LOG      ✓ Compiled in 694ms
+[08:50:44.215] Server  LOG      ✓ Compiled in 913ms
+[08:50:44.782] Browser ERROR   uncaughtError: ReferenceError: n is not defined
+[08:51:17.349] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[08:51:17.366] Server  LOG      ✓ Compiled in 647ms
+[08:51:20.242] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__6ec85217._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:51:20.294] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:51:20.296] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[08:51:20.313] Server  ERROR   findShop error: SyntaxError: Unexpected end of JSON input
+[08:51:21.093] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:51:23.344] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":false,"isSent":true,"link":null,"message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-14T15:54:04.155Z"}]}
+[08:51:35.543] Server  LOG      ✓ Compiled in 878ms
+[08:52:07.677] Server  LOG      ✓ Compiled in 727ms
+[08:52:20.501] Server  LOG      ✓ Compiled in 1217ms
+[08:52:26.678] Server  LOG      ✓ Compiled in 996ms
+[08:52:31.540] Server  LOG      ✓ Compiled in 742ms
+[08:53:39.888] Server  LOG      ✓ Compiled in 921ms
+[08:54:32.973] Server  LOG      ✓ Compiled in 1003ms
+[08:55:13.578] Server  LOG      ✓ Compiled in 818ms
+[08:55:22.791] Server  LOG      ✓ Compiled in 1064ms
+[09:01:02.329] Server  LOG      ✓ Compiled in 549ms
+[09:02:19.062] Server  LOG      ✓ Compiled in 928ms
+[09:33:04.571] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[09:33:07.348] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":false,"isSent":true,"link":null,"message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-14T15:54:04.155Z"}]}
+[09:49:39.689] Server  LOG      ✓ Compiled in 784ms
+[09:50:36.995] Server  LOG      ✓ Compiled in 546ms
+[09:50:39.651] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":false,"isSent":true,"link":null,"message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-14T15:54:04.155Z"}]}
+[09:51:10.217] Server  LOG      ✓ Compiled in 1001ms
+[09:51:38.128] Server  LOG      ✓ Compiled in 868ms
+[09:54:02.475] Server  LOG      ✓ Compiled in 1872ms
+[09:54:02.646] Browser ERROR   ./components/shop/notification/notifications-page/notificationsPage-content.jsx:11:1
+Export default doesn't exist in target module
+   9 | import { EmptyState } from "./empty-state";
+  10 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 11 | import NotificationDropDown from "../notification-dropdown/notifyDrop";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | const NotificationsPageContent = ({ shopId }) => {
+  14 |
+
+The export default was not found in module [project]/components/shop/notification/notification-dropdown/notifyDrop.jsx [app-client] (ecmascript).
+Did you mean to import NotificationDialog?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notifications-page/notificationsPage-content.jsx
+    ./app/shop/[shopId]/notifications/page.jsx
+[09:54:02.646] Browser ERROR   ./components/shop/notification/notifications-page/notificationsPage-content.jsx:11:1
+Export default doesn't exist in target module
+   9 | import { EmptyState } from "./empty-state";
+  10 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 11 | import NotificationDropDown from "../notification-dropdown/notifyDrop";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | const NotificationsPageContent = ({ shopId }) => {
+  14 |
+
+The export default was not found in module [project]/components/shop/notification/notification-dropdown/notifyDrop.jsx [app-ssr] (ecmascript).
+Did you mean to import NotificationDialog?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notifications-page/notificationsPage-content.jsx
+    ./app/shop/[shopId]/notifications/page.jsx
+[09:54:16.236] Server  ERROR    ⨯ ./components/shop/notification/notifications-page/notificationsPage-content.jsx:11:1
+Module not found: Can't resolve '../notification-dropdown/notifyDrop'
+   9 | import { EmptyState } from "./empty-state";
+  10 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 11 | import NotificationDropDown from "../notification-dropdown/notifyDrop";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | const NotificationsPageContent = ({ shopId }) => {
+  14 |
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notifications-page/notificationsPage-content.jsx
+    ./app/shop/[shopId]/notifications/page.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[09:54:16.254] Server  ERROR    ⨯ ./components/shop/notification/notifications-page/notificationsPage-content.jsx:11:1
+Module not found: Can't resolve '../notification-dropdown/notifyDrop'
+   9 | import { EmptyState } from "./empty-state";
+  10 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 11 | import NotificationDropDown from "../notification-dropdown/notifyDrop";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | const NotificationsPageContent = ({ shopId }) => {
+  14 |
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notifications-page/notificationsPage-content.jsx
+    ./app/shop/[shopId]/notifications/page.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[09:54:16.278] Server  ERROR    ⨯ ./components/shop/notification/notifications-page/notificationsPage-content.jsx:11:1
+Module not found: Can't resolve '../notification-dropdown/notifyDrop'
+   9 | import { EmptyState } from "./empty-state";
+  10 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 11 | import NotificationDropDown from "../notification-dropdown/notifyDrop";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | const NotificationsPageContent = ({ shopId }) => {
+  14 |
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notifications-page/notificationsPage-content.jsx
+    ./app/shop/[shopId]/notifications/page.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[09:54:16.287] Server  ERROR    ⨯ ./components/shop/notification/notifications-page/notificationsPage-content.jsx:11:1
+Module not found: Can't resolve '../notification-dropdown/notifyDrop'
+   9 | import { EmptyState } from "./empty-state";
+  10 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 11 | import NotificationDropDown from "../notification-dropdown/notifyDrop";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | const NotificationsPageContent = ({ shopId }) => {
+  14 |
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notifications-page/notificationsPage-content.jsx
+    ./app/shop/[shopId]/notifications/page.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[09:54:16.339] Server  ERROR    ⨯ ./components/shop/notification/notifications-page/notificationsPage-content.jsx:11:1
+Module not found: Can't resolve '../notification-dropdown/notifyDrop'
+   9 | import { EmptyState } from "./empty-state";
+  10 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 11 | import NotificationDropDown from "../notification-dropdown/notifyDrop";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | const NotificationsPageContent = ({ shopId }) => {
+  14 |
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notifications-page/notificationsPage-content.jsx
+    ./app/shop/[shopId]/notifications/page.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[09:54:16.385] Server  ERROR    ⨯ ./components/shop/notification/notifications-page/notificationsPage-content.jsx:11:1
+Module not found: Can't resolve '../notification-dropdown/notifyDrop'
+   9 | import { EmptyState } from "./empty-state";
+  10 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 11 | import NotificationDropDown from "../notification-dropdown/notifyDrop";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | const NotificationsPageContent = ({ shopId }) => {
+  14 |
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notifications-page/notificationsPage-content.jsx
+    ./app/shop/[shopId]/notifications/page.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[09:54:16.419] Server  ERROR    ⨯ ./components/shop/notification/notifications-page/notificationsPage-content.jsx:11:1
+Module not found: Can't resolve '../notification-dropdown/notifyDrop'
+   9 | import { EmptyState } from "./empty-state";
+  10 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 11 | import NotificationDropDown from "../notification-dropdown/notifyDrop";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | const NotificationsPageContent = ({ shopId }) => {
+  14 |
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notifications-page/notificationsPage-content.jsx
+    ./app/shop/[shopId]/notifications/page.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[09:54:16.438] Server  ERROR    ⨯ ./components/shop/notification/notifications-page/notificationsPage-content.jsx:11:1
+Module not found: Can't resolve '../notification-dropdown/notifyDrop'
+   9 | import { EmptyState } from "./empty-state";
+  10 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 11 | import NotificationDropDown from "../notification-dropdown/notifyDrop";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | const NotificationsPageContent = ({ shopId }) => {
+  14 |
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notifications-page/notificationsPage-content.jsx
+    ./app/shop/[shopId]/notifications/page.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[09:54:16.459] Server  ERROR    ⨯ ./components/shop/notification/notifications-page/notificationsPage-content.jsx:11:1
+Module not found: Can't resolve '../notification-dropdown/notifyDrop'
+   9 | import { EmptyState } from "./empty-state";
+  10 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 11 | import NotificationDropDown from "../notification-dropdown/notifyDrop";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | const NotificationsPageContent = ({ shopId }) => {
+  14 |
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notifications-page/notificationsPage-content.jsx
+    ./app/shop/[shopId]/notifications/page.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[09:54:16.524] Server  ERROR    ⨯ ./components/shop/notification/notifications-page/notificationsPage-content.jsx:11:1
+Module not found: Can't resolve '../notification-dropdown/notifyDrop'
+   9 | import { EmptyState } from "./empty-state";
+  10 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 11 | import NotificationDropDown from "../notification-dropdown/notifyDrop";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | const NotificationsPageContent = ({ shopId }) => {
+  14 |
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notifications-page/notificationsPage-content.jsx
+    ./app/shop/[shopId]/notifications/page.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[09:54:16.558] Server  ERROR    ⨯ ./components/shop/notification/notifications-page/notificationsPage-content.jsx:11:1
+Module not found: Can't resolve '../notification-dropdown/notifyDrop'
+   9 | import { EmptyState } from "./empty-state";
+  10 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 11 | import NotificationDropDown from "../notification-dropdown/notifyDrop";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | const NotificationsPageContent = ({ shopId }) => {
+  14 |
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notifications-page/notificationsPage-content.jsx
+    ./app/shop/[shopId]/notifications/page.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[09:54:16.599] Server  ERROR    ⨯ ./components/shop/notification/notifications-page/notificationsPage-content.jsx:11:1
+Module not found: Can't resolve '../notification-dropdown/notifyDrop'
+   9 | import { EmptyState } from "./empty-state";
+  10 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 11 | import NotificationDropDown from "../notification-dropdown/notifyDrop";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | const NotificationsPageContent = ({ shopId }) => {
+  14 |
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notifications-page/notificationsPage-content.jsx
+    ./app/shop/[shopId]/notifications/page.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[09:54:16.631] Server  LOG      ✓ Compiled in 1908ms
+[09:54:18.115] Browser ERROR   ./components/shop/notification/notifications-page/notificationsPage-content.jsx:11:1
+Module not found: Can't resolve '../notification-dropdown/notifyDrop'
+   9 | import { EmptyState } from "./empty-state";
+  10 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 11 | import NotificationDropDown from "../notification-dropdown/notifyDrop";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | const NotificationsPageContent = ({ shopId }) => {
+  14 |
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notifications-page/notificationsPage-content.jsx
+    ./app/shop/[shopId]/notifications/page.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[09:54:26.641] Browser ERROR   ./components/shop/notification/notifications-page/notificationsPage-content.jsx:11:1
+Module not found: Can't resolve '../notification-dropdown/notifyDrop'
+   9 | import { EmptyState } from "./empty-state";
+  10 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 11 | import NotificationDropDown from "../notification-dropdown/notifyDrop";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | const NotificationsPageContent = ({ shopId }) => {
+  14 |
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notifications-page/notificationsPage-content.jsx
+    ./app/shop/[shopId]/notifications/page.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[09:54:27.926] Browser ERROR   ./components/shop/notification/notifications-page/notificationsPage-content.jsx:11:1
+Module not found: Can't resolve '../notification-dropdown/notifyDrop'
+   9 | import { EmptyState } from "./empty-state";
+  10 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 11 | import NotificationDropDown from "../notification-dropdown/notifyDrop";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | const NotificationsPageContent = ({ shopId }) => {
+  14 |
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notifications-page/notificationsPage-content.jsx
+    ./app/shop/[shopId]/notifications/page.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[09:55:09.792] Browser ERROR   ./components/shop/notification/notifications-page/notificationsPage-content.jsx:11:1
+Module not found: Can't resolve '../notification-dropdown/notifyDrop'
+   9 | import { EmptyState } from "./empty-state";
+  10 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 11 | import NotificationDropDown from "../notification-dropdown/notifyDrop";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | const NotificationsPageContent = ({ shopId }) => {
+  14 |
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notifications-page/notificationsPage-content.jsx
+    ./app/shop/[shopId]/notifications/page.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[09:55:20.292] Server  LOG      ✓ Compiled in 1158ms
+[09:55:24.485] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\ssr\components_0f61229c._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[09:55:24.486] Server  ERROR    ⨯ ReferenceError: NotificationDropDown is not defined
+[09:55:27.838] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[09:55:31.638] Server  LOG      ✓ Compiled in 1037ms
+[09:55:31.661] Browser ERROR   uncaughtError: ReferenceError: NotificationDropDown is not defined
+[09:55:31.702] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[09:55:36.698] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[09:55:41.658] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":false,"isSent":true,"link":null,"message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-14T15:54:04.155Z"}]}
+[09:55:43.572] Server  LOG      ✓ Compiled in 759ms
+[09:57:48.215] Server  LOG      ✓ Compiled in 786ms
+[09:57:50.698] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":false,"isSent":true,"link":null,"message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-14T15:54:04.155Z"}]}
+[10:02:53.902] Server  LOG      ✓ Compiled in 574ms
+[10:02:58.308] Browser ERROR   uncaughtError: TypeError: selectedNotification is not a function
+[10:03:07.158] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[10:03:28.601] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[10:03:31.791] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":null,"message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-14T17:46:59.625Z"}]}
+[10:03:46.823] Server  LOG      ✓ Compiled in 549ms
+[10:04:38.392] Server  LOG      ✓ Compiled in 1116ms
+[10:05:12.334] Server  LOG      ✓ Compiled in 753ms
+[10:05:32.751] Server  LOG      ✓ Compiled in 597ms
+[10:07:21.067] Server  LOG      ✓ Compiled in 1155ms
+[10:07:23.660] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":null,"message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-14T17:49:38.201Z"}]}
+[10:07:31.352] Server  LOG      ✓ Compiled in 772ms
+[10:07:48.100] Server  LOG      ✓ Compiled in 706ms
+[10:08:13.505] Server  LOG      ✓ Compiled in 1309ms
+[10:08:35.624] Server  LOG      ✓ Compiled in 1092ms
+[10:08:37.861] Browser ERROR   uncaughtError: ReferenceError: onClose is not defined
+[10:09:40.334] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[10:09:40.349] Server  LOG      ✓ Compiled in 692ms
+[10:09:43.792] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__6ec85217._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[10:09:43.802] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[10:09:43.803] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[10:09:43.810] Server  ERROR   findShop error: SyntaxError: Unexpected end of JSON input
+[10:09:43.828] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__b8e280de._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[10:09:43.832] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[10:09:43.834] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[10:09:43.840] Server  ERROR   findShop error: SyntaxError: Unexpected end of JSON input
+[10:09:43.866] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__6ec85217._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[10:09:43.876] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[10:09:43.878] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[10:09:43.881] Server  ERROR   findShop error: SyntaxError: Unexpected end of JSON input
+[10:09:47.679] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[10:09:51.643] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":null,"message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-14T17:52:38.297Z"}]}
+[10:10:07.484] Server  LOG      ✓ Compiled in 545ms
+[10:10:11.144] Browser ERROR   Cannot update a component (`%s`) while rendering a different component (`%s`). To locate the bad setState() call inside `%s`, follow the stack trace as described in https://react.dev/link/setstate-in-render NotificationsPageContent NotificationDialog NotificationDialog
+[10:13:05.773] Server  LOG      ✓ Compiled in 953ms
+[10:13:08.815] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[10:13:08.815] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[10:13:30.959] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[10:13:30.959] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[10:13:44.431] Server  LOG      ✓ Compiled in 824ms
+[10:13:54.537] Server  LOG      ✓ Compiled in 1011ms
+[10:14:18.308] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[10:14:22.091] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[10:14:24.460] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":null,"message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-14T17:58:14.563Z"}]}
+[10:14:26.252] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[10:14:26.252] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[10:14:38.216] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[10:14:38.217] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[10:15:12.235] Server  LOG      ✓ Compiled in 593ms
+[10:15:12.639] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[10:15:12.639] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[10:16:14.831] Server  LOG      ✓ Compiled in 1018ms
+[10:16:15.668] Browser ERROR   ./components/shop/notification/notification-dialog/notifyDialog.jsx:12:48
+Parsing ecmascript source code failed
+  10 |
+  11 |     return (
+> 12 |         <Dialog open={dialogOPen} setDialogOPen(false)>
+     |                                                ^
+  13 |             <DialogContent className="sm:max-w-md">
+  14 |
+  15 |                 <DialogHeader className="flex flex-row items-center gap-3">
+
+Unexpected token `(`. Expected jsx identifier
+
+Import traces:
+  Client Component Browser:
+    ./components/shop/notification/notification-dialog/notifyDialog.jsx [Client Component Browser]
+    ./components/shop/notification/notifications-page/notificationsPage-content.jsx [Client Component Browser]
+    ./components/shop/notification/notifications-page/notificationsPage-content.jsx [Server Component]
+    ./app/shop/[shopId]/notifications/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./components/shop/notification/notification-dialog/notifyDialog.jsx [Client Component SSR]
+    ./components/shop/notification/notifications-page/notificationsPage-content.jsx [Client Component SSR]
+    ./components/shop/notification/notifications-page/notificationsPage-content.jsx [Server Component]
+    ./app/shop/[shopId]/notifications/page.jsx [Server Component]
+[10:16:32.242] Server  LOG      ✓ Compiled in 515ms
+[10:16:37.914] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[10:16:37.914] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[10:16:43.519] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[10:16:43.519] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[10:16:47.830] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[10:16:47.830] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[10:16:54.147] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[10:16:54.147] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[10:17:08.814] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[10:17:08.814] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:39:15.216] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:39:15.216] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:39:19.294] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:39:19.294] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:39:31.011] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:39:31.011] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:39:54.588] Server  LOG      ✓ Compiled in 1149ms
+[26:40:02.104] Server  LOG      ✓ Compiled in 967ms
+[26:40:22.666] Server  LOG      ✓ Compiled in 876ms
+[26:40:37.715] Server  LOG      ✓ Compiled in 582ms
+[26:40:56.328] Server  LOG      ✓ Compiled in 841ms
+[26:41:23.674] Server  LOG      ✓ Compiled in 962ms
+[26:42:31.121] Server  LOG      ✓ Compiled in 683ms
+[26:43:38.569] Server  LOG      ✓ Compiled in 584ms
+[26:45:40.489] Server  LOG      ✓ Compiled in 810ms
+[26:45:41.647] Browser ERROR   uncaughtError: TypeError: Date.toLocaleString is not a constructor
+[26:45:53.424] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[26:45:53.465] Server  LOG      ✓ Compiled in 530ms
+[26:46:00.241] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[26:46:02.297] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":null,"message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T10:23:26.724Z"}]}
+[26:46:03.582] Browser ERROR   uncaughtError: RangeError: Invalid language tag: 2026-03-14T15:52:38.713Z
+[26:46:35.470] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[26:46:35.471] Server  LOG      ✓ Compiled in 734ms
+[26:46:39.831] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[26:46:42.645] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":null,"message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T10:29:59.453Z"}]}
+[26:46:46.369] Browser ERROR   uncaughtError: RangeError: Invalid language tag: 2026-03-14T15:52:38.713Z
+[26:47:54.223] Server  LOG      ✓ Compiled in 980ms
+[26:47:54.225] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[26:47:58.919] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[26:48:01.148] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":null,"message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T10:30:42.110Z"}]}
+[26:48:03.066] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:48:03.066] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:49:18.097] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:49:18.097] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:53:44.088] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:53:44.088] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:53:47.600] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:53:47.600] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:53:53.537] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[26:53:56.397] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":null,"message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T10:37:43.821Z"}]}
+[26:54:19.643] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:54:19.643] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[27:02:38.163] Server  LOG      ✓ Compiled in 576ms
+[27:02:51.056] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[27:02:53.514] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":"/shop/shop_bzLWr-po/billing","message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM. View complete plan details on the billing page.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T10:38:15.552Z"}]}
+[27:02:55.476] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[27:02:55.476] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[27:03:04.879] Server  LOG      ✓ Compiled in 558ms
+[27:04:32.132] Server  LOG      ✓ Compiled in 785ms
+[27:04:35.072] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[27:04:35.072] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[27:04:43.768] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":"/shop/shop_bzLWr-po/billing","message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM. View complete plan details on the billing page.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T10:48:30.880Z"}]}
+[27:04:43.768] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":"/shop/shop_bzLWr-po/billing","message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM. View complete plan details on the billing page.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T10:48:30.880Z"}]}
+[27:05:06.431] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[27:05:06.431] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[27:05:10.742] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[27:05:10.742] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[27:06:06.395] Server  LOG      ✓ Compiled in 1919ms
+[27:06:11.137] Server  LOG      ✓ Compiled in 1417ms
+[28:25:00.392] Server  LOG      ✓ Compiled in 1608ms
+[28:27:09.149] Server  LOG      ✓ Compiled in 719ms
+[28:27:40.005] Server  LOG      ✓ Compiled in 625ms
+[28:27:43.649] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":"/shop/shop_bzLWr-po/billing","message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM. View complete plan details on the billing page.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T10:49:06.491Z"}]}
+[29:13:37.406] Server  LOG      ✓ Compiled in 727ms
+[29:13:37.953] Browser ERROR   A component is changing an uncontrolled input to be controlled. This is likely caused by the value changing from undefined to a defined value, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://react.dev/link/controlled-components
+[29:13:57.794] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[29:14:01.045] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":"/shop/shop_bzLWr-po/billing","message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM. View complete plan details on the billing page.","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T10:49:06.491Z"}]}
+[29:14:47.483] Server  LOG      ✓ Compiled in 631ms
+[29:14:59.737] Server  LOG      ✓ Compiled in 1043ms
+[29:15:04.252] Server  LOG      ✓ Compiled in 907ms
+[29:17:39.879] Server  LOG      ✓ Compiled in 572ms
+[29:18:15.660] Server  LOG      ✓ Compiled in 1275ms
+[29:21:56.788] Server  LOG      ✓ Compiled in 750ms
+[29:22:02.979] Server  LOG      ✓ Compiled in 800ms
+[29:22:36.433] Server  LOG      ✓ Compiled in 886ms
+[29:23:01.569] Server  LOG      ✓ Compiled in 1553ms
+[29:23:34.292] Server  LOG      ✓ Compiled in 887ms
+[29:25:20.292] Server  LOG      ✓ Compiled in 911ms
+[29:25:39.029] Server  LOG      ✓ Compiled in 569ms
+[29:26:00.039] Server  LOG      ✓ Compiled in 1265ms
+[29:26:05.052] Server  LOG      ✓ Compiled in 1481ms
+[29:26:12.556] Server  LOG      ✓ Compiled in 690ms
+[29:26:19.109] Server  LOG      ✓ Compiled in 907ms
+[29:28:26.784] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[29:28:29.617] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":"/shop/shop_bzLWr-po/billing","message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM. View complete plan details on the billing page. dhuwd","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T10:49:06.491Z"}]}
+[29:28:37.045] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[29:28:37.045] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[29:28:51.637] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[29:28:53.916] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":"/shop/shop_bzLWr-po/billing","message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM. View complete plan details on the billing page. dhuwd def dwndedwjd djwudn dhwudn dhnwjd  dbd wbd qsa dnwd wsjusnq sanw dwndedwjd","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T13:12:32.922Z"}]}
+[29:29:07.198] Server  LOG      ✓ Compiled in 1244ms
+[29:29:13.763] Server  LOG      ✓ Compiled in 927ms
+[29:29:27.871] Server  LOG      ✓ Compiled in 1197ms
+[29:29:31.530] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[29:29:31.530] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[29:29:46.058] Server  LOG      ✓ Compiled in 1463ms
+[29:29:53.907] Server  LOG      ✓ Compiled in 966ms
+[29:30:09.958] Server  LOG      ✓ Compiled in 1059ms
+[29:31:17.594] Server  LOG      ✓ Compiled in 635ms
+[29:32:09.706] Server  LOG      ✓ Compiled in 1182ms
+[29:32:17.631] Server  LOG      ✓ Compiled in 1087ms
+[29:32:35.656] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[29:32:38.062] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":"/shop/shop_bzLWr-po/billing","message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM. View complete plan details on the billing page. dhuwd def dwndedwjd djwudn dhwudn dhnwjd  dbd wbd qsa dnwd wsjusnq sanw dwndedwjd","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T13:13:27.471Z"}]}
+[29:34:21.299] Server  LOG      ✓ Compiled in 1076ms
+[29:36:20.002] Server  LOG      ✓ Compiled in 1009ms
+[29:36:44.576] Server  LOG      ✓ Compiled in 1163ms
+[29:37:01.053] Server  LOG      ✓ Compiled in 847ms
+[29:37:17.587] Server  LOG      ✓ Compiled in 948ms
+[29:46:04.845] Server  LOG      ✓ Compiled in 828ms
+[29:47:52.720] Server  LOG      ✓ Compiled in 1062ms
+[30:18:18.660] Server  LOG      ✓ Compiled in 2.7s
+[30:18:23.538] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":"/shop/shop_bzLWr-po/billing","message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM. View complete plan details on the billing page. dhuwd def dwndedwjd djwudn dhwudn dhnwjd  dbd wbd qsa dnwd wsjusnq sanw dwndedwjd","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T13:13:27.471Z"}]}
+[30:18:24.841] Server  LOG      ✓ Compiled in 660ms
+[30:18:25.635] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [] []
+[30:18:33.133] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[30:18:35.863] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":"/shop/shop_bzLWr-po/billing","message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM. View complete plan details on the billing page. dhuwd def dwndedwjd djwudn dhwudn dhnwjd  dbd wbd qsa dnwd wsjusnq sanw dwndedwjd","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T13:13:27.471Z"}]}
+[30:19:04.051] Server  LOG      ✓ Compiled in 657ms
+[30:19:12.468] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":"/shop/shop_bzLWr-po/billing","message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM. View complete plan details on the billing page. dhuwd def dwndedwjd djwudn dhwudn dhnwjd  dbd wbd qsa dnwd wsjusnq sanw dwndedwjd","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T13:13:27.471Z"}]}
+[30:19:14.639] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":"/shop/shop_bzLWr-po/billing","message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM. View complete plan details on the billing page. dhuwd def dwndedwjd djwudn dhwudn dhnwjd  dbd wbd qsa dnwd wsjusnq sanw dwndedwjd","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T13:13:27.471Z"}]}
+[30:19:42.696] Server  LOG      ✓ Compiled in 973ms
+[30:19:46.604] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":"/shop/shop_bzLWr-po/billing","message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM. View complete plan details on the billing page. dhuwd def dwndedwjd djwudn dhwudn dhnwjd  dbd wbd qsa dnwd wsjusnq sanw dwndedwjd","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T13:13:27.471Z"}]}
+[30:19:49.635] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":"/shop/shop_bzLWr-po/billing","message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM. View complete plan details on the billing page. dhuwd def dwndedwjd djwudn dhwudn dhnwjd  dbd wbd qsa dnwd wsjusnq sanw dwndedwjd","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T13:13:27.471Z"}]}
+[30:19:59.970] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":"/shop/shop_bzLWr-po/billing","message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM. View complete plan details on the billing page. dhuwd def dwndedwjd djwudn dhwudn dhnwjd  dbd wbd qsa dnwd wsjusnq sanw dwndedwjd","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T13:13:27.471Z"}]}
+[30:20:02.271] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":"/shop/shop_bzLWr-po/billing","message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM. View complete plan details on the billing page. dhuwd def dwndedwjd djwudn dhwudn dhnwjd  dbd wbd qsa dnwd wsjusnq sanw dwndedwjd","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T13:13:27.471Z"}]}
+[30:21:53.462] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[30:21:56.402] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":"/shop/shop_bzLWr-po/billing","message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM. View complete plan details on the billing page. dhuwd def dwndedwjd djwudn dhwudn dhnwjd  dbd wbd qsa dnwd wsjusnq sanw dwndedwjd","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T13:13:27.471Z"}]}
+[30:31:55.519] Server  LOG     prisma:error "\nInvalid `prisma.shop.findUnique()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d37eb29._.js:65:38\n\n  62 const { shopId, userEmail } = await req.json();\n  63 let shop;\n  64 if (shopId != null) {\n→ 65     shop = await prisma.shop.findUnique(\nCan't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`\n\nPlease make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`."
+[30:31:55.528] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__1d37eb29._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[30:31:55.563] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[30:31:55.642] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_36357ef7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[30:31:55.645] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[30:31:55.646] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[30:31:55.648] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[30:31:55.651] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[30:31:55.661] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[30:31:55.667] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[30:31:55.673] Server  ERROR   [subscription check error] PrismaClientKnownRequestError: 
+Invalid `prisma.shop.findUnique()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__1d37eb29._.js:65:38
+
+  62 const { shopId, userEmail } = await req.json();
+  63 let shop;
+  64 if (shopId != null) {
+→ 65     shop = await prisma.shop.findUnique(
+Can't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`
+
+Please make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`.
+[30:32:11.747] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":"/shop/shop_bzLWr-po/billing","message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM. View complete plan details on the billing page. dhuwd def dwndedwjd djwudn dhwudn dhnwjd  dbd wbd qsa dnwd wsjusnq sanw dwndedwjd","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T13:13:27.471Z"}]}
+[30:32:12.554] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":"/shop/shop_bzLWr-po/billing","message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM. View complete plan details on the billing page. dhuwd def dwndedwjd djwudn dhwudn dhnwjd  dbd wbd qsa dnwd wsjusnq sanw dwndedwjd","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T13:13:27.471Z"}]}
+[30:32:30.685] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":"/shop/shop_bzLWr-po/billing","message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM. View complete plan details on the billing page. dhuwd def dwndedwjd djwudn dhwudn dhnwjd  dbd wbd qsa dnwd wsjusnq sanw dwndedwjd","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T13:13:27.471Z"}]}
+[30:32:31.590] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":"/shop/shop_bzLWr-po/billing","message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM. View complete plan details on the billing page. dhuwd def dwndedwjd djwudn dhwudn dhnwjd  dbd wbd qsa dnwd wsjusnq sanw dwndedwjd","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T13:13:27.471Z"}]}
+[30:32:36.594] Server  LOG      ○ Compiling /shop/[shopId]/verifications ...
+[30:32:47.891] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":"/shop/shop_bzLWr-po/billing","message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM. View complete plan details on the billing page. dhuwd def dwndedwjd djwudn dhwudn dhnwjd  dbd wbd qsa dnwd wsjusnq sanw dwndedwjd","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T13:13:27.471Z"}]}
+[30:32:54.641] Browser LOG     data {"notifications":[{"channel":"IN_APP","createdAt":"2026-03-14T15:52:38.713Z","customerId":null,"id":"cmmqi87z60001leq57r88r7ct","isRead":true,"isSent":true,"link":"/shop/shop_bzLWr-po/billing","message":"Your shop \"The Street Cafe's\" has been successfully created. You are now on a free trial plan valid until 29 MAR 2026 • 9:22 PM. View complete plan details on the billing page. dhuwd def dwndedwjd djwudn dhwudn dhnwjd  dbd wbd qsa dnwd wsjusnq sanw dwndedwjd","metadata":{"trialEndsAt":"29 MAR 2026 • 9:22 PM"},"readAt":null,"sentAt":null,"shopId":"shop_bzLWr-po","title":"Welcome to Stampi! 🎉","type":"success","updatedAt":"2026-03-15T13:13:27.471Z"}]}
+[31:50:08.111] Server  LOG      ✓ Compiled in 1442ms
+[31:52:25.890] Server  LOG      ✓ Compiled in 1035ms
+[31:52:35.657] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[32:15:26.834] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[32:19:02.594] Server  LOG     prisma:error "\nInvalid `prisma.shop.findUnique()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d37eb29._.js:65:38\n\n  62 const { shopId, userEmail } = await req.json();\n  63 let shop;\n  64 if (shopId != null) {\n→ 65     shop = await prisma.shop.findUnique(\nTimed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 5)"
+[32:19:02.597] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__1d37eb29._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:02.606] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:02.607] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_36357ef7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:02.609] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:02.614] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:02.618] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:02.621] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:02.624] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:02.626] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:02.629] Server  ERROR   [subscription check error] PrismaClientKnownRequestError: 
+Invalid `prisma.shop.findUnique()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__1d37eb29._.js:65:38
+
+  62 const { shopId, userEmail } = await req.json();
+  63 let shop;
+  64 if (shopId != null) {
+→ 65     shop = await prisma.shop.findUnique(
+Timed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 5)
+[32:19:03.510] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[32:19:11.483] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[32:19:13.807] Server  LOG     prisma:error "\nInvalid `prisma.user.findUnique()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__40167ea4._.js:85:40\n\n  82     });\n  83 }\n  84 // ✅ SAME DB LOGIC\n→ 85 const user = await prisma.user.findUnique(\nTimed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 5)"
+[32:19:13.815] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__40167ea4._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:13.829] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:13.939] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_d3e5a362._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:13.942] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:13.943] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:13.954] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:13.958] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:13.966] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:13.976] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:13.982] Server  ERROR   [findUser error] PrismaClientKnownRequestError: 
+Invalid `prisma.user.findUnique()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__40167ea4._.js:85:40
+
+  82     });
+  83 }
+  84 // ✅ SAME DB LOGIC
+→ 85 const user = await prisma.user.findUnique(
+Timed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 5)
+[32:19:14.008] Server  LOG     prisma:error "\nInvalid `prisma.shop.findFirst()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__fa66d5c1._.js:82:40\n\n  79         status: 200\n  80     });\n  81 }\n→ 82 const shop = await prisma.shop.findFirst(\nTimed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 5)"
+[32:19:14.011] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__fa66d5c1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:14.028] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:14.064] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_1972b62e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:14.066] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:14.068] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:14.072] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:14.075] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:14.080] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:14.082] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:14.090] Server  ERROR   findShop error: PrismaClientKnownRequestError: 
+Invalid `prisma.shop.findFirst()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__fa66d5c1._.js:82:40
+
+  79         status: 200
+  80     });
+  81 }
+→ 82 const shop = await prisma.shop.findFirst(
+Timed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 5)
+[32:19:14.111] Server  LOG     prisma:error "\nInvalid `prisma.plan.findMany()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__80a4e117._.js:63:41\n\n  60 try {\n  61     // Lazy import Prisma (build-safe)\n  62     const { default: prisma } = await __turbopack_context__.A(\"[project]/lib/prisma.js [app-route] (ecmascript, async loader)\");\n→ 63     const plans = await prisma.plan.findMany(\nTimed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 5)"
+[32:19:14.114] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__80a4e117._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:14.118] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:14.166] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_f7163b6a._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:14.168] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:14.173] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:14.177] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:14.225] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:14.238] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:14.246] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:19:14.250] Server  ERROR   fetch plans error: PrismaClientKnownRequestError: 
+Invalid `prisma.plan.findMany()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__80a4e117._.js:63:41
+
+  60 try {
+  61     // Lazy import Prisma (build-safe)
+  62     const { default: prisma } = await __turbopack_context__.A("[project]/lib/prisma.js [app-route] (ecmascript, async loader)");
+→ 63     const plans = await prisma.plan.findMany(
+Timed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 5)
+[32:32:50.031] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[32:37:33.668] Server  LOG      ✓ Compiled in 934ms
+[32:37:33.877] Browser ERROR   uncaughtError: Error: Objects are not valid as a React child (found: [object Date]). If you meant to render a collection of children, use an array instead.
+[32:37:46.300] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[32:37:46.351] Server  LOG      ✓ Compiled in 1015ms
+[32:37:56.404] Server  LOG     prisma:error "\nInvalid `prisma.shop.findUnique()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d37eb29._.js:65:38\n\n  62 const { shopId, userEmail } = await req.json();\n  63 let shop;\n  64 if (shopId != null) {\n→ 65     shop = await prisma.shop.findUnique(\nTimed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 5)"
+[32:37:56.407] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__1d37eb29._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:37:56.414] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:37:56.415] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_36357ef7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:37:56.416] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:37:56.418] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:37:56.420] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:37:56.421] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:37:56.424] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:37:56.425] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:37:56.431] Server  ERROR   [subscription check error] PrismaClientKnownRequestError: 
+Invalid `prisma.shop.findUnique()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__1d37eb29._.js:65:38
+
+  62 const { shopId, userEmail } = await req.json();
+  63 let shop;
+  64 if (shopId != null) {
+→ 65     shop = await prisma.shop.findUnique(
+Timed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 5)
+[32:37:56.745] Server  LOG     prisma:error "\nInvalid `prisma.shop.findFirst()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d37eb29._.js:71:38\n\n  68         }\n  69     });\n  70 } else {\n→ 71     shop = await prisma.shop.findFirst(\nTimed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 5)"
+[32:37:56.747] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__1d37eb29._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:37:56.751] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:37:56.753] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_36357ef7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:37:56.754] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:37:56.756] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:37:56.758] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:37:56.760] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:37:56.762] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:37:56.763] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:37:56.766] Server  ERROR   [subscription check error] PrismaClientKnownRequestError: 
+Invalid `prisma.shop.findFirst()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__1d37eb29._.js:71:38
+
+  68         }
+  69     });
+  70 } else {
+→ 71     shop = await prisma.shop.findFirst(
+Timed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 5)
+[32:37:58.318] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[32:38:09.181] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[32:38:46.313] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[32:39:25.523] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[32:42:44.529] Server  LOG      ✓ Compiled in 824ms
+[32:42:54.817] Server  LOG      ✓ Compiled in 577ms
+[32:43:18.671] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[32:43:18.672] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[32:43:46.950] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[32:44:35.801] Server  LOG     prisma:error "\nInvalid `prisma.shop.findFirst()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d37eb29._.js:71:38\n\n  68         }\n  69     });\n  70 } else {\n→ 71     shop = await prisma.shop.findFirst(\nTimed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 5)"
+[32:44:35.803] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__1d37eb29._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:35.808] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:35.816] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_36357ef7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:35.832] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:35.837] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:35.839] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:35.840] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:35.843] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:35.850] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:35.857] Server  ERROR   [subscription check error] PrismaClientKnownRequestError: 
+Invalid `prisma.shop.findFirst()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__1d37eb29._.js:71:38
+
+  68         }
+  69     });
+  70 } else {
+→ 71     shop = await prisma.shop.findFirst(
+Timed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 5)
+[32:44:36.197] Browser ERROR   {}
+[32:44:36.554] Server  LOG     prisma:error "\nInvalid `prisma.shop.findFirst()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d37eb29._.js:71:38\n\n  68         }\n  69     });\n  70 } else {\n→ 71     shop = await prisma.shop.findFirst(\nServer has closed the connection."
+[32:44:36.556] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__1d37eb29._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:36.561] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:36.565] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_36357ef7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:36.566] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:36.569] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:36.570] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:36.571] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:36.575] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:36.577] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:36.583] Server  ERROR   [subscription check error] PrismaClientKnownRequestError: 
+Invalid `prisma.shop.findFirst()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__1d37eb29._.js:71:38
+
+  68         }
+  69     });
+  70 } else {
+→ 71     shop = await prisma.shop.findFirst(
+Server has closed the connection.
+[32:44:36.592] Server  LOG     prisma:error "\nInvalid `prisma.shop.findFirst()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d37eb29._.js:71:38\n\n  68         }\n  69     });\n  70 } else {\n→ 71     shop = await prisma.shop.findFirst(\nTimed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 5)"
+[32:44:36.596] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__1d37eb29._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:36.600] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:36.602] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_36357ef7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:36.604] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:36.605] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:36.607] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:36.609] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:36.616] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:36.618] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:36.625] Server  ERROR   [subscription check error] PrismaClientKnownRequestError: 
+Invalid `prisma.shop.findFirst()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__1d37eb29._.js:71:38
+
+  68         }
+  69     });
+  70 } else {
+→ 71     shop = await prisma.shop.findFirst(
+Timed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 5)
+[32:44:37.163] Browser ERROR   {}
+[32:44:37.163] Browser ERROR   {}
+[32:44:39.661] Server  LOG     prisma:error "\nInvalid `prisma.shop.findFirst()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d37eb29._.js:71:38\n\n  68         }\n  69     });\n  70 } else {\n→ 71     shop = await prisma.shop.findFirst(\nTimed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 5)"
+[32:44:39.665] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__1d37eb29._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:39.668] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:39.671] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_36357ef7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:39.673] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:39.675] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:39.677] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:39.680] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:39.685] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:39.686] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:39.689] Server  ERROR   [subscription check error] PrismaClientKnownRequestError: 
+Invalid `prisma.shop.findFirst()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__1d37eb29._.js:71:38
+
+  68         }
+  69     });
+  70 } else {
+→ 71     shop = await prisma.shop.findFirst(
+Timed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 5)
+[32:44:40.062] Browser ERROR   {}
+[32:44:42.813] Server  LOG     prisma:error "\nInvalid `prisma.shop.findUnique()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d37eb29._.js:65:38\n\n  62 const { shopId, userEmail } = await req.json();\n  63 let shop;\n  64 if (shopId != null) {\n→ 65     shop = await prisma.shop.findUnique(\nTimed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 5)"
+[32:44:42.815] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__1d37eb29._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:42.819] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:42.822] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_36357ef7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:42.824] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:42.826] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:42.829] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:42.834] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:42.836] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:42.837] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:42.840] Server  ERROR   [subscription check error] PrismaClientKnownRequestError: 
+Invalid `prisma.shop.findUnique()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__1d37eb29._.js:65:38
+
+  62 const { shopId, userEmail } = await req.json();
+  63 let shop;
+  64 if (shopId != null) {
+→ 65     shop = await prisma.shop.findUnique(
+Timed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 5)
+[32:44:43.765] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[32:44:49.015] Server  LOG     prisma:error "\nInvalid `prisma.shop.findFirst()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__fa66d5c1._.js:82:40\n\n  79         status: 200\n  80     });\n  81 }\n→ 82 const shop = await prisma.shop.findFirst(\nCan't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`\n\nPlease make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`."
+[32:44:49.017] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__fa66d5c1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.020] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.022] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_1972b62e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.024] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.026] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.031] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.033] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.037] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.039] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.041] Server  ERROR   findShop error: PrismaClientKnownRequestError: 
+Invalid `prisma.shop.findFirst()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__fa66d5c1._.js:82:40
+
+  79         status: 200
+  80     });
+  81 }
+→ 82 const shop = await prisma.shop.findFirst(
+Can't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`
+
+Please make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`.
+[32:44:49.152] Server  LOG     prisma:error "\nInvalid `prisma.plan.findMany()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__80a4e117._.js:63:41\n\n  60 try {\n  61     // Lazy import Prisma (build-safe)\n  62     const { default: prisma } = await __turbopack_context__.A(\"[project]/lib/prisma.js [app-route] (ecmascript, async loader)\");\n→ 63     const plans = await prisma.plan.findMany(\nCan't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`\n\nPlease make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`."
+[32:44:49.155] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__80a4e117._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.157] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.160] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_f7163b6a._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.161] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.166] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.167] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.169] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.171] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.174] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.177] Server  ERROR   fetch plans error: PrismaClientKnownRequestError: 
+Invalid `prisma.plan.findMany()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__80a4e117._.js:63:41
+
+  60 try {
+  61     // Lazy import Prisma (build-safe)
+  62     const { default: prisma } = await __turbopack_context__.A("[project]/lib/prisma.js [app-route] (ecmascript, async loader)");
+→ 63     const plans = await prisma.plan.findMany(
+Can't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`
+
+Please make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`.
+[32:44:49.190] Server  LOG     prisma:error "\nInvalid `prisma.user.findUnique()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__40167ea4._.js:85:40\n\n  82     });\n  83 }\n  84 // ✅ SAME DB LOGIC\n→ 85 const user = await prisma.user.findUnique(\nCan't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`\n\nPlease make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`."
+[32:44:49.192] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__40167ea4._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.198] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.200] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_d3e5a362._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.202] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.206] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.209] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.211] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.216] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.218] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.226] Server  ERROR   [findUser error] PrismaClientKnownRequestError: 
+Invalid `prisma.user.findUnique()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__40167ea4._.js:85:40
+
+  82     });
+  83 }
+  84 // ✅ SAME DB LOGIC
+→ 85 const user = await prisma.user.findUnique(
+Can't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`
+
+Please make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`.
+[32:44:49.913] Server  LOG     prisma:error "\nInvalid `prisma.shop.findUnique()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d37eb29._.js:65:38\n\n  62 const { shopId, userEmail } = await req.json();\n  63 let shop;\n  64 if (shopId != null) {\n→ 65     shop = await prisma.shop.findUnique(\nCan't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`\n\nPlease make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`."
+[32:44:49.916] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__1d37eb29._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.921] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.925] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_36357ef7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.927] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.929] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.933] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.934] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.936] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.937] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[32:44:49.940] Server  ERROR   [subscription check error] PrismaClientKnownRequestError: 
+Invalid `prisma.shop.findUnique()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__1d37eb29._.js:65:38
+
+  62 const { shopId, userEmail } = await req.json();
+  63 let shop;
+  64 if (shopId != null) {
+→ 65     shop = await prisma.shop.findUnique(
+Can't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`
+
+Please make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`.
+[32:44:51.120] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[32:53:12.448] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[32:53:35.880] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[32:53:35.880] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[32:53:45.569] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[32:53:45.570] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[32:54:24.540] Server  LOG      ✓ Compiled in 927ms
+[32:54:37.969] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[32:54:42.162] Browser LOG     date "2026-03-14T15:52:38.713Z"
+[32:54:42.162] Browser LOG     date "2026-03-14T15:52:38.713Z"
+[32:54:42.162] Browser LOG     date "2026-03-14T15:52:38.713Z"
+[32:54:42.162] Browser LOG     date "2026-03-14T15:52:38.713Z"
+[32:54:42.162] Browser LOG     date "2026-03-14T15:52:38.713Z"
+[32:54:42.162] Browser LOG     date "2026-03-14T15:52:38.713Z"
+[32:54:43.507] Browser LOG     date "2026-03-14T15:52:38.713Z"
+[32:54:43.507] Browser LOG     date "2026-03-14T15:52:38.713Z"
+[33:02:20.739] Server  LOG      ✓ Compiled in 513ms
+[33:02:29.928] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[33:02:45.173] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[33:02:45.173] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[33:04:27.802] Server  ERROR    ⨯ ./components/shop/notification/notificationMenu.jsx:15:1
+Module not found: Can't resolve '../notification-dialog/notifyDialog'
+  13 | import { CircleCheckBig, Info, TriangleAlert, CircleMinus } from 'lucide-react';
+  14 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 15 | import NotificationDialog from "../notification-dialog/notifyDialog";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { useRouter } from "next/navigation";
+  17 | import { toast } from "sonner";
+  18 | import Link from "next/link";
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notificationMenu.jsx
+    ./app/shop/[shopId]/layout.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[33:04:27.836] Server  ERROR    ⨯ ./components/shop/notification/notificationMenu.jsx:15:1
+Module not found: Can't resolve '../notification-dialog/notifyDialog'
+  13 | import { CircleCheckBig, Info, TriangleAlert, CircleMinus } from 'lucide-react';
+  14 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 15 | import NotificationDialog from "../notification-dialog/notifyDialog";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { useRouter } from "next/navigation";
+  17 | import { toast } from "sonner";
+  18 | import Link from "next/link";
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notificationMenu.jsx
+    ./app/shop/[shopId]/layout.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[33:04:27.889] Server  ERROR    ⨯ ./components/shop/notification/notificationMenu.jsx:15:1
+Module not found: Can't resolve '../notification-dialog/notifyDialog'
+  13 | import { CircleCheckBig, Info, TriangleAlert, CircleMinus } from 'lucide-react';
+  14 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 15 | import NotificationDialog from "../notification-dialog/notifyDialog";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { useRouter } from "next/navigation";
+  17 | import { toast } from "sonner";
+  18 | import Link from "next/link";
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notificationMenu.jsx
+    ./app/shop/[shopId]/layout.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[33:04:27.923] Server  ERROR    ⨯ ./components/shop/notification/notificationMenu.jsx:15:1
+Module not found: Can't resolve '../notification-dialog/notifyDialog'
+  13 | import { CircleCheckBig, Info, TriangleAlert, CircleMinus } from 'lucide-react';
+  14 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 15 | import NotificationDialog from "../notification-dialog/notifyDialog";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { useRouter } from "next/navigation";
+  17 | import { toast } from "sonner";
+  18 | import Link from "next/link";
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notificationMenu.jsx
+    ./app/shop/[shopId]/layout.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[33:04:27.974] Server  ERROR    ⨯ ./components/shop/notification/notificationMenu.jsx:15:1
+Module not found: Can't resolve '../notification-dialog/notifyDialog'
+  13 | import { CircleCheckBig, Info, TriangleAlert, CircleMinus } from 'lucide-react';
+  14 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 15 | import NotificationDialog from "../notification-dialog/notifyDialog";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { useRouter } from "next/navigation";
+  17 | import { toast } from "sonner";
+  18 | import Link from "next/link";
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notificationMenu.jsx
+    ./app/shop/[shopId]/layout.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[33:04:27.989] Server  ERROR    ⨯ ./components/shop/notification/notificationMenu.jsx:15:1
+Module not found: Can't resolve '../notification-dialog/notifyDialog'
+  13 | import { CircleCheckBig, Info, TriangleAlert, CircleMinus } from 'lucide-react';
+  14 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 15 | import NotificationDialog from "../notification-dialog/notifyDialog";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { useRouter } from "next/navigation";
+  17 | import { toast } from "sonner";
+  18 | import Link from "next/link";
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notificationMenu.jsx
+    ./app/shop/[shopId]/layout.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[33:04:28.000] Server  ERROR    ⨯ ./components/shop/notification/notificationMenu.jsx:15:1
+Module not found: Can't resolve '../notification-dialog/notifyDialog'
+  13 | import { CircleCheckBig, Info, TriangleAlert, CircleMinus } from 'lucide-react';
+  14 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 15 | import NotificationDialog from "../notification-dialog/notifyDialog";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { useRouter } from "next/navigation";
+  17 | import { toast } from "sonner";
+  18 | import Link from "next/link";
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notificationMenu.jsx
+    ./app/shop/[shopId]/layout.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[33:04:28.010] Server  ERROR    ⨯ ./components/shop/notification/notificationMenu.jsx:15:1
+Module not found: Can't resolve '../notification-dialog/notifyDialog'
+  13 | import { CircleCheckBig, Info, TriangleAlert, CircleMinus } from 'lucide-react';
+  14 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 15 | import NotificationDialog from "../notification-dialog/notifyDialog";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { useRouter } from "next/navigation";
+  17 | import { toast } from "sonner";
+  18 | import Link from "next/link";
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notificationMenu.jsx
+    ./app/shop/[shopId]/layout.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[33:04:28.033] Server  ERROR    ⨯ ./components/shop/notification/notificationMenu.jsx:15:1
+Module not found: Can't resolve '../notification-dialog/notifyDialog'
+  13 | import { CircleCheckBig, Info, TriangleAlert, CircleMinus } from 'lucide-react';
+  14 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 15 | import NotificationDialog from "../notification-dialog/notifyDialog";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { useRouter } from "next/navigation";
+  17 | import { toast } from "sonner";
+  18 | import Link from "next/link";
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notificationMenu.jsx
+    ./app/shop/[shopId]/layout.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[33:04:28.041] Server  ERROR    ⨯ ./components/shop/notification/notificationMenu.jsx:15:1
+Module not found: Can't resolve '../notification-dialog/notifyDialog'
+  13 | import { CircleCheckBig, Info, TriangleAlert, CircleMinus } from 'lucide-react';
+  14 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 15 | import NotificationDialog from "../notification-dialog/notifyDialog";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { useRouter } from "next/navigation";
+  17 | import { toast } from "sonner";
+  18 | import Link from "next/link";
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notificationMenu.jsx
+    ./app/shop/[shopId]/layout.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[33:04:28.051] Server  ERROR    ⨯ ./components/shop/notification/notificationMenu.jsx:15:1
+Module not found: Can't resolve '../notification-dialog/notifyDialog'
+  13 | import { CircleCheckBig, Info, TriangleAlert, CircleMinus } from 'lucide-react';
+  14 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 15 | import NotificationDialog from "../notification-dialog/notifyDialog";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { useRouter } from "next/navigation";
+  17 | import { toast } from "sonner";
+  18 | import Link from "next/link";
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notificationMenu.jsx
+    ./app/shop/[shopId]/layout.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[33:04:28.055] Server  ERROR    ⨯ ./components/shop/notification/notificationMenu.jsx:15:1
+Module not found: Can't resolve '../notification-dialog/notifyDialog'
+  13 | import { CircleCheckBig, Info, TriangleAlert, CircleMinus } from 'lucide-react';
+  14 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 15 | import NotificationDialog from "../notification-dialog/notifyDialog";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { useRouter } from "next/navigation";
+  17 | import { toast } from "sonner";
+  18 | import Link from "next/link";
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notificationMenu.jsx
+    ./app/shop/[shopId]/layout.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[33:04:28.065] Server  ERROR    ⨯ ./components/shop/notification/notificationMenu.jsx:15:1
+Module not found: Can't resolve '../notification-dialog/notifyDialog'
+  13 | import { CircleCheckBig, Info, TriangleAlert, CircleMinus } from 'lucide-react';
+  14 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 15 | import NotificationDialog from "../notification-dialog/notifyDialog";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { useRouter } from "next/navigation";
+  17 | import { toast } from "sonner";
+  18 | import Link from "next/link";
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notificationMenu.jsx
+    ./app/shop/[shopId]/layout.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[33:04:28.069] Server  ERROR    ⨯ ./components/shop/notification/notificationMenu.jsx:15:1
+Module not found: Can't resolve '../notification-dialog/notifyDialog'
+  13 | import { CircleCheckBig, Info, TriangleAlert, CircleMinus } from 'lucide-react';
+  14 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 15 | import NotificationDialog from "../notification-dialog/notifyDialog";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { useRouter } from "next/navigation";
+  17 | import { toast } from "sonner";
+  18 | import Link from "next/link";
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notificationMenu.jsx
+    ./app/shop/[shopId]/layout.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[33:04:28.076] Server  ERROR    ⨯ ./components/shop/notification/notificationMenu.jsx:15:1
+Module not found: Can't resolve '../notification-dialog/notifyDialog'
+  13 | import { CircleCheckBig, Info, TriangleAlert, CircleMinus } from 'lucide-react';
+  14 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 15 | import NotificationDialog from "../notification-dialog/notifyDialog";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { useRouter } from "next/navigation";
+  17 | import { toast } from "sonner";
+  18 | import Link from "next/link";
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notificationMenu.jsx
+    ./app/shop/[shopId]/layout.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[33:04:28.085] Server  ERROR    ⨯ ./components/shop/notification/notificationMenu.jsx:15:1
+Module not found: Can't resolve '../notification-dialog/notifyDialog'
+  13 | import { CircleCheckBig, Info, TriangleAlert, CircleMinus } from 'lucide-react';
+  14 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 15 | import NotificationDialog from "../notification-dialog/notifyDialog";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { useRouter } from "next/navigation";
+  17 | import { toast } from "sonner";
+  18 | import Link from "next/link";
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notificationMenu.jsx
+    ./app/shop/[shopId]/layout.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[33:04:28.090] Server  ERROR    ⨯ ./components/shop/notification/notificationMenu.jsx:15:1
+Module not found: Can't resolve '../notification-dialog/notifyDialog'
+  13 | import { CircleCheckBig, Info, TriangleAlert, CircleMinus } from 'lucide-react';
+  14 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 15 | import NotificationDialog from "../notification-dialog/notifyDialog";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { useRouter } from "next/navigation";
+  17 | import { toast } from "sonner";
+  18 | import Link from "next/link";
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notificationMenu.jsx
+    ./app/shop/[shopId]/layout.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[33:04:28.102] Server  ERROR    ⨯ ./components/shop/notification/notificationMenu.jsx:15:1
+Module not found: Can't resolve '../notification-dialog/notifyDialog'
+  13 | import { CircleCheckBig, Info, TriangleAlert, CircleMinus } from 'lucide-react';
+  14 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 15 | import NotificationDialog from "../notification-dialog/notifyDialog";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { useRouter } from "next/navigation";
+  17 | import { toast } from "sonner";
+  18 | import Link from "next/link";
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notificationMenu.jsx
+    ./app/shop/[shopId]/layout.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[33:04:28.110] Server  ERROR    ⨯ ./components/shop/notification/notificationMenu.jsx:15:1
+Module not found: Can't resolve '../notification-dialog/notifyDialog'
+  13 | import { CircleCheckBig, Info, TriangleAlert, CircleMinus } from 'lucide-react';
+  14 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 15 | import NotificationDialog from "../notification-dialog/notifyDialog";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { useRouter } from "next/navigation";
+  17 | import { toast } from "sonner";
+  18 | import Link from "next/link";
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notificationMenu.jsx
+    ./app/shop/[shopId]/layout.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[33:04:28.118] Server  ERROR    ⨯ ./components/shop/notification/notificationMenu.jsx:15:1
+Module not found: Can't resolve '../notification-dialog/notifyDialog'
+  13 | import { CircleCheckBig, Info, TriangleAlert, CircleMinus } from 'lucide-react';
+  14 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 15 | import NotificationDialog from "../notification-dialog/notifyDialog";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { useRouter } from "next/navigation";
+  17 | import { toast } from "sonner";
+  18 | import Link from "next/link";
+
+
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notificationMenu.jsx
+    ./app/shop/[shopId]/layout.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[33:04:28.123] Server  LOG      ✓ Compiled in 2.2s
+[33:04:28.644] Browser ERROR   ./components/shop/notification/notificationMenu.jsx:15:1
+Module not found: Can't resolve '../notification-dialog/notifyDialog'
+  13 | import { CircleCheckBig, Info, TriangleAlert, CircleMinus } from 'lucide-react';
+  14 | import { TimeAgoUTCtoIST } from "@/lib/dateFormat";
+> 15 | import NotificationDialog from "../notification-dialog/notifyDialog";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { useRouter } from "next/navigation";
+  17 | import { toast } from "sonner";
+  18 | import Link from "next/link";
+
+Import trace:
+  Server Component:
+    ./components/shop/notification/notificationMenu.jsx
+    ./app/shop/[shopId]/layout.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[33:04:43.822] Server  LOG      ✓ Compiled in 1243ms
+[33:04:49.111] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[33:04:56.335] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[33:05:14.065] Server  LOG      ✓ Compiled in 649ms
+[33:20:09.272] Server  LOG      ✓ Compiled in 924ms
+[33:20:22.124] Server  LOG      ✓ Compiled in 1095ms
+[33:20:23.696] Browser ERROR   uncaughtError: ReferenceError: selectedNotification is not defined
+[33:20:53.810] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[33:20:53.865] Server  LOG      ✓ Compiled in 525ms
+[33:20:59.420] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[33:22:01.811] Server  LOG      ✓ Compiled in 510ms
+[33:22:15.662] Server  LOG      ✓ Compiled in 559ms
+[33:22:34.860] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[33:22:34.860] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[33:33:56.085] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[33:33:56.085] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[33:34:43.768] Server  LOG      ✓ Compiled in 1085ms
+[33:34:51.965] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[33:34:51.965] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[33:34:59.046] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[33:34:59.046] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[33:35:03.563] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[33:35:03.563] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[33:35:24.464] Server  LOG      ✓ Compiled in 591ms
+[33:35:31.814] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[33:35:31.814] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[33:36:23.217] Server  LOG      ✓ Compiled in 595ms
+[33:36:26.627] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[33:36:26.627] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[33:36:43.135] Server  LOG      ✓ Compiled in 847ms
+[33:36:46.274] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[33:36:46.274] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[33:37:23.645] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[33:37:23.645] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[33:37:28.594] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[33:37:28.594] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[33:37:42.647] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[33:37:42.647] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[33:37:42.859] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[33:37:42.859] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[49:15:30.682] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[49:15:30.683] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[49:15:35.188] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[49:15:35.189] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[49:15:45.406] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[49:20:54.046] Server  LOG      ✓ Compiled in 1949ms
+[49:21:00.073] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[49:21:03.686] Browser LOG     date "2026-03-14T15:52:38.713Z" "2026-03-16T09:04:54.383Z"
+[49:21:03.686] Browser LOG     date "2026-03-14T15:52:38.713Z" "2026-03-16T09:04:54.389Z"
+[49:21:04.571] Browser LOG     date "2026-03-14T15:52:38.713Z" "2026-03-16T09:04:55.249Z"
+[49:21:04.571] Browser LOG     date "2026-03-14T15:52:38.713Z" "2026-03-16T09:04:55.254Z"
+[49:21:04.571] Browser LOG     date "2026-03-14T15:52:38.713Z" "2026-03-16T09:04:55.306Z"
+[49:21:04.571] Browser LOG     date "2026-03-14T15:52:38.713Z" "2026-03-16T09:04:55.312Z"
+[49:21:05.710] Browser LOG     date "2026-03-14T15:52:38.713Z" "2026-03-16T09:04:56.550Z"
+[49:21:05.710] Browser LOG     date "2026-03-14T15:52:38.713Z" "2026-03-16T09:04:56.554Z"
+[49:22:17.568] Server  LOG      ✓ Compiled in 760ms
+[49:22:27.014] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[49:22:30.152] Browser LOG     date 1
+[49:22:30.152] Browser LOG     date 1
+[49:22:30.152] Browser LOG     date 1
+[49:22:30.152] Browser LOG     date 1
+[49:22:30.152] Browser LOG     date 1
+[49:22:30.152] Browser LOG     date 1
+[49:22:31.173] Browser LOG     date 1
+[49:22:31.173] Browser LOG     date 1
+[49:27:35.799] Server  LOG      ✓ Compiled in 722ms
+[49:27:44.247] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[49:28:12.847] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[49:28:12.847] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[49:31:16.092] Server  LOG      ✓ Compiled in 1751ms
+[49:31:23.137] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[49:32:16.098] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[49:32:16.098] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[49:32:22.885] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[49:32:22.885] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[49:32:37.419] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[49:32:37.531] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[49:33:32.933] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[49:33:32.933] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[50:08:36.574] Server  LOG        Reload env: .env
+[50:24:06.860] Server  LOG      ○ Compiling /customer/[customerId] ...
+[50:24:18.902] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[50:24:19.909] Browser WARN    Image with src "http://localhost:3000/not-found.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[50:24:25.597] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[50:24:27.473] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <TooltipProvider delayDuration={0}>
+      <TooltipProvider data-slot="tooltip-pr..." delayDuration={0}>
+        <TooltipProviderProvider scope={undefined} isOpenDelayed={true} delayDuration={0} ...>
+          <div data-slot="sidebar-wr..." style={{...}} className="group/side...">
+            <AppSidebar shopId="shop_bzLWr-po">
+              <Sidebar collapsible="icon">
+                <div className="group peer..." data-state="expanded" data-collapsible="" data-variant="sidebar" ...>
+                  <div>
+                  <div data-slot="sidebar-co..." className="fixed inse...">
+                    <div data-sidebar="sidebar" data-slot="sidebar-inner" className="bg-sidebar...">
+                      <SidebarHeader>
+                        <div data-slot="sidebar-he..." data-sidebar="header" className="flex flex-...">
+                          <div className="flex gap-2...">
+                            <div>
+                            <div className="grid flex-1">
+                              <span className="truncate font-medium capitalize">
++                               {"The Street Cafe's"}
+-                               Shop Name
+                      ...
+            ...
+
+[50:24:36.520] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[50:36:11.471] Server  LOG      ○ Compiling /claim ...
+[50:36:17.279] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[50:36:40.502] Browser LOG     📌 OCR RESULT: {"date":"16 Mar 2026","text":"AS\n< Transaction Successful\n03:45 pm on 16 Mar 2026\nPaid to\nNaman Jain 150\n6350250055@ptaxis\nBanking Name © Naman Jain @\nSent to © PAYTM + XXXXXX0055@ptaxis\nTransfer Details ~\nTransaction ID\nT2603161545338589434686 (5)\nDebited from\n© xoxxxi79s 2150\nUTR: 623925265202 ©\n2 @ & G&G\nSend Again View Split Share\nHistory Expense Receipt\n©) Contact PhonePe Support >\nPowered by\nLEP @reici sank\n","time":"03:45 pm","upiId":null,"utr":"6350250055"}
+[50:36:43.422] Server  LOG      ○ Compiling /api/screenshot/verify ...
+[50:36:47.363] Server  WARN    Couldn't load fs
+[50:36:47.388] Server  WARN    Couldn't load zlib
+[50:36:53.097] Server  LOG     AI FIXED OCR → {}
+[51:01:48.355] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[51:01:49.541] Server  LOG     prisma:error "\nInvalid `prisma.shop.findFirst()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d37eb29._.js:71:38\n\n  68         }\n  69     });\n  70 } else {\n→ 71     shop = await prisma.shop.findFirst(\nError in connector: Error querying the database: FATAL: MaxClientsInSessionMode: max clients reached - in Session mode max clients are limited to pool_size"
+[51:01:49.586] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__1d37eb29._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[51:01:49.718] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[51:01:49.794] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_36357ef7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[51:01:49.797] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[51:01:49.803] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[51:01:49.807] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[51:01:49.811] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[51:01:49.814] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[51:01:49.817] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[51:01:49.826] Server  ERROR   [subscription check error] PrismaClientUnknownRequestError: 
+Invalid `prisma.shop.findFirst()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__1d37eb29._.js:71:38
+
+  68         }
+  69     });
+  70 } else {
+→ 71     shop = await prisma.shop.findFirst(
+Error in connector: Error querying the database: FATAL: MaxClientsInSessionMode: max clients reached - in Session mode max clients are limited to pool_size
+[51:05:47.570] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[51:34:22.769] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[51:34:43.868] Browser LOG     📌 OCR RESULT: {"date":"16 Mar 2026","text":"[2]\n< Transaction Successful\n04:12 pm on 16 Mar 2026\nPaid to\nNaman Jain 150\n6350250055@ptaxis\nBanking Name © Naman Jain @\nSent to © PAYTM + XXXXXX0055@ptaxis\nTransfer Details ~\nTransaction ID\nT2603161612150598273246 (5)\nDebited from\n© xoxxxi79s 2150\nUTR: 553795534628 [&]\n2D © O&O 6\nSend Again View Split Share\nHistory Expense Receipt\n©) Contact PhonePe Support >\nPowered by\nLEP @hreicigank\n","time":"04:12 pm","upiId":null,"utr":"6350250055"}
+[51:34:46.207] Server  WARN    Couldn't load fs
+[51:34:46.214] Server  WARN    Couldn't load zlib
+[51:34:51.209] Server  LOG     AI FIXED OCR → {}
+[51:34:51.346] Server  LOG     difffffff 2202
+[51:37:59.062] Browser LOG     📌 OCR RESULT: {"date":"16 Mar 2026","text":"< Transaction Successful\n04:50 pm on 16 Mar 2026\nPaid to\nNaman Jain 150\n6350250055@ptaxis\nBanking Name © Naman Jain @\nSent to © PAYTM + XXXXXX0055@ptaxis\nTransfer Details ~\nTransaction ID\nT2603161650212843800341 5}\nDebited from\n© xoxxxi79s 2150\nUTR: 848766159366 [&)\noD © OO €\nSend Again View Split Share\nHistory Expense Receipt\n©) Contact PhonePe Support >\nPowered by\nLIZ» @hreicigank\n","time":"04:50 pm","upiId":null,"utr":"6350250055"}
+[51:38:07.457] Server  LOG     AI FIXED OCR → {}
+[51:38:07.635] Server  LOG     difffffff 118
+[51:38:08.190] Server  LOG     data "6350250055" undefined ["Sir","The Street Cafe's",0,"8","https://stampi.in/customer/cust_F4JBYSr03-"]
+[51:43:21.084] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[51:43:43.479] Browser LOG     📌 OCR RESULT: {"date":"16 Mar 2026","text":"< Transaction Successful\n04:56 pm on 16 Mar 2026\nPaid to\nNaman Jain 150\n6350250055@ptaxis\nBanking Name © Naman Jain @\nSent to © PAYTM + XXXXXX0055@ptaxis\nTransfer Details ~\nTransaction ID\nT2603161656131143241951 (5)\nDebited from\n© xoxxxi7es 2150\nUTR: 511407141831 [5]\n2 @ & &\nSend Again View Split Share\nHistory Expense Receipt\n©) Contact PhonePe Support >\nPowered by\nLEP @iciciBank\n","time":"04:56 pm","upiId":null,"utr":"6350250055"}
+[51:43:44.845] Server  WARN    Couldn't load fs
+[51:43:44.849] Server  WARN    Couldn't load zlib
+[51:44:04.253] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[51:44:54.099] Browser LOG     📌 OCR RESULT: {"date":"16 Mar 2026","text":"< Transaction Successful\n04:56 pm on 16 Mar 2026\nPaid to\nNaman Jain 150\n6350250055@ptaxis\nBanking Name © Naman Jain @\nSent to © PAYTM + XXXXXX0055@ptaxis\nTransfer Details ~\nTransaction ID\nT2603161656131143241951 (5)\nDebited from\n© xoxxxi7es 2150\nUTR: 511407141831 [5]\n2 @ & &\nSend Again View Split Share\nHistory Expense Receipt\n©) Contact PhonePe Support >\nPowered by\nLEP @iciciBank\n","time":"04:56 pm","upiId":null,"utr":"6350250055"}
+[51:44:57.405] Server  LOG     AI FIXED OCR → {}
+[51:44:57.556] Server  LOG     difffffff 168
+[51:44:58.000] Server  LOG     data "6350250055" "stamp_added_link" ["Sir","The Street Cafe's",0,"8","https://stampi.in/customer/cust_dNjsVhFRfg"]
+[95:27:23.049] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[95:39:38.769] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

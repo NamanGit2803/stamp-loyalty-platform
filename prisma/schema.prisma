@@ -324,6 +324,7 @@ model Notification {
   @@index([shopId])
   @@index([customerId])
   @@index([isRead])
+  @@index([shopId, createdAt])
 }
 
 
