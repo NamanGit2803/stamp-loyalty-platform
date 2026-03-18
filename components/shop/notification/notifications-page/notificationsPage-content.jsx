@@ -167,16 +167,18 @@ const NotificationsPageContent = ({ shopId }) => {
                                         )}
                                     </div>
 
-                                    <div className="w-[80%] space-y-2">
-                                        <p className="font-medium">{item.title}</p>
-                                        <p className="text-sm text-muted-foreground line-clamp-2 h-10">
-                                            {item.message}
-                                        </p>
-                                    </div>
+                                    <div className="flex flex-col sm:flex-row sm:items-center sm:gap-1">
+                                        <div className="sm:w-[80%] sm:space-y-2">
+                                            <p className="font-medium">{item.title}</p>
+                                            <p className="text-sm text-muted-foreground line-clamp-2 h-10">
+                                                {item.message}
+                                            </p>
+                                        </div>
 
-                                    <span className="ml-auto text-xs text-dark-text/60">
-                                        {TimeAgoUTCtoIST(item.createdAt)}
-                                    </span>
+                                        <span className="sm:ml-auto text-xs text-dark-text/60">
+                                            {TimeAgoUTCtoIST(item.createdAt)}
+                                        </span>
+                                    </div>
 
                                 </CardContent>
                             </Card>
@@ -194,7 +196,7 @@ const NotificationsPageContent = ({ shopId }) => {
                 )}
             </div>
 
-            <NotificationDialog notification={selectedNotification} dialogOPen={dialogOPen} setDialogOPen={setDialogOPen}/>
+            <NotificationDialog notification={selectedNotification} dialogOPen={dialogOPen} setDialogOPen={setDialogOPen} />
         </>
     )
 }

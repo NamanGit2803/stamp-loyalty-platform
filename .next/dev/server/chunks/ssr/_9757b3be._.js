@@ -474,36 +474,45 @@ const NotificationsPageContent = ({ shopId })=>{
                                                 columnNumber: 37
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "w-[80%] space-y-2",
+                                                className: "flex flex-col sm:flex-row sm:items-center sm:gap-1",
                                                 children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "font-medium",
-                                                        children: item.title
-                                                    }, void 0, false, {
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "sm:w-[80%] sm:space-y-2",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                className: "font-medium",
+                                                                children: item.title
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/components/shop/notification/notifications-page/notificationsPage-content.jsx",
+                                                                lineNumber: 172,
+                                                                columnNumber: 45
+                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                className: "text-sm text-muted-foreground line-clamp-2 h-10",
+                                                                children: item.message
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/components/shop/notification/notifications-page/notificationsPage-content.jsx",
+                                                                lineNumber: 173,
+                                                                columnNumber: 45
+                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                        ]
+                                                    }, void 0, true, {
                                                         fileName: "[project]/components/shop/notification/notifications-page/notificationsPage-content.jsx",
                                                         lineNumber: 171,
                                                         columnNumber: 41
                                                     }, ("TURBOPACK compile-time value", void 0)),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-sm text-muted-foreground line-clamp-2 h-10",
-                                                        children: item.message
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "sm:ml-auto text-xs text-dark-text/60",
+                                                        children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$dateFormat$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TimeAgoUTCtoIST"])(item.createdAt)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shop/notification/notifications-page/notificationsPage-content.jsx",
-                                                        lineNumber: 172,
+                                                        lineNumber: 178,
                                                         columnNumber: 41
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/shop/notification/notifications-page/notificationsPage-content.jsx",
                                                 lineNumber: 170,
-                                                columnNumber: 37
-                                            }, ("TURBOPACK compile-time value", void 0)),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "ml-auto text-xs text-dark-text/60",
-                                                children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$dateFormat$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TimeAgoUTCtoIST"])(item.createdAt)
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/shop/notification/notifications-page/notificationsPage-content.jsx",
-                                                lineNumber: 177,
                                                 columnNumber: 37
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
@@ -525,12 +534,12 @@ const NotificationsPageContent = ({ shopId })=>{
                                     children: "Loading..."
                                 }, void 0, false, {
                                     fileName: "[project]/components/shop/notification/notifications-page/notificationsPage-content.jsx",
-                                    lineNumber: 189,
+                                    lineNumber: 191,
                                     columnNumber: 37
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/components/shop/notification/notifications-page/notificationsPage-content.jsx",
-                                lineNumber: 187,
+                                lineNumber: 189,
                                 columnNumber: 29
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
@@ -551,7 +560,7 @@ const NotificationsPageContent = ({ shopId })=>{
                 setDialogOPen: setDialogOPen
             }, void 0, false, {
                 fileName: "[project]/components/shop/notification/notifications-page/notificationsPage-content.jsx",
-                lineNumber: 197,
+                lineNumber: 199,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]

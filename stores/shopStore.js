@@ -285,6 +285,7 @@ class ShopStore {
     fetch all customer of a shop 
   */
   async fetchCustomers({ page, search = '' }) {
+    if (!shopStore.shop?.id) return;
     this.loading = false
     this.error = null
 
@@ -321,6 +322,7 @@ class ShopStore {
   redeem reward
   */
   async redeemReward(customerId) {
+    if (!shopStore.shop?.id) return;
     this.loading = true;
     this.error = null;
 
@@ -358,7 +360,8 @@ class ShopStore {
   payment verifications records
   */
   async fetchPaymentVerifications({ page, search, date, status }) {
-    this.loading = false
+    if (!shopStore.shop?.id) return;
+    this.loading = true
     this.error = null
 
     try {

@@ -78,15 +78,14 @@ const VerificationsList = () => {
                     placeholder="Search by name, phone or transaction ID"
                 />
 
-                <div className="grid grid-cols-2 gap-2">
-                    {/* date  */}
-                    <div className="relative w-full">
+                <div className="flex justify-between gap-2">
+                    {/* date */}
+                    <div className="relative flex-1 min-w-0">
                         <Input
                             type="date"
                             value={filterDate}
                             onChange={(e) => setFilterDate(e.target.value)}
-                            className="h-9 text-sm w-full pr-10"
-                            style={{ background: "linear-gradient(to bottom right, #faf5ff, #ffffff)" }}
+                            className="h-9 text-sm w-full pr-10 bg-background"
                         />
 
                         {filterDate && (
@@ -100,10 +99,9 @@ const VerificationsList = () => {
                         )}
                     </div>
 
-
-                    {/* status  */}
+                    {/* status */}
                     <Select value={status} onValueChange={setStatus}>
-                        <SelectTrigger className="bg-background w-full">
+                        <SelectTrigger className="bg-background flex-1 min-w-0">
                             <SelectValue placeholder="Status" />
                         </SelectTrigger>
 

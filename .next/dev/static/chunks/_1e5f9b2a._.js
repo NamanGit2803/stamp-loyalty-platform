@@ -492,6 +492,7 @@ class ShopStore {
     /*
     fetch all customer of a shop 
   */ async fetchCustomers({ page, search = '' }) {
+        if (!shopStore.shop?.id) return;
         this.loading = false;
         this.error = null;
         try {
@@ -522,6 +523,7 @@ class ShopStore {
     /*
   redeem reward
   */ async redeemReward(customerId) {
+        if (!shopStore.shop?.id) return;
         this.loading = true;
         this.error = null;
         try {
@@ -555,7 +557,8 @@ class ShopStore {
     /*
   payment verifications records
   */ async fetchPaymentVerifications({ page, search, date, status }) {
-        this.loading = false;
+        if (!shopStore.shop?.id) return;
+        this.loading = true;
         this.error = null;
         try {
             const res = await fetch("/api/shop/paymentVerification/fetch", {

@@ -40,11 +40,11 @@ const AppSidebar = ({shopId, ...rest}) => {
             <Separator/>
 
             <SidebarContent>
-                <NavMain shopId={shopStore.shop?.id ?? shopId} />
+                <NavMain shopId={shopId ?? shopStore.shop?.id} />
             </SidebarContent>
 
             <SidebarFooter>
-                <NavUser user={userStore.user} logout={userStore.logout} shopId={shopStore.shop?.id ?? shopId}/>
+                <NavUser user={userStore.user} logout={userStore.logout} shopId={shopId ?? shopStore.shop?.id}/>
             </SidebarFooter>
 
             <SidebarRail />
