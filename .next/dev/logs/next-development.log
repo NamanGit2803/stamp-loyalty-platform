@@ -2041,3 +2041,4 @@ Please make sure your database server is running at `aws-1-ap-south-1.pooler.sup
 [105:23:59.229] Server  LOG      ✓ Compiled in 712ms
 [105:24:45.217] Server  LOG      ✓ Compiled in 866ms
 [105:25:03.516] Server  LOG      ✓ Compiled in 614ms
+[119:09:25.329] Server  LOG      ✓ Compiled in 3s

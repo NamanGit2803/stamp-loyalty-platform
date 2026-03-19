@@ -3,7 +3,6 @@
 import React from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
 import {
     Table,
@@ -15,9 +14,12 @@ import {
 } from "@/components/ui/table"
 
 const PaymentHistoryPage = () => {
+
+    // 👉 Replace this with real API data later
+    const payments = []
+
     return (
         <div className='space-y-6'>
-            {/* ---------------- Payment History ---------------- */}
             <Card>
                 <CardHeader>
                     <CardTitle>Payment History</CardTitle>
@@ -36,27 +38,33 @@ const PaymentHistoryPage = () => {
                         </TableHeader>
 
                         <TableBody>
-                            <TableRow>
-                                <TableCell>12 Sep 2025</TableCell>
-                                <TableCell>₹299</TableCell>
-                                <TableCell>
-                                    <Badge variant="success">Success</Badge>
-                                </TableCell>
-                                <TableCell>UPI</TableCell>
-                                <TableCell className="text-right">
-                                    <Button variant="link">Download</Button>
-                                </TableCell>
-                            </TableRow>
-
-                            <TableRow>
-                                <TableCell>12 Aug 2025</TableCell>
-                                <TableCell>₹299</TableCell>
-                                <TableCell>
-                                    <Badge variant="secondary">Failed</Badge>
-                                </TableCell>
-                                <TableCell>UPI</TableCell>
-                                <TableCell className="text-right">—</TableCell>
-                            </TableRow>
+                            {payments.length > 0 ? (
+                                payments.map((payment, index) => (
+                                    <TableRow key={index}>
+                                        <TableCell>{payment.date}</TableCell>
+                                        <TableCell>₹{payment.amount}</TableCell>
+                                        <TableCell>
+                                            <Badge variant={payment.status === "success" ? "success" : "secondary"}>
+                                                {payment.status}
+                                            </Badge>
+                                        </TableCell>
+                                        <TableCell>{payment.method}</TableCell>
+                                        <TableCell className="text-right">
+                                            {payment.invoice ? (
+                                                <Button variant="link">Download</Button>
+                                            ) : (
+                                                "—"
+                                            )}
+                                        </TableCell>
+                                    </TableRow>
+                                ))
+                            ) : (
+                                <TableRow>
+                                    <TableCell colSpan={5} className="text-center py-10 text-muted-foreground">
+                                        No payment history found
+                                    </TableCell>
+                                </TableRow>
+                            )}
                         </TableBody>
                     </Table>
                 </CardContent>
