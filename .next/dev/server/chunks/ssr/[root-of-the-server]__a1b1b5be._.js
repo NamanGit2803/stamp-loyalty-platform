@@ -1037,14 +1037,14 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$spinner$
 ;
 ;
 ;
-function NameEnterCard({ shopName, customerId, setUIState }) {
+function NameEnterCard({ shop, customer, setUIState }) {
     const [name, setName] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const addName = async ()=>{
-        // if (!customerId) {
-        //     toast.error('User not found!')
-        //     return
-        // }
+        if (!customer) {
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error('User not found!');
+            return;
+        }
         setLoading(true);
         try {
             const res = await fetch("/api/public/addCustomerName", {
@@ -1053,7 +1053,7 @@ function NameEnterCard({ shopName, customerId, setUIState }) {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    customerId,
+                    customerId: customer.id,
                     name
                 })
             });
@@ -1061,9 +1061,33 @@ function NameEnterCard({ shopName, customerId, setUIState }) {
             if (!res.ok) throw new Error(data.error);
         } catch (error) {
             __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error(error);
+            setLoading(false);
         }
+        setLoading(false);
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].success("Name has been updated successfully");
         setUIState('success');
+        // send whats app message 
+        try {
+            const res = await fetch("/api/whatsapp/sendMessage", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    phone: customer.phone,
+                    templateName: "stamp_added_link",
+                    variables: [
+                        name || "",
+                        shop.name,
+                        customer.stampCount,
+                        shop.targetStamps,
+                        `https://stampi.in/customer/${customer.id}`
+                    ]
+                })
+            });
+        } catch (error) {
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error(error);
+        }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
         className: "w-full shadow-md mx-auto border border-border/50 overflow-hidden max-w-sm bg-white rounded-xl",
@@ -1075,12 +1099,12 @@ function NameEnterCard({ shopName, customerId, setUIState }) {
                     children: "Enter Your Name"
                 }, void 0, false, {
                     fileName: "[project]/components/claimPage/nameEnterCard.jsx",
-                    lineNumber: 46,
+                    lineNumber: 70,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/claimPage/nameEnterCard.jsx",
-                lineNumber: 45,
+                lineNumber: 69,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -1094,40 +1118,40 @@ function NameEnterCard({ shopName, customerId, setUIState }) {
                                 children: "Stampi"
                             }, void 0, false, {
                                 fileName: "[project]/components/claimPage/nameEnterCard.jsx",
-                                lineNumber: 53,
+                                lineNumber: 77,
                                 columnNumber: 36
                             }, this),
                             " reward journey! 🎉",
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                 fileName: "[project]/components/claimPage/nameEnterCard.jsx",
-                                lineNumber: 53,
+                                lineNumber: 77,
                                 columnNumber: 109
                             }, this),
                             "You're now joining the loyalty account of ",
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                 fileName: "[project]/components/claimPage/nameEnterCard.jsx",
-                                lineNumber: 54,
+                                lineNumber: 78,
                                 columnNumber: 63
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 className: "text-primary font-semibold",
-                                children: shopName ?? 'shop'
+                                children: shop.name ?? 'shop'
                             }, void 0, false, {
                                 fileName: "[project]/components/claimPage/nameEnterCard.jsx",
-                                lineNumber: 54,
+                                lineNumber: 78,
                                 columnNumber: 69
                             }, this),
                             ".",
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                 fileName: "[project]/components/claimPage/nameEnterCard.jsx",
-                                lineNumber: 54,
-                                columnNumber: 142
+                                lineNumber: 78,
+                                columnNumber: 143
                             }, this),
                             "To begin collecting your stamps, please enter your sweet name — only once!"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/claimPage/nameEnterCard.jsx",
-                        lineNumber: 52,
+                        lineNumber: 76,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1142,7 +1166,7 @@ function NameEnterCard({ shopName, customerId, setUIState }) {
                                         children: "Your Name"
                                     }, void 0, false, {
                                         fileName: "[project]/components/claimPage/nameEnterCard.jsx",
-                                        lineNumber: 60,
+                                        lineNumber: 84,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -1155,13 +1179,13 @@ function NameEnterCard({ shopName, customerId, setUIState }) {
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/components/claimPage/nameEnterCard.jsx",
-                                        lineNumber: 61,
+                                        lineNumber: 85,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/claimPage/nameEnterCard.jsx",
-                                lineNumber: 59,
+                                lineNumber: 83,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1175,7 +1199,7 @@ function NameEnterCard({ shopName, customerId, setUIState }) {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$spinner$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Spinner"], {}, void 0, false, {
                                             fileName: "[project]/components/claimPage/nameEnterCard.jsx",
-                                            lineNumber: 71,
+                                            lineNumber: 95,
                                             columnNumber: 38
                                         }, this),
                                         " Updating..."
@@ -1183,25 +1207,25 @@ function NameEnterCard({ shopName, customerId, setUIState }) {
                                 }, void 0, true) : 'Continue'
                             }, void 0, false, {
                                 fileName: "[project]/components/claimPage/nameEnterCard.jsx",
-                                lineNumber: 70,
+                                lineNumber: 94,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/claimPage/nameEnterCard.jsx",
-                        lineNumber: 58,
+                        lineNumber: 82,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/claimPage/nameEnterCard.jsx",
-                lineNumber: 51,
+                lineNumber: 75,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/claimPage/nameEnterCard.jsx",
-        lineNumber: 44,
+        lineNumber: 68,
         columnNumber: 9
     }, this);
 }
@@ -1401,8 +1425,8 @@ const ClaimPage = ({ shopId })=>{
                 columnNumber: 37
             }, ("TURBOPACK compile-time value", void 0)),
             uiState === 'nameCard' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$claimPage$2f$nameEnterCard$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                shopName: shop.name,
-                customerId: customer.customerId,
+                shop: shop,
+                customer: customer,
                 setUIState: setUIState
             }, void 0, false, {
                 fileName: "[project]/components/claimPage/claimPageComponent.jsx",

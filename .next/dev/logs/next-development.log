@@ -2042,3 +2042,11 @@ Please make sure your database server is running at `aws-1-ap-south-1.pooler.sup
 [105:24:45.217] Server  LOG      ✓ Compiled in 866ms
 [105:25:03.516] Server  LOG      ✓ Compiled in 614ms
 [119:09:25.329] Server  LOG      ✓ Compiled in 3s
+[119:31:11.439] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[119:31:19.981] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[119:32:13.243] Browser LOG     📌 OCR RESULT: {"date":null,"text":"Paid to\nNaman Jain 150\n6350250055@ptaxis\nBanking Name : Naman Jain @\nSent to : PAYTM + XXXXXX0055@ptaxis\nTransfer Details A\nTransaction ID\nT2603191239212331931846 B\nDebited from\n@ ooxxxorer 2150\nUTR: 084015826511 B®\n2 @ 0 ¢\nSend Again View Split Share\nHistory Expense Receipt\n©) Contact PhonePe Support >\nPowered by\nLIPID ~/ves BANK\n","time":null,"upiId":null,"utr":"6350250055"}
+[119:32:15.588] Server  WARN    Couldn't load fs
+[119:32:15.598] Server  WARN    Couldn't load zlib
+[119:32:21.825] Server  LOG     AI FIXED OCR → {}
+[119:32:22.237] Server  LOG     {}
+[119:32:43.736] Server  LOG      ○ Compiling /api/whatsapp/sendMessage ...

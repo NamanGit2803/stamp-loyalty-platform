@@ -538,13 +538,13 @@ function validateUPIScreenshotTime(dateStr, timeStr) {
  * Check past 15 minutes only
  ----------------------------------*/ function isWithinLast15Minutes(time) {
     const now = new Date();
+    console.log(time);
     const nowSeconds = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
     const givenSeconds = time.hour * 3600 + time.minute * 60 + (time.second || 0);
     const secondsInDay = 24 * 3600;
     let diff = nowSeconds - givenSeconds;
     // midnight crossing
     if (diff < 0) diff += secondsInDay;
-    console.log("difffffff", diff);
     return diff >= 0 && diff <= 15 * 60;
 }
 }),
@@ -562,7 +562,6 @@ __turbopack_context__.s([
     ()=>sendWhatsAppTemplate
 ]);
 async function sendWhatsAppTemplate({ phone, templateName, variables = [] }) {
-    console.log("data", phone, templateName, variables);
     const formattedPhone = phone.startsWith("91") ? phone : `91${phone}`;
     const body = {
         messaging_product: "whatsapp",
@@ -972,7 +971,7 @@ async function POST(req) {
         // --------------------------------------
         // 8️⃣ AWARD STAMP
         // --------------------------------------
-        await prisma.customer.update({
+        customer = await prisma.customer.update({
             where: {
                 id: customer.id
             },
@@ -989,27 +988,26 @@ async function POST(req) {
                 lastVisit: new Date()
             }
         });
-        // send message on whatsapp 
-        await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$whatsapp$2f$sendMessages$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["sendWhatsAppTemplate"])({
-            phone,
-            templateName: 'stamp_added_link',
-            variables: [
-                customer.name || "Sir",
-                shop.shopName,
-                customer.stampCount,
-                shop.targetStamps,
-                `https://stampi.in/customer/${customer.id}`
-            ]
-        });
+        if (!newCustomer && customer.stampCount === 2) {
+            // send message on whatsapp 
+            await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$whatsapp$2f$sendMessages$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["sendWhatsAppTemplate"])({
+                phone,
+                templateName: 'stamp_added_link',
+                variables: [
+                    customer.name || "",
+                    shop.shopName,
+                    customer.stampCount,
+                    shop.targetStamps,
+                    `https://stampi.in/customer/${customer.id}`
+                ]
+            });
+        }
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             success: true,
             message: "Stamp added!",
             scanId: scan.id,
             newCustomer,
-            customer: {
-                customerId: customer.id,
-                customerStamp: customer.stampCount
-            }
+            customer
         });
     } catch (err) {
         console.error("VERIFY ERROR →", err);

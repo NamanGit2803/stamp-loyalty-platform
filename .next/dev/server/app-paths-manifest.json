@@ -32,6 +32,7 @@
   "/api/shop/paymentVerification/fetch/route": "app/api/shop/paymentVerification/fetch/route.js",
   "/api/subscription/start/route": "app/api/subscription/start/route.js",
   "/api/subscription/status/route": "app/api/subscription/status/route.js",
+  "/api/whatsapp/sendMessage/route": "app/api/whatsapp/sendMessage/route.js",
   "/claim/page": "app/claim/page.js",
   "/customer/[customerId]/page": "app/customer/[customerId]/page.js",
   "/shop/[shopId]/billing/page": "app/shop/[shopId]/billing/page.js",
