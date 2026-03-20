@@ -2440,3 +2440,4 @@ Please make sure your database server is running at `aws-1-ap-south-1.pooler.sup
 [141:17:39.566] Browser ERROR   uncaughtError: Error: Rendered fewer hooks than expected. This may be caused by an accidental early return statement.
 [141:17:59.377] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [141:19:21.884] Browser LOG     📌 OCR RESULT: {"date":null,"text":"Paid to\nTANISH SUMAN 200\n*%*%*x6731@pthdfc\nSentto : PYTM » #*****6731@pthdfc\nPayment Details A\nTransaction ID\nT2603201030004063068337 [&)\nDebited from\nOD xxxxaz8392 2200\nUTR: 906788822394 (5)\nA & 1 <Q\nSend Again View History hh Se =k\n©) Contact PhonePe Support >\nPowered by\nLIPIP poss ean\nLJ\n","time":null,"upiId":null,"utr":"906788822394"}
+[141:45:45.049] Server  LOG      ✓ Compiled in 2.5s

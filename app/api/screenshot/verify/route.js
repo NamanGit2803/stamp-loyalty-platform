@@ -408,6 +408,24 @@ export async function POST(req) {
             },
         });
 
+        if (rejectReason && (rejectReason === 'upi_mismatch' || rejectReason === 'upi_not_exist')) {
+            await prisma.notification.create({
+                data: {
+                    shopId,
+                    title: "Manual Verification Required!",
+                    message: `A payment could not be verified automatically due to a UPI mismatch. Please review and verify this transaction manually to proceed.`,
+                    type: "warn",
+                    channel: "IN_APP",
+                    link: `/shop/${shopId}/verifications`,
+                    metadata: {
+                        reason: "upi_mismatch",
+                        scanId: scan.id, // important for quick access
+                    },
+                    isSent: true,
+                }
+            });
+        }
+
         // If failed fraud check → return here
         if (rejectReason) {
             return NextResponse.json(
