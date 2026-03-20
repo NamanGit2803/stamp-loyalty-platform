@@ -2050,3 +2050,393 @@ Please make sure your database server is running at `aws-1-ap-south-1.pooler.sup
 [119:32:21.825] Server  LOG     AI FIXED OCR → {}
 [119:32:22.237] Server  LOG     {}
 [119:32:43.736] Server  LOG      ○ Compiling /api/whatsapp/sendMessage ...
+[127:32:04.079] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[127:49:49.528] Server  LOG      ✓ Compiled in 5.2s
+[127:49:50.642] Browser ERROR   ./stores/shopStore.js:416:11
+Parsing ecmascript source code failed
+  414 |           shopId: this.shop?.id,
+  415 |           shopName: this.shop?.shopName
+> 416 |           scanId
+      |           ^^^^^^
+  417 |         })
+  418 |       });
+  419 |
+
+Expected ',', got 'scanId'
+
+Import traces:
+  Client Component Browser:
+    ./stores/shopStore.js [Client Component Browser]
+    ./stores/StoreProvider.js [Client Component Browser]
+    ./stores/StoreProvider.js [Server Component]
+    ./app/layout.jsx [Server Component]
+
+  Client Component SSR:
+    ./stores/shopStore.js [Client Component SSR]
+    ./stores/StoreProvider.js [Client Component SSR]
+    ./stores/StoreProvider.js [Server Component]
+    ./app/layout.jsx [Server Component]
+[127:50:08.349] Server  LOG      ✓ Compiled in 873ms
+[127:50:10.154] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[127:50:20.827] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[127:52:15.704] Server  LOG      ✓ Compiled in 1038ms
+[127:52:17.194] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[127:52:26.795] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[127:52:31.178] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <TooltipProvider delayDuration={0}>
+      <TooltipProvider data-slot="tooltip-pr..." delayDuration={0}>
+        <TooltipProviderProvider scope={undefined} isOpenDelayed={true} delayDuration={0} ...>
+          <div data-slot="sidebar-wr..." style={{...}} className="group/side...">
+            <AppSidebar shopId="shop_bzLWr-po">
+              <Sidebar collapsible="icon">
+                <div className="group peer..." data-state="expanded" data-collapsible="" data-variant="sidebar" ...>
+                  <div>
+                  <div data-slot="sidebar-co..." className="fixed inse...">
+                    <div data-sidebar="sidebar" data-slot="sidebar-inner" className="bg-sidebar...">
+                      <SidebarHeader>
+                        <div data-slot="sidebar-he..." data-sidebar="header" className="flex flex-...">
+                          <div className="flex gap-2...">
+                            <div>
+                            <div className="grid flex-1">
+                              <span className="truncate font-medium capitalize">
++                               {"The Street Cafe's"}
+-                               Shop Name
+                      ...
+            ...
+
+[129:06:45.448] Server  LOG      ✓ Compiled in 997ms
+[129:06:45.637] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[129:07:04.189] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[129:15:12.038] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[129:15:31.573] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[129:17:40.948] Browser LOG     📌 OCR RESULT: {"date":"19 Mar 2026","text":"10:29:42 9% Sil O56% +\n<— Sent Successfully Share Help\n\nAmount\n\nRupees One Hundred Only\n\nO08 Money Transfer Edit\n\nTo\n\nNaman Jain & NJ\n\nUPI ID: namanj283@axl|\n\non © Phonepe\n\nFrom\n\nTanish Suman =\n\nUPI'ID: 7851056731 @ptyes\n\nBank Of Baroda - 7475 ®\n\nPaid at 10:28 PM, 19 Mar 2026\n\nUPI Ref No: 202263290348 Copy\n\nPayment Details ~\n\n[@ payim Postpaid >\n\npaytm tw LIFIP | ~/ YES BANK\n","time":"10:28 pm","upiId":null,"utr":"7851056731"}
+[129:17:42.578] Server  WARN    Couldn't load fs
+[129:17:42.586] Server  WARN    Couldn't load zlib
+[129:18:48.057] Server  LOG     AI FIXED OCR → {}
+[129:26:58.238] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[129:26:58.247] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[129:26:58.331] Server  LOG      ✓ Compiled in 1044ms
+[129:27:05.897] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[129:27:06.204] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[129:27:15.980] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <TooltipProvider delayDuration={0}>
+      <TooltipProvider data-slot="tooltip-pr..." delayDuration={0}>
+        <TooltipProviderProvider scope={undefined} isOpenDelayed={true} delayDuration={0} ...>
+          <div data-slot="sidebar-wr..." style={{...}} className="group/side...">
+            <AppSidebar shopId="shop_bzLWr-po">
+              <Sidebar collapsible="icon">
+                <div className="group peer..." data-state="expanded" data-collapsible="" data-variant="sidebar" ...>
+                  <div>
+                  <div data-slot="sidebar-co..." className="fixed inse...">
+                    <div data-sidebar="sidebar" data-slot="sidebar-inner" className="bg-sidebar...">
+                      <SidebarHeader>
+                        <div data-slot="sidebar-he..." data-sidebar="header" className="flex flex-...">
+                          <div className="flex gap-2...">
+                            <div>
+                            <div className="grid flex-1">
+                              <span className="truncate font-medium capitalize">
++                               {"The Street Cafe's"}
+-                               Shop Name
+                      ...
+            ...
+
+[129:27:21.793] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[129:32:45.468] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[129:33:14.773] Browser LOG     📌 OCR RESULT: {"date":"19 Mar 2026","text":"10:45:46 VRC ul O53% +\n<— Sent Successfully Share Help\nAmount\nRupees One Hundred Only\nO08 Money Transfer Edit\nTo\nNaman Jain & NJ\nUPI ID: namanj283@axl|\non © Phonepe\nFrom\nTanish Suman =\nUPI'ID: 7851056731 @ptyes\nBank Of Baroda - 7475 ®\nPaid at 10:45 PM, 19 Mar 2026\nUPI Ref No: 202263943210 Copy\nPayment Details ~\n{@ Paytm Postpaid »\npaytm tw LIFIP | ~/ YES BANK\n","time":"10:45 pm","upiId":null,"utr":"7851056731"}
+[129:33:22.052] Server  LOG     AI FIXED OCR → {}
+[129:33:38.644] Server  LOG     customer true
+[129:33:38.758] Browser LOG     in store true
+[129:37:44.346] Server  LOG      ✓ Compiled in 915ms
+[129:40:10.536] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[129:40:10.918] Browser LOG     hii from claim page
+[129:42:30.842] Browser LOG     📌 OCR RESULT: {"date":"19 Mar 2026","text":"10:54:29 @ 300 Ql 052% +\n<— Sent Successfully Share Help\n\nAmount\n\nRupees One Hundred Only\n\nO08 Money Transfer Edit\n\nTo\n\nNaman Jain & NJ\n\nUPI ID: namanj283@axl|\n\non © Phonepe\n\nFrom\n\nTanish Suman =\n\nUPI'ID: 7851056731 @ptyes\n\nBank Of Baroda - 7475 ®\n\nPaid at 10:54 PM, 19 Mar 2026\n\nUPI Ref No: 202264241562 Copy\n\nPayment Details\n\n[@ payim Postpaid >\n\npaytm tw LIFIP | ~/ YES BANK\n","time":"10:54 pm","upiId":null,"utr":"7851056731"}
+[129:42:52.368] Server  LOG     AI FIXED OCR → {}
+[129:43:09.060] Server  LOG     customer true
+[129:43:09.174] Browser LOG     in store true
+[129:49:58.572] Server  LOG      ✓ Compiled in 1260ms
+[129:49:58.641] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[129:49:58.643] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[129:50:01.802] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[129:50:02.701] Browser LOG     hii from claim page
+[129:50:08.545] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[129:50:55.047] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[129:50:55.072] Server  LOG      ✓ Compiled in 701ms
+[129:50:55.979] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[129:50:56.861] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[129:50:59.128] Browser LOG     hii from claim page
+[129:51:03.815] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[129:51:21.662] Server  LOG      ✓ Compiled in 899ms
+[129:56:33.664] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[129:56:34.188] Server  ERROR   Error: aborted
+[129:56:34.224] Server  ERROR    ⨯ "uncaughtException:" Error: aborted
+[129:56:34.228] Server  ERROR    ⨯ "uncaughtException: " Error: aborted
+[129:56:34.983] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[129:56:35.462] Browser LOG     hii from claim page false
+[129:57:05.430] Browser LOG     📌 OCR RESULT: {"date":"19 Mar 2026","text":"11:07:32 WRC ul D4s9%\n<— Sent Successfully Share Help\nAmount\nRupees One Hundred Only\nO08 Money Transfer Edit\nTo\nNaman Jain & NJ\nUPI ID: namanj283@axl|\non © Phonepe\nFrom\nTanish Suman =\nUPI'ID: 7851056731 @ptyes\nBank Of Baroda - 7475 ®\nPaid at 11:07 PM, 19 Mar 2026\nUPI Ref No: 601250153920 Copy\nPayment Details ~\n[@ payim Postpaid >\npaytm tw LIFIP | ~/ YES BANK\n","time":"11:07 pm","upiId":null,"utr":"7851056731"}
+[129:57:13.491] Server  LOG     AI FIXED OCR → {}
+[129:57:31.762] Server  LOG     customer true
+[129:57:31.872] Browser LOG     in store true
+[139:09:46.966] Server  LOG      ✓ Compiled in 2.8s
+[139:09:47.921] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./components/claimPage/claimPageComponent.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[139:09:53.195] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[139:09:54.573] Server  LOG     prisma:error "\nInvalid `prisma.user.findUnique()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__40167ea4._.js:85:40\n\n  82     });\n  83 }\n  84 // ✅ SAME DB LOGIC\n→ 85 const user = await prisma.user.findUnique(\nCan't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`\n\nPlease make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`."
+[139:09:54.586] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__40167ea4._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:54.601] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:54.832] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_d3e5a362._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:54.835] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:54.838] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:54.845] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:54.847] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:54.849] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:54.855] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:54.865] Server  ERROR   [findUser error] PrismaClientKnownRequestError: 
+Invalid `prisma.user.findUnique()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__40167ea4._.js:85:40
+
+  82     });
+  83 }
+  84 // ✅ SAME DB LOGIC
+→ 85 const user = await prisma.user.findUnique(
+Can't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`
+
+Please make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`.
+[139:09:54.914] Server  LOG     prisma:error "\nInvalid `prisma.plan.findMany()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__80a4e117._.js:63:41\n\n  60 try {\n  61     // Lazy import Prisma (build-safe)\n  62     const { default: prisma } = await __turbopack_context__.A(\"[project]/lib/prisma.js [app-route] (ecmascript, async loader)\");\n→ 63     const plans = await prisma.plan.findMany(\nCan't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`\n\nPlease make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`."
+[139:09:54.918] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__80a4e117._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:54.937] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:54.984] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_f7163b6a._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:54.986] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:54.989] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:54.995] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:54.998] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:55.000] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:55.003] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:55.006] Server  ERROR   fetch plans error: PrismaClientKnownRequestError: 
+Invalid `prisma.plan.findMany()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__80a4e117._.js:63:41
+
+  60 try {
+  61     // Lazy import Prisma (build-safe)
+  62     const { default: prisma } = await __turbopack_context__.A("[project]/lib/prisma.js [app-route] (ecmascript, async loader)");
+→ 63     const plans = await prisma.plan.findMany(
+Can't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`
+
+Please make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`.
+[139:09:55.035] Server  LOG     prisma:error "\nInvalid `prisma.shop.findFirst()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__fa66d5c1._.js:82:40\n\n  79         status: 200\n  80     });\n  81 }\n→ 82 const shop = await prisma.shop.findFirst(\nCan't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`\n\nPlease make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`."
+[139:09:55.038] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__fa66d5c1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:55.049] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:55.095] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_1972b62e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:55.096] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:55.098] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:55.100] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:55.102] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:55.105] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:55.107] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:55.112] Server  ERROR   findShop error: PrismaClientKnownRequestError: 
+Invalid `prisma.shop.findFirst()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__fa66d5c1._.js:82:40
+
+  79         status: 200
+  80     });
+  81 }
+→ 82 const shop = await prisma.shop.findFirst(
+Can't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`
+
+Please make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`.
+[139:09:55.227] Server  LOG     prisma:error "\nInvalid `prisma.shop.findUnique()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__edcb51a8._.js:72:40\n\n  69         status: 400\n  70     });\n  71 }\n→ 72 const shop = await prisma.shop.findUnique(\nCan't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`\n\nPlease make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`."
+[139:09:55.230] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__edcb51a8._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:55.234] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:55.278] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_d0a21a4d._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:55.281] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:55.284] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:55.286] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:55.287] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:55.289] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:55.290] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[139:09:55.298] Server  ERROR   CheckShop API Error: PrismaClientKnownRequestError: 
+Invalid `prisma.shop.findUnique()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__edcb51a8._.js:72:40
+
+  69         status: 400
+  70     });
+  71 }
+→ 72 const shop = await prisma.shop.findUnique(
+Can't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`
+
+Please make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`.
+[139:11:17.317] Server  LOG      ✓ Compiled in 855ms
+[139:11:17.326] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[139:11:19.360] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./stores/shopStore.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[139:11:35.675] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[139:11:43.489] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[139:18:32.000] Server  LOG      ✓ Compiled in 817ms
+[139:18:41.061] Server  LOG      ✓ Compiled in 626ms
+[139:19:38.734] Server  LOG      ✓ Compiled in 574ms
+[139:19:50.668] Server  LOG      ✓ Compiled in 1305ms
+[139:29:41.872] Server  LOG      ✓ Compiled in 777ms
+[139:30:29.827] Server  LOG      ✓ Compiled in 565ms
+[139:32:01.188] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[139:32:30.636] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[139:32:30.636] Browser WARN    [MobX] Since strict-mode is enabled, changing (observed) observable values without using an action is not allowed. Tried to modify: ShopStore@2.loading
+[139:32:56.242] Server  LOG      ✓ Compiled in 2.2s
+[139:45:00.637] Server  LOG      ✓ Compiled in 1965ms
+[140:14:31.301] Server  LOG      ✓ Compiled in 865ms
+[140:20:01.390] Server  LOG      ✓ Compiled in 810ms
+[140:20:11.160] Server  LOG      ✓ Compiled in 648ms
+[140:21:54.433] Server  LOG      ✓ Compiled in 617ms
+[140:36:24.896] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[140:37:12.340] Browser LOG     📌 OCR RESULT: {"date":"20 Mar 2026","text":"9:44:47 5990 1% “Sl 033% »\n<— Sent Successfully Share Help\n\nAmount\n\nRupees One Hundred Only\n\nO08 Money Transfer Edit\n\nTo\n\nNaman Jain & NJ\n\nUPI ID: namanj283@axl|\n\non © Phonepe\n\nFrom\n\nTanish Suman =\n\nUPI'ID: 7851056731 @ptyes\n\nBank Of Baroda - 7475 ®\n\nPaid at 09:44 AM, 20 Mar 2026\n\nUPI Ref No: 399244659697 Copy\n\nPayment Details\n\n[@ payim Postpaid >\n\npaytm tw LIFIP | ~/ YES BANK\n","time":"09:44 am","upiId":null,"utr":"7851056731"}
+[140:37:14.231] Server  WARN    Couldn't load fs
+[140:37:14.242] Server  WARN    Couldn't load zlib
+[140:37:28.081] Server  LOG     AI FIXED OCR → {}
+[140:37:53.928] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__9a0ed524._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:37:54.037] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:37:54.478] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_bf35e940._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:37:54.482] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:37:54.485] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:37:54.491] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:37:54.494] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:37:54.496] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:37:54.500] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:37:54.514] Server  ERROR   Scan Verification API error: ReferenceError: Cannot access 'scan' before initialization
+[140:38:20.394] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__9a0ed524._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:20.397] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:20.399] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_bf35e940._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:20.401] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:20.403] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:20.404] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:20.410] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:20.411] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:20.413] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:20.414] Server  ERROR   Scan Verification API error: ReferenceError: Cannot access 'scan' before initialization
+[140:38:23.059] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__9a0ed524._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:23.064] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:23.067] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_bf35e940._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:23.081] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:23.083] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:23.085] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:23.086] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:23.088] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:23.094] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:23.096] Server  ERROR   Scan Verification API error: ReferenceError: Cannot access 'scan' before initialization
+[140:38:25.696] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__9a0ed524._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:25.718] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:25.727] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_bf35e940._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:25.736] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:25.746] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:25.749] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:25.754] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:25.766] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:25.793] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[140:38:25.798] Server  ERROR   Scan Verification API error: ReferenceError: Cannot access 'scan' before initialization
+[141:17:37.516] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[141:17:38.158] Server  LOG     prisma:error "\nInvalid `prisma.user.findUnique()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__40167ea4._.js:85:40\n\n  82     });\n  83 }\n  84 // ✅ SAME DB LOGIC\n→ 85 const user = await prisma.user.findUnique(\nCan't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`\n\nPlease make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`."
+[141:17:38.173] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__40167ea4._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:38.223] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:38.316] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_d3e5a362._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:38.318] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:38.320] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:38.323] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:38.324] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:38.326] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:38.329] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:38.337] Server  ERROR   [findUser error] PrismaClientKnownRequestError: 
+Invalid `prisma.user.findUnique()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__40167ea4._.js:85:40
+
+  82     });
+  83 }
+  84 // ✅ SAME DB LOGIC
+→ 85 const user = await prisma.user.findUnique(
+Can't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`
+
+Please make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`.
+[141:17:38.359] Server  LOG     prisma:error "\nInvalid `prisma.shop.findFirst()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__fa66d5c1._.js:82:40\n\n  79         status: 200\n  80     });\n  81 }\n→ 82 const shop = await prisma.shop.findFirst(\nCan't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`\n\nPlease make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`."
+[141:17:38.364] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__fa66d5c1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:38.372] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:38.628] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_1972b62e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:38.635] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:38.639] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:38.640] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:38.642] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:38.645] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:38.655] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:38.658] Server  ERROR   findShop error: PrismaClientKnownRequestError: 
+Invalid `prisma.shop.findFirst()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__fa66d5c1._.js:82:40
+
+  79         status: 200
+  80     });
+  81 }
+→ 82 const shop = await prisma.shop.findFirst(
+Can't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`
+
+Please make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`.
+[141:17:38.687] Server  LOG     prisma:error "\nInvalid `prisma.plan.findMany()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__80a4e117._.js:63:41\n\n  60 try {\n  61     // Lazy import Prisma (build-safe)\n  62     const { default: prisma } = await __turbopack_context__.A(\"[project]/lib/prisma.js [app-route] (ecmascript, async loader)\");\n→ 63     const plans = await prisma.plan.findMany(\nCan't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`\n\nPlease make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`."
+[141:17:38.695] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__80a4e117._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:38.710] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:39.116] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_f7163b6a._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:39.122] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:39.130] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:39.141] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:39.143] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:39.146] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:39.155] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:39.162] Server  ERROR   fetch plans error: PrismaClientKnownRequestError: 
+Invalid `prisma.plan.findMany()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__80a4e117._.js:63:41
+
+  60 try {
+  61     // Lazy import Prisma (build-safe)
+  62     const { default: prisma } = await __turbopack_context__.A("[project]/lib/prisma.js [app-route] (ecmascript, async loader)");
+→ 63     const plans = await prisma.plan.findMany(
+Can't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`
+
+Please make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`.
+[141:17:39.234] Server  LOG     prisma:error "\nInvalid `prisma.shop.findUnique()` invocation in\nE:\\Project Files\\Earning-model\\stamp-card-project\\stamp-loyalty-platform\\.next\\dev\\server\\chunks\\[root-of-the-server]__edcb51a8._.js:72:40\n\n  69         status: 400\n  70     });\n  71 }\n→ 72 const shop = await prisma.shop.findUnique(\nCan't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`\n\nPlease make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`."
+[141:17:39.256] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__edcb51a8._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:39.261] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:39.308] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\node_modules_next_d0a21a4d._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:39.310] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:39.311] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:39.313] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:39.319] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:39.321] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:39.323] Server  ERROR   E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[141:17:39.327] Server  ERROR   CheckShop API Error: PrismaClientKnownRequestError: 
+Invalid `prisma.shop.findUnique()` invocation in
+E:\Project Files\Earning-model\stamp-card-project\stamp-loyalty-platform\.next\dev\server\chunks\[root-of-the-server]__edcb51a8._.js:72:40
+
+  69         status: 400
+  70     });
+  71 }
+→ 72 const shop = await prisma.shop.findUnique(
+Can't reach database server at `aws-1-ap-south-1.pooler.supabase.com:5432`
+
+Please make sure your database server is running at `aws-1-ap-south-1.pooler.supabase.com:5432`.
+[141:17:39.566] Browser ERROR   uncaughtError: Error: Rendered fewer hooks than expected. This may be caused by an accidental early return statement.
+[141:17:59.377] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[141:19:21.884] Browser LOG     📌 OCR RESULT: {"date":null,"text":"Paid to\nTANISH SUMAN 200\n*%*%*x6731@pthdfc\nSentto : PYTM » #*****6731@pthdfc\nPayment Details A\nTransaction ID\nT2603201030004063068337 [&)\nDebited from\nOD xxxxaz8392 2200\nUTR: 906788822394 (5)\nA & 1 <Q\nSend Again View History hh Se =k\n©) Contact PhonePe Support >\nPowered by\nLIPIP poss ean\nLJ\n","time":null,"upiId":null,"utr":"906788822394"}

@@ -411,7 +411,7 @@ export async function POST(req) {
         // If failed fraud check → return here
         if (rejectReason) {
             return NextResponse.json(
-                { success: false, rejectReason, newCustomer },
+                { success: false, rejectReason, newCustomer, scanId: scan.id },
                 { status: 400 }
             );
         }

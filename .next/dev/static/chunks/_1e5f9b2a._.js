@@ -602,6 +602,8 @@ class ShopStore {
                 },
                 body: JSON.stringify({
                     shopId: this.shop?.id,
+                    shopName: this.shop?.shopName,
+                    targetStamps: this.shop?.targetStamps,
                     scanId
                 })
             });

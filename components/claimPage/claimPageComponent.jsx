@@ -21,6 +21,7 @@ const ClaimPage = ({ shopId }) => {
     const [loading, setLoading] = useState(false);
     const [uiState, setUIState] = useState("claim");
     const [customer, setCustomer] = useState({})
+    const [scanId, setScanId] = useState(null);
 
 
     if (!shopId) return <InvalidQRUI />;
@@ -61,7 +62,49 @@ const ClaimPage = ({ shopId }) => {
         checkShop();
     }, [shopId]);
 
+
+
     if (isInvalid) return <InvalidQRUI />;
+
+    useEffect(() => {
+        if (!scanId) return;
+
+        const interval = setInterval(async () => {
+            try {
+                const res = await fetch("/api/public/checkVerificationStatus", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ scanId }),
+                });
+
+                const data = await res.json();
+
+                if (data.status === "success") {
+                    clearInterval(interval);
+                    setCustomer(data.customer)
+
+                    if (data.customer?.stampCount === 1) {
+                        setUIState('nameCard')
+
+                        return
+                    }
+
+                    setUIState("success");
+                }
+
+                if (data.status === "rejected") {
+                    clearInterval(interval);
+                    setUIState("claim"); // or error UI
+                }
+
+            } catch (err) {
+                console.error(err);
+            }
+        }, 3000);
+
+        return () => clearInterval(interval);
+    }, [scanId])
+
 
     // verify screen shot 
     const verifyScreenshot = async (file, phone, ocrResult, screenshotHash) => {
@@ -114,7 +157,7 @@ const ClaimPage = ({ shopId }) => {
                     return
                 }
 
-                if(data.rejectReason === 'amount_below_mimimum'){
+                if (data.rejectReason === 'amount_below_mimimum') {
                     toast.error('Payment is below the minimum required amount.')
                     return
                 }
@@ -122,6 +165,7 @@ const ClaimPage = ({ shopId }) => {
 
                 if (data.rejectReason === 'upi_mismatch' || data.rejectReason === 'upi_not_exist') {
                     setUIState('manualReview')
+                    setScanId(data.scanId);
                     return
                 }
 
@@ -170,7 +214,7 @@ const ClaimPage = ({ shopId }) => {
 
             {uiState === 'nameCard' && <NameEnterCard shop={shop} customer={customer} setUIState={setUIState} />}
 
-            {uiState === 'success' && <SuccessAnimation targetStamps={shop.targetStamps} customer={customer}/>}
+            {uiState === 'success' && <SuccessAnimation targetStamps={shop.targetStamps} customer={customer} />}
 
             {uiState === 'error429' && <Error429 />}
 

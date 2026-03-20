@@ -537,14 +537,22 @@ function validateUPIScreenshotTime(dateStr, timeStr) {
 /** -------------------------------
  * Check past 15 minutes only
  ----------------------------------*/ function isWithinLast15Minutes(time) {
+    // ✅ Current time (actual, timezone-safe)
     const now = new Date();
-    console.log(time);
-    const nowSeconds = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
-    const givenSeconds = time.hour * 3600 + time.minute * 60 + (time.second || 0);
-    const secondsInDay = 24 * 3600;
-    let diff = nowSeconds - givenSeconds;
-    // midnight crossing
-    if (diff < 0) diff += secondsInDay;
+    // ✅ Get today's date in IST
+    const istNow = new Date(now.toLocaleString("en-US", {
+        timeZone: "Asia/Kolkata"
+    }));
+    // ✅ Build given time as IST date (today)
+    const givenIST = new Date(istNow);
+    givenIST.setHours(time.hour, time.minute, time.second || 0, 0);
+    // ✅ Handle "yesterday case" automatically
+    // If given time is ahead of now, it means it's from yesterday
+    if (givenIST > istNow) {
+        givenIST.setDate(givenIST.getDate() - 1);
+    }
+    // ✅ Difference in seconds
+    const diff = (istNow - givenIST) / 1000;
     return diff >= 0 && diff <= 15 * 60;
 }
 }),
@@ -963,7 +971,8 @@ async function POST(req) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 success: false,
                 rejectReason,
-                newCustomer
+                newCustomer,
+                scanId: scan.id
             }, {
                 status: 400
             });

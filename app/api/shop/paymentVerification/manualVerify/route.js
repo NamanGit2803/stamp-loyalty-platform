@@ -3,14 +3,15 @@ export const runtime = "nodejs";
 
 import { NextResponse } from "next/server";
 import { nanoid } from "nanoid"
+import { sendWhatsAppTemplate } from "@/lib/whatsapp/sendMessages"
 
 export async function POST(req) {
     try {
         const { default: prisma } = await import("@/lib/prisma");
 
         const body = await req.json();
-        const { scanId, shopId } = body;
-        
+        const { scanId, shopId, shopName, targetStamps } = body;
+
 
         if (!shopId && !scanId) {
             return NextResponse.json(
@@ -19,23 +20,20 @@ export async function POST(req) {
             );
         }
 
-        // -------------------------
-        // UPDATE
-        // -------------------------
-        const scan = await prisma.scanVerification.update({
-            where: { id: scanId },
-            data: {
-                status: 'success',
-                verifiedAt: new Date(),
-                rejectReason: null
-            }
+        let scan = await prisma.scanVerification.findUnique({
+            where: { id: scanId }
         });
+
+        if (!scan) {
+            return NextResponse.json({ error: "Scan not found" }, { status: 404 });
+        }
 
 
         // FETCH CUSTOMER
         let customer = await prisma.customer.findFirst({
             where: { shopId, phone: scan.phone }
         });
+        let newCustomer = false;
 
 
         //  3. If no customer → create new one
@@ -51,6 +49,8 @@ export async function POST(req) {
                     lastVisit: new Date(),
                 },
             });
+
+            newCustomer = true;
         }
         else {
             //  Customer exists → add stamp
@@ -63,6 +63,39 @@ export async function POST(req) {
                     lastVisit: new Date(),
                 },
             });
+
+            newCustomer = false;
+        }
+
+        // -------------------------
+        // UPDATE
+        // -------------------------
+        scan = await prisma.scanVerification.update({
+            where: { id: scanId },
+            data: {
+                status: 'success',
+                verifiedAt: new Date(),
+                rejectReason: null,
+                customerId: customer.id,
+            }
+        });
+
+
+
+        if (customer.stampCount < 3 && !newCustomer) {
+
+            // send whatsapp message 
+            await sendWhatsAppTemplate({
+                phone: customer.phone,
+                templateName: 'stamp_added_link',
+                variables: [
+                    customer.name || "",
+                    shopName,
+                    customer.stampCount,
+                    targetStamps,
+                    `https://stampi.in/customer/${customer.id}`,
+                ]
+            });
         }
 
 
@@ -73,6 +106,7 @@ export async function POST(req) {
             success: true,
             message: "Scan verified. Stamp added.",
             data: scan,
+            newCustomer,
         });
 
     } catch (err) {

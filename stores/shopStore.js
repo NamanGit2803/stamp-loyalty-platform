@@ -185,7 +185,7 @@ class ShopStore {
   }
 
 
-  
+
   /**
    * Creates a new shop
    */
@@ -412,12 +412,15 @@ class ShopStore {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           shopId: this.shop?.id,
+          shopName: this.shop?.shopName,
+          targetStamps: this.shop?.targetStamps,
           scanId
         })
       });
 
       const data = await res.json();
       if (!res.ok) throw new Error(data.error);
+
 
       // Refresh customer list after redeem
       await this.fetchPaymentVerifications({

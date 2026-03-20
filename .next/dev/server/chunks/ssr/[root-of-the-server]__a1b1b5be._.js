@@ -875,12 +875,12 @@ const ManualReviewUI = ()=>{
                             className: "h-10 w-10 text-primary"
                         }, void 0, false, {
                             fileName: "[project]/components/claimPage/errorComponents/manualReviewUI.jsx",
-                            lineNumber: 15,
+                            lineNumber: 16,
                             columnNumber: 25
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/components/claimPage/errorComponents/manualReviewUI.jsx",
-                        lineNumber: 14,
+                        lineNumber: 15,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -888,7 +888,7 @@ const ManualReviewUI = ()=>{
                         children: "Verification needs review"
                     }, void 0, false, {
                         fileName: "[project]/components/claimPage/errorComponents/manualReviewUI.jsx",
-                        lineNumber: 19,
+                        lineNumber: 20,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -900,29 +900,29 @@ const ManualReviewUI = ()=>{
                                 children: "Please show your screenshot to the shop for manual verification and stamp approval."
                             }, void 0, false, {
                                 fileName: "[project]/components/claimPage/errorComponents/manualReviewUI.jsx",
-                                lineNumber: 27,
+                                lineNumber: 28,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/claimPage/errorComponents/manualReviewUI.jsx",
-                        lineNumber: 24,
+                        lineNumber: 25,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/claimPage/errorComponents/manualReviewUI.jsx",
-                lineNumber: 11,
+                lineNumber: 12,
                 columnNumber: 17
             }, ("TURBOPACK compile-time value", void 0))
         }, void 0, false, {
             fileName: "[project]/components/claimPage/errorComponents/manualReviewUI.jsx",
-            lineNumber: 10,
+            lineNumber: 11,
             columnNumber: 13
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/claimPage/errorComponents/manualReviewUI.jsx",
-        lineNumber: 9,
+        lineNumber: 10,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -1271,9 +1271,10 @@ const ClaimPage = ({ shopId })=>{
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [uiState, setUIState] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("claim");
     const [customer, setCustomer] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({});
+    const [scanId, setScanId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     if (!shopId) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$claimPage$2f$errorComponents$2f$invalidQRUI$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
         fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-        lineNumber: 26,
+        lineNumber: 27,
         columnNumber: 25
     }, ("TURBOPACK compile-time value", void 0));
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
@@ -1314,9 +1315,44 @@ const ClaimPage = ({ shopId })=>{
     ]);
     if (isInvalid) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$claimPage$2f$errorComponents$2f$invalidQRUI$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
         fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-        lineNumber: 64,
+        lineNumber: 67,
         columnNumber: 27
     }, ("TURBOPACK compile-time value", void 0));
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        if (!scanId) return;
+        const interval = setInterval(async ()=>{
+            try {
+                const res = await fetch("/api/public/checkVerificationStatus", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        scanId
+                    })
+                });
+                const data = await res.json();
+                if (data.status === "success") {
+                    clearInterval(interval);
+                    setCustomer(data.customer);
+                    if (data.customer?.stampCount === 1) {
+                        setUIState('nameCard');
+                        return;
+                    }
+                    setUIState("success");
+                }
+                if (data.status === "rejected") {
+                    clearInterval(interval);
+                    setUIState("claim"); // or error UI
+                }
+            } catch (err) {
+                console.error(err);
+            }
+        }, 3000);
+        return ()=>clearInterval(interval);
+    }, [
+        scanId
+    ]);
     // verify screen shot 
     const verifyScreenshot = async (file, phone, ocrResult, screenshotHash)=>{
         if (!file) return;
@@ -1360,6 +1396,7 @@ const ClaimPage = ({ shopId })=>{
                 }
                 if (data.rejectReason === 'upi_mismatch' || data.rejectReason === 'upi_not_exist') {
                     setUIState('manualReview');
+                    setScanId(data.scanId);
                     return;
                 }
                 __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error(data.error ? data.error : data.rejectReason ? "Invalid Screenshot" : "Verification failed");
@@ -1381,7 +1418,7 @@ const ClaimPage = ({ shopId })=>{
                         children: shop.name || "Shop"
                     }, void 0, false, {
                         fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-                        lineNumber: 156,
+                        lineNumber: 200,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1391,7 +1428,7 @@ const ClaimPage = ({ shopId })=>{
                                 className: "w-4 h-4 text-primary/70"
                             }, void 0, false, {
                                 fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-                                lineNumber: 161,
+                                lineNumber: 205,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1399,19 +1436,19 @@ const ClaimPage = ({ shopId })=>{
                                 children: "You're one step away from rewards"
                             }, void 0, false, {
                                 fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-                                lineNumber: 162,
+                                lineNumber: 206,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-                        lineNumber: 160,
+                        lineNumber: 204,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-                lineNumber: 155,
+                lineNumber: 199,
                 columnNumber: 91
             }, ("TURBOPACK compile-time value", void 0)),
             uiState === 'claim' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$claimPage$2f$claimCard$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1421,7 +1458,7 @@ const ClaimPage = ({ shopId })=>{
                 setLoading: setLoading
             }, void 0, false, {
                 fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-                lineNumber: 169,
+                lineNumber: 213,
                 columnNumber: 37
             }, ("TURBOPACK compile-time value", void 0)),
             uiState === 'nameCard' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$claimPage$2f$nameEnterCard$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1430,7 +1467,7 @@ const ClaimPage = ({ shopId })=>{
                 setUIState: setUIState
             }, void 0, false, {
                 fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-                lineNumber: 171,
+                lineNumber: 215,
                 columnNumber: 40
             }, ("TURBOPACK compile-time value", void 0)),
             uiState === 'success' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$animations$2f$SuccessAnimation$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1438,22 +1475,22 @@ const ClaimPage = ({ shopId })=>{
                 customer: customer
             }, void 0, false, {
                 fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-                lineNumber: 173,
+                lineNumber: 217,
                 columnNumber: 39
             }, ("TURBOPACK compile-time value", void 0)),
             uiState === 'error429' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$claimPage$2f$errorComponents$2f$error429$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-                lineNumber: 175,
+                lineNumber: 219,
                 columnNumber: 40
             }, ("TURBOPACK compile-time value", void 0)),
             uiState === 'manualReview' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$claimPage$2f$errorComponents$2f$manualReviewUI$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-                lineNumber: 177,
+                lineNumber: 221,
                 columnNumber: 44
             }, ("TURBOPACK compile-time value", void 0)),
             uiState === 'pauseLoyalty' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$claimPage$2f$errorComponents$2f$pausedLoyaltyUI$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-                lineNumber: 179,
+                lineNumber: 223,
                 columnNumber: 44
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1466,19 +1503,19 @@ const ClaimPage = ({ shopId })=>{
                         children: ("TURBOPACK compile-time value", "Stampi") ?? "site_name"
                     }, void 0, false, {
                         fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-                        lineNumber: 183,
+                        lineNumber: 227,
                         columnNumber: 28
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-                lineNumber: 182,
+                lineNumber: 226,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/claimPage/claimPageComponent.jsx",
-        lineNumber: 149,
+        lineNumber: 193,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };

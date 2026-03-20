@@ -1,10 +1,11 @@
 'use client'
 
-import React from 'react'
+import { useEffect } from "react";
 import { Info } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const ManualReviewUI = () => {
+
     return (
         <div className="flex justify-center items-center bg-custom-gradient px-4">
             <Card className="w-full max-w-md border-border shadow-md rounded-2xl">

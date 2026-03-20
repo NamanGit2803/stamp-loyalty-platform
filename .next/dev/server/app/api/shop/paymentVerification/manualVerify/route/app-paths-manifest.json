@@ -1,0 +1,3 @@
+{
+  "/api/shop/paymentVerification/manualVerify/route": "app/api/shop/paymentVerification/manualVerify/route.js"
+}
