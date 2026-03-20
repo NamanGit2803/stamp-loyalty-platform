@@ -283,9 +283,9 @@ export async function POST(req) {
                     where: { shopId, utr, status: 'success' },
                 });
 
-                if (!utrRegex.test(utr)) {
-                    rejectReason = 'invalid_utr'
-                }
+                // if (!utrRegex.test(utr)) {
+                //     rejectReason = 'invalid_utr'
+                // }
 
                 // duplicate utr 
                 if (utrExists) {
@@ -337,13 +337,19 @@ export async function POST(req) {
             }
         }
 
-        // normaize text 
+        // normalize text 
         function normalizeText(text) {
             return text
                 ?.toLowerCase()
-                .replace(/[^a-z0-9@]/g, "");
+                .replace(/[^a-z0-9@.]/g, "");
         }
 
+        function extractUpiIds(text) {
+            return text.match(/[a-z0-9.\-_]{2,}@[a-z]{2,}/gi) || [];
+        }
+
+        const shopUpi = normalizeText(shop.upiId);
+        const extractedUpis = extractUpiIds(rawText).map(normalizeText);
         const normalizedRaw = normalizeText(rawText);
 
 
@@ -351,20 +357,23 @@ export async function POST(req) {
         if (!rejectReason && !upiId) {
             rejectReason = 'upi_not_exist'
 
-            if (normalizedRaw.includes(shop.upiId)) {
+            if (extractUpiIds.includes(shopUpi)) {
                 upiId = shop.upiId
                 rejectReason = null
             }
         }
 
         if (!rejectReason && upiId) {
-            if (upiId !== shop.upiId) {
-                rejectReason = 'upi_mismatch'
+            if (normalizeText(upiId) !== shopUpi) {
+                rejectReason = 'upi_mismatch';
             }
 
-            if (normalizedRaw.includes(shop.upiId)) {
-                upiId = shop.upiId
-                rejectReason = null
+            // fallback: check extracted list
+            if (extractedUpis.includes(shopUpi)) {
+                upiId = shop.upiId;
+                rejectReason = null;
+            } else {
+                rejectReason = 'upi_mismatch';
             }
         }
 
